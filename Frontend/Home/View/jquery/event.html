@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基础事件</title>
+    <script  type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+</head>
+<body>
+<input type="button" id="demo" value="load加载数据">
+<div id="box"></div>
+<script>
+    var AJAXURL = "__APP__/Home/Jquery/";
+    $(document).ready(function ()
+    {
+        $("#demo").bind('click',function(){
+            //默认情况下是一Get方式提交数据的
+            var url = AJAXURL+'loadingddd';
+            //$("#box").load(url+'?id=hello');
+            $("#box").load(url,{
+                        'id':'hello'
+                    },function(response, status, xhr)
+            {
+                // response [1]正确：返回数据 [2] 返回Html代码
+                // status : [1]正确：success [2] error
+                // xhr.statusText : [1]正确：ok [2] Not Found
+                alert('返回的值为：' + response + '，状态为：' + status + ',"状态是：' + xhr.statusText);
+            });
+        });
+
+    });
+</script>
+</body>
+</html>
