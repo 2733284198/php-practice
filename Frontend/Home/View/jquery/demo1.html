@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>第一个jQuery程序</title>
+    <script  type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+</head>
+<body>
+<!--
+1.$(function () {}); //执行一个匿名函数
+
+2.$(‘#box’).css(‘color’, ‘red’); //执行功能函数
+-->
+<div id="box">基础核心</div>
+<div class="pox">基础核心</div>
+<p>p2</p>
+<strong>strong</strong>
+<ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Success</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+<script>
+//    jQuery.noConflict(); //将$符所有权剔除
+//    var $$ = jQuery;
+
+    $(document).ready(function ()
+    {
+        //相同的元素进行合并
+        $('#box ,.pox ,p ,strong').css('color','red');
+        //后代选择器
+        $('ul li a').css('color','green');
+        //通配符选择器
+
+
+    });
+</script>
+</body>
+</html>
