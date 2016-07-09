@@ -26,8 +26,13 @@ return array(
         'auth' => 'mastertestpassword',
     ),
     'REDIS_SLAVE1' => array(
-        'HOST' => '127.0.0.1',
-        'PORT' => 6000,
-        'AUTH' => '',
-    )
+        'host' => '127.0.0.1',
+        'port' => 6000,
+        'auth' => '',
+    ),
+     'REDIS_SLAVE2' => array(
+    'host' => '127.0.0.1',
+    'port' => 6001,
+    'auth' => '',
+)
 );
