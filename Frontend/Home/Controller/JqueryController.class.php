@@ -10,7 +10,7 @@ class JqueryController extends Controller
 {
     public function index()
     {
-        echo 'Jquery';
+        echo 'Jquery123213';
     }
 
     public function demo1(){
