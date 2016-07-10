@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线聊天室</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div id="divMain">
+    <div id="divTop">
+        <div id="divL">
+            <h3>聊天室内容</h3>
+            <div class="divShow" id="divContent"></div>
+        </div>
+        <div id="divR">
+            <h3>当前在线人数</h3>
+            <div class="divShow" id="divOnline"></div>
+        </div>
+    </div>
+    <div class="divBot">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2" id="divFace" class="pb"></td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea id="txtContent" cols="64" rows="3">  </textarea>
+                </td>
+                <td class="p1">
+                    <input id="Button1" type="button" value="发送" class="btn">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="pt">发送内容不能为空</td>
+            </tr>
+        </table>
+    </div>
+    <span id="divMsg" class="clsTip"></span>
+</div>
+<script type="application/javascript">
+    var $URL = "__APP__/Home/AjaxChat/";
+    $(function () {
+        // 元素绑定全局ajaxStart事件
+        $('#divMsg').ajaxStart(function () {
+            $(this).show().html("正在发送请求...");   //显示元素
+        });
+
+        // 元素绑定全局ajaxStop事件
+        $('#divMsg').ajaxStop(function () {
+            $(this).html('页面请求完成').hide();
+        });
+        // 以上的两个绑定事件，让用户实时感觉自己操作到了哪一步了
+
+        // 按钮点击事件
+        $('#Button1').click(function () {
+            // 使用一个变量把该对象缓存起来 不建议直接获取值
+            var $content = $('#txtContent');
+            if ($content.val() != "") {
+                SendContent($content.val());
+            }
+            else {
+                alert('发送内容不能为空');
+                $content.focus();
+                return false; //阻止向服务器发送请求
+            }
+        });
+    });
+
+    // 初始化表情库
+    InitFace();
+
+    // 图标的显示操作
+    $("table tr td img").click(function()
+    {
+        // 表情图标单击事件
+        var strContent = $("#txtContent").val()+"<:"+this.id+":>";
+        // 当点击图标的时候，同时会把图标文件显示在文本框中
+        $("#txtContent").val(strContent);
+    });
+
+    // 定时获取最新聊天内容和当前在线人数的统计
+    AutoUpdContent();
+
+    //定时执行一段代码，或者一个函数
+    //var hander = setInterval("AutoUpdContent()",5000);
+
+    function AutoUpdContent(){
+        GetMessageList();
+        GetOnlineList();
+    }
+    /**
+     * 自定义设置表情图标函数
+     * 无返回值
+     */
+    function InitFace() {
+        var strHtml = "";
+        for (var i = 1; i <= 10; i++) {
+            strHtml += "<img scr='Face/" + i + ".gif ' id='" + i + "'/>";
+        }
+        $("#divFace").html(strHtml);
+    }
+
+    /**
+     * 自定义发送内容函数
+     * @param content
+     * @constructor
+     */
+    function SendContent(content) {
+        // {} 里面是好多的对象Object
+        $.ajax({
+            type: 'GET',
+            url: $URL + 'saveContent',
+            data: {
+                'time': new Date(),
+                'content': content,
+            },
+            success: function (data) {
+                if (data == '1') {
+                    GetMessageList();
+                    $("#txtContent").val('');
+                } else {
+                    alert('发送失败');
+                    return false;
+                }
+            }
+
+        });
+    }
+
+    /**
+     * 自定义返回聊天记录函数
+     * return data 为返回聊天内容数据
+     * @constructor
+     */
+    function GetMessageList() {
+        $.ajax({
+            type: 'GET',
+            url: $URL + 'ChatList',
+            data: {
+                'time': new Date()  //保证最新，不被缓存
+            },
+            success: function (data) {
+                if (data == '1') {
+                    GetMessageList();
+                    $("#divContent").html(data);
+                } else {
+                    alert('聊天内容数据获取失败');
+                    return false;
+                }
+            }
+
+        });
+    }
+
+    /**
+     * 自定义返回在线人员函数
+     * return data 为返回在线人员数据
+     * @constructor
+     */
+    function GetOnlineList() {
+        $.ajax({
+            type: 'GET',
+            url: $URL + 'OnlineList',
+            data: {
+                'time': new Date()  //保证最新，不被缓存
+            },
+            success: function (data) {
+                if (data == '1') {
+                    GetMessageList();
+                    $("#divOnline").html(data);
+                } else {
+                    alert('在线人员数据获取失败');
+                    return false;
+                }
+            }
+
+        });
+    }
+</script>
+</body>
+</html>
