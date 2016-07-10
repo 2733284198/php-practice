@@ -3,7 +3,15 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>第一个jQuery程序</title>
-    <script  type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        .red{
+            width: 100px;
+            font-size: 32px;
+            color: darkblue;
+            background-color: aquamarine;
+        }
+    </style>
 </head>
 <body>
 <!--
@@ -20,17 +28,63 @@
     <li><a href="#">Success</a></li>
     <li><a href="#">Contact</a></li>
 </ul>
+
+<div id="first" style="display: none; background-color: #9B410E; color: #333333;font-size: 32px;">first</div>
+<div id="event">event</div>
+<div id="next">next</div>
+<div>Hello World</div>
+
+<button>Click me</button>
+
+<ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+</ul>
+
 <script>
 //    jQuery.noConflict(); //将$符所有权剔除
 //    var $$ = jQuery;
 
     $(document).ready(function ()
     {
-        //相同的元素进行合并
-        $('#box ,.pox ,p ,strong').css('color','red');
-        //后代选择器
-        $('ul li a').css('color','green');
+//        //相同的元素进行合并
+//        $('#box ,.pox ,p ,strong').css('color','red');
+//        后代选择器
+//        $('ul li a').css('color','green');
         //通配符选择器
+        $('button').on('click', function() {
+            // $('li:first-child').css('backgroundColor', 'yellow');
+            //$(':input:enabled').css('backgroundColor', 'yellow');
+            //$("#first ~ div").css('backgroundColor', 'yellow');
+            //$("li:odd").css('backgroundColor','red');
+            //$("div:contains('llo')").css('backgroundColor', 'yellow');
+            //$('div:visible').css('display','none');
+
+            //给一个元素添加一个属性
+            //$("#event").attr('href','www.baidu.com');
+
+            //给一个元素添加多个个属性json
+//            $("#next").attr({
+//                'data-id':'something',
+//                'data-vaule':'vaule',
+//            });
+
+            //获取元素的属性的值
+            //var url = $("#event").attr('href');
+
+            //addClass（）添加一个class
+            //$("#next").addClass('red');
+
+            //获取一个元素的样式，这里通过数组获取多个样式
+            var cssVal = $("#next").css(['color','font-size','background-color']);
+            alert(JSON.stringify(cssVal));
+        });
 
     });
 </script>
