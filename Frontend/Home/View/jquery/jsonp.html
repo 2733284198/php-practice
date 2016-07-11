@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JsonP</title>
+    <script  type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+    <style>
+        .loading{
+            display: none;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="demo" value="load加载数据">
+<form>
+    <input id="age" name="age" value="">
+</form>
+<div id="box"></div>
+<span class="loading">正在加载中......</span>
+<script>
+    var AJAXURL = "__APP__/Home/Jquery/";
+    $(document).ready(function ()
+    {
+        $("#demo").bind('click',function()
+        {
+            $.ajax({
+                url : 'http://www.baidu.com/json2.php',
+                dataType : 'jsonp',
+                success : function (response, status, xhr) {
+                    console.log(response);
+                    alert(response.a);
+                }
+            });
+        });
+
+
+    });
+</script>
+</body>
+</html>

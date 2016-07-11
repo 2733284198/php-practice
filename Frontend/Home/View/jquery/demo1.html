@@ -3,19 +3,31 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>第一个jQuery程序</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script  type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
     <style>
-        .red{
-            width: 100px;
-            font-size: 32px;
-            color: darkblue;
-            background-color: aquamarine;
+        ul { list-style-type: none;}
+        li { display: inline-block;}
+        li {
+            margin: 10px 0;
+            border: 1px dashed #9B410E;
+            padding: 40px;
+            text-align: center;
         }
+        input[type=radio] {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        }
+
+
     </style>
 </head>
 <body>
 <!--
-1.$(function () {}); //执行一个匿名函数,update delete
+1.$(function () {}); //执行一个匿名函数
 
 2.$(‘#box’).css(‘color’, ‘red’); //执行功能函数
 -->
@@ -28,24 +40,29 @@
     <li><a href="#">Success</a></li>
     <li><a href="#">Contact</a></li>
 </ul>
+<hr/>
 
-<div id="first" style="display: none; background-color: #9B410E; color: #333333;font-size: 32px;">first</div>
-<div id="event">event</div>
-<div id="next">next</div>
-<div>Hello World</div>
-
-<button>Click me</button>
-
-<ul>
-    <li>0</li>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-</ul>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        选择频道
+    </div>
+    <div class="panel-body">
+        <form>
+            <ul class="dowebok">
+                <li>
+                    <input type="radio" name="radio" checked="checked" data-labelauty="视觉设计师"><br/>
+                    名称：频道一<br/>
+                    名称：频道一<br/>
+                    名称：频道一<br/>
+                </li>
+                <li>频道四
+                    <input type="radio" name="radio" data-labelauty="数据分析师"></li>
+                <li>频道五
+                    <input type="radio" name="radio" disabled data-labelauty="不可用"></li>
+            </ul>
+        </form>
+    </div>
+</div>
 
 <script>
 //    jQuery.noConflict(); //将$符所有权剔除
@@ -53,39 +70,11 @@
 
     $(document).ready(function ()
     {
-//        //相同的元素进行合并
-//        $('#box ,.pox ,p ,strong').css('color','red');
-//        后代选择器
-//        $('ul li a').css('color','green');
+        //相同的元素进行合并
+        $('#box ,.pox ,p ,strong').css('color','red');
+        //后代选择器
+        $('ul li a').css('color','green');
         //通配符选择器
-        $('button').on('click', function() {
-            // $('li:first-child').css('backgroundColor', 'yellow');
-            //$(':input:enabled').css('backgroundColor', 'yellow');
-            //$("#first ~ div").css('backgroundColor', 'yellow');
-            //$("li:odd").css('backgroundColor','red');
-            //$("div:contains('llo')").css('backgroundColor', 'yellow');
-            //$('div:visible').css('display','none');
-
-            //给一个元素添加一个属性
-            //$("#event").attr('href','www.baidu.com');
-
-            //给一个元素添加多个个属性json
-//            $("#next").attr({
-//                'data-id':'something',
-//                'data-vaule':'vaule',
-//            });
-
-            //获取元素的属性的值
-            //var url = $("#event").attr('href');
-
-            //addClass（）添加一个class
-            //$("#next").addClass('red');
-
-            //获取一个元素的样式，这里通过数组获取多个样式
-            var cssVal = $("#next").css(['color','font-size','background-color']);
-            alert(JSON.stringify(cssVal));
-        });
-
     });
 </script>
 </body>
