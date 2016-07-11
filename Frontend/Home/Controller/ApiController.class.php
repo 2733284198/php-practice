@@ -37,7 +37,11 @@ class ApiController extends Controller
         'id' => '47844'
     ];
 
-
+    /**
+     * Redis 数据库缓存数据
+     * @param string $liveId
+     * @return array|mixed
+     */
     public function getLive($liveId = 'L00735')
     {
         $redis = new \Redis();
