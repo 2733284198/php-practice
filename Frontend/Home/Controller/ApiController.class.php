@@ -78,8 +78,7 @@ class ApiController extends Controller
                 }
                 $resultData = $result;
             }
-        }
-        else // Redis数据库连接失败，则直接读取接口数据即可
+        } else // Redis数据库连接失败，则直接读取接口数据即可
         {
             $response = curlPost(self::API_LIVE, self::$liveParams);
             $result = json_decode($response, true);
@@ -95,36 +94,35 @@ class ApiController extends Controller
     public function liveRedis($deviceId = '2853')
     {
         $redis = new \Redis();
-        $redis->connect('127.0.0.1',6379);
+        $redis->connect('127.0.0.1', 6379);
         $redis->auth('mastertestpassword');
         $resultData = [];
         $liveInfo = json_decode($this->online->postCurl(self::LIVE_URL, self::$liveData), true);
 
-        if($redis->ping() == '+PONG'){
+        if ($redis->ping() == '+PONG') {
             $resultData['errcode'] = 'Redis 数据库连接成功';
-            $getResult = $redis->hGet(self::CACHE_KEY,$deviceId);
-            if($getResult){
-                $resultData = json_decode($getResult,true);
+            $getResult = $redis->hGet(self::CACHE_KEY, $deviceId);
+            if ($getResult) {
+                $resultData = json_decode($getResult, true);
                 $resultData['DataSource'] = '来自Redis数据库中的数据';
                 $resultData['errcode'] = 'OK';
-            }else{
+            } else {
                 $liveInfo = json_decode($this->online->postCurl(self::LIVE_URL, self::$liveData), true);
-                if($liveInfo['errcode'] == 200){
-                    foreach($liveInfo['dataList'] as $key=>$values)
-                    {
+                if ($liveInfo['errcode'] == 200) {
+                    foreach ($liveInfo['dataList'] as $key => $values) {
                         //根据设别号存储数据
-                        $redis->hset(self::CACHE_KEY,$values['deviceId'],json_encode($values));
+                        $redis->hset(self::CACHE_KEY, $values['deviceId'], json_encode($values));
                     }
                     $resultData[] = $liveInfo['dataList'];
-                    $redis->expire(self::CACHE_KEY,60);
+                    $redis->expire(self::CACHE_KEY, 60);
                     $resultData['DataSource'] = '来自API接口数据';
                     $resultData['errcode'] = 'OK';
-                }else{
+                } else {
                     $resultData['DataSource'] = '接口数据获取失败';
                     $resultData['errcode'] = 'Fail';
                 }
             }
-        }else{
+        } else {
             $resultData['errcode'] = 'Redis 数据库连接失败';
         }
         var_dump($resultData);
