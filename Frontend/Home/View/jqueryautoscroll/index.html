@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Jquery 自定义滚动条</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script  type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--容器区域-->
+<div class="scroll-demo">
+    <!--标签切换区域-->
+    <ul class="scroll-tab">
+        <li class="tab-item tab-active">第一篇</li>
+        <li class="tab-item">第二篇</li>
+        <li class="tab-item">第三篇</li>
+        <li class="tab-item">第四篇</li>
+    </ul>
+    <!--滚动内容局域-->
+    <div class="scroll-wrap">
+        <!--滚动内容-->
+        <div class="scrollcont">
+            <!--春天来了-->
+            <h3 class="anchor">春天来了</h3>
+            <div class="scroll-ol">
+                春天的内容..............
+                <p>夏天来了内容.............</p>
+            </div>
+            <!--夏天来了-->
+            <h3 class="anchor">夏天来了</h3>
+            <div class="scroll-ol">
+                <p>夏天来了内容.............</p>
+                <p>夏天来了内容.............</p>
+            </div>
+            <!--秋天来了-->
+            <h3 class="anchor">秋天来了</h3>
+            <div class="scroll-ol">
+                秋天来了.....................
+                <p>夏天来了内容.............</p>
+            </div>
+            <!--冬天来了-->
+            <h3 class="anchor">冬天来了</h3>
+            <div class="scroll-ol">
+                冬天来了...................
+                <p>夏天来了内容.............</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+//    jQuery.noConflict(); //将$符所有权剔除
+//    var $$ = jQuery;
+
+    $(document).ready(function ()
+    {
+        //相同的元素进行合并
+        $('#box ,.pox ,p ,strong').css('color','red');
+        //后代选择器
+        $('ul li a').css('color','green');
+        //通配符选择器
+    });
+</script>
+</body>
+</html>
