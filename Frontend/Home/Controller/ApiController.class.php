@@ -94,35 +94,41 @@ class ApiController extends Controller
     public function liveRedis($deviceId = '2853')
     {
         $redis = new \Redis();
-        $redis->connect('127.0.0.1', 6379);
-        $redis->auth('mastertestpassword');
-        $resultData = [];
-        $liveInfo = json_decode($this->online->postCurl(self::LIVE_URL, self::$liveData), true);
-
-        if ($redis->ping() == '+PONG') {
-            $resultData['errcode'] = 'Redis 数据库连接成功';
-            $getResult = $redis->hGet(self::CACHE_KEY, $deviceId);
-            if ($getResult) {
-                $resultData = json_decode($getResult, true);
-                $resultData['DataSource'] = '来自Redis数据库中的数据';
-                $resultData['errcode'] = 'OK';
-            } else {
-                $liveInfo = json_decode($this->online->postCurl(self::LIVE_URL, self::$liveData), true);
-                if ($liveInfo['errcode'] == 200) {
-                    foreach ($liveInfo['dataList'] as $key => $values) {
-                        //根据设别号存储数据
-                        $redis->hset(self::CACHE_KEY, $values['deviceId'], json_encode($values));
-                    }
-                    $resultData[] = $liveInfo['dataList'];
-                    $redis->expire(self::CACHE_KEY, 60);
-                    $resultData['DataSource'] = '来自API接口数据';
+        if($redis->connect('127.0.0.1', 6379) === TRUE)
+        {
+            $redis->auth('mastertestpassword');
+            $resultData = [];
+            if ($redis->ping() == '+PONG') {
+                $resultData['errcode'] = 'Redis 数据库连接成功';
+                $getResult = $redis->hGet(self::CACHE_KEY.':'.$deviceId,$deviceId);
+                if ($getResult) {
+                    $resultData = json_decode($getResult, true);
+                    $resultData['DataSource'] = '来自Redis数据库中的数据';
                     $resultData['errcode'] = 'OK';
                 } else {
-                    $resultData['DataSource'] = '接口数据获取失败';
-                    $resultData['errcode'] = 'Fail';
+                    $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$deviceId]), true);
+                    if ($liveInfo['errcode'] == 200) {
+                        //根据设别号存储数据
+                        $redis->multi();
+                        $redis->hset(self::CACHE_KEY.':'.$deviceId, $deviceId, json_encode($liveInfo['dataList']));
+                        $redis->expire(self::CACHE_KEY.':'.$deviceId, 30);
+                        $redis->exec();
+                        $resultData = $liveInfo['dataList'];
+                        $resultData['DataSource'] = '来自API接口数据';
+                        $resultData['errcode'] = 'OK';
+                    } else {
+                        $resultData['DataSource'] = '接口数据获取失败';
+                        $resultData['errcode'] = 'Fail';
+                    }
                 }
+            } else {
+                $resultData['errcode'] = 'Redis 服务器没有运行';
+                $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$deviceId]), true);
+                $resultData = $liveInfo['dataList'];
             }
-        } else {
+        }else{
+            $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$deviceId]), true);
+            $resultData = $liveInfo['dataList'];
             $resultData['errcode'] = 'Redis 数据库连接失败';
         }
         var_dump($resultData);
