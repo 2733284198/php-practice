@@ -93,45 +93,68 @@ class ApiController extends Controller
      */
     public function liveRedis($deviceId = '2853')
     {
+        $channelInfo = $this->dao->select('*')->from(TABLE_LIVE_CHANNEL)->where('selected')->eq('1')->fetch(); //返回一个对象
         $redis = new \Redis();
-        if($redis->connect('127.0.0.1', 6379) === TRUE)
+        if($redis->connect($this->config->redis->host, $this->config->redis->port) === TRUE)
         {
-            $redis->auth('mastertestpassword');
+            $redis->auth($this->config->redis->auth);
+            $redis->select($this->config->redis->db);
             $resultData = [];
             if ($redis->ping() == '+PONG') {
-                $resultData['errcode'] = 'Redis 数据库连接成功';
-                $getResult = $redis->hGet(self::CACHE_KEY.':'.$deviceId,$deviceId);
+                $resultData['errcode'] = 'Redis DB Connection Success';
+                $getResult = $redis->hGet(self::CACHE_KEY.':'.$channelInfo->deviceId,$channelInfo->deviceId);
                 if ($getResult) {
                     $resultData = json_decode($getResult, true);
-                    $resultData['DataSource'] = '来自Redis数据库中的数据';
+                    $resultData['channelNum'] = $channelInfo->num;
+                    $resultData['channelId'] = $channelInfo->id;
+                    $resultData['channelName'] = $channelInfo->name;
+                    $resultData['DataSource'] = 'From Redis DB DATA';
                     $resultData['errcode'] = 'OK';
                 } else {
-                    $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$deviceId]), true);
+                    $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$channelInfo->deviceId]), true);
                     if ($liveInfo['errcode'] == 200) {
-                        //根据设别号存储数据
                         $redis->multi();
-                        $redis->hset(self::CACHE_KEY.':'.$deviceId, $deviceId, json_encode($liveInfo['dataList']));
-                        $redis->expire(self::CACHE_KEY.':'.$deviceId, 30);
+                        $redis->hset(self::CACHE_KEY.':'.$channelInfo->deviceId, $channelInfo->deviceId, json_encode($liveInfo['dataList']));
+                        $redis->expire(self::CACHE_KEY.':'.$channelInfo->deviceId, 60);
                         $redis->exec();
                         $resultData = $liveInfo['dataList'];
-                        $resultData['DataSource'] = '来自API接口数据';
+                        $resultData['channelNum'] = $channelInfo->num;
+                        $resultData['channelId'] = $channelInfo->id;
+                        $resultData['channelName'] = $channelInfo->name;
+                        $resultData['DataSource'] = 'FROM API Interface DATA';
                         $resultData['errcode'] = 'OK';
                     } else {
-                        $resultData['DataSource'] = '接口数据获取失败';
+                        $resultData['DataSource'] = 'Interface DATA REQUEST FAIL';
                         $resultData['errcode'] = 'Fail';
                     }
                 }
             } else {
-                $resultData['errcode'] = 'Redis 服务器没有运行';
-                $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$deviceId]), true);
+                $resultData['errcode'] = 'Redis Server No Runs';
+                $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$channelInfo->deviceId]), true);
                 $resultData = $liveInfo['dataList'];
+                $resultData['channelNum'] = $channelInfo->num;
+                $resultData['channelId'] = $channelInfo->id;
+                $resultData['channelName'] = $channelInfo->name;
             }
         }else{
-            $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$deviceId]), true);
+            $liveInfo = json_decode($this->online->postCurl(self::CHANNEL_URL, ['id'=>$channelInfo->deviceId]), true);
             $resultData = $liveInfo['dataList'];
-            $resultData['errcode'] = 'Redis 数据库连接失败';
+            $resultData['channelNum'] = $channelInfo->num;
+            $resultData['channelId'] = $channelInfo->id;
+            $resultData['channelName'] = $channelInfo->name;
+            $resultData['errcode'] = 'Redis DB CONNECTION FAIL';
         }
-        var_dump($resultData);
+
+        $courses = $this->dao->select('title ,duration ,videoId ,liveId ,duration ,fileName ,fileTime ,fileSize ,views ,course_price ,create_time')
+            ->from(TABLE_LIVE_COURSE)
+            ->where('is_publish')->eq(1)
+            ->fetchAll();
+        $this->view->channelInfo = $resultData;
+        $this->view->courses = $courses;
+        $this->view->HLSDynamicPlugin = 'js/v2/player/HLSDynamicPlugin.swf';
+        $this->view->expressInstall = 'js/v2/player/expressInstall.swf';
+        $this->view->StrobeMediaPlayback = 'js/v2/player/StrobeMediaPlayback.swf';
+        $this->display('online', 'live');
     }
 
     public function getVideo()
