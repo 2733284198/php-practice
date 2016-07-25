@@ -44,10 +44,26 @@ function juhecurl($url,$params=false,$ispost=0){
 }
 
 //curl post method
-function curlPost($url, $curlPost)
+function curlPost($method, $url, $data)
 {
     //初始化一个curl会话，curl_init()函数唯一的一个参数是可选的，表示一个url地址
     $curl = curl_init();
+
+//    switch ($method)
+//    {
+//        case "POST":
+//            curl_setopt($curl, CURLOPT_POST, 1);
+//
+//            if ($data)
+//                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+//            break;
+//        case "PUT":
+//            curl_setopt($curl, CURLOPT_PUT, 1);
+//            break;
+//        default:
+//            if ($data)
+//                $url = sprintf("%s?%s", $url, http_build_query($data));
+//    }
 
     //这是你想用PHP取回的URL地址
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -66,7 +82,7 @@ function curlPost($url, $curlPost)
     curl_setopt($curl, CURLOPT_POST, true);
 
     // 传递一个作为HTTP “POST”操作的所有数据的字符串
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $curlPost);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
     //执行一个curl会话
     $return_str = curl_exec($curl);

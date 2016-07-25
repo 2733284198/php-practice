@@ -30,7 +30,7 @@ return array(
         'port' => 6000,
         'auth' => '',
     ),
-     'REDIS_SLAVE2' => array(
+    'REDIS_SLAVE2' => array(
     'host' => '127.0.0.1',
     'port' => 6001,
     'auth' => '',
