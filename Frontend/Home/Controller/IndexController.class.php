@@ -7,4 +7,8 @@ class IndexController extends Controller
     {
         echo '123123';
     }
+
+    public function test(){
+        echo 'test';
+    }
 }
