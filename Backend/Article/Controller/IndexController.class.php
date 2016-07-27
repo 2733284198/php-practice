@@ -1,4 +1,7 @@
 <?php
+/**
+ *
+ */
 namespace Article\Controller;
 use Think\Controller;
 class IndexController extends Controller {
