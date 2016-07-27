@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>无限级分类</title>
+</head>
+<body>
+<form action="{:U('Index/addCategory')}" method="post">
+    <label for="select">分类名</label>
+    <input type="text" name="name" />
+    <label for="select">选择父级分类</label>
+    <select name="pid" id="select">
+        <option value="0">默认分类</option>
+        <volist name="categorys" id="vo">
+         <option value="{$vo['id']}">{$vo['name']}</option>
+        </volist>
+    </select>
+    <input type="submit" value="确认" />
+</form>
+</body>
+</html>
