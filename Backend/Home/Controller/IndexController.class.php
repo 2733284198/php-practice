@@ -20,7 +20,7 @@ class IndexController extends Controller {
 
     /**
      * 通过 R 方法跨模块调用操作
-     * 尝试去调用一个Category模块下面Index控制器的Test()的方法0
+     * 尝试去调用一个Category模块下面Index控制器的Test()的方法
      * R()方法
      * ***建议：如果只需要使用其他模块内的其中一个方法，那么无疑 R 方法是最简洁的
      */
