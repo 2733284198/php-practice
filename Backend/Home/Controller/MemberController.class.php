@@ -9,6 +9,7 @@ class MemberController extends BaseController {
         echo 'Member';
 	}
 
+
 	public function memberCenter(){
 		$username = session('username');
 		$conditions = array('username' => ':username');
