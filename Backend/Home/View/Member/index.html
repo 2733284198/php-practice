@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<include file="Common:header"/>
+<style type="text/css">
+    div.page1 {
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        float: right;
+        color: #666;
+    }
+
+    div.page1 span.current , div.page1 a{
+        border: 1px solid #dcdcdc;
+        display: block;
+        float: left;
+        font-size: 12px;
+        margin-right: 5px;
+        padding: 3px 10px;
+        text-decoration: none;
+        border-radius: 3px;
+    }
+    div.page1 span.current{
+        background: #ff5c5c none repeat scroll 0 0 !important;
+        border-color: #ff5c5c;
+        color: #ffffff !important;
+        display: block;
+        float: left;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    div.page1 a.prev,div.page1 a.next{
+        padding: 3px 4px;
+    }
+</style>
+<body>
+<!-- HEAD Start--> 
+<include file="Common:head"/>
+<!-- HEAD End--> 
+      
+ <!--SIDEBAR Start-->
+<include file='Common:sidebar'/>
+ <!--SIDEBAR End-->  
+             
+ <!-- CONTENT --> 
+<div id="content" class="white">
+    <h1>
+        欢迎,{$Think.session.username}
+    </h1>
+    <div class="bloc left">
+        <div class="title">
+            发布管理
+        </div>
+        <div class="content dashboard">
+            <div class="center">
+                <a href="{:U('publish/publish')}" class="shortcut">
+                    <img src="__ROOT__/Application/Common/Public/img/icons/wifi-singal.png" alt="" />
+                    发布软件
+                </a>
+                <a href="{:U('LatestCheck/index')}" class="shortcut">
+                    <img src="__ROOT__/Application/Common/Public/img/icons/button-white-load.png" alt=""  width="32" height="32"/>
+                    版本检测
+                </a>
+                <div class="cb"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bloc right">
+        <div class="title">
+            版本管理
+        </div>
+        <div class="content dashboard">
+            <div class="center">
+                <a href="{:U('publish/index')}" class="shortcut">
+                    <img src="__ROOT__/Application/Common/Public/img/icons/window.png" alt=""  width="32" height="32"/>
+                    软件列表
+                </a>
+                <a href="{:U('DownloadLog/index')}" class="shortcut">
+                    <img src="__ROOT__/Application/Common/Public/img/icons/posts.png" alt=""  width="32" height="32"/>
+                    下载日志列表
+                </a>
+                <a href="{:U('DownloadRequest/index')}" class="shortcut">
+                    <img src="__ROOT__/Application/Common/Public/img/icons/chart.png" alt=""  width="32" height="32"/>
+                    软件下载
+                </a>
+                <div class="cb"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cb"></div>
+    <!---软件发布记录 START---->
+    <div class="bloc">
+        <div class="title">
+            软件发布记录
+        </div>
+        <div class="content">
+            <table>
+                <thead>
+                <tr>
+                    <th><input type="checkbox" class="checkall"/></th>
+                    <th>ID</th>
+                    <th>软件名</th>
+                    <th>版本号</th>
+                    <th>大小</th>
+                    <th>目录名</th>
+                    <th>发布时间</th>
+                    <th>平台</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="publish_info" id="vo">
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>{$vo['id']}</td>
+                        <td>{$vo['software_zh']}</td>
+                        <td>{$vo['version_num']}</td>
+                        <td>{$vo['size']}</td>
+                        <td>{$vo['software_name']}</td>
+                        <td>{$vo['publish_time']|date='Y-m-d',###}</td>
+                        <td align="center">
+                            <if condition="$vo['belongs_stage'] eq 'Windows'">
+                                  <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/wordpress.png"/>
+                                <elseif condition="$vo['belongs_stage'] eq 'Android'"/>
+                                  <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/android.png"/>
+                                <elseif condition="$vo['belongs_stage'] eq 'Linux'"/>
+                                   <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/earth.png"/>
+                                <elseif condition="$vo['belongs_stage'] eq 'WindowsPhone'"/>
+                                   <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/mobile.png"/>
+                                <elseif condition="$vo['belongs_stage'] eq 'Mac'"/>
+                                   <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/movie.png"/>
+                                <else />
+                                   <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/clipboard.png"/>
+                            </if>
+                        </td>
+                        <td>
+                            <a href="{:U('Publish/delete_upload',array('id'=>$vo['id']))}" class="del">
+                                <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/basket.png" alt="删除" />
+                            </a>
+                            <a href="{:U('DownloadRequest/upload_file',array('id'=>$vo['id']))}">
+                                <img src="__ROOT__/Application/Common/Public/img/icons/menu/dark/download.png" alt="下载" />
+                            </a>
+                        </td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!---软件发布记录 END---->
+    <div class="bloc">
+        <div class="title">
+            最新下载日志记录
+        </div>
+        <div class="content">
+            <table class="noalt">
+                <tbody>
+                <volist name="log_list" id="vo">
+                <tr>
+                    <td class="picture" style="width:80px;"><img src="__ROOT__/Application/Common/Public/img/anonymous.png" alt="" /></td>
+                    <td>
+                        <p>
+                            <strong>{$vo['PublishTable']['software_name']}</strong><br/>
+                            用户信息:&nbsp;&nbsp;&nbsp;{$vo['download_user']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            大小:&nbsp;&nbsp;&nbsp;{$vo['PublishTable']['size']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            版本:&nbsp;&nbsp;&nbsp;{$vo['PublishTable']['version_num']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            下载时间:&nbsp;&nbsp;{$vo['download_time']|date='Y-m-d H:i',###}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            所属平台:&nbsp;&nbsp;&nbsp;{$vo['PublishTable']['belongs_stage']}&nbsp;&nbsp;&nbsp;
+                            <br/>
+                            详细说明:&nbsp;&nbsp;&nbsp;{$vo['PublishTable']['description']|mb_substr=0,164}
+                    </td>
+                </tr>
+                </volist>
+                </tbody>
+            </table>
+            <div class="page1">{$show}</div>
+        </div>
+    </div>
+
+</div>       
+    </body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".del").bind('click',function(){
+           return confirm('确认删除该软件吗？删除后不可恢复！');
+        });
+    });
+</script>
