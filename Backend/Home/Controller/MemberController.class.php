@@ -1,10 +1,10 @@
 <?php
 namespace Home\Controller;
 
-use Home\Controller\BaseController;
+use Think\Controller;
 use Think\Model\RelationModel;
 
-class MemberController extends BaseController
+class MemberController extends Controller
 {
     public function index()
     {
@@ -17,7 +17,7 @@ class MemberController extends BaseController
     {
         $username = session('username');
         $conditions = array('username' => ':username');
-        $result = M('User')->where($conditions)->bind(':username', $username)->find();
+        $result = M('User')->where1($conditions)->bind(':username', $username)->find();
         $this->username = $username;
         $this->display();
     }
