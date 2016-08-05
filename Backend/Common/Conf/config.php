@@ -34,5 +34,20 @@ return array(
     'host' => '127.0.0.1',
     'port' => 6001,
     'auth' => '',
-)
+    ),
+
+    // 显示页面Trace信息
+    'SHOW_PAGE_TRACE' =>true,
+    // 自定义显示模块
+    'TRACE_PAGE_TABS'=>array(
+        'base'=>'基本',
+        'file'=>'文件',
+        'think'=>'流程',
+        'error'=>'错误',
+        'sql'=>'SQL',
+        'debug'=>'调试',
+        'user' =>'用户信息'
+    ),
+    //如果不希望保存所有的选项卡的信息，可以设置需要保存的选项卡，例如：
+    'PAGE_TRACE_SAVE' => array('base','file','sql'),
 );
