@@ -37,6 +37,21 @@ class MemberController extends BaseController
         exit;
     }
 
+    // 检查新旧密码是否一样
+    public function checkNewPwd()
+    {
+        $password = I('password');
+        $username = session('username');
+        $conditions = array('username' => ':username');
+        $result = M('AdminUser')->where($conditions)->bind(':username', $username)->find();
+        if ($result['password'] == md5($password)) {
+            echo 'false';
+        } else {
+            echo 'true';
+        }
+        exit;
+    }
+
     public function updatePwd()
     {
         $username = I('post.username');
