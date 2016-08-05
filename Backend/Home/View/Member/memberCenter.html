@@ -104,4 +104,20 @@
 
 
     });
+
+    // 是否确认删除操作
+    function deleteChannel() {
+        $("#promptModal").modal("hide");
+        if (promptId != null){
+            $.post("/aclresource/deleted",{arId:promptId}, function(data) {
+                if(data.errcode == 500){
+                    alert(data.errmsg)
+                }else{
+                    $("#aclresource_"+promptId).remove();
+                }
+            }).fail(function(e){
+                alert("删除失败: " + e);
+            });
+        }
+    }
 </script>
