@@ -5,7 +5,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        echo '123123';
+        echo 'Fronten----Home----IndexController---index';
     }
 
     public function test(){
