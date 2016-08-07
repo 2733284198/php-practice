@@ -7,6 +7,15 @@ class IndexController extends Controller {
         $this->display();
     }
 
+    public function welcome()
+    {
+        $this->display('Index/welcome');
+    }
+
+    public function notice(){
+        $this->display('Index/notice');
+    }
+
     /**
      * 通过 A 方法跨模块调用操作
      * 尝试去调用一个Category模块下面Index控制器的Test()的方法

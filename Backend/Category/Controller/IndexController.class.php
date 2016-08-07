@@ -60,7 +60,9 @@ class IndexController extends Controller
         } else {
             return $this->error('添加一个新分类失败');
         }
+    }
 
-
+    public function test(){
+        echo 'category test';
     }
 }
