@@ -2,14 +2,22 @@
 namespace Home\Controller;
 
 use Think\Controller;
-use Think\Model\RelationModel;
 
 class MemberController extends Controller
 {
     public function index()
     {
+        $this->display();
+    }
 
-        echo 'Member';
+    /**
+     * memberList 会员列表
+     */
+    public function memberList()
+    {
+        $model = M('User'); // return Object
+        $this->users = $model->select();
+        $this->display('Member/memberList');
     }
 
 
