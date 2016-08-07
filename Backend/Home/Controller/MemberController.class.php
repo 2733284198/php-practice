@@ -1,9 +1,9 @@
 <?php
 namespace Home\Controller;
 
-use Think\Controller;
+use Home\Controller\BaseController;
 
-class MemberController extends Controller
+class MemberController extends BaseController
 {
     public function index()
     {
@@ -31,7 +31,25 @@ class MemberController extends Controller
          * 最近的SQL语句  echo M('user')->getLastSql();
          */
         $this->username = $username;
-        $this->display();
+        $this->display('Member/memberCenter');
+        G('end');
+        // 进行统计区间
+        echo G('begin','end').'s'.'<br/>';
+        //使用G方法进行区间内存开销统计
+        echo G('begin','end','m').'kb';
+    }
+
+    public function memberInfo()
+    {
+        G('begin');
+        $username = session('username');
+        $conditions = array('username' => ':username');
+        $result = M('User')->where($conditions)->bind(':username', $username)->find();
+        /**
+         * 最近的SQL语句  echo M('user')->getLastSql();
+         */
+        $this->username = $username;
+        $this->display('Member/memberCenter');
         G('end');
         // 进行统计区间
         echo G('begin','end').'s'.'<br/>';

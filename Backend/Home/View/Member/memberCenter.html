@@ -1,123 +1,54 @@
-<!DOCTYPE html>
-<html>
-<include file="Common:header"/>
-
-<body>
-<!-- HEAD Start--> 
-<include file="Common:head"/>
-<!-- HEAD End--> 
-      
- <!--SIDEBAR Start-->
-<include file='Common:sidebar'/>
- <!--SIDEBAR End-->  
-             
- <!-- CONTENT Start--> 
-<div id="content" class="white">
-<h1>
-    <img src="__ROOT__/Application/Common/Public/img/icons/computer-on.png" alt="" /> 个人中心
-</h1>               
-  <div class="bloc">
-    <div class="title">个人中心密码修改</div>
-    <form action="{:U('Member/updatePwd')}" enctype="multipart/form-data" method="post" id="publishfrom">
-    <div class="content">
-        <div class="input">
-            <label>用户名</label>
-            <input type="text" id="username" name="username" value="<?php echo $username?>" disabled="disabled" />
-        </div>
-        <div class="input">
-            <label>旧密码</label>
-            <input type="password"  name="oldpassword" id="oldpassword" />
-    
-        </div>
-         <div class="input">
-            <label>新密码</label>
-            <input type="password" name="password" id="password" />
-        </div>
-         <div class="input">
-            <label>确认新密码</label>
-            <input type="password" name="confirm_password" id="confirm_password" />
-        </div>
-        
-        <div class="submit">
-            <input type="submit" value="确认" />
-        </div>
+<extend name="Common:common" />
+<block name="main">
+    <div class="page-container">
+        <table class="table table-border table-bordered table-bg">
+            <thead>
+            <tr>
+                <th colspan="7" scope="col">分类信息统计
+                    <a href="{:U('Home/Category/addCategory')}" class="btn btn-primary">添加分类</a>
+                </th>
+            </tr>
+            <tr class="text-c">
+                <th>ID</th>
+                <th>分类名称</th>
+                <th>级别</th>
+                <th>状态</th>
+                <th>排序</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="categorys" id="vo">
+                <tr class="text-c">
+                    <td>{$vo.id}</td>
+                    <td style="text-align: left">
+                        <if condition="$vo.level eq 1">
+                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                            <elseif condition="$vo.level eq 2" />
+                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                            <elseif condition="$vo.level eq 3" />
+                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                            <else />
+                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                        </if>
+                    </td>
+                    <td>{$vo.level}</td>
+                    <td>{$vo.level}
+                        <if condition="$vo.level eq 1">
+                            <span class="label label-success radius">1</span>
+                            <elseif condition="$vo.level eq 2" />
+                            <span class="label label-primary radius">2</span>
+                            <elseif condition="$vo.level eq 3" />
+                            <span class="label label-secondary radius">3</span>
+                            <else />
+                            <span class="label label-danger radius">4</span>
+                        </if>
+                    </td>
+                    <td>{$vo.order}</td>
+                    <td>{$vo.remark}</td>
+                </tr>
+            </volist>
+            </tbody>
+        </table>
     </div>
-</form>
-   </div>
-</div>   
-<!-- CONTENT End-->    
-
-</body>
-</html>
-<script type="text/javascript" src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js">
-</script>
-<script type="text/javascript">
-    var AJAXURL = "__APP__/Home/Member/";
-    $(function(){
-        $("#publishfrom").validate({
-            rules:{
-                'oldpassword':{
-                    required:true,
-                    minlength: 5,
-                    remote:{
-                        url:AJAXURL+'checkOldPwd',
-                        type:"post",
-                        dataType:"json",
-                        data:{
-                            username:function(){
-                                return $('#username').val();
-                            },
-                            'oldpassword':function(){
-                                return $("#oldpassword").val();
-                            }
-                        }
-                    }
-                },
-                 password: {
-                    required: true,
-                    minlength: 5
-                  },
-                confirm_password: {
-                    required: true,
-                    minlength: 5,
-                    equalTo: "#password"
-                  },
-            },
-            messages:{
-              'oldpassword':{
-                required:'旧密码不能为空',
-                minlength: '旧密码不能小于5个字符',
-                remote:"旧密码错误"
-              },
-              password: {
-                required: "请输入新密码",
-                minlength: "密码长度不能小于 5 个字母"
-              },
-              confirm_password: {
-                required: "请输入新密码",
-                minlength: "密码长度不能小于 5 个字母",
-                equalTo: "两次密码输入不一致"
-              },
-            }
-       
-        });
-
-
-    });
-
-    // 是否确认删除操作
-    function deleteChannel() {
-        $("#promptModal").modal("hide");
-        if (promptId != null){
-            $.post("/aclresource/deleted",{arId:promptId}, function(data) {
-                if(data.errcode == 500){
-                    alert(data.errmsg)
-                }else{
-                    $("#aclresource_"+promptId).remove();
-                }
-            }).fail(function(e){
-                alert("删除失败: " + e);
-            });
-        }
-    }
-</script>
+</block>

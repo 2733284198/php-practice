@@ -1,0 +1,52 @@
+<include file="Common:head"/>
+<div class="page-container">
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+        <tr>
+            <th colspan="7" scope="col">分类信息统计
+                <a href="{:U('Home/Category/addCategory')}" class="btn btn-primary">添加分类</a>
+            </th>
+        </tr>
+        <tr class="text-c">
+            <th>ID</th>
+            <th>分类名称</th>
+            <th>级别</th>
+            <th>状态</th>
+            <th>排序</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="categorys" id="vo">
+            <tr class="text-c">
+                <td>{$vo.id}</td>
+                <td style="text-align: left">
+                    <if condition="$vo.level eq 1">
+                        <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                        <elseif condition="$vo.level eq 2" />
+                        <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                        <elseif condition="$vo.level eq 3" />
+                        <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                        <else />
+                        <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
+                    </if>
+                </td>
+                <td>{$vo.level}</td>
+                <td>{$vo.level}
+                    <if condition="$vo.level eq 1">
+                        <span class="label label-success radius">1</span>
+                        <elseif condition="$vo.level eq 2" />
+                        <span class="label label-primary radius">2</span>
+                        <elseif condition="$vo.level eq 3" />
+                        <span class="label label-secondary radius">3</span>
+                        <else />
+                        <span class="label label-danger radius">4</span>
+                    </if>
+                </td>
+                <td>{$vo.order}</td>
+                <td>{$vo.remark}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+</div>

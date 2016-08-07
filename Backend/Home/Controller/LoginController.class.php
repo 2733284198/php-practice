@@ -149,6 +149,6 @@ class LoginController extends Controller{
         session('username',NULL);
         session_unset();
         session_destroy();
-        $this->redirect('Login/index');
+        return $this->redirect('Login/index');
     }
 }
