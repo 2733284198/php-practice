@@ -11,7 +11,7 @@ class BaseController extends Controller
        session('?name'); 相当于：isset($_SESSION['name']);
      */
     public function _initialize(){
-        if(!isset($_SESSION['username']))
+        if(!session('?username'))
         {
             return $this->redirect('Login/index');
         }
