@@ -1,80 +1,375 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta charset="utf-8"/>
+    <title>云计算大数据平台</title>
+
+    <meta name="description" content="User login page"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- basic styles -->
+
+    <link href="__PUBLIC__/Backend/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="__PUBLIC__/Backend/css/font-awesome.min.css"/>
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__PUBLIC__/Backend/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="__PUBLIC__/Backend/css/ace-fonts.css"/>
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="__PUBLIC__/Backend/css/ace.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Backend/css/ace-rtl.min.css"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="__PUBLIC__/Backend/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="lib/html5.js"></script>
-    <script type="text/javascript" src="lib/respond.min.js"></script>
-    <script type="text/javascript" src="lib/PIE_IE678.js"></script>
+    <script src="__PUBLIC__/Backend/js/html5shiv.js"></script>
+    <script src="__PUBLIC__/Backend/js/respond.min.js"></script>
     <![endif]-->
-    <link href="__PUBLIC__/Common/static/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-    <link href="__PUBLIC__/Backend/static/css/H-ui.login.css" rel="stylesheet" type="text/css" />
-    <link href="__PUBLIC__/Backend/static/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="__PUBLIC__/lib/Hui-iconfont/1.0.7/iconfont.css" rel="stylesheet" type="text/css" />
-    <!--[if IE 6]>
-    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
-    <script>DD_belatedPNG.fix('*');</script>
-    <![endif]-->
-    <title>后台登录 - H-ui.admin v2.3</title>
-    <meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
-    <meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+    <script src="__PUBLIC__/Common/js/jquery.validate-1.13.1.js"></script>
 </head>
-<body>
-<input type="hidden" id="TenantId" name="TenantId" value="" />
-<div class="header"></div>
-<div class="loginWraper">
-    <div id="loginform" class="loginBox">
-        <form class="form form-horizontal" action="{:U('Login/checkLogin')}" method="post">
-            <div class="row cl">
-                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
-                <div class="formControls col-xs-8">
-                    <input id="username" name="username" type="text" placeholder="账户" class="input-text size-L">
+
+<body class="login-layout">
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container">
+                    <div class="center">
+                        <h1>
+                            <i class="icon-leaf green"></i>
+                            <span class="red">Tinywan</span>
+                            <span class="white">云数据</span>
+                        </h1>
+                        <h4 class="blue">&copy; 物联网时代</h4>
+                    </div>
+
+                    <div class="space-6"></div>
+
+                    <div class="position-relative">
+                        <div id="login-box" class="login-box visible widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="icon-coffee green"></i>
+                                        请输入您的登录信息
+                                    </h4>
+
+                                    <div class="space-6"></div>
+
+                                    <form action="{:U('Login/checkLogin')}" method="post">
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" placeholder="用户名" name="username"/>
+															<i class="icon-user"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control"
+                                                                   placeholder="密码" name="password"/>
+															<i class="icon-lock"></i>
+														</span>
+                                            </label>
+
+                                            <div class="space"></div>
+
+                                            <div class="clearfix">
+                                                <label class="inline">
+                                                    <input type="checkbox" class="ace" name="remember"/>
+                                                    <span class="lbl"> 记住我</span>
+                                                </label>
+
+                                                <button type="submit"
+                                                        class="width-35 pull-right btn btn-sm btn-primary">
+                                                    <i class="icon-key"></i>
+                                                    登录
+                                                </button>
+                                            </div>
+
+                                            <div class="space-4"></div>
+                                        </fieldset>
+                                    </form>
+
+                                    <div class="social-or-login center">
+                                        <span class="bigger-110">第三方登录</span>
+                                    </div>
+
+                                    <div class="social-login center">
+                                        <a class="btn btn-primary">
+                                            <i class="icon-facebook"></i>
+                                        </a>
+
+                                        <a class="btn btn-info">
+                                            <i class="icon-twitter"></i>
+                                        </a>
+
+                                        <a class="btn btn-danger">
+                                            <i class="icon-google-plus"></i>
+                                        </a>
+                                    </div>
+                                </div><!-- /widget-main -->
+
+                                <div class="toolbar clearfix">
+                                    <div>
+                                        <a href="#" onclick="show_box('forgot-box'); return false;"
+                                           class="forgot-password-link">
+                                            <i class="icon-arrow-left"></i>
+                                            忘记密码
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="#" onclick="show_box('signup-box'); return false;"
+                                           class="user-signup-link">
+                                            立即注册
+                                            <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!-- /widget-body -->
+                        </div><!-- /login-box -->
+
+                        <div id="forgot-box" class="forgot-box widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header red lighter bigger">
+                                        <i class="icon-key"></i>
+                                        Retrieve Password
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                    <p>
+                                        Enter your email and to receive instructions
+                                    </p>
+
+                                    <form>
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" class="form-control"
+                                                                   placeholder="Email"/>
+															<i class="icon-envelope"></i>
+														</span>
+                                            </label>
+
+                                            <div class="clearfix">
+                                                <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
+                                                    <i class="icon-lightbulb"></i>
+                                                    Send Me!
+                                                </button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div><!-- /widget-main -->
+
+                                <div class="toolbar center">
+                                    <a href="#" onclick="show_box('login-box'); return false;"
+                                       class="back-to-login-link">
+                                        Back to login
+                                        <i class="icon-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div><!-- /widget-body -->
+                        </div><!-- /forgot-box -->
+
+                        <div id="signup-box" class="signup-box widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header green lighter bigger">
+                                        <i class="icon-group blue"></i>
+                                        New User Registration
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                    <p> Enter your details to begin: </p>
+
+                                    <form>
+                                        <fieldset>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" class="form-control"
+                                                                   placeholder="Email"/>
+															<i class="icon-envelope"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control"
+                                                                   placeholder="Username"/>
+															<i class="icon-user"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control"
+                                                                   placeholder="Password"/>
+															<i class="icon-lock"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control"
+                                                                   placeholder="Repeat password"/>
+															<i class="icon-retweet"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block">
+                                                <input type="checkbox" class="ace"/>
+														<span class="lbl">
+															I accept the
+															<a href="#">User Agreement</a>
+														</span>
+                                            </label>
+
+                                            <div class="space-24"></div>
+
+                                            <div class="clearfix">
+                                                <button type="reset" class="width-30 pull-left btn btn-sm">
+                                                    <i class="icon-refresh"></i>
+                                                    Reset
+                                                </button>
+
+                                                <button type="button"
+                                                        class="width-65 pull-right btn btn-sm btn-success">
+                                                    Register
+                                                    <i class="icon-arrow-right icon-on-right"></i>
+                                                </button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                                <div class="toolbar center">
+                                    <a href="#" onclick="show_box('login-box'); return false;"
+                                       class="back-to-login-link">
+                                        <i class="icon-arrow-left"></i>
+                                        Back to login
+                                    </a>
+                                </div>
+                            </div><!-- /widget-body -->
+                        </div><!-- /signup-box -->
+                    </div><!-- /position-relative -->
                 </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
-                <div class="formControls col-xs-8">
-                    <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
-                </div>
-            </div>
-            <div class="row cl">
-                <div class="formControls col-xs-8 col-xs-offset-3">
-                    <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-                    <img src="images/VerifyCode.aspx.png"> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
-            </div>
-            <div class="row cl">
-                <div class="formControls col-xs-8 col-xs-offset-3">
-                    <label for="online">
-                        <input type="checkbox" name="online" id="online" value="">
-                        使我保持登录状态</label>
-                </div>
-            </div>
-            <div class="row cl">
-                <div class="formControls col-xs-8 col-xs-offset-3">
-                    <input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
-                    <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
-                </div>
-            </div>
-        </form>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
     </div>
-</div>
-<div class="footer">Copyright 你的公司名称 by H-ui.admin.v2.3</div>
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080836300300be57b7f34f4b3e97d911' type='text/javascript'%3E%3C/script%3E"));
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='__PUBLIC__/Backend/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='__PUBLIC__/Backend/js/jquery-1.10.2.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if ("ontouchend" in document) document.write("<script src='__PUBLIC__/Backend/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- inline scripts related to this page -->
+
+<script type="text/javascript">
+    function show_box(id) {
+        jQuery('.widget-box.visible').removeClass('visible');
+        jQuery('#' + id).addClass('visible');
+    }
 </script>
 </body>
 </html>
+<script type="text/javascript">
+    var AJAXURL = "__APP__/Home/Login/";
+    $(document).ready(function (){
+
+        $("#login").delay(200).fadeIn();//登录框延迟加载
+
+        $("#loginform").validate({
+            rules:{
+                username: {
+                    required: true,
+                    //异步检测账号是否存在
+                    remote:{
+                        url : AJAXURL+'checkUser',
+                        type: 'post',
+                        dataType: 'json',
+                        data:{
+                            username:function(){
+                                return $(".username").val();
+                            }
+                        }
+                    }
+                },
+                password: {
+                    required: true,
+                    remote:{
+                        url : AJAXURL+'checkPwd',
+                        type: 'post',
+                        dataType: 'json',
+                        data:{
+                            password:function(){
+                                return $(".password").val();
+                            },
+                            username:function(){
+                                return $(".username").val();
+                            }
+
+                        }
+                    }
+                }
+
+            },
+            messages: {
+                username: {
+                    required: '用户名不能为空',
+                    remote:    '用户名不存在'
+                },
+                password: {
+                    required: '密码不能为空',
+                    remote: '密码不正确'
+                }
+            }
+        });
+        $.validator.addMethod("check_name", function(value, element, params){
+            var str = /^[A-Za-z]+$/;
+            return this.optional(element) || (str.test(value));
+        }, "必须为英文字母组成");
+        $.validator.addMethod("check_num", function(value, element, params){
+            var str = /^\d+(\.\d+)?(\.\d+)?(\.\d+)?$/;
+            return this.optional(element) || (str.test(value));
+        }, "版本号格式不正确");
+    });
+    $(document).ready(function(){
+
+        setTimeout(function(){
+            $('#loginbox').show();
+        },1000)
+    })
+</script>
