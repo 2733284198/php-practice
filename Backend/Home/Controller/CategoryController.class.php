@@ -14,6 +14,17 @@ class CategoryController extends BaseController
     }
 
     /**
+     * 按照树级目录分类
+     */
+    public function tree()
+    {
+        $model = M('Category'); // return Object
+        $result = $model->field("*,concat(path,',',id) as paths")->order('path')->select();
+        $this->categorys = $result;
+        $this->display();
+    }
+
+    /**
      * 添加一个新分类
      */
     public function addCategory()

@@ -138,4 +138,9 @@
             $.post(url, data, success, 'json');
         }
     }
+
+    $(".exit").bind('click',function(){
+        return confirm('确定要退出吗？');
+    });
+
 </script>
