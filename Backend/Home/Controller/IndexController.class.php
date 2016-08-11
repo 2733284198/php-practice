@@ -51,11 +51,11 @@ class IndexController extends BaseController
      * R()方法
      * 建议：如果只需要使用其他模块内的其中一个方法，那么无疑 R 方法是最简洁的
      */
-    public function aGetAppModule()
+    public function aGetAppModule($id)
     {
         $category = A('ThinkPhpStudy://Frontend/Home/Index/index');
         echo $category;
         echo '111111111';
-        echo C('VAR_ACTION');
+        echo $id;
     }
 }

@@ -22,7 +22,7 @@ define('APP_DEBUG',True);
  * old：http://serverName/index.php/Home/Index/index
  * new：http://serverName/home.php/Index/index
  */
-define('BIND_MODULE','Home');
+//define('BIND_MODULE','Home');
 
 
 /**
@@ -30,7 +30,7 @@ define('BIND_MODULE','Home');
  * old：http://serverName/index.php/Home/Index/index
  * new：http://serverName/home.php/index
  */
-define('BIND_CONTROLLER','Index');
+//define('BIND_CONTROLLER','Index');
 
 // 定义应用目录
 define('APP_PATH','./Backend/');

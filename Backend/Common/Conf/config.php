@@ -70,4 +70,10 @@ return array(
 
     // 设置禁止访问的模块列表
     //'MODULE_DENY_LIST'      =>  array('Common','Runtime','Api'),
+
+    // 多个伪静态后缀设置 用|分割
+    'URL_HTML_SUFFIX' => 'jsp|html|shtml|xml',
+
+    // URL禁止访问的后缀设置
+    'URL_DENY_SUFFIX' => 'pdf|ico|png|gif|jpg',
 );
