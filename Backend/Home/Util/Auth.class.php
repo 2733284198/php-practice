@@ -1,10 +1,7 @@
 <?php
 namespace Home\Controller;
-
 use Home\Controller\BaseController;
-
-class IndexController extends BaseController
-{
+class IndexController extends BaseController {
     public function index()
     {
         $this->display();
@@ -15,8 +12,7 @@ class IndexController extends BaseController
         $this->display('Index/welcome');
     }
 
-    public function notice()
-    {
+    public function notice(){
         $this->display('Index/notice');
     }
 
@@ -26,9 +22,7 @@ class IndexController extends BaseController
      * A()方法
      * ***建议：如果要使用其他模块内的多个方法，那么建议使用 A 方法，通过对象的方式调用该模块的不同方法，避免多次实例化对象。
      */
-    public function aGetModule()
-    {
-        //$User = new \Category\Controller\IndexController(); 等价于这个
+    public function aGetModule(){
         $category = A('Category/Index');
         $category->test();
     }
@@ -39,8 +33,7 @@ class IndexController extends BaseController
      * R()方法
      * ***建议：如果只需要使用其他模块内的其中一个方法，那么无疑 R 方法是最简洁的
      */
-    public function rGetModule()
-    {
+    public function rGetModule(){
         $category = R('Category/Index/test');
         echo $category;
     }
@@ -51,8 +44,7 @@ class IndexController extends BaseController
      * R()方法
      * 建议：如果只需要使用其他模块内的其中一个方法，那么无疑 R 方法是最简洁的
      */
-    public function aGetAppModule()
-    {
+    public function aGetAppModule(){
         $category = A('ThinkPhpStudy://Frontend/Home/Index/index');
         echo $category;
         echo '111111111';

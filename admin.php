@@ -24,6 +24,14 @@ define('APP_DEBUG',True);
  */
 define('BIND_MODULE','Home');
 
+
+/**
+ * 绑定Index控制器到当前入口文件(3.2.1以上版本写法)
+ * old：http://serverName/index.php/Home/Index/index
+ * new：http://serverName/home.php/index
+ */
+define('BIND_CONTROLLER','Index');
+
 // 定义应用目录
 define('APP_PATH','./Backend/');
 
