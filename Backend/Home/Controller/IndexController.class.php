@@ -58,4 +58,25 @@ class IndexController extends BaseController
         echo '111111111';
         echo $id;
     }
+
+    //空操作是指系统在找不到请求的操作方法的时候，会定位到空操作（_empty）方法来执行，利用这个机制，我们可以实现错误页面和一些URL的优化。
+    public function _empty($name)
+    {
+        //把所有城市的操作解析到city方法
+        $this->city($name);
+    }
+
+    //注意 city方法 本身是 protected 方法
+    protected function city($name)
+    {
+        //和$name这个城市相关的处理
+        echo __METHOD__ . "方法名" . $name . "不存在啊";
+    }
+
+    public function show($name='')
+    {
+        $this->id = 1024;
+        $this->name = $name;
+        $this->display('/Index/show');
+    }
 }
