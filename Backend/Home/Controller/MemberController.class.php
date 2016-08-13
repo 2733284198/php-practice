@@ -23,7 +23,7 @@ class MemberController extends BaseController
 
     public function memberCenter()
     {
-        G('begin');
+//        G('begin');
         $username = session('username');
         $conditions = array('username' => ':username');
         $result = M('User')->where($conditions)->bind(':username', $username)->find();
@@ -32,16 +32,16 @@ class MemberController extends BaseController
          */
         $this->username = $username;
         $this->display('Member/memberCenter');
-        G('end');
-        // 进行统计区间
-        echo G('begin','end').'s'.'<br/>';
-        //使用G方法进行区间内存开销统计
-        echo G('begin','end','m').'kb';
+//        G('end');
+//        // 进行统计区间
+//        echo G('begin','end').'s'.'<br/>';
+//        //使用G方法进行区间内存开销统计
+//        echo G('begin','end','m').'kb';
     }
 
     public function memberInfo()
     {
-        G('begin');
+//        G('begin');
         $username = session('username');
         $conditions = array('username' => ':username');
         $result = M('User')->where($conditions)->bind(':username', $username)->find();
@@ -49,12 +49,12 @@ class MemberController extends BaseController
          * 最近的SQL语句  echo M('user')->getLastSql();
          */
         $this->username = $username;
-        $this->display('Member/memberCenter');
-        G('end');
-        // 进行统计区间
-        echo G('begin','end').'s'.'<br/>';
-        //使用G方法进行区间内存开销统计
-        echo G('begin','end','m').'kb';
+        $this->display();
+//        G('end');
+//        // 进行统计区间
+//        echo G('begin','end').'s'.'<br/>';
+//        //使用G方法进行区间内存开销统计
+//        echo G('begin','end','m').'kb';
     }
 
     // 个人密码修改

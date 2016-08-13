@@ -89,7 +89,7 @@ class LoginController extends Controller
         $user_id = session('user_id');
         $user = D('User');
         $where = array('user_id' => $user_id);
-        $result = $user->relation(true)->where($where)->select();
+        $result = $user->where($where)->select();
         $this->result = $result;
         $this->display();
     }

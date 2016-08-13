@@ -1,54 +1,107 @@
-<extend name="Common:common" />
+<extend name="Common:common"/>
 <block name="main">
-    <div class="page-container">
-        <table class="table table-border table-bordered table-bg">
-            <thead>
-            <tr>
-                <th colspan="7" scope="col">分类信息统计
-                    <a href="{:U('Home/Category/addCategory')}" class="btn btn-primary">添加分类</a>
-                </th>
-            </tr>
-            <tr class="text-c">
-                <th>ID</th>
-                <th>分类名称</th>
-                <th>级别</th>
-                <th>状态</th>
-                <th>排序</th>
-                <th>备注</th>
-            </tr>
-            </thead>
-            <tbody>
-            <volist name="categorys" id="vo">
-                <tr class="text-c">
-                    <td>{$vo.id}</td>
-                    <td style="text-align: left">
-                        <if condition="$vo.level eq 1">
-                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
-                            <elseif condition="$vo.level eq 2" />
-                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
-                            <elseif condition="$vo.level eq 3" />
-                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
-                            <else />
-                            <p style="text-indent:  {$vo['level']*20}px;">{$vo.name}</p>
-                        </if>
-                    </td>
-                    <td>{$vo.level}</td>
-                    <td>{$vo.level}
-                        <if condition="$vo.level eq 1">
-                            <span class="label label-success radius">1</span>
-                            <elseif condition="$vo.level eq 2" />
-                            <span class="label label-primary radius">2</span>
-                            <elseif condition="$vo.level eq 3" />
-                            <span class="label label-secondary radius">3</span>
-                            <else />
-                            <span class="label label-danger radius">4</span>
-                        </if>
-                    </td>
-                    <td>{$vo.order}</td>
-                    <td>{$vo.remark}</td>
-                </tr>
-            </volist>
-            </tbody>
-        </table>
-    </div>
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
+                           autocomplete="off"/>
+                    <i class="icon-search nav-search-icon"></i>
+                </span>
+                </form>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    用户个人主页面
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        基本信息
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="profile-user-info profile-user-info-striped">
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"> Username </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable" id="username">{$username}</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"> 国家、地区 </div>
+
+                            <div class="profile-info-value">
+                                <i class="icon-map-marker light-orange bigger-110"></i>
+                                <span class="editable" id="country">Netherlands</span>
+                                <span class="editable" id="city">Amsterdam</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"> 年龄 </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable" id="age">38</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"> 加入时间 </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable" id="signup">20/06/2010</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"> 最近登录时间 </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable" id="login">3 小时之前</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"> 所属用户组 </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable" id="about">超级管理员</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
 </block>

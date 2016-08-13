@@ -229,7 +229,7 @@
                         <img class="nav-user-photo" src="__PUBLIC__/Backend/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>欢迎,</small>
-									Jason
+									{$Think.session.username}
 								</span>
 
                         <i class="icon-caret-down"></i>
@@ -244,7 +244,7 @@
                         </li>
 
                         <li>
-                            <a href="{:U('Home/Login/memberInfo')}">
+                            <a href="{:U('Home/Member/memberCenter')}">
                                 <i class="icon-user"></i>
                                 个人信息
                             </a>
