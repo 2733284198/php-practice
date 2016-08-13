@@ -63,13 +63,16 @@ return array(
     ),
 
     //========设置访问列表===============允许访问列表======================无法加载控制器:Auth和默认模块
-    'MODULE_ALLOW_LIST'    =>    array('Home','Admin','User'),
+    //'MODULE_ALLOW_LIST'    =>    array('Home','Admin','User'),
 
     //=======================默认访问的模块=================================
     //'DEFAULT_MODULE'       =>    'Home',
 
     // 设置禁止访问的模块列表
-    //'MODULE_DENY_LIST'      =>  array('Common','Runtime','Api'),
+    /**
+     * Auth 直接是访问不了的，只能通过主模块去调用
+     */
+    'MODULE_DENY_LIST'      =>  array('Common','Runtime','Api','Auth'),
 
     // 多个伪静态后缀设置 用|分割
     'URL_HTML_SUFFIX' => 'jsp|html|shtml|xml',

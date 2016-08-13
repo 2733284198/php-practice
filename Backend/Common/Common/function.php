@@ -157,4 +157,10 @@ function http_post_data($url, $params = array())
 
     return array($httpCode, $response);
 }
+
+function toJson($result)
+{
+    //header("Content-Type:text/html; charset=utf-8");
+    return json_decode($result);
+}
 ?>

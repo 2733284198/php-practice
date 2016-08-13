@@ -5,22 +5,13 @@
  * Date: 2016/2/16
  * Time: 15:01
  */
-namespace Auth\Controller;
-
-use Auth\Model\AdminRoleModel;
+namespace Home\Controller;
+use Home\Controller\BaseController;
+use Home\Model\AdminRoleModel;
 use Org\Util\Tree;
-use Think\Controller;
 
-class AdminRoleController extends Controller{
-    // Role List
-    public function roleList()
-    {
-        $db = M('AdminRole');
-        return $db->select();
-    }
-
-    public function index()
-    {
+class AdminRoleController extends BaseController{
+    public function index(){
         $db = M('AdminRole');
         $this->rolelist = $db->select();
         $this->display();
@@ -51,29 +42,6 @@ class AdminRoleController extends Controller{
             return $this->success('角色添加成功',U('AdminRole/index'));
         }
         $this->display();
-    }
-
-    public function param($name){
-        if($name == 1) return json_encode('this role name is not null');
-        return json_encode('this role');
-    }
-
-    public function createRole($name,$remark,$pid)
-    {
-        if(empty($name)) return $this->error('角色名称不能为空');
-        $role = M('AdminRole');
-        $where = array('name'=>$name);
-        $role_find = $role->where($where)->find();
-        if($role_find) $this->error("角色名称:'".$name."'已经存在");
-
-        $role->name = $name;
-        $role->remark = $remark;
-        $role->pid = $pid;
-        if(!$role->add()){
-            return $this->error("角色添加失败",U('AdminRole/createpartent'));
-        }
-        return $this->success('角色添加成功',U('AdminRole/index'));
-
     }
 
     /*

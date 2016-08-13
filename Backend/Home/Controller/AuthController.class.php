@@ -13,8 +13,19 @@ class AuthController extends BaseController
     {
         header("Content-Type:text/html; charset=utf-8");
         $authTest = A('Auth/AdminRole'); // 实例化 Auth 模块中Role控制器
-        $authTest->test();  // 调用 Auth 模块中的test()方法
-        echo '1111111';
+        $name = 1;
+        var_dump($authTest->param($name));  // 调用 Auth 模块中的test()方法
+    }
+
+    /**
+     * 通过Auth模块，获取角色信息
+     */
+    public function getRoleList()
+    {
+        header("Content-Type:text/html; charset=utf-8");
+        $roleModel = A('Auth/AdminRole');
+        $this->roleList = $roleModel->roleList();
+        $this->display();
     }
 
     public function welcome()
