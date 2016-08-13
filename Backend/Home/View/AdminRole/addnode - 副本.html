@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>吉林旅游云数据中心</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="__ROOT__/Application/Common/Public/css/bootstrap.min.css" />
+<link rel="stylesheet" href="__ROOT__/Application/Common/Public/css/matrix-style.css" />
+<link rel="stylesheet" href="__ROOT__/Application/Common/Public/css/matrix-media.css" />
+<style type="text/css">
+.checkselect {
+  margin: 0px;
+  padding: 0px;
+}
+p{
+    line-height: 40px;
+}
+
+</style>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">吉林旅游云数据中心</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<include file='Common:header_menu'/>
+<!--close-top-Header-menu-->
+
+<!--start-top-serch-->
+<include file='Common:serch'/>
+<!--close-top-serch-->
+
+<!--sidebar-menu-->
+<include file='Common:sidebar_menu'/>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 后台首页</a> <a href="{:U('AdminRole/index')}" class="current">角色定义管理</a> </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+
+  <form action="{:U('AdminRole/setAccess')}" method="post"  class="form-horizontal">
+    <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+          <h5>你正在为<font style="color:red; margin-right: 5px; margin-left:5px;font-size: 12px;">
+          {$role_name}</font>分配权限</h5>
+          <span class="label label-info"></span> </div>
+        <div class="widget-content" style="height: auto; padding-bottom: 50px; background-color: #FFFFFC;">
+            <volist name='node_list' id='vo'>
+              <p style="text-indent: {$vo['level']*30}px;
+              <if condition="$vo.level eq 3">float:left;<else/>clear:both;</if> margin-right: -60px;">
+              <input type="checkbox" id="{$vo.id}" 
+                     name="access[]" value="{$vo.id}_{$vo.level}" pid='{$vo.pid}' level="{$vo.level}"
+              <if condition="$vo['access']">checked='checked'</if>>
+
+               <if condition="$vo.level eq 1">
+                      <span style="font-weight: bold; color: red;">【项目】</span>
+                    <elseif condition="$vo.level eq 2"/>
+                      <span style="font-weight: bold; color: green;">【模块】</span>    
+              </if>
+                <button class="btn btn-mini" style="font-weight: bold; ">{$vo.title}</button>
+              </p>
+            </volist>
+      </div>
+      <div class="form-actions">
+          <input type="hidden" name="rid" value="{$rid}" />
+          <button type="submit" class="btn btn-success">确认</button>
+      </div>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-part-->
+<include file='Common:footer'/>
+<!--end-Footer-part-->
+<script src="__ROOT__/Application/Common/Public/js/jquery.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/jquery.ui.custom.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/bootstrap.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/jquery.uniform.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/select2.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/jquery.dataTables.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/matrix.js"></script> 
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $('input').click(function(){
+            var $level = $(this).attr('level'); //获取当前按钮框值。1（表示项目），2（模块），3（操作）
+            //如果选择 level=1 的话，则会选择它一下的所有checkbox
+            if($level == 1){
+                $str = '_';
+                $inputs = $('input[value*='+$str+']');  //这里是模糊匹配
+                $(this).attr('checked')?$inputs.attr('checked',true):$inputs.removeAttr('checked');
+            }
+            // 如果选择模块的话，则它下面的方法也一起会被选定，思路：就是模块下面操作的的“pid”都和模块的“id”是相等的
+            else if($level == 2){
+                $id = $(this).attr('id');
+                $inputs = $('input[pid = '+$id+']');
+                $(this).attr('checked')?$inputs.attr('checked',true):$inputs.removeAttr('checked');
+
+                if($(this).attr('checked')){
+                    //追加到上级（项目层），思路(相反):再次获取模块的pid
+                    $ppid = $('input[id = '+$id+']').attr('pid');
+                    $('input[id = '+$ppid+']').attr('checked',true);
+                }
+            }
+            //思路：如果当前的操作被选中的话，则获取它的pid，并且设置id(上级模块) = （操作）pid 模块也会被选中
+            else if($level == 3){
+                //判断当前按钮是否被选中
+                if($(this).attr('checked')){
+                    $pid = $(this).attr('pid');
+                    $('input[id='+$pid+']').attr('checked',true);
+
+                    //追加到上上级（项目层），思路(相反):再次获取模块的pid
+                    $ppid = $('input[id = '+$pid+']').attr('pid');
+                    $('input[id = '+$ppid+']').attr('checked',true);
+                }
+            }
+        });
+    });
+</script>

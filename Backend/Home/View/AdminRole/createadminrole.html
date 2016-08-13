@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<include file='Common:head'/>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">旅游数据中心</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<include file='Common:header_menu'/>
+<!--close-top-Header-menu-->
+
+<!--start-top-serch-->
+<include file='Common:serch'/>
+<!--close-top-serch-->
+
+<!--sidebar-menu-->
+<include file='Common:sidebar_menu'/>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 后台首页</a> <a href="{:U('Role/createrole')}" class="current">角色定义管理</a> </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+  
+	    <div class="widget-box">
+	        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+	          <h5>角色创建页面</h5>
+	        </div>
+
+	        <form action="{:U('AdminRole/createadminrole')}" method="post"  class="form-horizontal">
+	        <div class="widget-content nopadding">
+	          <form action="#" method="get" class="form-horizontal">
+	            <div class="control-group">
+	              <label class="control-label">角色名称:</label>
+	              <div class="controls">
+	                <input type="text" class="span11" placeholder="角色名称" name="name" style="width: 140px;" />
+	              </div>
+	            </div>
+	            <div class="control-group">
+	              <label class="control-label">角色描述:</label>
+	              <div class="controls">
+	                <textarea class="span11" name="remark" id="remark" style="width: 200px;"  ></textarea>
+	              </div>
+	            </div>
+	            <div class="form-actions">
+	            <input type="hidden" name="pid" value="0">
+	              <button type="submit" class="btn btn-success">确认</button>
+	            </div>
+	          </form>
+	        </div>
+	        </form>
+
+	      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-part-->
+<include file='Common:footer'/>
+<!--end-Footer-part-->
+<script src="__ROOT__/Application/Common/Public/js/jquery.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/jquery.ui.custom.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/bootstrap.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/jquery.uniform.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/select2.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/jquery.dataTables.min.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/matrix.js"></script> 
+<script src="__ROOT__/Application/Common/Public/js/matrix.tables.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function (){
+        $("#createfrom").validate({
+            rules:{
+                name: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 32
+                },
+                remark: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 256
+                }
+
+            },
+            messages: {
+                name: {
+                    required: '用户名不能为空',
+                    minlength: '角色名称不能小于6个字符',
+                    maxlength: '角色名称不能超过24个字符'
+                },
+                remark: {
+                    required: '角色描述不能为空',
+                    minlength: '角色描述不能小于2个字符',
+                    maxlength: '角色描述不能超过256个字符'
+                }
+            }
+        });
+        $.validator.addMethod("check_name", function(value, element, params){
+            var str = /^[A-Za-z]+$/;
+            return this.optional(element) || (str.test(value));
+        }, "必须为英文字母组成");
+        $.validator.addMethod("check_num", function(value, element, params){
+            var str = /^\d+(\.\d+)?(\.\d+)?(\.\d+)?$/;
+            return this.optional(element) || (str.test(value));
+        }, "版本号格式不正确");
+    });

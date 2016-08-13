@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file='Common:head'/>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">旅游数据中心</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<include file='Common:header_menu'/>
+<!--close-top-Header-menu-->
+
+<!--start-top-serch-->
+<include file='Common:serch'/>
+<!--close-top-serch-->
+
+<!--sidebar-menu-->
+<include file='Common:sidebar_menu'/>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 后台首页</a> <a href="#" class="current">权限管理</a> </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+  
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5>权限列表</h5>
+              <h5 style="font-size: 14px; float: right; margin-top: -10px; margin-right: 50px;"> <a href="{:U('AdminNode/createnode')}" class="btn btn-success">添加权限</a></h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th style="font-size: 14px;">#ID</th>
+                  <th style="font-size: 14px;">中文名称</th>
+                  <th style="font-size: 14px;">英文名称</th>
+                  <th style="font-size: 14px;">所属父级</th>
+                  <th style="font-size: 14px;">类型</th>
+                  <th style="font-size: 14px;">
+                    操作
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <volist name='nodelist' id='vo'>
+                <tr style="margin-top: 30px; margin-left: 50px;">
+                  <td>{$vo.id}</td>
+                  <td>
+                    <p style="text-indent: {$vo['level']*20}px;">{$vo.title}</p>
+                  </td>
+                  <td>{$vo.name}</td>
+                  <td>{$vo.pid}</td>
+                  <td>
+                    <if condition="$vo.level eq 1">
+                        <span class="badge badge-inverse">项目</span>
+                    <elseif condition="$vo.level eq 2"/>
+                        <span class="badge badge-info">模块</span>
+                    <else />
+                        <span class="badge badge-important">操作</span>
+                    </if>
+                  </td>
+                  <td class="center">
+                      <if condition="$vo.status eq 1">
+                          <button class="btn btn-inverse set" value="{$vo.id}">禁用</button>
+                          <else/>
+                          <button class="btn btn-primary set" value="{$vo.id}">启用</button>
+                      </if>
+                      <button class="btn btn-danger del" value="{$vo.id}">权限删除</button>
+                  </td>
+                </tr>
+               </volist>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-part-->
+<include file='Common:footer'/>
+<!--end-Footer-part-->
+<script src="__ROOT__/Application/Common/Public/js/jquery.min.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/jquery.ui.custom.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/jquery.uniform.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/select2.min.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/jquery.dataTables.min.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/matrix.js"></script>
+<script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    var $URL = "__APP__/Home/AdminNode/";
+    $(function(){
+        //delete AdminUser
+        $(".del").bind('click',function(){
+            var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+            var $id = $(this).attr('value');
+            var $url = $URL+'delNode';
+            if(!$msg){
+                return false;
+            }
+
+            $.ajax({
+                url: $url,
+                type: 'get',
+                dataType: 'text',
+                data:{id:$id},
+                success:function($result){
+                    if($result){
+                        alert('删除成功');
+                        window.location.reload();
+                    }else{
+                        alert('删除失败');
+                    }
+                },
+                error:function(){
+                    alert('删除失败');
+                }
+            });
+        });
+        //status set
+        $(".set").bind('click',function(){
+            var $id = $(this).attr('value');
+            $.ajax({
+                url: $URL+'setStatus',
+                type: 'get',
+                dataType: 'text',
+                data:{id:$id},
+                success:function($result){
+                    if($result){
+                        alert('设置成功');
+                        window.location.reload();
+                    }else{
+                        alert('设置失败');
+                    }
+                },
+                error:function(){
+                    alert('设置失败');
+                }
+            });
+        });
+    });
+</script>
+
