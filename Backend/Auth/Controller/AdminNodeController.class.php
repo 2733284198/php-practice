@@ -5,11 +5,11 @@
  * Date: 2016/2/16
  * Time: 15:01
  */
-namespace Home\Controller;
-use Home\Controller\BaseController;
+namespace Auth\Controller;
+use Think\Controller;
 use Org\Util\Tree;
 
-class AdminNodeController extends BaseController{
+class AdminNodeController extends Controller{
     public function index(){
         $db = M('AdminNode');
         $node = $db->order('id')->select();

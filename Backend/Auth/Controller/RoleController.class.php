@@ -7,11 +7,9 @@
  */
 namespace Auth\Controller;
 
-use Auth\Model\AdminRoleModel;
-use Org\Util\Tree;
 use Think\Controller;
 
-class AdminRoleController extends Controller{
+class RoleController extends Controller{
     public function test()
     {
         echo '22222222222';

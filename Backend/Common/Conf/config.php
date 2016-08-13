@@ -63,7 +63,7 @@ return array(
     ),
 
     //========设置访问列表===============允许访问列表======================无法加载控制器:Auth和默认模块
-    //'MODULE_ALLOW_LIST'    =>    array('Home','Admin','User'),
+    'MODULE_ALLOW_LIST'    =>    array('Home','Admin','User'),
 
     //=======================默认访问的模块=================================
     //'DEFAULT_MODULE'       =>    'Home',
