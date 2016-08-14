@@ -79,4 +79,7 @@ return array(
 
     // URL禁止访问的后缀设置
     'URL_DENY_SUFFIX' => 'pdf|ico|png|gif|jpg',
+
+    //错误页面
+    'TMPL_ACTION_FILE' => __ROOT__.'/Public/error/exception.tpl',
 );

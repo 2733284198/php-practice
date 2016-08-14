@@ -26,9 +26,9 @@ class AdminRoleController extends BaseController
     public function createAdminRole()
     {
         if (IS_POST) {
-            $name = I('post.name');
-            $remark = I('post.remark');
-            $pid = I('post.pid');
+            $name = I('post.name','','strip_tags');
+            $remark = I('post.remark','','strip_tags');
+            $pid = I('post.pid','','strip_tags');  // 用strip_tags过滤$_GET['title']
             if (empty($name)) return $this->error('角色名称不能为空');
             $role = M('AdminRole');
             $where['name'] = ':name';
@@ -113,37 +113,6 @@ class AdminRoleController extends BaseController
         $this->rid = $rid;
         $this->display();
     }
-
-    /*
-     *添加角色-权限表 节点表Access
-     */
-    public function setAccess()
-    {
-        $rid = I('rid');
-        //添加新权限之前，清空当前角色的所有权限
-        $access = M('AdminAccess');
-        $access->where(array('role_id' => $rid))->delete();
-
-        if (IS_POST) {
-            $data = array();
-            foreach ($_POST['actions'] as $value) {
-                $tmp = explode('_', $value);
-                $data[] = array(
-                    'role_id' => $rid,
-                    'node_id' => $tmp[0],
-                    'level' => $tmp[1]
-                );
-            }
-            if ($access->addAll($data)) {
-                return $this->success('权限设置成功', U('AdminRole/index', array('rid' => $rid)));
-            } else {
-                $this->error("权限设置失败000", U('AdminRole/addnode', array('rid' => $rid)));
-            }
-        } else {
-            $this->error("权限设置失败888888888", U('AdminRole/addnode', array('rid' => $rid)));
-        }
-    }
-
 
     /*
      *删除角色以及角色所拥有的权限
