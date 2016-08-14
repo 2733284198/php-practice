@@ -1,143 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <include file='Common:head'/>
-</head>
-<body>
+<extend name="Common:common"/>
+<block name="main">
 
-<!--Header-part-->
-<div id="header">
-  <h1><a href="dashboard.html">旅游数据中心</a></h1>
-</div>
-<!--close-Header-part--> 
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
 
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
 
-<!--top-Header-menu-->
-<include file='Common:header_menu'/>
-<!--close-top-Header-menu-->
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
 
-<!--start-top-serch-->
-<include file='Common:serch'/>
-<!--close-top-serch-->
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
 
-<!--sidebar-menu-->
-<include file='Common:sidebar_menu'/>
-<!--sidebar-menu-->
+        <div class="page-content">
 
-<!--main-container-part-->
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>后台首页</a> <a href="{:U('AdminUser/index')}" class="current">平台用户管理</a> </div>
-  </div>
-  <div class="container-fluid">
-
-    <div class="row-fluid">
-      <div class="span12">
-  
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5 style="font-size: 14px;">用户信息列表</h5>
-          </div>
-
-            <div>
-                <form action="{:U('AdminUser/index')}"  method="post">
-                    <table style="width:100%;" align="right">
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>
-                                <!--select style="width: 80px;" >
-                                    <option>全部</option>
-                                    <option>名称</option>
-                                    <option>类型</option>
-                                </select-->
-                            </td>
-
-                            <td align="right" width="30%">
-                                <input type="text" style="height: 20px; margin-top: 10px;" placeholder="请输入用户昵称..." name="keybord" />
-                                <button type="submit" title="Search" style="height: 30px;"><i class="icon-search icon-white"></i>搜索</button>
-                            </td>
-                            <td align="left" width="30%">&nbsp;
-                                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
-
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th style="font-size: 14px;">#ID</th>
+                        <th style="font-size: 14px;">用户昵称</th>
+                        <th style="font-size: 14px;">所属角色组</th>
+                        <th style="font-size: 14px;">登录时间</th>
+                        <th style="font-size: 14px;">
+                            操作
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name='list' id='vo'>
+                        <tr class="gradeX">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.username}</td>
+                            <td>{$vo['role_name'][0]['name']}</td>
+                            <td class="center">{$vo.logintime|date='Y-m-d H:i:s',###}</td>
+                            <td class="center">
+                                <if condition="$vo.status eq 1">
+                                    <button class="btn btn-inverse btn-xs set" value="{$vo.id}">禁用</button>
+                                    <else/>
+                                    <button class="btn btn-primary btn-xs set" value="{$vo.id}">启用</button>
+                                </if>
+                                <button class="btn btn-danger btn-xs del" value="{$vo.id}">用户删除</button>
                             </td>
                         </tr>
-                    </table>
-                </form>
+                    </volist>
+                    </tbody>
+                </table>
             </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
 
-          <div class="widget-content nopadding">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th style="font-size: 14px;">#ID</th>
-                  <th style="font-size: 14px;">用户昵称</th>
-                  <th style="font-size: 14px;">所属角色组</th>
-                  <th style="font-size: 14px;">登录时间</th>
-                  <th style="font-size: 14px;">
-                        操作
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-			 <volist name='list' id='vo'>
-                <tr class="gradeX">
-                  <td>{$vo.id}</td>
-                  <td>{$vo.username}</td>
-                  <td>{$vo['role_name'][0]['name']}</td>
-                  <td class="center">{$vo.logintime|date='Y-m-d H:i:s',###}</td>
-                  <td class="center">
-                      <if condition="$vo.status eq 1">
-                          <button class="btn btn-inverse set" value="{$vo.id}">禁用</button>
-                          <else/>
-                          <button class="btn btn-primary set" value="{$vo.id}">启用</button>
-                      </if>
-                      <button class="btn btn-danger del" value="{$vo.id}">用户删除</button>
-                  </td>
-                </tr>
-             </volist>
-              </tbody>
-            </table>
-          </div>
-            <div class="widget-title" style="height: 50px; background-color: #FFFFFF;">
-                <div class="pagination">
-                    {$show}
-                </div>
-            </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--Footer-part-->
-<include file='Common:footer'/>
-<!--end-Footer-part-->
-<script src="__ROOT__/Application/Common/Public/js/jquery.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.ui.custom.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/bootstrap.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.uniform.js"></script>
-
-<script src="__ROOT__/Application/Common/Public/js/select2.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.dataTables.min.js"></script><!--分页搜索js-->
-
-<script src="__ROOT__/Application/Common/Public/js/matrix.js"></script>
-
-<script src="__ROOT__/Application/Common/Public/js/matrix.tables.js"></script>
-
-<script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
-</body>
-</html>
-<script type="text/javascript">
-    var $URL = "__APP__/Home/AdminUser/";
-    $(function(){
-        //delete AdminUser
-        $(".del").bind('click',function(){
-            var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
-            var $id = $(this).attr('value');
-            var $url = $URL+'delUser';
-            if(!$msg){
-                return false;
-            }
+    <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/AdminUser/";
+        $(function(){
+            //delete AdminUser
+            $(".del").bind('click',function(){
+                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+                var $id = $(this).attr('value');
+                var $url = $URL+'delUser';
+                if(!$msg){
+                    return false;
+                }
 //            $.getJSON('$url',{user_id:$id},function(json){
 //                if(json.status ==1 ){
 //                    alert(1111);
@@ -145,44 +86,45 @@
 //                    alert(000000);
 //                }
 //            });
-            $.ajax({
-                url: $URL+'delUser',
-                type: 'get',
-                dataType: 'text',
-                data:{user_id:$id},
-                success:function($result){
-                    if($result){
-                        alert('删除成功');
-                        window.location.reload();
-                    }else{
+                $.ajax({
+                    url: $URL+'delUser',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{user_id:$id},
+                    success:function($result){
+                        if($result){
+                            alert('删除成功');
+                            window.location.reload();
+                        }else{
+                            alert('删除失败');
+                        }
+                    },
+                    error:function(){
                         alert('删除失败');
                     }
-                },
-                error:function(){
-                    alert('删除失败');
-                }
+                });
             });
-        });
-        //status set
-        $(".set").bind('click',function(){
-            var $id = $(this).attr('value');
-            $.ajax({
-                url: $URL+'setStatus',
-                type: 'get',
-                dataType: 'text',
-                data:{uid:$id},
-                success:function($result){
-                    if($result){
-                        alert('设置成功');
-                        window.location.reload();
-                    }else{
+            //status set
+            $(".set").bind('click',function(){
+                var $id = $(this).attr('value');
+                $.ajax({
+                    url: $URL+'setStatus',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{uid:$id},
+                    success:function($result){
+                        if($result){
+                            alert('设置成功');
+                            window.location.reload();
+                        }else{
+                            alert('设置失败');
+                        }
+                    },
+                    error:function(){
                         alert('设置失败');
                     }
-                },
-                error:function(){
-                    alert('设置失败');
-                }
+                });
             });
         });
-    });
-</script>
+    </script>
+</block>
