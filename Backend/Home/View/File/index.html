@@ -1,0 +1,185 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h4>文件上传管理</h4>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main no-padding">
+                                <p></p>
+                                <form class="form-horizontal" role="form" action="{:U('File/uploadFile')}" enctype="multipart/form-data" method="post">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文件中文名称 </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" id="software_zh" placeholder="文件中文名称" class="col-xs-10 col-sm-5" name="software_zh" />
+                                        </div>
+                                    </div>
+
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 目录名(必须为英文) </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" name="software_name" placeholder="目录名" class="col-xs-10 col-sm-5" />
+                                        </div>
+                                    </div>
+
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 版本号 </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" name="version_num" placeholder="目录名" class="col-xs-10 col-sm-5" />
+                                        </div>
+                                    </div>
+
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> version_num) </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" name="description" placeholder="说明" class="col-xs-10 col-sm-5" />
+                                        </div>
+                                    </div>
+
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 平台(必须为英文) </label>
+
+                                        <div class="col-sm-9">
+                                            <select name="belongs_stage" id="select">
+                                                <option value="Windows">Windows</option>
+                                                <option value="Linux">Linux</option>
+                                                <option value="Mac">Mac</option>
+                                                <option value="Android">Android</option>
+                                                <option value="IOS">IOS</option>
+                                                <option value="WindowsPhone">WindowsPhone</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 选择上传文件 </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="file" id="id-input-file-2" name="photo" />
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix form-actions">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button class="btn btn-info" type="submit">
+                                                <i class="icon-ok bigger-110"></i>
+                                                确认提交
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/AdminUser/";
+        $(function(){
+            //delete AdminUser
+            $(".del").bind('click',function(){
+                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+                var $id = $(this).attr('value');
+                var $url = $URL+'delUser';
+                if(!$msg){
+                    return false;
+                }
+//            $.getJSON('$url',{user_id:$id},function(json){
+//                if(json.status ==1 ){
+//                    alert(1111);
+//                }else{
+//                    alert(000000);
+//                }
+//            });
+                $.ajax({
+                    url: $URL+'delUser',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{user_id:$id},
+                    success:function($result){
+                        if($result){
+                            alert('删除成功');
+                            window.location.reload();
+                        }else{
+                            alert('删除失败');
+                        }
+                    },
+                    error:function(){
+                        alert('删除失败');
+                    }
+                });
+            });
+            //status set
+            $(".set").bind('click',function(){
+                var $id = $(this).attr('value');
+                $.ajax({
+                    url: $URL+'setStatus',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{uid:$id},
+                    success:function($result){
+                        if($result){
+                            alert('设置成功');
+                            window.location.reload();
+                        }else{
+                            alert('设置失败');
+                        }
+                    },
+                    error:function(){
+                        alert('设置失败');
+                    }
+                });
+            });
+        });
+    </script>
+</block>
