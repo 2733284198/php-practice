@@ -26,9 +26,9 @@ class AdminRoleController extends BaseController
     public function createAdminRole()
     {
         if (IS_POST) {
-            $name = I('post.name','','strip_tags');
-            $remark = I('post.remark','','strip_tags');
-            $pid = I('post.pid','','strip_tags');  // 用strip_tags过滤$_GET['title']
+            $name = I('post.name', '', 'strip_tags');
+            $remark = I('post.remark', '', 'strip_tags');
+            $pid = I('post.pid', '', 'strip_tags');  // 用strip_tags过滤$_GET['title']
             if (empty($name)) return $this->error('角色名称不能为空');
             $role = M('AdminRole');
             $where['name'] = ':name';
@@ -63,8 +63,6 @@ class AdminRoleController extends BaseController
         $roleWhere['id'] = ':id';
         $role_name = $roleModel->where($roleWhere)->bind(':id', $rid, \PDO::PARAM_INT)->getField('name');
         if ($role_name == false) return $this->success('没有找到该角色', U('AdminRole/index'));
-        $node = M('AdminNode')->order('id')->select();
-        $node_list = Tree::create($node);
 
         //根据角色遍历所有权限
         $access = M('AdminAccess');
@@ -96,6 +94,8 @@ class AdminRoleController extends BaseController
             }
 
         }
+        $node = M('AdminNode')->order('id')->select();
+        $node_list = Tree::create($node);
         $node_arr = array();
         foreach ($node_list as $value) {
             $conditions['node_id'] = $value['id'];
