@@ -88,7 +88,7 @@
         var i = 0;//初始化数组下标
         jQuery(function ($) {
             var sessionId = "{:session_id()}";
-            var uploaderUrl = "{:U('Home/File/uploadImage')}";
+            var uploaderUrl = "{:U('Home/File/imageUpload')}";
             var swfUrl = "__PUBLIC__/Backend/js/uploadify/uploadify.swf";
             $('#photo_upload').uploadify({
                 'auto': true,//关闭自动上传
@@ -96,7 +96,7 @@
                 'swf': swfUrl,
                 'uploader': uploaderUrl,
                 'width' : 120,//上传按钮样式
-                'height' : 30,
+                'height' : 60,
                 'buttonImage' : '__PUBLIC__/Backend/avatars/avatar.png',//上传按钮背景图地址
                 'method': 'post',//方法，服务端可以用$_POST数组获取数据
                 'buttonText': '选择图片',//设置按钮文本
