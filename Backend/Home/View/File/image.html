@@ -60,7 +60,7 @@
                         <if condition='$user["face180"]'>
                                             __ROOT__/Uploads/{$user.face180}
                                             <else/>
-                                            __PUBLIC__/Images/noface.gif
+                                            __PUBLIC__/Backend/images/default.jpg
                                             </if>" width='180' height='180' id='face-img'/>
                                         </div>
                                     </div>
@@ -127,6 +127,7 @@
                     if(data.status){
                         $('#face-img').attr('src',ROOT + '/Uploads/' + data.mini_pic);
                         $('input[name=face180]').val(data.mini_pic);
+
                     }else {
                         alert(msg.info);
                         return false;
