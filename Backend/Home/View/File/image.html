@@ -56,6 +56,19 @@
                                         <label class="col-sm-3 control-label no-padding-right"> 选择上传图片 </label>
 
                                         <div class="col-sm-9">
+                                            <img src="
+                        <if condition='$user["face180"]'>
+                                            __ROOT__/Uploads/{$user.face180}
+                                            <else/>
+                                            __PUBLIC__/Images/noface.gif
+                                            </if>" width='180' height='180' id='face-img'/>
+                                        </div>
+                                    </div>
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right"> 选择上传图片 </label>
+
+                                        <div class="col-sm-9">
                                             <input type="file"  name="photo_upload" id="photo_upload" multiple="true" />
                                             <input type="hidden" value="1215154" name="tmpdir" id="id_file">
                                         </div>
@@ -88,8 +101,9 @@
         var i = 0;//初始化数组下标
         jQuery(function ($) {
             var sessionId = "{:session_id()}";
-            var uploaderUrl = "{:U('Home/File/imageUpload')}";
+            var uploaderUrl = "{:U('Home/File/uploadifyUploadImage')}";
             var swfUrl = "__PUBLIC__/Backend/js/uploadify/uploadify.swf";
+            var ROOT = '__ROOT__';
             $('#photo_upload').uploadify({
                 'auto': true,//关闭自动上传
                 'removeTimeout': 1,//文件队列上传完成1秒后删除

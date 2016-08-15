@@ -60,7 +60,7 @@ class FileController extends BaseController
             //unlink($thumb_file); //上传生成缩略图以后删除源文件
         }
         //url拼接
-        $version_url = __ROOT__ . '/Uploads/' . iconv('UTF-8','GBK',$file_arr['savepath']) . iconv('UTF-8','GBK',$file_arr['savename']);
+        $version_url = __ROOT__ . '/Uploads/' . iconv('UTF-8', 'GBK', $file_arr['savepath']) . iconv('UTF-8', 'GBK', $file_arr['savename']);
 
         $db = M('PublishTable');
         $db->software_name = $software_name;
@@ -95,28 +95,28 @@ class FileController extends BaseController
      * @param [String] $thumbHeight [缩略图高度]
      * @return [Array] [图片上传信息]
      */
-    public function imageUpload($path = 'Images',$thumb = FALSE ,$thumbWidth = '' , $thumbHeight = '')
+    public function imageUpload($path = 'Images', $thumb = FALSE, $thumbWidth = 100, $thumbHeight = 100)
     {
         // 检查配置目录是否存在，如果不存在，则创建一个
-        if (!is_dir(C('UPLOAD_PATH'))){
+        if (!is_dir(C('UPLOAD_PATH'))) {
             mkdir(iconv('UTF-8', 'GBK', C('UPLOAD_PATH')), 0777, true);
         }
         //============支持在实例化后动态赋值上传参数===================
         $obj = new \Think\Upload();// 实例化上传类
-        $obj->maxSize = C('UPLOAD_MAX_SIZE') ;// 设置附件上传大小
-        $obj->rootPath = C('UPLOAD_PATH') ;// 保存根路径
-        $obj->savePath = $path.'/'; // 设置附件上传目录
-        $obj->exts =  C('UPLOAD_EXTS');// 设置附件上传类型
-        $obj->saveName = array('uniqid','');//文件名规则
+        $obj->maxSize = C('UPLOAD_MAX_SIZE');// 设置附件上传大小
+        $obj->rootPath = C('UPLOAD_PATH');// 保存根路径
+        $obj->savePath = $path . '/'; // 设置附件上传目录
+        $obj->exts = C('UPLOAD_EXTS');// 设置附件上传类型
+        $obj->saveName = array('uniqid', '');//文件名规则
         $obj->replace = true;//存在同名文件覆盖
         $obj->autoSub = true;//使用子目录保存
-        $obj->subName  = array('date','Ym');//子目录创建规则，
+        $obj->subName = array('date', 'Y-m-d');//子目录创建规则，
         $info = $obj->upload();
         // 没有上传成功，则直接返回错误信息
-        if(!$info) return array('status' =>0, 'msg'=> $obj->getError());
+        if (!$info) return array('status' => 0, 'msg' => $obj->getError());
 
         //=============是否生成缩略图==================================
-        if($thumb) {
+        if (TRUE == $thumb) {
             $image = new \Think\Image();
             // 循环获取上传文件信息
             foreach ($info as $file) {
@@ -132,76 +132,64 @@ class FileController extends BaseController
                 $mime = $image->mime(); // 返回图片的mime类型
                 $size = $image->size(); // 返回图片的尺寸数组 0 图片宽度 1 图片高度
                 //使用thumb方法生成缩略图,IMAGE_THUMB_FILLED    =   2 ; 缩放后填充类型
-                $image->thumb(150, 150, \Think\Image::IMAGE_THUMB_FILLED);
+                $image->thumb($thumbWidth, $thumbHeight, \Think\Image::IMAGE_THUMB_SCALE);
                 $image->save($savePath);
                 // 返回文件信息
                 return array(
                     'status' => 1,
                     'savepath' => $file['savepath'],
                     'savename' => $file['savename'],
+                    'width' => $width,
+                    'height' => $height,
+                    'type' => $type,
+                    'sha1' => $file['sha1'],
+                    'md5' => $file['md5'],
+                    'mime' => $mime,
                     'pic_path' => $file['savepath'] . $file['savename'],
                     'mini_pic' => $file['savepath'] . 'mini_' . $file['savename']
                 );
                 //@unlink($thumb_file); //上传生成缩略图以后删除源文件
             }
-        }else{
-            foreach($info as $file)
-            {
+         //=================================是否生成缩略图==================================
+        } else {
+            foreach ($info as $file) {
                 // 返回文件信息
                 return array(
                     'status' => 1,
                     'savepath' => $file['savepath'],
                     'savename' => $file['savename'],
-                    'pic_path' => $file['savepath'] . $file['savename'],
-                    'mini_pic' => $file['savepath'] . 'mini_' .$file['savename']
+                    'ext' => $file['ext'],
+                    'size' => $file['size'],
+                    'sha1' => $file['sha1'],
+                    'md5' => $file['md5'],
+                    'type' => $file['type'],
+                    'pic_path' => $file['savepath'] . $file['savename']
                 );
             }
         }
     }
 
     /**
-     * uploadify 文件上传
+     * uploadify 文件上传,通过调用imageUpload（）方法
      */
     public function uploadImage()
     {
-
-        if (!empty($_FILES))
-        {
-            //图片上传设置
-            $config = array(
-                'maxSize' => 3145728,
-                'savePath' => '',
-                'saveName' => array('uniqid', ''),
-                'exts' => array('jpg', 'png', 'jpeg'),
-                'autoSub' => true,
-                'subName' => array('date', 'Y-m-d'),
-            );
-            //得到上传的临时文件流
-            $tempFile = $_FILES['Filedata']['tmp_name'];
-
-            //允许的文件后缀
-            $fileTypes = array('jpg', 'jpeg', 'gif', 'png');
-
-            //得到文件原名
-            $fileName = iconv("UTF-8", "GB2312", $_FILES["Filedata"]["name"]);
-            $fileParts = pathinfo($_FILES['Filedata']['name']);
-
-            //接受动态传值
-            $files = $_POST['typeCode'];
-
-            $upload = new \Think\Upload($config);// 实例化上传类
-            $images = $upload->upload();
-            //判断是否有图
-            if ($images == false) {
-                echo $fileName . "上传失败！";
-            } else {
-                echo $fileName . "上传成功！";
-            }
-        }
+        $result = $this->imageUpload('Img',TRUE,150,150);
+        var_dump($result);
     }
 
-    public function test(){
-        if (!is_dir(C('UPLOAD_PATH'))){
+    /**
+     * uploadify 文件上传,通过调用imageUpload（）方法
+     */
+    public function uploadifyUploadImage()
+    {
+        $result = $this->imageUpload('Face',TRUE,150,150);
+        $this->ajaxReturn(json_encode($result),'JSON');
+    }
+
+    public function test()
+    {
+        if (!is_dir(C('UPLOAD_PATH'))) {
             var_dump(mkdir(iconv('UTF-8', 'GBK', C('UPLOAD_PATH')), 0777, true));
         }
         echo 1111111;
