@@ -1,0 +1,131 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h4>文件上传管理</h4>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main no-padding">
+                                <p></p>
+                                <form class="form-horizontal" role="form" action="" enctype="multipart/form-data" method="post">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 图片名称 </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" id="software_zh" placeholder="文件中文名称" class="col-xs-10 col-sm-5" name="software_zh" />
+                                        </div>
+                                    </div>
+
+
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right"> 选择上传图片 </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="file"  name="photo_upload" id="photo_upload" multiple="true" />
+                                            <input type="hidden" value="1215154" name="tmpdir" id="id_file">
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix form-actions">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button class="btn btn-info" type="submit" >
+                                                <i class="icon-ok bigger-110"></i>
+                                                确认提交
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--img_id_upload[i]=data;
+                i++;
+                alert(data);-->
+
+            </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script src="__PUBLIC__/Backend/js/uploadify/jquery.uploadify-3.1.min.js"></script>
+    <script type="text/javascript">
+        var img_id_upload = new Array();//初始化数组，存储已经上传的图片名
+        var i = 0;//初始化数组下标
+        jQuery(function ($) {
+            var sessionId = "{:session_id()}";
+            var uploaderUrl = "{:U('Home/File/uploadImage')}";
+            var swfUrl = "__PUBLIC__/Backend/js/uploadify/uploadify.swf";
+            $('#photo_upload').uploadify({
+                'auto': true,//关闭自动上传
+                'removeTimeout': 1,//文件队列上传完成1秒后删除
+                'swf': swfUrl,
+                'uploader': uploaderUrl,
+                'width' : 120,//上传按钮样式
+                'height' : 30,
+                'buttonImage' : '__PUBLIC__/Backend/avatars/avatar.png',//上传按钮背景图地址
+                'method': 'post',//方法，服务端可以用$_POST数组获取数据
+                'buttonText': '选择图片',//设置按钮文本
+                'multi': false,//允许同时上传多张图片
+                'uploadLimit': 1,//一次最多只允许上传10张图片
+                'fileTypeDesc': 'Image Files',//只允许上传图像,选择文件提示文字
+                'fileTypeExts': '*.gif; *.jpg; *.png',//限制允许上传的图片后缀
+                'fileSizeLimit': '1048576KB',//限制上传的图片不得超过200KB
+                'formData' : {'session_id' : sessionId},
+                'onUploadSuccess': function (file, data, response)  //每次成功上传后执行的回调函数，从服务端返回数据到前端
+                {
+                    eval('var data=' + data);
+                    var data = JSON.parse(data); //由JSON字符串转换为JSON对象，json转成object
+                    if(data.status){
+                        $('#face-img').attr('src',ROOT + '/Uploads/' + data.mini_pic);
+                        $('input[name=face180]').val(data.mini_pic);
+                    }else {
+                        alert(msg.info);
+                        return false;
+                    }
+                },
+                'onQueueComplete': function (queueData){
+                    //上传队列全部完成后执行的回调函数
+                    // if(img_id_upload.length>0)
+//                 alert('成功上传的文件有：'+encodeURIComponent(img_id_upload));
+                }
+                // Put your options here
+            });
+            $('#photo_upload').uploadify('settings', 'formData', {'typeCode':document.getElementById('id_file').value});
+        });
+    </script>
+</block>
