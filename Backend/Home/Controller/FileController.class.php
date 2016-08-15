@@ -25,7 +25,7 @@ class FileController extends BaseController
             'exts'    => array('rpm','apk','exe','zip','rar'),
             'replace' => true,
             'rootPath'=> './Uploads/',
-            'saveName'=> iconv('UTF-8','GBK',$software_name . '_v' . $version_num),      //这个是文件名字
+            'saveName'=> iconv('UTF-8','GBK',$software_name . '_v' . $version_num),      //这个是文件名字,也就是文件需要保存的名称
             'subName' => iconv('UTF-8','GBK',$software_name)        //这个是文件上级目录名称，相对于rootPath的下级目录
         );
         // 检测当前目录是否存在目录不存在的话,则尝试新建一个Uploads目录
