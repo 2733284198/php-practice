@@ -258,8 +258,9 @@ class FileController extends BaseController
      */
     public function uploadifyUploadImage()
     {
-        //$pid = I('post.pid');
+        // 接受URL地址传递的参数
         $pid = I('get.pid');
+        //接受 formData 动态传值
         $sessionId = $_POST['session_id'];
         $result = $this->imageUpload('Face', TRUE, 100, 100);
         $result['pid'] = $pid;
