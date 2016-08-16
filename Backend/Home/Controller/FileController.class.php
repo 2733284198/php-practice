@@ -260,8 +260,10 @@ class FileController extends BaseController
     {
         //$pid = I('post.pid');
         $pid = I('get.pid');
+        $sessionId = $_POST['session_id'];
         $result = $this->imageUpload('Face', TRUE, 100, 100);
         $result['pid'] = $pid;
+        $result['sessionId'] = $sessionId;
         $this->ajaxReturn(json_encode($result), 'JSON');
     }
 
