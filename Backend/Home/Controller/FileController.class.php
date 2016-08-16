@@ -150,7 +150,80 @@ class FileController extends BaseController
                 );
                 //@unlink($thumb_file); //上传生成缩略图以后删除源文件
             }
-         //=================================是否生成缩略图==================================
+            //=================================是否生成缩略图==================================
+        } else {
+            foreach ($info as $file) {
+                // 返回文件信息
+                return array(
+                    'status' => 1,
+                    'savepath' => $file['savepath'],
+                    'savename' => $file['savename'],
+                    'ext' => $file['ext'],
+                    'size' => $file['size'],
+                    'sha1' => $file['sha1'],
+                    'md5' => $file['md5'],
+                    'type' => $file['type'],
+                    'pic_path' => $file['savepath'] . $file['savename']
+                );
+            }
+        }
+    }
+
+    /**
+     * 添加图片水印
+     * @param string $path
+     * @param bool $thumb
+     * @param int $thumbWidth
+     * @param int $thumbHeight
+     * @return array
+     */
+    public function waterImage($path = 'Images', $water = FALSE)
+    {
+        // 检查配置目录是否存在，如果不存在，则创建一个
+        if (!is_dir(C('UPLOAD_PATH'))) {
+            mkdir(iconv('UTF-8', 'GBK', C('UPLOAD_PATH')), 0777, true);
+        }
+        //============支持在实例化后动态赋值上传参数===================
+        $obj = new \Think\Upload();// 实例化上传类
+        $obj->maxSize = C('UPLOAD_MAX_SIZE');// 设置附件上传大小
+        $obj->rootPath = C('UPLOAD_PATH');// 保存根路径
+        $obj->savePath = $path . '/'; // 设置附件上传目录
+        $obj->exts = C('UPLOAD_EXTS');// 设置附件上传类型
+        $obj->saveName = array('uniqid', '');//文件名规则
+        $obj->replace = true;//存在同名文件覆盖
+        $obj->autoSub = true;//使用子目录保存
+        $obj->subName = array('date', 'Y-m-d');//子目录创建规则，
+        $info = $obj->upload();
+        // 没有上传成功，则直接返回错误信息
+        if (!$info) return array('status' => 0, 'msg' => $obj->getError());
+
+        //=============是否生成缩略图==================================
+        if (TRUE == $water) {
+            $image = new \Think\Image();
+            // 循环获取上传文件信息
+            foreach ($info as $file) {
+                // 获取缩略图文件
+                $waterFile = C('UPLOAD_PATH') . $file['savepath'] . $file['savename'];
+                $logoFile = C('UPLOAD_PATH') . 'Logo/apple.png';
+                // 保存水印图路径,也就是需要保存的文件的格式
+                $waterPath = C('UPLOAD_PATH') . $file['savepath'] . 'water_' . $file['savename'];
+                //使用open方法打开图像文件进行相关操作
+                $image->open($waterFile);
+                //将图片裁剪为440x440并保存为corp.jpg
+                $image->water($logoFile, \Think\Image::IMAGE_THUMB_NORTHWEST, 50);
+                $image->save($waterPath);
+
+                // 返回文件信息
+                return array(
+                    'status' => 1,
+                    'savepath' => $file['savepath'],
+                    'savename' => $file['savename'],
+                    'pic_path' => $file['savepath'] . $file['savename'],
+                    'water_pic' => $file['savepath'] . 'water_' . $file['savename']
+                );
+                //@unlink($thumb_file); //上传生成缩略图以后删除源文件
+            }
+            //=================================是否生成缩略图==================================
         } else {
             foreach ($info as $file) {
                 // 返回文件信息
@@ -174,7 +247,7 @@ class FileController extends BaseController
      */
     public function uploadImage()
     {
-        $result = $this->imageUpload('Img',TRUE,150,150);
+        $result = $this->imageUpload('Img', TRUE, 150, 150);
         var_dump($result);
     }
 
@@ -183,8 +256,38 @@ class FileController extends BaseController
      */
     public function uploadifyUploadImage()
     {
-        $result = $this->imageUpload('Face',TRUE,150,150);
-        $this->ajaxReturn(json_encode($result),'JSON');
+        $result = $this->imageUpload('Face', TRUE, 100, 100);
+        $this->ajaxReturn(json_encode($result), 'JSON');
+    }
+
+    /**
+     * 头像上传
+     */
+    Public function uploadFace()
+    {
+        if (!IS_POST) E('页面不存在');
+        $result = $this->imageUpload('Face', TRUE, 100, 100);
+        $this->ajaxReturn(json_encode($result), 'JSON');
+    }
+
+    /**
+     * 修改用户头像
+     */
+    public function editFace()
+    {
+        if (!IS_POST) E('页面不存在');
+        $model = M('user');
+        $where = array('uid' => session('uid'));
+        $field = array('face180');
+        $old = $model->where($where)->field($field)->find();
+        if ($model->where($where)->save($_POST)) {
+            if (!empty($old['face180'])) {
+                @unlink('./Uploads/'.$old['face180']);//删除之前的缩略图
+            }
+            $this->success('修改成功',U('index'));
+        }else{
+            $this->error('修改失败,请重试。。。');
+        }
     }
 
     public function test()

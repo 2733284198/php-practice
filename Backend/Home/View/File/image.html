@@ -56,8 +56,7 @@
                                         <label class="col-sm-3 control-label no-padding-right"> 选择上传图片 </label>
 
                                         <div class="col-sm-9">
-                                            <img src="
-                        <if condition='$user["face180"]'>
+                                            <img src=" <if condition='$user["face180"]'>
                                             __ROOT__/Uploads/{$user.face180}
                                             <else/>
                                             __PUBLIC__/Backend/images/default.jpg
@@ -125,7 +124,7 @@
                     eval('var data=' + data);
                     var data = JSON.parse(data); //由JSON字符串转换为JSON对象，json转成object
                     if(data.status){
-                        $('#face-img').attr('src',ROOT + '/Uploads/' + data.mini_pic);
+                        $('#face-img').attr('src',ROOT + '/Uploads/' + data.pic_path);
                         $('input[name=face180]').val(data.mini_pic);
 
                     }else {
