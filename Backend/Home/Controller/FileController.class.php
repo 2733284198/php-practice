@@ -97,6 +97,7 @@ class FileController extends BaseController
      */
     public function imageUpload($path = 'Images', $thumb = FALSE, $thumbWidth = 100, $thumbHeight = 100)
     {
+        $typeCode = $_POST['typeCode'];
         // 检查配置目录是否存在，如果不存在，则创建一个
         if (!is_dir(C('UPLOAD_PATH'))) {
             mkdir(iconv('UTF-8', 'GBK', C('UPLOAD_PATH')), 0777, true);
@@ -146,7 +147,8 @@ class FileController extends BaseController
                     'md5' => $file['md5'],
                     'mime' => $mime,
                     'pic_path' => $file['savepath'] . $file['savename'],
-                    'mini_pic' => $file['savepath'] . 'mini_' . $file['savename']
+                    'mini_pic' => $file['savepath'] . 'mini_' . $file['savename'],
+                    'typeCode' => $typeCode
                 );
                 //@unlink($thumb_file); //上传生成缩略图以后删除源文件
             }
@@ -256,7 +258,10 @@ class FileController extends BaseController
      */
     public function uploadifyUploadImage()
     {
+        //$pid = I('post.pid');
+        $pid = I('get.pid');
         $result = $this->imageUpload('Face', TRUE, 100, 100);
+        $result['pid'] = $pid;
         $this->ajaxReturn(json_encode($result), 'JSON');
     }
 
