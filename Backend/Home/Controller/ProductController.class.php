@@ -14,21 +14,29 @@ class ProductController extends BaseController
             $data['mPrice'] = I('post.mPrice');
             $data['cid'] = I('post.cid');
             $data['iPrice'] = I('post.file-id');
-
+            $fileId = I('post.file-id');
             $model = M('Product');
-            $model->startTrans();
-            $insertId = $model->add($data);
+            if (empty($fileId)) {
+                $insertId = $model->add($data);
+                if ($insertId) {
+                    $this->success('添加一个新产品成功', U('Product/index'));
+                }
+                $this->error('添加失败', U('Product/index'));
+            } else {
+                $model->startTrans();
+                $insertId = $model->add($data);
 
-            $model2 = M('File');
-            $model2->id = I('post.file-id');
-            $model2->pid = $insertId;
-            $saveId = $model2->save();
-            if($saveId && $insertId){
-                $model->commit();
-                $this->success('添加一个新产品成功', U('Product/index'));
-            }else{
+                $model2 = M('File');
+                $model2->id = I('post.file-id');
+                $model2->pid = $insertId;
+                $saveId = $model2->save();
+                if ($saveId && $insertId) {
+                    $model->commit();
+                    $this->success('添加一个新产品成功', U('Product/index'));
+                }
                 $model->rollback();
                 $this->error('添加失败', U('Product/index'));
+
             }
 
         }
