@@ -300,10 +300,7 @@ class FileController extends BaseController
 
     public function test()
     {
-        if (!is_dir(C('UPLOAD_PATH'))) {
-            var_dump(mkdir(iconv('UTF-8', 'GBK', C('UPLOAD_PATH')), 0777, true));
-        }
-        echo 1111111;
+        return ['userId'=>'090909090'];
     }
 
 

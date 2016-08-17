@@ -133,6 +133,11 @@ class CategoryController extends BaseController
         $this->display();
     }
 
+    /**
+     * 删除分类
+     * 【1】删除分类同时删除分类下的商品
+     * 删除分类之前，查看该分类下面是否有商品，如果有则提示，下删除该商品，才可以删除该分类
+     */
     public function test(){
         echo 'category test';
     }
