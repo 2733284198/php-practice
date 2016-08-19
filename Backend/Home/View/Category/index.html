@@ -81,7 +81,10 @@
                             </if>
                         </td>
                         <td>{$vo.order}</td>
-                        <td>{$vo.remark}</td>
+                        <td>
+                            <a class="btn btn-xs btn-info">编辑分类</a>
+                            <a href="javascript:categoryDel({$vo.id})" class="btn btn-xs btn-danger del">删除</a>
+                        </td>
                     </tr>
                 </volist>
                 </tbody>
@@ -147,20 +150,7 @@
     </div>
 
     <!-- /.main-content -->
-    <script type="text/javascript">
-        window.jQuery || document.write("<script src='__PUBLIC__/Backend/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
-    </script>
-    <script src="__PUBLIC__/Backend/js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script src="__PUBLIC__/Backend/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="__PUBLIC__/Backend/js/bootbox.min.js"></script>
-    <script src="__PUBLIC__/Backend/js/jquery.easy-pie-chart.min.js"></script>
-    <script src="__PUBLIC__/Backend/js/jquery.gritter.min.js"></script>
-    <script src="__PUBLIC__/Backend/js/spin.min.js"></script>
 
-    <!-- ace scripts -->
-
-    <script src="__PUBLIC__/Backend/js/ace-elements.min.js"></script>
-    <script src="__PUBLIC__/Backend/js/ace.min.js"></script>
     <script type="text/javascript">
         var $URL = "__APP__/Home/Category/";
         jQuery(function ($) {
@@ -184,6 +174,30 @@
                 console.table(response);
             };
             $.post(url,data,success,'json');
+        }
+        /**
+         * 删除一个分类
+         */
+        function categoryDel($id){
+            // check children category is not exist
+            $actions = confirm('你确定要删除该分类吗？');
+            if($actions){
+                var success = function(response){
+                    if(response.errcode == 200){
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else if(response.errcode == 401){
+                        $actions = confirm('你确定要连同子类一并删除吗？');
+                    }else if(response.errcode == 402){
+                        $actions = confirm('你确定要删除该分类下面的所有商品吗？');
+                    }else{
+                        alert(response.errmsg);
+                    }
+
+                    console.table(response);
+                };
+                $.post($URL+'checkCategory', {'id':$id},success,'json');
+            }
         }
     </script>
 </block>

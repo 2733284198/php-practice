@@ -22,7 +22,7 @@ class ProductController extends BaseController
             $data['pSn'] = I('post.pSn');
             $data['pNum'] = I('post.pNum');
             $data['mPrice'] = I('post.mPrice');
-            $data['cid'] = I('post.cid');
+            $data['cId'] = I('post.cid');
             $data['iPrice'] = I('post.file-id');
             $fileId = I('post.file-id');
             $model = M('Product');
@@ -46,10 +46,12 @@ class ProductController extends BaseController
                 }
                 $model->rollback();
                 $this->error('添加失败', U('Product/index'));
-
             }
 
         }
+        $model = M('Category'); // return Object
+        $result = $model->field("*,concat(path,',',id) as paths")->order('path')->select();
+        $this->categorys = $result;
         $this->display();
     }
 

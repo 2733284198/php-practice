@@ -83,12 +83,9 @@
 
                                         <div class="col-sm-9">
                                             <select name="cid" id="cid">
-                                                <option value="1">Windows</option>
-                                                <option value="2">Linux</option>
-                                                <option value="3">Mac</option>
-                                                <option value="4">Android</option>
-                                                <option value="5">IOS</option>
-                                                <option value="6">WindowsPhone</option>
+                                                <volist name="categorys" id="vo">
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                                </volist>
                                             </select>
                                         </div>
                                     </div>
