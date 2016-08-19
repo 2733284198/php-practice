@@ -25,43 +25,142 @@ function p($data)
 }
 
 /**
- * =====================================================================================================================
- * 生成一定数量的随机数，并且不重复
- * @param integer $number 数量
- * @param string $len 长度
- * @param string $type 字串类型
- * 0 字母 1 数字 其它 混合
- * @return string
+ * ===================================【使用curl获取远程数据】=======================================================
+ * 使用curl获取远程数据
+ * @param  string $url url连接
+ * @return string      获取到的数据
+ */
+function curl_get_contents($url){
+    $ch=curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
+    //curl_setopt($ch,CURLOPT_HEADER,1);                //是否显示头部信息
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
+    curl_setopt($ch, CURLOPT_USERAGENT, _USERAGENT_);   //用户访问代理 User-Agent
+    curl_setopt($ch, CURLOPT_REFERER,_REFERER_);        //设置 referer
+    curl_setopt($ch,CURLOPT_FOLLOWLOCATION,1);          //跟踪301
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);        //返回结果
+    $r=curl_exec($ch);
+    curl_close($ch);
+    return $r;
+}
+
+/**
+ * =================================【传入时间戳,计算距离现在的时间】=======================================================
+ * 传入时间戳,计算距离现在的时间
+ * @param  number $time 时间戳
+ * @return string       返回多少以前
  * =====================================================================================================================
  */
-function build_count_rand($number, $length = 4, $mode = 1)
-{
-    if ($mode == 1 && $length < strlen($number)) {
-        //不足以生成一定数量的不重复数字
+function word_time($time) {
+    $time = (int) substr($time, 0, 10);
+    $int = time() - $time;
+    $str = '';
+    if ($int <= 2){
+        $str = sprintf('刚刚', $int);
+    }elseif ($int < 60){
+        $str = sprintf('%d秒前', $int);
+    }elseif ($int < 3600){
+        $str = sprintf('%d分钟前', floor($int / 60));
+    }elseif ($int < 86400){
+        $str = sprintf('%d小时前', floor($int / 3600));
+    }else{
+        $str = date('Y-m-d H:i:s', $time);
+    }
+    return $str;
+}
+
+/**
+ * ========================================【关于文件、图片，上传】=======================================================
+ * ======================生成缩略图
+ * @param  string  $image_path 原图path
+ * @param  integer $width      缩略图的宽
+ * @param  integer $height     缩略图的高
+ * @return string             缩略图path
+ */
+function crop_image($image_path,$width=170,$height=170){
+    $image_path=trim($image_path,'.');
+    $min_path='.'.str_replace('.', '_'.$width.'_'.$height.'.', $image_path);
+    $image = new \Think\Image();
+    $image->open($image_path);
+    // 生成一个居中裁剪为$width*$height的缩略图并保存
+    $image->thumb($width, $height,\Think\Image::IMAGE_THUMB_CENTER)->save($min_path);
+    oss_upload($min_path);
+    return $min_path;
+}
+
+/**
+ * ======================检测webuploader上传是否成功
+ * @param  string $file_path post中的字段
+ * @return boolear           是否成功
+ */
+function upload_success($file_path){
+    // 为兼容传进来的有数组；先转成json
+    $file_path=json_encode($file_path);
+    // 如果有undefined说明上传失败
+    if (strpos($file_path, 'undefined') !== false) {
         return false;
     }
-    $rand = array();
-    for ($i = 0; $i < $number; $i++) {
-        $rand[] = rand_string($length, $mode);
+    // 如果没有.符号说明上传失败
+    if (strpos($file_path, '.') === false) {
+        return false;
     }
-    $unqiue = array_unique($rand);
-    if (count($unqiue) == count($rand)) {
-        return $rand;
-    }
-    $count = count($rand) - count($unqiue);
-    for ($i = 0; $i < $count * 3; $i++) {
-        $rand[] = rand_string($length, $mode);
-    }
-    $rand = array_slice(array_unique($rand), 0, $number);
-    return $rand;
+    // 否则上传成功则返回true
+    return true;
 }
+//======================================================================================================================
+
+/**
+ * ==============================================【访问方式检测】=========================================================
+ * 检测是否是手机访问
+ */
+function is_mobile(){
+    $useragent=isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+    $useragent_commentsblock=preg_match('|\(.*?\)|',$useragent,$matches)>0?$matches[0]:'';
+    function _is_mobile($substrs,$text){
+        foreach($substrs as $substr)
+            if(false!==strpos($text,$substr)){
+                return true;
+            }
+        return false;
+    }
+    $mobile_os_list=array('Google Wireless Transcoder','Windows CE','WindowsCE','Symbian','Android','armv6l','armv5','Mobile','CentOS','mowser','AvantGo','Opera Mobi','J2ME/MIDP','Smartphone','Go.Web','Palm','iPAQ');
+    $mobile_token_list=array('Profile/MIDP','Configuration/CLDC-','160×160','176×220','240×240','240×320','320×240','UP.Browser','UP.Link','SymbianOS','PalmOS','PocketPC','SonyEricsson','Nokia','BlackBerry','Vodafone','BenQ','Novarra-Vision','Iris','NetFront','HTC_','Xda_','SAMSUNG-SGH','Wapaka','DoCoMo','iPhone','iPod');
+
+    $found_mobile=_is_mobile($mobile_os_list,$useragent_commentsblock) ||
+        _is_mobile($mobile_token_list,$useragent);
+    if ($found_mobile){
+        return true;
+    }else{
+        return false;
+    }
+}
+//======================================================================================================================
 
 
 /**
- * =====================================================================================================================
+ * ===============================================【安全、转换】==========================================================
+ * ===========将路径转换加密
+ * @param  string $file_path 路径
+ * @return string            转换后的路径
+ */
+function path_encode($file_path){
+    return rawurlencode(base64_encode($file_path));
+}
+
+/**
+ * ===========将路径解密
+ * @param  string $file_path 加密后的字符串
+ * @return string            解密后的路径
+ */
+function path_decode($file_path){
+    return base64_decode(rawurldecode($file_path));
+}
+//======================================================================================================================
+
+/**
+ * ================================================【用户登陆信息】=======================================================
  * 返回用户id
  * @return integer 用户id
- * =====================================================================================================================
  */
 function get_uid()
 {
@@ -69,10 +168,8 @@ function get_uid()
 }
 
 /**
- * =====================================================================================================================
  * 检测是否登录
  * @return boolean 是否登录
- * =====================================================================================================================
  */
 function check_login()
 {
@@ -83,7 +180,10 @@ function check_login()
     }
 }
 
-// 设置验证码
+/**
+ * 设置验证码
+ * @return boolean 是否登录
+ */
 function show_verify($config = '')
 {
     if ($config == '') {
@@ -107,6 +207,10 @@ function check_verify($code)
     $verify = new \Think\Verify();
     return $verify->check($code);
 }
+
+//======================================================================================================================
+
+
 
 /**
  * =====================================================================================================================
@@ -207,7 +311,7 @@ function app_upload_image($path, $maxSize = 52428800)
 
 
 /**
- * =====================================================================================================================
+ * ============================================【APi 接口、CURL】========================================================
  * 请求接口返回内容
  * @param  string $url [请求的URL地址]
  * @param  string $params [请求的参数]

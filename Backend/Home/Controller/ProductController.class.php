@@ -88,7 +88,8 @@ class ProductController extends BaseController
 
     public function test(){
         $model = M('Product');
-        p($model->select());
+        //生成一定数量的随机数，并且不重复
+        p(word_time(time()));
     }
 
 }
