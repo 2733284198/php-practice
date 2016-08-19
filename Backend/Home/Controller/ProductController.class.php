@@ -1,10 +1,20 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Tinywan
+ * Date: 2016/8/19
+ * Time: 9:18
+ * Mail: Overcome.wan@Gmail.com
+ */
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
 
 class ProductController extends BaseController
 {
+    /**
+     * 添加一个商品
+     */
     public function index()
     {
         if (IS_POST) {
@@ -53,7 +63,7 @@ class ProductController extends BaseController
         //接受 formData 动态传值
         $sessionId = $_POST['session_id'];
 
-        //通过 A 方法跨模块调用操作,以下为实例化一个Home模块的控制器
+        //通过 A 方法跨模块调用操作,以下为实例化一个Home模块的File控制器，其实也就是实例化这个控制器了
         $file = A('Home/File');
         $result = $file->imageUpload('Product', TRUE, 100, 100);
         if (!$result) {
@@ -74,6 +84,11 @@ class ProductController extends BaseController
         $result['fileId'] = $insertId;
         $this->ajaxReturn(json_encode($result), 'JSON');
 
+    }
+
+    public function test(){
+        $model = M('Product');
+        p($model->select());
     }
 
 }
