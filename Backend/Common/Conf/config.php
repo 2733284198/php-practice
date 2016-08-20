@@ -72,7 +72,7 @@ return array(
     /**
      * Auth 直接是访问不了的，只能通过主模块去调用
      */
-    'MODULE_DENY_LIST'      =>  array('Common','Runtime','Api','Auth'),
+    //'MODULE_DENY_LIST'      =>  array('Common','Runtime','Api','Auth'),
 
     // 多个伪静态后缀设置 用|分割
     'URL_HTML_SUFFIX' => 'jsp|html|shtml|xml',
@@ -91,4 +91,22 @@ return array(
     'UPLOAD_PATH' => './Uploads/', //文件上传保存路径
     //'UPLOAD_PATH' => './', //文件上传保存路径
     'UPLOAD_EXTS' => array('jpg','jpeg','gif','png'),
+
+    //***********************************融云开发设置**********************************
+    'RONG_IS_DEV'            => true,//是否是在开发中
+    'RONG_DEV_APP_KEY'       => 'qd46yzrf448if', //融云开发环境下的key       仅供测试使用
+    'RONG_DEV_APP_SECRET'    => 'XE7BLIezTlIdU', //融云开发环境下的SECRET     仅供测试使用
+    'GEETEST_ID'             => '034b9cc862456adf05398821cefc94eb',//极验id  仅供测试使用
+    'GEETEST_KEY'            => 'b7f064b9ae813699de794303f0b0e76f',//极验key 仅供测试使用
+    'RONG_PRO_APP_KEY'       => '', //融云生产环境下的key
+    'RONG_PRO_APP_SECRET'    => '', //融云生产环境下的SECRET
+    'UMENG_IOS_APP_KEY'      => '', //友盟ios AppKey
+    'UMENG_IOS_SECRET'       => '', //友盟ios App Master Secret
+    'UMENG_ANDROID_APP_KEY'  => '', //友盟android AppKey
+    'UMENG_ANDROID_SECRET'   => '', //友盟android App Master Secret
+    'RONGLIAN_ACCOUNT_SID'   => '', //容联云通讯 主账号 accountSid
+    'RONGLIAN_ACCOUNT_TOKEN' => '', //容联云通讯 主账号token accountToken
+    'RONGLIAN_APPID'         => '', //容联云通讯 应用Id appid
+    'RONGLIAN_TEMPLATE_ID'   => '', //容联云通讯 模板Id
+
 );

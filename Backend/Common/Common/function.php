@@ -30,16 +30,17 @@ function p($data)
  * @param  string $url url连接
  * @return string      获取到的数据
  */
-function curl_get_contents($url){
-    $ch=curl_init();
+function curl_get_contents($url)
+{
+    $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
     //curl_setopt($ch,CURLOPT_HEADER,1);                //是否显示头部信息
     curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
     curl_setopt($ch, CURLOPT_USERAGENT, _USERAGENT_);   //用户访问代理 User-Agent
-    curl_setopt($ch, CURLOPT_REFERER,_REFERER_);        //设置 referer
-    curl_setopt($ch,CURLOPT_FOLLOWLOCATION,1);          //跟踪301
+    curl_setopt($ch, CURLOPT_REFERER, _REFERER_);        //设置 referer
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);          //跟踪301
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);        //返回结果
-    $r=curl_exec($ch);
+    $r = curl_exec($ch);
     curl_close($ch);
     return $r;
 }
@@ -51,19 +52,20 @@ function curl_get_contents($url){
  * @return string       返回多少以前
  * =====================================================================================================================
  */
-function word_time($time) {
-    $time = (int) substr($time, 0, 10);
+function word_time($time)
+{
+    $time = (int)substr($time, 0, 10);
     $int = time() - $time;
     $str = '';
-    if ($int <= 2){
+    if ($int <= 2) {
         $str = sprintf('刚刚', $int);
-    }elseif ($int < 60){
+    } elseif ($int < 60) {
         $str = sprintf('%d秒前', $int);
-    }elseif ($int < 3600){
+    } elseif ($int < 3600) {
         $str = sprintf('%d分钟前', floor($int / 60));
-    }elseif ($int < 86400){
+    } elseif ($int < 86400) {
         $str = sprintf('%d小时前', floor($int / 3600));
-    }else{
+    } else {
         $str = date('Y-m-d H:i:s', $time);
     }
     return $str;
@@ -72,18 +74,19 @@ function word_time($time) {
 /**
  * ========================================【关于文件、图片，上传】=======================================================
  * ======================生成缩略图
- * @param  string  $image_path 原图path
- * @param  integer $width      缩略图的宽
- * @param  integer $height     缩略图的高
+ * @param  string $image_path 原图path
+ * @param  integer $width 缩略图的宽
+ * @param  integer $height 缩略图的高
  * @return string             缩略图path
  */
-function crop_image($image_path,$width=170,$height=170){
-    $image_path=trim($image_path,'.');
-    $min_path='.'.str_replace('.', '_'.$width.'_'.$height.'.', $image_path);
+function crop_image($image_path, $width = 170, $height = 170)
+{
+    $image_path = trim($image_path, '.');
+    $min_path = '.' . str_replace('.', '_' . $width . '_' . $height . '.', $image_path);
     $image = new \Think\Image();
     $image->open($image_path);
     // 生成一个居中裁剪为$width*$height的缩略图并保存
-    $image->thumb($width, $height,\Think\Image::IMAGE_THUMB_CENTER)->save($min_path);
+    $image->thumb($width, $height, \Think\Image::IMAGE_THUMB_CENTER)->save($min_path);
     oss_upload($min_path);
     return $min_path;
 }
@@ -93,9 +96,10 @@ function crop_image($image_path,$width=170,$height=170){
  * @param  string $file_path post中的字段
  * @return boolear           是否成功
  */
-function upload_success($file_path){
+function upload_success($file_path)
+{
     // 为兼容传进来的有数组；先转成json
-    $file_path=json_encode($file_path);
+    $file_path = json_encode($file_path);
     // 如果有undefined说明上传失败
     if (strpos($file_path, 'undefined') !== false) {
         return false;
@@ -107,33 +111,38 @@ function upload_success($file_path){
     // 否则上传成功则返回true
     return true;
 }
+
 //======================================================================================================================
 
 /**
  * ==============================================【访问方式检测】=========================================================
  * 检测是否是手机访问
  */
-function is_mobile(){
-    $useragent=isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-    $useragent_commentsblock=preg_match('|\(.*?\)|',$useragent,$matches)>0?$matches[0]:'';
-    function _is_mobile($substrs,$text){
-        foreach($substrs as $substr)
-            if(false!==strpos($text,$substr)){
+function is_mobile()
+{
+    $useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+    $useragent_commentsblock = preg_match('|\(.*?\)|', $useragent, $matches) > 0 ? $matches[0] : '';
+    function _is_mobile($substrs, $text)
+    {
+        foreach ($substrs as $substr)
+            if (false !== strpos($text, $substr)) {
                 return true;
             }
         return false;
     }
-    $mobile_os_list=array('Google Wireless Transcoder','Windows CE','WindowsCE','Symbian','Android','armv6l','armv5','Mobile','CentOS','mowser','AvantGo','Opera Mobi','J2ME/MIDP','Smartphone','Go.Web','Palm','iPAQ');
-    $mobile_token_list=array('Profile/MIDP','Configuration/CLDC-','160×160','176×220','240×240','240×320','320×240','UP.Browser','UP.Link','SymbianOS','PalmOS','PocketPC','SonyEricsson','Nokia','BlackBerry','Vodafone','BenQ','Novarra-Vision','Iris','NetFront','HTC_','Xda_','SAMSUNG-SGH','Wapaka','DoCoMo','iPhone','iPod');
 
-    $found_mobile=_is_mobile($mobile_os_list,$useragent_commentsblock) ||
-        _is_mobile($mobile_token_list,$useragent);
-    if ($found_mobile){
+    $mobile_os_list = array('Google Wireless Transcoder', 'Windows CE', 'WindowsCE', 'Symbian', 'Android', 'armv6l', 'armv5', 'Mobile', 'CentOS', 'mowser', 'AvantGo', 'Opera Mobi', 'J2ME/MIDP', 'Smartphone', 'Go.Web', 'Palm', 'iPAQ');
+    $mobile_token_list = array('Profile/MIDP', 'Configuration/CLDC-', '160×160', '176×220', '240×240', '240×320', '320×240', 'UP.Browser', 'UP.Link', 'SymbianOS', 'PalmOS', 'PocketPC', 'SonyEricsson', 'Nokia', 'BlackBerry', 'Vodafone', 'BenQ', 'Novarra-Vision', 'Iris', 'NetFront', 'HTC_', 'Xda_', 'SAMSUNG-SGH', 'Wapaka', 'DoCoMo', 'iPhone', 'iPod');
+
+    $found_mobile = _is_mobile($mobile_os_list, $useragent_commentsblock) ||
+        _is_mobile($mobile_token_list, $useragent);
+    if ($found_mobile) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
+
 //======================================================================================================================
 
 
@@ -143,7 +152,8 @@ function is_mobile(){
  * @param  string $file_path 路径
  * @return string            转换后的路径
  */
-function path_encode($file_path){
+function path_encode($file_path)
+{
     return rawurlencode(base64_encode($file_path));
 }
 
@@ -152,9 +162,11 @@ function path_encode($file_path){
  * @param  string $file_path 加密后的字符串
  * @return string            解密后的路径
  */
-function path_decode($file_path){
+function path_decode($file_path)
+{
     return base64_decode(rawurldecode($file_path));
 }
+
 //======================================================================================================================
 
 /**
@@ -209,7 +221,6 @@ function check_verify($code)
 }
 
 //======================================================================================================================
-
 
 
 /**
@@ -403,10 +414,147 @@ function http_post_data($url, $params = array())
     return array($httpCode, $response);
 }
 
-function toJson($result)
+/**
+ * ====================================融云开发环境=================================================================
+ * 根据配置项获取对应的key和secret
+ * @return array key和secret
+ */
+function get_rong_key_secret()
 {
-    //header("Content-Type:text/html; charset=utf-8");
-    return json_decode($result);
+    // 判断是需要开发环境还是生产环境的key
+    if (C('RONG_IS_DEV')) {
+        $key = C('RONG_DEV_APP_KEY');
+        $secret = C('RONG_DEV_APP_SECRET');
+    } else {
+        $key = C('RONG_PRO_APP_KEY');
+        $secret = C('RONG_PRO_APP_SECRET');
+    }
+    $data = array(
+        'key' => $key,
+        'secret' => $secret
+    );
+    return $data;
+}
+
+/**
+ * 获取融云token
+ * @param  integer $uid 用户id
+ * @return integer      token
+ */
+function get_rongcloud_token($uid)
+{
+    // 从数据库中获取token
+    $token = D('OauthUser')->getToken($uid, 1);
+    // 如果有token就返回
+    if ($token) {
+        return $token;
+    }
+    // 获取用户昵称和头像
+    $user_data = M('Users')->field('username,avatar')->getById($uid);
+    // 用户不存在
+    if (empty($user_data)) {
+        return false;
+    }
+    // 获取头像url格式
+    $avatar = get_url($user_data['avatar']);
+    // 获取key和secret
+    $key_secret = get_rong_key_secret();
+    // 实例化融云
+    $rong_cloud = new \Org\Xb\RongCloud($key_secret['key'], $key_secret['secret']);
+    // 获取token
+    $token_json = $rong_cloud->getToken($uid, $user_data['username'], $avatar);
+    $token_array = json_decode($token_json, true);
+    // 获取token失败
+    if ($token_array['code'] != 200) {
+        return false;
+    }
+    $token = $token_array['token'];
+    $data = array(
+        'uid' => $uid,
+        'type' => 1,
+        'nickname' => $user_data['username'],
+        'head_img' => $avatar,
+        'access_token' => $token
+    );
+    // 插入数据库
+    $result = D('OauthUser')->addData($data);
+    if ($result) {
+        return $token;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * 更新融云头像
+ * @param  integer $uid 用户id
+ * @return boolear      操作是否成功
+ */
+function refresh_rongcloud_token($uid)
+{
+    // 获取用户昵称和头像
+    $user_data = M('Users')->field('username,avatar')->getById($uid);
+    // 用户不存在
+    if (empty($user_data)) {
+        return false;
+    }
+    $avatar = get_url($user_data['avatar']);
+    // 获取key和secret
+    $key_secret = get_rong_key_secret();
+    // 实例化融云
+    $rong_cloud = new \Org\Xb\RongCloud($key_secret['key'], $key_secret['secret']);
+    // 更新融云用户头像
+    $result_json = $rong_cloud->userRefresh($uid, $user_data['username'], $avatar);
+    $result_array = json_decode($result_json, true);
+    if ($result_array['code'] == 200) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/** 删除所有空目录
+ * @param String $path 目录路径
+ */
+function rm_empty_dir($path){
+    if(is_dir($path) && ($handle = opendir($path))!==false){
+        while(($file=readdir($handle))!==false){// 遍历文件夹
+            if($file!='.' && $file!='..'){
+                $curfile = $path.'/'.$file;// 当前目录
+                if(is_dir($curfile)){// 目录
+                    rm_empty_dir($curfile);// 如果是目录则继续遍历
+                    if(count(scandir($curfile))==2){//目录为空,=2是因为.和..存在
+                        rmdir($curfile);// 删除空目录
+                    }
+                }
+            }
+        }
+        closedir($handle);
+    }
+}
+
+/**
+ * 获取完整网络连接
+ * @param  string $path 文件路径
+ * @return string       http连接
+ */
+function get_url($path){
+    // 如果是空；返回空
+    if (empty($path)) {
+        return '';
+    }
+    // 如果已经有http直接返回
+    if (strpos($path, 'http://')!==false) {
+        return $path;
+    }
+    // 判断是否使用了oss
+    $alioss=C('ALIOSS_CONFIG');
+    if (empty($alioss['KEY_ID'])) {
+        return 'http://'.$_SERVER['HTTP_HOST'].$path;
+    }else{
+        return 'http://'.$alioss['BUCKET'].'.'.$alioss['END_POINT'].$path;
+    }
+
 }
 
 ?>

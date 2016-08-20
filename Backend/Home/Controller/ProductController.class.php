@@ -56,6 +56,29 @@ class ProductController extends BaseController
     }
 
     /**
+     * 商品列表
+     */
+    public function productList()
+    {
+        $db = M('Product');
+        $count = $db->count();
+        $Page = new \Think\Page($count, 6);
+        $Page->setConfig('header', '共%TOTAL_ROW%条');
+        $Page->setConfig('first', '首页');
+        $Page->setConfig('last', '共%TOTAL_PAGE%页');
+        $Page->setConfig('prev', '上一页');
+        $Page->setConfig('next', '下一页');
+        $Page->setConfig('link', 'indexpagenumb');
+        $Page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%');
+        $show = $Page->show();
+        // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $lists = $db->limit($Page->firstRow . ',' . $Page->listRows)->order('pubtime DESC')->select();
+        $this->lists = $lists;
+        $this->show = $show;
+        $this->display('Product/productlist');
+    }
+
+    /**
      * 商品图片上传
      */
     public function UploadImage()
@@ -88,7 +111,75 @@ class ProductController extends BaseController
 
     }
 
-    public function test(){
+    /**
+     * 删除产品的同时删除掉对应的图片
+     */
+    public function delProduct()
+    {
+        $id = I('post.id');
+        $model = M('Product');
+        // 开启事务
+        $model->startTrans();
+        $where['id'] = ':id';
+        $result = $model->where($where)->bind(':id', $id, \PDO::PARAM_INT)->delete();
+        if ($result == false) {
+            $response = ['errcode' => 500, 'errmsg' => 'Product is not exists', 'dataList' => $result];
+            $this->ajaxReturn($response, 'JSON');
+        }
+        // 遍历所有产品的图片，进行物理删除
+        $where2['pid'] = ':pid';
+        $thumbs = M('File')->where($where2)->bind(':pid', $id, \PDO::PARAM_INT)->select();
+
+        if ($thumbs && is_array($thumbs)) {
+            foreach ($thumbs as $thumb) {
+                if (file_exists(C('UPLOAD_PATH') . $thumb['path'])) {
+                    if (!unlink(C('UPLOAD_PATH') . $thumb['path'])) {
+                        $response = ['errcode' => 500, 'errmsg' => 'unlink path fail'];
+                        $this->ajaxReturn($response, 'JSON');
+                    }
+                }
+                if (file_exists(C('UPLOAD_PATH') . $thumb['min_path'])) {
+                    if (!unlink(C('UPLOAD_PATH') . $thumb['min_path'])) {
+                        $response = ['errcode' => 500, 'errmsg' => 'unlink min_path fail'];
+                        $this->ajaxReturn($response, 'JSON');
+                    }
+                }
+                //如果目录文件为空，则删除目录文件，也就是个目录下面的最后一个文件一起删除的
+                //dirname返回路径的目录部分,
+                if (is_dir(dirname(C('UPLOAD_PATH') . $thumb['path']))) {
+                    //如果目录文件为空，则删除目录文件
+                    rmdir(dirname(C('UPLOAD_PATH') . $thumb['path']));
+                }
+            }
+        }
+
+        //同时删除文件记录表中数据file表中的数据
+        $result2 = M('File')->where($where2)->bind(':pid', $id, \PDO::PARAM_INT)->delete();
+        if ($thumbs && !$result2) {
+            $response = ['errcode' => 500, 'errmsg' => 'File fail'];
+            $this->ajaxReturn($response, 'JSON');
+        }
+
+        if ($thumbs) {
+            if ($result && $result2) {
+                $model->commit();
+                $response = array('errcode' => 200, 'errmsg' => '恭喜你,删除成功!');
+                $this->ajaxReturn($response, 'JSON');
+            }
+        } else {
+            if ($result) {
+                $model->commit();
+                $response = array('errcode' => 200, 'errmsg' => '恭喜你,删除成功!');
+                $this->ajaxReturn($response, 'JSON');
+            }
+        }
+        $model->rollback();
+        $response = ['errcode' => 500, 'errmsg' => 'File and Prodect delete', 'dataList' => $result];
+        $this->ajaxReturn($response, 'JSON');
+    }
+
+    public function test()
+    {
         $model = M('Product');
         //生成一定数量的随机数，并且不重复
         p(word_time(time()));

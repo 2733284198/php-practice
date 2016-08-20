@@ -271,10 +271,16 @@ class FileController extends BaseController
     /**
      * 头像上传
      */
-    Public function uploadFace()
+    Public function uploadAvatar()
     {
         if (!IS_POST) E('页面不存在');
-        $result = $this->imageUpload('Face', TRUE, 100, 100);
+        // 接受URL地址传递的参数
+        $pid = I('get.pid');
+        //接受 formData 动态传值
+        $sessionId = $_POST['session_id'];
+        $result = $this->imageUpload('Avatar', TRUE, 100, 100);
+        $result['pid'] = $pid;
+        $result['sessionId'] = $sessionId;
         $this->ajaxReturn(json_encode($result), 'JSON');
     }
 

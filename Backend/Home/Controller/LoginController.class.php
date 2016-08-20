@@ -77,6 +77,7 @@ class LoginController extends Controller
             // 获取$_SESSION['user_id'] 如果不存在则默认为0
             I('session.user_id',0);
             session('username', $result['username']);
+            session('user_id', $result['user_id']);
             return $this->redirect('Index/index');
         } else {
             return $this->error('2222222222222');
