@@ -113,6 +113,13 @@ class ProductController extends BaseController
 
     /**
      * 删除产品的同时删除掉对应的图片
+     * 【1】开启事务
+     * 【2】查看该物品是否存在
+     * 【3】删除商品记录
+     * 【3】删除商品图片【物理删除】,如果有空目录会一并删除
+     * 【4】删除图片记录信息表
+     * 【5】判断物品删除和图片删除是否都删除成功 【TURE 提交事务】【FALE 回滚事务】
+     * 【6】JSON返回Client
      */
     public function delProduct()
     {
@@ -121,9 +128,14 @@ class ProductController extends BaseController
         // 开启事务
         $model->startTrans();
         $where['id'] = ':id';
+        $find = $model->where($where)->bind(':id', $id, \PDO::PARAM_INT)->find();
+        if ($find == false) {
+            $response = ['errcode' => 500, 'errmsg' => 'Product is not exists', 'dataList' => $find];
+            $this->ajaxReturn($response, 'JSON');
+        }
         $result = $model->where($where)->bind(':id', $id, \PDO::PARAM_INT)->delete();
         if ($result == false) {
-            $response = ['errcode' => 500, 'errmsg' => 'Product is not exists', 'dataList' => $result];
+            $response = ['errcode' => 500, 'errmsg' => 'Product delete fail', 'dataList' => $result];
             $this->ajaxReturn($response, 'JSON');
         }
         // 遍历所有产品的图片，进行物理删除
@@ -149,6 +161,10 @@ class ProductController extends BaseController
                 if (is_dir(dirname(C('UPLOAD_PATH') . $thumb['path']))) {
                     //如果目录文件为空，则删除目录文件
                     rmdir(dirname(C('UPLOAD_PATH') . $thumb['path']));
+                    /**
+                     * rmdir() 删除空白目录
+                     * 注意：这里删除的对应的网站根目录。和网站域名是没有关系的,也就是完整路径哦
+                     */
                 }
             }
         }
