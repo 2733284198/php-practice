@@ -87,15 +87,17 @@ class FileController extends BaseController
         $this->display();
     }
 
+
     /**
      * 图片上传处理,包括缩略图的生成
      * @param [String] $path [保存文件夹名称，默认为Images]
-     * @param [String] $thumb [是否生成缩略图,默认False不生成缩略图]
+     * @param [Bool] $thumb [是否生成缩略图,默认False不生成缩略图]
      * @param [String] $thumbWidth [缩略图宽度]
      * @param [String] $thumbHeight [缩略图高度]
+     * @param [Bool] $unlink [是否删除原图,默认False不删除原图]
      * @return [Array] [图片上传信息]
      */
-    public function imageUpload($path = 'Images', $thumb = FALSE, $thumbWidth = 100, $thumbHeight = 100)
+    public function imageUpload($path = 'Images', $thumb = FALSE, $thumbWidth = 100, $thumbHeight = 100,$unlink = FALSE)
     {
         $typeCode = $_POST['typeCode'];
         // 检查配置目录是否存在，如果不存在，则创建一个
@@ -135,9 +137,12 @@ class FileController extends BaseController
                 //使用thumb方法生成缩略图,IMAGE_THUMB_FILLED    =   2 ; 缩放后填充类型
                 $image->thumb($thumbWidth, $thumbHeight, \Think\Image::IMAGE_THUMB_SCALE);
                 $image->save($savePath);
+                if($unlink) @unlink(C('UPLOAD_PATH') .$file['savepath'] . $file['savename']);
+
                 // 返回文件信息
                 return array(
                     'status' => 1,
+                    'unlink' => $unlink,
                     'savepath' => $file['savepath'],
                     'savename' => $file['savename'],
                     'width' => $width,

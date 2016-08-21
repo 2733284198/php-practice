@@ -24,6 +24,7 @@ class ProductController extends BaseController
             $data['mPrice'] = I('post.mPrice');
             $data['cId'] = I('post.cid');
             $data['iPrice'] = I('post.file-id');
+            $data['pubTime'] = date('Y-m-d H:i:s',time());
             $fileId = I('post.file-id');
             $model = M('Product');
             if (empty($fileId)) {
@@ -90,7 +91,7 @@ class ProductController extends BaseController
 
         //通过 A 方法跨模块调用操作,以下为实例化一个Home模块的File控制器，其实也就是实例化这个控制器了
         $file = A('Home/File');
-        $result = $file->imageUpload('Product', TRUE, 100, 100);
+        $result = $file->imageUpload('Product', TRUE, 100, 100, TRUE);
         if (!$result) {
             $result1['status'] = '0';
             $result1['list'] = null;
@@ -100,6 +101,8 @@ class ProductController extends BaseController
         $data['pid'] = $pid;
         $data['min_path'] = $result['mini_pic'];
         $data['path'] = $result['pic_path'];
+        if($result['unlink']) $data['path'] = $result['mini_pic'];
+
         $insertId = $model->add($data);
         if (!$insertId) {
             $result1['status'] = '0';
@@ -127,13 +130,13 @@ class ProductController extends BaseController
         $model = M('Product');
         // 开启事务
         $model->startTrans();
-        $where['id'] = ':id';
-        $find = $model->where($where)->bind(':id', $id, \PDO::PARAM_INT)->find();
+        //$where['id'] = ':id';
+        $find = $model->where(['id'=>':id'])->bind(':id', $id, \PDO::PARAM_INT)->find();
         if ($find == false) {
             $response = ['errcode' => 500, 'errmsg' => 'Product is not exists', 'dataList' => $find];
             $this->ajaxReturn($response, 'JSON');
         }
-        $result = $model->where($where)->bind(':id', $id, \PDO::PARAM_INT)->delete();
+        $result = $model->where(['id'=>':id'])->bind(':id', $id, \PDO::PARAM_INT)->delete();
         if ($result == false) {
             $response = ['errcode' => 500, 'errmsg' => 'Product delete fail', 'dataList' => $result];
             $this->ajaxReturn($response, 'JSON');
