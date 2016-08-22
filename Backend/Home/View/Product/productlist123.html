@@ -1,0 +1,141 @@
+<extend name="Common:common"/>
+
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('Product/index')}" class="btn btn-xs btn-primary">添加新产品</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <table class="table table-border table-bordered">
+                    <thead>
+                    <tr>
+                        <th colspan="7" scope="col">产品列表
+
+                        </th>
+                    </tr>
+                    <tr class="text-c">
+                        <th>#ID</th>
+                        <th>名称</th>
+                        <th>编号</th>
+                        <th>编号</th>
+                        <th>价格</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name='lists' id='vo'>
+                        <tr class="text-c">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.pname}</td>
+                            <td>{$vo.psn}</td>
+                            <td><span class="label label-lg label-pink arrowed-right">{$vo.psn}</span></td>
+                            <td>{$vo.mprice}</td>
+                            <td>{$vo.pubtime}</td>
+                            <td>
+
+                                <a href="{:U('AdminRole/addnode',array('rid' => $vo['id']))}" class="btn btn-xs btn-primary">
+                                    <span><i class="icon-edit bigger-120"></i></span>&nbsp;编辑</a>
+                                <if condition="$vo.status eq 1">
+                                    <button class="btn btn-xs btn-yellow set" value="{$vo.id}">禁用</button>
+                                    <else/>
+                                    <button class="btn btn-xs btn-warning set" value="{$vo.id}">启用</button>
+                                </if>
+                                <button class="btn btn-xs btn-danger del" value="{$vo.id}">
+                                    <span><i class="icon-trash bigger-120"></i></span>&nbsp;删除</button>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+                <div class="page1">{$show}</div>
+            </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <link rel="stylesheet" href="__PUBLIC__/Common/css/page.css" />
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/Product/";
+        jQuery(function($){
+            //delete AdminUser
+            $(".del").bind('click',function(){
+                var $actions = confirm('确认删除该产品吗？删除后不可恢复！');
+                var $id = $(this).attr('value');
+                var $url = $URL+'delProduct';
+
+                if(!$actions){
+                    return false;
+                }
+                $.ajax({
+                    url: $url,
+                    type: 'post',
+                    dataType: 'json',
+                    data:{'id':$id},
+                    success:function(response){
+                        console.table(response);
+                        if(response.errcode == 200 ){
+                            alert(response.errmsg);
+                            window.location.reload();
+                        }else{
+                            alert(response.errmsg);
+                        }
+
+                    },
+                    error:function(){
+                        alert('删除失败13123');
+                    }
+                });
+            });
+            //status set
+            $(".set").bind('click',function(){
+                var $id = $(this).attr('value');
+                $.ajax({
+                    url: $URL+'setStatus',
+                    type: 'post',
+                    dataType: 'Json',
+                    data:{rid:$id},
+                    success:function($result){
+                        if($result){
+                            alert('设置成功');
+                            window.location.reload();
+                        }else{
+                            alert('设置失败');
+                        }
+                    },
+                    error:function(){
+                        alert('设置失败');
+                    }
+                });
+            });
+        });
+    </script>
+</block>
+
+
