@@ -109,4 +109,5 @@ return array(
     'RONGLIAN_APPID'         => '', //容联云通讯 应用Id appid
     'RONGLIAN_TEMPLATE_ID'   => '', //容联云通讯 模板Id
 
+
 );
