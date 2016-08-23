@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<include file="Common:header"/>
+
+<body>
+<!-- HEAD Start-->
+<include file="Common:head"/>
+<!-- HEAD End-->
+
+<!--SIDEBAR Start-->
+<include file='Common:sidebar'/>
+<!--SIDEBAR End-->
+
+<!-- CONTENT Start-->
+<div id="content" class="white">
+    <h1>
+        <img src="__ROOT__/Application/Common/Public/img/icons/computer-on.png" alt=""/> 个人中心
+    </h1>
+    <div class="bloc">
+        <div class="title">个人中心密码修改</div>
+        <form action="{:U('Member/updatePwd')}" enctype="multipart/form-data" method="post" id="publishfrom">
+            <div class="content">
+                <div class="input">
+                    <label>用户名</label>
+                    <input type="text" id="username" name="username" value="<?php echo $username?>"
+                           disabled="disabled"/>
+                </div>
+                <div class="input">
+                    <label>旧密码</label>
+                    <input type="password" name="oldpassword" id="oldpassword"/>
+
+                </div>
+                <div class="input">
+                    <label>新密码</label>
+                    <input type="password" name="password" id="password"/>
+                </div>
+                <div class="input">
+                    <label>确认新密码</label>
+                    <input type="password" name="confirm_password" id="confirm_password"/>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="确认"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- CONTENT End-->
+
+</body>
+</html>
+<script type="text/javascript" src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js">
+</script>
+<script type="text/javascript">
+    var AJAXURL = "__APP__/Home/Member/";
+    $(function () {
+        $("#publishfrom").validate({
+            rules: {
+                'oldpassword': {
+                    required: true,
+                    minlength: 5,
+                    remote: {
+                        url: AJAXURL + 'checkOldPwd',
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            username: function () {
+                                return $('#username').val();
+                            },
+                            'oldpassword': function () {
+                                return $("#oldpassword").val();
+                            }
+                        }
+                    }
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#password"
+                },
+            },
+            messages: {
+                'oldpassword': {
+                    required: '旧密码不能为空',
+                    minlength: '旧密码不能小于5个字符',
+                    remote: "旧密码错误"
+                },
+                password: {
+                    required: "请输入新密码",
+                    minlength: "密码长度不能小于 5 个字母"
+                },
+                confirm_password: {
+                    required: "请输入新密码",
+                    minlength: "密码长度不能小于 5 个字母",
+                    equalTo: "两次密码输入不一致"
+                },
+            }
+
+        });
+
+
+    });
+
+    // 是否确认删除操作
+    function deleteChannel() {
+        $("#promptModal").modal("hide");
+        if (promptId != null) {
+            $.post("/aclresource/deleted", {arId: promptId}, function (data) {
+                if (data.errcode == 500) {
+                    alert(data.errmsg)
+                } else {
+                    $("#aclresource_" + promptId).remove();
+                }
+            }).fail(function (e) {
+                alert("删除失败: " + e);
+            });
+        }
+    }
+    /**
+     * 一个带警告的删除操作
+     * @param $id
+     */
+    function lessonChannelDel($id) {
+        var $actions = confirm('确定要从当前课程表中移除该课程吗？');
+        var url = '/courses/lessonChannelDel';
+        var data = {'id': $id};
+        var success = function (response) {
+            alert(response.errmsg);
+            window.location.reload();
+            console.table(response);
+        };
+        if ($actions) {
+            $.post(url, data, success, 'json');
+        }
+    }
+
+    $(".exit").bind('click',function(){
+        return confirm('确定要退出吗？');
+    });
+
+</script>
