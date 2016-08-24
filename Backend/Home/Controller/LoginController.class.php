@@ -50,34 +50,52 @@ class LoginController extends Controller
     public function checkLogin()
     {
         if (!IS_POST) $this->error('非法访问');
+
         // 采用htmlspecialchars方法对$_GET['name'] 进行过滤，如果不存在则返回空字符串
         $username = I('post.username', '', 'htmlspecialchars');
-
         // 采用正则表达式进行变量过滤,如果正则匹配不通过的话，则返回默认值。
-        I('get.name','','/^[A-Za-z]+$/');
-
+        //I('get.name','','/^[A-Za-z]+$/');
         $password = md5(I('post.password'));
 
+        $user = D('AdminUser');
         $where = array('username' => $username);
-        $user = M('User');
-        $result = $user->where($where)->find();
+        $fields = array('id','password','username','status','expire'); // 之查找需要的字段
+        $result = $user->where($where)->field($fields)->find();
+
+
         if (!$result || $password != $result['password']) {
             return $this->error('账号或密码错误');
         }
 
         if ($result['status'] == 0) return $this->error('账号不存在或者已经被禁用');
-        //保存用户登录信息
+
+        // 是否记住我的登录,设置一个Cookie，写在客户端
+        if(isset($_POST['remember'])){
+            $value = $result['id'].'|'.get_client_ip().'|'.$result['username'];
+            $value = encrytion($value,1);
+            @setcookie('remember',$value,C('AUTO_LOGIN_LIFETIME'),'/');
+        }
+
+        // 每天登录增加经验值
+        $today = strtotime(date('Y-m-d')); // 获取今天0时0分0秒的时间
+        // 如果上次的登录时间小于今天的时间，则增加经验值
+        $where2 = array('id' => $result['id']);
+        if($result['logintime'] < $today){
+            $user->where($where2)->setInc('expire',10);
+        }
+
+        //更新登录户登录信息
         $data_arr = array(
-            'user_id' => $result['user_id'],
+            'id' => $result['id'],
             'logintime' => time(),
             'loginip' => get_client_ip(),
         );
         if ($user->save($data_arr))
         {
             // 获取$_SESSION['user_id'] 如果不存在则默认为0
-            I('session.user_id',0);
+            I('session.uid',0);
             session('username', $result['username']);
-            session('user_id', $result['user_id']);
+            session('uid', $result['id']);
             return $this->redirect('Index/index');
         } else {
             return $this->error('2222222222222');

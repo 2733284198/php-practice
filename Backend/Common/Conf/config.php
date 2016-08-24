@@ -94,14 +94,5 @@ return array(
     'RONGLIAN_APPID'         => '', //容联云通讯 应用Id appid
     'RONGLIAN_TEMPLATE_ID'   => '', //容联云通讯 模板Id
 
-    //***********************************网站配置信息**********************************
-    'WEBNAME' => '云系统管理平台',
-    'KEYWORDS' => '云系统管理平台 -  云系统管理平台',
-    'DISCRIPTION' => '云系统管理平台社区',
-    'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
-    'RECORD' => '京ICP备10027771号-1',
-    'REGIS_ON' => '1',
-    'WEB_STATE' => '1',
-    //***********************************融云开发设置**********************************
 
 );
