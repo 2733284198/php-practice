@@ -29,9 +29,9 @@ return array(
     ),
 
     //***********************************页面设置**************************************
-    'TMPL_EXCEPTION_FILE'    => APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',
-    'TMPL_ACTION_ERROR'      => TMPL_PATH.'/Public/dispatch_jump.tpl', // 默认错误跳转对应的模板文件
-    'TMPL_ACTION_SUCCESS'    => TMPL_PATH.'/Public/dispatch_jump.tpl', // 默认成功跳转对应的模板文件
+    //'TMPL_EXCEPTION_FILE'    => APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',
+    //'TMPL_ACTION_ERROR'      => TMPL_PATH.'/Public/dispatch_jump.tpl', // 默认错误跳转对应的模板文件
+    //'TMPL_ACTION_SUCCESS'    => TMPL_PATH.'/Public/dispatch_jump.tpl', // 默认成功跳转对应的模板文件
 
     //*************************************显示页面Trace信息***************************
     'SHOW_PAGE_TRACE' =>true,
@@ -66,7 +66,7 @@ return array(
 
 
     //错误页面
-    'TMPL_ACTION_FILE' => __ROOT__.'/Public/error/exception.tpl',
+    //'TMPL_ACTION_FILE' => __ROOT__.'/Public/error/exception.tpl',
 
 
 
@@ -95,15 +95,13 @@ return array(
     'RONGLIAN_TEMPLATE_ID'   => '', //容联云通讯 模板Id
 
     //***********************************网站配置信息**********************************
-    'WEB_CONFIG' => array(
-        'WEBNAME' => '云系统管理平台',
-        'KEYWORDS' => '云系统管理平台 -  云系统管理平台',
-        'DISCRIPTION' => '云系统管理平台社区',
-        'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
-        'RECORD' => '京ICP备10027771号-1',
-        'REGIS_ON' => '1',
-        'WEB_STATE' => '1',
-    ),
+    'WEBNAME' => '云系统管理平台',
+    'KEYWORDS' => '云系统管理平台 -  云系统管理平台',
+    'DISCRIPTION' => '云系统管理平台社区',
+    'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
+    'RECORD' => '京ICP备10027771号-1',
+    'REGIS_ON' => '1',
+    'WEB_STATE' => '1',
     //***********************************融云开发设置**********************************
 
 );

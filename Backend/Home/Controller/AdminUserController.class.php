@@ -73,15 +73,20 @@ class AdminUserController extends BaseController
 			$data['logintime'] = time();
 			$data['loginip'] = get_client_ip();
 			$data['status'] = 1;
-	
-			$uid = M('AdminUser')->add($data); //获取用户id
+
+            $model = D('AdminUser');
+	        if(!$model->create()){
+                // 如果创建失败 表示验证没有通过 输出错误提示信息
+                $this->error($model->getError());
+            }
+			$uid = $model->add($data); //获取用户id
 			if(!$uid){
 				return $this->success('添加平台用户是失败',U('AdminUser/index'));
 			}
 			//用户添加成功后，给用户角色表添加数据
 			$role['role_id'] = I('role_id');
 			$role['user_id'] = $uid;
-            if(M('AdminRoleUser')->add($role)){
+            if(D('AdminRoleUser')->add($role)){
                 return $this->success('添加平台用户成功',U('AdminUser/index'));
             }else{
                 return $this->error('添加平台用户失败',U('AdminUser/index'));

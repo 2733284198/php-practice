@@ -17,7 +17,7 @@
   'DB_RW_SEPARATE' => false,
   'DB_MASTER_NUM' => 1,
   'DB_SLAVE_NO' => '',
-  'WEBNAME' => '云系统管理平台',
+  'WEBNAME' => '云系统管理平台123',
   'KEYWRODS' => '云系统管理平台',
   'DISCRIPTION' => '云系统管理平台社区',
   'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
