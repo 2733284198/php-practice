@@ -1,13 +1,13 @@
 <?php
 /**
  * UserModel.class.php
+ * Home\Logic\UserLogic 用于定义用户相关的业务逻辑
  */
-namespace Home\Model;
+namespace Home\Logic;
 
 use Think\Model;
-use Think\Model\RelationModel;
 
-class AdminUserModel extends RelationModel
+class AdminUserLogic extends Model
 {
     /**
      * 服务器端自动验证

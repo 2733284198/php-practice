@@ -77,8 +77,14 @@ class DeBugController extends Controller
     }
 
     /**
-     * 高性能的PHP日志系统—SeasLog
+     * ThinkPHP支持模型的分层 ，除了Model层之外，我们可以项目的需要设计和创建其他的模型层
+     * 逻辑层：Home\Logic\UserLogic 用于定义用户相关的业务逻辑
      */
+    public function instanceLogicModel()
+    {
+        //实例化方法UserLogic模型
+        $Logic = D('UserLogic','Logic');
+    }
 
 
 }

@@ -1,13 +1,12 @@
 <?php
 /**
- * UserModel.class.php
+ * 服务层：Home\Service\UserService 用于定义用户相关的服务接口等
  */
-namespace Home\Model;
+namespace Home\Service;
 
 use Think\Model;
-use Think\Model\RelationModel;
 
-class AdminUserModel extends RelationModel
+class AdminUserModel extends Model
 {
     /**
      * 服务器端自动验证
