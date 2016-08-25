@@ -70,13 +70,17 @@
                                         等级:&nbsp;<span class="label label-success arrowed">L{$user.expire|exp_to_level}</span>
                                     </li>
                                     <li>
+                                        <i class="icon-group blue"></i>
+                                        积分:&nbsp;{$user.expire}
+                                    </li>
+                                    <li>
                                         <i class="icon-calendar blue"></i>
-                                        登录时间:&nbsp;{$user.logintime|time_format=###}
+                                        最后登录:&nbsp;{$user.logintime|time_format=###}
                                     </li>
 
                                     <li>
                                         <i class="icon-desktop blue"></i>
-                                        ip地址:{$user.loginip}
+                                        最近登录IP地址:{$user.loginip}
                                     </li>
                                 </ul>
                             </div>
