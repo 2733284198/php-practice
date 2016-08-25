@@ -572,4 +572,39 @@ function encrytion($value, $type=0) {
     return $value ^ $key;
 }
 
+/** ***********************************格式化字符串时间 **********************************
+ *
+ * @param  [type] $time [description]
+ * @return [type]       [description]
+ */
+function time_format ($time) {
+    $now = time();
+    $today = strtotime(date('y-m-d'));
+    $yesterday = strtotime('-1 day', $today);
+
+    $diff = $now - $time;
+
+    $str = '';
+    switch (true) {
+        case $diff < 60 :
+            $str = '刚刚';
+            break;
+        case $diff < 3600 :
+            $str = floor($diff / 60) . '分钟前';
+            break;
+        case $diff < (3600 * 8) :
+            $str = floor($diff / 3600) . '小时前';
+            break;
+        case $time > $today :
+            $str = '今天' . date('H:i', $time);
+            break;
+        case $time > $yesterday :
+            $str = '昨天' . date('H:i', $time);
+            break;
+        default :
+            $str = date('Y-m-d H:i', $time);
+    }
+    return $str;
+}
+
 ?>
