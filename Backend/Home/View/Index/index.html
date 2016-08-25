@@ -55,6 +55,8 @@
                                 欢迎你的到来
                                 <i class="icon-wrench icon-animated-wrench bigger-125"></i>
                                 <strong>{$user.username}</strong>
+                                <span class="badge badge-info"></span>
+
                             </h3>
 
                             <div class="space"></div>
@@ -64,12 +66,16 @@
 
                                 <ul class="list-unstyled spaced inline bigger-110 margin-15">
                                     <li>
-                                        <i class="icon-hand-right blue"></i>
-                                        登录时间:{$user.logintime|time_format=###}
+                                        <i class="icon-group blue"></i>
+                                        等级:&nbsp;<span class="label label-success arrowed">L{$user.expire|exp_to_level}</span>
+                                    </li>
+                                    <li>
+                                        <i class="icon-calendar blue"></i>
+                                        登录时间:&nbsp;{$user.logintime|time_format=###}
                                     </li>
 
                                     <li>
-                                        <i class="icon-hand-right blue"></i>
+                                        <i class="icon-desktop blue"></i>
                                         ip地址:{$user.loginip}
                                     </li>
                                 </ul>
