@@ -516,14 +516,15 @@ function refresh_rongcloud_token($uid)
 /** 删除所有空目录
  * @param String $path 目录路径
  */
-function rm_empty_dir($path){
-    if(is_dir($path) && ($handle = opendir($path))!==false){
-        while(($file=readdir($handle))!==false){// 遍历文件夹
-            if($file!='.' && $file!='..'){
-                $curfile = $path.'/'.$file;// 当前目录
-                if(is_dir($curfile)){// 目录
+function rm_empty_dir($path)
+{
+    if (is_dir($path) && ($handle = opendir($path)) !== false) {
+        while (($file = readdir($handle)) !== false) {// 遍历文件夹
+            if ($file != '.' && $file != '..') {
+                $curfile = $path . '/' . $file;// 当前目录
+                if (is_dir($curfile)) {// 目录
                     rm_empty_dir($curfile);// 如果是目录则继续遍历
-                    if(count(scandir($curfile))==2){//目录为空,=2是因为.和..存在
+                    if (count(scandir($curfile)) == 2) {//目录为空,=2是因为.和..存在
                         rmdir($curfile);// 删除空目录
                     }
                 }
@@ -534,25 +535,54 @@ function rm_empty_dir($path){
 }
 
 /**
+ * 删除空目录
+ * @param $dir
+ * @return bool
+ */
+function rmdirs($dir)
+{
+    $dh = opendir($dir);
+    while ($file = readdir($dh)) {
+        if ($file != "." && $file != "..") {
+            $fullpath = $dir . "/" . $file;
+            if (!is_dir($fullpath)) {
+                @unlink($fullpath);
+            } else {
+                $this->rmdirs($fullpath);
+            }
+        }
+    }
+
+    closedir($dh);
+    //删除当前文件夹：
+    if (rmdir($dir)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
  * 获取完整网络连接
  * @param  string $path 文件路径
  * @return string       http连接
  */
-function get_url($path){
+function get_url($path)
+{
     // 如果是空；返回空
     if (empty($path)) {
         return '';
     }
     // 如果已经有http直接返回
-    if (strpos($path, 'http://')!==false) {
+    if (strpos($path, 'http://') !== false) {
         return $path;
     }
     // 判断是否使用了oss
-    $alioss=C('ALIOSS_CONFIG');
+    $alioss = C('ALIOSS_CONFIG');
     if (empty($alioss['KEY_ID'])) {
-        return 'http://'.$_SERVER['HTTP_HOST'].$path;
-    }else{
-        return 'http://'.$alioss['BUCKET'].'.'.$alioss['END_POINT'].$path;
+        return 'http://' . $_SERVER['HTTP_HOST'] . $path;
+    } else {
+        return 'http://' . $alioss['BUCKET'] . '.' . $alioss['END_POINT'] . $path;
     }
 
 }

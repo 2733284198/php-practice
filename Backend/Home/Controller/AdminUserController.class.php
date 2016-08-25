@@ -27,7 +27,7 @@ class AdminUserController extends BaseController
         } else {
             $model = D('AdminUser');
             $count = $model->count();
-            $Page = new Page($count, 10);
+            $Page = new Page($count, 20);
             $Page->setConfig('header', '共%TOTAL_ROW%条');
             $Page->setConfig('first', '首页');
             $Page->setConfig('last', '共%TOTAL_PAGE%页');

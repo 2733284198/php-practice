@@ -249,6 +249,8 @@ class FileController extends BaseController
         }
     }
 
+
+
     /**
      * uploadify 文件上传,通过调用imageUpload（）方法
      */

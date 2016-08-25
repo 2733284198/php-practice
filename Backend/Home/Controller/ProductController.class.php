@@ -107,7 +107,7 @@ class ProductController extends BaseController
         if (!$insertId) {
             $result1['status'] = '0';
             $result1['list'] = null;
-            $this->ajaxReturn($result1, 'JSON');
+            $this->ajaxReturn(json_encode($result1), 'JSON');
         }
         $result['fileId'] = $insertId;
         $this->ajaxReturn(json_encode($result), 'JSON');
