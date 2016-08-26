@@ -45,32 +45,42 @@
                             <h1 class="grey lighter smaller">
 											<span class="blue bigger-125">
 												<i class="icon-random"></i>
-												500
+												当前用户
 											</span>
-                                Something Went Wrong
+                                详细信息
                             </h1>
 
                             <hr/>
                             <h3 class="lighter smaller">
-                                But we are working
+                                欢迎你的到来
                                 <i class="icon-wrench icon-animated-wrench bigger-125"></i>
-                                on it!
+                                <strong>{$user.username}</strong>
+                                <span class="badge badge-info"></span>
+
                             </h3>
 
                             <div class="space"></div>
 
                             <div>
-                                <h4 class="lighter smaller">Meanwhile, try one of the following:</h4>
+                                <h4 class="lighter smaller">登录信息记录:</h4>
 
                                 <ul class="list-unstyled spaced inline bigger-110 margin-15">
                                     <li>
-                                        <i class="icon-hand-right blue"></i>
-                                        Read the faq
+                                        <i class="icon-group blue"></i>
+                                        等级:&nbsp;<span class="label label-success arrowed">L{$user.expire|exp_to_level}</span>
+                                    </li>
+                                    <li>
+                                        <i class="icon-group blue"></i>
+                                        积分:&nbsp;{$user.expire}
+                                    </li>
+                                    <li>
+                                        <i class="icon-calendar blue"></i>
+                                        最后登录:&nbsp;{$user.logintime|time_format=###}
                                     </li>
 
                                     <li>
-                                        <i class="icon-hand-right blue"></i>
-                                        Give us more info on how this specific error occurred!
+                                        <i class="icon-desktop blue"></i>
+                                        最近登录IP地址:{$user.loginip}
                                     </li>
                                 </ul>
                             </div>
@@ -78,17 +88,6 @@
                             <hr/>
                             <div class="space"></div>
 
-                            <div class="center">
-                                <a href="#" class="btn btn-grey">
-                                    <i class="icon-arrow-left"></i>
-                                    Go Back
-                                </a>
-
-                                <a href="#" class="btn btn-primary">
-                                    <i class="icon-dashboard"></i>
-                                    Dashboard
-                                </a>
-                            </div>
                         </div>
                     </div>
 
