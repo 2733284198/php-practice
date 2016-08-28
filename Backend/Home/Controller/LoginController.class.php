@@ -77,7 +77,7 @@ class LoginController extends Controller
         }
 
         // 每天登录增加经验值
-        $today = strtotime(date('Y-m-d H:i:s')); // 获取今天0时0分0秒的时间
+        $today = strtotime(date('Y-m-d')); // 获取今天0时0分0秒的时间
         // 如果上次的登录时间小于今天的时间，则增加经验值
         $where2 = array('id' => $result['id']);
         if($result['logintime'] < $today){

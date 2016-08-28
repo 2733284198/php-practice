@@ -607,6 +607,7 @@ function encrytion($value, $type=0) {
  * @param  [type] $time [description]
  * @return [type]       [description]
  */
+
 function time_format ($time) {
     $now = time();
     $today = strtotime(date('y-m-d'));
