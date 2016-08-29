@@ -11,7 +11,7 @@
 namespace Org\Util;
 
 
-class Redis
+class RedisTest
 {
     const HOST = "218.244.141.124";
 
@@ -23,9 +23,16 @@ class Redis
 
     const DB = 10;
 
-    protected static $instance;
+    /**
+     * 类对象实例数组,共有静态变量
+     * @var null
+     */
+    protected static $instance = null;
 
-
+    /**
+     * 每次实例的句柄,保护变量
+     * @var \Redis
+     */
     private $_redis;
 
     /**
@@ -35,9 +42,9 @@ class Redis
     private function __construct()
     {
         $this->_redis = new \Redis();
-        $this->_redis->pconnect(self::HOST, self::PORT, self::TIMEOUT);
-        $this->_redis->auth(self::PASSWORD);
-        $this->_redis->select(self::DB);
+        $this->_redis->pconnect(C('MASTER.HOST'), C('MASTER.PORT'), C('MASTER.TIMEOUT'));
+        $this->_redis->auth(C('MASTER.AUTH'));
+        $this->_redis->select(C('MASTER.DB'));
     }
 
     /**
@@ -49,7 +56,7 @@ class Redis
     }
 
     /**
-     *  返回一个
+     *  单例方法,用于访问实例的公共的静态方法
      * @return \Redis
      * @static
      */
@@ -65,9 +72,9 @@ class Redis
      * 获取redis的连接实例
      * @return \Redis
      */
-    public function getRedisConn()
+    public function getRedis()
     {
-        return $this->redis;
+        return $this->_redis;
     }
 
     /**

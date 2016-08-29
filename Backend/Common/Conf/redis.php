@@ -7,19 +7,45 @@
  */
 //*************************************Redis Master 设置*************************************
 return array(
-    'REDIS_MASTER' => array(
-        'host' => '127.0.0.1',
-        'port' => 6379,
-        'auth' => 'mastertestpassword',
+    'MASTER' => array(
+        'HOST' => '218.244.141.124',
+        'PORT' => 63579,
+        'TIMEOUT' => 0,
+        'AUTH' => 'amaitestredis',
+        'DB' => 10,
     ),
-    'REDIS_SLAVE1' => array(
-        'host' => '127.0.0.1',
-        'port' => 6000,
-        'auth' => '',
+    'SLAVE1' => array(
+        'HOST' => '127.0.0.1',
+        'PORT' => 63579,
+        'TIMEOUT' => 0,
+        'AUTH' => 'amaitestredis',
+        'DB' => 10,
     ),
-    'REDIS_SLAVE2' => array(
-        'host' => '127.0.0.1',
-        'port' => 6001,
-        'auth' => '',
+    'SLAVE2' => array(
+        'HOST' => '127.0.0.1',
+        'PORT' => 63579,
+        'TIMEOUT' => 0,
+        'AUTH' => 'amaitestredis',
+        'DB' => 10,
     ),
+
+    //*************************************TP 自带缓存 Redis 设置*************************************
+    'REDIS_HOST' =>'218.244.141.124',
+    'REDIS_PORT' => 63579,
+    'REDIS_TIMEOUT' => 0,
+    'REDIS_PREFIX' =>'redis_',
+    'REDIS_AUTH'   =>'amaitestredis',
+    'REDIS_DB'   =>10,
+
+    //*************************************Redis 缓存以及主从复制 设置*************************************
+    //默认第一个是master，其余的是slave
+    'DATA_CACHE_TYPE' =>'Redis',
+    'DATA_REDIS_HOST' =>'localhost,localhost',
+    'DATA_REDIS_PORT' =>'6379,6380',
+    'DATA_CACHE_TIME' => 30,
+    'DATA_CACHE_PREFIX' =>'redis_',
+    'DATA_PERSISTENT'   => true,
+    'DATA_REDIS_AUTH'   =>'amaitestredis',
+    'DATA_REDIS_DB'   =>10,
+
 );
