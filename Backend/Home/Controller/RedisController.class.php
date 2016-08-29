@@ -3,18 +3,25 @@ namespace Home\Controller;
 use Org\Util\Redis;
 use Think\Controller;
 class RedisController extends Controller {
-    public static $configMaster = array('host'=>'127.0.0.1','port'=>6379,'auth'=>'mastertestpassword');
-    public $redis;
-
-    public function __construct()
-    {
-        parent::__construct();
-
-    }
 
     public function index()
     {
-        echo 'redis';
+        $redis = new \Redis();
+        $redis->connect('218.244.141.124',63579);
+        $redis->auth('amaitestredis');
+        $redis->select(10);
+        $result = $redis->keys('*');
+        var_dump($result);
+    }
+
+    /**
+     * Singleton instance(使用一个单例模式)
+     */
+    public function instance()
+    {
+        $redis = Redis::getInstance();
+        $result = $redis->keys('*');
+        var_dump($result);
     }
 
     public function RedisTest()

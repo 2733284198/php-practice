@@ -5,6 +5,7 @@
  * Date: 2016/7/3
  * Time: 9:26
  * Mail: Overcome.wan@Gmail.com
+ * Singleton instance
  */
 
 namespace Org\Util;
@@ -12,37 +13,72 @@ namespace Org\Util;
 
 class Redis
 {
-    //保存类实例的静态成员变量
-    protected static $cong_redis;
+    const HOST = "218.244.141.124";
 
-    //private标记的构造方法
+    const PORT = 63579;
+
+    const TIMEOUT = 1000;
+
+    const PASSWORD = "amaitestredis";
+
+    const DB = 10;
+
+    protected static $instance;
+
+
+    private $_redis;
+
+    /**
+     * 私有化构造函数，防止类外实例化
+     * RedisConnect constructor.
+     */
     private function __construct()
     {
-        echo 'This is a Constructed method;';
+        $this->_redis = new \Redis();
+        $this->_redis->pconnect(self::HOST, self::PORT, self::TIMEOUT);
+        $this->_redis->auth(self::PASSWORD);
+        $this->_redis->select(self::DB);
     }
 
-    //创建__clone方法防止对象被复制克隆
+    /**
+     * 私有化克隆函数，防止类外克隆对象
+     */
     public function __clone()
     {
-        trigger_error('Clone is not allow!',E_USER_ERROR);
+        // TODO: Implement __clone() method.
     }
 
-    //单例方法,用于访问实例的公共的静态方法
-    public static function getInstance($config)
+    /**
+     *  返回一个
+     * @return \Redis
+     * @static
+     */
+    public static function getInstance()
     {
-        if(!self::$cong_redis instanceof \Redis)
-        {
-            self::$cong_redis = new \Redis;
-            self::$cong_redis->connect($config['host'],$config['port']);
-            self::$cong_redis->auth($config['auth']);
+        if (!static::$instance instanceof self) {
+            static::$instance = new self();
         }
-        return self::$cong_redis;
+        return static::$instance->_redis;
     }
 
-    //是否被调用成功的方法
-    public function test(){
-        echo '调用方法成功';
+    /**
+     * 获取redis的连接实例
+     * @return \Redis
+     */
+    public function getRedisConn()
+    {
+        return $this->redis;
     }
+
+    /**
+     * @return \Redis
+     * @static
+     */
+    public static function test()
+    {
+        return 'test';
+    }
+
 //    /**
 //     * 保存类实例的静态成员变量
 //     * @var
