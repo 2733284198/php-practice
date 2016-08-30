@@ -252,7 +252,7 @@ abstract class Controller {
      * 调用模板显示 默认为public目录下面的success页面
      * 提示页面为可配置 支持模板标签
      * @param string $message 提示信息
-     * @param Boolean $status 状态
+     * @param boolean $status 状态
      * @param string $jumpUrl 页面跳转地址
      * @param mixed $ajax 是否为Ajax方式 当数字时指定跳转时间
      * @access private

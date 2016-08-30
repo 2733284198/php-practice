@@ -13,16 +13,6 @@ namespace Org\Util;
 
 class RedisTest
 {
-    const HOST = "218.244.141.124";
-
-    const PORT = 63579;
-
-    const TIMEOUT = 1000;
-
-    const PASSWORD = "amaitestredis";
-
-    const DB = 10;
-
     /**
      * 类对象实例数组,共有静态变量
      * @var null

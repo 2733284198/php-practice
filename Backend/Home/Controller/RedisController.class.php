@@ -10,7 +10,7 @@ class RedisController extends Controller
 {
 
     /**
-     * 直接尝试这去实例花Redis 【不建议】
+     * 直接尝试这去实例化Redis 【不建议】
      */
     public function index()
     {
@@ -37,7 +37,14 @@ class RedisController extends Controller
      */
     public function redisCache()
     {
-        $redis = Redis::getInstance();
+        $options = array (
+            'host'          => C('REDIS_HOST'),
+            'port'          => C('REDIS_PORT'),
+            'timeout'       => C('REDIS_TIMEOUT') ,
+            'auth'       => C('REDIS_AUTH') ,
+            'select'       => C('REDIS_DB'),
+        );
+        $redis = Redis::getInstance($options);
         var_dump($redis->handler);
     }
 

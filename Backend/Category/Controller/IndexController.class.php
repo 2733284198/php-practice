@@ -13,6 +13,7 @@ class IndexController extends Controller
         foreach ($result as $key => $v) {
             $result[$key]['name'] = str_repeat('&nbsp;&nbsp;&nbsp;', $v['level']) . $v['name'];
         }
+        $this->ajaxReturn();
         $this->categorys = $result;
         $this->display();
     }
