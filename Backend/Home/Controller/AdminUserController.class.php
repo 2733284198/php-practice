@@ -112,8 +112,14 @@ class AdminUserController extends BaseController
         $user = D('AdminUser');
         $result = $user->relation(true)->where(array('id' => $user_id))->delete();
         if ($result) {
+            //添加该管理员操作到操作日志中
+            $desc = '删除用户ID:'.$user_id.'成功';
+            addOperationLog($desc);
             echo 'true';
         } else {
+            //添加该管理员操作到操作日志中
+            $desc = '删除用户ID:'.$user_id.'失败';
+            addOperationLog($desc);
             echo 'false';
         }
         exit();
