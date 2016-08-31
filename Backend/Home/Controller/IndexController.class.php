@@ -2,13 +2,14 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
-
+use Org\Util\Tree;
+use Org\Util\UserAgent;
 class IndexController extends BaseController
 {
     public function index()
     {
         $where['username'] = session('username');
-        $user = M('AdminUser')->where($where)->field(['username','logintime','loginip','expire'])->find();
+        $user = M('AdminUser')->where($where)->field(['username', 'logintime', 'loginip', 'expire'])->find();
         $this->user = $user;
         $this->display();
     }
@@ -76,10 +77,19 @@ class IndexController extends BaseController
         echo __METHOD__ . "方法名" . $name . "不存在啊";
     }
 
-    public function show($name='')
+    public function show($name = '')
     {
         $this->id = 1024;
         $this->name = $name;
         $this->display('/Index/show');
+    }
+
+    /**
+     * 判断用户是否是手机和微信登陆
+     */
+    public function userAgent()
+    {
+        var_dump(UserAgent::IS_MOBILE());
+        var_dump($_SERVER['HTTP_USER_AGENT']);
     }
 }
