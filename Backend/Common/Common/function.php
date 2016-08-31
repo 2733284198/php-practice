@@ -694,6 +694,7 @@ function exp_to_level($exp)
 
 /*************************************用户登陆操作日志记录 Logs **********************************************************
  * 全程记录用户的每一步操作，包括详细的描述
+ * 读取配置项的详细信息
  * @return array
  */
 function getGlobalSkypeLogDbConfig()
@@ -707,7 +708,7 @@ function getGlobalSkypeLogDbConfig()
     );
     return $global_skype_db_config;
 }
-// 写入日志的时候直接调用这个方法就是了，其中参数都是可选项
+
 /**
  *
  * @param null $desc 【日志详细描述，可以自定义详细信息】
