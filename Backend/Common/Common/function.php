@@ -707,6 +707,16 @@ function getGlobalSkypeLogDbConfig()
     );
     return $global_skype_db_config;
 }
+// 写入日志的时候直接调用这个方法就是了，其中参数都是可选项
+/**
+ *
+ * @param null $desc 【日志详细描述，可以自定义详细信息】
+ * @param string $unique_flag 【日志操作的唯一标识符】
+ * @param mixed|string $app 【操作项目】
+ * @param mixed|string $action 【控制器】
+ * @param string $method 【具体的每一个操作】
+ * @return bool 【返回一个布尔值，TRUE表示插入成功，否则失败】
+ */
 
 function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NAME, $action = CONTROLLER_NAME, $method = ACTION_NAME)
 {
@@ -716,9 +726,6 @@ function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NA
         die("连接失败: " . $conn->connect_error);
     }
     mysqli_query($conn, 'set names utf8');
-//    mysqli_select_db($global_skype_log_db_conn,$global_skype_db_config['database']);
-    //mysqli_query($global_skype_log_db_conn,'set names utf8');
-
     $account = getAdminAccount();
     $nickname = getAdminNickname();
     $user_id = getAdminUserId();
@@ -738,9 +745,10 @@ function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NA
     `method`,`query_string`,`is_desc`,`desc`,`ipaddr`,`unique_flag`) VALUES ('$user_id','$account','$nickname','$insert_time','$app',
     '$action','$method','$query_string','$is_desc','$desc','$ipaddr','$unique_flag');";
     if (mysqli_query($conn, $query)) {
-        $result = '新记录插入成功';
+        $result = TRUE;
     } else {
-        $result = "Error:" . $query . "<br/>" . mysqli_error($conn);
+        //$result = "Error:" . $query . "<br/>" . mysqli_error($conn); 用于以后调试
+        $result = FALSE;
     }
     return $result;
 }
