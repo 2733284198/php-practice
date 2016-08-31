@@ -91,6 +91,9 @@ class AdminUserController extends BaseController
             //用户添加成功后，给用户角色表添加数据
             $role['role_id'] = I('role_id');
             $role['user_id'] = $uid;
+            //添加该管理员操作到操作日志中
+            $desc = '给ID为:['.$_POST['role_id'].']的角色,新增用户:['.$_POST['username'].'],密码为:['.$_POST['password'].']'.'其他参数'.$_POST;
+            addOperationLog($desc);
             if (D('AdminRoleUser')->add($role)) {
                 return $this->success('添加平台用户成功', U('AdminUser/index'));
             } else {

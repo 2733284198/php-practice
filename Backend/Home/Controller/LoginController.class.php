@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Org\Util\Rbac;
 
 class LoginController extends Controller
 {
@@ -59,7 +60,7 @@ class LoginController extends Controller
 
         $user = D('AdminUser');
         $where = array('username' => $username);
-        $fields = array('id','password','username','status','expire','logintime'); // 之查找需要的字段
+        $fields = array('id', 'password', 'username', 'status', 'expire', 'logintime'); // 之查找需要的字段
         $result = $user->where($where)->field($fields)->find();
 
 
@@ -70,18 +71,18 @@ class LoginController extends Controller
         if ($result['status'] == 0) return $this->error('账号不存在或者已经被禁用');
 
         // 是否记住我的登录,设置一个Cookie，写在客户端
-        if(isset($_POST['remember'])){
-            $value = $result['id'].'|'.get_client_ip().'|'.$result['username'];
-            $value = encrytion($value,1);
-            @setcookie('remember',$value,C('AUTO_LOGIN_LIFETIME'),'/');
+        if (isset($_POST['remember'])) {
+            $value = $result['id'] . '|' . get_client_ip() . '|' . $result['username'];
+            $value = encrytion($value, 1);
+            @setcookie('remember', $value, C('AUTO_LOGIN_LIFETIME'), '/');
         }
 
         // 每天登录增加经验值
         $today = strtotime(date('Y-m-d')); // 获取今天0时0分0秒的时间
         // 如果上次的登录时间小于今天的时间，则增加经验值
         $where2 = array('id' => $result['id']);
-        if($result['logintime'] < $today){
-            $user->where($where2)->setInc('expire',10);
+        if ($result['logintime'] < $today) {
+            $user->where($where2)->setInc('expire', 10);
         }
 
         //更新登录户登录信息
@@ -90,12 +91,24 @@ class LoginController extends Controller
             'logintime' => time(),
             'loginip' => get_client_ip(),
         );
-        if ($user->save($data_arr))
-        {
+        if ($user->save($data_arr)) {
             // 获取$_SESSION['user_id'] 如果不存在则默认为0
-            I('session.uid',0);
+            session('uid', 0);
             session('username', $result['username']);
+            session('loginAccount', $result['username']);
+            session('loginUserName', $result['username']);
             session('uid', $result['id']);
+            //RBAC 开始,用户认证SESSION标记 ，默认为"authId"
+            session(C('USER_AUTH_KEY'), $result['id']);
+            // 是否是超级管理员
+            if ($_SESSION['username'] == C('RBAC_SUPERADMIN')) {
+                session(C('ADMIN_AUTH_KEY'), true);
+            }
+            //用于检测用户权限的方法,并保存到Session中
+            Rbac::saveAccessList($result['id']);
+            //添加操作日志中
+            $desc = '登陆成功';
+            addOperationLog($desc);
             return $this->redirect('Index/index');
         } else {
             return $this->error('2222222222222');

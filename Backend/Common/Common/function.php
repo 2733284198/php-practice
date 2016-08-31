@@ -590,10 +590,11 @@ function get_url($path)
 /** ***********************************异位或加密 **********************************
  *
  * @param  [type]  $value [description]
- * @param  integer $type  [description]
+ * @param  integer $type [description]
  * @return [type]         [description]
  */
-function encrytion($value, $type=0) {
+function encrytion($value, $type = 0)
+{
     $key = md5(C('AUTO_LOGIN_KEY'));
     if ($type) {
         return str_replace('=', '', base64_encode($value ^ $key));
@@ -608,7 +609,8 @@ function encrytion($value, $type=0) {
  * @return [type]       [description]
  */
 
-function time_format ($time) {
+function time_format($time)
+{
     $now = time();
     $today = strtotime(date('y-m-d'));
     $yesterday = strtotime('-1 day', $today);
@@ -643,7 +645,8 @@ function time_format ($time) {
  * @param  [type] $exp [description]
  * @return [type]      [description]
  */
-function exp_to_level ($exp) {
+function exp_to_level($exp)
+{
     switch (true) {
         case $exp >= C('LV20') :
             return 20;
@@ -687,5 +690,88 @@ function exp_to_level ($exp) {
             return 1;
     }
 }
+
+
+/*************************************用户登陆操作日志记录 Logs **********************************************************
+ * 全程记录用户的每一步操作，包括详细的描述
+ * @return array
+ */
+function getGlobalSkypeLogDbConfig()
+{
+    $global_skype_db_config = array(
+        'dbms' => C('DB_TYPE'),
+        'username' => C('DB_USER'),
+        'password' => C('DB_PWD'),
+        'hostname' => C('DB_HOST'),
+        'database' => C('DB_NAME'),
+    );
+    return $global_skype_db_config;
+}
+
+function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NAME, $action = CONTROLLER_NAME, $method = ACTION_NAME)
+{
+    $config = getGlobalSkypeLogDbConfig();
+    $conn = new \mysqli($config['hostname'], $config['username'], $config['password'], $config['database']);
+    if ($conn->connect_error) {
+        die("连接失败: " . $conn->connect_error);
+    }
+    mysqli_query($conn, 'set names utf8');
+//    mysqli_select_db($global_skype_log_db_conn,$global_skype_db_config['database']);
+    //mysqli_query($global_skype_log_db_conn,'set names utf8');
+
+    $account = getAdminAccount();
+    $nickname = getAdminNickname();
+    $user_id = getAdminUserId();
+    $ipaddr = get_client_ip();
+    $query_string = implode('--', array_merge($_GET, $_POST));
+
+    $desc = $desc;
+    $is_desc = 0;
+    $unique_flag = $unique_flag;
+    if ($desc) {
+        $is_desc = 1;
+    }
+
+    $insert_time = date('Y-m-d H:i:s');
+
+    $query = "INSERT INTO `" . C('LOG_DB_TABLE') . "` (`guid`,`account`,`nickname`,`addtime`,`app`,`action`,
+    `method`,`query_string`,`is_desc`,`desc`,`ipaddr`,`unique_flag`) VALUES ('$user_id','$account','$nickname','$insert_time','$app',
+    '$action','$method','$query_string','$is_desc','$desc','$ipaddr','$unique_flag');";
+    if (mysqli_query($conn, $query)) {
+        $result = '新记录插入成功';
+    } else {
+        $result = "Error:" . $query . "<br/>" . mysqli_error($conn);
+    }
+    return $result;
+}
+
+/**
+ * 获取用户账号
+ * @return mixed
+ */
+function getAdminAccount()
+{
+    return $_SESSION['loginAccount'];
+}
+
+/**
+ * 获取用户昵称
+ * @return mixed
+ */
+function getAdminNickname()
+{
+    return $_SESSION['loginUserName'];
+}
+
+/**
+ * 获取用户ID信息，这条信息是用户登陆的时候保存的
+ * @return mixed
+ */
+function getAdminUserId()
+{
+    return $_SESSION[C('USER_AUTH_KEY')];
+}
+
+/** ***********************************用户登陆操作日志记录 Logs ***************************************************************/
 
 ?>

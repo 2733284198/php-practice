@@ -4,6 +4,9 @@ namespace Home\Controller;
 use Home\Controller\BaseController;
 use Org\Util\Tree;
 use Org\Util\UserAgent;
+use Org\Util\Rbac;
+use Think\Log;
+
 class IndexController extends BaseController
 {
     public function index()
@@ -91,5 +94,14 @@ class IndexController extends BaseController
     {
         var_dump(UserAgent::IS_MOBILE());
         var_dump($_SERVER['HTTP_USER_AGENT']);
+        var_dump(getAdminAccount());
+
+        var_dump(getGlobalSkypeLogDbConfig());
+        addOperationLog();
+    }
+
+    public function test(){
+        var_dump(addOperationLog());
+
     }
 }

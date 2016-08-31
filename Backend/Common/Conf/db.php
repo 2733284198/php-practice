@@ -7,7 +7,8 @@
   'DB_PWD' => '',
   'DB_PORT' => '3306',
   'DB_PREFIX' => 'tour_',
-  'DB_PARAMS' => 
+  'LOG_DB_TABLE' => 'tour_logs',
+  'DB_PARAMS' =>
   array (
   ),
   'DB_DEBUG' => true,
