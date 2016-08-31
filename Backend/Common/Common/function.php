@@ -733,13 +733,8 @@ function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NA
     $ipaddr = get_client_ip();
     $query_string = implode('--', array_merge($_GET, $_POST));
 
-    $desc = $desc;
     $is_desc = 0;
-    $unique_flag = $unique_flag;
-    if ($desc) {
-        $is_desc = 1;
-    }
-
+    if ($desc) $is_desc = 1;
     $insert_time = date('Y-m-d H:i:s');
 
     $query = "INSERT INTO `" . C('LOG_DB_TABLE') . "` (`guid`,`account`,`nickname`,`addtime`,`app`,`action`,
