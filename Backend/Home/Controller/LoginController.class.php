@@ -196,6 +196,10 @@ class LoginController extends Controller
         echo get_client_ip();
     }
 
+    public function error1(){
+        $this->display();
+    }
+
     public function logout()
     {
         session('username', NULL);

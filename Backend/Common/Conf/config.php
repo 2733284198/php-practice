@@ -2,6 +2,7 @@
 return array(
     //*************************************附加设置***********************************
     'LOAD_EXT_CONFIG' => 'db,redis,logs',    // 加载扩展配置文件
+    'URL_CASE_INSENSITIVE'  =>  True,  // URL区分大小写
 
     //*************************************附加设置***********************************
 
@@ -96,17 +97,18 @@ return array(
 
     //**********************************RBAC 配置信息 ***********************************
     'SESSION_AUTO_START'=>true,
+    'RBAC_SUPERADMIN'   => 'admin',        // 超级管理员,不需要认证
+    'ADMIN_AUTH_KEY'    => 'administrator', // session里有这个管理员不需要认证
     'USER_AUTH_ON'      => true,            // 支持权限检查,是否需要认证
     'USER_AUTH_TYPE'    => 1,               // 默认认证类型 1 登录认证 2 实时认证
-    'RBAC_SUPERADMIN'   => 'admin',        // 超级管理员,不需要认证
+
     'USER_AUTH_KEY'     => 'authId',        // 用户认证SESSION标记
-    'ADMIN_AUTH_KEY'    => 'administrator', // session里有这个管理员不需要认证
     'ADMINISTRATOR'     => 'admin',
     'USER_AUTH_MODEL'   => 'User',          // 默认验证数据表模型
     'AUTH_PWD_ENCODER'  => 'md5',           // 用户认证密码加密方式
     'USER_AUTH_GATEWAY' => '/Public/login', // 默认认证网关
-    'NOT_AUTH_MODULE'   => 'Public,Login',        // 默认无需认证模块
-    'REQUIRE_AUTH_MODULE' => 'System,SystemControl,Share,DataManage',            // 默认需要认证模块
+    'NOT_AUTH_MODULE'   => 'Index,Login',        // 默认无需认证模块
+    'REQUIRE_AUTH_MODULE' => 'Category,File,Product,Rbac',            // 默认需要认证模块
     'NOT_AUTH_ACTION'   => '',              // 默认无需认证操作
     'REQUIRE_AUTH_ACTION' => '',            // 默认需要认证操作
     'GUEST_AUTH_ON'     => false,           // 是否开启游客授权访问

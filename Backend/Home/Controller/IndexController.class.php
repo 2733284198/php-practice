@@ -92,16 +92,23 @@ class IndexController extends BaseController
      */
     public function userAgent()
     {
-        var_dump(UserAgent::IS_MOBILE());
-        var_dump($_SERVER['HTTP_USER_AGENT']);
-        var_dump(getAdminAccount());
-
-        var_dump(getGlobalSkypeLogDbConfig());
-        addOperationLog();
+        var_dump(C('RBAC_SUPERADMIN'));
+        p($_SESSION);
     }
 
     public function test(){
-        var_dump(addOperationLog());
+        $module = '';    //存放拥有的模块
+        var_dump($_SESSION['_ACCESS_LIST']);
+        foreach ($_SESSION['_ACCESS_LIST'] as $key => $value) {
+            foreach ($value as $key1 => $value1) {
+//                $module = $module.','.$key1;    //字符串拼接模块名称
+//                foreach ($value1 as $key2 => $value2) {
+//                    $node_id = $node_id.','.$value2;    //字符串拼操作id
+//                }
+                var_dump($key1);
+                var_dump($value1);
+            }
+        }
 
     }
 }

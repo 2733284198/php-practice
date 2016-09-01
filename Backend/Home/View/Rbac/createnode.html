@@ -32,7 +32,7 @@
         <div class="page-content">
 
             <div class="row">
-                <form action="{:U('AdminNode/createnode')}" method="post" class="form-horizontal" id="createfrom">
+                <form action="{:U('Rbac/createnode')}" method="post" class="form-horizontal" id="createfrom">
                     <div class="widget-content nopadding">
                         <div class="control-group">
                             <label class="control-label">英文名称:</label>
@@ -46,6 +46,17 @@
 
                             <div class="controls">
                                 <input type="text" class="span2" placeholder="中文名称" name="title" style="width: 140px;"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">图标类型:</label>
+
+                            <div class="controls">
+                                <select name="class" class="span2">
+                                    <option value="icon-calendar">日历</option>
+                                    <option value="icon-calendar">日历</option>
+                                    <option value="icon-calendar">日历</option>
+                                </select>
                             </div>
                         </div>
                         <div class="control-group">
@@ -87,214 +98,5 @@
     </div>
     <!-- /.main-content -->
 
-    <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
-    <script type="text/javascript">
-        var $URL = "__APP__/Home/AdminNode/";
-        $(function () {
-            //delete AdminUser
-            $(".del").bind('click', function () {
-                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
-                var $id = $(this).attr('value');
-                var $url = $URL + 'delNode';
-                if (!$msg) {
-                    return false;
-                }
 
-                $.ajax({
-                    url: $url,
-                    type: 'get',
-                    dataType: 'text',
-                    data: {id: $id},
-                    success: function ($result) {
-                        if ($result) {
-                            alert('删除成功');
-                            window.location.reload();
-                        } else {
-                            alert('删除失败');
-                        }
-                    },
-                    error: function () {
-                        alert('删除失败');
-                    }
-                });
-            });
-            //status set
-            $(".set").bind('click', function () {
-                var $id = $(this).attr('value');
-                $.ajax({
-                    url: $URL + 'setStatus',
-                    type: 'get',
-                    dataType: 'text',
-                    data: {id: $id},
-                    success: function ($result) {
-                        if ($result) {
-                            alert('设置成功');
-                            window.location.reload();
-                        } else {
-                            alert('设置失败');
-                        }
-                    },
-                    error: function () {
-                        alert('设置失败');
-                    }
-                });
-            });
-        });
-    </script>
 </block>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<include file='Common:head'/>
-<body>
-
-<!--Header-part-->
-<div id="header">
-    <h1><a href="dashboard.html">旅游数据中心</a></h1>
-</div>
-<!--close-Header-part-->
-
-
-<!--top-Header-menu-->
-<include file='Common:header_menu'/>
-<!--close-top-Header-menu-->
-
-<!--start-top-serch-->
-<include file='Common:serch'/>
-<!--close-top-serch-->
-
-<!--sidebar-menu-->
-<include file='Common:sidebar_menu'/>
-<!--sidebar-menu-->
-
-<!--main-container-part-->
-<div id="content">
-    <div id="content-header">
-        <div id="breadcrumb"><a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i
-                class="icon-home"></i> 后台首页</a> <a href="{:U('AdminNode/createnode')}" class="current">权限管理</a></div>
-    </div>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12">
-
-                <div class="widget-box">
-                    <div class="widget-title"><span class="icon"> <i class="icon-align-justify"></i> </span>
-                        <h5>权限添加页面</h5>
-                    </div>
-
-                    <form action="{:U('AdminNode/createnode')}" method="post" class="form-horizontal" id="createfrom">
-                        <div class="widget-content nopadding">
-                            <div class="control-group">
-                                <label class="control-label">英文名称:</label>
-
-                                <div class="controls">
-                                    <input type="text" class="span2" placeholder="英文名称" name="name"
-                                           style="width: 140px;"/>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">显示中文名称:</label>
-
-                                <div class="controls">
-                                    <input type="text" class="span2" placeholder="中文名称" name="title"
-                                           style="width: 140px;"/>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">权限类型:</label>
-
-                                <div class="controls">
-                                    <select name="level" class="span2">
-                                        <option value="1">项目</option>
-                                        <option value="2">模块</option>
-                                        <option value="3">操作</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">父节点:</label>
-
-                                <div class="controls">
-                                    <select name="pid" class="span2">
-                                        <option value="0">根节点</option>
-                                        <volist name="nodelist" id="vo">
-
-                                            <if condition="$vo.level eq 1">
-                                                <option value="{$vo.id}">{$vo.title}</option>
-                                                <else/>
-                                                <option value="{$vo.id}">&nbsp;&nbsp;|{$vo.title}</option>
-                                            </if>
-                                        </volist>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-success">确认</button>
-                            </div>
-                    </form>
-                </div>
-                </form>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-</div>
-<!--Footer-part-->
-<include file='Common:footer'/>
-<!--end-Footer-part-->
-<script src="__ROOT__/Application/Common/Public/js/jquery.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.ui.custom.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/bootstrap.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.uniform.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/select2.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.dataTables.min.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/matrix.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/matrix.tables.js"></script>
-<script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
-</body>
-</html>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#createfrom").validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 4,
-                    maxlength: 24,
-                    check_name: true
-                },
-                title: {
-                    required: true
-                },
-                level: {
-                    required: true
-                }
-
-            },
-            messages: {
-                name: {
-                    required: '英文名称不能为空',
-                    minlength: '英文名称不能小于4个字符',
-                    maxlength: '英文名称不能超过24个字符'
-                },
-                title: {
-                    required: '显示中文名称不能为空'
-                },
-                level: {
-                    required: '权限类型不能为空'
-                }
-            }
-        });
-        $.validator.addMethod("check_name", function (value, element, params) {
-            var str = /^[A-Za-z]+$/;
-            return this.optional(element) || (str.test(value));
-        }, "必须为英文字母组成");
-        $.validator.addMethod("check_num", function (value, element, params) {
-            var str = /^\d+(\.\d+)?(\.\d+)?(\.\d+)?$/;
-            return this.optional(element) || (str.test(value));
-        }, "版本号格式不正确");
-    });
-</script>

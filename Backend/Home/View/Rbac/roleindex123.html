@@ -24,7 +24,7 @@
             <!-- .breadcrumb -->
 
             <div class="nav-search" id="nav-search">
-                <a href="{:U('AdminRole/createadminrole')}" class="btn btn-xs btn-primary">创建角色</a>
+                <a href="{:U('Home/Rbac/createadminrole')}" class="btn btn-xs btn-primary">创建角色</a>
             </div>
             <!-- #nav-search -->
         </div>
@@ -35,7 +35,7 @@
                 <table class="table table-border table-bordered">
                     <thead>
                     <tr>
-                        <th colspan="7" scope="col">角色信息表
+                        <th colspan="7" scope="col">角色表
 
                         </th>
                     </tr>
@@ -53,7 +53,7 @@
                             <td>{$vo.name}</td>
                             <td>{$vo.remark|mb_substr=0,98}</td>
                             <td>
-                                <a href="{:U('AdminRole/addnode',array('rid' => $vo['id']))}" class="btn btn-xs btn-primary">配置权限</a>
+                                <a href="{:U('Home/Rbac/addnode',array('rid' => $vo['id']))}" class="btn btn-xs btn-primary">配置权限</a>
                                 <if condition="$vo.status eq 1">
                                     <button class="btn btn-xs btn-yellow set" value="{$vo.id}">禁用</button>
                                     <else/>
@@ -71,11 +71,11 @@
 
     <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
     <script type="text/javascript">
-        var $URL = "__APP__/Home/AdminRole/";
+        var $URL = "__APP__/Home/Rbac/";
         jQuery(function($){
             //delete AdminUser
             $(".del").bind('click',function(){
-                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+                var $msg = confirm('确认删除该角色吗？');
                 var $id = $(this).attr('value');
                 var $url = $URL+'delRole';
                 if(!$msg){
@@ -104,7 +104,7 @@
             $(".set").bind('click',function(){
                 var $id = $(this).attr('value');
                 $.ajax({
-                    url: $URL+'setStatus',
+                    url: $URL+'roleStatus',
                     type: 'get',
                     dataType: 'text',
                     data:{rid:$id},
