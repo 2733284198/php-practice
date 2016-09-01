@@ -65,12 +65,18 @@
                                 </if>
                             </td>
                             <td class="center">
+                                <if condition="$vo.menus eq 1">
+                                    <button class="btn btn-xs btn-pink show-menus" value="{$vo.id}">正在显示</button>
+                                    <else/>
+                                    <button class="btn btn-xs btn-inverse show-menus" value="{$vo.id}">已经关闭</button>
+                                </if>
                                 <if condition="$vo.status eq 1">
                                     <button class="btn btn-xs btn-inverse set" value="{$vo.id}">禁用</button>
                                     <else/>
                                     <button class="btn btn-xs btn-primary set" value="{$vo.id}">启用</button>
                                 </if>
                                 <button class="btn btn-xs btn-danger del" value="{$vo.id}">权限删除</button>
+
                             </td>
                         </tr>
                     </volist>
@@ -112,6 +118,29 @@
                 var $msg = confirm('确认改变状态吗？');
                 var $id = $(this).attr('value');
                 var $url = $URL+'nodeStatus';
+                var $data = {'id':$id};
+                var success = function(response){
+                    console.log(response.status);
+
+                    if(response.status == 0)
+                    {
+                        alert(response.info);
+                    }else if(response.status == 200)
+                    {
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else{
+                        alert(response.errmsg);
+                    }
+                };
+                if($msg) $.post($url,$data,success,'json');
+            });
+
+            //status set
+            $(".show-menus").bind('click',function(){
+                var $msg = confirm('确定在菜单栏显示该栏目吗？');
+                var $id = $(this).attr('value');
+                var $url = $URL+'showMenus';
                 var $data = {'id':$id};
                 var success = function(response){
                     console.log(response.status);

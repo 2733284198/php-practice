@@ -76,47 +76,45 @@
                 var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
                 var $id = $(this).attr('value');
                 var $url = $URL+'delUser';
-                if(!$msg){
-                    return false;
-                }
-                $.ajax({
-                    url: $URL+'delUser',
-                    type: 'get',
-                    dataType: 'text',
-                    data:{user_id:$id},
-                    success:function($result){
-                        if($result){
-                            alert('删除成功');
-                            window.location.reload();
-                        }else{
-                            alert('删除失败');
-                        }
-                    },
-                    error:function(){
-                        alert('删除失败');
+                var $data = {'id':$id};
+                var success = function(response){
+                    console.log(response.status);
+
+                    if(response.status == 0)
+                    {
+                        alert(response.info);
+                    }else if(response.status == 200)
+                    {
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else{
+                        alert(response.errmsg);
                     }
-                });
+                };
+                if($msg) $.post($url,$data,success,'json');
+
             });
             //status set
             $(".set").bind('click',function(){
+                var $msg = confirm('确认改变状态吗？');
                 var $id = $(this).attr('value');
-                $.ajax({
-                    url: $URL+'userStatus',
-                    type: 'get',
-                    dataType: 'text',
-                    data:{uid:$id},
-                    success:function($result){
-                        if($result){
-                            alert('设置成功');
-                            window.location.reload();
-                        }else{
-                            alert('设置失败');
-                        }
-                    },
-                    error:function(){
-                        alert('设置失败');
+                var $url = $URL+'userStatus';
+                var $data = {'id':$id};
+                var success = function(response){
+                    console.log(response.status);
+
+                    if(response.status == 0)
+                    {
+                        alert(response.info);
+                    }else if(response.status == 200)
+                    {
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else{
+                        alert(response.errmsg);
                     }
-                });
+                };
+                if($msg) $.post($url,$data,success,'json');
             });
         });
     </script>

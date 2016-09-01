@@ -30,10 +30,9 @@ class SystemController extends BaseController
         // 以下将一个数组转换成一个字符串
         $str = "<?php\r\n return " . var_export($config, true) . ";\r\n?>";
         if (file_put_contents($file, $str)) {
-           echo 1;
-        } else {
-            echo 0;
+            return $this->success('系统信息修改成功');
         }
+        return $this->success('系统信息修改失败');
 
     }
 

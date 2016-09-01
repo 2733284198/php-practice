@@ -45,22 +45,26 @@
 
             <ul class="nav nav-list">
                 <volist name="menus" id="vo">
-                    <li>
-                        <a href="__APP__/Home/{$vo.name}/index" class="dropdown-toggle">
-                            <i class="{$vo.class}"></i>
-                            <span class="menu-text">{$vo.title}</span>
-                            <b class="arrow icon-angle-down"></b>
-                        </a>
-                        <ul class="submenu">
-                            <volist name="vo['node']" id="sub">
-                                <li><a href="__APP__/Home/{$vo.name}/{$sub.name}">
-                                    <i class="icon-double-angle-right"></i>
-                                    {$sub.title}
-                                </a>
-                                </li>
-                            </volist>
-                        </ul>
-                    </li>
+                    <if condition="$vo.menus eq 1">
+                        <li>
+                            <a href="__APP__/Home/{$vo.name}/index" class="dropdown-toggle">
+                                <i class="{$vo.class}"></i>
+                                <span class="menu-text">{$vo.title}</span>
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <volist name="vo['node']" id="sub">
+                                    <if condition="$sub.menus eq 1">
+                                        <li><a href="__APP__/Home/{$vo.name}/{$sub.name}">
+                                            <i class="icon-double-angle-right"></i>
+                                            {$sub.title}
+                                        </a>
+                                        </li>
+                                    </if>
+                                </volist>
+                            </ul>
+                        </li>
+                    </if>
                 </volist>
             </ul><!-- /.nav-list -->
 

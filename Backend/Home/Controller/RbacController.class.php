@@ -105,36 +105,40 @@ class RbacController extends BaseController
     //删除用户
     public function delUser()
     {
-        $user_id = I('get.user_id', '', intval);
+        $user_id = I('post.id', '', 'int');
         $user = D('AdminUser');
         $result = $user->relation(true)->where(array('id' => $user_id))->delete();
         if ($result) {
             //添加该管理员操作到操作日志中
             $desc = '删除用户ID:' . $user_id . '成功';
             addOperationLog($desc);
-            echo 'true';
-        } else {
-            //添加该管理员操作到操作日志中
-            $desc = '删除用户ID:' . $user_id . '失败';
-            addOperationLog($desc);
-            echo 'false';
+            $response = ['status' => 200, 'errmsg' => '删除成功', 'dataList' => $result];
+            return $this->ajaxReturn($response, 'JSON');
         }
-        exit();
+        //添加该管理员操作到操作日志中
+        $desc = '删除用户ID:' . $user_id . '失败';
+        addOperationLog($desc);
+        $response = ['status' => 500, 'errmsg' => '删除失败', 'dataList' => $result];
+        return $this->ajaxReturn($response, 'JSON');
+
     }
 
     //设置用户状态
     public function userStatus()
     {
-        $uid = I('get.uid');
+        $uid = I('post.id');
         $db = M('AdminUser');
         $status = $db->where(array('id' => $uid))->getField('status');
         $status = ($status == 1) ? 0 : 1;
         if ($db->where(array('id' => $uid))->setField('status', $status)) {
-            echo 'true';
-        } else {
-            echo 'false';
+            $response = ['status' => 200, 'errmsg' => '改变成功', 'dataList' => $status];
+            return $this->ajaxReturn($response, 'JSON');
         }
-        exit();
+        //添加该管理员操作到操作日志中
+        $desc = '设置用户状态:' . $uid . '失败';
+        addOperationLog($desc);
+        $response = ['status' => 500, 'errmsg' => '改变失败', 'dataList' => $status];
+        return $this->ajaxReturn($response, 'JSON');
     }
 
     /***********************************节点开始****************************************************/
@@ -169,7 +173,7 @@ class RbacController extends BaseController
     */
     public function delNode()
     {
-        $result = M('AdminNode')->where(array('id' => I('post.id', '', intval)))->delete();
+        $result = M('AdminNode')->where(array('id' => I('post.id', '', 'int')))->delete();
         if ($result) {
             $response = ['status' => 200, 'errmsg' => '删除成功', 'dataList' => $result];
             return $this->ajaxReturn($response, 'JSON');
@@ -185,13 +189,32 @@ class RbacController extends BaseController
     {
         $id = I('post.id');
         $db = M('AdminNode');
-        $status = $db->where(array('id' => I('post.id')))->getField('status');
+        $status = $db->where(array('id' => $id))->getField('status');
+
         $status = ($status == 1) ? 0 : 1;
         if ($db->where(array('id' => $id))->setField('status', $status)) {
             $response = ['status' => 200, 'errmsg' => '修改成功', 'dataList' => $status];
             return $this->ajaxReturn($response, 'JSON');
         }
         $response = ['status' => 500, 'errmsg' => '修改失败', 'dataList' => $status];
+        return $this->ajaxReturn($response, 'JSON');
+    }
+
+    /*
+   *   该节点是否在菜单栏显示
+   */
+    public function showMenus()
+    {
+        $id = I('post.id');
+        $db = M('AdminNode');
+        $show = $db->where(array('id' => $id))->getField('menus');
+        $menus = ($show == 1) ? 0 : 1;
+        $result = $db->where(array('id' => $id))->setField('menus',$menus);
+        if ($result) {
+            $response = ['status' => 200, 'errmsg' => '修改成功', 'dataList' => $result];
+            return $this->ajaxReturn($response, 'JSON');
+        }
+        $response = ['status' => 500, 'errmsg' => '修改失败', 'dataList' => $result];
         return $this->ajaxReturn($response, 'JSON');
     }
 
@@ -239,7 +262,7 @@ class RbacController extends BaseController
      */
     public function addNode()
     {
-        $rid = I('rid', '', intval);
+        $rid = I('rid', '', 'int');
         if (!is_numeric($rid)) return $this->success('参数类型错误,必须是数字', U('Rbac/roleIndex'));
         //getFieldById针对某个字段(ID)查询并返回某个字段(name)的值
         $roleModel = M('AdminRole');
@@ -302,15 +325,15 @@ class RbacController extends BaseController
      */
     public function delRole()
     {
-        $role_id = I('get.role_id', '', intval);
+        $role_id = I('post.role_id', '','int');
         $user = D('AdminRole');
         $result = $user->relation(true)->where(array('id' => $role_id))->delete();
         if ($result) {
-            echo 'true';
-        } else {
-            echo 'false';
+            $response = ['status' => 200, 'errmsg' => '修改成功', 'dataList' => $result];
+            return $this->ajaxReturn($response, 'JSON');
         }
-        exit();
+        $response = ['status' => 500, 'errmsg' => '修改失败', 'dataList' => $result];
+        return $this->ajaxReturn($response, 'JSON');
     }
 
     /*
@@ -318,16 +341,16 @@ class RbacController extends BaseController
     */
     public function roleStatus()
     {
-        $rid = I('get.rid');
+        $rid = I('post.rid');
         $db = M('AdminRole');
         $status = $db->where(array('id' => $rid))->getField('status');
         $status = ($status == 1) ? 0 : 1;
         if ($db->where(array('id' => $rid))->setField('status', $status)) {
-            echo 'true';
-        } else {
-            echo 'false';
+            $response = ['status' => 200, 'errmsg' => '修改成功', 'dataList' => $status];
+            return $this->ajaxReturn($response, 'JSON');
         }
-        exit();
+        $response = ['status' => 500, 'errmsg' => '修改失败', 'dataList' => $status];
+        return $this->ajaxReturn($response, 'JSON');
     }
 }
 

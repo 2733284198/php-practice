@@ -36,7 +36,7 @@ class BaseController extends Controller
         {
             if(!Rbac::AccessDecision()) //通过accessDecision获取权限信息
             {
-                return $this->error("您没有操作权限",U('Login/error1'));  //没有获取到权限信息时需要执行的代码
+                return $this->error("您没有操作权限");  //没有获取到权限信息时需要执行的代码
             }
         }
 

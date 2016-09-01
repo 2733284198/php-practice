@@ -19,11 +19,11 @@
   'DB_MASTER_NUM' => 1,
   'DB_SLAVE_NO' => '',
   'WEBNAME' => '云系统管理平台',
-  'KEYWRODS' => 'admin123789',
+  'KEYWRODS' => '云系统管理平台',
   'DISCRIPTION' => '云系统管理平台社区',
   'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
   'RECORD' => '京ICP备10027771号-1',
-  'REGIS_ON' => '0',
+  'REGIS_ON' => '1',
   'WEB_STATE' => '1',
 );
 ?>
