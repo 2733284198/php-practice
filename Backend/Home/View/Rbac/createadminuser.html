@@ -1,0 +1,71 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('Home/Rbac/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <form action="{:U('Home/Rbac/createadminuser')}" method="post"  class="form-horizontal" id="createfrom">
+                    <div class="widget-content nopadding">
+                        <form action="#" method="get" class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">用户名:</label>
+                                <div class="controls">
+                                    <input type="text" class="span2 username" placeholder="用户名" name="username" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                                <div class="controls">
+                                    <input type="password"  class="span2" placeholder="密码" name="password"  />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">选择用户组:</label>
+                                <div class="controls">
+                                    <select name="role_id" class="span2" >
+                                        <volist name="role_list" id="vo">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </volist>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">确认</button>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+</block>
+

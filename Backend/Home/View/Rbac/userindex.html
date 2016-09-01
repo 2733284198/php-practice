@@ -1,0 +1,123 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('Home/Rbac/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th style="font-size: 14px;">#ID</th>
+                        <th style="font-size: 14px;">用户昵称</th>
+                        <th style="font-size: 14px;">所属角色组</th>
+                        <th style="font-size: 14px;">登录时间</th>
+                        <th style="font-size: 14px;">
+                            操作
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name='list' id='vo'>
+                        <tr class="gradeX">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.username}</td>
+                            <td>{$vo['role_name'][0]['name']}</td>
+                            <td class="center">{$vo.logintime|date='Y-m-d H:i:s',###}</td>
+                            <td class="center">
+                                <if condition="$vo.status eq 1">
+                                    <button class="btn btn-inverse btn-xs set" value="{$vo.id}">禁用</button>
+                                    <else/>
+                                    <button class="btn btn-primary btn-xs set" value="{$vo.id}">启用</button>
+                                </if>
+                                <button class="btn btn-danger btn-xs del" value="{$vo.id}">用户删除</button>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/Rbac/";
+        $(function(){
+            //delete AdminUser
+            $(".del").bind('click',function(){
+                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+                var $id = $(this).attr('value');
+                var $url = $URL+'delUser';
+                if(!$msg){
+                    return false;
+                }
+                $.ajax({
+                    url: $URL+'delUser',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{user_id:$id},
+                    success:function($result){
+                        if($result){
+                            alert('删除成功');
+                            window.location.reload();
+                        }else{
+                            alert('删除失败');
+                        }
+                    },
+                    error:function(){
+                        alert('删除失败');
+                    }
+                });
+            });
+            //status set
+            $(".set").bind('click',function(){
+                var $id = $(this).attr('value');
+                $.ajax({
+                    url: $URL+'userStatus',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{uid:$id},
+                    success:function($result){
+                        if($result){
+                            alert('设置成功');
+                            window.location.reload();
+                        }else{
+                            alert('设置失败');
+                        }
+                    },
+                    error:function(){
+                        alert('设置失败');
+                    }
+                });
+            });
+        });
+    </script>
+</block>
