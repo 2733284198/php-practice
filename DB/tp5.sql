@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : 本地连接
 Source Server Version : 50617
 Source Host           : localhost:3306
 Source Database       : tp5
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-08-31 16:06:09
+Date: 2016-09-02 00:14:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `bjyadmin_admin_nav`
+-- Table structure for bjyadmin_admin_nav
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_admin_nav`;
 CREATE TABLE `bjyadmin_admin_nav` (
@@ -44,7 +44,7 @@ INSERT INTO `bjyadmin_admin_nav` VALUES ('36', '0', '文章管理', 'Admin/ShowN
 INSERT INTO `bjyadmin_admin_nav` VALUES ('37', '36', '文章列表', 'Admin/Posts/index', '', null);
 
 -- ----------------------------
--- Table structure for `bjyadmin_alipay_order`
+-- Table structure for bjyadmin_alipay_order
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_alipay_order`;
 CREATE TABLE `bjyadmin_alipay_order` (
@@ -63,7 +63,7 @@ CREATE TABLE `bjyadmin_alipay_order` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `bjyadmin_auth_group`
+-- Table structure for bjyadmin_auth_group
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_auth_group`;
 CREATE TABLE `bjyadmin_auth_group` (
@@ -82,7 +82,7 @@ INSERT INTO `bjyadmin_auth_group` VALUES ('2', '产品管理员', '1', '6,96,1,2
 INSERT INTO `bjyadmin_auth_group` VALUES ('4', '文章编辑', '1', '6,96,57,60,61,63,71,72,65,67,74,75,66,68,69,73,79,80,78,82,83,88,89,90,99,100,97,98,104,105,106,107,108,118,109,110,111,112,117,113,114');
 
 -- ----------------------------
--- Table structure for `bjyadmin_auth_group_access`
+-- Table structure for bjyadmin_auth_group_access
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_auth_group_access`;
 CREATE TABLE `bjyadmin_auth_group_access` (
@@ -101,7 +101,7 @@ INSERT INTO `bjyadmin_auth_group_access` VALUES ('89', '2');
 INSERT INTO `bjyadmin_auth_group_access` VALUES ('89', '4');
 
 -- ----------------------------
--- Table structure for `bjyadmin_auth_rule`
+-- Table structure for bjyadmin_auth_rule
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_auth_rule`;
 CREATE TABLE `bjyadmin_auth_rule` (
@@ -156,7 +156,7 @@ INSERT INTO `bjyadmin_auth_rule` VALUES ('124', '11', 'Admin/Rule/add_admin', '�
 INSERT INTO `bjyadmin_auth_rule` VALUES ('125', '11', 'Admin/Rule/edit_admin', '修改管理员', '1', '1', '');
 
 -- ----------------------------
--- Table structure for `bjyadmin_oauth_user`
+-- Table structure for bjyadmin_oauth_user
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_oauth_user`;
 CREATE TABLE `bjyadmin_oauth_user` (
@@ -178,7 +178,7 @@ CREATE TABLE `bjyadmin_oauth_user` (
 INSERT INTO `bjyadmin_oauth_user` VALUES ('671', '88', '2', '白俊遥', '', '', 'k2232R1tBYJ232XJQelszNuV2tlzgsdj9m8A6JtRJXMtM2tfOffQP3U0qNG5zL2qnw9Envm4TqeJtIbMjwAZYMaLjnXw==', '1457693930', '1457693930');
 
 -- ----------------------------
--- Table structure for `bjyadmin_order`
+-- Table structure for bjyadmin_order
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_order`;
 CREATE TABLE `bjyadmin_order` (
@@ -192,7 +192,7 @@ CREATE TABLE `bjyadmin_order` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `bjyadmin_province_city_area`
+-- Table structure for bjyadmin_province_city_area
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_province_city_area`;
 CREATE TABLE `bjyadmin_province_city_area` (
@@ -2222,1444 +2222,9 @@ INSERT INTO `bjyadmin_province_city_area` VALUES ('2021', '2016', '湘乡市');
 INSERT INTO `bjyadmin_province_city_area` VALUES ('2022', '2016', '韶山市');
 INSERT INTO `bjyadmin_province_city_area` VALUES ('2023', '1993', '衡阳');
 INSERT INTO `bjyadmin_province_city_area` VALUES ('2024', '2023', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2025', '2023', '江东区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2026', '2023', '城南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2027', '2023', '城北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2028', '2023', '郊   区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2029', '2023', '南岳区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2030', '2023', '衡阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2031', '2023', '衡南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2032', '2023', '衡山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2033', '2023', '衡东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2034', '2023', '祁东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2035', '2023', '耒阳市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2036', '2023', '常宁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2037', '1993', '邵阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2038', '2037', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2039', '2037', '双清区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2040', '2037', '大祥区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2041', '2037', '北塔区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2042', '2037', '邵东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2043', '2037', '新邵县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2044', '2037', '邵阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2045', '2037', '隆回县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2046', '2037', '洞口县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2047', '2037', '绥宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2048', '2037', '新宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2049', '2037', '城步苗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2050', '2037', '武冈市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2051', '1993', '岳阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2052', '2051', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2053', '2051', '岳阳楼区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2054', '2051', '云溪区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2055', '2051', '君山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2056', '2051', '岳阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2057', '2051', '华容县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2058', '2051', '湘阴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2059', '2051', '平江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2060', '2051', '汨罗市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2061', '2051', '临湘市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2062', '1993', '常德');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2063', '2062', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2064', '2062', '武陵区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2065', '2062', '鼎城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2066', '2062', '安乡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2067', '2062', '汉寿县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2068', '2062', '澧  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2069', '2062', '临澧县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2070', '2062', '桃源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2071', '2062', '石门县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2072', '2062', '津市市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2073', '1993', '张家界');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2074', '2073', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2075', '2073', '永定区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2076', '2073', '武陵源区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2077', '2073', '慈利县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2078', '2073', '桑植县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2079', '1993', '益阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2080', '2079', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2081', '2079', '资阳区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2082', '2079', '赫山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2083', '2079', '南  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2084', '2079', '桃江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2085', '2079', '安化县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2086', '2079', '沅江市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2087', '1993', '郴州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2088', '2087', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2089', '2087', '北湖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2090', '2087', '苏仙区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2091', '2087', '桂阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2092', '2087', '宜章县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2093', '2087', '永兴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2094', '2087', '嘉禾县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2095', '2087', '临武县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2096', '2087', '汝城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2097', '2087', '桂东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2098', '2087', '安仁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2099', '2087', '资兴市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2100', '1993', '永州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2101', '2100', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2102', '2100', '芝山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2103', '2100', '冷水滩区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2104', '2100', '祁阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2105', '2100', '东安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2106', '2100', '双牌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2107', '2100', '道  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2108', '2100', '江永县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2109', '2100', '宁远县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2110', '2100', '蓝山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2111', '2100', '新田县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2112', '2100', '江华瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2113', '1993', '怀化');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2114', '2113', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2115', '2113', '鹤城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2116', '2113', '中方县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2117', '2113', '沅陵县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2118', '2113', '辰溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2119', '2113', '溆浦县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2120', '2113', '会同县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2121', '2113', '麻阳苗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2122', '2113', '新晃侗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2123', '2113', '芷江侗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2125', '2113', '通道侗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2126', '2113', '洪江市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2127', '1993', '娄底');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2128', '2127', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2129', '2127', '娄星区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2130', '2127', '双峰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2131', '2127', '新化县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2132', '2127', '冷水江市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2133', '2127', '涟源市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2135', '2134', '吉首市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2136', '2134', '泸溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2137', '2134', '凤凰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2138', '2134', '花垣县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2139', '2134', '保靖县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2140', '2134', '古丈县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2141', '2134', '永顺县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2142', '2134', '龙山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2143', '0', '广东');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2144', '2143', '广州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2145', '2144', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2146', '2144', '东山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2147', '2144', '荔湾区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2148', '2144', '越秀区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2149', '2144', '海珠区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2150', '2144', '天河区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2151', '2144', '芳村区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2152', '2144', '白云区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2153', '2144', '黄埔区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2154', '2144', '番禺区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2155', '2144', '花都区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2156', '2144', '增城市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2157', '2144', '从化市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2158', '2143', '韶关');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2159', '2158', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2160', '2158', '北江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2161', '2158', '武江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2162', '2158', '浈江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2163', '2158', '曲江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2164', '2158', '始兴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2165', '2158', '仁化县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2166', '2158', '翁源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2167', '2158', '乳源瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2168', '2158', '新丰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2169', '2158', '乐昌市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2170', '2158', '南雄市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2171', '2143', '深圳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2172', '2171', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2173', '2171', '罗湖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2174', '2171', '福田区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2175', '2171', '南山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2176', '2171', '宝安区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2177', '2171', '龙岗区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2178', '2171', '盐田区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2179', '2143', '珠海');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2180', '2179', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2181', '2179', '香洲区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2182', '2179', '斗门县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2183', '2143', '汕头');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2184', '2183', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2185', '2183', '达濠区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2186', '2183', '龙湖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2187', '2183', '金园区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2188', '2183', '升平区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2189', '2183', '河浦区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2190', '2183', '南澳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2191', '2183', '潮阳市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2192', '2183', '澄海市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2193', '2143', '佛山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2194', '2193', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2195', '2193', '城  区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2196', '2193', '石湾区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2197', '2193', '顺德市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2198', '2193', '南海市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2199', '2193', '三水市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2200', '2193', '高明市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2201', '2143', '江门');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2202', '2201', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2203', '2201', '蓬江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2204', '2201', '江海区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2205', '2201', '台山市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2206', '2201', '新会市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2207', '2201', '开平市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2208', '2201', '鹤山市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2209', '2201', '恩平市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2210', '2143', '湛江');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2211', '2210', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2212', '2210', '赤坎区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2213', '2210', '霞山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2214', '2210', '坡头区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2215', '2210', '麻章区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2216', '2210', '遂溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2217', '2210', '徐闻县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2218', '2210', '廉江市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2219', '2210', '雷州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2220', '2210', '吴川市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2221', '2143', '茂名');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2222', '2221', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2223', '2221', '茂南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2224', '2221', '电白县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2225', '2221', '高州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2226', '2221', '化州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2227', '2221', '信宜市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2228', '2143', '肇庆');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2229', '2228', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2230', '2228', '端州区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2231', '2228', '鼎湖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2232', '2228', '广宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2233', '2228', '怀集县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2234', '2228', '封开县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2235', '2228', '德庆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2236', '2228', '高要市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2237', '2228', '四会市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2238', '2143', '惠州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2239', '2238', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2240', '2238', '惠城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2241', '2238', '博罗县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2242', '2238', '惠东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2243', '2238', '龙门县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2244', '2238', '惠阳市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2245', '2143', '梅州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2246', '2245', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2247', '2245', '梅江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2248', '2245', '梅  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2249', '2245', '大埔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2250', '2245', '丰顺县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2251', '2245', '五华县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2252', '2245', '平远县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2253', '2245', '蕉岭县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2254', '2245', '兴宁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2255', '2143', '汕尾');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2256', '2255', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2257', '2255', '城  区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2258', '2255', '海丰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2259', '2255', '陆河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2260', '2255', '陆丰市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2261', '2143', '河源');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2262', '2261', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2263', '2261', '源城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2264', '2261', '紫金县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2265', '2261', '龙川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2266', '2261', '连平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2267', '2261', '和平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2268', '2261', '东源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2269', '2143', '阳江');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2270', '2269', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2271', '2269', '江城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2272', '2269', '阳西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2273', '2269', '阳东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2274', '2269', '阳春市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2275', '2143', '清远');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2276', '2275', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2277', '2275', '清城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2278', '2275', '佛冈县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2279', '2275', '阳山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2281', '2275', '连南瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2282', '2275', '清新县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2283', '2275', '英德市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2284', '2275', '连州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2285', '2143', '东莞');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2286', '2285', '莞城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2287', '2285', '东城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2288', '2285', '南城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2289', '2285', '万江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2290', '2143', '中山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2291', '2290', '石岐区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2292', '2290', '东区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2293', '2290', '西区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2294', '2290', '南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2295', '2290', '五桂山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2296', '2143', '潮州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2297', '2296', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2298', '2296', '湘桥区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2299', '2296', '潮安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2300', '2296', '饶平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2301', '2143', '揭阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2302', '2301', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2303', '2301', '榕城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2304', '2301', '揭东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2305', '2301', '揭西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2306', '2301', '惠来县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2307', '2301', '普宁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2308', '2143', '云浮');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2309', '2308', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2310', '2308', '云城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2311', '2308', '新兴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2312', '2308', '郁南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2313', '2308', '云安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2314', '2308', '罗定市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2315', '0', '广西');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2316', '2315', '南宁');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2317', '2316', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2318', '2316', '兴宁区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2319', '2316', '新城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2320', '2316', '城北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2321', '2316', '江南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2322', '2316', '永新区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2323', '2316', '市郊区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2324', '2316', '邕宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2325', '2316', '武鸣县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2326', '2315', '柳州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2327', '2326', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2328', '2326', '城中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2329', '2326', '鱼峰区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2330', '2326', '柳南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2331', '2326', '柳北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2332', '2326', '市郊区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2333', '2326', '柳江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2334', '2326', '柳城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2335', '2315', '桂林');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2336', '2335', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2337', '2335', '秀峰区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2338', '2335', '叠彩区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2339', '2335', '象山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2340', '2335', '七星区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2341', '2335', '雁山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2342', '2335', '阳朔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2343', '2335', '临桂县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2344', '2335', '灵川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2345', '2335', '全州县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2346', '2335', '兴安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2347', '2335', '永福县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2348', '2335', '灌阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2349', '2335', '龙胜各县自治区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2350', '2335', '资源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2351', '2335', '平乐县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2352', '2335', '荔蒲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2353', '2335', '恭城瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2354', '2315', '梧州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2355', '2354', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2356', '2354', '万秀区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2357', '2354', '蝶山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2358', '2354', '市郊区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2359', '2354', '苍梧县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2360', '2354', '藤  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2361', '2354', '蒙山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2362', '2354', '岑溪市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2363', '2315', '北海');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2364', '2363', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2365', '2363', '海城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2366', '2363', '银海区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2367', '2363', '铁山港区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2368', '2363', '合浦县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2369', '2315', '防城港');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2370', '2369', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2371', '2369', '港口区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2372', '2369', '防城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2373', '2369', '上思县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2374', '2369', '东兴市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2375', '2315', '钦州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2376', '2375', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2377', '2375', '钦南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2378', '2375', '钦北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2379', '2375', '浦北县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2380', '2375', '灵山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2381', '2315', '贵港');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2382', '2381', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2383', '2381', '港北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2384', '2381', '港南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2385', '2381', '平南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2386', '2381', '桂平市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2387', '2315', '玉林');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2388', '2387', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2389', '2387', '玉州区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2390', '2387', '容  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2391', '2387', '陆川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2392', '2387', '博白县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2393', '2387', '兴业县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2394', '2387', '北流市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2395', '2315', '南宁地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2396', '2395', '凭祥市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2397', '2395', '横  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2398', '2395', '宾阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2399', '2395', '上林县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2400', '2395', '隆安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2401', '2395', '马山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2402', '2395', '扶绥县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2403', '2395', '崇左县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2404', '2395', '大新县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2405', '2395', '天等县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2406', '2395', '宁明县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2407', '2395', '龙州县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2408', '2315', '柳州地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2409', '2408', '合山市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2410', '2408', '鹿寨县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2411', '2408', '象州县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2412', '2408', '武宣县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2413', '2408', '来宾县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2414', '2408', '融安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2415', '2408', '三江侗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2416', '2408', '融水苗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2417', '2408', '金秀瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2418', '2408', '忻城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2419', '2315', '贺州地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2420', '2419', '贺州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2421', '2419', '昭平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2422', '2419', '钟山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2423', '2419', '富川瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2424', '2315', '百色地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2425', '2424', '百色市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2426', '2424', '田阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2427', '2424', '田东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2428', '2424', '平果县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2429', '2424', '德保县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2430', '2424', '靖西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2431', '2424', '那坡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2432', '2424', '凌云县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2433', '2424', '乐业县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2434', '2424', '田林县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2435', '2424', '隆林各族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2436', '2424', '西林县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2437', '2315', '河池地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2438', '2437', '河池市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2439', '2437', '宜州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2440', '2437', '罗城仫佬族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2441', '2437', '环江毛南族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2442', '2437', '南丹县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2443', '2437', '天峨县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2444', '2437', '凤山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2445', '2437', '东兰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2446', '2437', '巴马瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2447', '2437', '都安瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2448', '2437', '大化瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2449', '0', '海南');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2450', '2449', '海南');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2451', '2450', '通什市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2452', '2450', '琼海市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2453', '2450', '儋州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2454', '2450', '琼山市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2455', '2450', '文昌市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2456', '2450', '万宁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2457', '2450', '东方市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2458', '2450', '定安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2459', '2450', '屯昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2460', '2450', '澄迈县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2461', '2450', '临高县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2462', '2450', '白沙黎族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2463', '2450', '昌江黎族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2464', '2450', '乐东黎族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2465', '2450', '陵水黎族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2468', '2450', '西沙群岛');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2469', '2450', '南沙群岛');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2471', '2449', '海口');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2472', '2471', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2473', '2471', '振东区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2474', '2471', '新华区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2475', '2471', '秀英区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2476', '2449', '三亚');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2477', '2476', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2478', '0', '重庆');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2479', '2478', '重庆市辖');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2480', '2479', '万州区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2481', '2479', '涪陵区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2482', '2479', '渝中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2483', '2479', '大渡口区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2484', '2479', '江北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2485', '2479', '沙坪坝区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2486', '2479', '九龙坡区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2487', '2479', '南岸区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2488', '2479', '北碚区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2489', '2479', '万盛区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2490', '2479', '双桥区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2491', '2479', '渝北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2492', '2479', '巴南区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2493', '2479', '黔江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2494', '2478', '重庆县辖');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2495', '2494', '长寿县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2496', '2494', '綦江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2497', '2494', '潼南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2498', '2494', '铜梁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2499', '2494', '大足县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2500', '2494', '荣昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2501', '2494', '璧山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2502', '2494', '梁平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2503', '2494', '城口县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2504', '2494', '丰都县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2505', '2494', '垫江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2506', '2494', '武隆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2507', '2494', '忠  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2508', '2494', '开  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2509', '2494', '云阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2510', '2494', '奉节县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2511', '2494', '巫山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2512', '2494', '巫溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2513', '2494', '石柱土家族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2517', '2478', '重庆县级');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2518', '2517', '江津市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2519', '2517', '合川市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2520', '2517', '永川市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2521', '2517', '南川市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2522', '0', '四川');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2523', '2522', '成都');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2524', '2523', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2525', '2523', '高新区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2526', '2523', '锦江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2527', '2523', '青羊区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2528', '2523', '金牛区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2529', '2523', '武侯区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2530', '2523', '成华区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2531', '2523', '龙泉驿区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2532', '2523', '青白江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2533', '2523', '金堂县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2534', '2523', '双流县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2535', '2523', '温江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2536', '2523', '郫  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2537', '2523', '新都县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2538', '2523', '大邑县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2539', '2523', '蒲江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2540', '2523', '新津县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2541', '2523', '都江堰市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2542', '2523', '彭州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2543', '2523', '邛崃市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2544', '2523', '崇州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2545', '2522', '自贡');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2546', '2545', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2547', '2545', '自流井区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2548', '2545', '贡井区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2549', '2545', '大安区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2550', '2545', '沿滩区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2551', '2545', '荣  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2552', '2545', '富顺县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2553', '2522', '攀枝花');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2554', '2553', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2555', '2553', '东  区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2556', '2553', '西  区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2557', '2553', '仁和区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2558', '2553', '米易县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2559', '2553', '盐边县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2560', '2522', '泸州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2561', '2560', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2562', '2560', '江阳区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2563', '2560', '纳溪区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2564', '2560', '龙马潭区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2565', '2560', '泸  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2566', '2560', '合江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2567', '2560', '叙永县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2568', '2560', '古蔺县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2569', '2522', '德阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2570', '2569', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2571', '2569', '旌阳区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2572', '2569', '中江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2573', '2569', '罗江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2574', '2569', '广汉市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2575', '2569', '什邡市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2576', '2569', '绵竹市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2577', '2522', '绵阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2578', '2577', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2579', '2577', '涪城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2580', '2577', '游仙区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2581', '2577', '科学城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2582', '2577', '三台县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2583', '2577', '盐亭县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2584', '2577', '安  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2585', '2577', '梓潼县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2586', '2577', '北川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2587', '2577', '平武县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2588', '2577', '江油市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2589', '2522', '广元');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2590', '2589', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2591', '2589', '市中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2592', '2589', '元坝区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2593', '2589', '朝天区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2594', '2589', '旺苍县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2595', '2589', '青川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2596', '2589', '剑阁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2597', '2589', '苍溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2598', '2522', '遂宁');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2599', '2598', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2600', '2598', '市中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2601', '2598', '蓬溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2602', '2598', '射洪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2603', '2598', '大英县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2604', '2522', '内江');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2605', '2604', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2606', '2604', '市中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2607', '2604', '东兴区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2608', '2604', '威远县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2609', '2604', '资中县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2610', '2604', '隆昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2611', '2522', '乐山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2612', '2611', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2613', '2611', '市中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2614', '2611', '沙湾区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2615', '2611', '五通桥区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2616', '2611', '金口河区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2617', '2611', '犍为县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2618', '2611', '井研县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2619', '2611', '夹江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2620', '2611', '沐川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2621', '2611', '峨边彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2622', '2611', '马边彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2623', '2611', '峨眉山市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2624', '2522', '南充');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2625', '2624', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2626', '2624', '顺庆区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2627', '2624', '高坪区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2628', '2624', '嘉陵区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2629', '2624', '南部县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2630', '2624', '营山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2631', '2624', '蓬安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2632', '2624', '仪陇县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2633', '2624', '西充县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2634', '2624', '阆中市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2635', '2522', '眉山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2636', '2635', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2637', '2635', '东坡区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2638', '2635', '仁寿县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2639', '2635', '彭山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2640', '2635', '洪雅县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2641', '2635', '丹棱县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2642', '2635', '青神县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2643', '2522', '宜宾');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2644', '2643', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2645', '2643', '翠屏区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2646', '2643', '宜宾县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2647', '2643', '南溪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2648', '2643', '江安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2649', '2643', '长宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2650', '2643', '高  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2651', '2643', '珙  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2652', '2643', '筠连县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2653', '2643', '兴文县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2654', '2643', '屏山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2655', '2522', '广安');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2656', '2655', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2657', '2655', '广安区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2658', '2655', '岳池县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2659', '2655', '武胜县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2660', '2655', '邻水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2661', '2655', '华蓥市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2662', '2522', '达州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2663', '2662', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2664', '2662', '通川区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2665', '2662', '达  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2666', '2662', '宣汉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2667', '2662', '开江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2668', '2662', '大竹县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2669', '2662', '渠  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2670', '2662', '万源市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2671', '2522', '雅安');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2672', '2671', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2673', '2671', '雨城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2674', '2671', '名山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2675', '2671', '荥经县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2676', '2671', '汉源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2677', '2671', '石棉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2678', '2671', '天全县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2679', '2671', '芦山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2680', '2671', '宝兴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2681', '2522', '巴中');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2682', '2681', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2683', '2681', '巴州区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2684', '2681', '通江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2685', '2681', '南江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2686', '2681', '平昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2687', '2522', '资阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2688', '2687', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2689', '2687', '雁江区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2690', '2687', '安岳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2691', '2687', '乐至县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2692', '2687', '简阳市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2694', '2693', '汶川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2695', '2693', '理  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2696', '2693', '茂  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2697', '2693', '松潘县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2698', '2693', '九寨沟县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2699', '2693', '金川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2700', '2693', '小金县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2701', '2693', '黑水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2702', '2693', '马尔康县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2703', '2693', '壤塘县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2704', '2693', '阿坝县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2705', '2693', '若尔盖县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2706', '2693', '红原县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2707', '2522', '甘孜藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2708', '2707', '康定县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2709', '2707', '泸定县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2710', '2707', '丹巴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2711', '2707', '九龙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2712', '2707', '雅江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2713', '2707', '道孚县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2714', '2707', '炉霍县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2715', '2707', '甘孜县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2716', '2707', '新龙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2717', '2707', '德格县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2718', '2707', '白玉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2719', '2707', '石渠县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2720', '2707', '色达县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2721', '2707', '理塘县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2722', '2707', '巴塘县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2723', '2707', '乡城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2724', '2707', '稻城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2725', '2707', '得荣县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2726', '2522', '凉山彝族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2727', '2726', '西昌市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2728', '2726', '木里藏族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2729', '2726', '盐源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2730', '2726', '德昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2731', '2726', '会理县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2732', '2726', '会东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2733', '2726', '宁南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2734', '2726', '普格县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2735', '2726', '布拖县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2736', '2726', '金阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2737', '2726', '昭觉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2738', '2726', '喜德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2739', '2726', '冕宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2740', '2726', '越西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2741', '2726', '甘洛县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2742', '2726', '美姑县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2743', '2726', '雷波县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2744', '0', '贵州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2745', '2744', '贵阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2746', '2745', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2747', '2745', '南明区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2748', '2745', '云岩区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2749', '2745', '花溪区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2750', '2745', '乌当区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2751', '2745', '白云区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2752', '2745', '小河区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2753', '2745', '开阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2754', '2745', '息烽县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2755', '2745', '修文县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2756', '2745', '清镇市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2757', '2744', '六盘水');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2758', '2757', '钟山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2759', '2757', '六枝特区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2760', '2757', '水城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2761', '2757', '盘  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2762', '2744', '遵义');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2763', '2762', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2764', '2762', '红花岗区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2765', '2762', '遵义县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2766', '2762', '桐梓县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2767', '2762', '绥阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2768', '2762', '正安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2771', '2762', '凤冈县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2772', '2762', '湄潭县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2773', '2762', '余庆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2774', '2762', '习水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2775', '2762', '赤水市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2776', '2762', '仁怀市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2777', '2744', '安顺');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2778', '2777', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2779', '2777', '西秀区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2780', '2777', '平坝县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2781', '2777', '普定县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2785', '2744', '铜仁地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2786', '2785', '铜仁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2787', '2785', '江口县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2788', '2785', '玉屏侗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2789', '2785', '石阡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2790', '2785', '思南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2792', '2785', '德江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2793', '2785', '沿河土家族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2794', '2785', '松桃苗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2795', '2785', '万山特区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2797', '2796', '兴义市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2798', '2796', '兴仁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2799', '2796', '普安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2800', '2796', '晴隆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2801', '2796', '贞丰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2802', '2796', '望谟县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2803', '2796', '册亨县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2804', '2796', '安龙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2805', '2744', '毕节地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2806', '2805', '毕节市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2807', '2805', '大方县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2808', '2805', '黔西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2809', '2805', '金沙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2810', '2805', '织金县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2811', '2805', '纳雍县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2813', '2805', '赫章县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2815', '2814', '凯里市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2816', '2814', '黄平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2817', '2814', '施秉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2818', '2814', '三穗县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2819', '2814', '镇远县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2820', '2814', '岑巩县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2821', '2814', '天柱县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2822', '2814', '锦屏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2823', '2814', '剑河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2824', '2814', '台江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2825', '2814', '黎平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2826', '2814', '榕江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2827', '2814', '从江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2828', '2814', '雷山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2829', '2814', '麻江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2830', '2814', '丹寨县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2832', '2831', '都匀市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2833', '2831', '福泉市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2834', '2831', '荔波县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2835', '2831', '贵定县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2836', '2831', '瓮安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2837', '2831', '独山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2838', '2831', '平塘县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2839', '2831', '罗甸县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2840', '2831', '长顺县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2841', '2831', '龙里县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2842', '2831', '惠水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2843', '2831', '三都水族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2844', '0', '云南');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2845', '2844', '昆明');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2846', '2845', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2847', '2845', '五华区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2848', '2845', '盘龙区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2849', '2845', '官渡区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2850', '2845', '西山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2851', '2845', '东川区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2852', '2845', '呈贡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2853', '2845', '晋宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2854', '2845', '富民县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2855', '2845', '宜良县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2856', '2845', '石林彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2857', '2845', '嵩明县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2860', '2845', '安宁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2861', '2844', '曲靖');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2862', '2861', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2863', '2861', '麒麟区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2864', '2861', '马龙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2865', '2861', '陆良县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2866', '2861', '师宗县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2867', '2861', '罗平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2868', '2861', '富源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2869', '2861', '会泽县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2870', '2861', '沾益县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2871', '2861', '宣威市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2872', '2844', '玉溪');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2873', '2872', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2874', '2872', '红塔区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2875', '2872', '江川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2876', '2872', '澄江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2877', '2872', '通海县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2878', '2872', '华宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2879', '2872', '易门县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2880', '2872', '峨山彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2883', '2844', '保山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2884', '2883', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2885', '2883', '隆阳区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2886', '2883', '施甸县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2887', '2883', '腾冲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2888', '2883', '龙陵县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2889', '2883', '昌宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2890', '2844', '昭通地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2891', '2890', '昭通市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2892', '2890', '鲁甸县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2893', '2890', '巧家县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2894', '2890', '盐津县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2895', '2890', '大关县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2896', '2890', '永善县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2897', '2890', '绥江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2898', '2890', '镇雄县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2899', '2890', '彝良县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2900', '2890', '威信县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2901', '2890', '水富县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2902', '2844', '楚雄彝族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2903', '2902', '楚雄市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2904', '2902', '双柏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2905', '2902', '牟定县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2906', '2902', '南华县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2907', '2902', '姚安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2908', '2902', '大姚县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2909', '2902', '永仁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2910', '2902', '元谋县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2911', '2902', '武定县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2912', '2902', '禄丰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2914', '2913', '个旧市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2915', '2913', '开远市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2916', '2913', '蒙自县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2917', '2913', '屏边苗族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2918', '2913', '建水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2919', '2913', '石屏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2920', '2913', '弥勒县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2921', '2913', '泸西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2922', '2913', '元阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2923', '2913', '红河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2925', '2913', '绿春县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2926', '2913', '河口瑶族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2928', '2927', '文山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2929', '2927', '砚山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2930', '2927', '西畴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2931', '2927', '麻栗坡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2932', '2927', '马关县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2933', '2927', '丘北县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2934', '2927', '广南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2935', '2927', '富宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2936', '2844', '思茅地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2937', '2936', '思茅市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2939', '2936', '墨江哈尼族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2940', '2936', '景东彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2945', '2936', '澜沧拉祜族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2946', '2936', '西盟佤族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2948', '2947', '景洪市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2949', '2947', '勐海县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2950', '2947', '勐腊县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2951', '2844', '大理白族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2952', '2951', '大理市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2953', '2951', '漾濞彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2954', '2951', '祥云县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2955', '2951', '宾川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2956', '2951', '弥渡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2957', '2951', '南涧彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2959', '2951', '永平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2960', '2951', '云龙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2961', '2951', '洱源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2962', '2951', '剑川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2963', '2951', '鹤庆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2965', '2964', '瑞丽市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2966', '2964', '潞西市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2967', '2964', '梁河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2968', '2964', '盈江县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2969', '2964', '陇川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2970', '2844', '丽江地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2971', '2970', '丽江纳西族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2972', '2970', '永胜县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2973', '2970', '华坪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2974', '2970', '宁蒗彝族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2975', '2844', '怒江傈僳族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2976', '2975', '泸水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2977', '2975', '福贡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2980', '2844', '迪庆藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2981', '2980', '中甸县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2982', '2980', '德钦县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2983', '2980', '维西傈僳族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2984', '2844', '临沧地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2985', '2984', '临沧县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2986', '2984', '凤庆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2987', '2984', '云  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2988', '2984', '永德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2989', '2984', '镇康县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2992', '2984', '沧源佤族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2993', '0', '西藏');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2994', '2993', '拉萨');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2995', '2994', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2996', '2994', '城关区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2997', '2994', '林周县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2998', '2994', '当雄县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('2999', '2994', '尼木县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3000', '2994', '曲水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3001', '2994', '堆龙德庆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3002', '2994', '达孜县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3003', '2994', '墨竹工卡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3004', '2993', '昌都地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3005', '3004', '昌都县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3006', '3004', '江达县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3007', '3004', '贡觉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3008', '3004', '类乌齐县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3009', '3004', '丁青县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3010', '3004', '察雅县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3011', '3004', '八宿县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3012', '3004', '左贡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3013', '3004', '芒康县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3014', '3004', '洛隆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3015', '3004', '边坝县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3016', '2993', '山南地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3017', '3016', '乃东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3018', '3016', '扎囊县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3019', '3016', '贡嘎县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3020', '3016', '桑日县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3021', '3016', '琼结县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3022', '3016', '曲松县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3023', '3016', '措美县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3024', '3016', '洛扎县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3025', '3016', '加查县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3026', '3016', '隆子县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3027', '3016', '错那县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3028', '3016', '浪卡子县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3029', '2993', '日喀则地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3030', '3029', '日喀则市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3031', '3029', '南木林县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3032', '3029', '江孜县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3033', '3029', '定日县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3034', '3029', '萨迦县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3035', '3029', '拉孜县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3036', '3029', '昂仁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3037', '3029', '谢通门县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3038', '3029', '白朗县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3039', '3029', '仁布县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3040', '3029', '康马县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3041', '3029', '定结县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3042', '3029', '仲巴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3043', '3029', '亚东县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3044', '3029', '吉隆县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3045', '3029', '聂拉木县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3046', '3029', '萨嘎县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3047', '3029', '岗巴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3048', '2993', '那曲地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3049', '3048', '那曲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3050', '3048', '嘉黎县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3051', '3048', '比如县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3052', '3048', '聂荣县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3053', '3048', '安多县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3054', '3048', '申扎县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3055', '3048', '索  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3056', '3048', '班戈县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3057', '3048', '巴青县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3058', '3048', '尼玛县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3059', '2993', '阿里地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3060', '3059', '普兰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3061', '3059', '札达县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3062', '3059', '噶尔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3063', '3059', '日土县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3064', '3059', '革吉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3065', '3059', '改则县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3066', '3059', '措勤县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3067', '2993', '林芝地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3068', '3067', '林芝县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3069', '3067', '工布江达县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3070', '3067', '米林县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3071', '3067', '墨脱县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3072', '3067', '波密县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3073', '3067', '察隅县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3074', '3067', '朗  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3075', '0', '陕西');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3076', '3075', '西安');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3077', '3076', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3078', '3076', '新城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3079', '3076', '碑林区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3080', '3076', '莲湖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3081', '3076', '灞桥区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3082', '3076', '未央区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3083', '3076', '雁塔区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3084', '3076', '阎良区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3085', '3076', '临潼区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3086', '3076', '长安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3087', '3076', '蓝田县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3088', '3076', '周至县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3089', '3076', '户  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3090', '3076', '高陵县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3091', '3075', '铜川');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3092', '3091', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3093', '3091', '王益区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3094', '3091', '印台区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3095', '3091', '耀  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3096', '3091', '宜君县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3097', '3075', '宝鸡');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3098', '3097', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3099', '3097', '渭滨区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3100', '3097', '金台区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3101', '3097', '宝鸡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3102', '3097', '凤翔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3103', '3097', '岐山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3104', '3097', '扶风县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3105', '3097', '眉  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3106', '3097', '陇  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3107', '3097', '千阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3108', '3097', '麟游县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3109', '3097', '凤  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3110', '3097', '太白县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3111', '3075', '咸阳');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3112', '3111', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3113', '3111', '秦都区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3114', '3111', '杨陵区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3115', '3111', '渭城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3116', '3111', '三原县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3117', '3111', '泾阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3118', '3111', '乾  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3119', '3111', '礼泉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3120', '3111', '永寿县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3121', '3111', '彬  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3122', '3111', '长武县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3123', '3111', '旬邑县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3124', '3111', '淳化县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3125', '3111', '武功县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3126', '3111', '兴平市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3127', '3075', '渭南');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3128', '3127', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3129', '3127', '临渭区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3130', '3127', '华  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3131', '3127', '潼关县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3132', '3127', '大荔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3133', '3127', '合阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3134', '3127', '澄城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3135', '3127', '蒲城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3136', '3127', '白水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3137', '3127', '富平县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3138', '3127', '韩城市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3139', '3127', '华阴市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3140', '3075', '延安');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3141', '3140', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3142', '3140', '宝塔区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3143', '3140', '延长县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3144', '3140', '延川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3145', '3140', '子长县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3146', '3140', '安塞县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3147', '3140', '志丹县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3148', '3140', '吴旗县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3149', '3140', '甘泉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3150', '3140', '富  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3151', '3140', '洛川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3152', '3140', '宜川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3153', '3140', '黄龙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3154', '3140', '黄陵县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3155', '3075', '汉中');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3156', '3155', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3157', '3155', '汉台区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3158', '3155', '南郑县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3159', '3155', '城固县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3160', '3155', '洋  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3161', '3155', '西乡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3162', '3155', '勉  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3163', '3155', '宁强县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3164', '3155', '略阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3165', '3155', '镇巴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3166', '3155', '留坝县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3167', '3155', '佛坪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3168', '3075', '榆林');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3169', '3168', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3170', '3168', '榆阳区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3171', '3168', '神木县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3172', '3168', '府谷县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3173', '3168', '横山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3174', '3168', '靖边县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3175', '3168', '定边县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3176', '3168', '绥德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3177', '3168', '米脂县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3178', '3168', '佳  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3179', '3168', '吴堡县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3180', '3168', '清涧县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3181', '3168', '子洲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3182', '3075', '安康');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3183', '3182', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3184', '3182', '汉滨区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3185', '3182', '汉阴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3186', '3182', '石泉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3187', '3182', '宁陕县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3188', '3182', '紫阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3189', '3182', '岚皋县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3190', '3182', '平利县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3191', '3182', '镇坪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3192', '3182', '旬阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3193', '3182', '白河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3194', '3075', '商洛地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3195', '3194', '商州市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3196', '3194', '洛南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3197', '3194', '丹凤县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3198', '3194', '商南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3199', '3194', '山阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3200', '3194', '镇安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3201', '3194', '柞水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3202', '0', '甘肃');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3203', '3202', '兰州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3204', '3203', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3205', '3203', '城关区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3206', '3203', '七里河区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3207', '3203', '西固区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3208', '3203', '安宁区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3209', '3203', '红古区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3210', '3203', '永登县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3211', '3203', '皋兰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3212', '3203', '榆中县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3213', '3202', '嘉峪关');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3214', '3213', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3215', '3202', '金昌');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3216', '3215', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3217', '3215', '金川区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3218', '3215', '永昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3219', '3202', '白银');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3220', '3219', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3221', '3219', '白银区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3222', '3219', '平川区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3223', '3219', '靖远县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3224', '3219', '会宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3225', '3219', '景泰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3226', '3202', '天水');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3227', '3226', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3228', '3226', '秦城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3229', '3226', '北道区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3230', '3226', '清水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3231', '3226', '秦安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3232', '3226', '甘谷县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3233', '3226', '武山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3234', '3226', '张家川回族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3235', '3202', '酒泉地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3236', '3235', '玉门市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3237', '3235', '酒泉市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3238', '3235', '敦煌市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3239', '3235', '金塔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3240', '3235', '肃北蒙古族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3242', '3235', '安西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3243', '3202', '张掖地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3244', '3243', '张掖市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3245', '3243', '肃南裕固族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3246', '3243', '民乐县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3247', '3243', '临泽县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3248', '3243', '高台县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3249', '3243', '山丹县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3250', '3202', '武威地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3251', '3250', '武威市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3252', '3250', '民勤县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3253', '3250', '古浪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3254', '3250', '天祝藏族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3255', '3202', '定西地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3256', '3255', '定西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3257', '3255', '通渭县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3258', '3255', '陇西县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3259', '3255', '渭源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3260', '3255', '临洮县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3261', '3255', '漳  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3262', '3255', '岷  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3263', '3202', '陇南地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3264', '3263', '武都县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3265', '3263', '宕昌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3266', '3263', '成  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3267', '3263', '康  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3268', '3263', '文  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3269', '3263', '西和县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3270', '3263', '礼  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3271', '3263', '两当县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3272', '3263', '徽  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3273', '3202', '平凉地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3274', '3273', '平凉市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3275', '3273', '泾川县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3276', '3273', '灵台县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3277', '3273', '崇信县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3278', '3273', '华亭县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3279', '3273', '庄浪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3280', '3273', '静宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3281', '3202', '庆阳地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3282', '3281', '西峰市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3283', '3281', '庆阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3284', '3281', '环  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3285', '3281', '华池县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3286', '3281', '合水县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3287', '3281', '正宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3288', '3281', '宁  县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3289', '3281', '镇原县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3290', '3202', '临夏回族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3291', '3290', '临夏市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3292', '3290', '临夏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3293', '3290', '康乐县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3294', '3290', '永靖县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3295', '3290', '广河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3296', '3290', '和政县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3297', '3290', '东乡族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3299', '3202', '甘南藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3300', '3299', '合作市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3301', '3299', '临潭县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3302', '3299', '卓尼县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3303', '3299', '舟曲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3304', '3299', '迭部县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3305', '3299', '玛曲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3306', '3299', '碌曲县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3307', '3299', '夏河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3308', '0', '青海');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3309', '3308', '西宁');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3310', '3309', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3311', '3309', '城东区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3312', '3309', '城中区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3313', '3309', '城西区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3314', '3309', '城北区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3316', '3309', '湟中县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3317', '3309', '湟源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3318', '3308', '海东地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3319', '3318', '平安县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3321', '3318', '乐都县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3322', '3318', '互助土族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3323', '3318', '化隆回族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3324', '3318', '循化撒拉族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3325', '3308', '海北藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3326', '3325', '门源回族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3327', '3325', '祁连县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3328', '3325', '海晏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3329', '3325', '刚察县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3330', '3308', '黄南藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3331', '3330', '同仁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3332', '3330', '尖扎县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3333', '3330', '泽库县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3334', '3330', '河南蒙古族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3335', '3308', '海南藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3336', '3335', '共和县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3337', '3335', '同德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3338', '3335', '贵德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3339', '3335', '兴海县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3340', '3335', '贵南县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3341', '3308', '果洛藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3342', '3341', '玛沁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3343', '3341', '班玛县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3344', '3341', '甘德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3345', '3341', '达日县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3346', '3341', '久治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3347', '3341', '玛多县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3348', '3308', '玉树藏族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3349', '3348', '玉树县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3350', '3348', '杂多县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3351', '3348', '称多县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3352', '3348', '治多县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3353', '3348', '囊谦县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3354', '3348', '曲麻莱县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3356', '3355', '格尔木市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3357', '3355', '德令哈市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3358', '3355', '乌兰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3359', '3355', '都兰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3360', '3355', '天峻县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3361', '0', '宁夏');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3362', '3361', '银川');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3363', '3362', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3364', '3362', '城  区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3365', '3362', '新城区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3366', '3362', '郊  区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3367', '3362', '永宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3368', '3362', '贺兰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3369', '3361', '石嘴山');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3370', '3369', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3371', '3369', '大武口区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3372', '3369', '石嘴山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3373', '3369', '石炭井区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3374', '3369', '平罗县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3375', '3369', '陶乐县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3376', '3369', '惠农县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3377', '3361', '吴忠');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3378', '3377', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3379', '3377', '利通区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3380', '3377', '中卫县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3381', '3377', '中宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3382', '3377', '盐池县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3383', '3377', '同心县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3384', '3377', '青铜峡市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3385', '3377', '灵武市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3386', '3361', '固原地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3387', '3386', '固原县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3388', '3386', '海原县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3389', '3386', '西吉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3390', '3386', '隆德县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3391', '3386', '泾源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3392', '3386', '彭阳县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3393', '0', '新疆');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3394', '3393', '乌鲁木齐');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3395', '3394', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3396', '3394', '天山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3397', '3394', '沙依巴克区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3398', '3394', '新市区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3399', '3394', '水磨沟区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3400', '3394', '头屯河区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3401', '3394', '南泉区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3402', '3394', '东山区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3403', '3394', '乌鲁木齐县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3404', '3393', '克拉玛依');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3405', '3404', '市辖区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3406', '3404', '独山子区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3407', '3404', '克拉玛依区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3408', '3404', '白碱滩区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3409', '3404', '乌尔禾区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3410', '3393', '吐鲁番地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3411', '3410', '吐鲁番市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3412', '3410', '鄯善县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3413', '3410', '托克逊县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3414', '3393', '哈密地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3415', '3414', '哈密市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3417', '3414', '伊吾县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3418', '3393', '昌吉回族自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3419', '3418', '昌吉市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3420', '3418', '阜康市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3421', '3418', '米泉市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3422', '3418', '呼图壁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3423', '3418', '玛纳斯县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3424', '3418', '奇台县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3425', '3418', '吉木萨尔县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3426', '3418', '木垒哈萨克自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3428', '3427', '博乐市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3429', '3427', '精河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3430', '3427', '温泉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3432', '3431', '库尔勒市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3433', '3431', '轮台县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3434', '3431', '尉犁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3435', '3431', '若羌县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3436', '3431', '且末县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3437', '3431', '焉耆回族自治县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3438', '3431', '和静县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3439', '3431', '和硕县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3440', '3431', '博湖县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3441', '3393', '阿克苏地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3442', '3441', '阿克苏市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3443', '3441', '温宿县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3444', '3441', '库车县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3445', '3441', '沙雅县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3446', '3441', '新和县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3447', '3441', '拜城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3448', '3441', '乌什县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3449', '3441', '阿瓦提县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3450', '3441', '柯坪县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3452', '3451', '阿图什市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3453', '3451', '阿克陶县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3454', '3451', '阿合奇县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3455', '3451', '乌恰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3456', '3393', '喀什地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3457', '3456', '喀什市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3458', '3456', '疏附县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3459', '3456', '疏勒县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3460', '3456', '英吉沙县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3461', '3456', '泽普县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3462', '3456', '莎车县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3463', '3456', '叶城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3464', '3456', '麦盖提县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3465', '3456', '岳普湖县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3466', '3456', '伽师县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3467', '3456', '巴楚县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3469', '3393', '和田地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3470', '3469', '和田市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3471', '3469', '和田县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3472', '3469', '墨玉县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3473', '3469', '皮山县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3474', '3469', '洛浦县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3475', '3469', '策勒县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3476', '3469', '于田县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3477', '3469', '民丰县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3478', '3393', '伊犁哈萨克自治州');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3479', '3478', '奎屯市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3480', '3393', '伊犁地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3481', '3480', '伊宁市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3482', '3480', '伊宁县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3484', '3480', '霍城县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3485', '3480', '巩留县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3486', '3480', '新源县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3487', '3480', '昭苏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3488', '3480', '特克斯县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3489', '3480', '尼勒克县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3490', '3393', '塔城地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3491', '3490', '塔城市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3492', '3490', '乌苏市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3493', '3490', '额敏县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3494', '3490', '沙湾县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3495', '3490', '托里县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3496', '3490', '裕民县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3498', '3393', '阿勒泰地区');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3499', '3498', '阿勒泰市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3500', '3498', '布尔津县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3501', '3498', '富蕴县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3502', '3498', '福海县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3503', '3498', '哈巴河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3504', '3498', '青河县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3505', '3498', '吉木乃县');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3506', '3393', '省直辖行政单位');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3507', '3506', '石河子市');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3508', '0', '台湾');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3509', '0', '香港');
-INSERT INTO `bjyadmin_province_city_area` VALUES ('3510', '0', '澳门');
 
 -- ----------------------------
--- Table structure for `bjyadmin_users`
+-- Table structure for bjyadmin_users
 -- ----------------------------
 DROP TABLE IF EXISTS `bjyadmin_users`;
 CREATE TABLE `bjyadmin_users` (
@@ -3685,164 +2250,7 @@ INSERT INTO `bjyadmin_users` VALUES ('88', 'admin', 'e10adc3949ba59abbe56e057f20
 INSERT INTO `bjyadmin_users` VALUES ('89', 'admin2', 'e10adc3949ba59abbe56e057f20f883e', '/Upload/avatar/user2.jpg', '', '', null, '1', '1449199996', '', '0');
 
 -- ----------------------------
--- Table structure for `eps_address`
--- ----------------------------
-DROP TABLE IF EXISTS `eps_address`;
-CREATE TABLE `eps_address` (
-  `id` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `account` char(30) NOT NULL,
-  `contact` varchar(50) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `phone` char(20) NOT NULL,
-  `zipcode` char(6) NOT NULL,
-  `lang` char(30) NOT NULL,
-  `wechat` varchar(100) NOT NULL,
-  `remarks` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `account` (`account`) USING BTREE,
-  KEY `lang` (`lang`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of eps_address
--- ----------------------------
-INSERT INTO `eps_address` VALUES ('1', '123', '徐大大', '大大大大', '15157125056', '121535', 'zh-cn', '', '');
-INSERT INTO `eps_address` VALUES ('2', 'arthur_xcc', '许存存', '杭州阿麦科技', '18437652181', '310010', 'zh-cn', 'arthur_xcc', '尽快发货');
-INSERT INTO `eps_address` VALUES ('3', 'wechat_576cd66fa067c', '许存存', '阿麦科技', '18437652181', '310010', 'zh-cn', 'arthur_xcc', '');
-INSERT INTO `eps_address` VALUES ('4', 'wx_57709044a1b79', '许存存', '阿麦', '18437652181', '310010', 'zh-cn', 'arthur_xcc', '');
-INSERT INTO `eps_address` VALUES ('5', 'liuhuihui', '刘慧慧', '浙江省杭州市', '13516718179', '310012', 'zh-cn', 'liuhuihui', '');
-INSERT INTO `eps_address` VALUES ('6', 'wx_5775f4d48dd84', '许存存', '阿麦', '18437652181', '', 'zh-cn', 'arthur', '');
-INSERT INTO `eps_address` VALUES ('7', 'wx_577214c26ea5a', '许存存', '杭州阿麦', '18437652181', '', 'zh-cn', 'arthur', '');
-INSERT INTO `eps_address` VALUES ('8', 'wx_576baeec2adb4', '刘慧慧', '浙江杭州', '13516718179', '310022', 'zh-cn', 'mmmm', '');
-INSERT INTO `eps_address` VALUES ('9', 'wx_5775263fbd7c8', '万少波', '123', '13165895461', '', 'zh-cn', 'wan', '');
-INSERT INTO `eps_address` VALUES ('10', 'wx_5775123be6277', '淡淡的', '吃才吃饭吃', '15157125056', '', 'zh-cn', 'ccf', '');
-INSERT INTO `eps_address` VALUES ('11', 'wx_5775123be6277', '淡淡的', '犯过错', '15157125056', '', 'zh-cn', 'dds', '');
-
--- ----------------------------
--- Table structure for `eps_cart`
--- ----------------------------
-DROP TABLE IF EXISTS `eps_cart`;
-CREATE TABLE `eps_cart` (
-  `id` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `account` char(30) NOT NULL,
-  `product` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `count` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `lang` char(30) NOT NULL,
-  `extra` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `account` (`account`) USING BTREE,
-  KEY `lang` (`lang`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of eps_cart
--- ----------------------------
-INSERT INTO `eps_cart` VALUES ('1', '123', '6', '1', 'zh-cn', '');
-INSERT INTO `eps_cart` VALUES ('2', '', '6', '1', 'zh-cn', '{}');
-INSERT INTO `eps_cart` VALUES ('3', '', '6', '1', 'zh-cn', '');
-INSERT INTO `eps_cart` VALUES ('9', 'wx_5775123be6277', '5', '5', 'zh-cn', '{}');
-INSERT INTO `eps_cart` VALUES ('8', 'wx_5775123be6277', '6', '1', 'zh-cn', '{}');
-INSERT INTO `eps_cart` VALUES ('10', 'wx_5775123be6277', '10', '1', 'zh-cn', '{\"23\":\"红色\",\"24\":\"M\"}');
-INSERT INTO `eps_cart` VALUES ('11', 'wx_577214c26ea5a', '6', '1', 'zh-cn', '{}');
-
--- ----------------------------
--- Table structure for `eps_gift`
--- ----------------------------
-DROP TABLE IF EXISTS `eps_gift`;
-CREATE TABLE `eps_gift` (
-  `lang` char(30) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `author` varchar(12) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` double(11,2) NOT NULL,
-  `imgPath` varchar(255) NOT NULL DEFAULT 'default/default_gift.png',
-  `createTime` datetime NOT NULL,
-  `updateTime` datetime DEFAULT NULL,
-  `fileId` int(32) DEFAULT NULL,
-  `state` smallint(3) NOT NULL DEFAULT '0' COMMENT '100:使用中；200:已禁用',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of eps_gift
--- ----------------------------
-INSERT INTO `eps_gift` VALUES ('zh-cn', '4', '', '宝宝', '100.00', '201607/f_8f15c2078839af235f9307a5c068757b.gif', '2016-05-18 17:09:36', '2016-07-18 16:34:18', '43', '200');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '7', '', '牛牛', '0.02', '201607/f_01dec1c5bb771a8f110c47262482d0ec.gif', '2016-05-18 17:10:49', '2016-07-18 16:36:41', '45', '200');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '8', '', '二娃', '0.01', '201607/f_0ad157c74b7cb3f8b1296ef75537efbe.gif', '2016-05-18 17:11:09', '2016-07-18 16:39:42', '46', '200');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '9', '', '棒棒糖', '0.01', '201607/f_fce4cb7f136c794dd8756099fa4ec287.png', '2016-05-30 14:15:03', '2016-07-19 09:54:16', '52', '100');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '10', '', '戒指', '0.01', '201607/f_958320c91bfaf13c20d3207bfc7f063b.png', '2016-05-30 14:15:33', '2016-07-19 11:20:06', '54', '100');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '23', 'admin', '美女赠送', '0.88', '201607/f_1a30d70b5c536c3e8f032a021d7cca9f.gif', '2016-07-18 11:26:52', '2016-07-18 16:46:50', '48', '1');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '24', 'admin', '航空母舰', '1000.00', '201607/f_d33d356067d5fbeef6a679c926ab8235.gif', '2016-07-18 11:27:35', '2016-07-19 17:21:10', '60', '1');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '30', 'admin', '测试礼物', '0.01', '201607/f_37f07532409c04ed4e0487e7ce8d209b.gif', '2016-07-19 11:22:57', '2016-07-19 11:22:57', '57', '1');
-INSERT INTO `eps_gift` VALUES ('zh-cn', '31', 'admin', '啤酒111111', '123.00', '201607/f_204499e0aebb6bbf68a62ea6d79d461d.gif', '2016-07-21 13:46:46', '2016-07-21 13:47:00', '61', '1');
-
--- ----------------------------
--- Table structure for `imooc_admin`
--- ----------------------------
-DROP TABLE IF EXISTS `imooc_admin`;
-CREATE TABLE `imooc_admin` (
-  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` char(32) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of imooc_admin
--- ----------------------------
-INSERT INTO `imooc_admin` VALUES ('1', 'king', 'b2086154f101464aab3328ba7e060deb', '382771946@qq.com');
-INSERT INTO `imooc_admin` VALUES ('2', 'admin', 'b2086154f101464aab3328ba7e060deb', '382771946@qq.com');
-INSERT INTO `imooc_admin` VALUES ('3', 'imooc123', 'cab98d9ca998b351854f959064ca4935', 'imooc123@qq.com');
-INSERT INTO `imooc_admin` VALUES ('4', 'imooc1', '00e19d92ed3f2be707e94051b92986d1', 'imooc1@qq.com');
-INSERT INTO `imooc_admin` VALUES ('5', 'imoocCCTV', '914f21eb84c6fdb2b663dd6f453f65ca', 'imoocCCTV@qq.com');
-INSERT INTO `imooc_admin` VALUES ('6', 'test', '098f6bcd4621d373cade4e832627b4f6', 'test@qq.com');
-
--- ----------------------------
--- Table structure for `imooc_cate`
--- ----------------------------
-DROP TABLE IF EXISTS `imooc_cate`;
-CREATE TABLE `imooc_cate` (
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `cName` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `cName` (`cName`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of imooc_cate
--- ----------------------------
-INSERT INTO `imooc_cate` VALUES ('1', '家用电器');
-INSERT INTO `imooc_cate` VALUES ('4', '服装专区');
-
--- ----------------------------
--- Table structure for `imooc_user`
--- ----------------------------
-DROP TABLE IF EXISTS `imooc_user`;
-CREATE TABLE `imooc_user` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` char(32) NOT NULL,
-  `sex` enum('男','女','保密') NOT NULL DEFAULT '保密',
-  `email` varchar(50) NOT NULL,
-  `face` varchar(50) NOT NULL,
-  `regTime` int(10) unsigned NOT NULL,
-  `activeFlag` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of imooc_user
--- ----------------------------
-INSERT INTO `imooc_user` VALUES ('2', 'king', 'b2086154f101464aab3328ba7e060deb', '男', 'king@qq.com', 'af423aeab90796e3c1cd994b6c464e09.jpg', '1402583678', '0');
-INSERT INTO `imooc_user` VALUES ('3', 'queen', '72545f3f86fad045a26ed54abd2bbb9f', '保密', 'queen@sina.com', '45306f3e9e4674362731545a86b2261e.jpg', '1402584566', '0');
-INSERT INTO `imooc_user` VALUES ('4', 'test123', 'cc03e747a6afbbcbf8be7668acfebee5', '保密', 'test123@qq.com', 'c794aed26d04790517233c1d2c99c4d5.jpg', '1402585325', '0');
-INSERT INTO `imooc_user` VALUES ('5', 'test', 'c20ad4d76fe97759aa27a0c99bff6710', '男', 'test@qq.com', 'ce92c236763184aa42abf575df39b9d1.jpg', '1403009244', '0');
-
--- ----------------------------
--- Table structure for `tour_admin_access`
+-- Table structure for tour_admin_access
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_admin_access`;
 CREATE TABLE `tour_admin_access` (
@@ -3857,22 +2265,64 @@ CREATE TABLE `tour_admin_access` (
 -- ----------------------------
 -- Records of tour_admin_access
 -- ----------------------------
-INSERT INTO `tour_admin_access` VALUES ('1', '181', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '221', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '220', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '219', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '220', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '219', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '228', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '218', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '217', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '216', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '215', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '214', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '213', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '212', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '218', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '213', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '210', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '209', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '205', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '203', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '191', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '211', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '210', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '209', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '207', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '206', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '205', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '203', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '191', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '190', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '189', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '188', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '187', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '192', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '179', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '178', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '177', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '177', '2', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '176', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '175', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '174', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '173', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '173', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '172', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '171', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '170', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '169', '2', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '168', '1', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '171', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '190', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '189', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '188', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '187', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '177', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '176', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '175', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '174', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '173', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '172', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '171', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '166', '1', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '166', '1', null);
 
 -- ----------------------------
--- Table structure for `tour_admin_node`
+-- Table structure for tour_admin_node
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_admin_node`;
 CREATE TABLE `tour_admin_node` (
@@ -3884,32 +2334,57 @@ CREATE TABLE `tour_admin_node` (
   `sort` smallint(6) unsigned DEFAULT NULL,
   `pid` smallint(6) unsigned NOT NULL,
   `level` tinyint(1) unsigned NOT NULL,
+  `class` varchar(32) DEFAULT NULL,
+  `menus` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `level` (`level`) USING BTREE,
   KEY `pid` (`pid`) USING BTREE,
   KEY `status` (`status`) USING BTREE,
   KEY `name` (`name`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=182 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=229 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_admin_node
 -- ----------------------------
-INSERT INTO `tour_admin_node` VALUES ('168', 'ADMIN', '后台管理', '1', null, null, '0', '1');
-INSERT INTO `tour_admin_node` VALUES ('169', 'INDEX', '首页', '1', null, null, '168', '2');
-INSERT INTO `tour_admin_node` VALUES ('170', 'index', '列表', '1', null, null, '169', '3');
-INSERT INTO `tour_admin_node` VALUES ('171', 'userAgent', '判断用户', '1', null, null, '169', '3');
-INSERT INTO `tour_admin_node` VALUES ('172', 'notice', '通知信息', '1', null, null, '169', '3');
-INSERT INTO `tour_admin_node` VALUES ('173', 'FILE', '文件管理', '1', null, null, '168', '2');
-INSERT INTO `tour_admin_node` VALUES ('174', 'index', '列表', '1', null, null, '173', '3');
-INSERT INTO `tour_admin_node` VALUES ('175', 'uploadFile', '文件上传', '1', null, null, '173', '3');
-INSERT INTO `tour_admin_node` VALUES ('176', 'imageUpload', '图片上传', '1', null, null, '173', '3');
-INSERT INTO `tour_admin_node` VALUES ('177', 'waterImage', '水印图片', '1', null, null, '173', '3');
-INSERT INTO `tour_admin_node` VALUES ('178', 'uploadImage', '异步上传', '1', null, null, '173', '3');
-INSERT INTO `tour_admin_node` VALUES ('179', 'uploadifyUploadImage', '异步上传2', '1', null, null, '173', '3');
-INSERT INTO `tour_admin_node` VALUES ('181', 'editFace', '修改头像', '1', null, null, '173', '3');
+INSERT INTO `tour_admin_node` VALUES ('166', 'Home', '云数据后台', '1', null, null, '0', '1', null, '2');
+INSERT INTO `tour_admin_node` VALUES ('219', 'System', '系统管理', '1', null, null, '166', '2', ' icon-cogs', '1');
+INSERT INTO `tour_admin_node` VALUES ('171', 'File', '文件管理', '1', null, null, '166', '2', ' icon-folder-open', '1');
+INSERT INTO `tour_admin_node` VALUES ('172', 'index', '列表', '0', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('173', 'uploadFile', '文件上传', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('174', 'image', '图片', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('175', 'imageUpload', '图片上传', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('176', 'waterImage', '水印', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('177', 'Category', '分类管理', '1', null, null, '166', '2', 'icon-bar-chart', '1');
+INSERT INTO `tour_admin_node` VALUES ('178', 'addCategory', '添加分类', '1', null, null, '177', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('179', 'checkCategory', '检查分类', '1', null, null, '177', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('223', 'createnode', 'createnode', '1', null, null, '166', '2', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('225', 'createnode1', 'createnode', '1', null, null, '223', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('187', 'Product', '商品管理', '1', null, null, '166', '2', 'icon-gift', '1');
+INSERT INTO `tour_admin_node` VALUES ('188', 'index', '添加', '1', null, null, '187', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('189', 'productList', '列表', '1', null, null, '187', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('190', 'UploadImage', '商品图片', '1', null, null, '187', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('191', 'delProduct', '删除商品', '1', null, null, '187', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('192', 'ajaxAdd', '添加分类', '1', null, null, '177', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('203', 'Rbac', '权限管理', '1', null, null, '166', '2', ' icon-group', '1');
+INSERT INTO `tour_admin_node` VALUES ('220', 'index', '网站详情', '1', null, null, '219', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('221', 'edit', '网站设置', '1', null, null, '219', '3', 'icon-calendar', '0');
+INSERT INTO `tour_admin_node` VALUES ('218', 'userIndex', '用户列表', '1', null, null, '203', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('205', 'createAdminUser', '添加用户', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('206', 'delUser', '删除用户', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('207', 'userStatus', '用户状态', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('209', 'nodeIndex', '节点列表', '1', null, null, '203', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('210', 'createNode', '新建节点', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('211', 'delNode', '删除节点', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('212', 'NodeStatus', '节点状态', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('213', 'roleIndex', '角色列表', '1', null, null, '203', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('214', 'createAdminRole', '添加角色', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('215', 'addNode', '权限分配', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('216', 'delRole', '删除角色', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('217', 'roleStatus', '角色状态', '1', null, null, '203', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('228', 'showMenus', '菜单栏显示', null, null, null, '203', '3', 'icon-calendar', '0');
 
 -- ----------------------------
--- Table structure for `tour_admin_role`
+-- Table structure for tour_admin_role
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_admin_role`;
 CREATE TABLE `tour_admin_role` (
@@ -3921,18 +2396,17 @@ CREATE TABLE `tour_admin_role` (
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`) USING BTREE,
   KEY `status` (`status`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_admin_role
 -- ----------------------------
-INSERT INTO `tour_admin_role` VALUES ('1', '超级管理员', '0', '1', '超级管理员超级管理员');
-INSERT INTO `tour_admin_role` VALUES ('2', '管理员', '0', '1', '管理员描述');
-INSERT INTO `tour_admin_role` VALUES ('3', '会员', '0', '1', '描述');
-INSERT INTO `tour_admin_role` VALUES ('17', '体育分类', '0', '1', '旅游资源统计');
+INSERT INTO `tour_admin_role` VALUES ('1', '超级管理员', null, '1', '超级管理员超级管理员');
+INSERT INTO `tour_admin_role` VALUES ('2', '管理员', null, '1', '管理员描述');
+INSERT INTO `tour_admin_role` VALUES ('26', '系统基本信息', '0', '1', '系统基本信息');
 
 -- ----------------------------
--- Table structure for `tour_admin_role_user`
+-- Table structure for tour_admin_role_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_admin_role_user`;
 CREATE TABLE `tour_admin_role_user` (
@@ -3945,131 +2419,87 @@ CREATE TABLE `tour_admin_role_user` (
 -- ----------------------------
 -- Records of tour_admin_role_user
 -- ----------------------------
-INSERT INTO `tour_admin_role_user` VALUES ('1', '87');
+INSERT INTO `tour_admin_role_user` VALUES ('3', '72');
+INSERT INTO `tour_admin_role_user` VALUES ('12', '73');
+INSERT INTO `tour_admin_role_user` VALUES ('13', '74');
 INSERT INTO `tour_admin_role_user` VALUES ('1', '86');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '142');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '143');
-INSERT INTO `tour_admin_role_user` VALUES ('3', '144');
-INSERT INTO `tour_admin_role_user` VALUES ('1', '145');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '146');
-INSERT INTO `tour_admin_role_user` VALUES ('3', '147');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '148');
-INSERT INTO `tour_admin_role_user` VALUES ('1', '149');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '150');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '151');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '152');
-INSERT INTO `tour_admin_role_user` VALUES ('2', '154');
-INSERT INTO `tour_admin_role_user` VALUES ('1', '158');
+INSERT INTO `tour_admin_role_user` VALUES ('3', '69');
+INSERT INTO `tour_admin_role_user` VALUES ('3', '70');
+INSERT INTO `tour_admin_role_user` VALUES ('2', '71');
+INSERT INTO `tour_admin_role_user` VALUES ('26', '165');
+INSERT INTO `tour_admin_role_user` VALUES ('2', '110');
+INSERT INTO `tour_admin_role_user` VALUES ('2', '111');
+INSERT INTO `tour_admin_role_user` VALUES ('1', '112');
+INSERT INTO `tour_admin_role_user` VALUES ('2', '113');
+INSERT INTO `tour_admin_role_user` VALUES ('1', '114');
+INSERT INTO `tour_admin_role_user` VALUES ('1', '146');
+INSERT INTO `tour_admin_role_user` VALUES ('1', '163');
+INSERT INTO `tour_admin_role_user` VALUES ('2', '164');
+INSERT INTO `tour_admin_role_user` VALUES ('26', '155');
+INSERT INTO `tour_admin_role_user` VALUES ('1', '160');
+INSERT INTO `tour_admin_role_user` VALUES ('1', '161');
+INSERT INTO `tour_admin_role_user` VALUES ('2', '162');
 
 -- ----------------------------
--- Table structure for `tour_admin_user`
+-- Table structure for tour_admin_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_admin_user`;
 CREATE TABLE `tour_admin_user` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) DEFAULT NULL,
-  `password` varchar(60) DEFAULT NULL,
-  `logintime` varchar(128) DEFAULT NULL,
-  `loginip` text,
-  `status` int(2) DEFAULT '0',
-  `expire` int(32) NOT NULL DEFAULT '0',
+  `username` varchar(20) DEFAULT NULL COMMENT '平台用户名',
+  `password` varchar(60) DEFAULT NULL COMMENT '密码',
+  `logintime` varchar(128) DEFAULT NULL COMMENT '登陆时间',
+  `loginip` text COMMENT '登陆Ip地址',
+  `status` int(2) DEFAULT '0' COMMENT '状态',
+  `expire` int(32) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_admin_user
 -- ----------------------------
-INSERT INTO `tour_admin_user` VALUES ('86', 'admin', '4297f44b13955235245b2497399d7a93', '1470363340', '127.0.0.1', '1', '0');
-INSERT INTO `tour_admin_user` VALUES ('87', '管理员测试', '4297f44b13955235245b2497399d7a93', '1456294831', '127.0.0.1', '1', '0');
-INSERT INTO `tour_admin_user` VALUES ('142', 'admin4', 'e10adc3949ba59abbe56e057f20f883e', '1472630490', '127.0.0.1', '1', '90');
-INSERT INTO `tour_admin_user` VALUES ('143', 'admin123', 'e10adc3949ba59abbe56e057f20f883e', '1472171735', '127.0.0.1', '1', '20');
-INSERT INTO `tour_admin_user` VALUES ('144', 'admin456', 'e10adc3949ba59abbe56e057f20f883e', '1472620398', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('145', 'admin110', 'e10adc3949ba59abbe56e057f20f883e', '1472624375', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('146', 'admin678', 'e10adc3949ba59abbe56e057f20f883e', '1472624889', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('147', 'admin123789', 'e10adc3949ba59abbe56e057f20f883e', '1472625735', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('148', 'admin123ewqewq', 'e10adc3949ba59abbe56e057f20f883e', '1472625791', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('149', 'admin123324', 'e10adc3949ba59abbe56e057f20f883e', '1472625915', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('150', '弍萬先生', 'e10adc3949ba59abbe56e057f20f883e', '1472626324', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('151', '侯爱爱', 'f2410e0aecd441f3b22f32a5031d4726', '1472626489', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('152', '王思聪', '691a30721843649e0dbbb2ac825b92d1', '1472626762', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('154', 'admin12321321', 'e10adc3949ba59abbe56e057f20f883e', '1472627116', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('158', '王琳', '34940acf80f96f1433a82d1734f73c36', '1472630515', '127.0.0.1', '1', '10');
+INSERT INTO `tour_admin_user` VALUES ('86', 'admin', 'f85a836c2434e41638fe37b7ec992447', '1470401515', '115.205.238.94', '1', '0');
+INSERT INTO `tour_admin_user` VALUES ('146', 'Tinywan', 'e10adc3949ba59abbe56e057f20f883e', '1471057757', '115.193.175.224', '1', '0');
+INSERT INTO `tour_admin_user` VALUES ('155', 'admin123', '123123131', '1472051649', '127.0.0.1', '1', '0');
+INSERT INTO `tour_admin_user` VALUES ('160', 'admin6', 'e10adc3949ba59abbe56e057f20f883e', '1472057821', '127.0.0.1', '0', '140');
+INSERT INTO `tour_admin_user` VALUES ('161', 'admin888', 'e10adc3949ba59abbe56e057f20f883e', '1472744911', '127.0.0.1', '1', '10');
+INSERT INTO `tour_admin_user` VALUES ('162', 'admin666', 'e10adc3949ba59abbe56e057f20f883e', '1472744669', '127.0.0.1', '1', '10');
+INSERT INTO `tour_admin_user` VALUES ('163', 'admin110', 'e10adc3949ba59abbe56e057f20f883e', '1472693697', '127.0.0.1', '0', '10');
+INSERT INTO `tour_admin_user` VALUES ('164', 'admin123789', 'e10adc3949ba59abbe56e057f20f883e', '1472733997', '127.0.0.1', '0', '10');
+INSERT INTO `tour_admin_user` VALUES ('165', '管理人', 'e10adc3949ba59abbe56e057f20f883e', '1472744696', '127.0.0.1', '1', '10');
 
 -- ----------------------------
--- Table structure for `tour_category`
+-- Table structure for tour_category
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_category`;
 CREATE TABLE `tour_category` (
-  `url` char(50) DEFAULT NULL,
-  `imgPath` char(100) DEFAULT NULL,
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL DEFAULT '',
-  `abbr` varchar(60) NOT NULL,
-  `alias` varchar(100) DEFAULT NULL,
-  `desc` text,
-  `keywords` varchar(150) DEFAULT NULL,
-  `parent` smallint(5) unsigned DEFAULT '0',
-  `path` char(255) DEFAULT '',
-  `grade` tinyint(3) unsigned DEFAULT '0',
-  `level` int(10) DEFAULT '0',
-  `order` smallint(5) unsigned DEFAULT '0',
-  `type` char(30) DEFAULT NULL,
-  `readonly` enum('0','1') DEFAULT '0',
-  `moderators` varchar(255) DEFAULT NULL,
-  `threads` smallint(5) DEFAULT NULL,
-  `posts` smallint(5) DEFAULT NULL,
-  `postedBy` varchar(30) DEFAULT NULL,
-  `postedDate` datetime DEFAULT NULL,
-  `postID` mediumint(9) DEFAULT NULL,
-  `replyID` mediumint(8) unsigned DEFAULT NULL,
-  `link` varchar(255) DEFAULT NULL,
-  `unsaleable` enum('0','1') DEFAULT '0',
-  `lang` char(30) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `lang` (`lang`) USING BTREE,
-  KEY `tree` (`type`) USING BTREE,
-  KEY `order` (`order`) USING BTREE,
-  KEY `parent` (`parent`) USING BTREE,
-  KEY `path` (`path`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `pid` int(10) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `level` int(10) NOT NULL DEFAULT '0' COMMENT '级别',
+  `status` tinyint(1) DEFAULT '1' COMMENT '状态',
+  `order` int(32) DEFAULT NULL COMMENT '排序',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_category
 -- ----------------------------
-INSERT INTO `tour_category` VALUES ('', '201607/f_8aa25e7b5aa24b0e766db7c5ea9f4d46.jpg', '1', '婚纱', '', '', '', '', '0', '0,1', '1', '1', '10', 'product', '0', '', '0', '0', '', '2016-05-25 16:13:26', '0', '0', '', '0', 'zh-cn');
-INSERT INTO `tour_category` VALUES ('', '201607/f_c0323c1eb9db5f75ae40a7106bc23ad0.jpg', '2', '晚礼服', '', '', '', '', '0', '0,2', '1', '1', '20', 'product', '0', '', '0', '0', '', '2016-05-25 16:13:26', '0', '0', '', '0', 'zh-cn');
-INSERT INTO `tour_category` VALUES ('', '201607/f_c2fc43023cb6b1433642e7a9f7fa939f.jpg', '3', '鞋子', '', '', '', '', '0', '0,3', '1', '1', '30', 'product', '0', '', '0', '0', '', '2016-05-25 16:13:26', '0', '0', '', '0', 'zh-cn');
-INSERT INTO `tour_category` VALUES ('', '', '7', '二级婚纱1', '', '', '', '', '1', '0,1,7', '2', '2', '0', 'product', '0', '', '0', '0', '', '0000-00-00 00:00:00', '0', '0', '', '0', '');
-INSERT INTO `tour_category` VALUES ('', '', '8', '二级婚纱2', '', '', '', '', '1', '0,1,8', '2', '2', '0', 'product', '0', '', '0', '0', '', '0000-00-00 00:00:00', '0', '0', '', '0', '');
-INSERT INTO `tour_category` VALUES ('', '', '9', '皮鞋', '', '', '', '', '3', '0,3,9', '2', '2', '0', 'product', '0', '', '0', '0', '', '0000-00-00 00:00:00', '0', '0', '', '0', '');
-INSERT INTO `tour_category` VALUES ('', '', '10', '凉鞋', '', '', '', '', '3', '0,3,10', '2', '2', '0', 'product', '0', '', '0', '0', '', '0000-00-00 00:00:00', '0', '0', '', '0', '');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '69', '惠普', 'alias', '惠普', null, '惠普', '66', '0,64,66,69', '3', '3', '69', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '62', '运动鞋', 'alias', '运动鞋', null, '运动鞋', '3', '0,3,62', '2', '2', '62', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES (null, null, '84', '根分类', '', null, null, null, '0', '0', '0', '0', '0', null, '0', null, null, null, null, null, null, null, null, '0', null);
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '64', '电脑', 'alias', '电脑', null, '电脑', '0', '0,64', '1', '1', '64', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '65', '笔记本', 'alias', '笔记本', null, '笔记本', '64', '0,64,65', '2', '2', '65', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '66', '台式', 'alias', '台式', null, '台式', '64', '0,64,66', '2', '2', '66', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '67', '华硕笔记本', 'alias', '华硕笔记本', null, '华硕笔记本', '65', '0,64,65,67', '3', '3', '67', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '68', '联想', 'alias', '联想', null, '联想', '65', '0,64,65,68', '3', '3', '68', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '70', '晚礼服二级分类', 'alias', '晚礼服二级分类', null, '晚礼服二级分类', '2', '0,2,70', '2', '2', '70', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '71', '晚礼服二级', 'alias', '晚礼服二级', null, '晚礼服二级', '2', '0,2,71', '2', '2', '71', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '72', '新人婚纱', 'alias', '新人婚纱', null, '新人婚纱', '7', '0,1,7,72', '3', '3', '72', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '73', '最后以及啊', 'alias', '最后以及啊', null, '最后以及啊', '72', '0,1,7,72,73', '4', '4', '73', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '74', '书籍', 'alias', '书籍', null, '书籍', '0', '0,74', '1', '1', '74', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '75', '计算机', 'alias', '计算机', null, '计算机', '74', '0,74,75', '2', '2', '75', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '76', '英语', 'alias', '英语', null, '英语', '74', '0,74,76', '2', '2', '76', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '77', '软件工程', 'alias', '软件工程', null, '软件工程', '75', '0,74,75,77', '3', '3', '77', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '78', '网络', 'alias', '网络', null, '网络', '75', '0,74,75,78', '3', '3', '78', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '79', '系统', 'alias', '系统', null, '系统', '75', '0,74,75,79', '3', '3', '79', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '80', 'Linux操作系统', 'alias', 'Linux操作系统', null, 'Linux操作系统', '79', '0,74,75,79,80', '4', '4', '80', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '81', 'Windows操作系统', 'alias', 'Windows操作系统', null, 'Windows操作系统', '79', '0,74,75,79,81', '4', '4', '81', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '82', '软件测试', 'alias', '软件测试', null, '软件测试', '77', '0,74,75,77,82', '4', '4', '82', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES ('url', 'imgPath', '83', '工程测试', 'alias', '工程测试', null, '工程测试', '77', '0,74,75,77,83', '4', '4', '83', 'product', '', null, '1', '1', '1', '0000-00-00 00:00:00', null, '1', '1', '', 'lang');
-INSERT INTO `tour_category` VALUES (null, null, '85', '汽车', '', null, null, null, '0', '0,85', '0', '1', '0', null, '0', null, null, null, null, null, null, null, null, '0', null);
-INSERT INTO `tour_category` VALUES (null, null, '86', '网络安全', '', null, null, null, '0', '0,74,75,78,86', '0', '4', '0', null, '0', null, null, null, null, null, null, null, null, '0', null);
+INSERT INTO `tour_category` VALUES ('1', '服装', '0', '0,1', '1', '1', null, null);
+INSERT INTO `tour_category` VALUES ('2', '西服', '1', '0,1,2', '2', '1', null, null);
+INSERT INTO `tour_category` VALUES ('3', '鞋子', '0', '0,3', '1', null, null, null);
+INSERT INTO `tour_category` VALUES ('4', '皮鞋', '2', '0,3,4', '2', '1', null, null);
+INSERT INTO `tour_category` VALUES ('5', '黑皮鞋', '4', '0,3,4,5', '3', '1', null, null);
+INSERT INTO `tour_category` VALUES ('7', '西服测试', '2', '0,1,2', '2', null, null, null);
+INSERT INTO `tour_category` VALUES ('14', '童装', '1', '0,1,14', '2', null, null, null);
+INSERT INTO `tour_category` VALUES ('15', '凉鞋', '3', '0,3,15', '2', null, null, null);
+INSERT INTO `tour_category` VALUES ('22', '童装衣服33', '14', '0,1,14,22', '3', '1', null, null);
+INSERT INTO `tour_category` VALUES ('23', '服装分类33-33', '22', '0,1,14,22,23', '4', '1', null, null);
 
 -- ----------------------------
--- Table structure for `tour_download_log`
+-- Table structure for tour_download_log
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_download_log`;
 CREATE TABLE `tour_download_log` (
@@ -4095,53 +2525,57 @@ INSERT INTO `tour_download_log` VALUES ('238', '172', null, '1464492875', 'admin
 INSERT INTO `tour_download_log` VALUES ('239', '172', null, '1464492876', 'admin');
 
 -- ----------------------------
--- Table structure for `tour_file`
+-- Table structure for tour_file
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_file`;
 CREATE TABLE `tour_file` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pid` int(10) unsigned NOT NULL,
-  `path` varchar(50) DEFAULT NULL,
-  `min_path` varchar(32) DEFAULT NULL,
+  `min_path` varchar(100) NOT NULL,
+  `path` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_file
 -- ----------------------------
-INSERT INTO `tour_file` VALUES ('1', '1', '5e7852468c96b4cb0763e5f47991f351.jpg', null);
-INSERT INTO `tour_file` VALUES ('2', '1', 'ed50987c9544d26772f56b36de636acf.jpg', null);
-INSERT INTO `tour_file` VALUES ('3', '2', '40c194c5adf567527071d675b48baeb9.jpg', null);
-INSERT INTO `tour_file` VALUES ('4', '2', '7148d9fb2125ae1d117bc48e917b6d13.jpg', null);
-INSERT INTO `tour_file` VALUES ('5', '2', 'd70ad5fc301a19c0ddf8d6e82d3e24e7.jpg', null);
-INSERT INTO `tour_file` VALUES ('6', '3', 'f2b60ce8bb961e5f171e23d03ba8dd87.jpg', null);
-INSERT INTO `tour_file` VALUES ('7', '3', 'ee5d87a7d6a3bd0eb4febd39485d5987.jpg', null);
-INSERT INTO `tour_file` VALUES ('10', '5', '0c685612472ff1add958ba3048633025.jpg', null);
-INSERT INTO `tour_file` VALUES ('11', '5', '407865ba90f0df80822f6a1900f4c7d1.jpg', null);
-INSERT INTO `tour_file` VALUES ('14', '7', 'd8b335e57c1a754c92e0d971cb6016c7.jpg', null);
-INSERT INTO `tour_file` VALUES ('15', '7', 'bf4dddfbbd8fe3c5b87c2453a983ce5e.jpg', null);
-INSERT INTO `tour_file` VALUES ('17', '1', '7ec55f75f39e03ee8546a3ec1ab43f83.jpg', null);
-INSERT INTO `tour_file` VALUES ('18', '2', '5677a769720af6854e18e3c6d91f5bf3.jpg', null);
-INSERT INTO `tour_file` VALUES ('19', '9', '511736465de28bc9d6fc730238d53c34.jpg', null);
-INSERT INTO `tour_file` VALUES ('20', '9', 'ad643c1df5effa36c559c8548d55f3ee.jpg', null);
-INSERT INTO `tour_file` VALUES ('21', '10', 'f6339c7b3eec18dd2526ff26008bd56b.jpg', null);
-INSERT INTO `tour_file` VALUES ('22', '10', '49e5fbfbfbb74fe237988c18f8c37585.jpg', null);
-INSERT INTO `tour_file` VALUES ('23', '11', '0c14ca6ed080e92402c23d35af96556d.jpg', null);
-INSERT INTO `tour_file` VALUES ('24', '11', '6fe87551772f79fb88ed1ca16b77d2c3.jpg', null);
-INSERT INTO `tour_file` VALUES ('25', '12', 'f8d506bb6488955e77ad661caf049374.jpg', null);
-INSERT INTO `tour_file` VALUES ('26', '12', 'c1c9c2607fbc4b9ccf3a73d07f953680.jpg', null);
-INSERT INTO `tour_file` VALUES ('27', '13', '5b7930a28c1bbf9fca0463bcea1f1b56.jpg', null);
-INSERT INTO `tour_file` VALUES ('28', '14', '78e21378d2a43de2cf4a0dacfb0de6a1.jpg', null);
-INSERT INTO `tour_file` VALUES ('29', '15', '75a9f473e7b087dcc25770d8f58d0370.jpg', null);
-INSERT INTO `tour_file` VALUES ('30', '16', '9a77eb963b97a8c20163f656f6e52c7b.jpg', null);
-INSERT INTO `tour_file` VALUES ('31', '17', '1881bb9f44bd1bbad25a9085b1aaa3d5.jpg', null);
-INSERT INTO `tour_file` VALUES ('32', '18', '49659aecbb2aa7e99cd59cac8ea2a8a5.jpg', null);
-INSERT INTO `tour_file` VALUES ('33', '19', 'c32cd29977b460f8bcbb45b8286de347.jpg', null);
-INSERT INTO `tour_file` VALUES ('34', '84', 'Product/2016-08-24/mini_57bd220fe331f.jpg', 'Product/2016-08-24/mini_57bd220f');
-INSERT INTO `tour_file` VALUES ('35', '24', 'Product/2016-08-24/mini_57bd2220d5070.jpg', 'Product/2016-08-24/mini_57bd2220');
+INSERT INTO `tour_file` VALUES ('35', '1', 'Product/2016-08-17/mini_57b47810d7435.jpg', 'Product/2016-08-17/57b47810d7435.jpg');
+INSERT INTO `tour_file` VALUES ('36', '1', 'Product/2016-08-17/mini_57b478cbf362c.jpg', 'Product/2016-08-17/57b478cbf362c.jpg');
+INSERT INTO `tour_file` VALUES ('37', '1', 'Product/2016-08-17/mini_57b478f91ffcf.jpg', 'Product/2016-08-17/57b478f91ffcf.jpg');
+INSERT INTO `tour_file` VALUES ('38', '1', 'Product/2016-08-17/mini_57b479456851c.jpg', 'Product/2016-08-17/57b479456851c.jpg');
+INSERT INTO `tour_file` VALUES ('39', '1', 'Product/2016-08-17/mini_57b4795d8ba20.jpg', 'Product/2016-08-17/57b4795d8ba20.jpg');
+INSERT INTO `tour_file` VALUES ('40', '1', 'Product/2016-08-17/mini_57b47a0768546.jpg', 'Product/2016-08-17/57b47a0768546.jpg');
+INSERT INTO `tour_file` VALUES ('41', '1', 'Product/2016-08-17/mini_57b47ab41b150.jpg', 'Product/2016-08-17/57b47ab41b150.jpg');
+INSERT INTO `tour_file` VALUES ('42', '1', 'Product/2016-08-17/mini_57b47accd74d7.jpg', 'Product/2016-08-17/57b47accd74d7.jpg');
+INSERT INTO `tour_file` VALUES ('43', '1', 'Product/2016-08-17/mini_57b47aed0c88d.jpg', 'Product/2016-08-17/57b47aed0c88d.jpg');
+INSERT INTO `tour_file` VALUES ('44', '1', 'Product/2016-08-17/mini_57b47d4098bb0.jpg', 'Product/2016-08-17/57b47d4098bb0.jpg');
+INSERT INTO `tour_file` VALUES ('45', '1', 'Product/2016-08-17/mini_57b47d8417502.jpg', 'Product/2016-08-17/57b47d8417502.jpg');
+INSERT INTO `tour_file` VALUES ('46', '1', 'Product/2016-08-17/mini_57b47da53d457.jpg', 'Product/2016-08-17/57b47da53d457.jpg');
+INSERT INTO `tour_file` VALUES ('47', '1', 'Product/2016-08-17/mini_57b47e44692c1.jpg', 'Product/2016-08-17/57b47e44692c1.jpg');
+INSERT INTO `tour_file` VALUES ('48', '1', 'Product/2016-08-17/mini_57b47e66538ae.jpg', 'Product/2016-08-17/57b47e66538ae.jpg');
+INSERT INTO `tour_file` VALUES ('49', '1', 'Product/2016-08-17/mini_57b47eb99f333.jpg', 'Product/2016-08-17/57b47eb99f333.jpg');
+INSERT INTO `tour_file` VALUES ('50', '1', 'Product/2016-08-17/mini_57b47ef511f6f.jpg', 'Product/2016-08-17/57b47ef511f6f.jpg');
+INSERT INTO `tour_file` VALUES ('51', '1', 'Product/2016-08-17/mini_57b480cd2751b.jpg', 'Product/2016-08-17/57b480cd2751b.jpg');
+INSERT INTO `tour_file` VALUES ('52', '1', 'Product/2016-08-17/mini_57b48115165eb.jpg', 'Product/2016-08-17/57b48115165eb.jpg');
+INSERT INTO `tour_file` VALUES ('53', '1', 'Product/2016-08-17/mini_57b4816140045.jpg', 'Product/2016-08-17/57b4816140045.jpg');
+INSERT INTO `tour_file` VALUES ('54', '2', 'Product/2016-08-17/mini_57b481b0b4196.jpg', 'Product/2016-08-17/57b481b0b4196.jpg');
+INSERT INTO `tour_file` VALUES ('55', '1', 'Product/2016-08-17/mini_57b483c375905.jpg', 'Product/2016-08-17/57b483c375905.jpg');
+INSERT INTO `tour_file` VALUES ('57', '26', 'Product/2016-08-17/mini_57b48493cdcfb.jpg', 'Product/2016-08-17/57b48493cdcfb.jpg');
+INSERT INTO `tour_file` VALUES ('58', '29', 'Product/2016-08-17/mini_57b486725c59b.jpg', 'Product/2016-08-17/57b486725c59b.jpg');
+INSERT INTO `tour_file` VALUES ('60', '35', 'Product/2016-08-20/mini_57b7f1b323690.jpg', 'Product/2016-08-20/57b7f1b323690.jpg');
+INSERT INTO `tour_file` VALUES ('62', '1', 'Product/2016-08-20/mini_57b803956e123.jpg', 'Product/2016-08-20/57b803956e123.jpg');
+INSERT INTO `tour_file` VALUES ('64', '1', 'Product/2016-08-20/mini_57b804d07ffea.jpg', 'Product/2016-08-20/57b804d07ffea.jpg');
+INSERT INTO `tour_file` VALUES ('79', '53', 'Product/2016-08-21/mini_57b91be818c06.jpg', 'Product/2016-08-21/57b91be818c06.jpg');
+INSERT INTO `tour_file` VALUES ('80', '1', 'Product/2016-08-21/mini_57b91c614af52.jpg', 'Product/2016-08-21/57b91c614af52.jpg');
+INSERT INTO `tour_file` VALUES ('81', '54', 'Product/2016-08-21/mini_57b91db2c2528.jpg', 'Product/2016-08-21/57b91db2c2528.jpg');
+INSERT INTO `tour_file` VALUES ('82', '55', 'Product/2016-08-21/mini_57b91e8f93f38.jpg', 'Product/2016-08-21/mini_57b91e8f93f38.jpg');
+INSERT INTO `tour_file` VALUES ('83', '56', 'Product/2016-08-21/mini_57b9221439e69.jpg', 'Product/2016-08-21/mini_57b9221439e69.jpg');
+INSERT INTO `tour_file` VALUES ('84', '59', 'Product/2016-08-21/mini_57b92362b466c.jpg', 'Product/2016-08-21/mini_57b92362b466c.jpg');
+INSERT INTO `tour_file` VALUES ('85', '60', 'Product/2016-08-22/mini_57baff688d243.png', 'Product/2016-08-22/mini_57baff688d243.png');
+INSERT INTO `tour_file` VALUES ('86', '61', 'Product/2016-08-23/mini_57bc55471c333.jpg', 'Product/2016-08-23/mini_57bc55471c333.jpg');
 
 -- ----------------------------
--- Table structure for `tour_logs`
+-- Table structure for tour_logs
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_logs`;
 CREATE TABLE `tour_logs` (
@@ -4159,88 +2593,108 @@ CREATE TABLE `tour_logs` (
   `ipaddr` varchar(100) NOT NULL,
   `unique_flag` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_logs
 -- ----------------------------
-INSERT INTO `tour_logs` VALUES ('10', '145', '2016-08-31 14:45:15', 'admin110', 'admin110', 'Home', 'AdminUser', 'createadminuser', 'admin123324--123456--1', '0', '', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('11', '145', '2016-08-31 14:52:04', 'admin110', 'admin110', 'Home', 'AdminUser', 'createadminuser', '弍萬先生--123456--2', '1', '为角色Id为：2添加一个新用户:弍萬先生密码为:123456', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('12', '145', '2016-08-31 14:54:49', 'admin110', 'admin110', 'Home', 'AdminUser', 'createadminuser', '侯爱爱--klwdws1988--2', '1', '给ID为:[2]角色,新增用户:[侯爱爱],密码为:[klwdws1988]', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('13', '145', '2016-08-31 15:24:52', 'admin110', 'admin110', 'Home', 'Index', 'test', '', '0', '', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('14', '145', '2016-08-31 15:25:11', 'admin110', 'admin110', 'Home', 'AdminUser', 'createadminuser', 'admin78787--123456--2', '1', '给ID为:[2]的角色,新增用户:[admin78787],密码为:[123456]', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('15', '145', '2016-08-31 15:32:50', 'admin110', 'admin110', 'Home', 'AdminUser', 'createadminuser', '王琳--klwdws2016--1', '1', '给ID为:[1]的角色,新增用户:[王琳],密码为:[klwdws2016]', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('16', '158', '2016-08-31 15:36:09', '王琳', '王琳', 'Home', 'AdminUser', 'createadminuser', 'admin王琳--123456--2', '1', '给ID为:[2]的角色,新增用户:[admin王琳],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('17', '142', '2016-08-31 15:40:34', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆操作用户admin4其他参数Array', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('18', '142', '2016-08-31 15:40:54', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆操作用户admin4其他参数1', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('19', '142', '2016-08-31 15:43:26', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆操作用户admin4其他参数', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('20', '142', '2016-08-31 15:46:00', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('21', '142', '2016-08-31 16:01:30', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('22', '158', '2016-08-31 16:01:55', '王琳', '王琳', 'Home', 'Login', 'checkLogin', '王琳--klwdws2016--on', '1', '登陆成功', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('23', '158', '2016-08-31 16:04:28', '王琳', '王琳', 'Home', 'AdminUser', 'delUser', '157', '1', '删除用户ID:157成功', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('24', '158', '2016-08-31 16:04:50', '王琳', '王琳', 'Home', 'AdminUser', 'delUser', '156', '1', '删除用户ID:156成功', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('25', '158', '2016-08-31 16:04:53', '王琳', '王琳', 'Home', 'AdminUser', 'delUser', '155', '1', '删除用户ID:155成功', '127.0.0.1', 'system');
-INSERT INTO `tour_logs` VALUES ('26', '158', '2016-08-31 16:04:58', '王琳', '王琳', 'Home', 'AdminUser', 'delUser', '153', '1', '删除用户ID:153成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('27', '158', '2016-09-01 00:04:01', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('28', '158', '2016-09-01 00:15:42', 'admin4', 'admin4', 'Home', 'Index', 'userAgent', '', '0', '', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('29', '158', '2016-09-01 00:24:13', 'admin4', 'admin4', 'Home', 'AdminUser', 'createadminuser', 'admin888--123456--1', '1', '给ID为:[1]的角色,新增用户:[admin888],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('30', '161', '2016-09-01 00:24:23', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('31', '161', '2016-09-01 00:29:47', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('32', '161', '2016-09-01 00:38:19', 'admin888', 'admin888', 'Home', 'AdminUser', 'createadminuser', 'admin666--123456--2', '1', '给ID为:[2]的角色,新增用户:[admin666],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('33', '162', '2016-09-01 00:38:45', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('34', '161', '2016-09-01 00:39:22', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('35', '158', '2016-09-01 09:31:09', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('36', '161', '2016-09-01 09:31:26', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('37', '161', '2016-09-01 09:32:54', 'admin888', 'admin888', 'Home', 'AdminUser', 'delUser', '147', '1', '删除用户ID:147成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('38', '161', '2016-09-01 09:34:27', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('39', '161', '2016-09-01 09:34:57', 'admin888', 'admin888', 'Home', 'AdminUser', 'createadminuser', 'admin110--123456--1', '1', '给ID为:[1]的角色,新增用户:[admin110],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('40', '162', '2016-09-01 09:37:05', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('41', '161', '2016-09-01 10:07:25', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('42', '161', '2016-09-01 10:07:48', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('43', '161', '2016-09-01 10:08:46', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('44', '161', '2016-09-01 10:09:12', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('45', '158', '2016-09-01 10:09:37', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('46', '162', '2016-09-01 10:13:07', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('47', '158', '2016-09-01 10:27:09', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('48', '162', '2016-09-01 10:27:20', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('49', '158', '2016-09-01 10:29:45', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('50', '162', '2016-09-01 10:32:34', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('51', '162', '2016-09-01 13:55:46', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('52', '161', '2016-09-01 14:04:06', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('53', '162', '2016-09-01 14:27:38', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('54', '158', '2016-09-01 14:47:09', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('55', '157', '2016-09-01 14:47:56', 'admin456', 'admin456', 'Home', 'Login', 'checkLogin', 'admin456--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('56', '158', '2016-09-01 14:50:22', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('57', '162', '2016-09-01 14:52:07', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('58', '158', '2016-09-01 14:53:22', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('59', '162', '2016-09-01 14:53:48', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('60', '158', '2016-09-01 14:56:04', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('61', '162', '2016-09-01 14:57:18', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('62', '158', '2016-09-01 15:11:33', 'admin4', 'admin4', 'Home', 'Login', 'checkLogin', 'admin4--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('63', '158', '2016-09-01 15:11:51', 'admin4', 'admin4', 'Home', 'Rbac', 'delUser', '152', '1', '删除用户ID:152成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('64', '158', '2016-09-01 15:11:59', 'admin4', 'admin4', 'Home', 'Rbac', 'delUser', '151', '1', '删除用户ID:151成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('65', '158', '2016-09-01 15:17:26', 'admin4', 'admin4', 'Home', 'Rbac', 'createadminuser', 'admin123789--123456--2', '1', '给ID为:[2]的角色,新增用户:[admin123789],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('66', '158', '2016-09-01 15:17:42', 'admin4', 'admin4', 'Home', 'Rbac', 'delUser', '159', '1', '删除用户ID:159成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('67', '158', '2016-09-01 15:17:48', 'admin4', 'admin4', 'Home', 'Rbac', 'delUser', '157', '1', '删除用户ID:157成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('68', '158', '2016-09-01 15:17:55', 'admin4', 'admin4', 'Home', 'Rbac', 'delUser', '158', '1', '删除用户ID:158成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('69', '162', '2016-09-01 16:05:29', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('70', '161', '2016-09-01 16:08:45', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('71', '161', '2016-09-01 16:14:38', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('72', '161', '2016-09-01 17:37:41', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('73', '164', '2016-09-01 17:43:51', 'admin123789', 'admin123789', 'Home', 'Login', 'checkLogin', 'admin123789--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('74', '164', '2016-09-01 17:45:33', 'admin123789', 'admin123789', 'Home', 'Login', 'checkLogin', 'admin123789--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('75', '161', '2016-09-01 17:47:30', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('76', '164', '2016-09-01 17:48:38', 'admin123789', 'admin123789', 'Home', 'Login', 'checkLogin', 'admin123789--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('77', '161', '2016-09-01 17:49:54', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('78', '164', '2016-09-01 17:50:23', 'admin123789', 'admin123789', 'Home', 'Login', 'checkLogin', 'admin123789--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('79', '162', '2016-09-01 17:52:00', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('80', '161', '2016-09-01 18:03:37', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('81', '162', '2016-09-01 18:06:38', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('82', '161', '2016-09-01 18:14:19', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('83', '162', '2016-09-01 18:17:27', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('84', '161', '2016-09-01 18:21:29', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('85', '162', '2016-09-01 18:24:54', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('86', '164', '2016-09-01 20:46:37', 'admin123789', 'admin123789', 'Home', 'Login', 'checkLogin', 'admin123789--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('87', '164', '2016-09-01 20:49:10', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '108', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('88', '164', '2016-09-01 20:49:27', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '164', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('89', '164', '2016-09-01 20:52:23', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '108', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('90', '164', '2016-09-01 20:53:04', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '164', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('91', '164', '2016-09-01 20:53:14', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('92', '164', '2016-09-01 20:55:21', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '164', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('93', '164', '2016-09-01 20:55:38', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '164', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('94', '164', '2016-09-01 20:58:46', 'admin123789', 'admin123789', 'Home', 'Rbac', 'userStatus', '', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('95', '161', '2016-09-01 20:59:40', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('96', '161', '2016-09-01 20:59:56', 'admin888', 'admin888', 'Home', 'Rbac', 'delUser', '108', '1', '删除用户ID:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('97', '161', '2016-09-01 21:00:51', 'admin888', 'admin888', 'Home', 'Rbac', 'delUser', '108', '1', '删除用户ID:108成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('98', '162', '2016-09-01 21:04:45', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('99', '162', '2016-09-01 21:05:08', 'admin666', 'admin666', 'Home', 'Rbac', 'userStatus', '', '1', '设置用户状态:失败', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('100', '161', '2016-09-01 22:28:01', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('101', '161', '2016-09-01 22:50:24', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('102', '161', '2016-09-01 22:51:16', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('103', '162', '2016-09-01 23:40:11', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('104', '161', '2016-09-01 23:43:00', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('105', '162', '2016-09-01 23:44:29', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('106', '162', '2016-09-01 23:44:56', 'admin666', 'admin666', 'Home', 'Rbac', 'createadminuser', '管理人--123456--26', '1', '给ID为:[26]的角色,新增用户:[管理人],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('107', '161', '2016-09-01 23:48:31', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
 
 -- ----------------------------
--- Table structure for `tour_node`
--- ----------------------------
-DROP TABLE IF EXISTS `tour_node`;
-CREATE TABLE `tour_node` (
-  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `title` varchar(50) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT '1',
-  `remark` varchar(255) DEFAULT NULL,
-  `sort` smallint(6) unsigned DEFAULT NULL,
-  `pid` smallint(6) unsigned NOT NULL,
-  `level` tinyint(1) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `level` (`level`) USING BTREE,
-  KEY `pid` (`pid`) USING BTREE,
-  KEY `status` (`status`) USING BTREE,
-  KEY `name` (`name`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=163 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of tour_node
--- ----------------------------
-INSERT INTO `tour_node` VALUES ('100', 'HOME', '吉林旅游云数据', '1', null, null, '0', '1');
-INSERT INTO `tour_node` VALUES ('141', 'SystemControl', '系统运行监控', '1', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('142', 'StageInfo', '平台统计', '1', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('143', 'tourSource', '旅游资源统计', '1', null, null, '142', '3');
-INSERT INTO `tour_node` VALUES ('144', 'tourProduct', '旅游产品统计', '1', null, null, '142', '3');
-INSERT INTO `tour_node` VALUES ('145', 'DataManage', '数据管理', '1', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('146', 'dataProduct', '数据产品管理', '1', null, null, '145', '3');
-INSERT INTO `tour_node` VALUES ('147', 'dataDb', '数据库管理', '1', null, null, '145', '3');
-INSERT INTO `tour_node` VALUES ('148', 'Share', '数据共享', '1', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('149', 'dataUser', '数据用户管理', '1', null, null, '148', '3');
-INSERT INTO `tour_node` VALUES ('150', 'dataInterface', '接口管理', '1', null, null, '148', '3');
-INSERT INTO `tour_node` VALUES ('151', 'System', '系统设置', '1', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('152', 'userControl', '平台用户管理', '1', null, null, '151', '3');
-INSERT INTO `tour_node` VALUES ('153', 'roleControl', '角色定义', '1', null, null, '151', '3');
-INSERT INTO `tour_node` VALUES ('154', 'nodeControl', '权限管理', '1', null, null, '151', '3');
-INSERT INTO `tour_node` VALUES ('155', 'Login', '安全退出', '0', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('156', 'logout', '安全退出', '1', null, null, '155', '3');
-INSERT INTO `tour_node` VALUES ('157', 'controlIndex', '系统运行监控', '1', null, null, '141', '3');
-INSERT INTO `tour_node` VALUES ('161', 'Member', '个人中心', '1', null, null, '100', '2');
-INSERT INTO `tour_node` VALUES ('162', 'memberInfo', '个人信息', '1', null, null, '161', '3');
-
--- ----------------------------
--- Table structure for `tour_product`
+-- Table structure for tour_product
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_product`;
 CREATE TABLE `tour_product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pName` varchar(255) NOT NULL,
   `pSn` varchar(50) NOT NULL,
-  `pNum` int(10) unsigned DEFAULT '1',
+  `pNum` int(10) unsigned NOT NULL DEFAULT '1',
   `mPrice` decimal(10,2) NOT NULL,
   `iPrice` decimal(10,2) NOT NULL,
-  `pDesc` text,
-  `pubTime` int(10) unsigned NOT NULL,
-  `isShow` tinyint(1) DEFAULT '1',
-  `isHot` tinyint(1) DEFAULT '0',
+  `pDesc` text NOT NULL,
+  `pubTime` datetime NOT NULL,
+  `isShow` tinyint(1) NOT NULL DEFAULT '1',
+  `isHot` tinyint(1) NOT NULL DEFAULT '0',
   `cId` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pName` (`pName`),
@@ -4250,37 +2704,34 @@ CREATE TABLE `tour_product` (
 -- ----------------------------
 -- Records of tour_product
 -- ----------------------------
-INSERT INTO `tour_product` VALUES ('1', 'IMOOC苹果（APPLE）iPhone 4S 8G版 3G手机', '98122', '9999', '2000.00', '1999.00', '<p>\r\n	<span style=\"color:#666666;font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;\">双核，让 A5 芯片双倍强大，图形处理快达 7 倍1。你会感觉到它所带来的效果 — 飞快。iPhone 4S 快速，反应灵敏，当你启动应用软件、浏览网页，以及做各种操作时，就会体验到它所成就的与众不同。而且无论你正在做什么，都可以持续进行。A5 芯片具有极高的效能，赋予 iPhone 4S 超长的电池使用时间。</span> \r\n</p>\r\n<p>\r\n	<span style=\"color:#666666;font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;\"><span style=\"color:#666666;font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;\">双核，让 A5 芯片双倍强大，图形处理快达 7 倍1。你会感觉到它所带来的效果 — 飞快。iPhone 4S 快速，反应灵敏，当你启动应用软件、浏览网页，以及做各种操作时，就会体验到它所成就的与众不同。而且无论你正在做什么，都可以持续进行。A5 芯片具有极高的效能，赋予 iPhone 4S 超长的电池使用时间。</span><br />\r\n</span> \r\n</p>', '1402245020', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('2', 'IMOOC华为 荣耀3C （白色）3G手机 TD-SCDMA/GSM 2G RAM ', '1056969', '9999', '1099.00', '659.00', '<div style=\"margin:0px;padding:0px;background-color:#FFFFFF;color:#717071;font-family:微软雅黑;font-size:24px;\">\r\n	5英寸黑瀑布屏，全贴合工艺，LTPS技术\r\n</div>\r\n<p>\r\n	全贴合工艺，宛如黑瀑布，显示跃然屏上，清晰度更高，画质更细腻逼真 <br />\r\nLTPS低温多晶硅技术屏幕，响应速度快，更鲜艳\r\n</p>\r\n<p>\r\n	1280*720高清分辨率，1600万色，极佳的色彩表现，全视角\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;background-color:#FFFFFF;color:#717071;font-family:微软雅黑;font-size:24px;\">\r\n	<br />\r\n</div>', '1402306881', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('3', '三星（SAMSUNG）I9158P 3G手机（白色）TD-SCDMA/GSM', '1072545', '9999', '1699.00', '1299.00', '<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-size:14px;font-weight:700;color:#666666;font-family:Arial, Helvetica, sans-serif;background-color:#FFFFFF;\">\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n			5.8英寸清晰大屏，精彩“大”有不同\r\n		</div>\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			智能手机上也能畅享平板体验？GALAXY MEGA I9158P让平板和智能手机完美结合。它纤薄轻巧，让您轻松随身携带。极窄边框设计，让您单手亦可舒适掌握。更让您惊喜的是，它拥有5.8英寸的清晰大屏，提供更大的文字和图片显示，带来无比震撼的视觉冲击。\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n			<img alt=\"\" src=\"http://img20.360buyimg.com/vc/g14/M00/03/00/rBEhVVHL_jcIAAAAAAHZgUsur7oAAAl3ALoDUQAAdmZ750.jpg\" class=\"err-product\" />\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			主屏支持竖屏、横屏两种显示模式，为您呈现更丰富的内容，提供最开阔的视野。无论您玩游戏、播放视频还是浏览网页，都可获得最大化的视觉体验。\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n			<img alt=\"\" src=\"http://img20.360buyimg.com/vc/g15/M09/03/00/rBEhWlHL_oMIAAAAAADnHDxBzd4AAAl3AE0jZQAAOc0328.jpg\" class=\"err-product\" />\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n			多窗口多任务，一览无余，高效自如\r\n		</div>\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			需要处理多个任务时不想手忙脚乱、频繁切换窗口？GALAXY MEGA I9158P可在超大屏幕上同时运行两个程序窗口，让您体验真正便捷高效的多任务处理。\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n			<img alt=\"\" src=\"http://img20.360buyimg.com/vc/g15/M00/03/00/rBEhWFHL_u8IAAAAAACxViCPakQAAAl3QIhLpUAALFu557.jpg\" class=\"err-product\" />\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			您可以在访问网页或与好友聊天的同时，发送邮件或观看视频，一举多得。您还可通过Pop Up play画中画功能，一边发短信、电子邮件或处理其它应用，一边欣赏大片，绝不错失任何精彩。并可根据需要，将视频窗口拖曳到任何位置，让娱乐更自由。\r\n		</div>\r\n	</div>\r\n</div>\r\n<div class=\"formwork_text\" style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Helvetica, sans-serif;font-size:14px;background-color:#FFFFFF;\">\r\n</div>', '1402307174', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('5', '胜伟 高支棉斜纹四件套裸婚时代100%棉1.5/1.8米床', '10569691', '99999', '149.00', '119.00', '<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	产品资料\r\n</p>\r\n<p class=\"formwork_titleleft2\" style=\"font-size:14px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	胜伟高支棉斜纹四<span class=\"wiki-words\" id=\"wiki-keyword-1\">件套</span>裸婚时代<br />\r\n<span class=\"wiki-words\" id=\"wiki-keyword-2\">面料</span>：40S全棉<br />\r\n适合床：1.5/1.8米床<br />\r\n规格：被套230*200&nbsp;<span class=\"wiki-words\" id=\"wiki-keyword-0\">床单</span>250*230 枕套48*74*2只<br />\r\n毛重：2.1kg\r\n</p>', '1402308299', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('7', 'XP 热 阿迪达斯adidas2014新款生活男鞋网面低帮场下篮球文化板鞋', '2342123', '9999', '555.00', '333.00', '<h1 style=\"font-size:16px;font-family:arial, \'microsoft yahei\';color:#666666;background-color:#FFFFFF;\">\r\n	XP 热 阿迪达斯adidas2014新款生活男鞋网面低帮场下篮球文化板鞋Q33480 尊贵蓝+亮黄荧光+白 43\r\n</h1>', '1402309073', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('9', '韩都衣舍 韩版2014夏装新款女装两件套圆领短袖T恤NW3201肆 白色 M', '1056333', '55', '134.00', '90.00', '<p>\r\n	<span style=\"color:#5C5C5C;font-family:微软雅黑;background-color:#FFFFFF;\">外衣大身：95%粘纤 5%氨纶&nbsp;外衣袖子：70%棉 25%锦纶 5%粘纤 内搭：95%粘纤 5%氨纶</span>\r\n</p>\r\n<p>\r\n	<span style=\"color:#5C5C5C;font-family:微软雅黑;background-color:#FFFFFF;\">\r\n	<div class=\"content ke-post\" align=\"center\" style=\"margin:0px;padding:10px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img id=\"desc-module-3\" class=\"desc_anchor err-product\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t184/155/168032383/43/9acceab1/5382ee5eN2be51f49.gif\" />\r\n	</div>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t178/287/178335129/2820/609e02e3/5382ee60N2b1ddab5.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t148/50/186325206/7981/1e0aaf04/5382ee60N5e88de2b.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div class=\"content ke-post\" align=\"center\" style=\"margin:0px;padding:10px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img width=\"750\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t181/258/177275435/97121/d1daeccd/5382ee60N6a3f30e6.jpg\" class=\"err-product\" />\r\n	</div>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t205/334/168709737/134760/b4fbaff4/5382ee61N65bda1a9.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t190/165/182664900/141536/9c71d740/5382ee61N9e78a437.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t148/55/172181392/151420/bdf9cc8a/5382ee62Ne1afea73.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t196/125/192440496/118964/372173ca/5382ee62N7f1915a8.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t148/54/168991084/155385/fe5ee665/5382ee63N9832bd69.jpg\" class=\"err-product\" />\r\n	</p>\r\n<br />\r\n</span>\r\n</p>', '1402320900', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('10', '洛诗琳2014夏装新款女装欧根纱盘花荷叶边修身雪纺连衣裙', '102228144', '78', '786.00', '249.00', '<div style=\"margin:0px auto;padding:0px;color:#666666;background-color:#FFFFFF;border:1px dashed #AAAAAA;font-family:微软雅黑;\">\r\n	<p>\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g13/M00/01/18/rBEhU1NwdFUIAAAAAAAm5FOXIIcAANDzwPv_p8AACb8961.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"748\" class=\"ke-zeroborder\">\r\n		<tbody>\r\n			<tr>\r\n				<td align=\"middle\" rowspan=\"2\" valign=\"top\" width=\"218\">\r\n					<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g17/M00/00/06/rBEbSlNwdFkIAAAAAACS82hCKUUAAAPeQOPPtsAAJML149.jpg\" class=\"err-product\" />\r\n				</td>\r\n				<td rowspan=\"2\" width=\"10\">\r\n				</td>\r\n				<td valign=\"top\" width=\"250\">\r\n					<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"250\" style=\"text-align:center;color:#FFFFFF;font-size:12px;\" class=\"ke-zeroborder\">\r\n						<tbody>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"25\" style=\"text-align:left;background-color:#555555;font-size:15px;\">\r\n									<strong>基本参数</strong>\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"20\" style=\"text-align:left;color:#000000;font-size:13px;\">\r\n									<strong>款号：</strong>XDR114340\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"20\" style=\"text-align:left;color:#000000;font-size:13px;\">\r\n									<strong>品名：</strong>欧根纱盘花荷叶边修身雪纺连衣裙\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"20\" style=\"text-align:left;color:#000000;font-size:13px;\">\r\n									<strong>市场价：</strong>786RMB\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"30\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"25\" style=\"text-align:left;background-color:#555555;font-size:15px;\">\r\n									<strong>基本参数</strong>\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" width=\"65\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>面料指数：</strong>\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									宽松\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									略松\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									合身\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									紧身\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>衣长指数：</strong>\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									超短\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									短\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									常规\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									中长\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>弹力指数：</strong>\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									无弹\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									微弹\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									弹力\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									超弹\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>面料质感：</strong>\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									顺滑\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									滑\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									适中\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									粒感\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>拉链位置：</strong>\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									无\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									背后\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									左侧\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									右侧\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>有无里衬：</strong>\r\n								</td>\r\n								<td colspan=\"3\" style=\"background-color:#DBA64A;\">\r\n									有\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td colspan=\"3\" style=\"background-color:#999999;\">\r\n									无\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n				</td>\r\n				<td width=\"10\">\r\n				</td>\r\n				<td valign=\"top\">\r\n					<div style=\"margin:0px;padding:0px 20px;font-family:微软雅黑;background-color:#E6E6E6;font-size:13px;\">\r\n						<div style=\"margin:10px 0px 0px;padding:0px;font-size:15px;\">\r\n							<strong>面料信息</strong>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							面料：乔其&nbsp;<br />\r\n里料：配色弹力双绉\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							面布成分:聚酯纤维100%&nbsp;<br />\r\n里布成分:聚酯纤维100%\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:10px 0px 0px;padding:0px;font-size:15px;\">\r\n							<strong>洗涤说明：</strong>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							<span style=\"color:#FF0000;\">手洗不可漂白</span>，冷水单独洗涤；\r\n						</div>\r\n					</div>\r\n				</td>\r\n				<td width=\"10\">\r\n				</td>\r\n			</tr>\r\n			<tr>\r\n				<td colspan=\"3\" valign=\"top\">\r\n					<div style=\"margin:15px auto;padding:0px;text-align:center;font-family:微软雅黑;background-color:#E6E6E6;font-size:15px;font-weight:bold;\">\r\n						身体尺寸参照表\r\n					</div>\r\n					<table cellpadding=\"0\" cellspacing=\"0\" height=\"170\" width=\"100%\" style=\"border:1px double #CCCCCC;text-align:center;font-family:微软雅黑;font-size:13px;\">\r\n						<tbody>\r\n							<tr>\r\n								<td bgcolor=\"#000\" height=\"25\" style=\"color:#FFFFFF;\">\r\n									尺码\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									S\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									M\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									L\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									XL\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									2XL\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									3XL\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									胸围(cm)\r\n								</td>\r\n								<td valign=\"center\">\r\n									83\r\n								</td>\r\n								<td valign=\"center\">\r\n									86\r\n								</td>\r\n								<td valign=\"center\">\r\n									90\r\n								</td>\r\n								<td valign=\"center\">\r\n									94\r\n								</td>\r\n								<td valign=\"center\">\r\n									98\r\n								</td>\r\n								<td valign=\"center\">\r\n									102\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									腰围(cm)\r\n								</td>\r\n								<td valign=\"center\">\r\n									67(2.01尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									70(2.1尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									74(2.22尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									78(2.34尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									82(2.46尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									84(2.52尺)\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									臀围(cm)\r\n								</td>\r\n								<td valign=\"center\">\r\n									89\r\n								</td>\r\n								<td valign=\"center\">\r\n									92\r\n								</td>\r\n								<td valign=\"center\">\r\n									96\r\n								</td>\r\n								<td valign=\"center\">\r\n									100\r\n								</td>\r\n								<td valign=\"center\">\r\n									104\r\n								</td>\r\n								<td valign=\"center\">\r\n									108\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									适合体重(kg)\r\n								</td>\r\n								<td valign=\"center\">\r\n									50kg以内\r\n								</td>\r\n								<td valign=\"center\">\r\n									55kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									60kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									65kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									70kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									75kg左右\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<div style=\"margin:0px;padding:0px;font-family:微软雅黑;color:#666666;font-size:11px;\">\r\n						注：以上均为身体尺寸（身体尺寸是人体裸身尺寸，即未穿着衣物时身体三围尺寸。)\r\n					</div>\r\n				</td>\r\n			</tr>\r\n			<tr>\r\n				<td colspan=\"6\">\r\n					<div style=\"margin:10px 0px 0px 10px;padding:0px;\">\r\n						&nbsp;\r\n					</div>\r\n				</td>\r\n			</tr>\r\n			<tr>\r\n				<td align=\"middle\" valign=\"top\">\r\n					<img width=\"210\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/02/1F/rBEhVVNwdKAIAAAAAABQNfYAS4oAANKaAGzIeQAAFBN916.jpg\" class=\"err-product\" />\r\n				</td>\r\n				<td>\r\n				</td>\r\n				<td colspan=\"3\">\r\n					<div style=\"margin:15px auto;padding:0px;text-align:center;font-family:微软雅黑;background-color:#E6E6E6;font-size:15px;font-weight:bold;\">\r\n						衣服平铺尺寸参照表\r\n					</div>\r\n					<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"border:1px double #CCCCCC;text-align:center;font-family:微软雅黑;font-size:13px;\">\r\n						<tbody>\r\n							<tr>\r\n								<td bgcolor=\"#000\" height=\"25\" width=\"11%\" style=\"color:#FFFFFF;\">\r\n									尺码\r\n								</td>\r\n								<td width=\"11%\">\r\n									衣长\r\n								</td>\r\n								<td width=\"11%\">\r\n									肩宽\r\n								</td>\r\n								<td width=\"11%\">\r\n									胸围\r\n								</td>\r\n								<td width=\"11%\">\r\n									腰围\r\n								</td>\r\n								<td width=\"11%\">\r\n									臀围\r\n								</td>\r\n								<td width=\"12%\">\r\n									下摆围\r\n								</td>\r\n								<td width=\"11%\">\r\n									前领围\r\n								</td>\r\n								<td width=\"11%\">\r\n									后领围\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									S\r\n								</td>\r\n								<td valign=\"center\">\r\n									82.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									10.73\r\n								</td>\r\n								<td valign=\"center\">\r\n									88\r\n								</td>\r\n								<td valign=\"center\">\r\n									70.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									93\r\n								</td>\r\n								<td valign=\"center\">\r\n									114\r\n								</td>\r\n								<td valign=\"center\">\r\n									32.9\r\n								</td>\r\n								<td valign=\"center\">\r\n									26.1\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									M\r\n								</td>\r\n								<td valign=\"center\">\r\n									84\r\n								</td>\r\n								<td valign=\"center\">\r\n									11\r\n								</td>\r\n								<td valign=\"center\">\r\n									91\r\n								</td>\r\n								<td valign=\"center\">\r\n									73.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									96\r\n								</td>\r\n								<td valign=\"center\">\r\n									117\r\n								</td>\r\n								<td valign=\"center\">\r\n									33.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									26.5\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									L\r\n								</td>\r\n								<td valign=\"center\">\r\n									85.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									11.27\r\n								</td>\r\n								<td valign=\"center\">\r\n									95\r\n								</td>\r\n								<td valign=\"center\">\r\n									77.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									100\r\n								</td>\r\n								<td valign=\"center\">\r\n									121\r\n								</td>\r\n								<td valign=\"center\">\r\n									34.1\r\n								</td>\r\n								<td valign=\"center\">\r\n									26.9\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									XL\r\n								</td>\r\n								<td valign=\"center\">\r\n									87\r\n								</td>\r\n								<td valign=\"center\">\r\n									11.54\r\n								</td>\r\n								<td valign=\"center\">\r\n									99\r\n								</td>\r\n								<td valign=\"center\">\r\n									81.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									104\r\n								</td>\r\n								<td valign=\"center\">\r\n									125\r\n								</td>\r\n								<td valign=\"center\">\r\n									34.7\r\n								</td>\r\n								<td valign=\"center\">\r\n									27.3\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									XXL\r\n								</td>\r\n								<td valign=\"center\">\r\n									88.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									11.81\r\n								</td>\r\n								<td valign=\"center\">\r\n									103\r\n								</td>\r\n								<td valign=\"center\">\r\n									85.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									108\r\n								</td>\r\n								<td valign=\"center\">\r\n									129\r\n								</td>\r\n								<td valign=\"center\">\r\n									35.3\r\n								</td>\r\n								<td valign=\"center\">\r\n									27.7\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<div style=\"margin:0px;padding:0px;font-family:微软雅黑;color:#666666;font-size:11px;\">\r\n						注：因手工测量方式不同，存在2~4cm误差皆属合理范围(尺寸单位：cm)。\r\n					</div>\r\n				</td>\r\n				<td>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n</div>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	&nbsp;\r\n</p>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	&nbsp;<img align=\"absmiddle\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g1/M04/00/06/rBEGD1NwdKAIAAAAAALvlgVmWdUAABa2APzcpQAAu-u912.jpg\" class=\"err-product\" />\r\n</p>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<img align=\"absMiddle\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M01/02/1F/rBEhVVNwdFoIAAAAAAAiT7IZyYoAANKZwNHUUIAACJn018.jpg\" class=\"err-product\" />\r\n</p>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<img align=\"absMiddle\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g3/M05/00/06/rBEGFFNwdFoIAAAAAAD1X7RYjwEAABa3AEKcHEAAPV3940.jpg\" class=\"err-product\" />\r\n</p>', '1402408755', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('11', '韩衣丽舍 CY2014夏新款韩版女装牛仔拼接雪纺连衣裙牛仔裙长裙', '8866LYQ', '45', '169.00', '199.00', '<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"07fa5f8b0f644c76a62797fe4f0223fd \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t160/219/133431860/416493/1f76f4da/5381b727Ncc768598.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"33b92c2981f64ed284db15bfcf8ec883 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t157/9/166904638/396606/e139ba1b/5381b728Nf85cf14e.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"24af0f32f1564c6b9561b37ae76564c2 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t169/236/141384077/453903/ecd40fcd/5381b729Naa51a872.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"9e11efaccd814d2591cd289cfdc30151 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t199/201/156259466/298191/c67a93b2/5381b729Nae8b4b38.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<a href=\"http://item.jd.com/1024261341.html\" target=\"_blank\"><img alt=\"\" id=\"1b0b1f8de179444693cd910e750d6478 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t151/27/138670676/358548/17c3a50f/5381b72aN69f0c395.jpg\" class=\"err-product\" /></a>\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"097734a9f5574c6891bb0f9e9916590d \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t199/203/141943017/319697/36542a9e/5381b72bNd8ad94aa.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"6315ea92fe624a59803f0ffa4b186651 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t172/26/143204448/477155/923b5a9b/5381b72cN62693c95.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"0bfcabc7649c4c7d81354988ab8feec4 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t208/355/136154145/377474/1cc3487e/5381b72cN65bcfb73.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"f6d36b1cfed141728277798329a57e1d \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t196/175/139809136/367694/57154e3a/5381b72dN28879b33.jpg\" class=\"err-product\" />\r\n</div>', '1402408977', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('12', '艾致倩 2014夏装新款韩版修身女装欧根纱短袖连衣裙', 'OXN6805', '12', '599.00', '168.00', '<img id=\"3615ebb4221f4797afef81df134a9b8a\" alt=\"\" src=\"http://img30.360buyimg.com/popWareDetail/g14/M02/1F/04/rBEhVVNWAwIIAAAAAAeVJL9aHNIAAMZ9wBR6tMAB5U8412.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span><br />\r\n<img id=\"bad72c8c72d448bab8963da4699f7534\" alt=\"\" src=\"http://img30.360buyimg.com/popWareDetail/g14/M05/1F/03/rBEhVVNWAvcIAAAAAAdlMWR8PEkAAMZ9QGb3jkAB2VJ750.jpg\" class=\"err-product\" />', '1402409224', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('13', '韩版修身女装欧根纱短袖短裤淑女套装两件套AZQHYYF887', '1056912', '5000', '168.00', '112.00', '<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g10/M00/1E/04/rBEQWFNknEUIAAAAAAsP7Wb7szsAAF51gFbMekACxAF429.jpg\" class=\"err-product\" />', '1402410194', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('14', '韩版修身女装雪纺短袖短裤淑女气质套装 ', 'AZQHYYF889', '12', '388.00', '188.00', '<img alt=\"\" id=\"ac037fb766d54957a20c15671cc07e58 \" src=\"http://img30.360buyimg.com/popWaterMark/g13/M00/00/0B/rBEhU1Nkk10IAAAAAAYkTiWQM-YAAMxZwM1CJ4ABiRm591.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span><br />\r\n<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M06/01/18/rBEhVlNkk4IIAAAAAAS2Qxpw2j0AAM66ALdnUYABLZb573.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span><br />\r\n<br />\r\n<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M06/01/18/rBEhV1Nkk4QIAAAAAA3vRomcFbcAAM66APTC2UADe9e973.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span>', '1402410284', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('15', '韩版修身无袖淑女圆领雪纺衫女短裙套装套裤两件套', '7546435', '34', '399.00', '148.00', '<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhV1NFProIAAAAAABCG8xwEJ0AALoUgMMgjQAAEIz736.jpg\" class=\"err-product\" />\r\n</p>\r\n<table height=\"298\" align=\"center\" border=\"1\" bordercolor=\"#000000\" width=\"730\" style=\"background-color:#FFFFFF;font-size:14px;font-family:tahoma, arial, 宋体, sans-serif;color:#333333;\">\r\n	<tbody>\r\n		<tr>\r\n			<td height=\"33\" width=\"162\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					<strong>测量方法</strong>\r\n				</div>\r\n			</td>\r\n			<td width=\"60\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					<strong>尺码</strong>\r\n				</div>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp;腰围&nbsp;&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp; 肩宽&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp; 胸围 &nbsp;&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp;衣长&nbsp;/裤长&nbsp;&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong></strong><br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan=\"6\">\r\n				<strong></strong><br />\r\n<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhVlNFPrsIAAAAAACJkb4NtKQAALoUgMczN0AAImp921.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td height=\"36\" style=\"text-align:center;\">\r\n				<strong>M</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				72\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				33\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				88\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				60/30\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height=\"36\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					<strong>L</strong>\r\n				</div>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				76\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				34\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				92\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				61/31\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height=\"36\" style=\"text-align:center;\">\r\n				<strong>XL</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				80\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				35\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				96\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				62/32\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height=\"36\" style=\"text-align:center;\">\r\n				<strong>XXL</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				84\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				36\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				100\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				62/33\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"6\" height=\"36\" style=\"text-align:center;\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					注意：以上数据为平铺测量所得，没有拉伸，不考虑弹性范围内的数据。误差范围在1-3CM范围之内\r\n				</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"6\" height=\"36\" style=\"text-align:center;\">\r\n				模特资料：身高：166CM&nbsp;体重47KG&nbsp;三围：85/65/89&nbsp;&nbsp;试穿尺码：M码\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<font ??=\"\" style=\"margin: 0px; padding: 0px;\"><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhVlNFPrsIAAAAAAHgq5TGtdQAALoUgMpNVQAAeDD587.jpg\" class=\"err-product\" /><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhV1NFPrsIAAAAAABHcavPyIkAALoUgMvFt0AAEeJ853.jpg\" class=\"err-product\" /></span>\r\n</p>\r\n<font ??=\"\" style=\"margin: 0px; padding: 0px;\"><font ??=\"\" style=\"margin: 0px; padding: 0px; color: rgb(102, 102, 102); font-family: Arial, Verdana, 宋体; white-space: normal; background-color: rgb(255, 255, 255);\"><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhVlNFPr0IAAAAAAe5mj9H7m8AALoUgNdJlgAB7my558.jpg\" class=\"err-product\" /><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhV1NFPr4IAAAAAAkjMBqbLScAALoUgOqf1UACSNI791.jpg\" class=\"err-product\" /></span></span>', '1402410421', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('16', '夏普（SHARP） 46英寸日本原装面板', 'LCD-46DS20A', '34', '3599.00', '3299.00', '<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M08/0C/0C/rBEhV1LP23gIAAAAAAKrQhwc71wAAH6PAG0qlgAAqta883.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		采用FullHD液晶屏，以1920x1080分辨力迎接数字时代\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		以1920×1080分辨力迎接数字电视新时代，呈现非凡出色的超精细画面。\r\n	</div>\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		新1080/24P技术，以每秒24帧数的电影般播放模式\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		电影是由24帧数来拍摄的，新1080/24P技术，以每秒24帧数的电影般播放模式（在HDMI下支持1080P/24Hz）为您带来真正的影院效果，从未有过的视觉盛宴由AQUOS液晶电视带给您。\r\n	</div>\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M09/0C/0C/rBEhVVLP3FQIAAAAAAAzIX57aKYAAH6PQNxDKEAADM5955.jpg\" class=\"err-product\" />\r\n	</p>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g15/M00/01/15/rBEhWFLP3MEIAAAAAAGzHsv9egUAAHx-gEQcIQAAbM2697.jpg\" class=\"err-product\" />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		倍速FullHD液晶驱动技术，高速动作处理更佳\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		夏普倍速液晶驱动技术。在通常50帧/秒的动画影像中，在两帧画像之间插入一帧画像，使信号提升2倍，即100帧/秒进行播放。使画面更流畅，全方位改善画面残留，大大减少画面拖尾现象，清晰再现高速运动的画面，带来更具震撼力的视觉体验。\r\n	</div>\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M0A/0C/0C/rBEhVlLP3SwIAAAAAAJH2h94X20AAH6PwB_qykAAkfy060.jpg\" class=\"err-product\" />\r\n	</p>\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M0A/0C/0C/rBEhVlLP3VgIAAAAAAHsx7Wj3xMAAH6PwNaDmUAAezf214.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		采用可以精确亮度控制并能告诉应答的LED背光源系统。结合新一代X超晶面板的使用，实现画面高对比度，在黑暗环境里也能再现纯正黑色和绚丽红色。\r\n	</div>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g13/M03/0F/0E/rBEhU1LCir4IAAAAAAHPn-F09dQAAHevQI9mdUAAc-3112.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g14/M03/0A/16/rBEhVVLCi3MIAAAAAAMPUHuec08AAHlSwCCk4QAAw9o903.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g13/M09/0F/0E/rBEhU1LCi4wIAAAAAAKJJy-A0GcAAHewADfnfgAAok_965.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g14/M03/0A/16/rBEhVlLCi58IAAAAAAH146RVN9kAAHlSwMK9ogAAfX7360.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g15/M09/1F/1F/rBEhWVLCi7MIAAAAAALNsLPK9lkAAHdGAAHZZMAAs3I673.jpg\" class=\"err-product\" />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M02/11/03/rBEhVFLP4CwIAAAAAAIrnR5jwgQAAHzuQAUq3YAAiu1444.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		采用数码环绕声技术，身临其境的感受，为您带来家庭影院级的享受，&nbsp;<br />\r\n再现电影或体育节目等扣人心弦的声音。\r\n	</div>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g13/M02/11/03/rBEhVFLP4EoIAAAAAAGLXSBSAuQAAHzuQMw-80AAYt1128.jpg\" class=\"err-product\" />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g15/M06/01/15/rBEhWFLP4G8IAAAAAAA16DDFBoMAAHyAAP4qTcAADYA742.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		您可以通过MHL线（市面有售），将支持MHL的智能手机与电视机连接，可以实现在电视&nbsp;<br />\r\n机的大画面上观看手机中的图像与视频，还可通过电视机的扬声器播放手机中的音乐。\r\n	</div>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g15/M06/1D/08/rBEhWVKxT-EIAAAAAALdEus4i7YAAG7BQOhvIUAAt0q265.gif\" class=\"err-product\" />\r\n</p>', '1402410567', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('17', '三星（SAMSUNG） HT-F453K 5.1声道家庭影院 黑色', 'HT-F453K', '123', '3211.00', '2311.00', '<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titlecenter\" style=\"margin:0px;padding:0px;text-align:center;font-weight:700;\">\r\n		经典畅销再延续 三星科技再升级\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		HT-F453K家庭影院，一直以来是畅销的主力机型。现在三星优秀的设计团队再次将经典延续，并注入了新的设计呈现给大家，三星家庭影院系统凭借其独特的外观设计、便捷的功能以及先进的音效提升技术为消费者带来了无缝的连接体验和纯净的音质表现，这也使其成为了今年三星电视产品的最佳音频伴侣。现在请和我们一起尽享1000w5.1声道为您带来的畅爽感官体验。\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品特色</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Selling Point</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g15/M00/04/0F/rBEhWFIJ6fIIAAAAAAOcAz2GvKAAACAdgP2LOYAA5wb121.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		三星HT-F453K家庭娱乐系统的设计是为实现更深层次的低音和更丰富的声音。通过连接共享功能及拓展,我们可以轻松欣赏USB内存驱动器或硬盘中的电影或是您记录幸福点滴的帅气照片。音箱简易设置令使用更加便利.卡拉OK为您带来的乐趣，Anynet+.音频回传.水晶功放自适应.USB自适应.丰富的接口设置等等一切，彰显HT-F453K的实用与时尚。\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/17/rBEQYFGl2jQIAAAAAABpLFDqsJ8AACSkwOhOfcAAGlE164.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n		兼具便捷性与科技感的扬声器设置\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		简单快捷的音响设置模式，让您在家中轻松畅享高品质音效。它拥有直观的图形用户界面，并为您自动提升立体音效，您无需再操心音响的摆放位置。三星家庭影院，带给您极致观影体验。\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g12/M00/0C/1A/rBEQYVGpgfUIAAAAAAH1aBjkyyQAACgLAFTyEgAAfWA773.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n		低音炮升级带来超逼真的音效感受\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		配备前置设计的重低音喇叭，加强重低音技术，为您带来更丰富层次感的音色体验，无论观赏电视节目、电影或欣赏音乐，都可以给您犹如身临其境的逼真音效。而且，强大影音效能集一身，让您足不出户也可体验电影院般的视听感受。比需要另外配置昂贵设备的同类产品尤其优胜！浩瀚的宇宙.蔚蓝的天空，此刻你的心是否随之翱翔那?\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/1F/rBEQYFGm6PsIAAAAAAFsgqJ_VC4AACVyQP93Z0AAWya123.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titlecenter\" style=\"margin:0px;padding:0px;text-align:center;font-weight:700;\">\r\n		功能完备 娱乐家居生活\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		HT-F453K 支持卡拉ok，消声（部分碟盘格式可能不支持）及打分，支持调节回声电平;周末举办一场家庭卡拉ok比赛吧，让紧张的生活节奏放松一下吧，让你的好心情随歌声飞扬吧，生活就应该这样愉快。\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品细节</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Product Details</span>\r\n	</div>\r\n</div>\r\n<table width=\"750\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"6\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;font-size:12px;background-color:#FFFFFF;\" class=\"ke-zeroborder\">\r\n	<tbody>\r\n		<tr>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/17/rBEQYVGl3TAIAAAAAACxfqDiSGoAACSoAP2DD8AALGW969.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					HDMI (ARC)\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					无需使用单独线缆进行连接，只需通过HDMI ARC (音频回传通道)，即可轻松连接兼容设备，处理电视音频信号。通过更少的线缆，只需要2个HDMI，即可连接音频设备，让您体验全新的音频世界。\r\n				</p>\r\n			</td>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/17/rBEQYFGl3iMIAAAAAAAPnFh0sukAACSpAP7OVcAAA-0946.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					多媒体连接\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					通过连接即可分享视频, 您只需将USB内存驱动器或移动驱动器插入家庭影院，即可欣赏您喜爱的节目。\r\n				</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<table width=\"750\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"6\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;font-size:12px;background-color:#FFFFFF;\" class=\"ke-zeroborder\">\r\n	<tbody>\r\n		<tr>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0C/02/rBEQYVGnBFgIAAAAAAAT5kFN-XwAACW3wMquKwAABP-443.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					专属模式\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					使用FOOTBALL键可以欣赏到犹如足球场上的音乐，你会感觉置身于场内一样。将遥控器按功能键选择FM，收听您喜爱的电台节目，你可以预设1-15个电台，想听就听。\r\n				</p>\r\n			</td>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0C/02/rBEQYFGnBF8IAAAAAAAPK7wxCcYAACW3wP_1cYAAA9D151.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					安全设置\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					家长锁功能与指定评级DVD配合使用，指定评级可帮您控制家庭成员观看DVD类型，光盘最多分为8个评级，真正做到安全观看。\r\n				</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M03/0A/12/rBEhVVIK-TYIAAAAAAHmrnAnxxQAACEPQCZN5UAAebG208.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">尺寸信息</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Size Information</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M09/05/1A/rBEhUlIK-M0IAAAAAABSvlzDYpIAACCEQMKwVwAAFLW491.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M03/05/1A/rBEhU1IK-kUIAAAAAACSrbnEfnEAACCFwBSLbkAAJLF787.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n	</div>\r\n</div>', '1402410698', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('18', '美的（Midea）  近吸式吸油烟机', 'CXW-200-DJ213', '23', '1699.00', '1499.00', '<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品信息</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Product Information</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVVJYpsAIAAAAAACpJSF_RR4AAEFPwCmORQAAKk9728.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品细节</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Product Details</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g15/M05/0E/1D/rBEhWlJYpwoIAAAAAACAc_IcpT4AAEC3QFxIqEAAICL559.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVVJYpxUIAAAAAAB2d8MxlOsAAEFPwHHJzUAAHaP334.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVlJYpyIIAAAAAABspRXmbnEAAEFPwLXMWcAAGy9163.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVlJYpywIAAAAAACSmHYT0I0AAEFPwO3SLcAAJKw955.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M08/14/1C/rBEhVlJYp0gIAAAAAABufB5Nmh0AAEFQAJg4pgAAG6U783.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M04/10/03/rBEhU1JYp1MIAAAAAABw92REWJcAAECoAPe-XcAAHEP895.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		全不锈钢设计；大进风设计；琴键式设计；多种风速调节；渐明渐暗护眼灯；\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品特色</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Selling Point</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M05/10/03/rBEhUlJYp2YIAAAAAAD7s_d8ARYAAECoQM1_ioAAPvL996.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M08/14/1C/rBEhVlJYp6EIAAAAAADIVxa12-AAAEFQANj3LAAAMhv206.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>', '1402410808', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('19', '海尔（Haier） XQG70-B10866 电商 7公斤 变频滚筒洗衣机', 'XQG70-B10866', '12', '3399.00', '3299.00', '<div class=\"right\" style=\"margin:0px;padding:0px;\">\r\n	<div id=\"product-detail\" class=\"m m1\" style=\"margin:0px 0px 10px;padding:2px 0px 0px;\">\r\n		<div class=\"mc\" id=\"product-detail-1\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"detail-content\" style=\"margin:0px;padding:0px;\">\r\n				<table align=\"center\" width=\"750\">\r\n					<tbody>\r\n						<tr>\r\n							<td>\r\n								<a target=\"_blank\" href=\"http://sale.jd.com/act/OpjCvlLcN5uo.html\"><img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/jfs/t154/129/656904086/101633/5f6cae2d/53952f8bN50c53e38.jpg\" class=\"err-product\" /></a>\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n				<table align=\"center\" width=\"750\">\r\n					<tbody>\r\n						<tr>\r\n							<td>\r\n								<a target=\"_blank\" href=\"http://sale.jd.com/act/P6FWJzn5VILf.html\"><img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/jfs/t145/37/561203875/116765/194fd8d4/5391245fN7e3d69e6.png\" class=\"err-product\" /></a>\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n				<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"750\" class=\"ke-zeroborder\">\r\n					<tbody>\r\n						<tr>\r\n							<td valign=\"top\">\r\n								<a target=\"_blank\" href=\"http://sale.jd.com/act/vfQlPDUkRy8zO3b.html\"><span id=\"_xhe_cursor\"></span><span id=\"_xhe_temp\"></span><img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/jfs/t184/49/715984598/64095/140538d4/53969d4bN7bf24700.jpg\" class=\"err-product\" /></a>\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n				<div style=\"margin:0px auto;padding:0px;\">\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWlNGdoMIAAAAAAJFhIQwiJAAALj9gBQXRsAAkWc704.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWVNGdpMIAAAAAAGoualDSyMAALj9gFpa4sAAajR495.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							无碳刷设计，避免普通串激电机碳刷摩擦产生的风啸声及电火花，超级静音，夜晚洗衣也安静。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							360°零缝隙控制信号，平滑调速，精准调控电机运转及洗涤节奏，精准洗涤，节能减碳，带来绿色的低碳体验.\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							外驱动升级为内驱动，直效内驱，转速&nbsp;<br />\r\n高达1000转/分钟，大幅提升滚筒洗净&nbsp;<br />\r\n能力，洗净比最高达1.23*。\r\n							<div style=\"margin:20px 0px 0px;padding:0px;font-size:12px;\">\r\n								* 数据来源：经国家家用电器质量监督检测中心检测得出\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWVNGdqAIAAAAAAPBk98FIyYAALj9gLRQW4AA8Gr051.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							洗衣机静止状态下，经过电脑模拟及实机模拟测定，精确选定6个平衡支撑点用以保持滚筒稳定性，在启动洗衣机前排除滚筒自身不平衡因素，保证洗衣机运转平稳。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							洗衣机运转过程中，HPM芯平衡系统主动调整高碳素钢挂簧及空气阻尼器的拉伸强度，即时调整洗涤过程中产生的偏心，始终保持平衡，即使宝宝的毛绒玩具熊也能轻松洗净、甩干。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							薄壳仿生原理设计，受力均匀、耐压，极大提高承受强度的同时避免箱体与各部件之间发生共振，减小洗涤振动与噪声。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							不同的污渍用不同的水温洗涤效果更佳，海尔洗衣机每一个程序可以自动调节水温，充分发挥酶的活性，达到最好的洗涤效果。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWFNGdqsIAAAAAAJWq-x0IZIAALj9gPkfDgAAlbD646.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:14px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:22px;\">\r\n								1.独创弹力筋\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								海尔独创弹力筋内筒，平滑的筒壁上分布有128道弹力筋，弹力筋中间凹槽密布3234个脱水小孔。内筒旋转带动弹力筋不断击荡水流，产生震荡水波，颠簸式洗涤衣物，弹落顽固污渍，同时激发织物纤维活性。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:14px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:22px;\">\r\n								2.活力弹污 三重洗涤更干净\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								独特弹力筋洗涤方式，辅以传统垂直摔打洗涤及立体喷射水流，三重洗涤，快速去除深层污垢；同时，污垢从最低处脱水孔通畅排出，导垢彻底，洁净效果更加显著。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:14px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:22px;\">\r\n								3.完美护衣&nbsp;<br />\r\n焕发衣物纤维活力\r\n							</div>\r\n							<div style=\"margin:10px 0px 0px;padding:0px;\">\r\n								弹力筋犹如支起的“支架”，避免衣物与脱水孔间的磨擦，同时减少洗涤水流对衣物的拉伸力度，柔和洗涤，还原织物纤维弹性，衣物洗后蓬松柔软。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M0A/1A/12/rBEhWFNfaMQIAAAAAAR0oGyUsFAAAMpRgNjxb4ABHS4526.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								洁净生活迅速拥有\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								洗涤、漂洗、甩干全部完成只需15分钟，夏天衣物及时洗，少量衣物随时洗，满足您经常换洗衣物的洁净需求。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								洗衣机也有洁癖\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								洗时段自动增加摔打揉搓的时间和强度，与顽固污渍奋战到底。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								多一次漂洗才格外干净\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								在原有漂洗次数基础上，增加一次漂洗，衣物漂洗更干净。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								多几种选择 多几分呵护\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								电脑控制，独立水温调节，较大较脏衣物加热到40℃，充分激活活性酶；洗小孩、病人衣物加热到90℃，杀菌消毒。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M02/04/0D/rBEhUlNGdsYIAAAAAAOtvhbTadUAALk4QG6Iv8AA63W767.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								轻松跟上你想要的速度\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								脱水转速可根据需要进行调整，选择范围从400,600,800至1000转每分钟,呵护您和家人的衣物，省心力，随心意。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								我的时间我做主\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								24小时预约洗涤，时间一到衣服就洗好，特别适合上班族和分时电价地区。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								抑制霉菌滋生，健康呵护倍增\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								经权威机构测定，抗菌率&gt;99％，达到最高等级，有效抑制霉菌滋生。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								方便快捷\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								安全状态下可开启筒门，方便中途添加衣物；洗衣结束立即开门，无需等待\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								人性设计 舒适洗衣\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								45°筒门开启设计，符合人机原理，操作不弯腰，方便又省力 。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M02/04/0D/rBEhUlNGdtQIAAAAAAJtWA2eTVoAALk4gAZ7osAAm1w237.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								鼠标式程序旋钮\r\n							</div>\r\n弱电工作、安全可靠、操作方便、使用寿命更长。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								LED显示\r\n							</div>\r\n一目了然，轻松洗衣\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								AMT防霉抗菌窗垫\r\n							</div>\r\n抑制霉菌滋生，健康呵护倍增\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								抽屉式洗衣粉盒\r\n							</div>\r\n洗衣粉和洗涤剂分开投放，溶解充分，一体式设计避免藏污纳垢藏污纳垢。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								筒壁上分布128道弹力筋\r\n							</div>\r\n降低磨损，提高洗净比\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M00/1B/10/rBEhVlNGduMIAAAAAAeTlV7qJfEAALs9QAJanQAB5Ot945.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							台面板采用一体式设计，四面封胶，杜绝安全隐患。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：台面板采用装订拼接工艺，易渗水受潮导致台面鼓，台面发霉等，如与电器接触可引起起火等重大安全隐患。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							分配盒使用优质工程塑料，强度高分配器盒内壁镜面抛光，冲洗无残留。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：分配器盒使用回用料，颜色深，性能差，易损坏。内壁粗糙有毛刺，洗衣粉粘结在盒内，造成漂洗不干净。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							窗垫无残留泡沫、不会发生发霉变黑现象。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：窗垫残留泡沫，发霉变黑。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g12/M00/06/1F/rBEQYFNGdwAIAAAAAAfod5BRH_wAAEL2QJ6K-QAB-iP295.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							内筒内后法兰打孔工艺，可以让洗涤时水流冲刷力更强，对衣服形成多角度冲刷，提高洗净率。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：内筒后法兰工艺简单，无孔。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							铰链厚度厚，表面电镀镜面处理，坚固不生锈。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：观察窗门铰链厚度薄，表面简单镀锌，处理简单，易生锈。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							内筒采用正反冲，弹力筋，微孔脱水工艺，洗涤时弹力筋产生激荡水流，降低磨损，提高洗净比，呵护衣物。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：内筒采用原始的单面冲孔工艺，孔眼大，易产生毛刺且高速甩干时对衣服磨损大（特别在洗涤羊毛，真丝等高档面料。）\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M00/1B/10/rBEhV1NGdxAIAAAAAATquM1eU3UAALs9QKNJSkABOrQ317.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							有电脑板盒保护，安全性高（正如电视机需要后盖一样，既能保护电脑版，又不影响散热）。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：电脑板裸露，存在极大安全隐患（因静电作用，易吸附潮气，灰尘等，带来不安全隐患）。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							内筒焊接工艺，采用第三代激光无缝焊接，可承受超高转速负荷；\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：采用第一代扣缝工艺，不能承受高转速负荷\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M00/1B/10/rBEhV1NGdxwIAAAAAAG-ZqoUWgAAALs9QOpdaEAAb5-761.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M04/1B/10/rBEhVVNGdykIAAAAAACfGVhD7aQAALs9gCEr0AAAJ8x452.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#DDDDDD;\">\r\n							产品型号&nbsp;<br />\r\n电机类型&nbsp;<br />\r\n内桶材质&nbsp;<br />\r\n上市时间&nbsp;<br />\r\n洗涤功率&nbsp;<br />\r\n洗衣机能效等级&nbsp;<br />\r\n箱体材质&nbsp;<br />\r\n显示方式&nbsp;<br />\r\n脱水功率&nbsp;<br />\r\n尺寸（高*宽*深mm）&nbsp;<br />\r\n产品净重\r\n							<div style=\"margin:15px 0px;padding:0px;\">\r\n								洗衣程序\r\n							</div>\r\n产品毛重&nbsp;<br />\r\n洗净比&nbsp;<br />\r\n是否预约&nbsp;<br />\r\n开门方式&nbsp;<br />\r\n排水方式&nbsp;<br />\r\n洗涤公斤量&nbsp;<br />\r\n洗衣/干衣机型&nbsp;<br />\r\n自动化程度\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#DDDDDD;\">\r\n							XQG70-B10866 电商&nbsp;<br />\r\n变频电机&nbsp;<br />\r\n不锈钢&nbsp;<br />\r\n2013年&nbsp;<br />\r\n250&nbsp;<br />\r\n1级&nbsp;<br />\r\n渗锌钢板&nbsp;<br />\r\nLED&nbsp;<br />\r\n450&nbsp;<br />\r\n850*595*600&nbsp;<br />\r\n71&nbsp;<br />\r\n							<div style=\"margin:10px 0px 12px;padding:0px;\">\r\n								内衣、羊毛、化纤、棉麻、预洗、&nbsp;<br />\r\n小件、快洗、单洗、单漂、单甩\r\n							</div>\r\n78&nbsp;<br />\r\n1.03&nbsp;<br />\r\n有&nbsp;<br />\r\n前开式&nbsp;<br />\r\n上排水&nbsp;<br />\r\n7公斤&nbsp;<br />\r\n洗衣机&nbsp;<br />\r\n全自动&nbsp;<br />\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M06/15/00/rBEhWVNGdzMIAAAAAACQYo-RwtoAALj9wE4e3sAAJB6251.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M06/15/00/rBEhWFNGdz4IAAAAAABPj0St3E8AALj9wL6qmsAAE-n852.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#FFFFFF;font-size:20px;\">\r\n							滚筒洗衣机使用一段时间后的保养方法\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:0px 0px 0px 10px;padding:0px;\">\r\n								滚筒洗衣机使用一段时间后的保养方法：\r\n							</div>\r\n【1】不洗衣时，应将机门微开，以便透风，防止筒内出现异味。&nbsp;<br />\r\n【2】带过滤器的滚筒洗衣机要定期清理过滤器，以防堵塞。&nbsp;<br />\r\n【3】不要将洗衣机放在潮湿的环境里，以防电器件受潮，缩短机器寿命。&nbsp;<br />\r\n【4】洗衣机的底部经常保持清洁干燥，以防箱体生锈。&nbsp;<br />\r\n【5】使用几次后，应将分配器盒拉出来清理。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#FFFFFF;font-size:20px;\">\r\n							滚筒洗衣机如何安置才可以减轻震动？\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							减振方法：&nbsp;<br />\r\n滚筒洗衣机安放时，四个底角应在同一平面上，洗衣机底部不能倾斜，不能垫木板等垫块，也不宜放置在底部悬空的木地板上。而且，洗衣机安放时应取出洗衣机运输包装的固定用螺栓、泡沫等材料，这样就可以有效减轻振动。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M01/15/00/rBEhWlNGd0oIAAAAAABb7xRVdXoAALj-ACGGjwAAFwH038.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#FFFFFF;font-size:20px;\">\r\n							安装条件：\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:3px 0px 0px;padding:0px;\">\r\n								安放位置不能太潮湿，地面不能太光滑或不平，不能安装在台子上，环境温度不能低于0度；\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								如卫生间不适合摆放洗衣机，可以设计到厨房，客厅，阳台等位置；\r\n							</div>\r\n							<div style=\"margin:20px 0px 0px;padding:0px;\">\r\n								电源要求：220V/50HZ交流电，使用单独的三相插座，并有可靠接地，滚筒洗衣机插座最大承载电流不低于15A;\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								安装的位置最好有地漏，以保证排水通畅；\r\n							</div>\r\n							<div style=\"margin:30px 0px 0px;padding:0px;\">\r\n								自来水压力在0.03-1MPA（兆帕）之间。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M01/15/00/rBEhWFNGd1UIAAAAAACxG3mx-pcAALj-AKc7mkAALEz929.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							收费项目&nbsp;<br />\r\n							<div style=\"margin:25px 0px 0px;padding:0px;\">\r\n								加长进水管\r\n							</div>\r\n							<div style=\"margin:60px 0px 0px;padding:0px;\">\r\n								加长排水管\r\n							</div>\r\n							<div style=\"margin:190px 0px 0px;padding:0px;\">\r\n								水龙头\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:5px 0px 0px;padding:0px;\">\r\n								收费说明\r\n							</div>\r\n							<div style=\"margin:10px 0px 0px;padding:0px;\">\r\n								由于用户的使用环境不同如果安装过程中需要加长进水管，加长的进水管需要另行收费\r\n							</div>\r\n							<div style=\"margin:3px 0px 0px;padding:0px;\">\r\n								由于用户的使用环境不同如果安装过程中需要加长排水管，加长的排水管需要另行收费\r\n							</div>\r\n							<div style=\"margin:70px 0px 0px;padding:0px;\">\r\n								1、如用户需要安装水龙头可以自行选购安装符合标准的水龙头。\r\n							</div>\r\n							<div style=\"margin:110px 0px 0px;padding:0px;\">\r\n								2、用户也可以选购海尔提供的水龙头，海尔可以收费提供专用水龙头，并负责免费安装。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:5px 0px 0px;padding:0px;\">\r\n								收费标准\r\n							</div>\r\n							<div style=\"margin:10px 0px 0px;padding:0px;\">\r\n								加长0.5米（12元/根） 加长1米（15元/根） 加长2米（20元/根）\r\n							</div>\r\n							<div style=\"margin:50px 0px 0px;padding:0px;\">\r\n								加长1.5米（5元/根）\r\n							</div>\r\n							<div style=\"margin:105px 0px 0px;padding:0px;\">\r\n								标准水龙头46元/个\r\n							</div>\r\n							<div style=\"margin:150px 0px 0px;padding:0px;\">\r\n								精品水龙头65元/个\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:5px 0px 0px;padding:0px;\">\r\n								收费标准\r\n							</div>\r\n							<div style=\"margin:70px 0px 0px;padding:0px;\">\r\n								进水管、排水管&nbsp;<br />\r\n为整根加长\r\n							</div>\r\n							<div style=\"margin:80px 0px 0px;padding:0px;\">\r\n								- 专享三年超长保修服务&nbsp;<br />\r\n免除您的后顾之忧&nbsp;<br />\r\n- 采用行业内锻压、冲孔工艺，内壁光滑耐腐蚀，密度高&nbsp;<br />\r\n- 主体采用纯铜材料，防锈，经久耐用，陶瓷阀芯，耐磨性高\r\n							</div>\r\n							<div style=\"margin:20px 0px 0px;padding:0px;\">\r\n								- 专享三年超长保修服务免除您的后顾之忧&nbsp;<br />\r\n- 货真价实的材料，主体采用纯铜制造，密度高，抗氧化，防锈斑，陶瓷阀芯，耐磨性高&nbsp;<br />\r\n- 完全贴合洗衣机进水管的设计，密封效果好，有效防止滴漏\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							说明：&nbsp;<br />\r\n因每位用户的安装环境不同，需求不同，安装过程中需要其它辅加材料或特殊服务项目，具体收费标准参考《海尔维修服务收费标准》。服务人员上门安装时会出示收费标准并讲解，同时请您监督我们的服务，如发现服务人员多收费，可拨打海尔售后统一服务热线投诉并有权拒绝付费，经核实属实的，本次服务“免单”（全额退还收取的安装材料费）。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M04/1B/10/rBEhVlNGd2MIAAAAAAGjmqPCFhoAALs9gG-XXgAAaOy289.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M02/04/0D/rBEhU1NGd28IAAAAAALQCZn9Ba8AALk4gIMgdAAAtAh713.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M04/04/0D/rBEhUlNGd4sIAAAAAAFQtPmsSlYAALk4wJsJ20AAVDM520.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M04/1B/10/rBEhVlNGd5YIAAAAAAMTkbIuygQAALs9gLoUG4AAxOp692.jpg\" class=\"err-product\" />\r\n					</div>\r\n				</div>\r\n				<table align=\"center\" width=\"750\">\r\n					<tbody>\r\n						<tr>\r\n							<td>\r\n								<img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/g13/M09/0F/0B/rBEhU1LCWgoIAAAAAACAkL3yMvEAAHd2wElDz0AAICo828.jpg\" class=\"err-product\" />\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n			</div>\r\n		</div>\r\n		<div id=\"promises\" style=\"margin:0px;padding:10px;\">\r\n			<strong>服务承诺：</strong><br />\r\n京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东商城还为您提供具有竞争力的商品价格和<a href=\"http://www.jd.com/help/kdexpress.aspx\" target=\"_blank\">运费政策</a>，请您放心购买！&nbsp;<br />\r\n注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！\r\n		</div>\r\n		<div id=\"state\" style=\"margin:0px;padding:10px;\">\r\n			<strong>权利声明：</strong><br />\r\n京东商城上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东商城重要的经营资源，未经许可，禁止非法转载使用。\r\n			<p>\r\n				<b>注：</b>本站商品信息均来自于厂商，其真实性、准确性和合法性由信息拥有者（厂商）负责。本站不提供任何保证，并不承担任何法律责任。\r\n			</p>\r\n		</div>\r\n	</div>\r\n	<div id=\"comment\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				商品评价\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:10px 0px;\">\r\n			<div class=\"iloading\" style=\"margin:0px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"comments-list\" class=\"m\" style=\"margin:0px 0px 20px;padding:2px 0px 0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;\">\r\n					<a>全部评价(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>好评(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>中评(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>差评(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>有晒单的评价(0)</a>\r\n				</li>\r\n				<li class=\"tab-last\" style=\"text-align:center;\">\r\n				</li>\r\n			</ul>\r\n		</div>\r\n		<div id=\"comment-0\" class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"iloading\" style=\"margin:20px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"consult\" class=\"m m1\" style=\"margin:0px 0px 20px;padding:2px 0px 0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;\">\r\n					<a>全部购买咨询</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>商品咨询</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>库存配送</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>支付</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>发票保修</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>支付帮助</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>配送帮助</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>常见问题</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n		<div id=\"consult-search\" style=\"margin:0px;padding:10px 16px;\">\r\n			<div class=\"form\" style=\"margin:0px;padding:0px;\">\r\n				咨询前请先搜索，方便又快捷：\r\n			</div>\r\n			<div class=\"prompt\" style=\"margin:0px;padding:9px 0px 9px 16px;color:#9C9A9C;\">\r\n				<strong>温馨提示:</strong>因厂家更改产品包装、产地或者更换随机附件等没有任何提前通知，且每位咨询者购买情况、提问时间等不同，为此以下回复仅对提问者3天内有效，其他网友仅供参考！若由此给您带来不便请多多谅解，谢谢！\r\n			</div>\r\n		</div>\r\n		<div id=\"consult-0\" class=\"mc tabcon\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"iloading\" style=\"margin:0px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"discuss\" class=\"m m1\" style=\"margin:0px 0px 10px;padding:2px 0px 0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;\">\r\n					<a>网友讨论圈</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>晒单贴</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>讨论贴</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>问答贴</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>圈子贴</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n		<div id=\"discuss-1\" class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"iloading\" style=\"margin:0px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>\r\n<div class=\"left\" style=\"margin:0px;padding:0px;\">\r\n	<div id=\"related-sorts\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				相关分类\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<ul class=\"lh\">\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-798.html\">平板电视</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-870.html\">空调</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-878.html\">冰箱</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-880.html\">洗衣机</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-823.html\">家庭影院</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-965.html\">DVD播放机</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1199.html\">迷你音响</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1300.html\">烟机/灶具</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1706.html\">热水器</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1301.html\">消毒柜/洗碗机</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1707.html\">酒柜/冰吧/冷柜</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-877.html\">家电配件</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1013.html\">家电下乡</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n	</div>\r\n	<div id=\"related-brands\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				同类其他品牌\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<ul class=\"lh\">\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-18403.html\">小天鹅（Little Swan）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-7817.html\">海尔（Haier）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-2505.html\">TCL</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-16407.html\">松下（Panasonic）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-7408.html\">格兰仕（Galanz）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-22186.html\">统帅（Leader）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-17382.html\">威力（WEILI）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-15133.html\">三洋（SANYO）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-1528.html\">LG</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-12380.html\">美的（Midea）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-18423.html\">小鸭</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-18177.html\">现代（HYUNDAI）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-10317.html\">康佳（KONKA）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-7888.html\">海信（Hisense）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-17887.html\">西门子（SIEMENS）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-14705.html\">日普（RIPU）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-19909.html\">樱花（Sakura）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-9508.html\">金松（JINSONG）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-14734.html\">荣事达（Royalstar）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-15127.html\">三星（SAMSUNG）</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		<div id=\"view-buy\" class=\"m m2 related-buy hide\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n			<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n				<h2 style=\"font-size:14px;font-weight:400;\">\r\n					浏览了该商品的用户最终购买了\r\n				</h2>\r\n			</div>\r\n			<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n				<ul>\r\n					<li class=\"fore1\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）\" src=\"http://img10.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaM-gIAAAAAAHEkmKa3kMAAFgCAPtLXoAAcSq389.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\">海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015650\">￥1999.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore2\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015658.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG70-B1286 电商 7公斤 1200转变频滚筒洗衣机（银灰色）\" src=\"http://img13.360buyimg.com/n4/g14/M01/02/00/rBEhVVNmEGsIAAAAAAIJBBbz8GoAAM-EADL6qcAAgkc040.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015658.html\">海尔（Haier） XQG70-B1286 电商 7公斤 1200转变频滚筒洗衣机（银灰色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015658\">￥3499.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore3\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机\" src=\"http://img12.360buyimg.com/n4/g13/M0A/01/0A/rBEhU1NoeGcIAAAAAAMZpOXaofEAAM-KQKSb-8AAxm8158.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\">海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1069497\">￥3099.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore4\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img13.360buyimg.com/n4/g13/M03/09/0C/rBEhVFNdyPIIAAAAAAGCGiBpM18AAMjCACQRzoAAYIy355.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\">LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-876668\">￥2099.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore5\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img11.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaOG0IAAAAAAGmsN2QEMYAAFgIgI0FTwAAabI647.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\">LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-698301\">￥2899.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore6\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698303.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-N12430D 6公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img13.360buyimg.com/n4/g15/M03/1B/17/rBEhWFNnJPUIAAAAAAKH8aVIEMkAAM4PgBCB6UAAogJ874.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698303.html\">LG WD-N12430D 6公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-698303\">￥2349.00</strong>\r\n						</div>\r\n					</li>\r\n				</ul>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"ranklist\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				洗衣机排行榜\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;font-weight:700;\">\r\n					同价位\r\n				</li>\r\n				<li style=\"text-align:center;color:#333333;background-color:#F7F7F7;\">\r\n					同品牌\r\n				</li>\r\n				<li style=\"text-align:center;color:#333333;background-color:#F7F7F7;\">\r\n					同类别\r\n				</li>\r\n			</ul>\r\n			<ul class=\"tabcon\">\r\n				<li class=\"fore1\">\r\n					1\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/609522.html\"><img height=\"50\" width=\"50\" src=\"http://img12.360buyimg.com/n5/g10/M00/1C/02/rBEQWFNaOCQIAAAAAAG9_mtdNmoAAFgHwJBRCcAAb4W939.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/609522.html\">三星(SAMSUNG) WF1702NCW/XSC 7公斤 滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-609522\">￥2299.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore2\">\r\n					2\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/698301.html\"><img height=\"50\" width=\"50\" src=\"http://img11.360buyimg.com/n5/g10/M00/1C/02/rBEQWFNaOG0IAAAAAAGmsN2QEMYAAFgIgI0FTwAAabI647.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/698301.html\">LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-698301\">￥2899.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore3\">\r\n					3\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/816528.html\"><img height=\"50\" width=\"50\" src=\"http://img13.360buyimg.com/n5/g12/M00/0B/1D/rBEQYVNZ6nUIAAAAAAHTERq_3BcAAFJzgGOpJQAAdMp856.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/816528.html\">西门子（SIEMENS） XQG60-WS10K1C00W 6公斤 3D正负洗系列 滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-816528\">￥3599.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore4\">\r\n					4\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/782194.html\"><img height=\"50\" width=\"50\" src=\"http://img14.360buyimg.com/n5/g13/M09/08/14/rBEhUlNY2_gIAAAAAAGJkqlbYpYAAMZTQBh29MAAYmq090.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/782194.html\">松下(panasonic) XQG52-M75201 5.2公斤 斜式滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-782194\">￥2099.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore5\">\r\n					5\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/895588.html\"><img height=\"50\" width=\"50\" src=\"http://img13.360buyimg.com/n5/g13/M06/08/14/rBEhVFNY380IAAAAAAGjGtfbB14AAMZeQHKBr0AAaMy314.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/895588.html\">西门子（SIEMENS） XQG70-WM12E2680W 7公斤 滚筒洗衣机（银色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-895588\">￥4199.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore6\">\r\n					6\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/997834.html\"><img height=\"50\" width=\"50\" src=\"http://img14.360buyimg.com/n5/g10/M00/1C/02/rBEQWFNaP50IAAAAAAGMSIVDV84AAFgPgGfg2gAAYxg172.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/997834.html\">西门子（SIEMENS） WM08E2C00W 7公斤滚筒洗衣机 （白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-997834\">￥3599.00</strong>\r\n					</div>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		<div id=\"buy-buy\" class=\"m m2 related-buy\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n			<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n				<h2 style=\"font-size:14px;font-weight:400;\">\r\n					购买了该商品的用户还购买了\r\n				</h2>\r\n			</div>\r\n			<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n				<ul>\r\n					<li class=\"fore1\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/850692.html\"><img height=\"100\" width=\"100\" alt=\"嘉沛（JIAPEI） WA-305Pro 冰箱洗衣机架/固定底座 (高低可调)\" src=\"http://img12.360buyimg.com/n4/g10/M00/1C/1C/rBEQWFNdu0QIAAAAAAG19nxYnoUAAFqVwKTfaQAAbYO358.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/850692.html\">嘉沛（JIAPEI） WA-305Pro 冰箱洗衣机架/固定底座 (高低可调)</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-850692\">￥128.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore2\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015324.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） KFR-35GW/05GDC23A 1.5匹壁挂式冷暖变频空调\" src=\"http://img14.360buyimg.com/n4/g13/M09/08/15/rBEhVFNY7WAIAAAAAADTuTnnj5kAAMZ9ACc62YAANPR744.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015324.html\">海尔（Haier） KFR-35GW/05GDC23A 1.5匹壁挂式冷暖变频空调</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015324\">￥2799.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore3\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015707.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier）EC6002-D 60升遥控电热水器\" src=\"http://img12.360buyimg.com/n4/g14/M02/02/08/rBEhVVNnWFAIAAAAAAFn30R0R_oAANBRQLB4PcAAWf3690.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015707.html\">海尔（Haier）EC6002-D 60升遥控电热水器</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015707\">￥1498.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore4\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/821655.html\"><img height=\"100\" width=\"100\" alt=\"乐歌(Loctek) PSW842M(26-52寸)旋转拉伸电视功能挂架/支架\" src=\"http://img10.360buyimg.com/n4/g14/M06/1F/18/rBEhVVNaNtUIAAAAAAHc3a1K0ckAAMh3gF_7QUAAdz1420.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/821655.html\">乐歌(Loctek) PSW842M(26-52寸)旋转拉伸电视功能挂架/支架</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-821655\">￥199.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore5\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/717250.html\"><img height=\"100\" width=\"100\" alt=\"美的 (Midea) 电子制冷 饮水机 MYD927S-W\" src=\"http://img10.360buyimg.com/n4/g16/M00/01/1A/rBEbRVNrWg4IAAAAAAEpgMSM8dwAAAWzwGJ1M0AASmY137.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/717250.html\">美的 (Midea) 电子制冷 饮水机 MYD927S-W</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-717250\">￥379.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore6\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/874319.html\"><img height=\"100\" width=\"100\" alt=\"美的（Midea） EM7KCGW3-NR 平板微波炉\" src=\"http://img14.360buyimg.com/n4/g17/M00/00/13/rBEbSFNqFvMIAAAAAAIGkTsnd6EAAAHkQK-QzIAAgap910.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/874319.html\">美的（Midea） EM7KCGW3-NR 平板微波炉</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-874319\">￥438.00</strong>\r\n						</div>\r\n					</li>\r\n				</ul>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		<div id=\"browse-browse\" class=\"m m2 related-buy\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n			<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n				<h2 style=\"font-size:14px;font-weight:400;\">\r\n					浏览了该商品的用户还浏览了\r\n				</h2>\r\n			</div>\r\n			<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n				<ul>\r\n					<li class=\"fore1\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015662.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG60-B1226AW 6公斤 1200转 水晶系列变频滚筒洗衣机（瓷白色）\" src=\"http://img12.360buyimg.com/n4/g12/M00/0F/03/rBEQYVNmELkIAAAAAAHyQFVoRY4AAFerwHSFi4AAfJY645.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015662.html\">海尔（Haier） XQG60-B1226AW 6公斤 1200转 水晶系列变频滚筒洗衣机（瓷白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015662\">￥3899.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore2\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机\" src=\"http://img12.360buyimg.com/n4/g13/M0A/01/0A/rBEhU1NoeGcIAAAAAAMZpOXaofEAAM-KQKSb-8AAxm8158.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\">海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1069497\">￥3099.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore3\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）\" src=\"http://img10.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaM-gIAAAAAAHEkmKa3kMAAFgCAPtLXoAAcSq389.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\">海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015650\">￥1999.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore4\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img11.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaOG0IAAAAAAGmsN2QEMYAAFgIgI0FTwAAabI647.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\">LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-698301\">￥2899.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore5\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/895588.html\"><img height=\"100\" width=\"100\" alt=\"西门子（SIEMENS） XQG70-WM12E2680W 7公斤 滚筒洗衣机（银色）\" src=\"http://img13.360buyimg.com/n4/g13/M06/08/14/rBEhVFNY380IAAAAAAGjGtfbB14AAMZeQHKBr0AAaMy314.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/895588.html\">西门子（SIEMENS） XQG70-WM12E2680W 7公斤 滚筒洗衣机（银色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-895588\">￥4199.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore6\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img13.360buyimg.com/n4/g13/M03/09/0C/rBEhVFNdyPIIAAAAAAGCGiBpM18AAMjCACQRzoAAYIy355.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\">LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-876668\">￥2099.00</strong>\r\n						</div>\r\n					</li>\r\n				</ul>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"miaozhen7886\" class=\"m\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<a href=\"http://c.fa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=817&amp;bid=3147&amp;unit=29866&amp;advid=95489&amp;guv=&amp;url=http://e.cn.miaozhen.com/r.gif?k=1012922&amp;p=4+jSA0&amp;rt=2&amp;ns=[M_ADIP]&amp;ni=[M_IESID]&amp;na=[M_MAC]&amp;o=http://sale.jd.com/act/P2oMfuidjRr10wsE.html\" target=\"_blank\"><img width=\"211\" height=\"261\" src=\"http://img11.360buyimg.com/da/jfs/t157/216/441872528/18241/5d272345/538d51fdN29a86e05.jpg\" class=\"loading-style2\" /></a>\r\n	</div>\r\n	<div id=\"miaozhen10767\" class=\"m\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<a href=\"http://c.fa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=818&amp;bid=2947&amp;unit=28576&amp;advid=96247&amp;guv=&amp;url=http://jmall.jd.com/shop/p129940/index.html?erpad_source=erpad\" target=\"_blank\"><img width=\"211\" height=\"261\" alt=\"\" src=\"http://img13.360buyimg.com/da/jfs/t205/61/637500449/23385/6d479db/539524e1Nc8892389.jpg\" class=\"loading-style2\" /></a>\r\n	</div>\r\n	<div id=\"ad_market_1\" class=\"m\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div style=\"margin:0px;padding:0px;\">\r\n			<img id=\"tracker_banner45b34482-ae79-4feb-95c7-28eb79cc2d9b\" width=\"0\" height=\"0\" border=\"0\" src=\"http://x.jd.com/dsp/np?log=VLikGDCsgoBvQrY6FOANYuekrtHPkiO8++O4zBTXUEXMZir0ZwsFPbpSIz0SM3d8IPL9jxA26rE3R+n6klF3wecKlWrR/83eE18PR4AnluGhBvahZAWn6TQRj1Jp0Jyy353Xe1m/GPXrHBo2rddQ5i/7y8ywXRy6evvzcVdpd7ziUdd3I7WuE/NWW9CuQHcndzomCTWla9CyhnP0U78lI1lWEme8MLkVo+Wgz1bxolpvrjz+VWP32fd6/kSDCt6m0/BW6Fn+RAD4ED55xE2ICg==&amp;v=2\" />\r\n			<div id=\"jd_banner45b34482-ae79-4feb-95c7-28eb79cc2d9b\" style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>', '1402410923', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('20', '商品名称1', '', '10000', '100.00', '0.00', null, '2016', '1', '0', '73');
-INSERT INTO `tour_product` VALUES ('22', '商品名称1rewrwe', '21312321321', '10000', '100.00', '0.00', null, '2016', '1', '0', '62');
-INSERT INTO `tour_product` VALUES ('24', '在模板中输出变量的方法很简单，例如，在控制器中我们给模板变量赋值', '213213', '10000', '100.00', '35.00', null, '2016', '1', '0', '74');
-INSERT INTO `tour_product` VALUES ('26', '2014夏装新款韩版修身女装欧根纱短袖连衣裙', 'L00734', '1', '99.80', '57.00', '', '0', '1', '0', '0');
-INSERT INTO `tour_product` VALUES ('32', '淑女圆领雪纺衫女短裙套装套裤两件套', '123', '10000', '100.00', '0.00', '', '0', '1', '0', '0');
-INSERT INTO `tour_product` VALUES ('53', '商品名称4343', '4324234', '10000', '100.00', '79.00', '', '0', '1', '0', '7');
-INSERT INTO `tour_product` VALUES ('54', '商品名称1PHP获取目录和的方法通过魔术变量', '321313', '10000', '100.00', '81.00', '', '0', '1', '0', '23');
-INSERT INTO `tour_product` VALUES ('55', '商品名称1312321312', '', '10000', '100.00', '82.00', '', '0', '1', '0', '4');
-INSERT INTO `tour_product` VALUES ('56', '商品名称1231232', '321312321', '10000', '100.00', '83.00', '', '0', '1', '0', '1');
-INSERT INTO `tour_product` VALUES ('59', '商品名称1PHP获取目录和的方法通过魔术变量11', '123123', '10000', '100.00', '84.00', '', '2016', '1', '0', '2');
-INSERT INTO `tour_product` VALUES ('60', '商品名称34', '21312313123', '10000', '100.00', '85.00', '', '2016', '1', '0', '2');
-INSERT INTO `tour_product` VALUES ('61', '商品名称1213213213', '', '10000', '100.00', '86.00', '', '2016', '1', '0', '23');
+INSERT INTO `tour_product` VALUES ('1', 'IMOOC苹果（APPLE）iPhone 4S 8G版 3G手机', '98122', '9999', '2000.00', '1999.00', '<p>\r\n	<span style=\"color:#666666;font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;\">双核，让 A5 芯片双倍强大，图形处理快达 7 倍1。你会感觉到它所带来的效果 — 飞快。iPhone 4S 快速，反应灵敏，当你启动应用软件、浏览网页，以及做各种操作时，就会体验到它所成就的与众不同。而且无论你正在做什么，都可以持续进行。A5 芯片具有极高的效能，赋予 iPhone 4S 超长的电池使用时间。</span> \r\n</p>\r\n<p>\r\n	<span style=\"color:#666666;font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;\"><span style=\"color:#666666;font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;\">双核，让 A5 芯片双倍强大，图形处理快达 7 倍1。你会感觉到它所带来的效果 — 飞快。iPhone 4S 快速，反应灵敏，当你启动应用软件、浏览网页，以及做各种操作时，就会体验到它所成就的与众不同。而且无论你正在做什么，都可以持续进行。A5 芯片具有极高的效能，赋予 iPhone 4S 超长的电池使用时间。</span><br />\r\n</span> \r\n</p>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('2', 'IMOOC华为 荣耀3C （白色）3G手机 TD-SCDMA/GSM 2G RAM ', '1056969', '9999', '1099.00', '659.00', '<div style=\"margin:0px;padding:0px;background-color:#FFFFFF;color:#717071;font-family:微软雅黑;font-size:24px;\">\r\n	5英寸黑瀑布屏，全贴合工艺，LTPS技术\r\n</div>\r\n<p>\r\n	全贴合工艺，宛如黑瀑布，显示跃然屏上，清晰度更高，画质更细腻逼真 <br />\r\nLTPS低温多晶硅技术屏幕，响应速度快，更鲜艳\r\n</p>\r\n<p>\r\n	1280*720高清分辨率，1600万色，极佳的色彩表现，全视角\r\n</p>\r\n<p>\r\n	<br />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;background-color:#FFFFFF;color:#717071;font-family:微软雅黑;font-size:24px;\">\r\n	<br />\r\n</div>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('3', '三星（SAMSUNG）I9158P 3G手机（白色）TD-SCDMA/GSM', '1072545', '9999', '1699.00', '1299.00', '<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-size:14px;font-weight:700;color:#666666;font-family:Arial, Helvetica, sans-serif;background-color:#FFFFFF;\">\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n			5.8英寸清晰大屏，精彩“大”有不同\r\n		</div>\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			智能手机上也能畅享平板体验？GALAXY MEGA I9158P让平板和智能手机完美结合。它纤薄轻巧，让您轻松随身携带。极窄边框设计，让您单手亦可舒适掌握。更让您惊喜的是，它拥有5.8英寸的清晰大屏，提供更大的文字和图片显示，带来无比震撼的视觉冲击。\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n			<img alt=\"\" src=\"http://img20.360buyimg.com/vc/g14/M00/03/00/rBEhVVHL_jcIAAAAAAHZgUsur7oAAAl3ALoDUQAAdmZ750.jpg\" class=\"err-product\" />\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			主屏支持竖屏、横屏两种显示模式，为您呈现更丰富的内容，提供最开阔的视野。无论您玩游戏、播放视频还是浏览网页，都可获得最大化的视觉体验。\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n			<img alt=\"\" src=\"http://img20.360buyimg.com/vc/g15/M09/03/00/rBEhWlHL_oMIAAAAAADnHDxBzd4AAAl3AE0jZQAAOc0328.jpg\" class=\"err-product\" />\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n			多窗口多任务，一览无余，高效自如\r\n		</div>\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			需要处理多个任务时不想手忙脚乱、频繁切换窗口？GALAXY MEGA I9158P可在超大屏幕上同时运行两个程序窗口，让您体验真正便捷高效的多任务处理。\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n			<img alt=\"\" src=\"http://img20.360buyimg.com/vc/g15/M00/03/00/rBEhWFHL_u8IAAAAAACxViCPakQAAAl3QIhLpUAALFu557.jpg\" class=\"err-product\" />\r\n		</div>\r\n	</div>\r\n	<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n		<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n			您可以在访问网页或与好友聊天的同时，发送邮件或观看视频，一举多得。您还可通过Pop Up play画中画功能，一边发短信、电子邮件或处理其它应用，一边欣赏大片，绝不错失任何精彩。并可根据需要，将视频窗口拖曳到任何位置，让娱乐更自由。\r\n		</div>\r\n	</div>\r\n</div>\r\n<div class=\"formwork_text\" style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Helvetica, sans-serif;font-size:14px;background-color:#FFFFFF;\">\r\n</div>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('5', '胜伟 高支棉斜纹四件套裸婚时代100%棉1.5/1.8米床', '10569691', '99999', '149.00', '119.00', '<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	产品资料\r\n</p>\r\n<p class=\"formwork_titleleft2\" style=\"font-size:14px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	胜伟高支棉斜纹四<span class=\"wiki-words\" id=\"wiki-keyword-1\">件套</span>裸婚时代<br />\r\n<span class=\"wiki-words\" id=\"wiki-keyword-2\">面料</span>：40S全棉<br />\r\n适合床：1.5/1.8米床<br />\r\n规格：被套230*200&nbsp;<span class=\"wiki-words\" id=\"wiki-keyword-0\">床单</span>250*230 枕套48*74*2只<br />\r\n毛重：2.1kg\r\n</p>', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('7', 'XP 热 阿迪达斯adidas2014新款生活男鞋网面低帮场下篮球文化板鞋', '2342123', '9999', '555.00', '333.00', '<h1 style=\"font-size:16px;font-family:arial, \'microsoft yahei\';color:#666666;background-color:#FFFFFF;\">\r\n	XP 热 阿迪达斯adidas2014新款生活男鞋网面低帮场下篮球文化板鞋Q33480 尊贵蓝+亮黄荧光+白 43\r\n</h1>', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('9', '韩都衣舍 韩版2014夏装新款女装两件套圆领短袖T恤NW3201肆 白色 M', '1056333', '55', '134.00', '90.00', '<p>\r\n	<span style=\"color:#5C5C5C;font-family:微软雅黑;background-color:#FFFFFF;\">外衣大身：95%粘纤 5%氨纶&nbsp;外衣袖子：70%棉 25%锦纶 5%粘纤 内搭：95%粘纤 5%氨纶</span>\r\n</p>\r\n<p>\r\n	<span style=\"color:#5C5C5C;font-family:微软雅黑;background-color:#FFFFFF;\">\r\n	<div class=\"content ke-post\" align=\"center\" style=\"margin:0px;padding:10px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img id=\"desc-module-3\" class=\"desc_anchor err-product\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t184/155/168032383/43/9acceab1/5382ee5eN2be51f49.gif\" />\r\n	</div>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t178/287/178335129/2820/609e02e3/5382ee60N2b1ddab5.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t148/50/186325206/7981/1e0aaf04/5382ee60N5e88de2b.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div class=\"content ke-post\" align=\"center\" style=\"margin:0px;padding:10px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img width=\"750\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t181/258/177275435/97121/d1daeccd/5382ee60N6a3f30e6.jpg\" class=\"err-product\" />\r\n	</div>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t205/334/168709737/134760/b4fbaff4/5382ee61N65bda1a9.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t190/165/182664900/141536/9c71d740/5382ee61N9e78a437.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t148/55/172181392/151420/bdf9cc8a/5382ee62Ne1afea73.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t196/125/192440496/118964/372173ca/5382ee62N7f1915a8.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<p class=\"content ke-post\" align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t148/54/168991084/155385/fe5ee665/5382ee63N9832bd69.jpg\" class=\"err-product\" />\r\n	</p>\r\n<br />\r\n</span>\r\n</p>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('10', '洛诗琳2014夏装新款女装欧根纱盘花荷叶边修身雪纺连衣裙', '102228144', '78', '786.00', '249.00', '<div style=\"margin:0px auto;padding:0px;color:#666666;background-color:#FFFFFF;border:1px dashed #AAAAAA;font-family:微软雅黑;\">\r\n	<p>\r\n		<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g13/M00/01/18/rBEhU1NwdFUIAAAAAAAm5FOXIIcAANDzwPv_p8AACb8961.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"748\" class=\"ke-zeroborder\">\r\n		<tbody>\r\n			<tr>\r\n				<td align=\"middle\" rowspan=\"2\" valign=\"top\" width=\"218\">\r\n					<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g17/M00/00/06/rBEbSlNwdFkIAAAAAACS82hCKUUAAAPeQOPPtsAAJML149.jpg\" class=\"err-product\" />\r\n				</td>\r\n				<td rowspan=\"2\" width=\"10\">\r\n				</td>\r\n				<td valign=\"top\" width=\"250\">\r\n					<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"250\" style=\"text-align:center;color:#FFFFFF;font-size:12px;\" class=\"ke-zeroborder\">\r\n						<tbody>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"25\" style=\"text-align:left;background-color:#555555;font-size:15px;\">\r\n									<strong>基本参数</strong>\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"20\" style=\"text-align:left;color:#000000;font-size:13px;\">\r\n									<strong>款号：</strong>XDR114340\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"20\" style=\"text-align:left;color:#000000;font-size:13px;\">\r\n									<strong>品名：</strong>欧根纱盘花荷叶边修身雪纺连衣裙\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"20\" style=\"text-align:left;color:#000000;font-size:13px;\">\r\n									<strong>市场价：</strong>786RMB\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"30\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"25\" style=\"text-align:left;background-color:#555555;font-size:15px;\">\r\n									<strong>基本参数</strong>\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" width=\"65\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>面料指数：</strong>\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									宽松\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									略松\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									合身\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									紧身\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>衣长指数：</strong>\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									超短\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									短\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									常规\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									中长\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>弹力指数：</strong>\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									无弹\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									微弹\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									弹力\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									超弹\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>面料质感：</strong>\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									顺滑\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									滑\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									适中\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									粒感\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>拉链位置：</strong>\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									无\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#DBA64A;\">\r\n									背后\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									左侧\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td style=\"background-color:#999999;\">\r\n									右侧\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td colspan=\"8\" height=\"10\">\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"20\" style=\"color:#000000;font-size:13px;\">\r\n									<strong>有无里衬：</strong>\r\n								</td>\r\n								<td colspan=\"3\" style=\"background-color:#DBA64A;\">\r\n									有\r\n								</td>\r\n								<td width=\"1\">\r\n								</td>\r\n								<td colspan=\"3\" style=\"background-color:#999999;\">\r\n									无\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n				</td>\r\n				<td width=\"10\">\r\n				</td>\r\n				<td valign=\"top\">\r\n					<div style=\"margin:0px;padding:0px 20px;font-family:微软雅黑;background-color:#E6E6E6;font-size:13px;\">\r\n						<div style=\"margin:10px 0px 0px;padding:0px;font-size:15px;\">\r\n							<strong>面料信息</strong>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							面料：乔其&nbsp;<br />\r\n里料：配色弹力双绉\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							面布成分:聚酯纤维100%&nbsp;<br />\r\n里布成分:聚酯纤维100%\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							&nbsp;\r\n						</div>\r\n						<div style=\"margin:10px 0px 0px;padding:0px;font-size:15px;\">\r\n							<strong>洗涤说明：</strong>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;\">\r\n							<span style=\"color:#FF0000;\">手洗不可漂白</span>，冷水单独洗涤；\r\n						</div>\r\n					</div>\r\n				</td>\r\n				<td width=\"10\">\r\n				</td>\r\n			</tr>\r\n			<tr>\r\n				<td colspan=\"3\" valign=\"top\">\r\n					<div style=\"margin:15px auto;padding:0px;text-align:center;font-family:微软雅黑;background-color:#E6E6E6;font-size:15px;font-weight:bold;\">\r\n						身体尺寸参照表\r\n					</div>\r\n					<table cellpadding=\"0\" cellspacing=\"0\" height=\"170\" width=\"100%\" style=\"border:1px double #CCCCCC;text-align:center;font-family:微软雅黑;font-size:13px;\">\r\n						<tbody>\r\n							<tr>\r\n								<td bgcolor=\"#000\" height=\"25\" style=\"color:#FFFFFF;\">\r\n									尺码\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									S\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									M\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									L\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									XL\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									2XL\r\n								</td>\r\n								<td style=\"color:#FFFFFF;\">\r\n									3XL\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									胸围(cm)\r\n								</td>\r\n								<td valign=\"center\">\r\n									83\r\n								</td>\r\n								<td valign=\"center\">\r\n									86\r\n								</td>\r\n								<td valign=\"center\">\r\n									90\r\n								</td>\r\n								<td valign=\"center\">\r\n									94\r\n								</td>\r\n								<td valign=\"center\">\r\n									98\r\n								</td>\r\n								<td valign=\"center\">\r\n									102\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									腰围(cm)\r\n								</td>\r\n								<td valign=\"center\">\r\n									67(2.01尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									70(2.1尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									74(2.22尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									78(2.34尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									82(2.46尺)\r\n								</td>\r\n								<td valign=\"center\">\r\n									84(2.52尺)\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									臀围(cm)\r\n								</td>\r\n								<td valign=\"center\">\r\n									89\r\n								</td>\r\n								<td valign=\"center\">\r\n									92\r\n								</td>\r\n								<td valign=\"center\">\r\n									96\r\n								</td>\r\n								<td valign=\"center\">\r\n									100\r\n								</td>\r\n								<td valign=\"center\">\r\n									104\r\n								</td>\r\n								<td valign=\"center\">\r\n									108\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									适合体重(kg)\r\n								</td>\r\n								<td valign=\"center\">\r\n									50kg以内\r\n								</td>\r\n								<td valign=\"center\">\r\n									55kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									60kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									65kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									70kg左右\r\n								</td>\r\n								<td valign=\"center\">\r\n									75kg左右\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<div style=\"margin:0px;padding:0px;font-family:微软雅黑;color:#666666;font-size:11px;\">\r\n						注：以上均为身体尺寸（身体尺寸是人体裸身尺寸，即未穿着衣物时身体三围尺寸。)\r\n					</div>\r\n				</td>\r\n			</tr>\r\n			<tr>\r\n				<td colspan=\"6\">\r\n					<div style=\"margin:10px 0px 0px 10px;padding:0px;\">\r\n						&nbsp;\r\n					</div>\r\n				</td>\r\n			</tr>\r\n			<tr>\r\n				<td align=\"middle\" valign=\"top\">\r\n					<img width=\"210\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/02/1F/rBEhVVNwdKAIAAAAAABQNfYAS4oAANKaAGzIeQAAFBN916.jpg\" class=\"err-product\" />\r\n				</td>\r\n				<td>\r\n				</td>\r\n				<td colspan=\"3\">\r\n					<div style=\"margin:15px auto;padding:0px;text-align:center;font-family:微软雅黑;background-color:#E6E6E6;font-size:15px;font-weight:bold;\">\r\n						衣服平铺尺寸参照表\r\n					</div>\r\n					<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"border:1px double #CCCCCC;text-align:center;font-family:微软雅黑;font-size:13px;\">\r\n						<tbody>\r\n							<tr>\r\n								<td bgcolor=\"#000\" height=\"25\" width=\"11%\" style=\"color:#FFFFFF;\">\r\n									尺码\r\n								</td>\r\n								<td width=\"11%\">\r\n									衣长\r\n								</td>\r\n								<td width=\"11%\">\r\n									肩宽\r\n								</td>\r\n								<td width=\"11%\">\r\n									胸围\r\n								</td>\r\n								<td width=\"11%\">\r\n									腰围\r\n								</td>\r\n								<td width=\"11%\">\r\n									臀围\r\n								</td>\r\n								<td width=\"12%\">\r\n									下摆围\r\n								</td>\r\n								<td width=\"11%\">\r\n									前领围\r\n								</td>\r\n								<td width=\"11%\">\r\n									后领围\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									S\r\n								</td>\r\n								<td valign=\"center\">\r\n									82.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									10.73\r\n								</td>\r\n								<td valign=\"center\">\r\n									88\r\n								</td>\r\n								<td valign=\"center\">\r\n									70.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									93\r\n								</td>\r\n								<td valign=\"center\">\r\n									114\r\n								</td>\r\n								<td valign=\"center\">\r\n									32.9\r\n								</td>\r\n								<td valign=\"center\">\r\n									26.1\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									M\r\n								</td>\r\n								<td valign=\"center\">\r\n									84\r\n								</td>\r\n								<td valign=\"center\">\r\n									11\r\n								</td>\r\n								<td valign=\"center\">\r\n									91\r\n								</td>\r\n								<td valign=\"center\">\r\n									73.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									96\r\n								</td>\r\n								<td valign=\"center\">\r\n									117\r\n								</td>\r\n								<td valign=\"center\">\r\n									33.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									26.5\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									L\r\n								</td>\r\n								<td valign=\"center\">\r\n									85.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									11.27\r\n								</td>\r\n								<td valign=\"center\">\r\n									95\r\n								</td>\r\n								<td valign=\"center\">\r\n									77.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									100\r\n								</td>\r\n								<td valign=\"center\">\r\n									121\r\n								</td>\r\n								<td valign=\"center\">\r\n									34.1\r\n								</td>\r\n								<td valign=\"center\">\r\n									26.9\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									XL\r\n								</td>\r\n								<td valign=\"center\">\r\n									87\r\n								</td>\r\n								<td valign=\"center\">\r\n									11.54\r\n								</td>\r\n								<td valign=\"center\">\r\n									99\r\n								</td>\r\n								<td valign=\"center\">\r\n									81.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									104\r\n								</td>\r\n								<td valign=\"center\">\r\n									125\r\n								</td>\r\n								<td valign=\"center\">\r\n									34.7\r\n								</td>\r\n								<td valign=\"center\">\r\n									27.3\r\n								</td>\r\n							</tr>\r\n							<tr>\r\n								<td height=\"30\" valign=\"center\">\r\n									XXL\r\n								</td>\r\n								<td valign=\"center\">\r\n									88.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									11.81\r\n								</td>\r\n								<td valign=\"center\">\r\n									103\r\n								</td>\r\n								<td valign=\"center\">\r\n									85.5\r\n								</td>\r\n								<td valign=\"center\">\r\n									108\r\n								</td>\r\n								<td valign=\"center\">\r\n									129\r\n								</td>\r\n								<td valign=\"center\">\r\n									35.3\r\n								</td>\r\n								<td valign=\"center\">\r\n									27.7\r\n								</td>\r\n							</tr>\r\n						</tbody>\r\n					</table>\r\n					<div style=\"margin:0px;padding:0px;font-family:微软雅黑;color:#666666;font-size:11px;\">\r\n						注：因手工测量方式不同，存在2~4cm误差皆属合理范围(尺寸单位：cm)。\r\n					</div>\r\n				</td>\r\n				<td>\r\n				</td>\r\n			</tr>\r\n		</tbody>\r\n	</table>\r\n</div>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	&nbsp;\r\n</p>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	&nbsp;<img align=\"absmiddle\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g1/M04/00/06/rBEGD1NwdKAIAAAAAALvlgVmWdUAABa2APzcpQAAu-u912.jpg\" class=\"err-product\" />\r\n</p>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<img align=\"absMiddle\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M01/02/1F/rBEhVVNwdFoIAAAAAAAiT7IZyYoAANKZwNHUUIAACJn018.jpg\" class=\"err-product\" />\r\n</p>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<img align=\"absMiddle\" alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g3/M05/00/06/rBEGFFNwdFoIAAAAAAD1X7RYjwEAABa3AEKcHEAAPV3940.jpg\" class=\"err-product\" />\r\n</p>', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('11', '韩衣丽舍 CY2014夏新款韩版女装牛仔拼接雪纺连衣裙牛仔裙长裙', '8866LYQ', '45', '169.00', '199.00', '<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"07fa5f8b0f644c76a62797fe4f0223fd \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t160/219/133431860/416493/1f76f4da/5381b727Ncc768598.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"33b92c2981f64ed284db15bfcf8ec883 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t157/9/166904638/396606/e139ba1b/5381b728Nf85cf14e.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"24af0f32f1564c6b9561b37ae76564c2 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t169/236/141384077/453903/ecd40fcd/5381b729Naa51a872.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"9e11efaccd814d2591cd289cfdc30151 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t199/201/156259466/298191/c67a93b2/5381b729Nae8b4b38.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<a href=\"http://item.jd.com/1024261341.html\" target=\"_blank\"><img alt=\"\" id=\"1b0b1f8de179444693cd910e750d6478 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t151/27/138670676/358548/17c3a50f/5381b72aN69f0c395.jpg\" class=\"err-product\" /></a>\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"097734a9f5574c6891bb0f9e9916590d \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t199/203/141943017/319697/36542a9e/5381b72bNd8ad94aa.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"6315ea92fe624a59803f0ffa4b186651 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t172/26/143204448/477155/923b5a9b/5381b72cN62693c95.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"0bfcabc7649c4c7d81354988ab8feec4 \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t208/355/136154145/377474/1cc3487e/5381b72cN65bcfb73.jpg\" class=\"err-product\" />\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;text-align:center;\">\r\n	<img alt=\"\" id=\"f6d36b1cfed141728277798329a57e1d \" src=\"http://img30.360buyimg.com/popWaterMark/jfs/t196/175/139809136/367694/57154e3a/5381b72dN28879b33.jpg\" class=\"err-product\" />\r\n</div>', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('12', '艾致倩 2014夏装新款韩版修身女装欧根纱短袖连衣裙', 'OXN6805', '12', '599.00', '168.00', '<img id=\"3615ebb4221f4797afef81df134a9b8a\" alt=\"\" src=\"http://img30.360buyimg.com/popWareDetail/g14/M02/1F/04/rBEhVVNWAwIIAAAAAAeVJL9aHNIAAMZ9wBR6tMAB5U8412.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span><br />\r\n<img id=\"bad72c8c72d448bab8963da4699f7534\" alt=\"\" src=\"http://img30.360buyimg.com/popWareDetail/g14/M05/1F/03/rBEhVVNWAvcIAAAAAAdlMWR8PEkAAMZ9QGb3jkAB2VJ750.jpg\" class=\"err-product\" />', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('13', '韩版修身女装欧根纱短袖短裤淑女套装两件套AZQHYYF887', '1056912', '5000', '168.00', '112.00', '<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g10/M00/1E/04/rBEQWFNknEUIAAAAAAsP7Wb7szsAAF51gFbMekACxAF429.jpg\" class=\"err-product\" />', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('14', '韩版修身女装雪纺短袖短裤淑女气质套装 ', 'AZQHYYF889', '12', '388.00', '188.00', '<img alt=\"\" id=\"ac037fb766d54957a20c15671cc07e58 \" src=\"http://img30.360buyimg.com/popWaterMark/g13/M00/00/0B/rBEhU1Nkk10IAAAAAAYkTiWQM-YAAMxZwM1CJ4ABiRm591.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span><br />\r\n<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M06/01/18/rBEhVlNkk4IIAAAAAAS2Qxpw2j0AAM66ALdnUYABLZb573.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span><br />\r\n<br />\r\n<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M06/01/18/rBEhV1Nkk4QIAAAAAA3vRomcFbcAAM66APTC2UADe9e973.jpg\" class=\"err-product\" /><span style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">&nbsp;</span>', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('15', '韩版修身无袖淑女圆领雪纺衫女短裙套装套裤两件套', '7546435', '34', '399.00', '148.00', '<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhV1NFProIAAAAAABCG8xwEJ0AALoUgMMgjQAAEIz736.jpg\" class=\"err-product\" />\r\n</p>\r\n<table height=\"298\" align=\"center\" border=\"1\" bordercolor=\"#000000\" width=\"730\" style=\"background-color:#FFFFFF;font-size:14px;font-family:tahoma, arial, 宋体, sans-serif;color:#333333;\">\r\n	<tbody>\r\n		<tr>\r\n			<td height=\"33\" width=\"162\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					<strong>测量方法</strong>\r\n				</div>\r\n			</td>\r\n			<td width=\"60\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					<strong>尺码</strong>\r\n				</div>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp;腰围&nbsp;&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp; 肩宽&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp; 胸围 &nbsp;&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong>&nbsp;&nbsp;&nbsp;衣长&nbsp;/裤长&nbsp;&nbsp;&nbsp;</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<strong></strong><br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td rowspan=\"6\">\r\n				<strong></strong><br />\r\n<img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhVlNFPrsIAAAAAACJkb4NtKQAALoUgMczN0AAImp921.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td height=\"36\" style=\"text-align:center;\">\r\n				<strong>M</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				72\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				33\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				88\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				60/30\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height=\"36\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					<strong>L</strong>\r\n				</div>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				76\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				34\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				92\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				61/31\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height=\"36\" style=\"text-align:center;\">\r\n				<strong>XL</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				80\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				35\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				96\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				62/32\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height=\"36\" style=\"text-align:center;\">\r\n				<strong>XXL</strong>\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				84\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				36\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				100\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				62/33\r\n			</td>\r\n			<td style=\"text-align:center;\">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"6\" height=\"36\" style=\"text-align:center;\">\r\n				<div align=\"center\" style=\"margin:0px;padding:0px;\">\r\n					注意：以上数据为平铺测量所得，没有拉伸，不考虑弹性范围内的数据。误差范围在1-3CM范围之内\r\n				</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"6\" height=\"36\" style=\"text-align:center;\">\r\n				模特资料：身高：166CM&nbsp;体重47KG&nbsp;三围：85/65/89&nbsp;&nbsp;试穿尺码：M码\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p align=\"center\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n	<font ??=\"\" style=\"margin: 0px; padding: 0px;\"><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhVlNFPrsIAAAAAAHgq5TGtdQAALoUgMpNVQAAeDD587.jpg\" class=\"err-product\" /><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhV1NFPrsIAAAAAABHcavPyIkAALoUgMvFt0AAEeJ853.jpg\" class=\"err-product\" /></span>\r\n</p>\r\n<font ??=\"\" style=\"margin: 0px; padding: 0px;\"><font ??=\"\" style=\"margin: 0px; padding: 0px; color: rgb(102, 102, 102); font-family: Arial, Verdana, 宋体; white-space: normal; background-color: rgb(255, 255, 255);\"><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhVlNFPr0IAAAAAAe5mj9H7m8AALoUgNdJlgAB7my558.jpg\" class=\"err-product\" /><img alt=\"\" src=\"http://img30.360buyimg.com/popWaterMark/g14/M05/1F/0E/rBEhV1NFPr4IAAAAAAkjMBqbLScAALoUgOqf1UACSNI791.jpg\" class=\"err-product\" /></span></span>', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('16', '夏普（SHARP） 46英寸日本原装面板', 'LCD-46DS20A', '34', '3599.00', '3299.00', '<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M08/0C/0C/rBEhV1LP23gIAAAAAAKrQhwc71wAAH6PAG0qlgAAqta883.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		采用FullHD液晶屏，以1920x1080分辨力迎接数字时代\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		以1920×1080分辨力迎接数字电视新时代，呈现非凡出色的超精细画面。\r\n	</div>\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		新1080/24P技术，以每秒24帧数的电影般播放模式\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		电影是由24帧数来拍摄的，新1080/24P技术，以每秒24帧数的电影般播放模式（在HDMI下支持1080P/24Hz）为您带来真正的影院效果，从未有过的视觉盛宴由AQUOS液晶电视带给您。\r\n	</div>\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M09/0C/0C/rBEhVVLP3FQIAAAAAAAzIX57aKYAAH6PQNxDKEAADM5955.jpg\" class=\"err-product\" />\r\n	</p>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g15/M00/01/15/rBEhWFLP3MEIAAAAAAGzHsv9egUAAHx-gEQcIQAAbM2697.jpg\" class=\"err-product\" />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		倍速FullHD液晶驱动技术，高速动作处理更佳\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		夏普倍速液晶驱动技术。在通常50帧/秒的动画影像中，在两帧画像之间插入一帧画像，使信号提升2倍，即100帧/秒进行播放。使画面更流畅，全方位改善画面残留，大大减少画面拖尾现象，清晰再现高速运动的画面，带来更具震撼力的视觉体验。\r\n	</div>\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M0A/0C/0C/rBEhVlLP3SwIAAAAAAJH2h94X20AAH6PwB_qykAAkfy060.jpg\" class=\"err-product\" />\r\n	</p>\r\n</div>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M0A/0C/0C/rBEhVlLP3VgIAAAAAAHsx7Wj3xMAAH6PwNaDmUAAezf214.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		采用可以精确亮度控制并能告诉应答的LED背光源系统。结合新一代X超晶面板的使用，实现画面高对比度，在黑暗环境里也能再现纯正黑色和绚丽红色。\r\n	</div>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g13/M03/0F/0E/rBEhU1LCir4IAAAAAAHPn-F09dQAAHevQI9mdUAAc-3112.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g14/M03/0A/16/rBEhVVLCi3MIAAAAAAMPUHuec08AAHlSwCCk4QAAw9o903.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g13/M09/0F/0E/rBEhU1LCi4wIAAAAAAKJJy-A0GcAAHewADfnfgAAok_965.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g14/M03/0A/16/rBEhVlLCi58IAAAAAAH146RVN9kAAHlSwMK9ogAAfX7360.jpg\" class=\"err-product\" />\r\n</p>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g15/M09/1F/1F/rBEhWVLCi7MIAAAAAALNsLPK9lkAAHdGAAHZZMAAs3I673.jpg\" class=\"err-product\" />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M02/11/03/rBEhVFLP4CwIAAAAAAIrnR5jwgQAAHzuQAUq3YAAiu1444.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		采用数码环绕声技术，身临其境的感受，为您带来家庭影院级的享受，&nbsp;<br />\r\n再现电影或体育节目等扣人心弦的声音。\r\n	</div>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g13/M02/11/03/rBEhVFLP4EoIAAAAAAGLXSBSAuQAAHzuQMw-80AAYt1128.jpg\" class=\"err-product\" />\r\n</p>\r\n<div style=\"margin:0px;padding:0px;color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<p>\r\n		<img src=\"http://img20.360buyimg.com/vc/g15/M06/01/15/rBEhWFLP4G8IAAAAAAA16DDFBoMAAHyAAP4qTcAADYA742.jpg\" class=\"err-product\" />\r\n	</p>\r\n	<div style=\"margin:0px;padding:0px;font-size:14px;\">\r\n		您可以通过MHL线（市面有售），将支持MHL的智能手机与电视机连接，可以实现在电视&nbsp;<br />\r\n机的大画面上观看手机中的图像与视频，还可通过电视机的扬声器播放手机中的音乐。\r\n	</div>\r\n</div>\r\n<p style=\"color:#666666;font-family:微软雅黑;background-color:#F0F0F0;\">\r\n	<img src=\"http://img20.360buyimg.com/vc/g15/M06/1D/08/rBEhWVKxT-EIAAAAAALdEus4i7YAAG7BQOhvIUAAt0q265.gif\" class=\"err-product\" />\r\n</p>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('17', '三星（SAMSUNG） HT-F453K 5.1声道家庭影院 黑色', 'HT-F453K', '123', '3211.00', '2311.00', '<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titlecenter\" style=\"margin:0px;padding:0px;text-align:center;font-weight:700;\">\r\n		经典畅销再延续 三星科技再升级\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		HT-F453K家庭影院，一直以来是畅销的主力机型。现在三星优秀的设计团队再次将经典延续，并注入了新的设计呈现给大家，三星家庭影院系统凭借其独特的外观设计、便捷的功能以及先进的音效提升技术为消费者带来了无缝的连接体验和纯净的音质表现，这也使其成为了今年三星电视产品的最佳音频伴侣。现在请和我们一起尽享1000w5.1声道为您带来的畅爽感官体验。\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品特色</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Selling Point</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g15/M00/04/0F/rBEhWFIJ6fIIAAAAAAOcAz2GvKAAACAdgP2LOYAA5wb121.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		三星HT-F453K家庭娱乐系统的设计是为实现更深层次的低音和更丰富的声音。通过连接共享功能及拓展,我们可以轻松欣赏USB内存驱动器或硬盘中的电影或是您记录幸福点滴的帅气照片。音箱简易设置令使用更加便利.卡拉OK为您带来的乐趣，Anynet+.音频回传.水晶功放自适应.USB自适应.丰富的接口设置等等一切，彰显HT-F453K的实用与时尚。\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/17/rBEQYFGl2jQIAAAAAABpLFDqsJ8AACSkwOhOfcAAGlE164.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n		兼具便捷性与科技感的扬声器设置\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		简单快捷的音响设置模式，让您在家中轻松畅享高品质音效。它拥有直观的图形用户界面，并为您自动提升立体音效，您无需再操心音响的摆放位置。三星家庭影院，带给您极致观影体验。\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g12/M00/0C/1A/rBEQYVGpgfUIAAAAAAH1aBjkyyQAACgLAFTyEgAAfWA773.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titleleft\" style=\"margin:0px;padding:0px;font-weight:700;\">\r\n		低音炮升级带来超逼真的音效感受\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		配备前置设计的重低音喇叭，加强重低音技术，为您带来更丰富层次感的音色体验，无论观赏电视节目、电影或欣赏音乐，都可以给您犹如身临其境的逼真音效。而且，强大影音效能集一身，让您足不出户也可体验电影院般的视听感受。比需要另外配置昂贵设备的同类产品尤其优胜！浩瀚的宇宙.蔚蓝的天空，此刻你的心是否随之翱翔那?\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/1F/rBEQYFGm6PsIAAAAAAFsgqJ_VC4AACVyQP93Z0AAWya123.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_titlecenter\" style=\"margin:0px;padding:0px;text-align:center;font-weight:700;\">\r\n		功能完备 娱乐家居生活\r\n	</div>\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		HT-F453K 支持卡拉ok，消声（部分碟盘格式可能不支持）及打分，支持调节回声电平;周末举办一场家庭卡拉ok比赛吧，让紧张的生活节奏放松一下吧，让你的好心情随歌声飞扬吧，生活就应该这样愉快。\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品细节</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Product Details</span>\r\n	</div>\r\n</div>\r\n<table width=\"750\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"6\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;font-size:12px;background-color:#FFFFFF;\" class=\"ke-zeroborder\">\r\n	<tbody>\r\n		<tr>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/17/rBEQYVGl3TAIAAAAAACxfqDiSGoAACSoAP2DD8AALGW969.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					HDMI (ARC)\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					无需使用单独线缆进行连接，只需通过HDMI ARC (音频回传通道)，即可轻松连接兼容设备，处理电视音频信号。通过更少的线缆，只需要2个HDMI，即可连接音频设备，让您体验全新的音频世界。\r\n				</p>\r\n			</td>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0B/17/rBEQYFGl3iMIAAAAAAAPnFh0sukAACSpAP7OVcAAA-0946.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					多媒体连接\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					通过连接即可分享视频, 您只需将USB内存驱动器或移动驱动器插入家庭影院，即可欣赏您喜爱的节目。\r\n				</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<table width=\"750\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"6\" style=\"color:#666666;font-family:Arial, Verdana, 宋体;font-size:12px;background-color:#FFFFFF;\" class=\"ke-zeroborder\">\r\n	<tbody>\r\n		<tr>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0C/02/rBEQYVGnBFgIAAAAAAAT5kFN-XwAACW3wMquKwAABP-443.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					专属模式\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					使用FOOTBALL键可以欣赏到犹如足球场上的音乐，你会感觉置身于场内一样。将遥控器按功能键选择FM，收听您喜爱的电台节目，你可以预设1-15个电台，想听就听。\r\n				</p>\r\n			</td>\r\n			<td width=\"20%\">\r\n				<img src=\"http://img20.360buyimg.com/vc/g12/M00/0C/02/rBEQYFGnBF8IAAAAAAAPK7wxCcYAACW3wP_1cYAAA9D151.jpg\" class=\"err-product\" />\r\n			</td>\r\n			<td width=\"30%\">\r\n				<p class=\"formwork_titleleft\" style=\"font-size:14px;font-weight:700;\">\r\n					安全设置\r\n				</p>\r\n				<p class=\"formwork_titleleft2\" style=\"font-size:14px;\">\r\n					家长锁功能与指定评级DVD配合使用，指定评级可帮您控制家庭成员观看DVD类型，光盘最多分为8个评级，真正做到安全观看。\r\n				</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M03/0A/12/rBEhVVIK-TYIAAAAAAHmrnAnxxQAACEPQCZN5UAAebG208.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">尺寸信息</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Size Information</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M09/05/1A/rBEhUlIK-M0IAAAAAABSvlzDYpIAACCEQMKwVwAAFLW491.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M03/05/1A/rBEhU1IK-kUIAAAAAACSrbnEfnEAACCFwBSLbkAAJLF787.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n	</div>\r\n</div>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('18', '美的（Midea）  近吸式吸油烟机', 'CXW-200-DJ213', '23', '1699.00', '1499.00', '<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品信息</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Product Information</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVVJYpsAIAAAAAACpJSF_RR4AAEFPwCmORQAAKk9728.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品细节</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Product Details</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g15/M05/0E/1D/rBEhWlJYpwoIAAAAAACAc_IcpT4AAEC3QFxIqEAAICL559.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVVJYpxUIAAAAAAB2d8MxlOsAAEFPwHHJzUAAHaP334.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVlJYpyIIAAAAAABspRXmbnEAAEFPwLXMWcAAGy9163.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M04/14/1C/rBEhVlJYpywIAAAAAACSmHYT0I0AAEFPwO3SLcAAJKw955.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M08/14/1C/rBEhVlJYp0gIAAAAAABufB5Nmh0AAEFQAJg4pgAAG6U783.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M04/10/03/rBEhU1JYp1MIAAAAAABw92REWJcAAECoAPe-XcAAHEP895.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_text\" style=\"margin:0px;padding:0px;\">\r\n		全不锈钢设计；大进风设计；琴键式设计；多种风速调节；渐明渐暗护眼灯；\r\n	</div>\r\n</div>\r\n<div class=\"formwork_bt\" style=\"margin:0px;padding:10px 0px;font-size:14px;font-family:Arial, Helvetica, sans-serif;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_bt_dz\" style=\"margin:0px;padding:0px;\">\r\n		<span style=\"line-height:25px;font-family:微软雅黑;color:#FFFFFF;\">产品特色</span><span class=\"s2\" style=\"line-height:20px;font-family:微软雅黑;font-size:12px;color:#FFFFFF;\">Selling Point</span>\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g13/M05/10/03/rBEhUlJYp2YIAAAAAAD7s_d8ARYAAECoQM1_ioAAPvL996.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>\r\n<div class=\"formwork\" style=\"margin:0px;padding:10px 0px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#666666;background-color:#FFFFFF;\">\r\n	<div class=\"formwork_img\" style=\"margin:0px auto;padding:0px;text-align:center;\">\r\n		<img src=\"http://img20.360buyimg.com/vc/g14/M08/14/1C/rBEhVlJYp6EIAAAAAADIVxa12-AAAEFQANj3LAAAMhv206.jpg\" class=\"err-product\" />\r\n	</div>\r\n</div>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('19', '海尔（Haier） XQG70-B10866 电商 7公斤 变频滚筒洗衣机', 'XQG70-B10866', '12', '3399.00', '3299.00', '<div class=\"right\" style=\"margin:0px;padding:0px;\">\r\n	<div id=\"product-detail\" class=\"m m1\" style=\"margin:0px 0px 10px;padding:2px 0px 0px;\">\r\n		<div class=\"mc\" id=\"product-detail-1\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"detail-content\" style=\"margin:0px;padding:0px;\">\r\n				<table align=\"center\" width=\"750\">\r\n					<tbody>\r\n						<tr>\r\n							<td>\r\n								<a target=\"_blank\" href=\"http://sale.jd.com/act/OpjCvlLcN5uo.html\"><img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/jfs/t154/129/656904086/101633/5f6cae2d/53952f8bN50c53e38.jpg\" class=\"err-product\" /></a>\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n				<table align=\"center\" width=\"750\">\r\n					<tbody>\r\n						<tr>\r\n							<td>\r\n								<a target=\"_blank\" href=\"http://sale.jd.com/act/P6FWJzn5VILf.html\"><img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/jfs/t145/37/561203875/116765/194fd8d4/5391245fN7e3d69e6.png\" class=\"err-product\" /></a>\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n				<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"750\" class=\"ke-zeroborder\">\r\n					<tbody>\r\n						<tr>\r\n							<td valign=\"top\">\r\n								<a target=\"_blank\" href=\"http://sale.jd.com/act/vfQlPDUkRy8zO3b.html\"><span id=\"_xhe_cursor\"></span><span id=\"_xhe_temp\"></span><img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/jfs/t184/49/715984598/64095/140538d4/53969d4bN7bf24700.jpg\" class=\"err-product\" /></a>\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n				<div style=\"margin:0px auto;padding:0px;\">\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWlNGdoMIAAAAAAJFhIQwiJAAALj9gBQXRsAAkWc704.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWVNGdpMIAAAAAAGoualDSyMAALj9gFpa4sAAajR495.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							无碳刷设计，避免普通串激电机碳刷摩擦产生的风啸声及电火花，超级静音，夜晚洗衣也安静。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							360°零缝隙控制信号，平滑调速，精准调控电机运转及洗涤节奏，精准洗涤，节能减碳，带来绿色的低碳体验.\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							外驱动升级为内驱动，直效内驱，转速&nbsp;<br />\r\n高达1000转/分钟，大幅提升滚筒洗净&nbsp;<br />\r\n能力，洗净比最高达1.23*。\r\n							<div style=\"margin:20px 0px 0px;padding:0px;font-size:12px;\">\r\n								* 数据来源：经国家家用电器质量监督检测中心检测得出\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWVNGdqAIAAAAAAPBk98FIyYAALj9gLRQW4AA8Gr051.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							洗衣机静止状态下，经过电脑模拟及实机模拟测定，精确选定6个平衡支撑点用以保持滚筒稳定性，在启动洗衣机前排除滚筒自身不平衡因素，保证洗衣机运转平稳。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							洗衣机运转过程中，HPM芯平衡系统主动调整高碳素钢挂簧及空气阻尼器的拉伸强度，即时调整洗涤过程中产生的偏心，始终保持平衡，即使宝宝的毛绒玩具熊也能轻松洗净、甩干。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							薄壳仿生原理设计，受力均匀、耐压，极大提高承受强度的同时避免箱体与各部件之间发生共振，减小洗涤振动与噪声。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							不同的污渍用不同的水温洗涤效果更佳，海尔洗衣机每一个程序可以自动调节水温，充分发挥酶的活性，达到最好的洗涤效果。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M08/15/00/rBEhWFNGdqsIAAAAAAJWq-x0IZIAALj9gPkfDgAAlbD646.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:14px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:22px;\">\r\n								1.独创弹力筋\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								海尔独创弹力筋内筒，平滑的筒壁上分布有128道弹力筋，弹力筋中间凹槽密布3234个脱水小孔。内筒旋转带动弹力筋不断击荡水流，产生震荡水波，颠簸式洗涤衣物，弹落顽固污渍，同时激发织物纤维活性。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:14px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:22px;\">\r\n								2.活力弹污 三重洗涤更干净\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								独特弹力筋洗涤方式，辅以传统垂直摔打洗涤及立体喷射水流，三重洗涤，快速去除深层污垢；同时，污垢从最低处脱水孔通畅排出，导垢彻底，洁净效果更加显著。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:14px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:22px;\">\r\n								3.完美护衣&nbsp;<br />\r\n焕发衣物纤维活力\r\n							</div>\r\n							<div style=\"margin:10px 0px 0px;padding:0px;\">\r\n								弹力筋犹如支起的“支架”，避免衣物与脱水孔间的磨擦，同时减少洗涤水流对衣物的拉伸力度，柔和洗涤，还原织物纤维弹性，衣物洗后蓬松柔软。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M0A/1A/12/rBEhWFNfaMQIAAAAAAR0oGyUsFAAAMpRgNjxb4ABHS4526.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								洁净生活迅速拥有\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								洗涤、漂洗、甩干全部完成只需15分钟，夏天衣物及时洗，少量衣物随时洗，满足您经常换洗衣物的洁净需求。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								洗衣机也有洁癖\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								洗时段自动增加摔打揉搓的时间和强度，与顽固污渍奋战到底。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								多一次漂洗才格外干净\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								在原有漂洗次数基础上，增加一次漂洗，衣物漂洗更干净。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								多几种选择 多几分呵护\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								电脑控制，独立水温调节，较大较脏衣物加热到40℃，充分激活活性酶；洗小孩、病人衣物加热到90℃，杀菌消毒。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M02/04/0D/rBEhUlNGdsYIAAAAAAOtvhbTadUAALk4QG6Iv8AA63W767.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								轻松跟上你想要的速度\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								脱水转速可根据需要进行调整，选择范围从400,600,800至1000转每分钟,呵护您和家人的衣物，省心力，随心意。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								我的时间我做主\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								24小时预约洗涤，时间一到衣服就洗好，特别适合上班族和分时电价地区。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								抑制霉菌滋生，健康呵护倍增\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								经权威机构测定，抗菌率&gt;99％，达到最高等级，有效抑制霉菌滋生。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								方便快捷\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								安全状态下可开启筒门，方便中途添加衣物；洗衣结束立即开门，无需等待\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							<div style=\"margin:0px;padding:0px;font-size:20px;\">\r\n								人性设计 舒适洗衣\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								45°筒门开启设计，符合人机原理，操作不弯腰，方便又省力 。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M02/04/0D/rBEhUlNGdtQIAAAAAAJtWA2eTVoAALk4gAZ7osAAm1w237.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								鼠标式程序旋钮\r\n							</div>\r\n弱电工作、安全可靠、操作方便、使用寿命更长。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								LED显示\r\n							</div>\r\n一目了然，轻松洗衣\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								AMT防霉抗菌窗垫\r\n							</div>\r\n抑制霉菌滋生，健康呵护倍增\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								抽屉式洗衣粉盒\r\n							</div>\r\n洗衣粉和洗涤剂分开投放，溶解充分，一体式设计避免藏污纳垢藏污纳垢。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;\">\r\n							<div style=\"margin:0px 0px 5px;padding:0px;font-size:16px;\">\r\n								筒壁上分布128道弹力筋\r\n							</div>\r\n降低磨损，提高洗净比\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M00/1B/10/rBEhVlNGduMIAAAAAAeTlV7qJfEAALs9QAJanQAB5Ot945.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							台面板采用一体式设计，四面封胶，杜绝安全隐患。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：台面板采用装订拼接工艺，易渗水受潮导致台面鼓，台面发霉等，如与电器接触可引起起火等重大安全隐患。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							分配盒使用优质工程塑料，强度高分配器盒内壁镜面抛光，冲洗无残留。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：分配器盒使用回用料，颜色深，性能差，易损坏。内壁粗糙有毛刺，洗衣粉粘结在盒内，造成漂洗不干净。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							窗垫无残留泡沫、不会发生发霉变黑现象。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：窗垫残留泡沫，发霉变黑。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g12/M00/06/1F/rBEQYFNGdwAIAAAAAAfod5BRH_wAAEL2QJ6K-QAB-iP295.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							内筒内后法兰打孔工艺，可以让洗涤时水流冲刷力更强，对衣服形成多角度冲刷，提高洗净率。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：内筒后法兰工艺简单，无孔。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							铰链厚度厚，表面电镀镜面处理，坚固不生锈。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：观察窗门铰链厚度薄，表面简单镀锌，处理简单，易生锈。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							内筒采用正反冲，弹力筋，微孔脱水工艺，洗涤时弹力筋产生激荡水流，降低磨损，提高洗净比，呵护衣物。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：内筒采用原始的单面冲孔工艺，孔眼大，易产生毛刺且高速甩干时对衣服磨损大（特别在洗涤羊毛，真丝等高档面料。）\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M00/1B/10/rBEhV1NGdxAIAAAAAATquM1eU3UAALs9QKNJSkABOrQ317.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							有电脑板盒保护，安全性高（正如电视机需要后盖一样，既能保护电脑版，又不影响散热）。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：电脑板裸露，存在极大安全隐患（因静电作用，易吸附潮气，灰尘等，带来不安全隐患）。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							内筒焊接工艺，采用第三代激光无缝焊接，可承受超高转速负荷；\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#DDDDDD;font-size:15px;\">\r\n							其他品牌高端滚筒洗衣机：采用第一代扣缝工艺，不能承受高转速负荷\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M00/1B/10/rBEhV1NGdxwIAAAAAAG-ZqoUWgAAALs9QOpdaEAAb5-761.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M04/1B/10/rBEhVVNGdykIAAAAAACfGVhD7aQAALs9gCEr0AAAJ8x452.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#DDDDDD;\">\r\n							产品型号&nbsp;<br />\r\n电机类型&nbsp;<br />\r\n内桶材质&nbsp;<br />\r\n上市时间&nbsp;<br />\r\n洗涤功率&nbsp;<br />\r\n洗衣机能效等级&nbsp;<br />\r\n箱体材质&nbsp;<br />\r\n显示方式&nbsp;<br />\r\n脱水功率&nbsp;<br />\r\n尺寸（高*宽*深mm）&nbsp;<br />\r\n产品净重\r\n							<div style=\"margin:15px 0px;padding:0px;\">\r\n								洗衣程序\r\n							</div>\r\n产品毛重&nbsp;<br />\r\n洗净比&nbsp;<br />\r\n是否预约&nbsp;<br />\r\n开门方式&nbsp;<br />\r\n排水方式&nbsp;<br />\r\n洗涤公斤量&nbsp;<br />\r\n洗衣/干衣机型&nbsp;<br />\r\n自动化程度\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#DDDDDD;\">\r\n							XQG70-B10866 电商&nbsp;<br />\r\n变频电机&nbsp;<br />\r\n不锈钢&nbsp;<br />\r\n2013年&nbsp;<br />\r\n250&nbsp;<br />\r\n1级&nbsp;<br />\r\n渗锌钢板&nbsp;<br />\r\nLED&nbsp;<br />\r\n450&nbsp;<br />\r\n850*595*600&nbsp;<br />\r\n71&nbsp;<br />\r\n							<div style=\"margin:10px 0px 12px;padding:0px;\">\r\n								内衣、羊毛、化纤、棉麻、预洗、&nbsp;<br />\r\n小件、快洗、单洗、单漂、单甩\r\n							</div>\r\n78&nbsp;<br />\r\n1.03&nbsp;<br />\r\n有&nbsp;<br />\r\n前开式&nbsp;<br />\r\n上排水&nbsp;<br />\r\n7公斤&nbsp;<br />\r\n洗衣机&nbsp;<br />\r\n全自动&nbsp;<br />\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M06/15/00/rBEhWVNGdzMIAAAAAACQYo-RwtoAALj9wE4e3sAAJB6251.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M06/15/00/rBEhWFNGdz4IAAAAAABPj0St3E8AALj9wL6qmsAAE-n852.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#FFFFFF;font-size:20px;\">\r\n							滚筒洗衣机使用一段时间后的保养方法\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:0px 0px 0px 10px;padding:0px;\">\r\n								滚筒洗衣机使用一段时间后的保养方法：\r\n							</div>\r\n【1】不洗衣时，应将机门微开，以便透风，防止筒内出现异味。&nbsp;<br />\r\n【2】带过滤器的滚筒洗衣机要定期清理过滤器，以防堵塞。&nbsp;<br />\r\n【3】不要将洗衣机放在潮湿的环境里，以防电器件受潮，缩短机器寿命。&nbsp;<br />\r\n【4】洗衣机的底部经常保持清洁干燥，以防箱体生锈。&nbsp;<br />\r\n【5】使用几次后，应将分配器盒拉出来清理。\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;color:#FFFFFF;font-size:20px;\">\r\n							滚筒洗衣机如何安置才可以减轻震动？\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							减振方法：&nbsp;<br />\r\n滚筒洗衣机安放时，四个底角应在同一平面上，洗衣机底部不能倾斜，不能垫木板等垫块，也不宜放置在底部悬空的木地板上。而且，洗衣机安放时应取出洗衣机运输包装的固定用螺栓、泡沫等材料，这样就可以有效减轻振动。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M01/15/00/rBEhWlNGd0oIAAAAAABb7xRVdXoAALj-ACGGjwAAFwH038.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;color:#FFFFFF;font-size:20px;\">\r\n							安装条件：\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:3px 0px 0px;padding:0px;\">\r\n								安放位置不能太潮湿，地面不能太光滑或不平，不能安装在台子上，环境温度不能低于0度；\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								如卫生间不适合摆放洗衣机，可以设计到厨房，客厅，阳台等位置；\r\n							</div>\r\n							<div style=\"margin:20px 0px 0px;padding:0px;\">\r\n								电源要求：220V/50HZ交流电，使用单独的三相插座，并有可靠接地，滚筒洗衣机插座最大承载电流不低于15A;\r\n							</div>\r\n							<div style=\"margin:15px 0px 0px;padding:0px;\">\r\n								安装的位置最好有地漏，以保证排水通畅；\r\n							</div>\r\n							<div style=\"margin:30px 0px 0px;padding:0px;\">\r\n								自来水压力在0.03-1MPA（兆帕）之间。\r\n							</div>\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g15/M01/15/00/rBEhWFNGd1UIAAAAAACxG3mx-pcAALj-AKc7mkAALEz929.jpg\" class=\"err-product\" />\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							收费项目&nbsp;<br />\r\n							<div style=\"margin:25px 0px 0px;padding:0px;\">\r\n								加长进水管\r\n							</div>\r\n							<div style=\"margin:60px 0px 0px;padding:0px;\">\r\n								加长排水管\r\n							</div>\r\n							<div style=\"margin:190px 0px 0px;padding:0px;\">\r\n								水龙头\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:5px 0px 0px;padding:0px;\">\r\n								收费说明\r\n							</div>\r\n							<div style=\"margin:10px 0px 0px;padding:0px;\">\r\n								由于用户的使用环境不同如果安装过程中需要加长进水管，加长的进水管需要另行收费\r\n							</div>\r\n							<div style=\"margin:3px 0px 0px;padding:0px;\">\r\n								由于用户的使用环境不同如果安装过程中需要加长排水管，加长的排水管需要另行收费\r\n							</div>\r\n							<div style=\"margin:70px 0px 0px;padding:0px;\">\r\n								1、如用户需要安装水龙头可以自行选购安装符合标准的水龙头。\r\n							</div>\r\n							<div style=\"margin:110px 0px 0px;padding:0px;\">\r\n								2、用户也可以选购海尔提供的水龙头，海尔可以收费提供专用水龙头，并负责免费安装。\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:5px 0px 0px;padding:0px;\">\r\n								收费标准\r\n							</div>\r\n							<div style=\"margin:10px 0px 0px;padding:0px;\">\r\n								加长0.5米（12元/根） 加长1米（15元/根） 加长2米（20元/根）\r\n							</div>\r\n							<div style=\"margin:50px 0px 0px;padding:0px;\">\r\n								加长1.5米（5元/根）\r\n							</div>\r\n							<div style=\"margin:105px 0px 0px;padding:0px;\">\r\n								标准水龙头46元/个\r\n							</div>\r\n							<div style=\"margin:150px 0px 0px;padding:0px;\">\r\n								精品水龙头65元/个\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							<div style=\"margin:5px 0px 0px;padding:0px;\">\r\n								收费标准\r\n							</div>\r\n							<div style=\"margin:70px 0px 0px;padding:0px;\">\r\n								进水管、排水管&nbsp;<br />\r\n为整根加长\r\n							</div>\r\n							<div style=\"margin:80px 0px 0px;padding:0px;\">\r\n								- 专享三年超长保修服务&nbsp;<br />\r\n免除您的后顾之忧&nbsp;<br />\r\n- 采用行业内锻压、冲孔工艺，内壁光滑耐腐蚀，密度高&nbsp;<br />\r\n- 主体采用纯铜材料，防锈，经久耐用，陶瓷阀芯，耐磨性高\r\n							</div>\r\n							<div style=\"margin:20px 0px 0px;padding:0px;\">\r\n								- 专享三年超长保修服务免除您的后顾之忧&nbsp;<br />\r\n- 货真价实的材料，主体采用纯铜制造，密度高，抗氧化，防锈斑，陶瓷阀芯，耐磨性高&nbsp;<br />\r\n- 完全贴合洗衣机进水管的设计，密封效果好，有效防止滴漏\r\n							</div>\r\n						</div>\r\n						<div style=\"margin:0px;padding:0px;font-size:14px;color:#FFFFFF;\">\r\n							说明：&nbsp;<br />\r\n因每位用户的安装环境不同，需求不同，安装过程中需要其它辅加材料或特殊服务项目，具体收费标准参考《海尔维修服务收费标准》。服务人员上门安装时会出示收费标准并讲解，同时请您监督我们的服务，如发现服务人员多收费，可拨打海尔售后统一服务热线投诉并有权拒绝付费，经核实属实的，本次服务“免单”（全额退还收取的安装材料费）。\r\n						</div>\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M04/1B/10/rBEhVlNGd2MIAAAAAAGjmqPCFhoAALs9gG-XXgAAaOy289.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M02/04/0D/rBEhU1NGd28IAAAAAALQCZn9Ba8AALk4gIMgdAAAtAh713.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g13/M04/04/0D/rBEhUlNGd4sIAAAAAAFQtPmsSlYAALk4wJsJ20AAVDM520.jpg\" class=\"err-product\" />\r\n					</div>\r\n					<div style=\"margin:0px;padding:0px;\">\r\n						<img src=\"http://img20.360buyimg.com/vc/g14/M04/1B/10/rBEhVlNGd5YIAAAAAAMTkbIuygQAALs9gLoUG4AAxOp692.jpg\" class=\"err-product\" />\r\n					</div>\r\n				</div>\r\n				<table align=\"center\" width=\"750\">\r\n					<tbody>\r\n						<tr>\r\n							<td>\r\n								<img alt=\"\" src=\"http://img30.360buyimg.com/jgsq-productsoa/g13/M09/0F/0B/rBEhU1LCWgoIAAAAAACAkL3yMvEAAHd2wElDz0AAICo828.jpg\" class=\"err-product\" />\r\n							</td>\r\n						</tr>\r\n					</tbody>\r\n				</table>\r\n			</div>\r\n		</div>\r\n		<div id=\"promises\" style=\"margin:0px;padding:10px;\">\r\n			<strong>服务承诺：</strong><br />\r\n京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东商城还为您提供具有竞争力的商品价格和<a href=\"http://www.jd.com/help/kdexpress.aspx\" target=\"_blank\">运费政策</a>，请您放心购买！&nbsp;<br />\r\n注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！\r\n		</div>\r\n		<div id=\"state\" style=\"margin:0px;padding:10px;\">\r\n			<strong>权利声明：</strong><br />\r\n京东商城上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东商城重要的经营资源，未经许可，禁止非法转载使用。\r\n			<p>\r\n				<b>注：</b>本站商品信息均来自于厂商，其真实性、准确性和合法性由信息拥有者（厂商）负责。本站不提供任何保证，并不承担任何法律责任。\r\n			</p>\r\n		</div>\r\n	</div>\r\n	<div id=\"comment\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				商品评价\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:10px 0px;\">\r\n			<div class=\"iloading\" style=\"margin:0px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"comments-list\" class=\"m\" style=\"margin:0px 0px 20px;padding:2px 0px 0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;\">\r\n					<a>全部评价(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>好评(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>中评(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>差评(0)</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>有晒单的评价(0)</a>\r\n				</li>\r\n				<li class=\"tab-last\" style=\"text-align:center;\">\r\n				</li>\r\n			</ul>\r\n		</div>\r\n		<div id=\"comment-0\" class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"iloading\" style=\"margin:20px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"consult\" class=\"m m1\" style=\"margin:0px 0px 20px;padding:2px 0px 0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;\">\r\n					<a>全部购买咨询</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>商品咨询</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>库存配送</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>支付</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>发票保修</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>支付帮助</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>配送帮助</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>常见问题</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n		<div id=\"consult-search\" style=\"margin:0px;padding:10px 16px;\">\r\n			<div class=\"form\" style=\"margin:0px;padding:0px;\">\r\n				咨询前请先搜索，方便又快捷：\r\n			</div>\r\n			<div class=\"prompt\" style=\"margin:0px;padding:9px 0px 9px 16px;color:#9C9A9C;\">\r\n				<strong>温馨提示:</strong>因厂家更改产品包装、产地或者更换随机附件等没有任何提前通知，且每位咨询者购买情况、提问时间等不同，为此以下回复仅对提问者3天内有效，其他网友仅供参考！若由此给您带来不便请多多谅解，谢谢！\r\n			</div>\r\n		</div>\r\n		<div id=\"consult-0\" class=\"mc tabcon\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"iloading\" style=\"margin:0px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"discuss\" class=\"m m1\" style=\"margin:0px 0px 10px;padding:2px 0px 0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;font-size:14px;font-family:\'microsoft yahei\';\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;\">\r\n					<a>网友讨论圈</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>晒单贴</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>讨论贴</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>问答贴</a>\r\n				</li>\r\n				<li style=\"text-align:center;\">\r\n					<a>圈子贴</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n		<div id=\"discuss-1\" class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<div class=\"iloading\" style=\"margin:0px auto;padding:0px 0px 0px 22px;color:#999999;\">\r\n				正在加载中，请稍候...\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>\r\n<div class=\"left\" style=\"margin:0px;padding:0px;\">\r\n	<div id=\"related-sorts\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				相关分类\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<ul class=\"lh\">\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-798.html\">平板电视</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-870.html\">空调</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-878.html\">冰箱</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-880.html\">洗衣机</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-823.html\">家庭影院</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-965.html\">DVD播放机</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1199.html\">迷你音响</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1300.html\">烟机/灶具</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1706.html\">热水器</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1301.html\">消毒柜/洗碗机</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1707.html\">酒柜/冰吧/冷柜</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-877.html\">家电配件</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://list.jd.com/737-794-1013.html\">家电下乡</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n	</div>\r\n	<div id=\"related-brands\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				同类其他品牌\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<ul class=\"lh\">\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-18403.html\">小天鹅（Little Swan）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-7817.html\">海尔（Haier）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-2505.html\">TCL</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-16407.html\">松下（Panasonic）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-7408.html\">格兰仕（Galanz）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-22186.html\">统帅（Leader）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-17382.html\">威力（WEILI）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-15133.html\">三洋（SANYO）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-1528.html\">LG</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-12380.html\">美的（Midea）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-18423.html\">小鸭</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-18177.html\">现代（HYUNDAI）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-10317.html\">康佳（KONKA）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-7888.html\">海信（Hisense）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-17887.html\">西门子（SIEMENS）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-14705.html\">日普（RIPU）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-19909.html\">樱花（Sakura）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-9508.html\">金松（JINSONG）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-14734.html\">荣事达（Royalstar）</a>\r\n				</li>\r\n				<li>\r\n					<a href=\"http://www.jd.com/pinpai/880-15127.html\">三星（SAMSUNG）</a>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		<div id=\"view-buy\" class=\"m m2 related-buy hide\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n			<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n				<h2 style=\"font-size:14px;font-weight:400;\">\r\n					浏览了该商品的用户最终购买了\r\n				</h2>\r\n			</div>\r\n			<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n				<ul>\r\n					<li class=\"fore1\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）\" src=\"http://img10.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaM-gIAAAAAAHEkmKa3kMAAFgCAPtLXoAAcSq389.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\">海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015650\">￥1999.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore2\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015658.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG70-B1286 电商 7公斤 1200转变频滚筒洗衣机（银灰色）\" src=\"http://img13.360buyimg.com/n4/g14/M01/02/00/rBEhVVNmEGsIAAAAAAIJBBbz8GoAAM-EADL6qcAAgkc040.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015658.html\">海尔（Haier） XQG70-B1286 电商 7公斤 1200转变频滚筒洗衣机（银灰色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015658\">￥3499.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore3\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机\" src=\"http://img12.360buyimg.com/n4/g13/M0A/01/0A/rBEhU1NoeGcIAAAAAAMZpOXaofEAAM-KQKSb-8AAxm8158.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\">海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1069497\">￥3099.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore4\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img13.360buyimg.com/n4/g13/M03/09/0C/rBEhVFNdyPIIAAAAAAGCGiBpM18AAMjCACQRzoAAYIy355.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\">LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-876668\">￥2099.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore5\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img11.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaOG0IAAAAAAGmsN2QEMYAAFgIgI0FTwAAabI647.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\">LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-698301\">￥2899.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore6\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698303.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-N12430D 6公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img13.360buyimg.com/n4/g15/M03/1B/17/rBEhWFNnJPUIAAAAAAKH8aVIEMkAAM4PgBCB6UAAogJ874.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698303.html\">LG WD-N12430D 6公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-698303\">￥2349.00</strong>\r\n						</div>\r\n					</li>\r\n				</ul>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"ranklist\" class=\"m m2\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n			<h2 style=\"font-size:14px;font-weight:400;\">\r\n				洗衣机排行榜\r\n			</h2>\r\n		</div>\r\n		<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n			<ul class=\"tab\">\r\n				<li class=\"curr\" style=\"text-align:center;color:#E4393C;background-color:#FFFFFF;font-weight:700;\">\r\n					同价位\r\n				</li>\r\n				<li style=\"text-align:center;color:#333333;background-color:#F7F7F7;\">\r\n					同品牌\r\n				</li>\r\n				<li style=\"text-align:center;color:#333333;background-color:#F7F7F7;\">\r\n					同类别\r\n				</li>\r\n			</ul>\r\n			<ul class=\"tabcon\">\r\n				<li class=\"fore1\">\r\n					1\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/609522.html\"><img height=\"50\" width=\"50\" src=\"http://img12.360buyimg.com/n5/g10/M00/1C/02/rBEQWFNaOCQIAAAAAAG9_mtdNmoAAFgHwJBRCcAAb4W939.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/609522.html\">三星(SAMSUNG) WF1702NCW/XSC 7公斤 滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-609522\">￥2299.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore2\">\r\n					2\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/698301.html\"><img height=\"50\" width=\"50\" src=\"http://img11.360buyimg.com/n5/g10/M00/1C/02/rBEQWFNaOG0IAAAAAAGmsN2QEMYAAFgIgI0FTwAAabI647.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/698301.html\">LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-698301\">￥2899.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore3\">\r\n					3\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/816528.html\"><img height=\"50\" width=\"50\" src=\"http://img13.360buyimg.com/n5/g12/M00/0B/1D/rBEQYVNZ6nUIAAAAAAHTERq_3BcAAFJzgGOpJQAAdMp856.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/816528.html\">西门子（SIEMENS） XQG60-WS10K1C00W 6公斤 3D正负洗系列 滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-816528\">￥3599.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore4\">\r\n					4\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/782194.html\"><img height=\"50\" width=\"50\" src=\"http://img14.360buyimg.com/n5/g13/M09/08/14/rBEhUlNY2_gIAAAAAAGJkqlbYpYAAMZTQBh29MAAYmq090.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/782194.html\">松下(panasonic) XQG52-M75201 5.2公斤 斜式滚筒洗衣机（白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-782194\">￥2099.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore5\">\r\n					5\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/895588.html\"><img height=\"50\" width=\"50\" src=\"http://img13.360buyimg.com/n5/g13/M06/08/14/rBEhVFNY380IAAAAAAGjGtfbB14AAMZeQHKBr0AAaMy314.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/895588.html\">西门子（SIEMENS） XQG70-WM12E2680W 7公斤 滚筒洗衣机（银色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-895588\">￥4199.00</strong>\r\n					</div>\r\n				</li>\r\n				<li class=\"fore6\">\r\n					6\r\n					<div class=\"p-img\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/997834.html\"><img height=\"50\" width=\"50\" src=\"http://img14.360buyimg.com/n5/g10/M00/1C/02/rBEQWFNaP50IAAAAAAGMSIVDV84AAFgPgGfg2gAAYxg172.jpg\" class=\"err-product\" /></a>\r\n					</div>\r\n					<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n						<a href=\"http://item.jd.com/997834.html\">西门子（SIEMENS） WM08E2C00W 7公斤滚筒洗衣机 （白色）</a>\r\n					</div>\r\n					<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;\">\r\n						<strong class=\"J-p-997834\">￥3599.00</strong>\r\n					</div>\r\n				</li>\r\n			</ul>\r\n		</div>\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		<div id=\"buy-buy\" class=\"m m2 related-buy\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n			<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n				<h2 style=\"font-size:14px;font-weight:400;\">\r\n					购买了该商品的用户还购买了\r\n				</h2>\r\n			</div>\r\n			<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n				<ul>\r\n					<li class=\"fore1\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/850692.html\"><img height=\"100\" width=\"100\" alt=\"嘉沛（JIAPEI） WA-305Pro 冰箱洗衣机架/固定底座 (高低可调)\" src=\"http://img12.360buyimg.com/n4/g10/M00/1C/1C/rBEQWFNdu0QIAAAAAAG19nxYnoUAAFqVwKTfaQAAbYO358.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/850692.html\">嘉沛（JIAPEI） WA-305Pro 冰箱洗衣机架/固定底座 (高低可调)</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-850692\">￥128.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore2\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015324.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） KFR-35GW/05GDC23A 1.5匹壁挂式冷暖变频空调\" src=\"http://img14.360buyimg.com/n4/g13/M09/08/15/rBEhVFNY7WAIAAAAAADTuTnnj5kAAMZ9ACc62YAANPR744.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015324.html\">海尔（Haier） KFR-35GW/05GDC23A 1.5匹壁挂式冷暖变频空调</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015324\">￥2799.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore3\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015707.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier）EC6002-D 60升遥控电热水器\" src=\"http://img12.360buyimg.com/n4/g14/M02/02/08/rBEhVVNnWFAIAAAAAAFn30R0R_oAANBRQLB4PcAAWf3690.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015707.html\">海尔（Haier）EC6002-D 60升遥控电热水器</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015707\">￥1498.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore4\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/821655.html\"><img height=\"100\" width=\"100\" alt=\"乐歌(Loctek) PSW842M(26-52寸)旋转拉伸电视功能挂架/支架\" src=\"http://img10.360buyimg.com/n4/g14/M06/1F/18/rBEhVVNaNtUIAAAAAAHc3a1K0ckAAMh3gF_7QUAAdz1420.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/821655.html\">乐歌(Loctek) PSW842M(26-52寸)旋转拉伸电视功能挂架/支架</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-821655\">￥199.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore5\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/717250.html\"><img height=\"100\" width=\"100\" alt=\"美的 (Midea) 电子制冷 饮水机 MYD927S-W\" src=\"http://img10.360buyimg.com/n4/g16/M00/01/1A/rBEbRVNrWg4IAAAAAAEpgMSM8dwAAAWzwGJ1M0AASmY137.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/717250.html\">美的 (Midea) 电子制冷 饮水机 MYD927S-W</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-717250\">￥379.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore6\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/874319.html\"><img height=\"100\" width=\"100\" alt=\"美的（Midea） EM7KCGW3-NR 平板微波炉\" src=\"http://img14.360buyimg.com/n4/g17/M00/00/13/rBEbSFNqFvMIAAAAAAIGkTsnd6EAAAHkQK-QzIAAgap910.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/874319.html\">美的（Midea） EM7KCGW3-NR 平板微波炉</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-874319\">￥438.00</strong>\r\n						</div>\r\n					</li>\r\n				</ul>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div style=\"margin:0px;padding:0px;\">\r\n		<div id=\"browse-browse\" class=\"m m2 related-buy\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n			<div class=\"mt\" style=\"margin:0px;padding:0px;background-color:#F7F7F7;font-size:14px;font-family:\'microsoft yahei\';border:1px solid #DDDDDD;\">\r\n				<h2 style=\"font-size:14px;font-weight:400;\">\r\n					浏览了该商品的用户还浏览了\r\n				</h2>\r\n			</div>\r\n			<div class=\"mc\" style=\"margin:0px;padding:0px;\">\r\n				<ul>\r\n					<li class=\"fore1\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015662.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG60-B1226AW 6公斤 1200转 水晶系列变频滚筒洗衣机（瓷白色）\" src=\"http://img12.360buyimg.com/n4/g12/M00/0F/03/rBEQYVNmELkIAAAAAAHyQFVoRY4AAFerwHSFi4AAfJY645.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015662.html\">海尔（Haier） XQG60-B1226AW 6公斤 1200转 水晶系列变频滚筒洗衣机（瓷白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015662\">￥3899.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore2\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机\" src=\"http://img12.360buyimg.com/n4/g13/M0A/01/0A/rBEhU1NoeGcIAAAAAAMZpOXaofEAAM-KQKSb-8AAxm8158.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1069497.html\">海尔（Haier） XQG60-BS1086AM 6公斤 变频滚筒洗衣机</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1069497\">￥3099.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore3\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\"><img height=\"100\" width=\"100\" alt=\"海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）\" src=\"http://img10.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaM-gIAAAAAAHEkmKa3kMAAFgCAPtLXoAAcSq389.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/1015650.html\">海尔（Haier） XQG70-1000J 7公斤 1000转滚筒洗衣机（银灰色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-1015650\">￥1999.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore4\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img11.360buyimg.com/n4/g10/M00/1C/02/rBEQWFNaOG0IAAAAAAGmsN2QEMYAAFgIgI0FTwAAabI647.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/698301.html\">LG WD-T12410D 8公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-698301\">￥2899.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore5\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/895588.html\"><img height=\"100\" width=\"100\" alt=\"西门子（SIEMENS） XQG70-WM12E2680W 7公斤 滚筒洗衣机（银色）\" src=\"http://img13.360buyimg.com/n4/g13/M06/08/14/rBEhVFNY380IAAAAAAGjGtfbB14AAMZeQHKBr0AAaMy314.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/895588.html\">西门子（SIEMENS） XQG70-WM12E2680W 7公斤 滚筒洗衣机（银色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-895588\">￥4199.00</strong>\r\n						</div>\r\n					</li>\r\n					<li class=\"fore6\">\r\n						<div class=\"p-img\" style=\"margin:0px;padding:5px 0px;text-align:center;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\"><img height=\"100\" width=\"100\" alt=\"LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）\" src=\"http://img13.360buyimg.com/n4/g13/M03/09/0C/rBEhVFNdyPIIAAAAAAGCGiBpM18AAMjCACQRzoAAYIy355.jpg\" class=\"loading-style2\" /></a>\r\n						</div>\r\n						<div class=\"p-name\" style=\"margin:0px;padding:0px;\">\r\n							<a target=\"_blank\" href=\"http://item.jd.com/876668.html\">LG WD-N12435D 6公斤 静音系列滚筒洗衣机（白色）</a>\r\n						</div>\r\n						<div class=\"p-price\" style=\"margin:0px;padding:0px;color:#999999;text-align:center;\">\r\n							<strong class=\"J-p-876668\">￥2099.00</strong>\r\n						</div>\r\n					</li>\r\n				</ul>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div id=\"miaozhen7886\" class=\"m\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<a href=\"http://c.fa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=817&amp;bid=3147&amp;unit=29866&amp;advid=95489&amp;guv=&amp;url=http://e.cn.miaozhen.com/r.gif?k=1012922&amp;p=4+jSA0&amp;rt=2&amp;ns=[M_ADIP]&amp;ni=[M_IESID]&amp;na=[M_MAC]&amp;o=http://sale.jd.com/act/P2oMfuidjRr10wsE.html\" target=\"_blank\"><img width=\"211\" height=\"261\" src=\"http://img11.360buyimg.com/da/jfs/t157/216/441872528/18241/5d272345/538d51fdN29a86e05.jpg\" class=\"loading-style2\" /></a>\r\n	</div>\r\n	<div id=\"miaozhen10767\" class=\"m\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<a href=\"http://c.fa.jd.com/adclick?sid=2&amp;cid=163&amp;aid=818&amp;bid=2947&amp;unit=28576&amp;advid=96247&amp;guv=&amp;url=http://jmall.jd.com/shop/p129940/index.html?erpad_source=erpad\" target=\"_blank\"><img width=\"211\" height=\"261\" alt=\"\" src=\"http://img13.360buyimg.com/da/jfs/t205/61/637500449/23385/6d479db/539524e1Nc8892389.jpg\" class=\"loading-style2\" /></a>\r\n	</div>\r\n	<div id=\"ad_market_1\" class=\"m\" style=\"margin:0px 0px 10px;padding:0px;\">\r\n		<div style=\"margin:0px;padding:0px;\">\r\n			<img id=\"tracker_banner45b34482-ae79-4feb-95c7-28eb79cc2d9b\" width=\"0\" height=\"0\" border=\"0\" src=\"http://x.jd.com/dsp/np?log=VLikGDCsgoBvQrY6FOANYuekrtHPkiO8++O4zBTXUEXMZir0ZwsFPbpSIz0SM3d8IPL9jxA26rE3R+n6klF3wecKlWrR/83eE18PR4AnluGhBvahZAWn6TQRj1Jp0Jyy353Xe1m/GPXrHBo2rddQ5i/7y8ywXRy6evvzcVdpd7ziUdd3I7WuE/NWW9CuQHcndzomCTWla9CyhnP0U78lI1lWEme8MLkVo+Wgz1bxolpvrjz+VWP32fd6/kSDCt6m0/BW6Fn+RAD4ED55xE2ICg==&amp;v=2\" />\r\n			<div id=\"jd_banner45b34482-ae79-4feb-95c7-28eb79cc2d9b\" style=\"margin:0px;padding:0px;color:#666666;font-family:Arial, Verdana, 宋体;background-color:#FFFFFF;\">\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('26', '2014夏装新款韩版修身女装欧根纱短袖连衣裙', 'L00734', '1', '99.80', '57.00', '', '0000-00-00 00:00:00', '1', '0', '0');
+INSERT INTO `tour_product` VALUES ('32', '淑女圆领雪纺衫女短裙套装套裤两件套', '123', '10000', '100.00', '0.00', '', '0000-00-00 00:00:00', '1', '0', '0');
+INSERT INTO `tour_product` VALUES ('53', '商品名称4343', '4324234', '10000', '100.00', '79.00', '', '0000-00-00 00:00:00', '1', '0', '7');
+INSERT INTO `tour_product` VALUES ('54', '商品名称1PHP获取目录和的方法通过魔术变量', '321313', '10000', '100.00', '81.00', '', '0000-00-00 00:00:00', '1', '0', '23');
+INSERT INTO `tour_product` VALUES ('55', '商品名称1312321312', '', '10000', '100.00', '82.00', '', '0000-00-00 00:00:00', '1', '0', '4');
+INSERT INTO `tour_product` VALUES ('56', '商品名称1231232', '321312321', '10000', '100.00', '83.00', '', '0000-00-00 00:00:00', '1', '0', '1');
+INSERT INTO `tour_product` VALUES ('59', '商品名称1PHP获取目录和的方法通过魔术变量11', '123123', '10000', '100.00', '84.00', '', '2016-08-21 11:44:08', '1', '0', '2');
+INSERT INTO `tour_product` VALUES ('60', '商品名称34', '21312313123', '10000', '100.00', '85.00', '', '2016-08-22 21:34:45', '1', '0', '2');
+INSERT INTO `tour_product` VALUES ('61', '商品名称1213213213', '', '10000', '100.00', '86.00', '', '2016-08-23 21:53:18', '1', '0', '23');
 
 -- ----------------------------
--- Table structure for `tour_publish_table`
+-- Table structure for tour_publish_table
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_publish_table`;
 CREATE TABLE `tour_publish_table` (
@@ -4289,163 +2740,66 @@ CREATE TABLE `tour_publish_table` (
   `software_zh` varchar(128) DEFAULT NULL,
   `version_num` varchar(32) DEFAULT NULL COMMENT '版本号',
   `size` varchar(128) DEFAULT NULL COMMENT '文件大小',
-  `upload_name` varchar(128) DEFAULT NULL COMMENT '上传文件本身名称',
-  `url` varchar(128) DEFAULT NULL COMMENT 'url',
+  `download_num` varchar(128) DEFAULT NULL COMMENT '上传文件本身名称',
+  `url` text COMMENT 'url',
   `publish_time` varchar(128) DEFAULT NULL COMMENT '发布日期',
   `description` text COMMENT '说明',
   `belongs_stage` varchar(128) DEFAULT NULL COMMENT '平台',
   `sha1` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_publish_table
 -- ----------------------------
-INSERT INTO `tour_publish_table` VALUES ('165', 'app', '谷歌APP', '1.0', '628.17KB', null, '/version/uploads/app/app_v1.0.rar', '1455612577', '谷歌APP谷歌APP谷歌APP谷歌APP', 'Linux', '82bfceaf1a11df53db6b8486a8024e3cce05e84f');
-INSERT INTO `tour_publish_table` VALUES ('166', 'app', '谷歌APP', '2.0', '628.17KB', null, '/version/uploads/app/app_v2.0.rar', '1455612607', '谷歌APP', 'Linux', '82bfceaf1a11df53db6b8486a8024e3cce05e84f');
-INSERT INTO `tour_publish_table` VALUES ('167', 'RtmpDevice', 'RtmpDevice', '0.1', '1.45MB', null, '/version/uploads/RtmpDevice/RtmpDevice_v0.1.zip', '1455619658', 'rtmpdevcie的设备端程序', 'Windows', 'ef38d072560ab663b803001362a4bd31c1c92457');
-INSERT INTO `tour_publish_table` VALUES ('168', 'APP', '谷歌APP222', '3.0', '37.91MB', null, '/version/uploads/APP/APP_v3.0.zip', '1455635702', '谷歌APP', 'Windows', 'c4ba0b3eb7abd4b60a3d3dfb657e1aa107d027f7');
-INSERT INTO `tour_publish_table` VALUES ('169', 'amai', 'amai', '1.0.0.1', '628.17KB', null, '/version/uploads/amai/amai_v1.0.0.1.rar', '1455669351', 'amaiamaiamaiamaiamaiamai', 'Android', '82bfceaf1a11df53db6b8486a8024e3cce05e84f');
-INSERT INTO `tour_publish_table` VALUES ('170', 'RtmpDevice', 'RtmpDevice', '1.0', '628.17KB', null, '/version/uploads/RtmpDevice/RtmpDevice_v1.0.rar', '1455755720', '	RtmpDevice	RtmpDevice	RtmpDevice', 'Linux', '82bfceaf1a11df53db6b8486a8024e3cce05e84f');
-INSERT INTO `tour_publish_table` VALUES ('171', 'ecshop', 'html模板', '1.1.3', '21.74MB', null, '/version/uploads/ecshop/ecshop_v1.1.3.rar', '1455764304', '这是一个织梦的html模板', 'Windows', '7caec566248537cdecc1772160a3ca6a14c44aa7');
-INSERT INTO `tour_publish_table` VALUES ('172', 'wampserver', 'wampserver', '1.0', '37.91MB', null, '/version/uploads/wampserver/wampserver_v1.0.zip', '1455801067', 'wampserverwampserver', 'Windows', 'c4ba0b3eb7abd4b60a3d3dfb657e1aa107d027f7');
-INSERT INTO `tour_publish_table` VALUES ('173', 'BaiduApp', '微信', '1.0', '1.45MB', null, '/version/uploads/BaiduApp/BaiduApp_v1.0.zip', '1459135221', '微信微信微信微信微信微信微信微信', 'Windows', 'ef38d072560ab663b803001362a4bd31c1c92457');
-INSERT INTO `tour_publish_table` VALUES ('174', 'BaiduApp', '谷歌APP', '1.0', '45.65MB', null, '/version/uploads/BaiduApp/BaiduApp_v1.0.zip', '1459135304', '谷歌APP谷歌APP谷歌APP谷歌APP谷歌APP谷歌APP', 'Linux', 'dc7d012044e7b0992d3a66ab780d82d92b8d3e2f');
-INSERT INTO `tour_publish_table` VALUES ('175', 'testdata', '微信111', '1.0', '45.65MB', null, '/version/uploads/testdata/testdata_v1.0.zip', '1459136039', '的撒打算', 'Linux', 'dc7d012044e7b0992d3a66ab780d82d92b8d3e2f');
-INSERT INTO `tour_publish_table` VALUES ('176', 'Tinywan', '万少波', '1.0.213.31', '45.65MB', null, '/version/uploads/Tinywan/Tinywan_v1.0.213.31.zip', '1459136250', 'root', 'Windows', 'dc7d012044e7b0992d3a66ab780d82d92b8d3e2f');
-INSERT INTO `tour_publish_table` VALUES ('177', 'BaiduApp', '谷歌APP', '2.0', '64.12KB', null, '/version/uploads/BaiduApp/BaiduApp_v2.0.rar', '1459995785', 'ewqewq', 'Mac', '5a29cb7949cde0d7a35db8bc543b3b9f648b6c1a');
-INSERT INTO `tour_publish_table` VALUES ('178', '文件测试1', '文件测试1', '1.0', '1281107', null, '/ThinkPhpStudy/Uploads/文件测试1/文件测试1_v1.0.zip', '1471225191', '文件测试1文件测试1文件测试1文件测试1', 'Mac', '46be8fda616d1cf67ac45f07f3a10215c38b9e8d');
-INSERT INTO `tour_publish_table` VALUES ('179', '文件中文', '文件中文', '1', '5681943', null, '/ThinkPhpStudy/Uploads/', '1471225325', '文件中文文件中文文件中文', 'Windows', '8b4db01f8561cdd3e58c98ff1dcc91f20f742fb2');
-INSERT INTO `tour_publish_table` VALUES ('180', 'Linux测试', 'Linux测试', '10.0', '5681943', null, '/ThinkPhpStudy/Uploads/Linux', '1471225449', 'Linux测试Linux测试Linux测试', 'Android', '8b4db01f8561cdd3e58c98ff1dcc91f20f742fb2');
-INSERT INTO `tour_publish_table` VALUES ('181', '', '', '', '100', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471226273', '', '', '11fce6a6ab4161b27dc2d1c16982fce9dc899f01');
-INSERT INTO `tour_publish_table` VALUES ('182', 'BaiduApp', '图片测试怕', '1.0', '143028', 'BaiduApp/mini_BaiduApp_v1.0.jpg', '/ThinkPhpStudy/Uploads/BaiduApp/BaiduApp_v1.0.jpg', '1471239088', '', 'Linux', 'ba4da58d455eae781326a50b9357897948917eeb');
-INSERT INTO `tour_publish_table` VALUES ('183', 'BaiduApp', '图片测试怕', '1.0', '174909', 'BaiduApp/mini_BaiduApp_v1.0.jpg', '/ThinkPhpStudy/Uploads/BaiduApp/BaiduApp_v1.0.jpg', '1471241272', '324234', 'Linux', '4366fb597870ffa64bb5a6cec4a3c7a9931bf420');
-INSERT INTO `tour_publish_table` VALUES ('184', 'BaiduApp', '图片测试怕', '1.0', '334216', 'BaiduApp/mini_BaiduApp_v1.0.jpg', '/ThinkPhpStudy/Uploads/BaiduApp/BaiduApp_v1.0.jpg', '1471241306', '324234', 'Windows', '61e6790683338390a22d9ec05b9623c457777e96');
-INSERT INTO `tour_publish_table` VALUES ('185', 'BaiduApp', '图片测试怕', '1.1', '174909', 'BaiduApp/mini_BaiduApp_v1.1.jpg', '/ThinkPhpStudy/Uploads/BaiduApp/BaiduApp_v1.1.jpg', '1471241354', '', 'Windows', '4366fb597870ffa64bb5a6cec4a3c7a9931bf420');
+INSERT INTO `tour_publish_table` VALUES ('173', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471162517', '', 'Windows', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('174', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471162910', '', 'Windows', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('175', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471163886', '', 'Windows', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('176', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471163901', '', 'Windows', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('177', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471163970', '', '', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('178', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v.rar', '1471164161', '', '', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('179', '', '', '', '51563', null, '/ThinkPhpStudy/Uploads/_v9629.rar', '1471164217', '', '', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('180', 'HTML', 'RtmpDevice', '1.0', '51563', null, '/ThinkPhpStudy/Uploads/HTML/HTML_v8528.rar', '1471164321', '', '', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('181', 'FDSF', '钻石小鸟2016简洁版单独数据包', '1.0', '51563', null, '/ThinkPhpStudy/Uploads/FDSF/FDSF_v4855.rar', '1471164368', '23123', '', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('182', '', '', '', '3905', null, '/ThinkPhpStudy/Uploads/_v6365.rar', '1471164736', '', '', 'd141976c9dd491b1a51635578276b30e694fffd0');
+INSERT INTO `tour_publish_table` VALUES ('183', 'HTML', 'RtmpDevice', '1.0', '12708064', null, '/ThinkPhpStudy/Uploads/HTML/HTML_v6822.zip', '1471164893', '23123', '', 'f3b8b56fbea16a9506bd91c11e5c7cc346011252');
+INSERT INTO `tour_publish_table` VALUES ('184', 'FDSF', 'RtmpDevice', '1.0', '51563', null, '/ThinkPhpStudy/Uploads/FDSF/FDSF_v1.0.rar', '1471165052', '23123', '', '49200676cec8081eadbcd0a4357d29264d7e65a5');
+INSERT INTO `tour_publish_table` VALUES ('185', 'App1', '钻石小鸟2016简洁版单独数据包', '1.0', '4874947', null, '/ThinkPhpStudy/Uploads/App1/App1_v1.0.zip', '1471165193', '23123', '', 'a276a2578f14e9e799f7da561c9f0ac938dea5a4');
+INSERT INTO `tour_publish_table` VALUES ('186', 'HTML', 'RtmpDevice', '1.0', '3905', null, '/ThinkPhpStudy/Uploads/HTML/HTML_v1.0.rar', '1471166318', '23123', 'Linux', 'd141976c9dd491b1a51635578276b30e694fffd0');
+INSERT INTO `tour_publish_table` VALUES ('187', 'HTML', 'RtmpDevice', '0.1', '12708064', null, '/ThinkPhpStudy/Uploads/HTML/HTML_v0.1.zip', '1471166415', '23123', 'Mac', 'f3b8b56fbea16a9506bd91c11e5c7cc346011252');
+INSERT INTO `tour_publish_table` VALUES ('188', '文件中文名称', '文件中文名称', '1.0', '48632', null, '/ThinkPhpStudy/Uploads/', '1471263617', '文件中文名称文件中文名称', 'Windows', 'd4229ddf9fef242f668daffcbeaef7f673183d17');
+INSERT INTO `tour_publish_table` VALUES ('189', 'APP', 'APP', 'APP', '48632', null, '/ThinkPhpStudy/Uploads/APP/APP_vAPP.jpg', '1471263925', '1.0', 'Android', 'd4229ddf9fef242f668daffcbeaef7f673183d17');
+INSERT INTO `tour_publish_table` VALUES ('190', '系统设置', '系统设置', '1.0', '43293', null, '/ThinkPhpStudy/Uploads/', '1471264058', '系统设置系统设置', 'Mac', '821c78d657bff1ef9aae4cff2717697cc68d5b1a');
+INSERT INTO `tour_publish_table` VALUES ('191', '系统设置1', '系统设置1', '1.0', '91462', null, '/ThinkPhpStudy/Uploads/', '1471264118', '系统设置', 'Windows', '2383ec61464647f3d68c45adbda4f28da5a94ac0');
+INSERT INTO `tour_publish_table` VALUES ('192', 'Home', '系统设置', '1.1.1', '60472', null, '/ThinkPhpStudy/Uploads/Home/Home_v1.1.1.jpg', '1471264159', '系统设置系统设置', 'Android', 'bb5bea9896e581db18b2f08fe06755fb009645ec');
 
 -- ----------------------------
--- Table structure for `tour_role`
--- ----------------------------
-DROP TABLE IF EXISTS `tour_role`;
-CREATE TABLE `tour_role` (
-  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `pid` smallint(6) DEFAULT NULL,
-  `status` tinyint(1) unsigned DEFAULT '1',
-  `remark` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `pid` (`pid`) USING BTREE,
-  KEY `status` (`status`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of tour_role
--- ----------------------------
-INSERT INTO `tour_role` VALUES ('1', '超级管理员', null, '1', '超级管理员超级管理员');
-INSERT INTO `tour_role` VALUES ('2', '管理员', null, '1', '管理员描述');
-INSERT INTO `tour_role` VALUES ('3', '会员', null, '1', '描述');
-INSERT INTO `tour_role` VALUES ('17', '体育分类', '0', '1', '旅游资源统计');
-
--- ----------------------------
--- Table structure for `tour_role_user`
--- ----------------------------
-DROP TABLE IF EXISTS `tour_role_user`;
-CREATE TABLE `tour_role_user` (
-  `role_id` mediumint(9) unsigned DEFAULT NULL,
-  `user_id` char(32) DEFAULT NULL,
-  KEY `group_id` (`role_id`) USING BTREE,
-  KEY `user_id` (`user_id`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of tour_role_user
--- ----------------------------
-INSERT INTO `tour_role_user` VALUES ('3', '72');
-INSERT INTO `tour_role_user` VALUES ('12', '73');
-INSERT INTO `tour_role_user` VALUES ('13', '74');
-INSERT INTO `tour_role_user` VALUES ('2', '107');
-INSERT INTO `tour_role_user` VALUES ('1', '86');
-INSERT INTO `tour_role_user` VALUES ('3', '69');
-INSERT INTO `tour_role_user` VALUES ('3', '70');
-INSERT INTO `tour_role_user` VALUES ('2', '71');
-INSERT INTO `tour_role_user` VALUES ('2', '87');
-INSERT INTO `tour_role_user` VALUES ('3', '88');
-INSERT INTO `tour_role_user` VALUES ('2', '108');
-INSERT INTO `tour_role_user` VALUES ('3', '109');
-INSERT INTO `tour_role_user` VALUES ('2', '110');
-INSERT INTO `tour_role_user` VALUES ('2', '111');
-INSERT INTO `tour_role_user` VALUES ('1', '112');
-INSERT INTO `tour_role_user` VALUES ('2', '113');
-INSERT INTO `tour_role_user` VALUES ('1', '114');
-INSERT INTO `tour_role_user` VALUES ('1', '115');
-INSERT INTO `tour_role_user` VALUES ('1', '116');
-INSERT INTO `tour_role_user` VALUES ('1', '117');
-INSERT INTO `tour_role_user` VALUES ('3', '141');
-INSERT INTO `tour_role_user` VALUES ('1', '119');
-INSERT INTO `tour_role_user` VALUES ('1', '121');
-INSERT INTO `tour_role_user` VALUES ('1', '122');
-INSERT INTO `tour_role_user` VALUES ('1', '123');
-INSERT INTO `tour_role_user` VALUES ('1', '124');
-INSERT INTO `tour_role_user` VALUES ('1', '125');
-INSERT INTO `tour_role_user` VALUES ('1', '126');
-INSERT INTO `tour_role_user` VALUES ('1', '127');
-INSERT INTO `tour_role_user` VALUES ('1', '128');
-INSERT INTO `tour_role_user` VALUES ('1', '129');
-INSERT INTO `tour_role_user` VALUES ('1', '130');
-INSERT INTO `tour_role_user` VALUES ('1', '131');
-INSERT INTO `tour_role_user` VALUES ('1', '134');
-INSERT INTO `tour_role_user` VALUES ('1', '135');
-INSERT INTO `tour_role_user` VALUES ('17', '136');
-INSERT INTO `tour_role_user` VALUES ('17', '139');
-INSERT INTO `tour_role_user` VALUES ('1', '140');
-
--- ----------------------------
--- Table structure for `tour_user`
+-- Table structure for tour_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tour_user`;
 CREATE TABLE `tour_user` (
   `user_id` int(100) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(128) DEFAULT '2',
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
+  `apikey_value` varchar(60) DEFAULT NULL,
+  `apikey_time` varchar(60) DEFAULT NULL,
   `logintime` varchar(128) DEFAULT NULL,
-  `loginip` text,
+  `loginip` varchar(128) DEFAULT '127.0.0.1',
   `status` int(2) DEFAULT '0',
+  `description` text,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_user
 -- ----------------------------
-INSERT INTO `tour_user` VALUES ('86', 'admin', '4297f44b13955235245b2497399d7a93', '1470895205', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('87', '管理员测试', '4297f44b13955235245b2497399d7a93', '1456294831', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('88', '会员测试', '4297f44b13955235245b2497399d7a93', '1456294603', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('107', 'admin123', '4297f44b13955235245b2497399d7a93', '1456295345', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('108', 'admin123312', '45a5381e5a89cc97afdba368553b3243', '1456303613', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('109', '一部测试', '4297f44b13955235245b2497399d7a93', '1456303671', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('115', '惹我热吻', '8f5f90130c5393affe3b6037c319d1bb', '1456304010', '127.0.0.1', '0');
-INSERT INTO `tour_user` VALUES ('116', 'admindsdsa', '5d87c48737641ddd59b231d4d933d954', '1456304128', '127.0.0.1', '0');
-INSERT INTO `tour_user` VALUES ('117', '惹我热吻', '8f5f90130c5393affe3b6037c319d1bb', '1456304234', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('119', '惹我热吻', '8f5f90130c5393affe3b6037c319d1bb', '1456304235', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('121', 'admindsdsa', '5d87c48737641ddd59b231d4d933d954', '1456304266', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('122', 'adminrewrew', '16affafe81e0b9185ebd199ab19f1868', '1456304386', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('123', 'adminrewrew', '16affafe81e0b9185ebd199ab19f1868', '1456304390', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('124', 'ewqewq', 'bff9a869137805d4f02640e9aa141881', '1456304396', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('125', 'ewqewq', 'bff9a869137805d4f02640e9aa141881', '1456304523', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('126', 'adminrewrewr', '4237eb259879f58e49d40e49746dbc13', '1456304528', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('127', 'adminrewrwe', '213c6ecc5b2cdbf3feb3b415ed445caf', '1456304533', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('128', 'admintretre', 'b5439ba5576cbd395edd8e1d7bd57028', '1456304624', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('129', 'adminrewr', '3964fd31837a486a455e4cec286a04e3', '1456304636', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('130', 'adminrewrewrewrew', '3964fd31837a486a455e4cec286a04e3', '1456304647', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('131', 'adminrewrewrewrew', '3964fd31837a486a455e4cec286a04e3', '1456304664', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('134', '惹我热吻惹我', '3d186804534370c3c817db0563f0e461', '1456304679', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('135', '321321', 'bb2d91d0fbbebe8719509ed0f865c63f', '1456304686', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('136', 'adminewrew', '6f106aee6475d00a193095639575632b', '1457661341', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('139', 'admin321321', '139e1603741c4ffb4a88a7776d79ab6f', '1457661427', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('140', 'tretretre', '27648ca605dfab27b2955eef714ef573', '1457661531', '127.0.0.1', '1');
-INSERT INTO `tour_user` VALUES ('141', 'controlIndex', 'd1034c027fbf9a4d745e4490097250a1', '1461912267', '127.0.0.1', '1');
+INSERT INTO `tour_user` VALUES ('8', '0', 'Administrator', '21232f297a57a5a743894a0e4a801fc3', '007c91306de15735ad90b7d5633556d5b0633429', '1452649122', null, null, '1', null);
+INSERT INTO `tour_user` VALUES ('18', '1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '99809701ba179cae883a32db741422c20eda4b9d', '1453168690', '1471962846', '127.0.0.1', '1', null);
+INSERT INTO `tour_user` VALUES ('26', '2', 'Tinywan', 'e10adc3949ba59abbe56e057f20f883e', 'a8ea378110bdf3d4114de976a27b5a263da26d73', '1453077060', null, '127.0.0.1', '0', null);
 
 -- ----------------------------
--- Table structure for `version_app`
+-- Table structure for version_app
 -- ----------------------------
 DROP TABLE IF EXISTS `version_app`;
 CREATE TABLE `version_app` (
@@ -4463,88 +2817,3 @@ CREATE TABLE `version_app` (
 -- ----------------------------
 -- Records of version_app
 -- ----------------------------
-
--- ----------------------------
--- Table structure for `version_download_log`
--- ----------------------------
-DROP TABLE IF EXISTS `version_download_log`;
-CREATE TABLE `version_download_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `version_id` varchar(128) DEFAULT NULL COMMENT '下载软件版本id',
-  `download_time` varchar(128) DEFAULT '' COMMENT '下载日期',
-  `download_user` varchar(128) DEFAULT NULL COMMENT '下载用户信息',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of version_download_log
--- ----------------------------
-INSERT INTO `version_download_log` VALUES ('93', '132', '1454487384', 'admin');
-INSERT INTO `version_download_log` VALUES ('94', '159', '1454487399', 'admin');
-INSERT INTO `version_download_log` VALUES ('95', '158', '1454487405', 'admin');
-INSERT INTO `version_download_log` VALUES ('96', '158', '1454487407', 'admin');
-INSERT INTO `version_download_log` VALUES ('97', '159', '1454487418', 'admin');
-INSERT INTO `version_download_log` VALUES ('98', '159', '1454487423', 'admin');
-INSERT INTO `version_download_log` VALUES ('99', '133', '1454487437', 'admin');
-INSERT INTO `version_download_log` VALUES ('100', '133', '1454487439', 'admin');
-INSERT INTO `version_download_log` VALUES ('101', '162', '1454496799', 'admin');
-INSERT INTO `version_download_log` VALUES ('102', '163', '1454640229', 'admin');
-INSERT INTO `version_download_log` VALUES ('103', '163', '1454642761', 'admin');
-INSERT INTO `version_download_log` VALUES ('104', '164', '1454644598', 'user1200072538');
-INSERT INTO `version_download_log` VALUES ('105', '164', '1454644613', 'user755568298');
-INSERT INTO `version_download_log` VALUES ('106', '164', '1454644708', 'user1858833927');
-INSERT INTO `version_download_log` VALUES ('107', '164', '1454738294', 'user592321558');
-INSERT INTO `version_download_log` VALUES ('108', '165', '1455670464', 'user1110789341');
-INSERT INTO `version_download_log` VALUES ('109', '165', '1455670573', 'user1837239479');
-INSERT INTO `version_download_log` VALUES ('110', '168', '1455670585', 'user426199601');
-INSERT INTO `version_download_log` VALUES ('111', '166', '1455670464', 'user717908596');
-INSERT INTO `version_download_log` VALUES ('112', '166', '1455670465', 'user2024775267');
-INSERT INTO `version_download_log` VALUES ('113', '168', '1455670476', 'user2055896985');
-INSERT INTO `version_download_log` VALUES ('114', '168', '1455670478', 'user2122848486');
-INSERT INTO `version_download_log` VALUES ('115', '168', '1455670737', 'user1071652155');
-INSERT INTO `version_download_log` VALUES ('116', '165', '1455670816', 'user951377336');
-INSERT INTO `version_download_log` VALUES ('117', '166', '1455670820', 'user415600393');
-INSERT INTO `version_download_log` VALUES ('118', '169', '1455671391', 'user1745188741');
-INSERT INTO `version_download_log` VALUES ('119', '165', '1455671750', 'user1518351094');
-INSERT INTO `version_download_log` VALUES ('120', '165', '1455671744', 'user1958195151');
-INSERT INTO `version_download_log` VALUES ('121', '165', '1455671747', 'user1606596268');
-INSERT INTO `version_download_log` VALUES ('122', '168', '1455671751', 'user1720374265');
-INSERT INTO `version_download_log` VALUES ('123', '168', '1455671755', 'user461446448');
-INSERT INTO `version_download_log` VALUES ('124', '165', '1455697965', 'user1947440067');
-INSERT INTO `version_download_log` VALUES ('125', '165', '1455698001', 'user1171116215');
-INSERT INTO `version_download_log` VALUES ('126', '166', '1455698019', 'user450242553');
-INSERT INTO `version_download_log` VALUES ('127', '165', '1455761153', 'user1545851807');
-INSERT INTO `version_download_log` VALUES ('128', '167', '1455761225', 'user221851742');
-INSERT INTO `version_download_log` VALUES ('129', '167', '1455761243', 'user1289683355');
-INSERT INTO `version_download_log` VALUES ('130', '167', '1455761287', 'user2136669335');
-INSERT INTO `version_download_log` VALUES ('131', '167', '1455761434', 'user398394109');
-INSERT INTO `version_download_log` VALUES ('132', '167', '1455761661', 'user603613586');
-INSERT INTO `version_download_log` VALUES ('133', '167', '1455761721', 'user1563531399');
-INSERT INTO `version_download_log` VALUES ('134', '167', '1455761725', 'user2122841476');
-INSERT INTO `version_download_log` VALUES ('135', '167', '1455761725', 'user1696801531');
-INSERT INTO `version_download_log` VALUES ('136', '167', '1455761725', 'user1757189895');
-INSERT INTO `version_download_log` VALUES ('137', '167', '1455761889', 'user550296180');
-INSERT INTO `version_download_log` VALUES ('138', '167', '1455761935', 'user150455235');
-INSERT INTO `version_download_log` VALUES ('139', '167', '1455761938', 'user856541538');
-INSERT INTO `version_download_log` VALUES ('140', '167', '1455762220', 'user1333891246');
-INSERT INTO `version_download_log` VALUES ('141', '167', '1455762286', 'user94074261');
-INSERT INTO `version_download_log` VALUES ('142', '167', '1455762297', 'user788776223');
-INSERT INTO `version_download_log` VALUES ('143', '170', '1455764095', 'admin');
-INSERT INTO `version_download_log` VALUES ('144', '165', '1455764199', 'user1361861576');
-INSERT INTO `version_download_log` VALUES ('145', '171', '1455764315', 'admin');
-INSERT INTO `version_download_log` VALUES ('146', '166', '1455766409', 'admin');
-INSERT INTO `version_download_log` VALUES ('147', '165', '1456196064', 'user1889326958');
-INSERT INTO `version_download_log` VALUES ('148', '167', '1456196084', 'user1287969732');
-INSERT INTO `version_download_log` VALUES ('149', '167', '1456196085', 'user1159499651');
-INSERT INTO `version_download_log` VALUES ('150', '165', '1456196086', 'user1607977761');
-INSERT INTO `version_download_log` VALUES ('151', '165', '1456196086', 'user1975687422');
-INSERT INTO `version_download_log` VALUES ('152', '165', '1456196087', 'user1285117619');
-INSERT INTO `version_download_log` VALUES ('153', '165', '1456196127', 'user599498904');
-INSERT INTO `version_download_log` VALUES ('154', '165', '1456196797', 'user1971504745');
-INSERT INTO `version_download_log` VALUES ('155', '165', '1456196799', 'user1066752609');
-INSERT INTO `version_download_log` VALUES ('156', '167', '1456281043', 'user1634041541');
-INSERT INTO `version_download_log` VALUES ('157', '167', '1457056659', 'user465125743');
-INSERT INTO `version_download_log` VALUES ('158', '167', '1457056660', 'user1351145209');
-INSERT INTO `version_download_log` VALUES ('159', '167', '1458018060', 'user2139198542');
-INSERT INTO `version_download_log` VALUES ('160', '167', '1458018068', 'user137505229');
-INSERT INTO `version_download_log` VALUES ('161', '176', '1459136272', 'admin');
