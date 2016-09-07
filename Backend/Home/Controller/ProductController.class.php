@@ -9,6 +9,7 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
+use Home\Model\ProductViewModel;
 
 class ProductController extends BaseController
 {
@@ -202,6 +203,11 @@ class ProductController extends BaseController
         $model = M('Product');
         //生成一定数量的随机数，并且不重复
         p(word_time(time()));
+    }
+
+    public function viewFind(){
+        $Model = D('Product');
+        p($Model->select());
     }
 
 }
