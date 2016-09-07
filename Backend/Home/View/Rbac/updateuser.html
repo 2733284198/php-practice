@@ -32,38 +32,32 @@
         <div class="page-content">
 
             <div class="row">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th style="font-size: 14px;">#ID</th>
-                        <th style="font-size: 14px;">用户昵称</th>
-                        <th style="font-size: 14px;">所属角色组</th>
-                        <th style="font-size: 14px;">登录时间</th>
-                        <th style="font-size: 14px;">
-                            操作
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <volist name='list' id='vo'>
-                        <tr class="gradeX">
-                            <td>{$vo.id}</td>
-                            <td>{$vo.username}</td>
-                            <td>{$vo['role_name'][0]['name']}</td>
-                            <td class="center">{$vo.logintime|date='Y-m-d H:i:s',###}</td>
-                            <td class="center">
-                                <a href="{:U('Home/Rbac/updateUser',array('id'=>$vo['id']))}" class="btn btn-primary btn-xs"><i class="icon-edit"></i>&nbsp;修改角色</a>
-                                <if condition="$vo.status eq 1">
-                                    <button class="btn btn-inverse btn-xs set" value="{$vo.id}"><i class="icon-refresh"></i>&nbsp;禁用</button>
-                                    <else/>
-                                    <button class="btn btn-pink btn-xs set" value="{$vo.id}"><i class="icon-refresh"></i>&nbsp;启用</button>
-                                </if>
-                                <button class="btn btn-danger btn-xs del" value="{$vo.id}"> <i class="icon-trash"></i>&nbsp;删除</button>
-                            </td>
-                        </tr>
-                    </volist>
-                    </tbody>
-                </table>
+                <form action="{:U('Home/Rbac/updateuser')}" method="post"  class="form-horizontal">
+                    <div class="widget-content nopadding">
+                        <form action="#" method="get" class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">用户名:</label>
+                                <div class="controls">
+                                    <input type="text" class="span2 username" placeholder="用户名" disabled name="username" value="{$user['username']}" />
+                                    <input type="hidden" name="user_id" value="{$user['id']}"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">选择用户组:</label>
+                                <div class="controls">
+                                    <select name="role_id" class="span2" >
+                                        <volist name="role_list" id="vo">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </volist>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success">确认</button>
+                            </div>
+                        </form>
+                    </div>
+                </form>
             </div>
         </div><!-- /.page-content -->
     </div><!-- /.main-content -->

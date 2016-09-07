@@ -102,6 +102,30 @@ class RbacController extends BaseController
         $this->display('Rbac/createAdminUser');
     }
 
+    /**
+     * 改变用户角色
+     * 可以支持不执行SQL而只是返回SQL语句:$User->fetchSql(true)->add($data);
+     */
+    public function updateUser()
+    {
+        $userId = I('get.id');
+        if(IS_POST){
+            $data['user_id'] = I('post.user_id');
+            $data['role_id'] = I('post.role_id');
+            $model = M('AdminRoleUser');
+            if($model->where(array('user_id'=>$data['user_id']))->delete() == false){
+                return $this->error('用户角色修改失败', U('Rbac/updateUser',array('id'=>$userId)));
+            }
+            if($model->add($data) == false){
+                return $this->error('用户角色修改失败', U('Rbac/updateUser',array('id'=>$userId)));
+            }
+            return $this->success('用户角色修改成功', U('Rbac/userIndex'));
+        }
+        $this->role_list = M('AdminRole')->select();
+        $this->user = M('AdminUser')->where(array('id'=>$userId))->find();
+        $this->display();
+    }
+
     //删除用户
     public function delUser()
     {
@@ -209,7 +233,7 @@ class RbacController extends BaseController
         $db = M('AdminNode');
         $show = $db->where(array('id' => $id))->getField('menus');
         $menus = ($show == 1) ? 0 : 1;
-        $result = $db->where(array('id' => $id))->setField('menus',$menus);
+        $result = $db->where(array('id' => $id))->setField('menus', $menus);
         if ($result) {
             $response = ['status' => 200, 'errmsg' => '修改成功', 'dataList' => $result];
             return $this->ajaxReturn($response, 'JSON');
@@ -325,7 +349,7 @@ class RbacController extends BaseController
      */
     public function delRole()
     {
-        $role_id = I('post.role_id', '','int');
+        $role_id = I('post.role_id', '', 'int');
         $user = D('AdminRole');
         $result = $user->relation(true)->where(array('id' => $role_id))->delete();
         if ($result) {
