@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-09-02 00:14:56
+Date: 2016-09-07 21:47:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2268,9 +2268,8 @@ CREATE TABLE `tour_admin_access` (
 INSERT INTO `tour_admin_access` VALUES ('1', '221', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '220', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '219', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '229', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '220', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('2', '219', '2', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '228', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '218', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '217', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '216', '3', null);
@@ -2278,14 +2277,14 @@ INSERT INTO `tour_admin_access` VALUES ('1', '215', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '214', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '213', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '212', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '211', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('2', '219', '2', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '218', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '213', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '210', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '209', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '205', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '203', '2', null);
-INSERT INTO `tour_admin_access` VALUES ('2', '191', '3', null);
-INSERT INTO `tour_admin_access` VALUES ('1', '211', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '210', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '209', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '207', '3', null);
@@ -2297,6 +2296,7 @@ INSERT INTO `tour_admin_access` VALUES ('1', '190', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '189', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '188', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '187', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '232', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '192', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '179', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '178', '3', null);
@@ -2320,6 +2320,8 @@ INSERT INTO `tour_admin_access` VALUES ('2', '172', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '171', '2', null);
 INSERT INTO `tour_admin_access` VALUES ('2', '166', '1', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '166', '1', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '233', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '234', '3', null);
 
 -- ----------------------------
 -- Table structure for tour_admin_node
@@ -2341,7 +2343,7 @@ CREATE TABLE `tour_admin_node` (
   KEY `pid` (`pid`) USING BTREE,
   KEY `status` (`status`) USING BTREE,
   KEY `name` (`name`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=229 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_admin_node
@@ -2349,22 +2351,21 @@ CREATE TABLE `tour_admin_node` (
 INSERT INTO `tour_admin_node` VALUES ('166', 'Home', '云数据后台', '1', null, null, '0', '1', null, '2');
 INSERT INTO `tour_admin_node` VALUES ('219', 'System', '系统管理', '1', null, null, '166', '2', ' icon-cogs', '1');
 INSERT INTO `tour_admin_node` VALUES ('171', 'File', '文件管理', '1', null, null, '166', '2', ' icon-folder-open', '1');
-INSERT INTO `tour_admin_node` VALUES ('172', 'index', '列表', '0', null, null, '171', '3', null, '1');
-INSERT INTO `tour_admin_node` VALUES ('173', 'uploadFile', '文件上传', '1', null, null, '171', '3', null, '1');
-INSERT INTO `tour_admin_node` VALUES ('174', 'image', '图片', '1', null, null, '171', '3', null, '1');
-INSERT INTO `tour_admin_node` VALUES ('175', 'imageUpload', '图片上传', '1', null, null, '171', '3', null, '1');
-INSERT INTO `tour_admin_node` VALUES ('176', 'waterImage', '水印', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('172', 'index', '列表', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('173', 'uploadFile', '文件上传', '1', null, null, '171', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('174', 'image', 'Uploadify图片上传', '1', null, null, '171', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('175', 'imageUpload', '图片上传', '1', null, null, '171', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('176', 'waterImage', '水印', '0', null, null, '171', '3', null, '1');
 INSERT INTO `tour_admin_node` VALUES ('177', 'Category', '分类管理', '1', null, null, '166', '2', 'icon-bar-chart', '1');
-INSERT INTO `tour_admin_node` VALUES ('178', 'addCategory', '添加分类', '1', null, null, '177', '3', null, '1');
-INSERT INTO `tour_admin_node` VALUES ('179', 'checkCategory', '检查分类', '1', null, null, '177', '3', null, '1');
-INSERT INTO `tour_admin_node` VALUES ('223', 'createnode', 'createnode', '1', null, null, '166', '2', 'icon-calendar', '1');
-INSERT INTO `tour_admin_node` VALUES ('225', 'createnode1', 'createnode', '1', null, null, '223', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('178', 'addCategory', '添加分类', '1', null, null, '177', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('179', 'checkCategory', '检查分类', '1', null, null, '177', '3', null, '0');
+INSERT INTO `tour_admin_node` VALUES ('232', 'index', '分类列表', '1', null, null, '177', '3', 'icon-calendar', '1');
 INSERT INTO `tour_admin_node` VALUES ('187', 'Product', '商品管理', '1', null, null, '166', '2', 'icon-gift', '1');
 INSERT INTO `tour_admin_node` VALUES ('188', 'index', '添加', '1', null, null, '187', '3', null, '0');
 INSERT INTO `tour_admin_node` VALUES ('189', 'productList', '列表', '1', null, null, '187', '3', null, '1');
 INSERT INTO `tour_admin_node` VALUES ('190', 'UploadImage', '商品图片', '1', null, null, '187', '3', null, '1');
 INSERT INTO `tour_admin_node` VALUES ('191', 'delProduct', '删除商品', '1', null, null, '187', '3', null, '0');
-INSERT INTO `tour_admin_node` VALUES ('192', 'ajaxAdd', '添加分类', '1', null, null, '177', '3', null, '1');
+INSERT INTO `tour_admin_node` VALUES ('192', 'ajaxAdd', '添加分类', '1', null, null, '177', '3', null, '0');
 INSERT INTO `tour_admin_node` VALUES ('203', 'Rbac', '权限管理', '1', null, null, '166', '2', ' icon-group', '1');
 INSERT INTO `tour_admin_node` VALUES ('220', 'index', '网站详情', '1', null, null, '219', '3', 'icon-calendar', '1');
 INSERT INTO `tour_admin_node` VALUES ('221', 'edit', '网站设置', '1', null, null, '219', '3', 'icon-calendar', '0');
@@ -2381,7 +2382,9 @@ INSERT INTO `tour_admin_node` VALUES ('214', 'createAdminRole', '添加角色', 
 INSERT INTO `tour_admin_node` VALUES ('215', 'addNode', '权限分配', '1', null, null, '203', '3', null, '0');
 INSERT INTO `tour_admin_node` VALUES ('216', 'delRole', '删除角色', '1', null, null, '203', '3', null, '0');
 INSERT INTO `tour_admin_node` VALUES ('217', 'roleStatus', '角色状态', '1', null, null, '203', '3', null, '0');
-INSERT INTO `tour_admin_node` VALUES ('228', 'showMenus', '菜单栏显示', null, null, null, '203', '3', 'icon-calendar', '0');
+INSERT INTO `tour_admin_node` VALUES ('233', 'Api', '接口管理', '1', null, null, '166', '2', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('229', 'showMenus', '菜单显示', '1', null, null, '203', '3', 'icon-calendar', '0');
+INSERT INTO `tour_admin_node` VALUES ('234', 'commonApi', '公共接口', '1', null, null, '233', '3', 'icon-calendar', '1');
 
 -- ----------------------------
 -- Table structure for tour_admin_role
@@ -2433,7 +2436,6 @@ INSERT INTO `tour_admin_role_user` VALUES ('1', '112');
 INSERT INTO `tour_admin_role_user` VALUES ('2', '113');
 INSERT INTO `tour_admin_role_user` VALUES ('1', '114');
 INSERT INTO `tour_admin_role_user` VALUES ('1', '146');
-INSERT INTO `tour_admin_role_user` VALUES ('1', '163');
 INSERT INTO `tour_admin_role_user` VALUES ('2', '164');
 INSERT INTO `tour_admin_role_user` VALUES ('26', '155');
 INSERT INTO `tour_admin_role_user` VALUES ('1', '160');
@@ -2462,9 +2464,8 @@ INSERT INTO `tour_admin_user` VALUES ('86', 'admin', 'f85a836c2434e41638fe37b7ec
 INSERT INTO `tour_admin_user` VALUES ('146', 'Tinywan', 'e10adc3949ba59abbe56e057f20f883e', '1471057757', '115.193.175.224', '1', '0');
 INSERT INTO `tour_admin_user` VALUES ('155', 'admin123', '123123131', '1472051649', '127.0.0.1', '1', '0');
 INSERT INTO `tour_admin_user` VALUES ('160', 'admin6', 'e10adc3949ba59abbe56e057f20f883e', '1472057821', '127.0.0.1', '0', '140');
-INSERT INTO `tour_admin_user` VALUES ('161', 'admin888', 'e10adc3949ba59abbe56e057f20f883e', '1472744911', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('162', 'admin666', 'e10adc3949ba59abbe56e057f20f883e', '1472744669', '127.0.0.1', '1', '10');
-INSERT INTO `tour_admin_user` VALUES ('163', 'admin110', 'e10adc3949ba59abbe56e057f20f883e', '1472693697', '127.0.0.1', '0', '10');
+INSERT INTO `tour_admin_user` VALUES ('161', 'admin888', 'e10adc3949ba59abbe56e057f20f883e', '1473142709', '127.0.0.1', '1', '40');
+INSERT INTO `tour_admin_user` VALUES ('162', 'admin666', 'e10adc3949ba59abbe56e057f20f883e', '1472952683', '127.0.0.1', '1', '30');
 INSERT INTO `tour_admin_user` VALUES ('164', 'admin123789', 'e10adc3949ba59abbe56e057f20f883e', '1472733997', '127.0.0.1', '0', '10');
 INSERT INTO `tour_admin_user` VALUES ('165', '管理人', 'e10adc3949ba59abbe56e057f20f883e', '1472744696', '127.0.0.1', '1', '10');
 
@@ -2572,7 +2573,6 @@ INSERT INTO `tour_file` VALUES ('82', '55', 'Product/2016-08-21/mini_57b91e8f93f
 INSERT INTO `tour_file` VALUES ('83', '56', 'Product/2016-08-21/mini_57b9221439e69.jpg', 'Product/2016-08-21/mini_57b9221439e69.jpg');
 INSERT INTO `tour_file` VALUES ('84', '59', 'Product/2016-08-21/mini_57b92362b466c.jpg', 'Product/2016-08-21/mini_57b92362b466c.jpg');
 INSERT INTO `tour_file` VALUES ('85', '60', 'Product/2016-08-22/mini_57baff688d243.png', 'Product/2016-08-22/mini_57baff688d243.png');
-INSERT INTO `tour_file` VALUES ('86', '61', 'Product/2016-08-23/mini_57bc55471c333.jpg', 'Product/2016-08-23/mini_57bc55471c333.jpg');
 
 -- ----------------------------
 -- Table structure for tour_logs
@@ -2593,7 +2593,7 @@ CREATE TABLE `tour_logs` (
   `ipaddr` varchar(100) NOT NULL,
   `unique_flag` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_logs
@@ -2679,6 +2679,19 @@ INSERT INTO `tour_logs` VALUES ('104', '161', '2016-09-01 23:43:00', 'admin888',
 INSERT INTO `tour_logs` VALUES ('105', '162', '2016-09-01 23:44:29', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
 INSERT INTO `tour_logs` VALUES ('106', '162', '2016-09-01 23:44:56', 'admin666', 'admin666', 'Home', 'Rbac', 'createadminuser', '管理人--123456--26', '1', '给ID为:[26]的角色,新增用户:[管理人],密码为:[123456]其他参数Array', '127.0.0.1', 'system');
 INSERT INTO `tour_logs` VALUES ('107', '161', '2016-09-01 23:48:31', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('108', '162', '2016-09-02 10:36:09', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('109', '161', '2016-09-02 10:38:15', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('110', '162', '2016-09-02 10:39:40', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('111', '161', '2016-09-02 10:40:32', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('112', '161', '2016-09-02 11:02:18', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('113', '161', '2016-09-02 11:05:43', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('114', '161', '2016-09-02 11:08:58', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('115', '161', '2016-09-04 09:27:22', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('116', '161', '2016-09-04 09:27:51', 'admin888', 'admin888', 'Home', 'Rbac', 'delUser', '163', '1', '删除用户ID:163成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('117', '161', '2016-09-04 09:29:32', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('118', '161', '2016-09-04 09:30:06', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('119', '162', '2016-09-04 09:31:24', 'admin666', 'admin666', 'Home', 'Login', 'checkLogin', 'admin666--123456--on', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('120', '161', '2016-09-06 14:18:29', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
 
 -- ----------------------------
 -- Table structure for tour_product
@@ -2728,7 +2741,6 @@ INSERT INTO `tour_product` VALUES ('55', '商品名称1312321312', '', '10000', 
 INSERT INTO `tour_product` VALUES ('56', '商品名称1231232', '321312321', '10000', '100.00', '83.00', '', '0000-00-00 00:00:00', '1', '0', '1');
 INSERT INTO `tour_product` VALUES ('59', '商品名称1PHP获取目录和的方法通过魔术变量11', '123123', '10000', '100.00', '84.00', '', '2016-08-21 11:44:08', '1', '0', '2');
 INSERT INTO `tour_product` VALUES ('60', '商品名称34', '21312313123', '10000', '100.00', '85.00', '', '2016-08-22 21:34:45', '1', '0', '2');
-INSERT INTO `tour_product` VALUES ('61', '商品名称1213213213', '', '10000', '100.00', '86.00', '', '2016-08-23 21:53:18', '1', '0', '23');
 
 -- ----------------------------
 -- Table structure for tour_publish_table
