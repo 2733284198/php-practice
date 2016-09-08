@@ -32,37 +32,54 @@
         <div class="page-content">
 
             <div class="row">
-                <form action="{:U('Home/Rbac/createadminuser')}" method="post"  class="form-horizontal" id="createfrom">
-                    <div class="widget-content nopadding">
-                        <form action="#" method="get" class="form-horizontal">
-                            <div class="control-group">
-                                <label class="control-label">用户名:</label>
-                                <div class="controls">
-                                    <input type="text" class="span2 username" placeholder="用户名" name="username" />
-                                </div>
+                <div class="col-sm-12">
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h4 class="smaller">
+                                {$user['username']}
+                                <small>在进行角色身份的修改</small>
+                            </h4>
+                        </div>
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <form action="{:U('Home/Rbac/createadminuser')}" method="post"  class="form-horizontal">
+                                    <div class="widget-content nopadding">
+                                        <div class="form-group">
+                                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 用户名 </label>
+                                            <div class="col-sm-11">
+                                                <input type="text" id="form-field-1" placeholder="Username" name="username" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 密&nbsp;&nbsp;&nbsp;&nbsp;码: </label>
+                                            <div class="col-sm-11">
+                                                <input type="text" id="form-field-2" placeholder="密码" name="password" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label">选择用户组:</label>
+                                            <div class="controls">
+                                                <select name="role_id" class="form-control" id="form-field-select-2" multiple="multiple" >
+                                                    <volist name="role_list" id="vo">
+                                                        <option value="{$vo.id}">{$vo.name}</option>
+                                                    </volist>
+                                                </select>
+                                            </div>
+                                        </div>
+                                            <hr/>
+                                            <div>
+                                                <button type="submit" class="btn btn-success btn-block">确认</button>
+                                            </div>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="control-group">
-                                <label class="control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
-                                <div class="controls">
-                                    <input type="password"  class="span2" placeholder="密码" name="password"  />
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">选择用户组:</label>
-                                <div class="controls">
-                                    <select name="role_id" class="span2" >
-                                        <volist name="role_list" id="vo">
-                                            <option value="{$vo.id}">{$vo.name}</option>
-                                        </volist>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-success">确认</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </form>
+                </div><!-- /span -->
+
             </div>
         </div><!-- /.page-content -->
     </div><!-- /.main-content -->
