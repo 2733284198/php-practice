@@ -39,6 +39,7 @@ class Cx extends TagLib {
         'assign'    =>  array('attr'=>'name,value','close'=>0),
         'define'    =>  array('attr'=>'name,value','close'=>0),
         'for'       =>  array('attr'=>'start,end,name,comparison,step', 'level'=>3),
+        'category'  =>  array('attr'=>'parentid',level=>3)
         );
 
     /**
