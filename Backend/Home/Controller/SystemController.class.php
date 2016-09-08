@@ -8,6 +8,7 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
+use Think\Page;
 
 class SystemController extends BaseController
 {
@@ -22,7 +23,7 @@ class SystemController extends BaseController
      * [2] var_export() var_export必须返回合法的php代码， 也就是说，var_export返回的代码，
      *     可以直接当作php代码赋值个一个变量
      */
-    Public function edit()
+    public function edit()
     {
 
         $file = CONF_PATH.'db.php';
@@ -33,7 +34,27 @@ class SystemController extends BaseController
             return $this->success('系统信息修改成功');
         }
         return $this->success('系统信息修改失败');
+    }
 
+    /**
+     * 记录管理员操作的日志
+     */
+    public function actionLog(){
+        $model = M('Logs');
+        $count = $model->count();
+        $Page = new Page($count, 18);
+        $Page->setConfig('header', '共%TOTAL_ROW%条');
+        $Page->setConfig('first', '首页');
+        $Page->setConfig('last', '共%TOTAL_PAGE%页');
+        $Page->setConfig('prev', '上一页');
+        $Page->setConfig('next', '下一页');
+        $Page->setConfig('link', 'indexpagenumb');
+        $Page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%');
+        $show = $Page->show();
+        $model = $model->order('addtime desc')->limit($Page->firstRow . ',' . $Page->listRows)->select();
+        $this->logs = $model;
+        $this->show = $show;
+        $this->display();
     }
 
 

@@ -11,23 +11,30 @@ use Think\Page;
 
 class RbacController extends BaseController
 {
+    //初始化操作
+//    public function _initialize()
+//    {
+//        if (!IS_AJAX) $this->error('你访问的页面不存在，请稍后再试');
+//    }
+
     public function userIndex()
     {
         if (IS_POST) {
             $condition['username'] = array('like', "%" . trim(I('keybord')) . "%");
             $model = D('AdminUser');
             $count = $model->where($condition)->count();
-            $Page = new Page($count, 10);
+            $Page = new Page($count, 3);
             $Page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%');
             $show = $Page->show();
+            //select search
             $list = $model->where($condition)->field('password', true)->relation(true)->limit($Page->firstRow . ',' . $Page->listRows)->select();
             $this->show = $show;
             $this->list = $list;
-            $this->display('Rbac/userIndex');
+            $this->display('AdminUser/index');
         } else {
             $model = D('AdminUser');
             $count = $model->count();
-            $Page = new Page($count, 20);
+            $Page = new Page($count, 6);
             $Page->setConfig('header', '共%TOTAL_ROW%条');
             $Page->setConfig('first', '首页');
             $Page->setConfig('last', '共%TOTAL_PAGE%页');
@@ -109,20 +116,20 @@ class RbacController extends BaseController
     public function updateUser()
     {
         $userId = I('get.id');
-        if(IS_POST){
+        if (IS_POST) {
             $data['user_id'] = I('post.user_id');
             $data['role_id'] = I('post.role_id');
             $model = M('AdminRoleUser');
-            if($model->where(array('user_id'=>$data['user_id']))->delete() == false){
-                return $this->error('用户角色修改失败', U('Rbac/updateUser',array('id'=>$userId)));
+            if ($model->where(array('user_id' => $data['user_id']))->delete() == false) {
+                return $this->error('用户角色修改失败', U('Rbac/updateUser', array('id' => $userId)));
             }
-            if($model->add($data) == false){
-                return $this->error('用户角色修改失败', U('Rbac/updateUser',array('id'=>$userId)));
+            if ($model->add($data) == false) {
+                return $this->error('用户角色修改失败', U('Rbac/updateUser', array('id' => $userId)));
             }
             return $this->success('用户角色修改成功', U('Rbac/userIndex'));
         }
         $this->role_list = M('AdminRole')->select();
-        $this->user = M('AdminUser')->join('tour_admin_role_user ON tour_admin_role_user.user_id = tour_admin_user.id')->where(array('id'=>$userId))->field('user_id,username,role_id')->find();
+        $this->user = M('AdminUser')->join('tour_admin_role_user ON tour_admin_role_user.user_id = tour_admin_user.id')->where(array('id' => $userId))->field('user_id,username,role_id')->find();
         $this->display();
     }
 
@@ -185,6 +192,8 @@ class RbacController extends BaseController
             if (!$db->add()) {
                 return $this->error("权限添加失败", U('Rbac/nodeIndex'));
             }
+            $desc = '添加新节点:' .implode('|',$_POST);
+            addOperationLog($desc);
             return $this->success('权限添加成功', U('Rbac/nodeIndex'));
         }
         $node = $db->where('level !=3')->order('sort')->select();
@@ -199,6 +208,8 @@ class RbacController extends BaseController
     {
         $result = M('AdminNode')->where(array('id' => I('post.id', '', 'int')))->delete();
         if ($result) {
+            $desc = '删除节点:' . I('post.id', '', 'int') ;
+            addOperationLog($desc);
             $response = ['status' => 200, 'errmsg' => '删除成功', 'dataList' => $result];
             return $this->ajaxReturn($response, 'JSON');
         }
@@ -276,6 +287,8 @@ class RbacController extends BaseController
                 if (!$result) return $this->error("角色添加失败", U('Rbac/createpartent'));
                 return $this->success('角色添加成功', U('Rbac/roleIndex'));
             }
+            $desc = '创建角色:' . $name ;
+            addOperationLog($desc);
             return $this->success('角色添加成功', U('Rbac/roleIndex'));
         }
         $this->display();
@@ -306,17 +319,17 @@ class RbacController extends BaseController
                 $data = array();
                 foreach ($actions as $value) {
                     $tmp = explode('_', $value);
+                    $nodeLog[] = $tmp[0];
                     $data[] = array(
                         'role_id' => $rid,
                         'node_id' => $tmp[0],
                         'level' => $tmp[1]
                     );
                 }
-                if (!($access->addAll($data))) {
-                    $access->rollback();
-                } else {
-                    $access->commit();
-                }
+                if (!($access->addAll($data))) $access->rollback();
+                $access->commit();
+                $desc = '给角色ID为:' .$data[0]['role_id'].'：设置节点ID：'.implode('|',$nodeLog);
+                addOperationLog($desc);
                 return $this->success('权限设置成功', U('Rbac/addNode', array('rid' => $rid)));
             } catch (\Exception $e) {
                 $access->rollback();
@@ -353,9 +366,13 @@ class RbacController extends BaseController
         $user = D('AdminRole');
         $result = $user->relation(true)->where(array('id' => $role_id))->delete();
         if ($result) {
+            $desc = '删除角色ID:' . $role_id . '成功';
+            addOperationLog($desc);
             $response = ['status' => 200, 'errmsg' => '修改成功', 'dataList' => $result];
             return $this->ajaxReturn($response, 'JSON');
         }
+        $desc = '删除角色ID:' . $role_id . '失败';
+        addOperationLog($desc);
         $response = ['status' => 500, 'errmsg' => '修改失败', 'dataList' => $result];
         return $this->ajaxReturn($response, 'JSON');
     }

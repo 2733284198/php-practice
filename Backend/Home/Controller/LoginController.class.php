@@ -63,12 +63,9 @@ class LoginController extends Controller
         $fields = array('id', 'password', 'username', 'status', 'expire', 'logintime'); // 之查找需要的字段
         $result = $user->where($where)->field($fields)->find();
 
+        if (!$result || $password != $result['password']) return $this->error('账号或密码错误',U('Home/Login/index'));
 
-        if (!$result || $password != $result['password']) {
-            return $this->error('账号或密码错误');
-        }
-
-        if ($result['status'] == 0) return $this->error('账号不存在或者已经被禁用');
+        if ($result['status'] == 0) return $this->error('该用户被锁定，暂时不可登录',U('Home/Login/index'));
 
         // 是否记住我的登录,设置一个Cookie，写在客户端
         if (isset($_POST['remember'])) {
@@ -100,11 +97,11 @@ class LoginController extends Controller
             session('uid', $result['id']);
             //RBAC 开始,用户认证SESSION标记 ，默认为"authId"
             session(C('USER_AUTH_KEY'), $result['id']);
-            // 是否是超级管理员
-            if ($_SESSION['username'] == C('RBAC_SUPERADMIN')) {
-                session(C('ADMIN_AUTH_KEY'), true);
-            }
-            //用于检测用户权限的方法,并保存到Session中
+
+            //如果为超级管理员，则无需验证
+            if ($_SESSION['username'] == C('RBAC_SUPERADMIN')) session(C('ADMIN_AUTH_KEY'), true);
+
+            //用于检测用户权限的方法,并保存到Session中,读取用户权限
             Rbac::saveAccessList($result['id']);
             //添加操作日志中
             $desc = '登陆成功';

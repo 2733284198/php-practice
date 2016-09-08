@@ -70,17 +70,21 @@
                                     <if condition="$vo['access']">checked='checked'</if>>
 
                                     <if condition="$vo.level eq 1">
-                                        <span style="font-weight: bold; color: red;">【项目】</span>
+                                        <span style="font-weight: bold; color: indianred;">【项目】</span>
+                                        <span style="font-weight: bolder;font-size: 14px;">{$vo.title}</span>
                                         <elseif condition="$vo.level eq 2"/>
-                                        <span style="font-weight: bold; color: green;">【模块】</span>
+                                        <span style="font-weight: bolder;font-size: 14px; color: purple;">【模块】</span>
+                                        <span style="font-weight: bolder;font-size: 14px;">{$vo.title}</span>
+                                        <else />
+                                        {$vo.title}
                                     </if>
-                                    {$vo.title}
+
                                     </p>
                                 </volist>
                             </div>
                             <div>
                                 <input type="hidden" name="rid" value="{$rid}" />
-                                <button type="submit" class="btn btn-success btn-block">确认</button>
+                                <button type="submit" class="btn btn-primary btn-block">确认</button>
                             </div>
                         </div>
                     </div>
@@ -112,7 +116,7 @@
 
                     if($(this).prop('checked')){
                         //追加到上级（项目层），思路(相反):再次获取模块的pid
-                        $ppid = $('input[id = '+$id+']').prop('pid');
+                        $ppid = $('input[id = '+$id+']').attr('pid');
                         $('input[id = '+$ppid+']').prop('checked',true);
                     }
                 }
@@ -124,7 +128,7 @@
                         $('input[id='+$pid+']').prop('checked',true);
 
                         //追加到上上级（项目层），思路(相反):再次获取模块的pid
-                        $ppid = $('input[id = '+$pid+']').prop('pid');
+                        $ppid = $('input[id = '+$pid+']').attr('pid');
                         $('input[id = '+$ppid+']').prop('checked',true);
                     }
 

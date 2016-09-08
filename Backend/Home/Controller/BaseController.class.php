@@ -34,9 +34,9 @@ class BaseController extends Controller
         // 如果不在公共模块之中，同时开启权限验证的话，则开始认证过程
         if(C('USER_AUTH_ON') && !$Public)
         {
-            if(!Rbac::AccessDecision()) //通过accessDecision获取权限信息
+            if(!Rbac::AccessDecision()) //通过accessDecision获取权限信息,true:表示有操作权限,false:无操作权限
             {
-                return $this->error("您没有操作权限");  //没有获取到权限信息时需要执行的代码
+                return $this->error("你没有对应的权限");  //没有获取到权限信息时需要执行的代码
             }
         }
         /***************************************导航栏菜单显示****************************************************/
