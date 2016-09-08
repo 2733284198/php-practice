@@ -55,26 +55,6 @@
                         </span><!-- /span -->
                     </h3>
 
-                    <!--<form action="{:U('Home/Rbac/addNode')}" method="post"  class="form-horizontal">-->
-                    <!--<div class="control-group">-->
-                        <!--<label class="control-label bolder blue">权限分类列表</label>-->
-
-                        <!--<volist name='node_list' id='vo'>-->
-                        <!--<div class="checkbox">-->
-                            <!--<label style="margin-left:{$vo['level']*30}px;">-->
-                                <!--<input type="checkbox" class="ace" id="{$vo['id']}" name="actions[]" value="{$vo.id}_{$vo.level}" pid='{$vo.pid}' level="{$vo.level}"-->
-                                <!--<if condition="$vo['access']">checked='checked'</if> />-->
-                                <!--<span class="lbl"> {$vo['title']}</span>-->
-                            <!--</label>-->
-                        <!--</div>-->
-                        <!--</volist>-->
-                        <!--<div class="form-actions">-->
-                            <!--<input type="hidden" name="rid" value="{$rid}" />-->
-                            <!--<button type="submit" class="btn btn-success">确认</button>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-                    <!--</form>-->
                     <form action="{:U('Home/Rbac/addNode')}" method="post"  class="form-horizontal">
                     <div class="col-sm-12" style="font-size: 14px;">
                         <div class="widget-box">
@@ -106,8 +86,8 @@
                     </div>
                     </form>
 
-                </div><!-- /span -->
-            </div><!-- /row -->
+                </div>
+            </div>
 
         </div><!-- /.page-content -->
     </div><!-- /.main-content -->
@@ -115,40 +95,39 @@
     <script type="text/javascript">
         $(function(){
             $("input:checkbox").click(function(){
-                var $object = $(this);
-                var $level = '';
-                $level = $object.attr('level'); //获取当前按钮框值。1（表示项目），2（模块），3（操作）
+
+                $level = $(this).attr('level'); //获取当前按钮框值。1（表示项目），2（模块），3（操作）
                 //如果选择 level=1 的话，则会选择它一下的所有checkbox
                 if($level == 1){
                     $str = '_';
                     $inputs = $('input[value*='+$str+']');  //这里是模糊匹配
                     console.log($inputs);
-                    $object.attr('checked')?$inputs.attr('checked',true):$inputs.removeAttr('checked');
+                    $(this).prop('checked')?$inputs.prop('checked',true):$inputs.removeAttr('checked');
                 }
                 // 如果选择模块的话，则它下面的方法也一起会被选定，思路：就是模块下面操作的的“pid”都和模块的“id”是相等的
                 else if($level == 2){
                     $id = $(this).attr('id');
                     $inputs = $('input[pid = '+$id+']');
-                    console.log($inputs);
-                    $(this).attr('checked')?$inputs.attr('checked',true):$inputs.removeAttr('checked');
+                    $(this).prop('checked')?$inputs.prop('checked',true):$inputs.removeAttr('checked');
 
-                    if($(this).attr('checked')){
+                    if($(this).prop('checked')){
                         //追加到上级（项目层），思路(相反):再次获取模块的pid
-                        $ppid = $('input[id = '+$id+']').attr('pid');
-                        $('input[id = '+$ppid+']').attr('checked',true);
+                        $ppid = $('input[id = '+$id+']').prop('pid');
+                        $('input[id = '+$ppid+']').prop('checked',true);
                     }
                 }
                 //思路：如果当前的操作被选中的话，则获取它的pid，并且设置id(上级模块) = （操作）pid 模块也会被选中
                 else if($level == 3){
                     //判断当前按钮是否被选中
-                    if($(this).attr('checked')){
+                    if($(this).prop('checked')){
                         $pid = $(this).attr('pid');
-                        $('input[id='+$pid+']').attr('checked',true);
+                        $('input[id='+$pid+']').prop('checked',true);
 
                         //追加到上上级（项目层），思路(相反):再次获取模块的pid
-                        $ppid = $('input[id = '+$pid+']').attr('pid');
-                        $('input[id = '+$ppid+']').attr('checked',true);
+                        $ppid = $('input[id = '+$pid+']').prop('pid');
+                        $('input[id = '+$ppid+']').prop('checked',true);
                     }
+
                 }
             });
         });
