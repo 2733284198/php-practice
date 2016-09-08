@@ -122,7 +122,7 @@ class RbacController extends BaseController
             return $this->success('用户角色修改成功', U('Rbac/userIndex'));
         }
         $this->role_list = M('AdminRole')->select();
-        $this->user = M('AdminUser')->where(array('id'=>$userId))->find();
+        $this->user = M('AdminUser')->join('tour_admin_role_user ON tour_admin_role_user.user_id = tour_admin_user.id')->where(array('id'=>$userId))->field('user_id,username,role_id')->find();
         $this->display();
     }
 

@@ -32,13 +32,13 @@ class BaseController extends Controller
         /***************************************权限认证****************************************************/
         $Public = in_array(MODULE_NAME,explode(',',C('NOT_AUTH_MODULE'))) || in_array(ACTION_NAME,explode(',',C('NOT_AUTH_ACTION')));
         // 如果不在公共模块之中，同时开启权限验证的话，则开始认证过程
-//        if(C('USER_AUTH_ON') && !$Public)
-//        {
-//            if(!Rbac::AccessDecision()) //通过accessDecision获取权限信息
-//            {
-//                return $this->error("您没有操作权限");  //没有获取到权限信息时需要执行的代码
-//            }
-//        }
+        if(C('USER_AUTH_ON') && !$Public)
+        {
+            if(!Rbac::AccessDecision()) //通过accessDecision获取权限信息
+            {
+                return $this->error("您没有操作权限");  //没有获取到权限信息时需要执行的代码
+            }
+        }
         /***************************************导航栏菜单显示****************************************************/
         /*
         *   思路：
