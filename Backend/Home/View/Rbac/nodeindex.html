@@ -1,6 +1,13 @@
 <extend name="Common:common"/>
 <block name="main">
-
+    <style type="text/css">
+        .open-node{
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            line-height: 16px;
+        }
+    </style>
     <div class="main-content">
         <div class="breadcrumbs" id="breadcrumbs">
             <script type="text/javascript">
@@ -32,9 +39,11 @@
         <div class="page-content">
 
             <div class="row">
+
                 <table class="table table-bordered">
                     <thead>
                     <tr>
+                        <th style="font-size: 14px;">展开</th>
                         <th style="font-size: 14px;">#ID</th>
                         <th style="font-size: 14px;">中文名称</th>
                         <th style="font-size: 14px;">英文名称</th>
@@ -48,7 +57,8 @@
                     <tbody>
 
                     <volist name='nodelist' id='vo'>
-                        <tr style="margin-top: 30px; margin-left: 50px;">
+                        <tr style="margin-top: 30px; margin-left: 50px;" level="{$vo.level}" id="{$vo.id}" pid="{$vo.pid}">
+                            <td width="5%" align="center"><span class="open-node"><i class="icon-check"></i></span></td>
                             <td>{$vo.id}</td>
                             <td>
                                 <p style="text-indent: {$vo['level']*20}px;">{$vo.title}</p>
@@ -90,6 +100,14 @@
 
     <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
     <script type="text/javascript">
+        $(function(){
+            $('tr[level=3]').hide();
+            $('.open-node').click(function(){
+                var index = $(this).parents('tr').prop('id');
+                $(this).html("<i class='icon-check-empty'></i>");
+                $('tr[pid='+index+']').slideToggle();
+            });
+        });
         var $URL = "__APP__/Home/Rbac/";
         $(function(){
             //delete AdminUser
