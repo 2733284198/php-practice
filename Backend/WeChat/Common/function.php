@@ -21,8 +21,12 @@ function getAccessToken()
     return $access_token;
 }
 
+/**
+ * 判断是否是微信
+ * @return bool
+ */
 function isWeiXin() {
-    if (preg_match("/MicroMessenger/i", $_SERVER['HTTP_USER_AGENT']) !== false) {
+    if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
         return true;
     } return false;
 }
