@@ -92,8 +92,7 @@ class IndexController extends BaseController
      */
     public function userAgent()
     {
-        var_dump(C('RBAC_SUPERADMIN'));
-        p($_SESSION);
+        p(UserAgent::IS_WECHAT());
     }
 
     public function test(){
