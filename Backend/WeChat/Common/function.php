@@ -20,3 +20,9 @@ function getAccessToken()
     $access_token = $result['access_token'];
     return $access_token;
 }
+
+function isWeiXin() {
+    if (preg_match("/MicroMessenger/i", $_SERVER['HTTP_USER_AGENT']) !== false) {
+        return true;
+    } return false;
+}

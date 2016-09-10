@@ -13,8 +13,7 @@ class IndexController extends Controller
      */
     public function index($redirect_url = "http://wechatu.xd107.com/")
     {
-        $isWeixin = UserAgent::IS_WECHAT();
-        if (!$isWeixin) return $this->error("提示", "请在微信中打开链接");
+        if (!isWeiXin()) return $this->error("提示", "请在微信中打开链接");
 
         /*高级授权 snsapi_userinfo*/
         $redirect_uri = urlencode('http://wechatu.xd107.com/home/WeiXin/getUserInfo');
