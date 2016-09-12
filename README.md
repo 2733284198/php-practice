@@ -2,6 +2,10 @@
 
 ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架。
 
+## 详细说明文档请见个人博客
+
+博客园地址：http://www.cnblogs.com/tinywan/
+
 ## 全面的WEB开发特性支持
 
 最新的以ThinkPHP为WEB应用开发提供功能有以下，包括：
