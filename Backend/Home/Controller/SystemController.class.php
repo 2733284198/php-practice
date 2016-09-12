@@ -27,7 +27,10 @@ class SystemController extends BaseController
     {
 
         $file = CONF_PATH.'db.php';
+        p(file_get_contents($file));
         $config = array_merge(include $file, array_change_key_case($_POST, CASE_UPPER));
+        p($config);
+        die;
         // 以下将一个数组转换成一个字符串
         $str = "<?php\r\n return " . var_export($config, true) . ";\r\n?>";
         if (file_put_contents($file, $str)) {

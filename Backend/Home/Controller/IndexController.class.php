@@ -11,6 +11,8 @@ class IndexController extends BaseController
 {
     public function index()
     {
+
+        $user = M('AdminUser')->select();
         $where['username'] = session('username');
         $user = M('AdminUser')->where($where)->field(['username', 'logintime', 'loginip', 'expire'])->find();
         $this->user = $user;
