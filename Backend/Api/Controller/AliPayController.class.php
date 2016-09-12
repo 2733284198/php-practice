@@ -15,7 +15,7 @@ class AliPayController extends Controller
 
     public function index()
     {
-        $map['id'] = 2;
+        $map['id'] = 3;
         $info = M('alipay')->where($map)->find();
         $this->info = $info;
         $this->display();
