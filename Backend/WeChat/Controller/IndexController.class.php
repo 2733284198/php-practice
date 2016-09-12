@@ -3,6 +3,7 @@ namespace WeChat\Controller;
 
 use Org\Util\UserAgent;
 use Think\Controller;
+use Think\Log;
 
 class IndexController extends Controller
 {
@@ -112,7 +113,7 @@ class IndexController extends Controller
         $CODE = $options->code;
         $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$APPID."&secret=".$SECRET."&code=".$CODE."&grant_type=authorization_code";
 
-        Logger::debug("Wechat:getOAuth2AccessToken => " . $url);
+        Log::debug("Wechat:getOAuth2AccessToken => " . $url);
 
         $raw = file_get_contents($url);
 
