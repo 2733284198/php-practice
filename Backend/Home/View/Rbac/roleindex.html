@@ -24,6 +24,17 @@
             <!-- .breadcrumb -->
 
             <div class="nav-search" id="nav-search">
+                <if condition='C("USER_AUTH_ON")'>
+                    <label>
+                        <input name="switch-field-1" class="ace ace-switch ace-switch-5 switch-auth" value='0' checked="checked" type="checkbox" />
+                        <span class="lbl"></span>
+                    </label>
+                <else />
+                    <label>
+                        <input name="switch-field-1" class="ace ace-switch ace-switch-5 switch-auth" value='1'  type="checkbox" />
+                        <span class="lbl"></span>
+                    </label>
+                </if>
                 <a href="{:U('Home/Rbac/createadminrole')}" class="btn btn-xs btn-primary">创建角色</a>
             </div>
             <!-- #nav-search -->
@@ -72,6 +83,7 @@
     <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
     <script type="text/javascript">
         var $URL = "__APP__/Home/Rbac/";
+        var $URL2 = "__APP__/Home/System/";
         jQuery(function($){
             //delete AdminUser
             $(".del").bind('click',function(){
@@ -109,6 +121,29 @@
                     {
                         alert(response.info);
                     }else if(response.status == 200)
+                    {
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else{
+                        alert(response.errmsg);
+                    }
+                };
+                if($msg) $.post($url,$data,success,'json');
+            });
+
+            //auth set
+            $(".switch-auth").bind('click',function(){
+                var $status = $(this).attr('value');
+                var $content = '确认开启权限吗？';
+                if($status == 1){
+                    $content = '确认关闭权限吗？';
+                }
+                var $msg = confirm($content);
+                var $url = $URL2+'setAuth';
+                var $data = {'user_auth_on':$status};
+                var success = function(response){
+
+                    if(response.status == 200)
                     {
                         alert(response.errmsg);
                         window.location.reload();

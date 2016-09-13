@@ -1,7 +1,7 @@
 <?php
  return array (
   'DB_TYPE' => 'mysql',
-  'DB_HOST' => 'localhost',
+  'DB_HOST' => '127.0.0.1',
   'DB_NAME' => 'tp5',
   'DB_USER' => 'root',
   'DB_PWD' => '',
@@ -16,7 +16,7 @@
   'DB_MASTER_NUM' => 1,
   'DB_SLAVE_NO' => '',
   'WEBNAME' => '云系统管理平台',
-  'KEYWORDS' => '云系统管理',
+  'KEYWORDS' => '云系统管理12312',
   'DISCRIPTION' => '云系统管理平台社区',
   'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
   'RECORD' => '京ICP备10027771号-110',
