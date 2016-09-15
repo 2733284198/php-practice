@@ -7,13 +7,21 @@ class IndexController extends Controller
 {
     public function index()
     {
-        echo 'Vendor';
+        // 获取到配置项
+        $config = include './plugin/plugin' . substr($_GET['change'], -1) . '/config.php';
+        // 如果是开启 那就关闭 如果是关闭 则开启
+        $config['status'] = $config['status'] == 1 ? 0 : 1;
+        // 将更改后的配置项写入到文件中
+        $str = "<?php \r\n return " . var_export($config, true) . ';';
+        file_put_contents('./plugin/' . $_GET['change'] . '/config.php', $str);
+        header('Location:./');
     }
 
     /**
      * 生成二维码
      */
-    public function qrcode(){
+    public function qrcode()
+    {
         $url = 'http://www.cnblogs.com/tinywan/';
         qrcode($url);
     }
@@ -21,7 +29,8 @@ class IndexController extends Controller
     /**
      * 生成pdf
      */
-    public function pdf(){
+    public function pdf()
+    {
         $content = $_GET['content'];
         pdf($content);
     }

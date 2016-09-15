@@ -8,7 +8,6 @@ header("Content-type:text/html;charset=utf-8");
  */
 function qrcode($url,$size=4){
     Vendor('Phpqrcode.phpqrcode');
-    // 如果没有http 则添加
     if (strpos($url, 'http')===false) {
         $url='http://'.$url;
     }

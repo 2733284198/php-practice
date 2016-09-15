@@ -26,11 +26,8 @@ class SystemController extends BaseController
     public function edit()
     {
 
-        $file = CONF_PATH.'db.php';
-        p(file_get_contents($file));
+        $file = CONF_PATH . 'db.php';
         $config = array_merge(include $file, array_change_key_case($_POST, CASE_UPPER));
-        p($config);
-        die;
         // 以下将一个数组转换成一个字符串
         $str = "<?php\r\n return " . var_export($config, true) . ";\r\n?>";
         if (file_put_contents($file, $str)) {
@@ -42,7 +39,8 @@ class SystemController extends BaseController
     /**
      * 记录管理员操作的日志
      */
-    public function actionLog(){
+    public function actionLog()
+    {
         $model = M('Logs');
         $count = $model->count();
         $Page = new Page($count, 18);
@@ -59,6 +57,47 @@ class SystemController extends BaseController
         $this->show = $show;
         $this->display();
     }
+
+    /**
+     * 数据库配置
+     */
+    public function dataBase()
+    {
+        if (IS_POST) {
+            $file = CONF_PATH . 'db.php';
+            $config = array_merge(include $file, array_change_key_case($_POST, CASE_UPPER));
+            // 以下将一个数组转换成一个字符串
+            $str = "<?php\r\n return " . var_export($config, true) . ";\r\n?>";
+            if (file_put_contents($file, $str)) {
+                $response = ['status' => 200, 'errmsg' => '权限改变成功', 'dataList' => 0];
+                return $this->ajaxReturn($response, 'JSON');
+            }
+            $response = ['status' => 500, 'errmsg' => '权限改变失败', 'dataList' => 1];
+            return $this->ajaxReturn($response, 'JSON');
+        }
+        $this->display();
+    }
+
+    /**
+     * 数据库配置
+     */
+    public function setAuth()
+    {
+        if (IS_POST) {
+            $file = CONF_PATH . 'rbac.php';
+            $config = array_merge(include $file, array_change_key_case($_POST, CASE_UPPER));
+            // 以下将一个数组转换成一个字符串
+            $str = "<?php\r\n return " . var_export($config, true) . ";\r\n?>";
+            if (file_put_contents($file, $str)) {
+                $response = ['status' => 200, 'errmsg' => '权限改变成功', 'dataList' => 0];
+                return $this->ajaxReturn($response, 'JSON');
+            }
+            $response = ['status' => 500, 'errmsg' => '权限改变失败', 'dataList' => 1];
+            return $this->ajaxReturn($response, 'JSON');
+        }
+        $this->display();
+    }
+
 
 
 }

@@ -1,0 +1,75 @@
+
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <form action="{:U('System/dataBase')}" method='post'>
+                        <table class="table table-border table-bordered table-bg mt-20">
+                            <tr>
+                                <th colspan='2'>数据库信息配置列表</th>
+                            </tr>
+                            <tr>
+                                <td width='20%' align='right'>类型：</td>
+                                <td>
+                                    <input type="text" name='DB_TYPE' value='{$Think.config.DB_TYPE}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='right'>主机地址：</td>
+                                <td>
+                                    <input type="text" name='DB_HOST' value='{$Think.config.DB_HOST}' class='len400'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='right'>数据库名：</td>
+                                <td>
+                                    <input type="text" name='DB_NAME' value='{$Think.config.DB_NAME}' class='len400'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='right'>用户名</td>
+                                <td>
+                                    <input type="text" name='DB_USER' value='{$Think.config.DB_USER}' class='len400'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='right'>密码</td>
+                                <td>
+                                    <input type="text" name='DB_PWD' value='{$Think.config.DB_PWD}' class='len400'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='right'>端口：</td>
+                                <td>
+                                    <input type="text" name='DB_PORT' value='{$Think.config.DB_PORT}' class='len400'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='right'>表前缀：</td>
+                                <td>
+                                    <input type="text" name='DB_PREFIX' value='{$Think.config.DB_PREFIX}' class='len400'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2' align='center' height='60'>
+                                    <input type="submit" value='保存修改' class='submit'/>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <!-- PAGE CONTENT ENDS -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.main-content -->
+
+</block>

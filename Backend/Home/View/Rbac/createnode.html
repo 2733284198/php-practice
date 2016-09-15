@@ -17,9 +17,9 @@
                 </li>
 
                 <li>
-                    <a href="#">权限管理</a>
+                    <a href="#">系统基本信息</a>
                 </li>
-                <li class="active">权限列表</li>
+                <li class="active">系统设置</li>
             </ul>
             <!-- .breadcrumb -->
 
@@ -32,81 +32,146 @@
         <div class="page-content">
 
             <div class="row">
-                <form action="{:U('Rbac/createnode')}" method="post" class="form-horizontal" id="createfrom">
-                    <div class="widget-content nopadding">
-                        <div class="control-group">
-                            <label class="control-label">英文名称:</label>
-
-                            <div class="controls">
-                                <input type="text" class="span2" placeholder="英文名称" name="name" style="width: 140px;"/>
-                            </div>
+                <div class="col-sm-12">
+                    <div class="widget-box">
+                        <div class="widget-header">
+                            <h4 class="smaller">
+                                {$user['username']}
+                                <small>在进行角色身份的修改</small>
+                            </h4>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label">显示中文名称:</label>
 
-                            <div class="controls">
-                                <input type="text" class="span2" placeholder="中文名称" name="title" style="width: 140px;"/>
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <form action="{:U('Rbac/createnode')}" method="post" class="form-horizontal" id="createfrom">
+                                    <div class="widget-content nopadding">
+                                        <div class="control-group">
+                                            <label class="control-label">英文名称:</label>
+
+                                            <div class="controls">
+                                                <input type="text" class="span8" placeholder="英文名称" name="name" style="width: 140px;"/>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">显示中文名称:</label>
+
+                                            <div class="controls">
+                                                <input type="text" class="span12" placeholder="中文名称" name="title" style="width: 140px;"/>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">图标类型:</label>
+
+                                            <div class="controls">
+                                                <select name="class" class="span2">
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                    <option value="icon-calendar">日历</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">权限类型:</label>
+
+                                            <div class="controls">
+                                                <select name="level" class="span12">
+                                                    <option value="1">项目</option>
+                                                    <option value="2">模块</option>
+                                                    <option value="3">操作</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">父节点:</label>
+
+                                            <div class="controls">
+                                                <select name="pid" class="span2">
+                                                    <option value="0">根节点</option>
+                                                    <volist name="nodelist" id="vo">
+
+                                                        <if condition="$vo.level eq 1">
+                                                            <option value="{$vo.id}">{$vo.title}</option>
+                                                            <else/>
+                                                            <option value="{$vo.id}">&nbsp;&nbsp;|{$vo.title}</option>
+                                                        </if>
+                                                    </volist>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-success">确认</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">图标类型:</label>
-
-                            <div class="controls">
-                                <select name="class" class="span2">
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                    <option value="icon-calendar">日历</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">权限类型:</label>
-
-                            <div class="controls">
-                                <select name="level" class="span2">
-                                    <option value="1">项目</option>
-                                    <option value="2">模块</option>
-                                    <option value="3">操作</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">父节点:</label>
-
-                            <div class="controls">
-                                <select name="pid" class="span2">
-                                    <option value="0">根节点</option>
-                                    <volist name="nodelist" id="vo">
-
-                                        <if condition="$vo.level eq 1">
-                                            <option value="{$vo.id}">{$vo.title}</option>
-                                            <else/>
-                                            <option value="{$vo.id}">&nbsp;&nbsp;|{$vo.title}</option>
-                                        </if>
-                                    </volist>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-success">确认</button>
                         </div>
                     </div>
-                </form>
+                </div><!-- /span -->
+
             </div>
-        </div>
-        <!-- /.page-content -->
-    </div>
-    <!-- /.main-content -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
 
+    <script src="__ROOT__/Application/Common/Public/js/jquery.validate-1.13.1.js"></script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/Rbac/";
+        $(function(){
+            //delete AdminUser
+            $(".del").bind('click',function(){
+                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+                var $id = $(this).attr('value');
+                var $url = $URL+'delUser';
+                var $data = {'id':$id};
+                var success = function(response){
+                    console.log(response.status);
 
+                    if(response.status == 0)
+                    {
+                        alert(response.info);
+                    }else if(response.status == 200)
+                    {
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else{
+                        alert(response.errmsg);
+                    }
+                };
+                if($msg) $.post($url,$data,success,'json');
+
+            });
+            //status set
+            $(".set").bind('click',function(){
+                var $msg = confirm('确认改变状态吗？');
+                var $id = $(this).attr('value');
+                var $url = $URL+'userStatus';
+                var $data = {'id':$id};
+                var success = function(response){
+                    console.log(response.status);
+
+                    if(response.status == 0)
+                    {
+                        alert(response.info);
+                    }else if(response.status == 200)
+                    {
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else{
+                        alert(response.errmsg);
+                    }
+                };
+                if($msg) $.post($url,$data,success,'json');
+            });
+        });
+    </script>
 </block>
+
