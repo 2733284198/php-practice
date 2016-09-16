@@ -53,19 +53,29 @@ class AliPayController extends Controller
     //同步通知
     public function return_url()
     {
-        $verify = D('Common/Pay')->verifyReturn();  //验证是否是支付宝发过来的信息
+        $verify = D('Common/Pay')->verifyReturn();  //计算得出通知验证结果,验证是否是支付宝发过来的信息
         if ($verify) {
-            $out_trade_no = $_GET['out_trade_no'];
-            $trade_no = $_GET['trade_no'];
-            $trade_status = $_GET['trade_status'];
-            if ($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
+            $out_trade_no = $_GET['out_trade_no']; //商户订单号
+            $trade_no = $_GET['trade_no'];    //支付宝交易号
+            $trade_status = $_GET['trade_status']; //交易状态
+            if ($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') //状态为成功
+            {
+                //处理自己网站的业务逻辑
+                //根据订单号判断本地数据库中的订单是否已经处理
+                //如果没处理就将状态改成已经处理
+                //金钱的增加
+                $model = M('alipay');
+                $status = $model->where(array())->getField('status');
                 $map['out_trade_no'] = $out_trade_no;
                 $data['trade_no'] = $trade_no;
-                $res = M('alipay')->where($map)->save($data);
+                $res = $model->where($map)->save($data);
                 if ($res !== false) {
                     echo 'success,return_url' . $res;
                 }
             }
+        } else {
+            //验证失败
+            echo "fail";
         }
 
     }
@@ -73,12 +83,68 @@ class AliPayController extends Controller
     //异步通知
     public function notify_url()
     {
-        $verify = D('Common/Pay')->verifyNotify(); //验证是否是支付宝发过来的信息
-        if ($verify) {
+        $verify = D('Common/Pay')->verifyNotify(); //计算得出通知验证结果,验证是否是支付宝发过来的信息
+        if ($verify)
+        {
+            //商户订单号
             $out_trade_no = $_POST['out_trade_no'];
+            //支付宝交易号
             $trade_no = $_POST['trade_no'];
+            //交易状态
             $trade_status = $_POST['trade_status'];
-            if ($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
+            //实例化数据库模型
+            $model = M('alipay');
+            $condition['out_trade_no'] = ':out_trade_no';
+            //判断本地数据库中的订单是否已经处理
+            $orderStatus = $model->where($condition)->bind(':out_trade_no',$out_trade_no)->getField('status');
+            if ($trade_status == 'WAIT_BUYER_PAY')
+            {
+                //该判断表示买家已在支付宝交易管理中产生了交易记录，但没有付款
+                //判断该笔订单是否在商户网站中已经做过处理
+                //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+                //如果有做过处理，不执行商户的业务程序
+                echo "success";    //请不要修改或删除
+                //调试用，写文本函数记录程序运行情况是否正常
+                //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+            }
+            elseif ($trade_status == 'WAIT_SELLER_SEND_GOODS')
+            {
+                //该判断表示买家已在支付宝交易管理中产生了交易记录且付款成功，但卖家没有发货
+
+                if(!$orderStatus){
+                    $model->where($condition)->bind(':out_trade_no',$out_trade_no)->setField('status');
+                    //金钱的增加
+                    //.............
+                }
+                echo "success";    //请不要修改或删除
+                //调试用，写文本函数记录程序运行情况是否正常
+                //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+
+            }
+            elseif ($trade_status == 'WAIT_BUYER_CONFIRM_GOODS')
+            {
+                //该判断表示卖家已经发了货，但买家还没有做确认收货的操作
+
+                if(!$orderStatus){
+                    $model->where($condition)->bind(':out_trade_no',$out_trade_no)->setField('status');
+                    //金钱的增加
+                    //.............
+                }
+                echo "success";    //请不要修改或删除
+                //调试用，写文本函数记录程序运行情况是否正常
+                //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+
+            }
+            elseif ($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS')
+            {
+                //该判断表示买家已经确认收货，这笔交易完成
+                //该判断表示买家已在支付宝交易管理中产生了交易记录，但没有付款
+                //判断该笔订单是否在商户网站中已经做过处理
+                //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+                //如果有做过处理，不执行商户的业务程序
+                echo "success";    //请不要修改或删除
+                //调试用，写文本函数记录程序运行情况是否正常
+                //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
                 $map['out_trade_no'] = $out_trade_no;
                 $data['trade_no'] = $trade_no;
                 $res = M('alipay')->where($map)->save($data);
@@ -86,6 +152,9 @@ class AliPayController extends Controller
                     echo 'success notify_url--$res';
                 }
             }
+        } else{
+            //验证失败
+            echo "fail";
         }
     }
 

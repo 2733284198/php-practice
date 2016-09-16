@@ -22,12 +22,12 @@ class PayModel
     {
         $param = array(
             'service' => 'create_direct_pay_by_user',
-            'partner' => $this->partner,
+            'partner' => $this->partner, //安全检验码，以数字和字母组成的32位字符
             '_input_charset' => 'utf-8',
-            'notify_url' => 'http://wechatu.xd107.com/pay/notify/notify_url',  //异步通知
-            'return_url' => 'http://wechatu.xd107.com/pay/notify/return_url', //同步通知
+            'notify_url' => 'http://wechatu.xd107.com/pay/notify/notify_url',  //需http://格式的完整路径，不能加?id=123这类自定义参数
+            'return_url' => 'http://wechatu.xd107.com/pay/notify/return_url', //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
             'out_trade_no' => $data['out_trade_no'],
-            'subject' => $data['subject'],
+            'subject' => $data['subject'], //订单名称
             'payment_type' => '1',
             'total_fee' => $data['total_fee'],
             'seller_email' => 'mzhsoft@126.com',
