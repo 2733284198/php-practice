@@ -10,7 +10,7 @@ class RefundModel{
 
 	//退款请求
 	function refund($data){
-		//构造要请求的参数数组，无需改动
+		//构造要请求的参数数组，无需改动.
 		$parameter = array(
 				"service" => 'refund_fastpay_by_platform_pwd',
 				"partner" => $this->partner,
