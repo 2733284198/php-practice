@@ -25,7 +25,7 @@ class PayModel
             'partner' => $this->partner,
             '_input_charset' => 'utf-8',
             'notify_url' => 'http://wechatu.xd107.com/pay/notify/notify_url',  //异步通知
-            //'return_url' => 'http://wechatu.xd107.com/pay/notify/return_url', //同步通知
+            'return_url' => 'http://wechatu.xd107.com/pay/notify/return_url', //同步通知
             'out_trade_no' => $data['out_trade_no'],
             'subject' => $data['subject'],
             'payment_type' => '1',
