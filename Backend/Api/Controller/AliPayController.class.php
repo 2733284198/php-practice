@@ -39,9 +39,10 @@ class AliPayController extends Controller
     /**
      * 退款
      */
-    public function refund(){
+    public function refund()
+    {
         header("Content-type:text/html;charset=utf-8");
-        $data['batch_no'] = date('YmdHis').'MZ01';
+        $data['batch_no'] = date('YmdHis') . 'MZ01';
         $data['batch_num'] = 1;
         $data['detail_data'] = '2016091621001004480242264394^0.01^协商退款01';
         $res = D('Common/Refund')->refund($data);
@@ -50,31 +51,40 @@ class AliPayController extends Controller
     }
 
     //同步通知
-    public function return_url(){
-        $out_trade_no = $_GET['out_trade_no'];
-        $trade_no = $_GET['trade_no'];
-        $trade_status = $_GET['trade_status'];
-        if($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
-            $map['out_trade_no'] = $out_trade_no;
-            $data['trade_no'] = $trade_no;
-            $res = M('alipay')->where($map)->save($data);
-            if($res !== false){
-                echo 'success';
+    public function return_url()
+    {
+        $verify = D('Common/Pay')->verifyReturn();  //验证是否是支付宝发过来的信息
+        if ($verify) {
+            $out_trade_no = $_GET['out_trade_no'];
+            $trade_no = $_GET['trade_no'];
+            $trade_status = $_GET['trade_status'];
+            if ($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
+                $map['out_trade_no'] = $out_trade_no;
+                $data['trade_no'] = $trade_no;
+                $res = M('alipay')->where($map)->save($data);
+                if ($res !== false) {
+                    echo 'success,return_url' . $res;
+                }
             }
         }
+
     }
 
     //异步通知
-    public function notify_url(){
-        $out_trade_no = $_POST['out_trade_no'];
-        $trade_no = $_POST['trade_no'];
-        $trade_status = $_POST['trade_status'];
-        if($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
-            $map['out_trade_no'] = $out_trade_no;
-            $data['trade_no'] = $trade_no;
-            $res = M('alipay')->where($map)->save($data);
-            if($res !== false){
-                echo 'success';
+    public function notify_url()
+    {
+        $verify = D('Common/Pay')->verifyNotify(); //验证是否是支付宝发过来的信息
+        if ($verify) {
+            $out_trade_no = $_POST['out_trade_no'];
+            $trade_no = $_POST['trade_no'];
+            $trade_status = $_POST['trade_status'];
+            if ($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
+                $map['out_trade_no'] = $out_trade_no;
+                $data['trade_no'] = $trade_no;
+                $res = M('alipay')->where($map)->save($data);
+                if ($res !== false) {
+                    echo 'success notify_url--$res';
+                }
             }
         }
     }
