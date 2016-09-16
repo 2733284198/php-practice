@@ -21,16 +21,37 @@ class PayModel
     public function alipay($data)
     {
         $param = array(
-            'service' => 'create_direct_pay_by_user',
-            'partner' => $this->partner, //安全检验码，以数字和字母组成的32位字符
-            '_input_charset' => 'utf-8',
-            'notify_url' => 'http://wechatu.xd107.com/pay/notify/notify_url',  //需http://格式的完整路径，不能加?id=123这类自定义参数
-            'return_url' => 'http://wechatu.xd107.com/pay/notify/return_url', //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+            // 产品类型，无需修改
+            'service' => $data['service'],
+            //合作身份者ID，签约账号，以2088开头由16位纯数字组成的字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm
+            'partner' => $data['partner'],
+            //字符编码格式 目前支持 gbk 或 utf-8
+            '_input_charset' => $data['_input_charset'],
+            // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+            'notify_url' => $data['notify_url'],
+            // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+            'return_url' => $data['return_url'],
+            // 支付类型 ，无需修改
+            'payment_type' => $data['payment_type'],
+            //商户订单号，商户网站订单系统中唯一订单号，必填
             'out_trade_no' => $data['out_trade_no'],
-            'subject' => $data['subject'], //订单名称
-            'payment_type' => '1',
+            //订单名称，必填
+            'subject' => $data['subject'],
+            // 商品展示网址,收银台页面上,商品展示的超链接。
+            "show_url" => $data['show_url'],
+            //付款金额，必填
             'total_fee' => $data['total_fee'],
-            'seller_email' => 'mzhsoft@126.com',
+            // email 从支付宝商户版个人中心获取
+            'seller_email' => $data['seller_email'],
+            // 物流类型EXPRESS（快递）、POST（平邮）、EMS（EMS）
+            "logistics_type" => "EXPRESS",
+            // 物流费用
+            "logistics_fee" => "0.00",
+
+            "receive_address" => '1', // 收货人地址 即时到账方式无视此参数即可
+            "receive_mobile" => '1', // 收货人手机号码 即时到账方式无视即可
+            "receive_name" => '1', // 收货人姓名 即时到账方式无视即可
+            "receive_zip" => '1', // 收货人邮编 即时到账方式无视即可
         );
         //构造请求参数
         $res = $this->buildRequestPara($param);
