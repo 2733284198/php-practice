@@ -7,7 +7,7 @@ return array(
     //*************************************附加设置***********************************
 
     //***********************************URL设置**************************************
-    'MODULE_ALLOW_LIST'      => array('Home','Admin','Api','User','App','WeChat','Libary'), //允许访问列表
+    'MODULE_ALLOW_LIST'      => array('Home','Admin','Api','User','App','WeChat','Libary','Html5'), //允许访问列表
     'URL_MODEL'              => 1,  //启用rewrite
     'HTML_CACHE_ON'     =>    false, // 开启静态缓存
     'HTML_CACHE_TIME'   =>    60,   // 全局静态缓存有效期（秒）
