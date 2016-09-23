@@ -37,8 +37,8 @@ class AliPayController extends Controller
         $data['partner'] = '2088802807619823';             // 卖家支付宝帐户必填 从支付宝商户版个人中心获取
         $data['seller_email'] = 'mzhsoft@126.com';         // email 从支付宝商户版个人中心获
         $data['payment_type'] = 1;                         // 支付类型对应请求时的 payment_type 参数,原样返回。固定设置为1即可
-        $data['notify_url'] = 'http://wechatu.xd107.com/pay/notify/notify_url';   // 异步接收支付状态通知的链接
-        $data['return_url'] = 'http://wechatu.xd107.com/pay/notify/return_url';   // 页面跳转 同步通知 页面路径
+        $data['notify_url'] = 'http://wechatu.xd107.com/pay/Alipay/notify_url';   // 异步接收支付状态通知的链接
+        $data['return_url'] = 'http://wechatu.xd107.com/pay/Alipay/return_url';   // 页面跳转 同步通知 页面路径
         $data['_input_charset'] = 'utf-8';                 // 编码格式
         $res = D('Common/Pay')->alipay($data);
         $this->ajaxReturn($res);
