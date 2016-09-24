@@ -1,9 +1,8 @@
 <?php
 namespace Home\Controller;
 
+use Org\Util\RedisInstance;
 use Org\Util\RedisTest;
-use Think\Cache\Driver\Redis;
-use Think\Cache\Driver\RedisCache;
 use Think\Controller;
 
 class RedisController extends Controller
@@ -14,12 +13,19 @@ class RedisController extends Controller
      */
     public function index()
     {
-        $redis = new \Redis();
-        $redis->connect('218.244.141.124', 63579);
-        $redis->auth('amaitestredis');
-        $redis->select(10);
-        $result = $redis->keys('*');
-        var_dump($result);
+        $redis = RedisInstance::getInstance();
+            var_dump($redis->keys('*'));
+        die;
+        $tt = new \Redis();
+
+//        if($tt->ping() == 'PONG'){
+//            echo 'Server is running';
+//             }
+        $ll = $tt->connect(C('MASTER.HOST'), C('MASTER.PORT'), C('MASTER.TIMEOUT'));
+        var_dump($ll->ping());
+//        $result = $redis->keys('*');
+        var_dump($redis);
+        die;
     }
 
     /**
@@ -32,44 +38,7 @@ class RedisController extends Controller
         var_dump($result);
     }
 
-    /**
-     * Redis 缓存
-     */
-    public function redisCache()
-    {
-        $options = array (
-            'host'          => C('REDIS_HOST'),
-            'port'          => C('REDIS_PORT'),
-            'timeout'       => C('REDIS_TIMEOUT') ,
-            'auth'       => C('REDIS_AUTH') ,
-            'select'       => C('REDIS_DB'),
-        );
-        $redis = Redis::getInstance($options);
-        var_dump($redis->handler);
-    }
 
-    public function RedisTest()
-    {
-        /**
-         * Write Redis
-         */
-        $configMaster = array('host' => '127.0.0.1', 'port' => 6379, 'auth' => 'mastertestpassword');
-        $redisWrite = Redis::getInstance($configMaster);
-        /*$redisWrite->zAdd('WanYin',90,'语文',100,'数学');
-        $redisWrite->sAdd();*/
-        /**
-         * Read Redis Data
-         */
-        var_dump(C('REDIS_MASTER'));
-        $redisRead = Redis::getInstance(C('REDIS_MASTER'));
-        var_dump($redisRead->keys('*'));
-    }
-
-    public function readRedis()
-    {
-        $redis = Redis::getInstance(C('REDIS_SLAVE2'));
-        var_dump($redis->keys('*'));
-    }
 
     /**
      * 对某人进行关注

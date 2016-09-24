@@ -11,19 +11,19 @@
 namespace Org\Util;
 
 
-class RedisTest
+class RedisInstance
 {
     /**
      * 类对象实例数组,共有静态变量
      * @var null
      */
-    protected static $instance = null;
+    private static $_instance;
 
     /**
-     * 每次实例的句柄,保护变量
-     * @var \Redis
+     * 数据库连接资源句柄
+     * @var
      */
-    private $_redis;
+    private static $_connectSource;
 
     /**
      * 私有化构造函数，防止类外实例化
@@ -31,18 +31,7 @@ class RedisTest
      */
     private function __construct()
     {
-        $this->_redis = new \Redis();
-        $this->_redis->pconnect(C('MASTER.HOST'), C('MASTER.PORT'), C('MASTER.TIMEOUT'));
-        $this->_redis->auth(C('MASTER.AUTH'));
-        $this->_redis->select(C('MASTER.DB'));
-    }
 
-    /**
-     * 私有化克隆函数，防止类外克隆对象
-     */
-    public function __clone()
-    {
-        // TODO: Implement __clone() method.
     }
 
     /**
@@ -52,20 +41,41 @@ class RedisTest
      */
     public static function getInstance()
     {
-        if (!static::$instance instanceof self) {
-            static::$instance = new self();
+        if (!(static::$_instance instanceof \Redis)) {
+            static::$_instance = new \Redis();
+            self::getInstance()->connect(C('MASTER.HOST'), C('MASTER.PORT'), C('MASTER.TIMEOUT'));
         }
-        return static::$instance->_redis;
+        return static::$_instance;
     }
 
     /**
-     * 获取redis的连接实例
-     * @return \Redis
+     * Redis数据库是否连接成功
+     * @return bool|string
      */
-    public function getRedis()
+    public static function connect()
     {
-        return $this->_redis;
+        // 如果连接资源不存在，则进行资源连接
+        if (!self::$_connectSource)
+        {
+            //@return bool TRUE on success, FALSE on error.
+            self::$_connectSource = self::getInstance()->connect(C('MASTER.HOST'), C('MASTER.PORT'), C('MASTER.TIMEOUT'));
+            // 没有资源返回
+            if (!self::$_connectSource)
+            {
+                return 'Redis Server Connection Fail';
+            }
+        }
+        return self::$_connectSource;
     }
+
+    /**
+     * 私有化克隆函数，防止类外克隆对象
+     */
+    private function __clone()
+    {
+        // TODO: Implement __clone() method.
+    }
+
 
     /**
      * @return \Redis
