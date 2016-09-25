@@ -2,6 +2,7 @@
 namespace Html5\Controller;
 
 
+use Org\Util\Context;
 use Org\Util\Gateway;
 use Think\Controller;
 
@@ -32,14 +33,15 @@ class WorkerManController extends Controller
             'content' => $content,
             'publish_time' => date('Y-m-d h:i:s', time())
         ];
+
         $sendResult = Gateway::sendToAll(json_encode($message));
-        if($sendResult == false){
+        if ($sendResult == false) {
             $arr = [
                 'status' => 500,
                 'message' => 'send fail!',
                 'content' => $content
             ];
-        }else{
+        } else {
             $arr = [
                 'status' => 200,
                 'message' => 'send success!',
@@ -59,6 +61,14 @@ class WorkerManController extends Controller
     }
 
     /**
+     * WebSocket 消息页面
+     */
+    public function clientIdToAddress()
+    {
+        p($this->getClientIp());
+    }
+
+    /**
      * sendToAll 只能发送字符串，不能够发送数组
      */
     public function sendToAll()
@@ -72,15 +82,42 @@ class WorkerManController extends Controller
             'publish_time' => date('Y-m-d h:i:s', time())
         ];
         $sendResult = Gateway::sendToAll($clientId);
-        if($sendResult == false){
+        if ($sendResult == false) {
             echo 'send fail';
-        }else{
+        } else {
             echo 'send success!';
         }
     }
 
-    public function getAllClientCount(){
+    public function getAllClientCount()
+    {
         var_dump(Gateway::getAllClientCount());
+    }
+
+    /**
+     * 获取客户端IP
+     */
+    public function getClientIp()
+    {
+        $ip = 'unknown';
+        $unknown = 'unknown';
+
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR'] && strcasecmp($_SERVER['HTTP_X_FORWARDED_FOR'], $unknown)) {
+            // 使用透明代理、欺骗性代理的情况
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+
+        } elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], $unknown)) {
+            // 没有代理、使用普通匿名代理和高匿代理的情况
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+
+        // 处理多层代理的情况
+        if (strpos($ip, ',') !== false) {
+            // 输出第一个IP
+            $ip = reset(explode(',', $ip));
+        }
+
+        return $ip;
     }
 
 }

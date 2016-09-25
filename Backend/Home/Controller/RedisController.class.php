@@ -14,17 +14,7 @@ class RedisController extends Controller
     public function index()
     {
         $redis = RedisInstance::getInstance();
-            var_dump($redis->keys('*'));
-        die;
-        $tt = new \Redis();
-
-//        if($tt->ping() == 'PONG'){
-//            echo 'Server is running';
-//             }
-        $ll = $tt->connect(C('MASTER.HOST'), C('MASTER.PORT'), C('MASTER.TIMEOUT'));
-        var_dump($ll->ping());
-//        $result = $redis->keys('*');
-        var_dump($redis);
+        var_dump($redis->incr(date('Y-m-d').':user1'));
         die;
     }
 
@@ -33,11 +23,37 @@ class RedisController extends Controller
      */
     public function instance()
     {
-        $redis = RedisTest::getInstance();
-        $result = $redis->keys('*');
-        var_dump($result);
+        $redis = RedisInstance::getInstance();
+        $redis->multi();
+        $redis->set('instance', '100000' . rand(00, 99));
+        $redis->expire('instance', 100);
+        $redis->exec();
     }
 
+    public function publish()
+    {
+        $redis = RedisInstance::getInstance();
+        $redis->publish('test','ThinkPHP browser output:'.date('Y-m-d H:i:s',time()));
+    }
+
+    public function subscribe()
+    {
+        $redis = RedisInstance::getInstance();
+        $redis->setOption(\Redis::OPT_READ_TIMEOUT,3);
+        $redis->subscribe(array('test'), 'callback');
+        // 回调函数,这里写处理逻辑
+//        callback($redis, $channelName, $message);
+    }
+
+    /*监听demo频道，打印收到的信息*/
+    public function callbackRedis() {
+
+    }
+
+    function callback($instance, $channelName, $message)
+    {
+        echo $channelName, "==>", $message, PHP_EOL;
+    }
 
 
     /**

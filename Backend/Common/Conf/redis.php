@@ -9,7 +9,7 @@
 return array(
     'MASTER' => array(
         'HOST' => '121.41.88.209',
-        'PORT' => 6379,
+        'PORT' => 63789,
         'TIMEOUT' => 0,
         'AUTH' => '',
         'DB' => 0,
@@ -28,7 +28,6 @@ return array(
         'AUTH' => 'amaitestredis',
         'DB' => 10,
     ),
-
     //*************************************TP 自带缓存 Redis 设置*************************************
     'REDIS_HOST' =>'218.244.141.124',
     'REDIS_PORT' => 63579,
@@ -36,7 +35,6 @@ return array(
     'REDIS_PREFIX' =>'redis_',
     'REDIS_AUTH'   =>'amaitestredis',
     'REDIS_DB'   =>10,
-
     //*************************************Redis 缓存以及主从复制 设置*************************************
     //默认第一个是master，其余的是slave
     'DATA_CACHE_TYPE' =>'Redis',
@@ -47,5 +45,4 @@ return array(
     'DATA_PERSISTENT'   => true,
     'DATA_REDIS_AUTH'   =>'amaitestredis',
     'DATA_REDIS_DB'   =>10,
-
 );
