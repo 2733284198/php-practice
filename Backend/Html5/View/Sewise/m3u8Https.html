@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>Sewise M3U8 https播放</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<div style="width: 940px; height: 452px; margin-left: auto;margin-right: auto">
+	<script type="text/javascript" src="http://jackzhang1204.github.io/sewise/sewise_player/player/sewise.player.min.js"></script>
+	<div id="player" style="width: 940px; height: 452px; margin-left: auto;margin-right: auto">
+		<script type="text/javascript">
+			SewisePlayer.setup({
+				server: "vod",
+				type: "m3u8",
+				autostart: "true",
+				poster: "http://jackzhang1204.github.io/materials/poster.png",
+				videourl: "http://121.43.63.240/hls/S0000_8.m3u8?username=tinywan&pwd=1234567890&token=123456",
+				skin: "vodWhite",
+				title: "M3U8 AES 128",
+				lang: "zh_CN",
+				claritybutton: 'disable'
+			}, "player");
+		</script>
+</div>
+</div>
+<p></p>
+<div style="padding: 20px;float: left;margin-left: auto;margin-right: auto">
+	<h1>直播HLS权限地址检测</h1>
+	<hr/>
+	<h2>分发服务器</h2><p></p>
+	<font color="green" size="4">【SewisePlayer OK】当前播放：http://120.26.206.180/hls/test_8.m3u8【VLC可以】</font>【待解决】<p></p>
+	<font color="green" size="4">【SewisePlayer OK】当前播放：http://120.26.206.180/hls/test_8.m3u8?username=tinywan&pwd=123456&token=123456【VLC可以】</font><p></p>
+	<hr/>
+	<h2>直播节点服务器</h2><p></p>
+	<font color="green">【SewisePlayer OK】开启权限未携带参数：http://121.43.63.240/hls/S0000_8.m3u8【VLC 错误!!!!】</font><p></p>
+	<font color="green">【SewisePlayer OK】开启权限携带不合法参数：http://121.43.63.240/hls/S0000_8.m3u8?username=tinywan&pwd=1234567890&token=123456【VLC 错误!!!!】</font><p></p>
+	<font color="green" size="4">【SewisePlayer OK】开启权限携带合法参数：rtmp://121.43.63.240/live/S0000_8?username=tinywan&pwd=123456&token=123456【VLC】</font><p></p>
+	<hr/>
+</div>
+</body>
+</html>

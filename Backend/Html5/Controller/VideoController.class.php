@@ -35,4 +35,64 @@ class VideoController extends Controller
         $this->ajaxReturn($response, 'JSON');
     }
 
+    /**
+     * tokenSecret
+     * 顺序:MD5(KEY+ streamId + txTime)
+     * @param string $username
+     * @param string $password
+     * @return string
+     */
+    public function tokenUrl()
+    {
+        $deviceId = '100022';
+        $userName = 'test1';
+        $userId = '11';
+        $currentTime = '2016-07-29 11:13:45';
+        $expireTime = '300';
+        $streamId = $deviceId.$userName.$userId;
+        $tokenTime = $this->getTokenTime($currentTime,$expireTime);
+        $tokenSecret = $this->getTokenSecret($tokenTime,$streamId,$currentTime,$expireTime);
+        $originalUrl= 'rtmp://120.26.206.180/live';
+        $tokenUrl = $deviceId.'_'.$userName.$userId."?tokenSecret=$tokenSecret&tokenTime=$tokenTime";
+        $allUrl = $originalUrl.'/'.$tokenUrl;
+        return $tokenUrl;
+    }
+
+    /**
+     * tokenSecret
+     * 顺序:MD5(KEY+ streamId + txTime)
+     * @param int $streamId
+     * @param string $currentTime
+     * @param string $expireTime
+     * @return string
+     */
+    public function getTokenSecret($tokenTime,$streamId,$currentTime,$expireTime)
+    {
+        $KEY = '8935737e61b6fdd586cdab3b1';
+        $tokenSecret = md5($KEY . $streamId . $tokenTime);
+        return $tokenSecret;
+    }
+
+    /**
+     * tokenTime
+     * $currentTime :开始时间
+     */
+    public function getTokenTime()
+    {
+//        $tokenTime = dechex(strtotime($currentTime)+$expireTime);
+        $time = '57EDD67E';
+        $new = hexdec($time);
+        $current = time();
+        if(time() > hexdec($time)){
+            echo 'expires';
+        }else{
+            echo 'yes';
+        }
+        var_dump($new);
+        var_dump($current);
+        die;
+        return strtoupper($tokenTime);
+    }
+
+
 }

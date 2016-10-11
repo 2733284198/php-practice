@@ -112,4 +112,16 @@ class IndexController extends BaseController
         }
 
     }
+
+    public function curltest()
+    {
+//        $url="http://121.43.63.240/control/record/stop?app=live&name=L00735&rec=rec1";
+//        $result = http_post_data($url,$ost=null);
+//        var_dump($result);
+//        $userId = explode('_','test_8')[1];
+//        var_dump($userId);
+        $str = 'rtmp://120.26.206.180/live';
+        preg_match("/[0-9]+[^\s]*[0-9]/",$str,$matches);
+        var_dump($matches[0]);
+    }
 }
