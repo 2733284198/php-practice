@@ -8,7 +8,7 @@ class EmailController extends Controller
     /**
      * 发送邮件
      */
-    public function send_email()
+    public function register()
     {
         $usernName = I('post.userName', 'Guest1722318623');
         $passWord = I('post.passWord', '123456' . rand(1000, 9999));

@@ -11,16 +11,43 @@
             padding: 0px;
         }
     </style>
-
 </head>
 <body>
 <div style="width: 940px; height: 452px; margin-left: auto;margin-right: auto">
     <script type="text/javascript" src="http://jackzhang1204.github.io/sewise/sewise_player/player/sewise.player.min.js"></script>
     <script type="text/javascript">
+        function getParams () {
+            var url = location.search; //获取url中"?"符后的字串
+            console.log(url);
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        var channel = getParams();
+        var $activityid = channel['activityid'];
+        var $username = channel['username'];
+        var $pwd = channel['pwd'];
+        var $token = channel['token'];
+        var url = 'fsdfdsfs';
+        //判断检测是否合适
+        console.warn(channel);
+        console.warn(location.hash);
+        console.warn(location.host);
+        console.warn(location.pathname);
+        console.warn(location.href);
+        console.table("rtmp://rtmp.uc.anyrtc.io/live/"+$activityid+'?username='+$username+'pwd='+$pwd+'token='+$token);
         SewisePlayer.setup({
             server: "live",
             type: "rtmp",
-            streamurl: "rtmp://121.43.63.240/live/S0000_8?username=tinywan&pwd=123456&token=123456",
+            streamurl: "rtmp://121.43.63.240/live/"+$activityid+'?username='+$username+'&pwd='+$pwd+'&token='+$token,
+            //streamurl: "rtmp://121.43.63.240/live/S0000_8?username=tinywan&pwd=123456&token=123456",
+            //streamurl: "rtmp://rtmp.uc.anyrtc.io/live/"+channel['activityid'],
             autostart: "true",
             buffer: "5",
             title: "RTMP src path",

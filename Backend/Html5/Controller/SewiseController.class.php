@@ -85,6 +85,33 @@ class SewiseController extends Controller
         var_dump($result);
     }
 
+    /**
+     *  如果上面的rtmp流无法播放，就播放hls流
+     */
+    public function json_url()
+    {
+        $this->display();
+    }
+
+    /**
+     *  全屏控制，就播放hls流
+     */
+    public function fullscreen_control()
+    {
+        $this->display();
+    }
+
+    /**
+     *  Transparent皮肤
+     */
+    public function Transparent()
+    {
+        $this->display();
+    }
+
+
+
+
 
 
 
