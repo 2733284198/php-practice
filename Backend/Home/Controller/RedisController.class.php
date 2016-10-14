@@ -16,26 +16,30 @@ class RedisController extends Controller
         {
             //有新评论，添加到列表中
             $redis->lPush('latest-comment',
-                'id:'.$_REQUEST['id'],
-                'time::'.$time,
-                'content-'.$_REQUEST['comment'].rand(00000,99999)
+                $_REQUEST['id'].'|'.$time.'|'.$_REQUEST['comment'].rand(00000,99999)
             );
             //只保留最新的10条，其他都丢掉
             $redis->lTrim('latest-comment', 0, 9);
             //存入数据库
-            $redis->hMset('ID:'.$_REQUEST['id'],[
-                'time' => date('Y-m-d H:i:s',time()),
+            $redis->hMset('h-id:'.time(),[
+                'time' => $time,
                 'user_id' => $_REQUEST['id'],
                 'enjoye' => $_REQUEST['id'],
                 'image' => $_REQUEST['id'],
                 'content' => $_REQUEST['comment'],
             ]);
+            $redis->zAdd('z-id:'.time(),time(),$_REQUEST['id'].'|'.$time.'|'.$_REQUEST['comment'].rand(00000,99999));
         }else{
             //取出最新的10条评论
             $comments = $redis->lRange('latest-comment', 0, 9);
             foreach($comments as $comment) {
-                echo $comment . "----<br>";
+                $latest[] = [
+                    'id'=>explode('|',$comment)[0],
+                    'time'=>explode('|',$comment)[1],
+                    'content'=>explode('|',$comment)[2],
+                ];
             }
+            var_dump($latest);
         }
     }
 
@@ -46,7 +50,7 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::getInstance();
         $redis->select(2);
-        var_dump($redis->keys('*'));
+        var_dump($redis->keys('ID:123456'));
     }
 
     /**
