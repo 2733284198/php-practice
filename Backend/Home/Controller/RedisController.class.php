@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 
+use Org\Util\Gateway;
 use Org\Util\RedisInstance;
 use Org\Util\RedisTest;
 use Think\Controller;
@@ -8,35 +9,35 @@ use Think\Controller;
 class RedisController extends Controller
 {
     //获取最新的10条数据
-    public function comment(){
+    public function comment()
+    {
         $redis = RedisInstance::getInstance();
         $redis->select(2);
-        $time = date('Y-m-d H:i:s',time());
-        if(isset($_REQUEST['comment']))
-        {
+        $time = date('Y-m-d H:i:s', time());
+        if (isset($_REQUEST['comment'])) {
             //有新评论，添加到列表中
             $redis->lPush('latest-comment',
-                $_REQUEST['id'].'|'.$time.'|'.$_REQUEST['comment'].rand(00000,99999)
+                $_REQUEST['id'] . '|' . $time . '|' . $_REQUEST['comment'] . rand(00000, 99999)
             );
             //只保留最新的10条，其他都丢掉
             $redis->lTrim('latest-comment', 0, 9);
             //存入数据库
-            $redis->hMset('h-id:'.time(),[
+            $redis->hMset('h-id:' . time(), [
                 'time' => $time,
                 'user_id' => $_REQUEST['id'],
                 'enjoye' => $_REQUEST['id'],
                 'image' => $_REQUEST['id'],
                 'content' => $_REQUEST['comment'],
             ]);
-            $redis->zAdd('z-id:'.time(),time(),$_REQUEST['id'].'|'.$time.'|'.$_REQUEST['comment'].rand(00000,99999));
-        }else{
+            $redis->zAdd('z-id:' . time(), time(), $_REQUEST['id'] . '|' . $time . '|' . $_REQUEST['comment'] . rand(00000, 99999));
+        } else {
             //取出最新的10条评论
             $comments = $redis->lRange('latest-comment', 0, 9);
-            foreach($comments as $comment) {
+            foreach ($comments as $comment) {
                 $latest[] = [
-                    'id'=>explode('|',$comment)[0],
-                    'time'=>explode('|',$comment)[1],
-                    'content'=>explode('|',$comment)[2],
+                    'id' => explode('|', $comment)[0],
+                    'time' => explode('|', $comment)[1],
+                    'content' => explode('|', $comment)[2],
                 ];
             }
             var_dump($latest);
@@ -51,18 +52,37 @@ class RedisController extends Controller
         $redis = RedisInstance::getInstance();
         $redis->select(2);
         var_dump($redis->keys('ID:123456'));
+        $this->display();
     }
 
     /**
      * Singleton instance(使用一个单例模式)
      */
-    public function instance()
+    public function userCommit()
     {
-        $redis = RedisTest::getInstance();
-        $result = $redis->keys('*');
-        var_dump($result);
+        $redis = RedisInstance::getInstance();
+        $client_id = I('post.client_id');
+        $redis->sAdd('mysadd',$client_id);
     }
 
+    public function userExists()
+    {
+        $redis = RedisInstance::getInstance();
+        var_dump($redis->sIsMember('mysadd','333'));
+    }
+
+    public function sendToClient()
+    {
+        Gateway::$registerAddress = '120.26.220.223:1238';
+        $message = [
+            'user_id' => '999999',
+            'show' => 0,   // 这个是二维码扫描进入的那个页面是否直播信息链接显示
+            'bindUid' => 1,  // 判断clientId是否和Userid已经绑定, 1:已经绑定 ，0:没有绑定
+            'is_repeal' => 0,  // 1：正在维修的话，则一直可以检查权限。 0：表示已经维修结束了，就不需用再去判断是都有权限了
+            'publish_time' => date('Y-m-d h:i:s', time())
+        ];
+        Gateway::sendToAll(json_encode($message));
+    }
 
 
     /**
