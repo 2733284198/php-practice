@@ -7,6 +7,41 @@ use Think\Controller;
 
 class RedisController extends Controller
 {
+    //获取最新的10条数据
+    public function comment(){
+        $redis = RedisInstance::getInstance();
+        $redis->select(2);
+        $time = date('Y-m-d H:i:s',time());
+        if(isset($_REQUEST['comment']))
+        {
+            //有新评论，添加到列表中
+            $redis->lPush('latest-comment',
+                $_REQUEST['id'].'|'.$time.'|'.$_REQUEST['comment'].rand(00000,99999)
+            );
+            //只保留最新的10条，其他都丢掉
+            $redis->lTrim('latest-comment', 0, 9);
+            //存入数据库
+            $redis->hMset('h-id:'.time(),[
+                'time' => $time,
+                'user_id' => $_REQUEST['id'],
+                'enjoye' => $_REQUEST['id'],
+                'image' => $_REQUEST['id'],
+                'content' => $_REQUEST['comment'],
+            ]);
+            $redis->zAdd('z-id:'.time(),time(),$_REQUEST['id'].'|'.$time.'|'.$_REQUEST['comment'].rand(00000,99999));
+        }else{
+            //取出最新的10条评论
+            $comments = $redis->lRange('latest-comment', 0, 9);
+            foreach($comments as $comment) {
+                $latest[] = [
+                    'id'=>explode('|',$comment)[0],
+                    'time'=>explode('|',$comment)[1],
+                    'content'=>explode('|',$comment)[2],
+                ];
+            }
+            var_dump($latest);
+        }
+    }
 
     /**
      * 直接尝试这去实例化Redis 【不建议】
@@ -14,8 +49,8 @@ class RedisController extends Controller
     public function index()
     {
         $redis = RedisInstance::getInstance();
-        var_dump($redis->incr(date('Y-m-d').':user1'));
-        die;
+        $redis->select(2);
+        var_dump($redis->keys('ID:123456'));
     }
 
     /**
@@ -23,37 +58,11 @@ class RedisController extends Controller
      */
     public function instance()
     {
-        $redis = RedisInstance::getInstance();
-        $redis->multi();
-        $redis->set('instance', '100000' . rand(00, 99));
-        $redis->expire('instance', 100);
-        $redis->exec();
+        $redis = RedisTest::getInstance();
+        $result = $redis->keys('*');
+        var_dump($result);
     }
 
-    public function publish()
-    {
-        $redis = RedisInstance::getInstance();
-        $redis->publish('test','ThinkPHP browser output:'.date('Y-m-d H:i:s',time()));
-    }
-
-    public function subscribe()
-    {
-        $redis = RedisInstance::getInstance();
-        $redis->setOption(\Redis::OPT_READ_TIMEOUT,3);
-        $redis->subscribe(array('test'), 'callback');
-        // 回调函数,这里写处理逻辑
-//        callback($redis, $channelName, $message);
-    }
-
-    /*监听demo频道，打印收到的信息*/
-    public function callbackRedis() {
-
-    }
-
-    function callback($instance, $channelName, $message)
-    {
-        echo $channelName, "==>", $message, PHP_EOL;
-    }
 
 
     /**

@@ -83,9 +83,14 @@ class DeBugController extends Controller
     public function instanceLogicModel()
     {
         //实例化方法UserLogic模型
-        $Logic = D('UserLogic','Logic');
+        $Logic = D('UserLogic', 'Logic');
     }
 
+    public function curltest()
+    {
+        $result = Get("http://121.43.63.240/control/record/start?app=live&name=L00735&rec=rec1");
+        var_dump($result);
+    }
 
 
 }

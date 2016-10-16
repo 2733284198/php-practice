@@ -781,12 +781,11 @@ function getAdminUserId()
  * 跳向支付宝付款
  * @param  array $order 订单数据 必须包含 out_trade_no(订单号)、price(订单金额)、subject(商品名称标题)
  */
-function alipay($order)
-{
-    vendor('Alipay.AlipaySubmit', '', '.class.php');
+function alipay($order){
+    vendor('Alipay.AlipaySubmit','','.class.php');
     // 获取配置
-    $config = C('ALIPAY_CONFIG');
-    $data = array(
+    $config=C('ALIPAY_CONFIG');
+    $data=array(
         "_input_charset" => $config['input_charset'], // 编码格式
         "logistics_fee" => "0.00", // 物流费用
         "logistics_payment" => "SELLER_PAY", // 物流支付方式SELLER_PAY（卖家承担运费）、BUYER_PAY（买家承担运费）
@@ -808,17 +807,70 @@ function alipay($order)
         "show_url" => $config['show_url'], // 商品展示网址,收银台页面上,商品展示的超链接。
         "subject" => $order['subject'] // 商品名称商品的标题/交易标题/订单标 题/订单关键字等
     );
-    $alipay = new \AlipaySubmit($config);
-    $new = $alipay->buildRequestPara($data);
-    $go_pay = $alipay->buildRequestForm($new, 'get', '支付');
+    $alipay=new \AlipaySubmit($config);
+    $new=$alipay->buildRequestPara($data);
+    $go_pay=$alipay->buildRequestForm($new, 'get','支付');
     echo $go_pay;
 }
 
-function callback($instance, $channelName, $message)
+/**
+ * 发送邮件
+ * @param  string $address 需要发送的邮箱地址 发送给多个地址需要写成数组形式
+ * @param  string $subject 标题
+ * @param  string $content 内容
+ * @return boolean       是否成功
+ */
+function send_email($address, $subject, $content)
 {
-
-    echo $channelName, "==>", $message, PHP_EOL;
+    $email_smtp = C('EMAIL_SMTP');
+    $email_username = C('EMAIL_USERNAME');
+    $email_password = C('EMAIL_PASSWORD');
+    $email_from_name = C('EMAIL_FROM_NAME');
+    if (empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)) {
+        return array("error" => 1, "message" => '邮箱配置不完整');
+    }
+    require './ThinkPHP/Library/Org/Nx/class.phpmailer.php';
+    require './ThinkPHP/Library/Org/Nx/class.smtp.php';
+    $phpmailer = new \Phpmailer();
+    // 设置PHPMailer使用SMTP服务器发送Email
+    $phpmailer->IsSMTP();
+    // 设置为html格式
+    $phpmailer->IsHTML(true);
+    // 设置邮件的字符编码'
+    $phpmailer->CharSet = 'UTF-8';
+    // 设置SMTP服务器。
+    $phpmailer->Host = $email_smtp;
+    // 设置为"需要验证"
+    $phpmailer->SMTPAuth = true;
+    // 设置用户名
+    $phpmailer->Username = $email_username;
+    // 设置密码
+    $phpmailer->Password = $email_password;
+    // 设置邮件头的From字段。
+    $phpmailer->From = $email_username;
+    // 设置发件人名字
+    $phpmailer->FromName = $email_from_name;
+    // 添加收件人地址，可以多次使用来添加多个收件人
+    if (is_array($address)) {
+        foreach ($address as $addressv) {
+            $phpmailer->AddAddress($addressv);
+        }
+    } else {
+        $phpmailer->AddAddress($address);
+    }
+    // 设置邮件标题
+    $phpmailer->Subject = $subject;
+    // 设置邮件正文
+    $phpmailer->Body = $content;
+    // 发送邮件。
+    if (!$phpmailer->Send()) {
+        $phpmailererror = $phpmailer->ErrorInfo;
+        return array("error" => 1, "message" => $phpmailererror);
+    } else {
+        return array("error" => 0);
+    }
 }
+
 
 
 ?>

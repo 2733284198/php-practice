@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<title>全屏控制</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body>
+<div style="width: 940px; height: 452px; margin-left: auto;margin-right: auto; margin-top: 100px;">
+	<script type="text/javascript" src="http://jackzhang1204.github.io/sewise/sewise_player/player/sewise.player.min.js"></script>
+	<script type="text/javascript">
+		SewisePlayer.setup({
+			server: "vod",
+			type: "mp4",
+			autostart: "false",
+			skin: "vodTransparent",
+			title: "Apple watch",
+			videourl: "http://amai.oss-cn-hangzhou.aliyuncs.com/data/S013669361192/video/S0000_8-1476097759all.mp4?fileId=42324&quality=1",
+			poster: "http://netdisk.foream.cn:8080/netdisk/iface/downloadOpen?fileId=55572&thumbnailType=1",
+			logo: "http://onvod.sewise.com/libs/swfplayer/skin/images/logo.png",
+			lang: 'en_US',
+			fallbackurls:{
+				ogg: "http://jackzhang1204.github.io/materials/mov_bbb.ogg",
+				webm: "http://jackzhang1204.github.io/materials/mov_bbb.webm"
+			}
+		});
+	</script>
+</div>
+<div style="padding: 20px;float: left;margin-left: auto;margin-right: auto">
+	<div style="padding-right: 20px;float: left;"><a href="javascript:toFullScreen();">全屏</a></div>
+	<div style="padding-right: 20px;float: left;"><a href="javascript:toNoramlScreen();">普屏</a></div><br/>
+	<h2>全屏控制 JSON地址集:</h2>
+	[1]可以获取不同清晰度的视频流<p></p>
+	[2]播放格式是MP4格式，可以携带参数
+	<br clear="all"/>
+</div>
+</body>
+</html>
