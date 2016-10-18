@@ -61,8 +61,16 @@ class RedisController extends Controller
     public function userCommit()
     {
         $redis = RedisInstance::getInstance();
+        $redis->incrBy();
         $client_id = I('post.client_id');
-        $redis->sAdd('mysadd',$client_id);
+        $content = I('post.content');
+        $msgDate = json_decode($client_id, true);
+        exit(json_encode($client_id));
+
+        $redis->set('myset',$client_id);
+        $redis->set('myset2',$msgDate['clientId']);
+        exit(json_encode(['uuuu'=>$msgDate['clientId']]));
+        $redis->sAdd('mysadd',$msgDate['clientId']);
     }
 
     public function userExists()
@@ -94,7 +102,7 @@ class RedisController extends Controller
     public function follow($targetUser, $user)
     {
         $configMaster = array('host' => '127.0.0.1', 'port' => 6379, 'auth' => 'mastertestpassword');
-        $redisWrite = Redis::getInstance($configMaster);
+        $redisWrite = RedisInstance::getInstance($configMaster);
         //自己关注的列表
         $followingKey = 'following:' . $user['uid'];
         $redisWrite->sadd($followingKey, $targetUser['uid']);
@@ -114,7 +122,7 @@ class RedisController extends Controller
     function unfollow($targetUser, $user)
     {
         $configMaster = array('host' => '127.0.0.1', 'port' => 6379, 'auth' => 'mastertestpassword');
-        $redisWrite = Redis::getInstance($configMaster);
+        $redisWrite = RedisInstance::getInstance($configMaster);
         //自己关注的列表
         $followingKey = 'following:' . $user['uid'];
         $redisWrite->sRem($followingKey, $targetUser['uid']);

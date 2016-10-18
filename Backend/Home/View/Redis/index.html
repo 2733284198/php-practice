@@ -8,6 +8,7 @@
     var wsUri = "ws://120.26.220.223:8283";
     var output;
     var clientId;
+    var client_id;
 
     function init() {
         output = document.getElementById("output");
@@ -39,6 +40,7 @@
     }
 
     function onMessage(evt) {
+        client_id = evt.data;
         writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
     }
 
@@ -50,7 +52,7 @@
         var myJsonStr = setJson(myJsonStr, "clientId", clientId);
         myJsonStr = setJson(myJsonStr, "type", "say");
         myJsonStr = setJson(myJsonStr, "userId", "565081");
-        myJsonStr = setJson(myJsonStr, "userName", "龙隆蟀舞");
+        myJsonStr = setJson(myJsonStr, "userName", "userName123");
         myJsonStr = setJson(myJsonStr, "userImage", "http:\/\/wx.qlogo.cn\/mmopen\/eMWJkc6M6KoWxQqLKuGfPjxRPGO3SmMjeY0I0jJ6WTdGwaEuBm6Z42SsHtVG3afwD71HLb0ZBV8DepIYGVDdVVscQdyQ4siax\/0");
         myJsonStr = setJson(myJsonStr, "roomId", "005");
         myJsonStr = setJson(myJsonStr, "message", "哇哈哈哈哈");
@@ -90,12 +92,16 @@
 
     function commitAjax()
     {
+        var commitMsg = {
+            content:'123213',
+        };
+        websocket.send(JSON.stringify(commitMsg));
+        var aa= JSON.parse(client_id);
         var $content = $("#data").val();
         var data = {
             content:$content,
-            client_id:$content
+            client_id:aa.clientId
         };
-        websocket.send(JSON.stringify(data));
         var $url = $URL+'userCommit';
 
         var success = function(response){
@@ -117,9 +123,9 @@
 <body>
 <h2>WebSocketDemo</h2>
 token：<input type="text" name="token" id="token"><p></p>
-评论评论：<input type="text" style="height: 50px; width: 100%;" name="data" id="data"><p></p>
+加密内容信息：<input type="text" style="height: 50px; width: 100%;" name="data" id="data"><p></p>
 <button id="submit" onclick="sub()" >提交</button> <p></p>
-<button id="submit" onclick="commitAjax()" >点赞</button> <p></p>
+<button id="submit" onclick="commitAjax()" >获取视频token</button> <p></p>
 <button id="submit" onclick="forExample()" >JSON数据</button> <p></p>
 
 <div id="output"></div>
