@@ -109,6 +109,17 @@ class SewiseController extends Controller
         $this->display();
     }
 
+    /**
+     *  Transparent皮肤
+     */
+    public function getNginxAccess()
+    {
+        $ipkey= md5("tinywan121.43.63.240");
+
+        echo $_SERVER['REMOTE_ADDR'];
+
+    }
+
 
 
 

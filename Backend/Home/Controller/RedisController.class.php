@@ -45,10 +45,80 @@ class RedisController extends Controller
     }
 
     /**
+     * 消息Redis方法保存到Mysql数据库
+     * @param string $liveKey
+     */
+    public function redisSaveMysqlAction()
+    {
+        $liveKey = $this->request->getQuery('liveKey');
+        if(empty($liveKey)){
+            $result = array("errcode" => 500, "errmsg" => "this parameter is empty!");
+            return $this->toJson($result);
+        }
+        $redis = new \Redis();
+        $redis->connect('10.51.24.116', '6379');
+        $redisInfo = $redis->lRange($liveKey,0,99);
+        $dataLength = $redis->lLen($liveKey);
+        while($dataLength > 200) {
+            try {
+                $this->db->begin();
+                foreach ($redisInfo as $action) {
+                    $sql = "INSERT INTO livecomment (liveId,username,createTime,userId,content) VALUES (?, ? ,?,? ,?)";
+                    $this->db->execute($sql, array(
+                        json_decode($action,true)['roomId'],
+                        json_decode($action,true)['userName'],
+                        json_decode($action,true)['createTime'],
+                        json_decode($action,true)['userId'],
+                        json_decode($action,true)['content'],
+                    ));
+                }
+                $redis->set('message_insert_success', '1');
+                $redis->lTrim($liveKey, 100, -1);
+                $redisInfo = $redis->lRange($liveKey,0,99);
+                $dataLength = $redis->lLen($liveKey);
+                $redis->set('dataLength_backenk', $dataLength);
+                $this->db->commit();
+            } catch (\Exception $e) {
+                $redis->set('message_insert_fail', '0');
+                $this->db->rollback();
+            }
+        }
+        $redis->set('log'.$liveKey,$redis->incr('request_counts'));
+        $result = array("errcode" => 200, "errmsg" => "Data Insert into Success!",'data'=>'dataLength:'.$dataLength.'liveKey:'.$liveKey);
+        return $this->toJson($result);
+    }
+
+    /**
+     * 创建一个Reids测试数据
+     */
+    public function createRedisAction()
+    {
+        $redis = new \Redis();
+        $redis->connect('10.51.24.116', '6379');
+        $message = [
+            'type' => 'say',
+            'userId' => $redis->incr('user_id'),
+            'userName' => 'Tinywan'.mt_rand(100,9999), //是否正在录像
+            'userImage' => '/res/pub/user-default-w.png', //是否正在录像
+            'openId' => 'openId'.mt_rand(100000,9999999999999999),
+            'roomId' => 'openId'.mt_rand(30,50),
+            'createTime' => date('Y-m-d H:i:s', time()),
+            'content' => $redis->incr('content') //当前是否正在打流状态
+        ];
+        $rPushResul = $redis->rPush('L02367Comments', json_encode($message)); //执行成功后返回当前列表的长度 9
+        var_dump($rPushResul);
+        die();
+    }
+
+    /**
      * 直接尝试这去实例化Redis 【不建议】
      */
     public function index()
     {
+        $string = "<h1>你们好啊!<h1>";
+        $redis = htmlspecialchars($string);
+        var_dump(htmlspecialchars_decode("<h1>你们好啊!<h1>"));
+        die;
         $redis = RedisInstance::getInstance();
         $redis->select(2);
         var_dump($redis->keys('ID:123456'));
