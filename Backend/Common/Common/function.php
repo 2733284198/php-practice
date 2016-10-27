@@ -72,6 +72,32 @@ function word_time($time)
 }
 
 /**
+ * 转换字节大小 Bytes/Kb/MB/GB/TB/EB
+ * @param number $size
+ * @return number
+ */
+function trans_byte($size){
+    $size_arr = array ("B", "KB", "MB", "GB", "TB", "EB" );
+    $i = 0;
+    while ($size >= 1024) {
+        $size = $size/1024;
+        $i++;
+    }
+    return round($size,2).$size_arr[$i];
+}
+/**
+ * 文件下载
+ * @param number $size
+ * @return number
+ */
+function downfile($filename){
+    header("content-disposition:attachment;filename=".basename($filename));
+    header("content-length:".filesize($filename));
+    readfile($filename);
+}
+
+
+/**
  * ========================================【关于文件、图片，上传】=======================================================
  * ======================生成缩略图
  * @param  string $image_path 原图path
