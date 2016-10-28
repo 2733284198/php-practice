@@ -44,6 +44,51 @@ class RedisInstance
         if (!(static::$_instance instanceof \Redis)) {
             static::$_instance = new \Redis();
             self::getInstance()->connect('121.41.88.209', '63789');
+            self::getInstance()->auth('tinywanredis');
+        }
+        return static::$_instance;
+    }
+
+    /**
+     *  单例方法,用于访问实例的公共的静态方法
+     * @return \Redis
+     * @static
+     */
+    public static function getMaster()
+    {
+        if (!(static::$_instance instanceof \Redis)) {
+            static::$_instance = new \Redis();
+            self::getInstance()->connect('121.41.88.209', '63789');
+            self::getInstance()->auth('tinywanredis');
+        }
+        return static::$_instance;
+    }
+
+
+    /**
+     * Slave1
+     * @return null
+     * @static
+     */
+    public static function getSlave1()
+    {
+        if (!(static::$_instance instanceof \Redis)) {
+            static::$_instance = new \Redis();
+            self::getInstance()->connect('121.41.88.209', '63788');
+        }
+        return static::$_instance;
+    }
+
+    /**
+     * Slave2
+     * @return null
+     * @static
+     */
+    public static function getSlave2()
+    {
+        if (!(static::$_instance instanceof \Redis)) {
+            static::$_instance = new \Redis();
+            self::getInstance()->connect('121.41.88.209', '63700');
         }
         return static::$_instance;
     }
