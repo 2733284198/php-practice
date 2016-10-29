@@ -7,11 +7,88 @@ use Think\Model;
 
 class DataBaseController extends Controller
 {
-    public function index(){
-
+    public function index()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(1);
+        $redisInfo = $redis->lRange('message01',0,10);
+        var_dump($redisInfo);
     }
 
-    public function show($name){
+    /**
+     * MasterInstance Redis主实例，适合于存储数据
+     */
+    public function MasterInstance()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(1);
+        $redisInfo = $redis->lRange('message01',0,10);
+        var_dump($redisInfo);
+    }
+
+    /**
+     * SlaveOneInstance Redis从实例，适合于读取数据
+     */
+    public function SlaveOneInstance()
+    {
+        $redis = RedisInstance::SlaveOneInstance();
+        $redis->select(1);
+        $redisInfo = $redis->lRange('message01',0,15);
+        var_dump($redisInfo);
+    }
+
+    /**
+     * SlaveTwoInstance Redis从实例，适合于读取数据
+     */
+    public function SlaveTwoInstance()
+    {
+        $redis = RedisInstance::SlaveTwoInstance();
+        $redis->select(1);
+        $redisInfo = $redis->lRange('message01',0,6);
+        var_dump($redisInfo);
+    }
+
+    /**
+     * 连接本地的Redis实例
+     */
+    public function localhostRedis(){
+        $redis = RedisInstance::Instance();
+        var_dump($redis);
+
+        $redis->connect('127.0.0.1');
+        $keys = $redis->keys('*');
+        var_dump($keys);
+    }
+
+    /**
+     * 是否是同一个对象的比较
+     * 比较结果：
+     * 【redis1和redis2：是同一个实例--redis1和redis3：是同一个实例--redis2和redis3：是同一个实例--】
+     * 对象$redis1,$redis2,$redis3实际上都是使用同一个对象实例，访问的都是同一块内存区域
+     */
+    public function ObjectCompare()
+    {
+
+        $redis1 = RedisInstance::MasterInstance();
+        $redis2 = RedisInstance::SlaveOneInstance();
+        $redis3 = RedisInstance::SlaveTwoInstance();
+        if($redis1 === $redis2){
+            echo 'redis1和redis2：是同一个实例--';
+        }else{
+            echo '不是同一个实例';
+        }
+
+        if($redis1 === $redis3){
+            echo 'redis1和redis3：是同一个实例--';
+        }else{
+            echo '不是同一个实例';
+        }
+
+        if($redis3 === $redis2){
+            echo 'redis2和redis3：是同一个实例--';
+        }else{
+            echo '不是同一个实例';
+        }
 
     }
 
