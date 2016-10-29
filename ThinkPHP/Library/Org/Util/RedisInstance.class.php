@@ -43,8 +43,6 @@ class RedisInstance
     {
         if (!(static::$_instance instanceof \Redis)) {
             static::$_instance = new \Redis();
-            self::getInstance()->connect('121.41.88.209', '63789');
-            self::getInstance()->auth('tinywanredis');
         }
         return static::$_instance;
     }
