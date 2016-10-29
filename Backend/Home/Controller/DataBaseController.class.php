@@ -61,10 +61,15 @@ class DataBaseController extends Controller
     }
 
     /**
+     * 单列模式参考连接：http://www.cnblogs.com/hongfei/archive/2012/07/07/2580994.html
+     * 【官方解释】：
+     * 如果两个对象是同一个类的实例，且它们有相同的属性和值，则这两个对象相等。类似的规则还适用与用全等符（===）对两个对象的比较。
+     * http://php.net/manual/zh/oop4.object-comparison.php
      * 是否是同一个对象的比较
      * 比较结果：
      * 【redis1和redis2：是同一个实例--redis1和redis3：是同一个实例--redis2和redis3：是同一个实例--】
      * 对象$redis1,$redis2,$redis3实际上都是使用同一个对象实例，访问的都是同一块内存区域
+     *
      */
     public function ObjectCompare()
     {
@@ -98,7 +103,7 @@ class DataBaseController extends Controller
      */
     public function createRedis()
     {
-        $redis = RedisInstance::getInstance();
+        $redis = RedisInstance::MasterInstance();
         $redis->select(1);
         $message = [
             'type' => 'say',
@@ -130,7 +135,7 @@ class DataBaseController extends Controller
      */
     public function getRedisData()
     {
-        $redis = RedisInstance::getInstance();
+        $redis = RedisInstance::MasterInstance();
         $redis->select(1);
         $redisInfo = $redis->lRange('message01',0,-1);
         var_dump($redisInfo);
