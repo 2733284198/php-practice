@@ -1,6 +1,3 @@
-
-
-
 <?php
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
@@ -34,12 +31,10 @@ define('APP_DEBUG',True);
  * new：http://serverName/home.php/index
  */
 //define('BIND_CONTROLLER','Index');
+//php-cli http://www.thinkphp.cn/topic/34761.html
 
 // 定义应用目录
-define('APP_PATH','./Backend/');
+define('APP_PATH',dirname(__FILE__).'/Backend/');
 
 // 引入ThinkPHP入口文件
-require './ThinkPHP/ThinkPHP.php';
-
-// 亲^_^ 后面不需要任何代码了 就是如此简单
-
+require dirname( __FILE__).'/ThinkPHP/ThinkPHP.php';

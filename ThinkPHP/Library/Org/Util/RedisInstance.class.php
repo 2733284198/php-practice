@@ -43,10 +43,15 @@ class RedisInstance
      */
     public static function Instance()
     {
-        if (!(static::$_instance instanceof \Redis)) {
-            static::$_instance = new \Redis();
+        try{
+            if (!(static::$_instance instanceof \Redis)) {
+                static::$_instance = new \Redis();
+            }
+            return static::$_instance;
+        }catch (\Exception $e){
+            return false;
         }
-        return static::$_instance;
+
     }
 
     /**
@@ -56,9 +61,13 @@ class RedisInstance
      */
     public static function MasterInstance()
     {
-        self::Instance()->connect('121.41.88.209', '63789');
-        self::Instance()->auth('tinywanredis');
-        return static::$_instance;
+        try{
+            self::Instance()->connect('121.41.88.209', '63789');
+            self::Instance()->auth('tinywanredis');
+            return static::$_instance;
+        }catch (\Exception $e){
+            return false;
+        }
     }
 
 
@@ -69,8 +78,12 @@ class RedisInstance
      */
     public static function SlaveOneInstance()
     {
-        self::Instance()->connect('121.41.88.209', '63788');
-        return static::$_instance;
+       try{
+            self::Instance()->connect('121.41.88.209', '63788');
+            return static::$_instance;
+       }catch (\Exception $e){
+            return false;
+       }
     }
 
     /**
@@ -80,8 +93,12 @@ class RedisInstance
      */
     public static function SlaveTwoInstance()
     {
-        self::Instance()->connect('121.41.88.209', '63700');
-        return static::$_instance;
+        try{
+            self::Instance()->connect('121.41.88.209', '63700');
+            return static::$_instance;
+        }catch (\Exception $e){
+             return false;
+        }
     }
 
     /**

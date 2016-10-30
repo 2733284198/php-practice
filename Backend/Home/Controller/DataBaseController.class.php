@@ -11,7 +11,7 @@ class DataBaseController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(1);
-        $redisInfo = $redis->lRange('message01',0,10);
+        $redisInfo = $redis->lRange('message01', 0, 10);
         var_dump($redisInfo);
     }
 
@@ -22,7 +22,7 @@ class DataBaseController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(1);
-        $redisInfo = $redis->lRange('message01',0,10);
+        $redisInfo = $redis->lRange('message01', 0, 10);
         var_dump($redisInfo);
     }
 
@@ -33,7 +33,7 @@ class DataBaseController extends Controller
     {
         $redis = RedisInstance::SlaveOneInstance();
         $redis->select(1);
-        $redisInfo = $redis->lRange('message01',0,15);
+        $redisInfo = $redis->lRange('message01', 0, 15);
         var_dump($redisInfo);
     }
 
@@ -44,14 +44,15 @@ class DataBaseController extends Controller
     {
         $redis = RedisInstance::SlaveTwoInstance();
         $redis->select(1);
-        $redisInfo = $redis->lRange('message01',0,6);
+        $redisInfo = $redis->lRange('message01', 0, 6);
         var_dump($redisInfo);
     }
 
     /**
      * 连接本地的Redis实例
      */
-    public function localhostRedis(){
+    public function localhostRedis()
+    {
         $redis = RedisInstance::Instance();
         var_dump($redis);
 
@@ -77,46 +78,24 @@ class DataBaseController extends Controller
         $redis1 = RedisInstance::MasterInstance();
         $redis2 = RedisInstance::SlaveOneInstance();
         $redis3 = RedisInstance::SlaveTwoInstance();
-        if($redis1 === $redis2){
+        if ($redis1 === $redis2) {
             echo 'redis1和redis2：是同一个实例--';
-        }else{
+        } else {
             echo '不是同一个实例';
         }
 
-        if($redis1 === $redis3){
+        if ($redis1 === $redis3) {
             echo 'redis1和redis3：是同一个实例--';
-        }else{
+        } else {
             echo '不是同一个实例';
         }
 
-        if($redis3 === $redis2){
+        if ($redis3 === $redis2) {
             echo 'redis2和redis3：是同一个实例--';
-        }else{
+        } else {
             echo '不是同一个实例';
         }
 
-    }
-
-    /**
-     * 使用队列生成reids测试数据
-     * 成功：执行 RPUSH操作后，返回列表的长度：8
-     */
-    public function createRedis()
-    {
-        $redis = RedisInstance::MasterInstance();
-        $redis->select(1);
-        $message = [
-            'type' => 'say',
-            'userId' => $redis->incr('user_id'),
-            'userName' => 'Tinywan'.mt_rand(100,9999), //是否正在录像
-            'userImage' => '/res/pub/user-default-w.png', //是否正在录像
-            'openId' => 'openId'.mt_rand(100000,9999999999999999),
-            'roomId' => 'openId'.mt_rand(30,50),
-            'createTime' => date('Y-m-d H:i:s', time()),
-            'content' => $redis->incr('content') //当前是否正在打流状态
-        ];
-        $rPushResul = $redis->rPush('message01', json_encode($message)); //执行成功后返回当前列表的长度 9
-        return $rPushResul;
     }
 
     /**
@@ -125,8 +104,8 @@ class DataBaseController extends Controller
      */
     public function executeCli()
     {
-       $dir = 'D:\wamp\bin\php\php5.5.12>php.exe';
-       exec("D:\wamp\bin\php\php5.5.12>php.exe ../cli_test.php");
+        $dir = 'D:\wamp\bin\php\php5.5.12>php.exe';
+        exec("D:\wamp\bin\php\php5.5.12>php.exe ../cli_test.php");
     }
 
     /**
@@ -136,10 +115,10 @@ class DataBaseController extends Controller
     public function cli_test()
     {
         $count = 0;
-        while(true){
+        while (true) {
             $count++;
-            file_put_contents("./test_result.txt",$count."\r\n",FILE_APPEND);
-            if($count > 10){
+            file_put_contents("./test_result.txt", $count . "\r\n", FILE_APPEND);
+            if ($count > 10) {
                 break;
             }
             sleep(3);
@@ -147,7 +126,77 @@ class DataBaseController extends Controller
         echo 'done';
     }
 
+    /**
+     * 使用队列生成reids测试数据
+     * 成功：执行 RPUSH操作后，返回列表的长度：8
+     */
+    public function createRedisList($listKey = 'message01')
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(1);
+        $message = [
+            'type' => 'say',
+            'userId' => $redis->incr('user_id'),
+            'userName' => 'Tinywan' . mt_rand(100, 9999), //是否正在录像
+            'userImage' => '/res/pub/user-default-w.png', //是否正在录像
+            'openId' => 'openId' . mt_rand(100000, 9999999999999999),
+            'roomId' => 'openId' . mt_rand(30, 50),
+            'createTime' => date('Y-m-d H:i:s', time()),
+            'content' => $redis->incr('content') //当前是否正在打流状态
+        ];
+        $rPushResul = $redis->rPush($listKey, json_encode($message)); //执行成功后返回当前列表的长度 9
+        return $rPushResul;
+    }
 
+    /**
+     * [0]检查当前Redis是否连接成功
+     * [1]获取数据，首先从Redis中去获取，没有的话再从数据库中去获取
+     */
+    public function findDataRedisOrMysql($listKey = 'message01')
+    {
+        //Check the current connection status 查看服务是否运行
+        if (RedisInstance::MasterInstance() != false) {
+            $redis = RedisInstance::MasterInstance();
+            $redis->select(1);
+            /**
+             * 首先从Redis中去获取数据
+             * lRange 获取为空的话，则表示没有数据，否则返回一个非空数组
+             */
+            $redisData = $redis->lRange($listKey, 0, 9);
+            $resultData = [];
+            if (!empty($redisData)) {
+                $resultData['status_code'] = 200;
+                $resultData['msg'] = 'Data Source from Redis Cache';
+                foreach ($redisData as $key => $val) {
+                    $resultData['listData'][] = json_decode($val, true);
+                }
+            } else {
+                $resultData['redis_msg'] = 'Redis is Expire';
+                $conditions = array('status' => ':status');
+                $mysqlData = M('User')->where($conditions)->bind(':status',1, \PDO::PARAM_STR)->select();
+                if($mysqlData){
+                    $resultData['status_code'] = 200;
+                    $resultData['mysql_msg'] = 'Data Source from Mysql is Success';
+                    foreach ($mysqlData as $key => $val) {
+                        $resultData['listData'][] = $val;
+                    }
+                }else{
+                    $resultData['status_code'] = 500;
+                    $resultData['mysql_msg'] = 'Data Source from Mysql is Fail';
+                }
+
+            }
+        } else {
+            $resultData['redis_msg'] = 'Redis server went away';
+            $resultData['mysql_msg'] = 'Mysql Data2';
+            $conditions = array('status' => ':status');
+            $mysqlData = M('User')->where($conditions)->bind(':status', 1, \PDO::PARAM_STR)->select();
+            foreach ($mysqlData as $key => $val) {
+                $resultData['listData'][] = $val;
+            }
+        }
+        homePrint($resultData);
+    }
 
     /**
      * 获取Redis数据
@@ -157,21 +206,18 @@ class DataBaseController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(1);
-        $redisInfo = $redis->lRange('message01',0,-1);
-        var_dump($redisInfo);
-        die;
-        "<hr/>";
+        $redisInfo = $redis->lRange('message01', 0, 20);
         $dataLength = $redis->lLen('message01');
         // 10 14 19 20 21
-        if($dataLength > 20){
-            $redis->lTrim('message01',10,-1);
+        if ($dataLength > 20) {
+            $redis->lTrim('message01', 10, -1);
             var_dump($dataLength);
-        }else{
-            echo '不可以删除了,只剩下:'.$dataLength.'条了';
+        } else {
+            echo '不可以删除了,只剩下:' . $dataLength . '条了';
             var_dump($redisInfo);
         }
-        foreach($redisInfo as $value){
-            $newArr[] = json_decode($value,true);
+        foreach ($redisInfo as $value) {
+            $newArr[] = json_decode($value, true);
         }
         var_dump($newArr);
         die;
@@ -182,20 +228,20 @@ class DataBaseController extends Controller
      */
     public function RedisSaveToMysql($dataList = 'Message01')
     {
-        $sql= "insert into twenty_million (value) values";
-        for($i=0;$i<10;$i++){
-            $sql.="('50'),";
+        $sql = "insert into twenty_million (value) values";
+        for ($i = 0; $i < 10; $i++) {
+            $sql .= "('50'),";
         };
-        $sql = substr($sql,0,strlen($sql)-1);
+        $sql = substr($sql, 0, strlen($sql) - 1);
         var_dump($sql);
         die;
-        if(empty($dataList)) {
+        if (empty($dataList)) {
             $this->error = L('_DATA_TYPE_INVALID_');
             return false;
         }
         $redis = RedisInstance::getInstance();
         $redis->select(1);
-        $redisInfo = $redis->lRange('message01',0,9);
+        $redisInfo = $redis->lRange('message01', 0, 9);
         $dataLength = $redis->lLen('message01');
 //        var_dump($redisInfo);
         $model = new  Model();
@@ -204,7 +250,7 @@ class DataBaseController extends Controller
 //        $result = $model->query($sql);
 //        var_dump($result);
 //        die;
-        $redis->set('dataLength_front',$dataLength);
+        $redis->set('dataLength_front', $dataLength);
         try {
             $model->startTrans();
             foreach ($redisInfo as $action) {
@@ -212,7 +258,7 @@ class DataBaseController extends Controller
                     json_decode($action,true)['userName'],
                     json_decode($action,true)['content'],
                     )";
-                     $result = $model->query($sql);
+                $result = $model->query($sql);
             }
             $redis->set('message_insert_success', '00000');
 //                $redis->lTrim('message01', 10, -1);
@@ -232,23 +278,23 @@ class DataBaseController extends Controller
     /*
      * TP 自带批量插入数据的方法
      */
-    public function addAll($dataList,$options=array(),$replace=false)
+    public function addAll($dataList, $options = array(), $replace = false)
     {
-        if(empty($dataList)) {
+        if (empty($dataList)) {
             $this->error = L('_DATA_TYPE_INVALID_');
             return false;
         }
         // 数据处理
-        foreach ($dataList as $key=>$data){
+        foreach ($dataList as $key => $data) {
             $dataList[$key] = $this->_facade($data);
         }
         // 分析表达式
-        $options =  $this->_parseOptions($options);
+        $options = $this->_parseOptions($options);
         // 写入数据到数据库
-        $result = $this->db->insertAll($dataList,$options,$replace);
-        if(false !== $result ) {
-            $insertId   =   $this->getLastInsID();
-            if($insertId) {
+        $result = $this->db->insertAll($dataList, $options, $replace);
+        if (false !== $result) {
+            $insertId = $this->getLastInsID();
+            if ($insertId) {
                 return $insertId;
             }
         }
