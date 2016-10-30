@@ -119,12 +119,32 @@ class DataBaseController extends Controller
         return $rPushResul;
     }
 
-    public function executeFunction()
+    /**
+     * php cli模式执行php文件
+     * 模拟队列发送邮件
+     */
+    public function executeCli()
     {
-        for ($x=0; $x<=10000; $x++)
-        {
-            $this->createRedis();
+       $dir = 'D:\wamp\bin\php\php5.5.12>php.exe';
+       exec("D:\wamp\bin\php\php5.5.12>php.exe ../cli_test.php");
+    }
+
+    /**
+     * php cli模式执行php文件
+     * D:\wamp\bin\php\php5.5.12>php.exe ../cli_test.php
+     */
+    public function cli_test()
+    {
+        $count = 0;
+        while(true){
+            $count++;
+            file_put_contents("./test_result.txt",$count."\r\n",FILE_APPEND);
+            if($count > 10){
+                break;
+            }
+            sleep(3);
         }
+        echo 'done';
     }
 
 
