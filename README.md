@@ -17,8 +17,7 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
  *  高并发简单解决方案
         * 存储数据形成消息队列 【Home模块/DataBaseController/createRedisList】
         * 消息队列元素大于10000时，批量插入到Mysql数据库 【Home模块/DataBaseController/RedisSaveToMysql】 
-        * 读取缓存数据 【Home模块/DataBaseController/findDataRedisOrMysql
- 
+        * 读取缓存数据 【Home模块/DataBaseController/findDataRedisOrMysql】
 *  多级模块化的管理【实例】
 *  Uploadify图片上传DEMO【实例】
 *  phpmailer批量发送邮件DEMO【Library模块/Index控制器/send_email方法】
