@@ -3,6 +3,7 @@ namespace Home\Controller;
 
 use Org\Util\RedisInstance;
 use Think\Controller;
+use Think\Exception;
 use Think\Model;
 
 class DataBaseController extends Controller
@@ -149,6 +150,98 @@ class DataBaseController extends Controller
     }
 
     /**
+     * 消息Redis方法保存到Mysql数据库
+     * @param string $liveKey
+     */
+    public function RedisSaveToMysql($listKey = 'message01')
+    {
+        if (empty($listKey)) {
+            $result = ["errcode" => 500, "errmsg" => "this parameter is empty!"];
+            exit(json_encode($result));
+        }
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(1);
+        $redisInfo = $redis->lRange($listKey, 0, 5);
+        $dataLength = $redis->lLen($listKey);
+        $model = M("User");
+        while ($dataLength > 65970) {
+            try {
+                $model->startTrans();
+                $redis->watch($listKey);
+                $arrList = [];
+                foreach ($redisInfo as $key => $val) {
+                    $arrList[] = array(
+                        'username' => json_decode($val, true)['userName'],
+                        'logintime' => json_decode($val, true)['createTime'],
+                        'description' => json_decode($val, true)['content'],
+                        'pido' => json_decode($val, true)['content']
+                    );
+                }
+                $insertResult = $model->addAll($arrList);
+                if (!$insertResult) {
+                    $model->rollback();
+                    $result = array("errcode" => 500, "errmsg" => "Data Insert into Fail!", 'data' => 'dataLength:' . $dataLength);
+                    exit(json_encode($result));
+                }
+                $model->commit();
+                $redis->lTrim($listKey, 6, -1);
+                $redisInfo = $redis->lRange($listKey, 0, 5);
+                $dataLength = $redis->lLen($listKey);
+            } catch (Exception $e) {
+                $model->rollback();
+                $result = array("errcode" => 500, "errmsg" => "Data Insert into Fail!");
+                exit(json_encode($result));
+            }
+        }
+        $result = array("errcode" => 200, "errmsg" => "Data Insert into Success!", 'data' => 'dataLength:' . $dataLength . 'liveKey:' . $listKey);
+        exit(json_encode($result));
+    }
+
+    /**
+     * Phalcon 框架的
+     * 消息Redis方法保存到Mysql数据库
+     * @param string $liveKey
+     */
+    public function RedisSaveToMysqlPhalcon($listKey = 'message01')
+    {
+        if (empty($listKey)) {
+            $result = ["errcode" => 500, "errmsg" => "this parameter is empty!"];
+            exit(json_encode($result));
+        }
+        $redis = new \Redis();
+        $redis->connect('10.51.24.116', '6379');
+        $redisInfo = $redis->lRange($listKey, 0, 99);
+        $dataLength = $redis->lLen($listKey);
+        while ($dataLength > 200) {
+            try {
+                $this->db->begin();
+                $sql = "INSERT INTO livecomment (liveId,username,createTime,userId,content) VALUES";
+                foreach ($redisInfo as $action) {
+                    $sql .= "('" . json_decode($action, true)['roomId'] . "',
+                    '" . json_decode($action, true)['userName'] . "',
+                    '" . json_decode($action, true)['createTime'] . "',
+                    '" . json_decode($action, true)['userId'] . "',
+                    '" . json_decode($action, true)['content'] . "'),";
+                }
+                $sql = rtrim($sql, ',');
+                $this->db->execute($sql);
+                $redis->set('message_insert_success', '1');
+                $redis->lTrim($listKey, 100, -1);
+                $redisInfo = $redis->lRange($listKey, 0, 99);
+                $dataLength = $redis->lLen($listKey);
+                $redis->set('dataLength_backenk', $dataLength);
+                $this->db->commit();
+            } catch (\Exception $e) {
+                $redis->set('message_insert_fail', '0');
+                $this->db->rollback();
+            }
+        }
+        $redis->set('log' . $listKey, $redis->incr('request_counts'));
+        $result = array("errcode" => 200, "errmsg" => "Data Insert into Success!", 'data' => 'dataLength:' . $dataLength . 'liveKey:' . $listKey);
+        return $this->toJson($result);
+    }
+
+    /**
      * [0]检查当前Redis是否连接成功
      * [1]获取数据，首先从Redis中去获取，没有的话再从数据库中去获取
      */
@@ -173,14 +266,14 @@ class DataBaseController extends Controller
             } else {
                 $resultData['redis_msg'] = 'Redis is Expire';
                 $conditions = array('status' => ':status');
-                $mysqlData = M('User')->where($conditions)->bind(':status',1, \PDO::PARAM_STR)->select();
-                if($mysqlData){
+                $mysqlData = M('User')->where($conditions)->bind(':status', 1, \PDO::PARAM_STR)->select();
+                if ($mysqlData) {
                     $resultData['status_code'] = 200;
                     $resultData['mysql_msg'] = 'Data Source from Mysql is Success';
                     foreach ($mysqlData as $key => $val) {
                         $resultData['listData'][] = $val;
                     }
-                }else{
+                } else {
                     $resultData['status_code'] = 500;
                     $resultData['mysql_msg'] = 'Data Source from Mysql is Fail';
                 }
@@ -223,57 +316,6 @@ class DataBaseController extends Controller
         die;
     }
 
-    /**
-     * 获取Redis数据批量保存到Mysql数据库
-     */
-    public function RedisSaveToMysql($dataList = 'Message01')
-    {
-        $sql = "insert into twenty_million (value) values";
-        for ($i = 0; $i < 10; $i++) {
-            $sql .= "('50'),";
-        };
-        $sql = substr($sql, 0, strlen($sql) - 1);
-        var_dump($sql);
-        die;
-        if (empty($dataList)) {
-            $this->error = L('_DATA_TYPE_INVALID_');
-            return false;
-        }
-        $redis = RedisInstance::getInstance();
-        $redis->select(1);
-        $redisInfo = $redis->lRange('message01', 0, 9);
-        $dataLength = $redis->lLen('message01');
-//        var_dump($redisInfo);
-        $model = new  Model();
-
-//        $sql = "INSERT INTO tour_user (username,description) VALUES ('tingywan','123123')";
-//        $result = $model->query($sql);
-//        var_dump($result);
-//        die;
-        $redis->set('dataLength_front', $dataLength);
-        try {
-            $model->startTrans();
-            foreach ($redisInfo as $action) {
-                $sql = "INSERT INTO tour_user (username,description) VALUES (
-                    json_decode($action,true)['userName'],
-                    json_decode($action,true)['content'],
-                    )";
-                $result = $model->query($sql);
-            }
-            $redis->set('message_insert_success', '00000');
-//                $redis->lTrim('message01', 10, -1);
-//                $redisInfo = $redis->lRange('message01',0,9);
-//                $dataLength = $redis->lLen('message01');
-//                $redis->set('dataLength_backenk', $dataLength);
-            $model->commit();
-        } catch (\Exception $e) {
-            $redis->set('message_catch', json_encode($e));
-            $model->rollback();
-        }
-
-        var_dump($result);
-        die;
-    }
 
     /*
      * TP 自带批量插入数据的方法
