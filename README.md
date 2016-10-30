@@ -12,7 +12,11 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 
 *  基于角色的RBAC权限管理【实例】
 *  基于类的无限级分类和数据库的无限级分类【实例】
-*  非关系性数据库Redis的简单操作【单实例模式】
+* 非关系性数据库Redis
+    * 脚本语言 
+    * 脚本语言
+    * 脚本语言
+    * 脚本语言
 *  多级模块化的管理【实例】
 *  Uploadify图片上传DEMO【实例】
 *  phpmailer批量发送邮件DEMO【Library模块/Index控制器/send_email方法】
@@ -71,7 +75,6 @@ ThinkPHP从诞生以来一直秉承大道至简的开发理念，无论从底层
 Thank `You` . Please `Call` Me `Tinywan`
 
 * 编程语言
-*      编程语言
     * 脚本语言  
         * Python 
 
