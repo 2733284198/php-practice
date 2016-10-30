@@ -15,9 +15,9 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 *  非关系性数据库Redis
  *  单例模式 【Org/Util/RedisInstance.class.php】针对不同的Redis链接(主从复制)
  *  高并发简单解决方案
-   *  存储数据形成消息队列 【Home模块/DataBaseController/createRedisList】
-   *  消息队列元素大于10000时，批量插入到Mysql数据库 【Home模块/DataBaseController/RedisSaveToMysql】
- *  Redis缓存逻辑（是否读取Mysql） 【Home模块/DataBaseController/findDataRedisOrMysql】
+        * 存储数据形成消息队列 【Home模块/DataBaseController/createRedisList】
+        * 消息队列元素大于10000时，批量插入到Mysql数据库 【Home模块/DataBaseController/RedisSaveToMysql】 
+        * 读取缓存数据 【Home模块/DataBaseController/findDataRedisOrMysql
  
 *  多级模块化的管理【实例】
 *  Uploadify图片上传DEMO【实例】
@@ -78,6 +78,8 @@ Thank `You` . Please `Call` Me `Tinywan`
 
 * 编程语言
     * 脚本语言  
+        * Python 
+        * Python 
         * Python 
 
 
