@@ -3,7 +3,7 @@
 ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架。
 
 ## What is it?
-![baidu](https://www.baidu.com/img/bdlogo.gif)
+![baidu](https://camo.githubusercontent.com/9e32acff11b04496eb14e09b198fcbb055c9ccf0/68747470733a2f2f646e67356c33717a7265616c362e636c6f756466726f6e742e6e65742f323031362f4175672f636f64696e675f626f6172645f736d616c6c2d313437303836363336393131382e6a7067)
 
 ## 详细说明文档请见个人博客
 
