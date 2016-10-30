@@ -130,26 +130,31 @@ class DataBaseController extends Controller
     /**
      * 使用队列生成reids测试数据
      * 成功：执行 RPUSH操作后，返回列表的长度：8
+     * 添加数据的时候，不需用设置过期时间，等到第一次从Mysql数据库中获取数据的时候在设置过期时间就可以了
      */
     public function createRedisList($listKey = 'message01')
     {
         $redis = RedisInstance::MasterInstance();
-        $redis->select(1);
-        $message = [
-            'type' => 'say',
-            'userId' => $redis->incr('user_id'),
-            'userName' => 'Tinywan' . mt_rand(100, 9999), //是否正在录像
-            'userImage' => '/res/pub/user-default-w.png', //是否正在录像
-            'openId' => 'openId' . mt_rand(100000, 9999999999999999),
-            'roomId' => 'openId' . mt_rand(30, 50),
-            'createTime' => date('Y-m-d H:i:s', time()),
-            'content' => $redis->incr('content') //当前是否正在打流状态
+        $redis->select(2);
+//
+        $val = [
+            'username' => 'username312'.mt_rand(1111,9999),
+            'description' => 'description',
         ];
-        $rPushResul = $redis->rPush($listKey, json_encode($message)); //执行成功后返回当前列表的长度 9
-        return $rPushResul;
+        $redis->rPush($listKey, json_encode($val));
+        $listLen = $redis->lLen($listKey);
+
+        //哈哈，在这里触发一下哦，数据队列满的时候就插入到MySql数据库中去哦！
+        $returnResult = false;
+        if($listLen > 20){
+           $returnResult =  $this->RedisSaveToMysql($listKey);
+        }
+        homePrint($returnResult);
+        var_dump($listLen);
     }
 
     /**
+     * 第一种方法
      * 消息Redis方法保存到Mysql数据库
      * @param string $liveKey
      */
@@ -160,11 +165,11 @@ class DataBaseController extends Controller
             exit(json_encode($result));
         }
         $redis = RedisInstance::MasterInstance();
-        $redis->select(1);
+        $redis->select(2);
         $redisInfo = $redis->lRange($listKey, 0, 5);
         $dataLength = $redis->lLen($listKey);
         $model = M("User");
-        while ($dataLength > 65970) {
+        while ($dataLength > 25) {
             try {
                 $model->startTrans();
                 $redis->watch($listKey);
@@ -196,6 +201,7 @@ class DataBaseController extends Controller
         $result = array("errcode" => 200, "errmsg" => "Data Insert into Success!", 'data' => 'dataLength:' . $dataLength . 'liveKey:' . $listKey);
         exit(json_encode($result));
     }
+
 
     /**
      * Phalcon 框架的
@@ -250,7 +256,7 @@ class DataBaseController extends Controller
         //Check the current connection status 查看服务是否运行
         if (RedisInstance::MasterInstance() != false) {
             $redis = RedisInstance::MasterInstance();
-            $redis->select(1);
+            $redis->select(2);
             /**
              * 首先从Redis中去获取数据
              * lRange 获取为空的话，则表示没有数据，否则返回一个非空数组
@@ -270,14 +276,18 @@ class DataBaseController extends Controller
                 if ($mysqlData) {
                     $resultData['status_code'] = 200;
                     $resultData['mysql_msg'] = 'Data Source from Mysql is Success';
+                    $redis->select(2);
                     foreach ($mysqlData as $key => $val) {
                         $resultData['listData'][] = $val;
+                        //写入Redis作为缓存
+                        $redis->rPush($listKey, json_encode($val));
                     }
+                    //同时设置一个过期时间
+                    $redis->expire($listKey,30);
                 } else {
                     $resultData['status_code'] = 500;
                     $resultData['mysql_msg'] = 'Data Source from Mysql is Fail';
                 }
-
             }
         } else {
             $resultData['redis_msg'] = 'Redis server went away';
