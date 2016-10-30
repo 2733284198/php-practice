@@ -12,7 +12,13 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 
 *  基于角色的RBAC权限管理【实例】
 *  基于类的无限级分类和数据库的无限级分类【实例】
-* 非关系性数据库Redis
+*  非关系性数据库Redis
+   * 脚本语言
+   * 脚本语言
+   * 脚本语言
+   * 脚本语言
+   * 脚本语言
+    * 单实例模式
     * 单实例模式 【Org/Util/RedisInstance.class.php】针对不同的Redis链接(主从复制)
     * 存储数据形成消息队列 【Home模块/DataBaseController/createRedisList】
     * 消息队列大于1000时，批量插入到Mysql数据库 【Home模块/DataBaseController/RedisSaveToMysql】
