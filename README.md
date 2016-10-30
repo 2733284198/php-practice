@@ -4,7 +4,7 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 
 ## 详细说明文档请见个人博客
 
-[我的博客]:(http://www.cnblogs.com/tinywan "欢迎收藏")
+[博客地址] : http://www.cnblogs.com/tinywan/
 
 ## 全面的WEB开发特性支持
 
