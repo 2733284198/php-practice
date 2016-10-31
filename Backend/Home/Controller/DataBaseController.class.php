@@ -60,6 +60,7 @@ class DataBaseController extends Controller
         $redis->connect('127.0.0.1');
         $keys = $redis->keys('*');
         var_dump($keys);
+        var_dump($keys);
     }
 
     /**
