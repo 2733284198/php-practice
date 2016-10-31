@@ -304,55 +304,48 @@ class DataBaseController extends Controller
     }
 
     /**
-     * 获取Redis数据
+     * MessageRedis
      * 如果是14 的话 大于10条，满足条件的话，则截取列表长度是多少
      */
-    public function getRedisData()
+    public function BaseRedis()
     {
         $redis = RedisInstance::MasterInstance();
-        $redis->select(1);
-        $redisInfo = $redis->lRange('message01', 0, 20);
-        $dataLength = $redis->lLen('message01');
-        // 10 14 19 20 21
-        if ($dataLength > 20) {
-            $redis->lTrim('message01', 10, -1);
-            var_dump($dataLength);
-        } else {
-            echo '不可以删除了,只剩下:' . $dataLength . '条了';
-            var_dump($redisInfo);
-        }
-        foreach ($redisInfo as $value) {
-            $newArr[] = json_decode($value, true);
-        }
-        var_dump($newArr);
+        var_dump($redis);
+        var_dump($redis->keys("*"));
+        die;
+        $redis1->select(1);
+        var_dump($redis1->get('name'));
+        die;
+    }
+
+    /**
+     * MessageRedis
+     * 如果是14 的话 大于10条，满足条件的话，则截取列表长度是多少
+     */
+    public function MessageRedis()
+    {
+        $redis = RedisInstance::commentRedis();
+        var_dump($redis);
+        var_dump($redis->keys("*"));
+        die;
+        $redis1->select(1);
+        var_dump($redis1->get('name'));
+        die;
+    }
+
+    /**
+     * commentRedis 评论
+     * 如果是14 的话 大于10条，满足条件的话，则截取列表长度是多少
+     */
+    public function commentRedis()
+    {
+
+        $redis = RedisInstance::messageRedis();
+        var_dump($redis);
+        var_dump($redis->keys('*'));
         die;
     }
 
 
-    /*
-     * TP 自带批量插入数据的方法
-     */
-    public function addAll($dataList, $options = array(), $replace = false)
-    {
-        if (empty($dataList)) {
-            $this->error = L('_DATA_TYPE_INVALID_');
-            return false;
-        }
-        // 数据处理
-        foreach ($dataList as $key => $data) {
-            $dataList[$key] = $this->_facade($data);
-        }
-        // 分析表达式
-        $options = $this->_parseOptions($options);
-        // 写入数据到数据库
-        $result = $this->db->insertAll($dataList, $options, $replace);
-        if (false !== $result) {
-            $insertId = $this->getLastInsID();
-            if ($insertId) {
-                return $insertId;
-            }
-        }
-        return $result;
-    }
 
 }

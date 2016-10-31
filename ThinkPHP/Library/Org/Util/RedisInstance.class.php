@@ -102,6 +102,37 @@ class RedisInstance
     }
 
     /**
+     * Slave2 实例
+     * @return null
+     * @static
+     */
+    public static function messageRedis()
+    {
+        try{
+            self::Instance()->connect('218.244.141.124', '63579');
+            self::Instance()->auth('amaitestredis');
+            return static::$_instance;
+        }catch (\Exception $e){
+            return false;
+        }
+    }
+
+    /**
+     * Slave2 实例
+     * @return null
+     * @static
+     */
+    public static function commentRedis()
+    {
+        try{
+            self::Instance()->connect('127.0.0.1', '6379');
+            return static::$_instance;
+        }catch (\Exception $e){
+            return false;
+        }
+    }
+
+    /**
      * Redis数据库是否连接成功
      * @return bool|string
      */
