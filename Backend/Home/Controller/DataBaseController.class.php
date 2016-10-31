@@ -14,6 +14,7 @@ class DataBaseController extends Controller
         $redis->select(1);
         $redisInfo = $redis->lRange('message01', 0, 10);
         var_dump($redisInfo);
+        var_dump($redisInfo);
     }
 
     /**
@@ -47,6 +48,7 @@ class DataBaseController extends Controller
         $redis->select(1);
         $redisInfo = $redis->lRange('message01', 0, 6);
         var_dump($redisInfo);
+        var_dump($redisInfo);
     }
 
     /**
@@ -59,7 +61,6 @@ class DataBaseController extends Controller
 
         $redis->connect('127.0.0.1');
         $keys = $redis->keys('*');
-        var_dump($keys);
         var_dump($keys);
     }
 
