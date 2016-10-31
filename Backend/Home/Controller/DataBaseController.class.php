@@ -43,7 +43,7 @@ class DataBaseController extends Controller
 
     public function executeFunction()
     {
-        for ($x=0; $x<=500; $x++)
+        for ($x=0; $x<=10000; $x++)
         {
             $this->createRedis();
         }

@@ -36,61 +36,69 @@ class RedisInstance
 
     /**
      *  单例方法,用于访问实例的公共的静态方法
+     *  这个只是一个实例
+     *  这个实例方法适合于连接到别的Redis数据库中去。列如：在项目中选择不同的Redis数据库
      * @return \Redis
      * @static
      */
-    public static function getInstance()
+    public static function Instance()
     {
-        if (!(static::$_instance instanceof \Redis)) {
-            static::$_instance = new \Redis();
-            self::getInstance()->connect('121.41.88.209', '63789');
-            self::getInstance()->auth('tinywanredis');
+        try{
+            if (!(static::$_instance instanceof \Redis)) {
+                static::$_instance = new \Redis();
+            }
+            return static::$_instance;
+        }catch (\Exception $e){
+            return false;
         }
-        return static::$_instance;
+
     }
 
     /**
-     *  单例方法,用于访问实例的公共的静态方法
+     *  单例方法,用于访问Master实例的公共的静态方法
      * @return \Redis
      * @static
      */
-    public static function getMaster()
+    public static function MasterInstance()
     {
-        if (!(static::$_instance instanceof \Redis)) {
-            static::$_instance = new \Redis();
-            self::getInstance()->connect('121.41.88.209', '63789');
-            self::getInstance()->auth('tinywanredis');
+        try{
+            self::Instance()->connect('121.41.88.209', '63789');
+            self::Instance()->auth('tinywanredis');
+            return static::$_instance;
+        }catch (\Exception $e){
+            return false;
         }
-        return static::$_instance;
     }
 
 
     /**
-     * Slave1
+     * Slave1 实例
      * @return null
      * @static
      */
-    public static function getSlave1()
+    public static function SlaveOneInstance()
     {
-        if (!(static::$_instance instanceof \Redis)) {
-            static::$_instance = new \Redis();
-            self::getInstance()->connect('121.41.88.209', '63788');
-        }
-        return static::$_instance;
+       try{
+            self::Instance()->connect('121.41.88.209', '63788');
+            return static::$_instance;
+       }catch (\Exception $e){
+            return false;
+       }
     }
 
     /**
-     * Slave2
+     * Slave2 实例
      * @return null
      * @static
      */
-    public static function getSlave2()
+    public static function SlaveTwoInstance()
     {
-        if (!(static::$_instance instanceof \Redis)) {
-            static::$_instance = new \Redis();
-            self::getInstance()->connect('121.41.88.209', '63700');
+        try{
+            self::Instance()->connect('121.41.88.209', '63700');
+            return static::$_instance;
+        }catch (\Exception $e){
+             return false;
         }
-        return static::$_instance;
     }
 
     /**
@@ -103,7 +111,7 @@ class RedisInstance
         if (!self::$_connectSource)
         {
             //@return bool TRUE on success, FALSE on error.
-            self::$_connectSource = self::getInstance()->connect('121.41.88.209', '63789');
+            self::$_connectSource = self::Instance()->connect('121.41.88.209', '63789');
             // 没有资源返回
             if (!self::$_connectSource)
             {
