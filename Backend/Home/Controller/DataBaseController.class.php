@@ -355,4 +355,14 @@ class DataBaseController extends Controller
         return $result;
     }
 
+    public function test(){
+        $aa = '4001:user_id';
+        $messageId = explode(':',$aa);
+        switch($messageId[0]){
+            case 4001:
+
+        }
+        echo $messageId[1];
+    }
+
 }

@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
+use Org\Util\RedisInstance;
 use Org\Util\Tree;
 use Org\Util\UserAgent;
 use Org\Util\Rbac;
@@ -14,6 +15,7 @@ class IndexController extends BaseController
 
         $user = M('AdminUser')->select();
         $where['username'] = session('username');
+
         $user = M('AdminUser')->where($where)->field(['username', 'logintime', 'loginip', 'expire'])->find();
         $this->user = $user;
         $this->display();
@@ -123,5 +125,38 @@ class IndexController extends BaseController
         $str = 'rtmp://120.26.206.180/live';
         preg_match("/[0-9]+[^\s]*[0-9]/",$str,$matches);
         var_dump($matches[0]);
+    }
+
+    public function testRedis(){
+        $session_name = 'tinywan';
+        $save_path = 'F:/wamp/sessionredis';
+        $session_expire = 60;
+        echo session_id();
+        $redis = RedisInstance::MasterInstance();
+        $str = 'PHPREDIS_SESSION:1a2t9ln6so69j38frhivm79ak0';
+        homePrint($redis->get($str));
+        var_dump(session('_ACCESS_LIST'));
+        die;
+
+        session_save_path($save_path);
+        session_name($session_name);
+        session_cache_expire($session_expire);
+
+        echo 'session_name:'.session_name().'session_id:'.session_id().'session_expire:'.session_cache_expire();
+
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(3);
+        echo session_name().'='.session_id();
+        die;
+    }
+
+    public function getSessionRedis(){
+//        echo 'session_name:'.session_name().'session_id:'.session_id().'session_expire:'.session_cache_expire();
+        echo '========'.session_save_path();
+        $redis = RedisInstance::MasterInstance();
+        $redis->hSet();
+        $redis->select(3);
+        echo session_name().'='.session_id();
+        die;
     }
 }
