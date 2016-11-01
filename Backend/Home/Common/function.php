@@ -41,3 +41,55 @@ function cli_test()
     }
     echo 'done';
 }
+
+/**
+ * 匿名函数也叫闭包函数（closures允许创建一个没有指定没成的函数，最经常用作回调函数参数的值。
+ * 闭包函数没有函数名称，直接在function()传入变量即可 使用时将定义的变量当作函数来处理
+ */
+function everyFunction(){
+    $message = 'hello';
+    $example = function() use ($message){
+        var_dump($message);
+    };
+    echo $example();
+    $message = 'world';
+    //输出hello 因为继承变量的值的时候是函数定义的时候而不是 函数被调用的时候
+    echo $example();
+    //重置为hello
+    $message = 'hello';
+    //此处传引用
+    $example = function() use(&$message){
+        var_dump($message);
+    };
+    echo $example();
+    //输出hello
+    $message = 'world';
+    echo $example();
+    //此处输出world
+    //闭包函数也用于正常的传值
+    $message = 'hello';
+    $example = function ($data) use ($message){
+        return "{$data},{$message}";
+    };
+
+    echo $example('world');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

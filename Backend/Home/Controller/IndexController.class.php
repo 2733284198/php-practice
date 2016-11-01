@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
+use Org\Util\Car;
 use Org\Util\RedisInstance;
 use Org\Util\Tree;
 use Org\Util\UserAgent;
@@ -158,5 +159,14 @@ class IndexController extends BaseController
         $redis->select(3);
         echo session_name().'='.session_id();
         die;
+    }
+
+    public function everyFunction(){
+        $carObj = new Car();
+        var_dump($carObj);
+        $carObj->add('butter',1);
+        $carObj->add('milk',4);
+        $carObj->add('eggs',9);
+        print_r($carObj->getTotal(0.05));
     }
 }

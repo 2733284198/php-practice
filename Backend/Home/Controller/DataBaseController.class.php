@@ -356,13 +356,31 @@ class DataBaseController extends Controller
     }
 
     public function test(){
-        $aa = '4001:user_id';
-        $messageId = explode(':',$aa);
-        switch($messageId[0]){
-            case 4001:
-
+        $redis = RedisInstance::Instance();
+        $conn = $redis->connect('127.0.0.1', '6379000');
+        if($conn == true){
+            var_dump($conn);
+        }else{
+            echo 'Redis server went away';
         }
-        echo $messageId[1];
+        var_dump($redis);
+
+    }
+
+    public function test2(){
+        $redis = RedisInstance::LocationInstance();
+        var_dump($redis);
+        $newRedis= new \Redis();
+        var_dump($newRedis);
+        die;
+        if($redis != false){
+            var_dump($redis->keys('*'));
+            echo '11111111';
+        }else{
+            echo '00000000';
+        }
+
+
     }
 
 }
