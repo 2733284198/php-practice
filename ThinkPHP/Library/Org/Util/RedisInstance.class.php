@@ -2,23 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: Tinywan
- * Date: 2016/7/3
- * Time: 9:26
+ * Date: 2016/11/1
+ * Time: 8:54
  * Mail: Overcome.wan@Gmail.com
- * Singleton instance
  */
 
 namespace Org\Util;
 
+
 class RedisInstance
 {
-
     /**
      * 类对象实例数组,共有静态变量
      * @var null
      */
     private static $_instance;
-
     /**
      * 数据库连接资源句柄
      * @var
@@ -31,7 +29,6 @@ class RedisInstance
      */
     private function __construct()
     {
-
     }
 
     /**
@@ -43,15 +40,14 @@ class RedisInstance
      */
     public static function Instance()
     {
-        try{
+        try {
             if (!(static::$_instance instanceof \Redis)) {
                 static::$_instance = new \Redis();
             }
             return static::$_instance;
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return false;
         }
-
     }
 
     /**
@@ -61,15 +57,16 @@ class RedisInstance
      */
     public static function MasterInstance()
     {
-        try{
-            self::Instance()->connect('121.41.88.209', '63789');
+        try {
+            $_connectSource = self::Instance()->connect('121.41.88.209', '63789');
+            if ($_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             self::Instance()->auth('tinywanredis');
+
             return static::$_instance;
-        }catch (\Exception $e){
-            return false;
+        } catch (\Exception $e) {
+            return FALSE;
         }
     }
-
 
     /**
      * Slave1 实例
@@ -78,12 +75,13 @@ class RedisInstance
      */
     public static function SlaveOneInstance()
     {
-       try{
+        try {
             self::Instance()->connect('121.41.88.209', '63788');
+            if (self::$_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             return static::$_instance;
-       }catch (\Exception $e){
+        } catch (\Exception $e) {
             return false;
-       }
+        }
     }
 
     /**
@@ -93,11 +91,28 @@ class RedisInstance
      */
     public static function SlaveTwoInstance()
     {
-        try{
+        try {
             self::Instance()->connect('121.41.88.209', '63700');
+            if (self::$_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             return static::$_instance;
-        }catch (\Exception $e){
-             return false;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    /**
+     * Slave2 实例
+     * @return null
+     * @static
+     */
+    public static function LocationInstance()
+    {
+        try {
+            if (self::Instance()->connect('127.0.0.1', '6379') === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
+            if (self::Instance()->ping() != '+PONG') return FALSE;
+            return static::$_instance;
+        } catch (\Exception $e) {
+            return false;
         }
     }
 
@@ -139,13 +154,11 @@ class RedisInstance
     public static function connect()
     {
         // 如果连接资源不存在，则进行资源连接
-        if (!self::$_connectSource)
-        {
+        if (!self::$_connectSource) {
             //@return bool TRUE on success, FALSE on error.
             self::$_connectSource = self::Instance()->connect('121.41.88.209', '63789');
             // 没有资源返回
-            if (!self::$_connectSource)
-            {
+            if (!self::$_connectSource) {
                 return 'Redis Server Connection Fail';
             }
         }
@@ -159,7 +172,6 @@ class RedisInstance
     {
         // TODO: Implement __clone() method.
     }
-
 
     /**
      * @return \Redis
