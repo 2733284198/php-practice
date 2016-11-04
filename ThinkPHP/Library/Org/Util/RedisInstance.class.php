@@ -58,7 +58,7 @@ class RedisInstance
     public static function MasterInstance()
     {
         try {
-            $_connectSource = self::Instance()->connect('121.41.88.209', '63789');
+            $_connectSource = self::Instance()->connect('128.2', '63789');
             if ($_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             self::Instance()->auth('tinywanredis');
 
@@ -76,7 +76,7 @@ class RedisInstance
     public static function SlaveOneInstance()
     {
         try {
-            self::Instance()->connect('121.41.88.209', '63788');
+            self::Instance()->connect('121.09', '63788');
             if (self::$_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             return static::$_instance;
         } catch (\Exception $e) {
@@ -92,7 +92,7 @@ class RedisInstance
     public static function SlaveTwoInstance()
     {
         try {
-            self::Instance()->connect('121.41.88.209', '63700');
+            self::Instance()->connect('121.49', '63700');
             if (self::$_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             return static::$_instance;
         } catch (\Exception $e) {
@@ -124,7 +124,7 @@ class RedisInstance
     public static function messageRedis()
     {
         try{
-            self::Instance()->connect('218.244.141.124', '63579');
+            self::Instance()->connect('214', '63579');
             self::Instance()->auth('amaitestredis');
             return static::$_instance;
         }catch (\Exception $e){
@@ -156,7 +156,7 @@ class RedisInstance
         // 如果连接资源不存在，则进行资源连接
         if (!self::$_connectSource) {
             //@return bool TRUE on success, FALSE on error.
-            self::$_connectSource = self::Instance()->connect('121.41.88.209', '63789');
+            self::$_connectSource = self::Instance()->connect('129', '63789');
             // 没有资源返回
             if (!self::$_connectSource) {
                 return 'Redis Server Connection Fail';
