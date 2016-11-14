@@ -95,6 +95,27 @@ return array(
     'RONGLIAN_APPID'         => '', //容联云通讯 应用Id appid
     'RONGLIAN_TEMPLATE_ID'   => '', //容联云通讯 模板Id
 
+    //***********************************定义一下在html中就直接可以使用的路径**********************************
+    'TMPL_PARSE_STRING'      => array(    // 定义常用路径
+        '__PUBLIC__'         => __ROOT__.'/Public',
+        '__HOME_CSS__'       => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/css',
+        '__HOME_JS__'        => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/js',
+        '__HOME_IMAGES__'    => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/images',
+        '__ADMIN_CSS__'      => __ROOT__.trim(TMPL_PATH,'.').'Admin/Public/css',
+        '__ADMIN_JS__'       => __ROOT__.trim(TMPL_PATH,'.').'Admin/Public/js',
+        '__ADMIN_IMAGES__'   => __ROOT__.trim(TMPL_PATH,'.').'Admin/Public/images',
+        '__ADMIN_ACEADMIN__' => __ROOT__.trim(TMPL_PATH,'.').'Admin/Public/aceadmin',
+        '__PUBLIC_CSS__'     => __ROOT__.trim(TMPL_PATH,'.').'Public/css',
+        '__PUBLIC_JS__'      => __ROOT__.trim(TMPL_PATH,'.').'Public/js',
+        '__PUBLIC_IMAGES__'  => __ROOT__.trim(TMPL_PATH,'.').'Public/images',
+        '__USER_CSS__'       => __ROOT__.trim(TMPL_PATH,'.').'User/Public/css',
+        '__USER_JS__'        => __ROOT__.trim(TMPL_PATH,'.').'User/Public/js',
+        '__USER_IMAGES__'    => __ROOT__.trim(TMPL_PATH,'.').'User/Public/images',
+        '__APP_CSS__'        => __ROOT__.trim(TMPL_PATH,'.').'App/Public/css',
+        '__APP_JS__'         => __ROOT__.trim(TMPL_PATH,'.').'App/Public/js',
+        '__APP_IMAGES__'     => __ROOT__.trim(TMPL_PATH,'.').'App/Public/images'
+    ),
+
 
 
 );
