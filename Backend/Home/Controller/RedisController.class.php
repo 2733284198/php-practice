@@ -117,12 +117,35 @@ class RedisController extends Controller
     {
         $string = "<h1>你们好啊!<h1>";
         $redis = htmlspecialchars($string);
-        var_dump(htmlspecialchars_decode("<h1>你们好啊!<h1>"));
-        die;
-        $redis = RedisInstance::getInstance();
-        $redis->select(2);
-        var_dump($redis->keys('ID:123456'));
-        $this->display();
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        var_dump($redis->keys('*'));
+        $it = NULL; /* Initialize our iterator to NULL */
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY); /* retry when we get no keys back */
+        while($arr_keys = $redis->scan($it)) {
+            foreach($arr_keys as $str_key) {
+                echo "Here is a key: $str_key\n";
+            }
+            echo "No more keys to scan!\n";
+        }
+    }
+
+    /**
+     * Scan 扫描键的键空间
+     */
+    public function scan()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $it = NULL; /* 将我们的迭代器初始化为NULL */
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY); /* 当我们没有回到钥匙时重试 */
+        var_dump($redis->scan($it));
+//        while($arr_keys = $redis->scan($it)) {
+//            foreach($arr_keys as $str_key) {
+//                echo "Here is a key: $str_key<br/>";
+//            }
+//            echo "No more keys to scan!\n";
+//        }
     }
 
     /**
