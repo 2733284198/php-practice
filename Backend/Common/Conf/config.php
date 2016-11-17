@@ -98,6 +98,7 @@ return array(
     //***********************************定义一下在html中就直接可以使用的路径**********************************
     'TMPL_PARSE_STRING'      => array(    // 定义常用路径
         '__PUBLIC__'         => __ROOT__.'/Public',
+        '__PUBLIC__'         => __ROOT__.'/Public',
         '__HOME_CSS__'       => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/css',
         '__HOME_JS__'        => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/js',
         '__HOME_IMAGES__'    => __ROOT__.trim(TMPL_PATH,'.').'Home/Public/images',

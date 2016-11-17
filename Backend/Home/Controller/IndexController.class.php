@@ -22,6 +22,11 @@ class IndexController extends BaseController
         $this->display();
     }
 
+    public function tpltest()
+    {
+        $this->display('Index/tpltest');
+    }
+
     public function welcome()
     {
         $this->display('Index/welcome');

@@ -10,6 +10,11 @@ class IndexController extends Controller
         echo 'Html5';
     }
 
+    public function testtpl()
+    {
+        $this->display();
+    }
+
     public function setTimeOut()
     {
         $this->display();
