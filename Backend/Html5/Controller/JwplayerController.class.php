@@ -17,8 +17,19 @@ class JwplayerController extends Controller
         $this->display();
     }
 
-    public function setTimeOut()
+    //swfobject
+    public function swfobject()
     {
+        $this->display();
+    }
+
+    //swfobject
+    public function oldswfobject()
+    {
+        $this->display();
+    }
+
+    public function onlyvideo(){
         $this->display();
     }
 
