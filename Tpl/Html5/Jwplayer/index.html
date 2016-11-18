@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jwplayer播放器播放RTMP视频</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+<div id="my-video"><i class="fa fa fa-spinner fa-spin"></i> 正在加载...</div>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">
+    jwplayer("my-video").setup({
+        file: "rtmp://ruiyutouzi.amailive.com/live/410", //视频/直播 播放地址
+        image: "/res/streaming/img/amai-logo-01.jpg", //播放前的 LOGO 图片地址
+        width: "100%", //宽度
+        height: "370", //高度
+        hlshtml:true,
+        autostart: false //自动播放
+    });
+</script>
+</body>
+</html>

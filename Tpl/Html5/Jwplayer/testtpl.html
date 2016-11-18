@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setInterval和setTimeout的使用区别</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+    <link href="__PUBLIC__/Backend/video/video-js.css" rel="stylesheet" type="text/css" />
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="__PUBLIC__/Backend/video/video.js"></script>
+    <css file="__PUBLIC__/Backend/css/prettify.css" />
+
+    <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+    <script>
+        videojs.options.flash.swf = "__PUBLIC__/video/video-js.swf";
+    </script>
+
+
+</head>
+<body>
+setTimeOut
+<div id="info">
+    <h3>欢迎光临</h3>
+    <p>我的qq是332877552</p>
+</div>
+
+<!--设置自动播放将下面代码加到html中代码后面-->
+<script type="text/javascript">
+    var intervalProcess  = setInterval("showTime2()", 1000);
+    function showTime2()
+    {
+        var today = new Date();
+        console.log("The time is: " + today.toString());
+        console.warn("timer ID: " + intervalProcess);
+    }
+    console.log('打印信息');
+//    /*函数是如何被调用的，在其中加入console.trace()方法就可以了*/
+//    function add(a,b){
+//        console.trace();
+//        return a+b;
+//    }
+//    var x = add3(1,1);
+//    function add3(a,b){return add2(a,b);}
+//    function add2(a,b){return add1(a,b);}
+//    function add1(a,b){return add(a,b);}
+//    console.log("%d年%d月%d日",2011,1,26);
+//
+//    var result = 1;
+//    console.assert( result );
+//    var year = 2014;
+//    console.assert(year == 2018 );
+
+    //    console.info('信息');
+//    console.warn('警告');
+//    console.error('错误');
+//    console.trace();
+
+//    console.group('第一个分组');
+//        console.log('第一条');
+//        console.log('第二条');
+//    console.groupEnd();
+//
+//    console.group('第二个分组');
+//            console.log('第一条');
+//            console.log('第二条');
+//    console.groupEnd();
+
+</script>
+</body>
+</html>
