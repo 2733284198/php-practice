@@ -13,6 +13,15 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 
 [博客地址] : http://www.cnblogs.com/tinywan/
 
+## 公共视频测试库
+*  2016杭州·云栖大会集锦:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
+*  阿里巴巴王坚完整版视频:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
+
+## 公共脚本库
+*  bootstrap/css:<br>http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css
+*  bootstrap/js:<br>http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js
+*  jquery:<br>http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js
+
 ## 全面的WEB开发特性支持
 
 最新的以ThinkPHP为WEB应用开发提供功能有以下，包括：
