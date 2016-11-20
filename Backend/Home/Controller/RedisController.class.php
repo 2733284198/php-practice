@@ -149,27 +149,117 @@ class RedisController extends Controller
     }
 
     /**
-     * Singleton instance(使用一个单例模式)
+     *  用户注册信息
      */
-    public function userCommit()
+    public function userRegister()
     {
-        $redis = RedisInstance::getInstance();
-        $redis->incrBy();
-        $client_id = I('post.client_id');
-        $content = I('post.content');
-        $msgDate = json_decode($client_id, true);
-        exit(json_encode($client_id));
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $username = 'tinywan'.mt_rand(0000,8888);
+        $password = '123456';
+        if($redis->get('user:username:'.$username.':userid')){
+            exit('该用户名没有被使用');
+        }
+        //获取全局userId
+        $userId = $redis->incr('global:userid');
+        $redis->set('user:userId:'.$userId.':username',$username);
+        $redis->set('user:userId:'.$userId.':password',$password);
+        $redis->set('user:username:'.$username.':userid',$userId);
 
-        $redis->set('myset',$client_id);
-        $redis->set('myset2',$msgDate['clientId']);
-        exit(json_encode(['uuuu'=>$msgDate['clientId']]));
-        $redis->sAdd('mysadd',$msgDate['clientId']);
+        //存储userId 用户排序功能 使用队列链表进行排序 50个最新的UserId
+        $redis->lPush('lastNewUserId',$userId);
+        //之存储50条，使用截取
+        $redis->lTrim('lastNewUserId',0,49);
+
     }
 
-    public function userExists()
+    /**
+     *      用于登录信息
+     */
+    public function userLogin()
     {
-        $redis = RedisInstance::getInstance();
-        var_dump($redis->sIsMember('mysadd','333'));
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $username = 'tinywan8165';
+        $password = '123456';
+        $uid = $redis->get('user:username:'.$username.':userid');
+        if($uid == false){
+            exit('该用户名不存在');
+        }
+        $oldpwd = $redis->get('user:userId:'.$uid.':password');
+        if($password != $oldpwd){
+            exit('密码错误');
+        }
+        echo '登录成功，跳转';
+        homePrint($uid);
+    }
+
+    /**
+     *   发表微博
+     */
+    public function createContentByUserId()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $userId = 2;
+        $time = time();
+        $content = 'content'.mt_rand(5555,9999);
+        $postId = $redis->incr('global:postid');
+        $redis->set('post:postid:'.$postId.':userid',$userId);
+        $redis->set('post:postid:'.$postId.':time',$time);
+        $redis->set('post:postid:'.$postId.':content',$content);
+        homePrint($redis->get('post:postid:'.$postId.':content'));
+    }
+
+    /**
+     * 最新注册的用户
+     * 注意：学习这里的Sort()命令;
+     */
+    public function getLastUserId()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $lastNewUserIdArray = $redis->sort('lastNewUserId',
+            array('sort' => 'desc',
+                'limit' => array(0, 10),
+                'get'=>'user:userId:*:username')
+        );
+        var_dump($lastNewUserIdArray);
+    }
+
+    /**
+     * 对某人关注的信息：
+     * 对某人进行关注和关注自己的用户信息
+     * 设置两个集合进行操作
+     * void
+     * @param $targetUser
+     * @param $user
+     */
+    public function userFollow($targetUser='2', $user=323)
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $userName = 'tinywan243';
+        $userId = 2;
+        $prouId = $redis->get('user:username:'.$userName.':userid'); //取出该用户
+        if($prouId == false){
+            exit('非法的用户名');
+        }
+        // ismembers  判断该用户是不是该集合的元素
+        $isfollowing = $redis->sIsMember('following:'.$userId,$prouId);
+        if($isfollowing){
+            echo '已经是粉丝了，取消关注';
+        }else{
+            echo '你还不是粉丝了，点击关注';
+            // 关注我的粉丝集合（被关注者的粉丝列表）
+            $redis->sAdd('followers:' . $userId,$prouId); //给自己集合中添加该粉丝
+            //自己关注的人的集合
+            $redis->sAdd('following:'.$prouId,$userId);  //关注的人给自己集合中增加一条，我关注了谁
+        }
+        $followers = $redis->sCard('followers:' . $userId); //获取粉丝数
+        var_dump($followers);
+        //设置粉丝个数
+        $redis->hset('user:' . $userId, 'fans', $followers);
     }
 
     public function sendToClient()
