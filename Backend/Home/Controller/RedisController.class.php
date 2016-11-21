@@ -219,10 +219,11 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $lastNewUserIdArray = $redis->sort('lastNewUserId',
-            array('sort' => 'desc',
+        $lastNewUserIdArray = $redis->sort('lastNewUserId', [
+                'sort' => 'desc',
                 'limit' => array(0, 10),
-                'get'=>'user:userId:*:username')
+                'get'=>'user:userId:*:username'
+            ]
         );
         var_dump($lastNewUserIdArray);
     }
