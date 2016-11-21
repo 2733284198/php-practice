@@ -209,7 +209,13 @@ class RedisController extends Controller
         $redis->set('post:postid:'.$postId.':time',$time);
         $redis->set('post:postid:'.$postId.':content',$content);
         //把微博推送给自己的分析
-        $fans = $redis->sCard('followers:' . $userId); //获取自己的粉丝数
+
+        $fans = $redis->sMembers('followers:' . $userId); //获取自己的粉丝数
+        //对粉丝挨个推送微博
+        $fans[] = $userId;
+        foreach($fans as $fanId){
+            $redis->lPush('revicePost:'.$fanId,$postId);
+        }
         var_dump($fans);die;
 
         homePrint($redis->get('post:postid:'.$postId.':content'));
