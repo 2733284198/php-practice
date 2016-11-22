@@ -180,7 +180,7 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $username = 'tinywan8165';
+        $username = 'tinywan3704';
         $password = '123456';
         $uid = $redis->get('user:username:'.$username.':userid');
         if($uid == false){
@@ -208,6 +208,16 @@ class RedisController extends Controller
         $redis->set('post:postid:'.$postId.':userid',$userId);
         $redis->set('post:postid:'.$postId.':time',$time);
         $redis->set('post:postid:'.$postId.':content',$content);
+        //把微博推送给自己的分析
+
+        $fans = $redis->sMembers('followers:' . $userId); //获取自己的粉丝数
+        //对粉丝挨个推送微博
+        $fans[] = $userId;
+        foreach($fans as $fanId){
+            $redis->lPush('revicePost:'.$fanId,$postId);
+        }
+        var_dump($fans);die;
+
         homePrint($redis->get('post:postid:'.$postId.':content'));
     }
 
@@ -240,7 +250,7 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $userName = 'tinywan243';
+        $userName = 'tinywan2245';
         $userId = 2;
         $prouId = $redis->get('user:username:'.$userName.':userid'); //取出该用户
         if($prouId == false){
@@ -248,6 +258,7 @@ class RedisController extends Controller
         }
         // ismembers  判断该用户是不是该集合的元素
         $isfollowing = $redis->sIsMember('following:'.$userId,$prouId);
+
         if($isfollowing){
             echo '已经是粉丝了，取消关注';
         }else{
@@ -257,10 +268,11 @@ class RedisController extends Controller
             //自己关注的人的集合
             $redis->sAdd('following:'.$prouId,$userId);  //关注的人给自己集合中增加一条，我关注了谁
         }
-        $followers = $redis->sCard('followers:' . $userId); //获取粉丝数
-        var_dump($followers);
+        //获取粉丝数
+        $allFollowers = $redis->sCard('followers:' . $userId); //获取粉丝数
+        var_dump($allFollowers);
         //设置粉丝个数
-        $redis->hset('user:' . $userId, 'fans', $followers);
+        $redis->hset('user:' . $userId, 'fans', $allFollowers);
     }
 
     public function sendToClient()
