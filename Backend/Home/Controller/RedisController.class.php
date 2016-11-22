@@ -157,16 +157,15 @@ class RedisController extends Controller
         $redis->select(10);
         $username = 'tinywan'.mt_rand(0000,8888);
         $password = '123456';
-        if($redis->get('user:username:'.$username.':userid')){
-            exit('该用户名没有被使用');
-        }
         //获取全局userId
-        $userId = $redis->incr('global:userid');
-        $redis->set('user:userId:'.$userId.':username',$username);
-        $redis->set('user:userId:'.$userId.':password',$password);
-        $redis->set('user:username:'.$username.':userid',$userId);
-
-        //存储userId 用户排序功能 使用队列链表进行排序 50个最新的UserId
+        $userId = $redis->incr('global:userId');
+        $redis->hMset('user:'.$userId,[
+            'userId'=>$userId,
+            'password'=>$password,
+            'username'=>$username,
+        ]);
+        $redis->set('user:'.$username,$userId);
+        //存储userId .用户排序功能 使用队列链表进行排序 50个最新的UserId
         $redis->lPush('lastNewUserId',$userId);
         //之存储50条，使用截取
         $redis->lTrim('lastNewUserId',0,49);
@@ -180,13 +179,13 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $username = 'tinywan3704';
+        $username = 'tinywan6656';
         $password = '123456';
-        $uid = $redis->get('user:username:'.$username.':userid');
+        $uid = $redis->get('user:'.$username);
         if($uid == false){
             exit('该用户名不存在');
         }
-        $oldpwd = $redis->get('user:userId:'.$uid.':password');
+        $oldpwd = $redis->hGet('user:'.$uid,'password');
         if($password != $oldpwd){
             exit('密码错误');
         }
@@ -197,28 +196,28 @@ class RedisController extends Controller
     /**
      *   发表微博
      */
-    public function createContentByUserId()
+    public function createContentByUserId($userId = 2)
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $userId = 2;
         $time = time();
         $content = 'content'.mt_rand(5555,9999);
         $postId = $redis->incr('global:postid');
-        $redis->set('post:postid:'.$postId.':userid',$userId);
-        $redis->set('post:postid:'.$postId.':time',$time);
-        $redis->set('post:postid:'.$postId.':content',$content);
+        $redis->hMset('post:'.$postId,[
+            'userId' => $userId,
+            'username' => $redis->hGet('user:'.$userId,'username'),
+            'time' => $time,
+            'content' => $content,
+        ]);
         //把微博推送给自己的分析
-
         $fans = $redis->sMembers('followers:' . $userId); //获取自己的粉丝数
-        //对粉丝挨个推送微博
-        $fans[] = $userId;
-        foreach($fans as $fanId){
-            $redis->lPush('revicePost:'.$fanId,$postId);
-        }
-        var_dump($fans);die;
 
-        homePrint($redis->get('post:postid:'.$postId.':content'));
+        //对粉丝挨个推送微博
+        $fans[] = $userId; //自己发送的微博自己也可以看得到
+        foreach($fans as $fanId){
+            $redis->lPush('receivePost:'.$fanId,$postId);
+        }
+        homePrint($redis->hGetAll('post:'.$postId));
     }
 
     /**
@@ -232,7 +231,7 @@ class RedisController extends Controller
         $lastNewUserIdArray = $redis->sort('lastNewUserId', [
                 'sort' => 'desc',
                 'limit' => array(0, 10),
-                'get'=>'user:userId:*:username'
+                'hGet'=>'user:*'
             ]
         );
         var_dump($lastNewUserIdArray);
@@ -245,34 +244,65 @@ class RedisController extends Controller
      * void
      * @param $targetUser
      * @param $user
+     * following 关注了谁
+     * followers 关注我的人【粉丝集合群】
      */
-    public function userFollow($targetUser='2', $user=323)
+    public function userFollow($targetUser='2', $userId=2)
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $userName = 'tinywan2245';
-        $userId = 2;
-        $prouId = $redis->get('user:username:'.$userName.':userid'); //取出该用户
-        if($prouId == false){
+        $userName = 'tinywan6656'; //粉丝用户名 userID =2
+        $fenSiId = $redis->get('user:'.$userName); //取出该用户
+        if($fenSiId == false){
             exit('非法的用户名');
         }
         // ismembers  判断该用户是不是该集合的元素
-        $isfollowing = $redis->sIsMember('following:'.$userId,$prouId);
+        $isFollowing = $redis->sIsMember('following:'.$userId,$fenSiId);
 
-        if($isfollowing){
+        if($isFollowing){
             echo '已经是粉丝了，取消关注';
         }else{
             echo '你还不是粉丝了，点击关注';
             // 关注我的粉丝集合（被关注者的粉丝列表）
-            $redis->sAdd('followers:' . $userId,$prouId); //给自己集合中添加该粉丝
+            $redis->sAdd('followers:'. $userId,$fenSiId); //给自己集合中添加该粉丝
             //自己关注的人的集合
-            $redis->sAdd('following:'.$prouId,$userId);  //关注的人给自己集合中增加一条，我关注了谁
+            $redis->sAdd('following:'.$fenSiId,$userId);  //关注的人给自己集合中增加一条，我关注了谁
         }
         //获取粉丝数
         $allFollowers = $redis->sCard('followers:' . $userId); //获取粉丝数
-        var_dump($allFollowers);
         //设置粉丝个数
         $redis->hset('user:' . $userId, 'fans', $allFollowers);
+    }
+
+    /**
+     * 获取最新微博数
+     */
+    public function getLastPostByUserId($userId = 3){
+        //之获取最新的50条记录
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $redis->lTrim('receivePost:'.$userId,0,49);
+        $newPosts = $redis->sort('receivePost:'.$userId,[
+            'sort' => 'desc',
+            'hGetAll' => "post:*"
+        ]);
+        $postList = [];
+        foreach($newPosts as $post){
+            $postList[] = [
+                'userId' => $redis->hGet('post:'.$post,'userId'),
+                'username' => $redis->hGet('post:'.$post,'username'),
+                'time' => word_time($redis->hGet('post:'.$post,'time')),
+                'content' => $redis->hGet('post:'.$post,'content'),
+            ];
+        }
+        var_dump($postList);
+    }
+
+    public function getUserNameById($uid){
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $user = $redis->hGet('user:'.$uid,'username');
+        return $user;
     }
 
     public function sendToClient()
