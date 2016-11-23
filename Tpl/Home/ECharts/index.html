@@ -60,9 +60,12 @@
             }]
         });
         // 异步加载数据
+        //ECharts 默认有提供了一个简单的加载动画。只需要调用 showLoading 方法显示。数据加载完成后再调用 hideLoading 方法隐藏加载动画。
+        myChart.showLoading();
         $.get($URL+'getJson').done(function (data) {
             console.log($.parseJSON(data));
             $data = $.parseJSON(data);
+            myChart.hideLoading();
             // 填入数据
             myChart.setOption({
                 xAxis: {
@@ -73,65 +76,6 @@
                     name: "{$name}",
                     data: $data.data
                 }]
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        var $URL = "__APP__/Home/AdminUser/";
-        $(function(){
-            //delete AdminUser
-            $(".del").bind('click',function(){
-                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
-                var $id = $(this).attr('value');
-                var $url = $URL+'delUser';
-                if(!$msg){
-                    return false;
-                }
-//            $.getJSON('$url',{user_id:$id},function(json){
-//                if(json.status ==1 ){
-//                    alert(1111);
-//                }else{
-//                    alert(000000);
-//                }
-//            });
-                $.ajax({
-                    url: $URL+'delUser',
-                    type: 'get',
-                    dataType: 'text',
-                    data:{user_id:$id},
-                    success:function($result){
-                        if($result){
-                            alert('删除成功');
-                            window.location.reload();
-                        }else{
-                            alert('删除失败');
-                        }
-                    },
-                    error:function(){
-                        alert('删除失败');
-                    }
-                });
-            });
-            //status set
-            $(".set").bind('click',function(){
-                var $id = $(this).attr('value');
-                $.ajax({
-                    url: $URL+'setStatus',
-                    type: 'get',
-                    dataType: 'text',
-                    data:{uid:$id},
-                    success:function($result){
-                        if($result){
-                            alert('设置成功');
-                            window.location.reload();
-                        }else{
-                            alert('设置失败');
-                        }
-                    },
-                    error:function(){
-                        alert('设置失败');
-                    }
-                });
             });
         });
     </script>

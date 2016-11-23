@@ -21,9 +21,10 @@ class EChartsController extends BaseController
     public function getJson(){
         $result = [
             'status'=>200,
-            'categories'=>["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+            'categories'=>["12-01","12-01","12-01","12-01","12-01","12-04"],
             'data'=>[45,23,67,43,89,230]
         ];
+        sleep(3);
         exit(json_encode($result));
     }
 
