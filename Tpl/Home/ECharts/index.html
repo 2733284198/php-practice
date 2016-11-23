@@ -1,0 +1,138 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div id="main" style="width: 600px;height:400px;"></div>
+
+        </div>
+       </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script src="__PUBLIC__/Common/static/js/echarts.common.min.js"></script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/ECharts/";
+        var myChart = echarts.init(document.getElementById('main'));
+        // 显示标题，图例和空的坐标轴
+        myChart.setOption({
+            title: {
+                text: "{$product_name}"
+            },
+            tooltip: {},
+            legend: {
+                data:["{$name}"]
+            },
+            xAxis: {
+                data: []
+            },
+            yAxis: {},
+            series: [{
+                name: "{$name}",
+                type: 'bar',
+                data: []
+            }]
+        });
+        // 异步加载数据
+        $.get($URL+'getJson').done(function (data) {
+            console.log($.parseJSON(data));
+            $data = $.parseJSON(data);
+            // 填入数据
+            myChart.setOption({
+                xAxis: {
+                    data: $data.categories
+                },
+                series: [{
+                    // 根据名字对应到相应的系列
+                    name: "{$name}",
+                    data: $data.data
+                }]
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/AdminUser/";
+        $(function(){
+            //delete AdminUser
+            $(".del").bind('click',function(){
+                var $msg = confirm('确认删除该用户吗？删除后不可恢复！');
+                var $id = $(this).attr('value');
+                var $url = $URL+'delUser';
+                if(!$msg){
+                    return false;
+                }
+//            $.getJSON('$url',{user_id:$id},function(json){
+//                if(json.status ==1 ){
+//                    alert(1111);
+//                }else{
+//                    alert(000000);
+//                }
+//            });
+                $.ajax({
+                    url: $URL+'delUser',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{user_id:$id},
+                    success:function($result){
+                        if($result){
+                            alert('删除成功');
+                            window.location.reload();
+                        }else{
+                            alert('删除失败');
+                        }
+                    },
+                    error:function(){
+                        alert('删除失败');
+                    }
+                });
+            });
+            //status set
+            $(".set").bind('click',function(){
+                var $id = $(this).attr('value');
+                $.ajax({
+                    url: $URL+'setStatus',
+                    type: 'get',
+                    dataType: 'text',
+                    data:{uid:$id},
+                    success:function($result){
+                        if($result){
+                            alert('设置成功');
+                            window.location.reload();
+                        }else{
+                            alert('设置失败');
+                        }
+                    },
+                    error:function(){
+                        alert('设置失败');
+                    }
+                });
+            });
+        });
+    </script>
+</block>

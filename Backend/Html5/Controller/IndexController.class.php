@@ -28,4 +28,9 @@ class IndexController extends Controller
         var_dump(microtime());
     }
 
+    public function echarts()
+    {
+        $this->display();
+    }
+
 }
