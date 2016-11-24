@@ -8,6 +8,7 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 ## Github个人主页
 
 [Github地址] : https://tinywan.github.io/
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 ## 详细说明文档请见个人博客
 
