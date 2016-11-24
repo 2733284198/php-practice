@@ -1,14 +1,6 @@
 <?php
 namespace Home\Controller;
 
-use Home\Controller\BaseController;
-use Org\Util\Car;
-use Org\Util\RedisInstance;
-use Org\Util\Tree;
-use Org\Util\UserAgent;
-use Org\Util\Rbac;
-use Think\Log;
-
 class EChartsController extends BaseController
 {
     public function index()
@@ -24,8 +16,14 @@ class EChartsController extends BaseController
             'categories'=>["12-01","12-01","12-01","12-01","12-01","12-04"],
             'data'=>[45,23,67,43,89,230]
         ];
-        sleep(3);
+        sleep(1);
         exit(json_encode($result));
+    }
+
+    public function test(){
+        date_default_timezone_set('UTC');
+        $utc = date('Y-m-d\TH:i:s\Z', time());
+        var_dump($utc);
     }
 
 }

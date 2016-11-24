@@ -15,7 +15,29 @@ class AliYunCsController extends Controller
 
     public function index()
     {
-       echo 'AliYunCs';
+        echo 'AliYunCs';
+    }
+
+    /**
+     * 接口调用DEMO
+     * @param  String $DomainName
+     * @param  String $AppName
+     * @param  String $StreamName "2016-11-16T00:00:00Z"
+     * @param  String $StartTime "2016-11-24T00:00:00Z"
+     * @param  String $EndTime
+     * @return array
+     */
+    public function demoApiAction()
+    {
+        $DomainName = 'testzhibo.amai8.com';
+        $AppName = 'testzhibo-live';
+        $StreamName = null;
+        $requestStart = '2016-11-22 07:31:45';
+        $requestEnd = '2016-11-24 11:31:45';
+        $StartTime = $this->prcToUtc($requestStart);
+        $EndTime = $this->prcToUtc($requestEnd);
+        $result = $this->getLiveStreamsPublishList($DomainName, $AppName, $StreamName, $StartTime, $EndTime);
+        var_dump($result);
     }
 
     /**
@@ -26,7 +48,7 @@ class AliYunCsController extends Controller
      * @param $StreamName
      * @param $StartTime
      * @param $EndTime
-     * @return Array
+     * @return array
      */
     public function getLiveStreamsPublishList()
     {
@@ -37,10 +59,10 @@ class AliYunCsController extends Controller
         $StartTime = '2016-10-18T00:00:00Z';
         $EndTime = '2016-11-16T00:00:00Z';
 
-        $result = $this->aliYunMethod($Action,$DomainName,$AppName,$StreamName,$StartTime,$EndTime);
-        $PublishInfo = json_decode(file_get_contents($result),true)['PublishInfo'];
+        $result = $this->aliYunMethod($Action, $DomainName, $AppName, $StreamName, $StartTime, $EndTime);
+        $PublishInfo = json_decode(file_get_contents($result), true)['PublishInfo'];
         $LiveStreamPublishInfo = [];
-        foreach($PublishInfo['LiveStreamPublishInfo'] as $val){
+        foreach ($PublishInfo['LiveStreamPublishInfo'] as $val) {
             $LiveStreamPublishInfo[] = [
                 'EdgeNodeAddr' => $val['EdgeNodeAddr'],
                 'PublishTime' => $val['PublishTime'],
@@ -53,17 +75,7 @@ class AliYunCsController extends Controller
                 'AppName' => $val['AppName'],
             ];
         }
-        var_dump($LiveStreamPublishInfo);
-    }
-
-    function curl_file_get_contents($durl){
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $durl);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) ; // 获取数据返回
-        curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; // 在启用 CURLOPT_RETURNTRANSFER 时候将获取数据返回
-        $r = curl_exec($ch);
-        curl_close($ch);
-        return $r;
+        return $LiveStreamPublishInfo;
     }
 
     /**
@@ -74,25 +86,25 @@ class AliYunCsController extends Controller
      * @param $StreamName
      * @param $StartTime
      * @param $EndTime
-     * @return Array
+     * @return array
      */
-    public function getLiveStreamOnlineUserNum($DomainName = 'ruiyutouzi.amailive.com',$AppName = 'live',$StreamName = '410',$StartTime = '2016-10-18T00:00:00Z',$EndTime = '2016-11-16T00:00:00Z')
+    public function getLiveStreamOnlineUserNum($DomainName = 'ruiyutouzi.amailive.com', $AppName = 'live', $StreamName = '410', $StartTime = '2016-10-18T00:00:00Z', $EndTime = '2016-11-16T00:00:00Z')
     {
         $Action = 'DescribeLiveStreamOnlineUserNum';
-        $result = $this->aliYunMethod($Action,$DomainName,$AppName,$StreamName,$StartTime,$EndTime);
-        $responseResult = json_decode(file_get_contents($result),true);
+        $result = $this->aliYunMethod($Action, $DomainName, $AppName, $StreamName, $StartTime, $EndTime);
+        $responseResult = json_decode(file_get_contents($result), true);
         $TotalUserNumber = $responseResult['TotalUserNumber'];
         $OnlineUserInfo = $responseResult['OnlineUserInfo'];
         $LiveStreamOnlineUser = [];
-        foreach($OnlineUserInfo['LiveStreamOnlineUserNumInfo'] as $val){
+        $LiveStreamOnlineUser['TotalUserNumber'] = $TotalUserNumber;
+        foreach ($OnlineUserInfo['LiveStreamOnlineUserNumInfo'] as $val) {
             $LiveStreamOnlineUser[] = [
                 'Time' => $val['Time'],
                 'StreamUrl' => $val['StreamUrl'],
                 'UserNumber' => $val['UserNumber'],
             ];
         }
-        echo '当前在线人数:'.$TotalUserNumber;
-        var_dump($LiveStreamOnlineUser);
+        return $LiveStreamOnlineUser;
     }
 
     /**
@@ -100,20 +112,20 @@ class AliYunCsController extends Controller
      * Action:DescribeLiveStreamsOnlineList
      * @param $DomainName
      * @param $AppName
-     * @return Array
+     * @return array
      */
-    public function DescribeLiveStreamsOnlineList($DomainName = 'ruiyutouzi.amailive.com',$AppName = 'live')
+    public function DescribeLiveStreamsOnlineList($DomainName = 'ruiyutouzi.amailive.com', $AppName = 'live')
     {
         $Action = 'DescribeLiveStreamsOnlineList';
         $StreamName = null;
         $StartTime = null;
         $EndTime = null;
-        $result = $this->aliYunMethod($Action,$DomainName,$AppName,$StreamName,$StartTime,$EndTime);
-        $responseResult = json_decode(file_get_contents($result),true);
+        $result = $this->aliYunMethod($Action, $DomainName, $AppName, $StreamName, $StartTime, $EndTime);
+        $responseResult = json_decode(file_get_contents($result), true);
         $OnlineInfo = $responseResult['OnlineInfo']['LiveStreamOnlineInfo'];
 
         $LiveStreamOnlineInfo = [];
-        foreach($OnlineInfo as $val){
+        foreach ($OnlineInfo as $val) {
             $LiveStreamOnlineInfo[] = [
                 'PublishTime' => $val['PublishTime'],
                 'PublishUrl' => $val['PublishUrl'],
@@ -122,7 +134,7 @@ class AliYunCsController extends Controller
                 'StreamName' => $val['StreamName'],
             ];
         }
-        var_dump($LiveStreamOnlineInfo);
+        return $LiveStreamOnlineInfo;
     }
 
     /**
@@ -130,16 +142,16 @@ class AliYunCsController extends Controller
      * Action:DescribeLiveStreamsOnlineList
      * @param $DomainName
      * @param $AppName
-     * @return Array
+     * @return array
      */
-    public function DescribeLiveStreamsFrameRateAndBitRateData($DomainName = 'ruiyutouzi.amailive.com',$AppName = 'live',$StreamName = '410',$StartTime = '2016-10-18T00:00:00Z',$EndTime = '2016-11-16T00:00:00Z')
+    public function DescribeLiveStreamsFrameRateAndBitRateData($DomainName = 'ruiyutouzi.amailive.com', $AppName = 'live', $StreamName = '410', $StartTime = '2016-10-18T00:00:00Z', $EndTime = '2016-11-16T00:00:00Z')
     {
         $Action = 'DescribeLiveStreamsFrameRateAndBitRateData';
-        $result = $this->aliYunMethod($Action,$DomainName,$AppName,$StreamName,$StartTime,$EndTime);
-        $responseResult = json_decode(file_get_contents($result),true);
+        $result = $this->aliYunMethod($Action, $DomainName, $AppName, $StreamName, $StartTime, $EndTime);
+        $responseResult = json_decode(file_get_contents($result), true);
         $FrameRateAndBitRateInfos = $responseResult['FrameRateAndBitRateInfos'];
         $FrameRateAndBitRateInfo = [];
-        foreach($FrameRateAndBitRateInfos['FrameRateAndBitRateInfo'] as $val){
+        foreach ($FrameRateAndBitRateInfos['FrameRateAndBitRateInfo'] as $val) {
             $FrameRateAndBitRateInfo[] = [
                 'AudioFrameRate' => $val['AudioFrameRate'],
                 'Time' => $val['Time'],
@@ -148,37 +160,37 @@ class AliYunCsController extends Controller
                 'VideoFrameRate' => $val['VideoFrameRate']
             ];
         }
-        var_dump($FrameRateAndBitRateInfo);
+        return $FrameRateAndBitRateInfo;
     }
 
 
     /**
      * 公共调用接口方法
      */
-    public function aliYunMethod($Action,$DomainName,$AppName,$StreamName,$StartTime,$EndTime)
+    public function aliYunMethod($Action, $DomainName, $AppName, $StreamName, $StartTime, $EndTime)
     {
         $access_key_id = "3eyuRfszR0RyCDZH";
         $cdn_server_address = 'https://cdn.aliyuncs.com';
-        $parameters =  array("Format"=>"JSON",
-            "Version"=>"2014-11-11",
-            "AccessKeyId"=>$access_key_id,
-            "SignatureVersion"=>"1.0",
-            "SignatureMethod"=>"HMAC-SHA1",
-            "SignatureNonce"=>$this->uuid(),
-            "TimeStamp"=>gmdate('c'),
+        $parameters = array("Format" => "JSON",
+            "Version" => "2014-11-11",
+            "AccessKeyId" => $access_key_id,
+            "SignatureVersion" => "1.0",
+            "SignatureMethod" => "HMAC-SHA1",
+            "SignatureNonce" => $this->uuid(),
+            "TimeStamp" => gmdate('c'),
         );
         //这几个参数应该是输入的 这里写死了
         $parameters['Action'] = $Action;//操作接口名，系统规定参数，取值：RefreshObjectCaches
         $parameters['DomainName'] = $DomainName;
         $parameters['AppName'] = $AppName;
-        if($StreamName != null) $parameters['StreamName'] = $StreamName;
-        if($StartTime != null) $parameters['StartTime'] = $StartTime;
-        if($EndTime != null) $parameters['EndTime'] = $EndTime;
+        if ($StreamName != null) $parameters['StreamName'] = $StreamName;
+        if ($StartTime != null) $parameters['StartTime'] = $StartTime;
+        if ($EndTime != null) $parameters['EndTime'] = $EndTime;
 
         //添加签名信息
         $parameters['Signature'] = $this->getSign($parameters);
         //拼接url
-        $url = $cdn_server_address."/?".http_build_query($parameters);
+        $url = $cdn_server_address . "/?" . http_build_query($parameters);
         return $url;
     }
 
@@ -188,7 +200,7 @@ class AliYunCsController extends Controller
         //构造用来计算签名信息的字符串
         $stringToSign = $this->det_stringToSign($parameters);
         //计算签名信息
-        $signature = base64_encode(hash_hmac("SHA1",$stringToSign,$access_key_secret.'&', true));
+        $signature = base64_encode(hash_hmac("SHA1", $stringToSign, $access_key_secret . '&', true));
         return $signature;
     }
 
@@ -197,8 +209,9 @@ class AliYunCsController extends Controller
      * @param 输入的字符串
      * @return 规范后的字符串
      */
-    public function percent_encode($str) {
-        $res = urlencode(mb_convert_encoding($str,'utf-8', 'gb2312'));
+    public function percent_encode($str)
+    {
+        $res = urlencode(mb_convert_encoding($str, 'utf-8', 'gb2312'));
         return $res;
     }
 
@@ -207,14 +220,15 @@ class AliYunCsController extends Controller
      * @param $parameters 参数
      * @return string  $stringToSign 用于计算签名的字符串
      */
-    public function det_stringToSign($parameters){
+    public function det_stringToSign($parameters)
+    {
         ksort($parameters);
         $cannibalizedQueryString = "";
-        foreach ($parameters as $key => $value){
-            $cannibalizedQueryString = $cannibalizedQueryString."&".$this->percent_encode($key)."=".$this->percent_encode($value)  ;
+        foreach ($parameters as $key => $value) {
+            $cannibalizedQueryString = $cannibalizedQueryString . "&" . $this->percent_encode($key) . "=" . $this->percent_encode($value);
         }
-        $cannibalizedQueryString=substr($cannibalizedQueryString,1);
-        $stringToSign = "GET&%2F&".$this->percent_encode($cannibalizedQueryString);
+        $cannibalizedQueryString = substr($cannibalizedQueryString, 1);
+        $stringToSign = "GET&%2F&" . $this->percent_encode($cannibalizedQueryString);
         return $stringToSign;
     }
 
@@ -222,12 +236,34 @@ class AliYunCsController extends Controller
      * 生成UUID
      * @return uuid
      */
-    public function uuid() {
+    public function uuid()
+    {
         return preg_replace(
             '~^(.{8})(.{4})(.{4})(.{4})(.{12})$~',
             '\1-\2-\3-\4-\5',
             md5(uniqid('', true))
         );
+    }
+
+    /**
+     * UTc时间转换为北京时间
+     * @param $utcTime
+     * @return bool|string
+     */
+    public function utcToPRC($utcTime)
+    {
+        date_default_timezone_set('PRC');
+        return date('Y-m-d H:i:s', strtotime($utcTime));
+    }
+
+    /**
+     * UTc时间转换为北京时间
+     * @param $utcTime
+     * @return bool|string
+     */
+    public function prcToUtc($prcTime)
+    {
+        return gmdate("Y-m-d\TH:i:s\Z", strtotime($prcTime));
     }
 
 }
