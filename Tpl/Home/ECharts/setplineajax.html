@@ -1,0 +1,96 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+
+            <div id="main" style="width: 600px;height:400px;"></div>
+
+        </div>
+       </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script src="__PUBLIC__/Common/static/js/echarts.common.min.js"></script>
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/ECharts/";
+        var myChart = echarts.init(document.getElementById('main'));
+        // 显示标题，图例和空的坐标轴
+        myChart.setOption({
+            title: {
+                text: 'Step Line'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['Step Start']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: []
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: []
+        });
+        // 异步加载数据
+        //ECharts 默认有提供了一个简单的加载动画。只需要调用 showLoading 方法显示。数据加载完成后再调用 hideLoading 方法隐藏加载动画。
+        $.get($URL+'getsetpLineAjaxJson').done(function (data) {
+            console.log(data);
+            $data = $.parseJSON(data);
+            console.log('========='+$data.data.xAxisData);
+            console.log('+++++++++'+$data.data['xAxisData']);
+            console.log($data.categories);
+            // 填入数据
+            myChart.setOption({
+                xAxis: {
+                    type: $data.categories,
+                    data: $data.data['xAxisData']
+                },
+                series: [{
+                    // 根据名字对应到相应的系列
+                    name: "{$name}",
+                    data: $data.data['seriesData']
+                }]
+            });
+        });
+    </script>
+</block>

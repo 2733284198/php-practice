@@ -1,0 +1,96 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <a href="{:U('AdminUser/createadminuser')}" class="btn btn-xs btn-success"><i class="icon-plus icon-white"></i>添加新用户</a>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="main" style="width: 600px;height:400px;"></div>
+
+        </div>
+       </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script src="__PUBLIC__/Common/static/js/echarts.common.min.js"></script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'),'tinywan测试');
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'Step Line'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['Step Start', 'Step Middle', 'Step End']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name:'Step Start',
+                    type:'line',
+                    step: 'start',
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'Step Middle',
+                    type:'line',
+                    step: 'middle',
+                    data:[220, 282, 201, 234, 290, 430, 410]
+                },
+                {
+                    name:'Step End',
+                    type:'line',
+                    step: 'end',
+                    data:[450, 432, 401, 454, 590, 530, 510]
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</block>

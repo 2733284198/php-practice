@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Zero Clipboard Test</title>
+    <script type="text/javascript" src="__PUBLIC__/Common/static/copy/js/clipboard.min.js"></script>
+    <script language="JavaScript">
+        var clip = null;
+        function $(id) { return document.getElementById(id); }
+        function init() {
+            clip = new ZeroClipboard.Client();
+            clip.setHandCursor(true);
+            clip.addEventListener('mouseOver', function (client) {
+                // update the text on mouse over
+                clip.setText( $('fe_text').value );
+            });
+
+            clip.addEventListener('complete', function (client, text) {
+                //debugstr("Copied text to clipboard: " + text );
+                alert("该地址已经复制，你可以使用Ctrl+V 粘贴。");
+            });
+            clip.glue('clip_button', 'clip_container' );
+        }
+    </script>
+</head>
+<body>
+<ul class="list-group"><!--important_field-->
+    <li class="list-group-item">
+        <span style="color: #b3b0bb">推流地址：</span>
+        <samp class="copyurl_domain_url">rtmp://<code class="">{{domain.source}}</code>/<code class="" title="" data-container="body" data-toggle="popover" data-placement="top" data-content="{{domain.appName}}是应用名称，支持自定义，可以更改">{{domain.appName}}</code>/<code class=""  title="" data-container="body" data-toggle="popover" data-placement="top" data-content="{{domain.streamName}}是流名称，支持自定义，可以更改">{{domain.streamName}}</code>?vhost={{domain.domain}}</samp>
+        &ensp;
+        <a href="javascript:;" class="copy" data-clipboard-action="copy" data-clipboard-target=".copyurl_domain_url" title="" data-container="body" data-toggle="popover" data-placement="top" data-content="复制"><i  class='fa fa-files-o' aria-hidden='true'></i></a>
+    </li>
+</ul>
+<script type="text/javascript">
+    var firstDayOfMonth = function() {
+        // your special logic...
+        return 0;
+    };
+    var d = new Date();
+    var currMonth = d.getMonth()-1;
+    var currYear = d.getFullYear()-1;
+    var startDate = new Date(currYear,currMonth,firstDayOfMonth());
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',//
+        format:"yyyy-mm-dd hh:ii:ss",//
+        weekStart: 1,//
+        todayBtn:  true,
+        autoclose: true,//
+        todayHighlight: true,
+        startView: 2,//
+        startDate: startDate,
+        forceParse: 0,
+        showMeridian: false,
+        minuteStep:5,
+        minView: 0,//month
+        pickerPosition: "bottom-left",
+    });
+
+
+    /**
+     * 复制功能
+     */
+    var clipboard = new Clipboard('.copy');
+
+    clipboard.on('success', function(e) {
+        $("#original_url").val(e.text);
+        alert("地址已复制到剪贴板中\t并放入到\"原始URL\"输入框内\n\n地址："+e.text);
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+
+
+
+
+</script>
+</body>
+</html

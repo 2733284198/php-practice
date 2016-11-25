@@ -8,6 +8,31 @@ use Think\Controller;
 
 class RedisController extends Controller
 {
+    // 限制IP地址短时间类访问
+    public function redistest(){
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(12);
+        $clientIP = $_SERVER['REMOTE_ADDR'];
+        $clientKey = "speed:limiting:{$clientIP}";
+        $listClientIpLen = $redis->llen($clientKey);
+        $time = time();
+        echo $listClientIpLen."<br/>";
+        echo $clientKey."<br/>";
+        echo $time."<br/>";
+        if($listClientIpLen > 10 ){
+            $clientIPexpireTime = $redis->lIndex($clientKey,-1); //获取最后一个索引文件
+            if($time - $clientIPexpireTime < 60 ){
+                exit('超出限制');
+            }else{
+                $redis->lPush($clientKey,$time);
+                $redis->lTrim($clientKey,0,9);
+            }
+        }
+        $redis->lPush($clientKey,$time);
+        //逻辑继续往下去写就是
+        die;
+    }
+
     //获取最新的10条数据
     public function comment()
     {
