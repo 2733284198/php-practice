@@ -20,8 +20,8 @@
         .video-player{position:absolute;width:100%;height: 100%; top: 0;left: 0;}
         .btn-play{position: absolute;width: 100%;height: 100%;background: url(__PUBLIC__/Common/static/img/play1.png) no-repeat center;top: 0;left: 0;background-size:90px; }
         #video-player{
-            width:100%;
-            height: 100%;
+            width:80%;
+            height: 80%;
         }
     </style>
 </head>
@@ -38,7 +38,7 @@
 <script lang="text/javascript">
     var $URL = "__PUBLIC__/lib/player/";
     function playLiveChannel() {
-        src = "rtmp://testzhibo.amai8.com/live/4001480052097?auth_key=1480652097-0-0-78c854d676e0c15a35ad63adfb665f12";
+        src = "{$play_address}";
         var swfPlayer = new SWFPlayer("video-container", "video-player", "550", "375", "8.0.0");
         $(".video-img").hide();
         swfPlayer.reload(src);

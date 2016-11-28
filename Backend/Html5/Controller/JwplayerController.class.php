@@ -20,6 +20,7 @@ class JwplayerController extends Controller
     //swfobject
     public function swfobject()
     {
+        $this->play_address = 'rtmp://tinywan.amai8.com/live/4001480324020';
         $this->display();
     }
 
