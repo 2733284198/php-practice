@@ -76,23 +76,26 @@ function word_time($time)
  * @param number $size
  * @return number
  */
-function trans_byte($size){
-    $size_arr = array ("B", "KB", "MB", "GB", "TB", "EB" );
+function trans_byte($size)
+{
+    $size_arr = array("B", "KB", "MB", "GB", "TB", "EB");
     $i = 0;
     while ($size >= 1024) {
-        $size = $size/1024;
+        $size = $size / 1024;
         $i++;
     }
-    return round($size,2).$size_arr[$i];
+    return round($size, 2) . $size_arr[$i];
 }
+
 /**
  * 文件下载
  * @param number $size
  * @return number
  */
-function downfile($filename){
-    header("content-disposition:attachment;filename=".basename($filename));
-    header("content-length:".filesize($filename));
+function downfile($filename)
+{
+    header("content-disposition:attachment;filename=" . basename($filename));
+    header("content-length:" . filesize($filename));
     readfile($filename);
 }
 
@@ -807,11 +810,12 @@ function getAdminUserId()
  * 跳向支付宝付款
  * @param  array $order 订单数据 必须包含 out_trade_no(订单号)、price(订单金额)、subject(商品名称标题)
  */
-function alipay($order){
-    vendor('Alipay.AlipaySubmit','','.class.php');
+function alipay($order)
+{
+    vendor('Alipay.AlipaySubmit', '', '.class.php');
     // 获取配置
-    $config=C('ALIPAY_CONFIG');
-    $data=array(
+    $config = C('ALIPAY_CONFIG');
+    $data = array(
         "_input_charset" => $config['input_charset'], // 编码格式
         "logistics_fee" => "0.00", // 物流费用
         "logistics_payment" => "SELLER_PAY", // 物流支付方式SELLER_PAY（卖家承担运费）、BUYER_PAY（买家承担运费）
@@ -833,9 +837,9 @@ function alipay($order){
         "show_url" => $config['show_url'], // 商品展示网址,收银台页面上,商品展示的超链接。
         "subject" => $order['subject'] // 商品名称商品的标题/交易标题/订单标 题/订单关键字等
     );
-    $alipay=new \AlipaySubmit($config);
-    $new=$alipay->buildRequestPara($data);
-    $go_pay=$alipay->buildRequestForm($new, 'get','支付');
+    $alipay = new \AlipaySubmit($config);
+    $new = $alipay->buildRequestPara($data);
+    $go_pay = $alipay->buildRequestForm($new, 'get', '支付');
     echo $go_pay;
 }
 
@@ -897,6 +901,99 @@ function send_email($address, $subject, $content)
     }
 }
 
+/**
+ * CURL_GET方式实现
+ * @param string $url
+ * @return mixed
+ */
+function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')
+{
+    //初始化
+    $curl = curl_init();
+    //设置抓取的url
+    curl_setopt($curl, CURLOPT_URL, $url);
+    //设置头文件的信息作为数据流输出
+    curl_setopt($curl, CURLOPT_HEADER, 1);
+    //设置获取的信息以文件流的形式返回，而不是直接输出。
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    //执行命令
+    $data = curl_exec($curl);
+    //关闭URL请求
+    curl_close($curl);
+    //显示获得的数据
+    return $data;
+}
+
+/**
+ * POST方式实现,这个参数主要是为了或委屈文件的大小一家未知关系的
+ * @param string $url
+ * @param $post_data
+ * @return mixed
+ */
+function CURL_POST_REQUEST_HTTP($url = 'http://www.baidu.com', $post_data)
+{
+    //初始化
+    $curl = curl_init();
+    //设置抓取的url
+    curl_setopt($curl, CURLOPT_URL, $url);
+    //设置头文件的信息作为数据流输出
+    curl_setopt($curl, CURLOPT_HEADER, 1);
+    //设置获取的信息以文件流的形式返回，而不是直接输出。
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    //设置post方式提交
+    curl_setopt($curl, CURLOPT_POST, 1);
+    //设置post数据
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+    //执行命令
+    $data = curl_exec($curl);
+    //关闭URL请求
+    curl_close($curl);
+    //显示获得的数据
+    return $data;
+}
 
 
-?>
+/**
+ * 参数1：访问的URL，
+ * 参数2：post数据(不填则为GET)，
+ * 参数3：提交的$cookies,
+ * 参数4：是否返回$cookies
+ * @param $url
+ * @param string $post
+ * @param string $cookie
+ * @param int $returnCookie
+ * @return mixed|string
+ */
+function CURL_REQUEST_HTTP($url, $post = '', $cookie = '', $returnCookie = 0)
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)');
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($curl, CURLOPT_AUTOREFERER, 1);
+    curl_setopt($curl, CURLOPT_REFERER, "http://XXX");
+    if ($post) {
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($post));
+    }
+    if ($cookie) {
+        curl_setopt($curl, CURLOPT_COOKIE, $cookie);
+    }
+    curl_setopt($curl, CURLOPT_HEADER, $returnCookie);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $data = curl_exec($curl);
+    if (curl_errno($curl)) {
+        return curl_error($curl);
+    }
+    curl_close($curl);
+    if ($returnCookie) {
+        list($header, $body) = explode("\r\n\r\n", $data, 2);
+        preg_match_all("/Set\-Cookie:([^;]*);/", $header, $matches);
+        $info['cookie'] = substr($matches[1][0], 1);
+        $info['content'] = $body;
+        return $info;
+    } else {
+        return $data;
+    }
+}
