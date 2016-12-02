@@ -75,6 +75,10 @@ class EChartsController extends BaseController
         $this->display();
     }
 
+    public function test123(){
+
+    }
+
     public function redistest(){
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
