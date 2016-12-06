@@ -1,16 +1,10 @@
-﻿## 简介
+[![doodle]][doodle-story]
 
-ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架。
-
-## What is he thinking about?
-![Tinywan](https://camo.githubusercontent.com/9e32acff11b04496eb14e09b198fcbb055c9ccf0/68747470733a2f2f646e67356c33717a7265616c362e636c6f756466726f6e742e6e65742f323031362f4175672f636f64696e675f626f6172645f736d616c6c2d313437303836363336393131382e6a7067)
+[doodle]: https://www.google.com/logos/doodles/2016/googles-18th-birthday-5661535679545344-hp2x.gif "Google 18岁啦"
+[doodle-story]: https://www.google.com.hk/search?q=Google
 
 ## Github个人主页
-
-[Github地址] : <br>
 [![Tinywan] (https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://tinywan.github.io/)<br>
-[![Yii2] (https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)<br>
-## [![Gitter](https://badges.gitter.im/Tinywan Chat.svg)](聊天室 URL)
 
 ## 详细说明文档请见个人博客
 
@@ -19,6 +13,16 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 ## 公共视频测试库
 *  2016杭州·云栖大会集锦:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
 *  阿里巴巴王坚完整版视频:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
+
+## 香港卫视公开的拉流地址（Open Broadcaster Software 推荐推流）
+*  视频测试地址:	rtmp://live.hkstv.hk.lxdns.com/live/hks<br>
+*  推流在后面随便加个流名:	rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456<br>
+*  推流测试地址:       rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456<br>
+
+## RTMP直播流
+*  亚太第一卫视	rtmp://v1.one-tv.com/live/mpegts.stream<br>
+*  香港电视台直播:	rtmp://live.hkstv.hk.lxdns.com/live/hks<br>
+*  亚太卫视:       rtmp://58.61.150.198/live/Livestream<br>
 
 ## 公共脚本库
 *  bootstrap/css:<br>http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css
@@ -69,6 +73,9 @@ ThinkPHP从诞生以来一直秉承大道至简的开发理念，无论从底层
 *  表单令牌验证
 *  防SQL注入
 *  图像上传检测
+
+## What is he thinking about?
+![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
 
 ## 编辑格式
 【标题】：
