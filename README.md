@@ -1,5 +1,8 @@
 ﻿## 简介
 
+[doodle]: https://www.google.com/logos/doodles/2016/googles-18th-birthday-5661535679545344-hp2x.gif "Google 18岁啦"
+[doodle-story]: https://www.google.com.hk/search?q=Google
+
 ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架。
 
 ## What is he thinking about?
