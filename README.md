@@ -3,12 +3,6 @@
 [doodle]: https://www.google.com/logos/doodles/2016/googles-18th-birthday-5661535679545344-hp2x.gif "Google 18岁啦"
 [doodle-story]: https://www.google.com.hk/search?q=Google
 
-﻿## 简介
-ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级PHP开发框架。
-
-## What is he thinking about?
-![Tinywan](https://camo.githubusercontent.com/9e32acff11b04496eb14e09b198fcbb055c9ccf0/68747470733a2f2f646e67356c33717a7265616c362e636c6f756466726f6e742e6e65742f323031362f4175672f636f64696e675f626f6172645f736d616c6c2d313437303836363336393131382e6a7067)
-
 ## Github个人主页
 [![Tinywan] (https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://tinywan.github.io/)<br>
 
@@ -79,6 +73,9 @@ ThinkPHP从诞生以来一直秉承大道至简的开发理念，无论从底层
 *  表单令牌验证
 *  防SQL注入
 *  图像上传检测
+
+## What is he thinking about?
+![Tinywan](https://camo.githubusercontent.com/9e32acff11b04496eb14e09b198fcbb055c9ccf0/68747470733a2f2f646e67356c33717a7265616c362e636c6f756466726f6e742e6e65742f323031362f4175672f636f64696e675f626f6172645f736d616c6c2d313437303836363336393131382e6a7067)
 
 ## 编辑格式
 【标题】：
