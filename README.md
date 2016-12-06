@@ -75,7 +75,7 @@ ThinkPHP从诞生以来一直秉承大道至简的开发理念，无论从底层
 *  图像上传检测
 
 ## What is he thinking about?
-![Tinywan](https://camo.githubusercontent.com/9e32acff11b04496eb14e09b198fcbb055c9ccf0/68747470733a2f2f646e67356c33717a7265616c362e636c6f756466726f6e742e6e65742f323031362f4175672f636f64696e675f626f6172645f736d616c6c2d313437303836363336393131382e6a7067)
+![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
 
 ## 编辑格式
 【标题】：
