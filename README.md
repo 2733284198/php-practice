@@ -20,6 +20,11 @@ ThinkPHP 是一个免费开源的，快速、简单的面向对象的 轻量级P
 *  2016杭州·云栖大会集锦:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
 *  阿里巴巴王坚完整版视频:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
 
+## 香港卫视公开的拉流地址（Open Broadcaster Software 推荐推流）
+*  视频测试地址:	rtmp://live.hkstv.hk.lxdns.com/live/hks<br>
+*  推流在后面随便加个流名:	rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456<br>
+*  推流测试地址:       rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456<br>
+
 ## RTMP直播流
 *  亚太第一卫视	rtmp://v1.one-tv.com/live/mpegts.stream<br>
 *  香港电视台直播:	rtmp://live.hkstv.hk.lxdns.com/live/hks<br>
