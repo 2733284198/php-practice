@@ -6,9 +6,9 @@
 ## Github个人主页
 [![Tinywan] (https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://tinywan.github.io/)<br>
 
-## 详细说明文档请见个人博客
+## 博客
 
-[博客地址] : http://www.cnblogs.com/tinywan/
+[地址] : http://www.cnblogs.com/tinywan/
 
 ## 公共视频测试库
 *  2016杭州·云栖大会集锦:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
@@ -29,9 +29,7 @@
 *  bootstrap/js:<br>http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js
 *  jquery:<br>http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js
 
-## 全面的WEB开发特性支持
-
-最新的以ThinkPHP为WEB应用开发提供功能有以下，包括：
+## 最新的以ThinkPHP为WEB应用开发提供功能
 
 *  基于角色的RBAC权限管理【实例】
 *  基于类的无限级分类和数据库的无限级分类【实例】
