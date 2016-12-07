@@ -52,7 +52,8 @@ class ProductController extends BaseController
 
         }
         $model = M('Category'); // return Object
-        $result = $model->field("*,concat(path,',',id) as paths")->order('path')->select();
+        $condition['type'] = 'shop';
+        $result = $model->field("*,concat(path,',',id) as paths")->where($condition)->order('path')->select();
         $this->categorys = $result;
         $this->display();
     }
