@@ -367,18 +367,30 @@ class DataBaseController extends Controller
 
     }
 
-    public function test2(){
-        $redis = RedisInstance::LocationInstance();
-        var_dump($redis);
-        $newRedis= new \Redis();
-        var_dump($newRedis);
+    public function updateMsyql($id){
+        $model = new Model();
+        $msql = "select * from tour_logs";
+        homePrint($model->query($msql));
         die;
-        if($redis != false){
-            var_dump($redis->keys('*'));
-            echo '11111111';
-        }else{
-            echo '00000000';
+        $display_order = [
+            1 => 4,
+            2 => 1,
+            3 => 2,
+            4 => 3,
+            5 => 9,
+            6 => 5,
+            7 => 8,
+            8 => 9];
+        homePrint($display_order);
+        $ids = implode(',', array_keys($display_order));
+        homePrint($ids);
+
+        $sql = "UPDATE categories SET display_order = CASE id ";
+        foreach ($display_order as $id => $ordinal) {
+            $sql .= sprintf("WHEN %d THEN %d ", $id, $ordinal);
         }
+        $sql .= "END WHERE id IN ($ids)";
+        homePrint($sql);
 
 
     }

@@ -157,20 +157,142 @@ class RedisController extends Controller
 
     /**
      * Scan 扫描键的键空间
+     * SCAN命令系列的选项，指示是否抽象用户的空结果。
+     * 如果设置为SCAN_NORETRY（默认），phpredis将一次只发出一个SCAN命令，有时返回一个空数组结果。
+     * 如果设置为SCAN_RETRY，phpredis将重试扫描命令直到键返回或Redis返回一个零的迭代器
+     * /
      */
     public function scan()
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(10);
-        $it = NULL; /* 将我们的迭代器初始化为NULL */
+        $iterator = NULL; /* 将我们的迭代器初始化为NULL */
         $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY); /* 当我们没有回到钥匙时重试 */
-        var_dump($redis->scan($it));
+        var_dump($redis->scan($iterator));
+        echo count($redis->scan($iterator));
 //        while($arr_keys = $redis->scan($it)) {
 //            foreach($arr_keys as $str_key) {
 //                echo "Here is a key: $str_key<br/>";
 //            }
 //            echo "No more keys to scan!\n";
 //        }
+    }
+    // scan 使用正则表达式
+    public function scanPattern()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $iterator = NULL; /* 将我们的迭代器初始化为NULL */
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY); /* 当我们没有回到钥匙时重试 */
+        while($arr_keys = $redis->scan($iterator,'*post:*')) {
+            foreach($arr_keys as $str_key=>$str_value) {
+                homePrint("$str_key => $str_value\n");
+            }
+            //echo "No more keys to scan!\n";
+        }
+    }
+
+
+    /**
+     * 说明：扫描成员HASH值，使用可选模式和计数
+     * 关键：字符串  迭代器：长（参考）  模式：可选模式来匹配  计数：有多少键在一展身手返回（仅sugestion到Redis的）
+     * 返回值:数组  成员的数组匹配我们的模式
+     */
+    public function hScan()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $it = null;
+        //*不要返回一个空数组，直到我们完成迭代*
+        $redis->setOption(\Redis::OPT_SCAN,\Redis::SCAN_RETRY);
+        while ($arr_key = $redis->hScan('post:1',$it)){
+            foreach ($arr_key as $str_filed=>$str_value){
+                homePrint("$str_filed => $str_value\n");
+            }
+        }
+        echo '11111111';
+    }
+
+    // sScan  使用正则表达式
+    public function sScan()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(10);
+        $it = NULL;
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY); /* don't return empty results until we're done */
+        while($arr_mems = $redis->sScan('set', $it, "*pattern*")) {
+            foreach($arr_mems as $str_mem) {
+                echo "Member: $str_mem\n";
+            }
+        }
+
+        $it = NULL;
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_NORETRY); /* return after each iteration, even if empty */
+        while(($arr_mems = $redis->sScan('set', $it, "*pattern*"))!==FALSE) {
+            if(count($arr_mems) > 0) {
+                foreach($arr_mems as $str_mem) {
+                    echo "Member found: $str_mem\n";
+                }
+            } else {
+                echo "No members in this iteration, iterator value: $it\n";
+            }
+        }
+        echo 'sScan';
+        homePrint($redis->getLastError());
+    }
+
+    /**
+     * 说明：一种实用程序方法前面加上前缀设置phpredis值
+     */
+    public function my_prefix()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->setOption(\Redis::OPT_PREFIX, 'my-prefix:');
+        $redis->set('tinywan','tinywanvalu');
+        $redis->_prefix('my-value');
+        homePrint($redis->get('tinywan'));
+    }
+
+    /**
+     * 说明：设置客户端选项。
+     */
+    public function setOption()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_NONE);   // 不要序列化数据
+        $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);    // 使用内置的serialize / unserialize
+        $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_IGBINARY);   // 使用igBinary serialize / unserialize
+        $redis->setOption(\Redis::OPT_PREFIX, 'myAppName:'); // 在所有键上使用自定义前缀\
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_NORETRY);
+        $redis->setOption(\Redis::OPT_SCAN, \Redis::SCAN_RETRY);
+    }
+
+    /**
+     * 说明：设置客户端选项。
+     */
+    public function getOption()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP); // 不要序列化数据
+        homePrint($redis->getOption(\Redis::OPT_SERIALIZER));   // 不要序列化数据
+    }
+
+    /**
+     * 说明：返回最后磁盘的时间戳保存。
+     */
+    public function lastSave()
+    {
+        $redis = RedisInstance::MasterInstance();
+        echo $redis->lastSave();
+    }
+
+    /**
+     * 说明：返回最后磁盘的时间戳保存。
+     */
+    public function slowLog()
+    {
+        $redis = RedisInstance::MasterInstance();
+        homePrint($redis->slowlog('get'));
     }
 
     /**

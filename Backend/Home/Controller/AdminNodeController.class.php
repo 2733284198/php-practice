@@ -20,7 +20,6 @@ class AdminNodeController extends BaseController{
     //创建权限表单处理
     public function createNode(){
     	$db = M('AdminNode');
-
     	//创建权限表单处理
     	 if(IS_POST){
     	 	$db->create();

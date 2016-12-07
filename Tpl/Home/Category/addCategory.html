@@ -1,14 +1,140 @@
-<include file="Common:head"/>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<form action="{:U('Category/addCategory')}" method="post">
-    <label for="select">分类名</label>
-    <input type="text" name="name" />
-    <label for="select">选择父级分类</label>
-    <select name="pid" id="select">
-        <option value="0">默认分类</option>
-        <volist name="categorys" id="vo">
-            <option value="{$vo['id']}">{$vo['name']}</option>
-        </volist>
-    </select>
-    <input type="submit" value="确认" />
-</form>
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
+                           autocomplete="off"/>
+                    <i class="icon-search nav-search-icon"></i>
+                </span>
+                </form>
+            </div>
+            <!-- #nav-search -->
+        </div>
+        <div class="page-content">
+
+            <div class="row">
+                <form action="{:U('Category/addCategory')}" method="post" class="form-horizontal" id="createfrom">
+                    <div class="widget-content nopadding">
+                        <div class="control-group">
+                            <label class="control-label">分类类型:</label>
+                            <div class="controls">
+                                <select name="type" id="type">
+                                    <option value="system">系统分类</option>
+                                    <option value="live">活动分类</option>
+                                    <option value="channel">频道分类</option>
+                                    <option value="express">快递分类</option>
+                                    <option value="video">视频分类</option>
+                                    <option value="shop">商城分类</option>
+                                    <option value="auth">权限分类</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">父级分类:</label>
+                            <div class="controls">
+                                <select name="pid" id="select">
+                                    <option value="0">默认分类</option>
+                                    <volist name="categorys" id="vo">
+                                        <option value="{$vo['id']}">{$vo['name']}</option>
+                                    </volist>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">分类名称:</label>
+                            <div class="controls">
+                                <input type="text" class="span2" placeholder="分类名称" name="name" style="width: 140px;"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">详细描述:</label>
+                            <div class="controls">
+                                <input type="text" class="span2" placeholder="详细描述" name="remark" style="width: 140px;"/>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">确认</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- /.page-content -->
+    </div>
+
+
+    <script type="text/javascript">
+        var $URL = "__APP__/Home/Category/";
+        jQuery(function ($) {
+            $("#bootbox-regular").click(function () {
+                $("#categoryModal").modal('show');
+            });
+
+        });
+        function createCategory(){
+            $name = $('#name').val();
+            $categoryId = $('#categoryId').val();
+            var url = $URL+'ajaxAdd';
+            var data = {
+                'pid':$categoryId,
+                'name':$name,
+            };
+            var success = function(response)
+            {
+                alert(response.errmsg);
+                window.location.reload();
+                console.table(response);
+            };
+            $.post(url,data,success,'json');
+        }
+        /**
+         * 删除一个分类
+         */
+        function categoryDel($id){
+            // check children category is not exist
+            $actions = confirm('你确定要删除该分类吗？');
+            if($actions){
+                var success = function(response){
+                    if(response.errcode == 200){
+                        alert(response.errmsg);
+                        window.location.reload();
+                    }else if(response.errcode == 401){
+                        $actions = confirm('你确定要连同子类一并删除吗？');
+                    }else if(response.errcode == 402){
+                        $actions = confirm('你确定要删除该分类下面的所有商品吗？');
+                    }else{
+                        alert(response.errmsg);
+                    }
+
+                    console.table(response);
+                };
+                $.post($URL+'checkCategory', {'id':$id},success,'json');
+            }
+        }
+    </script>
+</block>

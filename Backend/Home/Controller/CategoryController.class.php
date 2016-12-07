@@ -8,6 +8,7 @@ class CategoryController extends BaseController
     public function index()
     {
         $model = M('Category'); // return Object
+        $condition['type'] = 'channel';
         $result = $model->field("*,concat(path,',',id) as paths")->order('path')->select();
         $this->categorys = $result;
         $this->display();
@@ -32,6 +33,9 @@ class CategoryController extends BaseController
         if (IS_POST) {
             $data['pid'] = I('post.pid');
             $data['name'] = I('post.name');
+            $data['remark'] = I('post.remark');
+            $data['type'] = I('post.type','system');
+            $data['userId'] = session('uid');
             // 实例化一个数据表
             $model = M('Category');
             // 判断是否是顶级分类
@@ -50,7 +54,7 @@ class CategoryController extends BaseController
                 if (!$updateResult) {
                     return $this->error('添加一个新分类失败');
                 } else {
-                    return $this->success('添加一个新分类成功', U('Index/index'));
+                    return $this->success('添加一个新分类成功', U('Category/index'));
                 }
             } elseif (!empty($data['name']) && $data['pid'] == 0) {
                 $data['path'] = $data['pid'];
@@ -61,9 +65,9 @@ class CategoryController extends BaseController
                 $update['path'] = $data['path'] . ',' . $resultId;
                 $updateResult = $model->save($update);
                 if (!$updateResult) {
-                    return $this->error('添加一个新分类失败');
+                    return $this->error('添加一个新分类失败', U('Category/addCategory'));
                 } else {
-                    return $this->success('添加一个新分类成功', U('Index/index'));
+                    return $this->success('添加一个新分类成功', U('Category/index'));
                 }
             } else {
                 return $this->error('添加一个新分类失败');
@@ -72,7 +76,7 @@ class CategoryController extends BaseController
         $model = M('Category'); // return Object
         $result = $model->field("*,concat(path,',',id) as paths")->order('path')->select();
         foreach ($result as $key => $v) {
-            $result[$key]['name'] = str_repeat('&nbsp;&nbsp;&nbsp;', $v['level']) . $v['name'];
+            $result[$key]['name'] = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', $v['level']) . $v['name'];
         }
         $this->categorys = $result;
         $this->display();
@@ -152,8 +156,8 @@ class CategoryController extends BaseController
             $this->ajaxReturn($response, 'JSON');
         }
         // 查看是否有商品该分类下面
-        $prod = M('Product')->where(array('cId'=>$id))->find();
-        if($prod){
+        $prod = M('Product')->where(array('cId' => $id))->find();
+        if ($prod) {
             $response = ['errcode' => 402, 'errmsg' => '请先删除该分类下的产品'];
             $this->ajaxReturn($response, 'JSON');
         }
