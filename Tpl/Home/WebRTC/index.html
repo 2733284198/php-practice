@@ -1,0 +1,104 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">系统设置</li>
+            </ul>
+            <!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
+                           autocomplete="off"/>
+                    <i class="icon-search nav-search-icon"></i>
+                </span>
+                </form>
+            </div>
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="error-container">
+                        <div class="well">
+                            <h1 class="grey lighter smaller">
+											<span class="blue bigger-125">
+												<i class="icon-random"></i>
+												当前用户
+											</span>
+                                详细信息
+                            </h1>
+
+                            <hr/>
+                            <h3 class="lighter smaller">
+                                欢迎你的到来
+                                <i class="icon-wrench icon-animated-wrench bigger-125"></i>
+                                <strong>{$user.username}</strong>
+                                <span class="badge badge-info"></span>
+
+                            </h3>
+
+                            <div class="space"></div>
+
+                            <div>
+                                <h4 class="lighter smaller">登录信息记录:</h4>
+
+                                <ul class="list-unstyled spaced inline bigger-110 margin-15">
+                                    <li>
+                                        <i class="icon-group blue"></i>
+                                        等级:&nbsp;<span class="label label-success arrowed">L{$user.expire|exp_to_level}</span>
+                                    </li>
+                                    <li>
+                                        <i class="icon-group blue"></i>
+                                        积分:&nbsp;{$user.expire}
+                                    </li>
+                                    <li>
+                                        <i class="icon-calendar blue"></i>
+                                        最后登录:&nbsp;{$user.logintime|time_format=###}
+                                    </li>
+
+                                    <li>
+                                        <i class="icon-desktop blue"></i>
+                                        最近登录IP地址:{$user.loginip}
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <hr/>
+                            <div class="space"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- PAGE CONTENT ENDS -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.main-content -->
+
+</block>
