@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : tp5
+Source Server         : localhost
 Source Server Version : 50617
 Source Host           : localhost:3306
 Source Database       : tp5
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-11-22 18:04:06
+Date: 2016-12-07 15:51:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,6 +31,13 @@ CREATE TABLE `tour_admin_access` (
 -- ----------------------------
 -- Records of tour_admin_access
 -- ----------------------------
+INSERT INTO `tour_admin_access` VALUES ('1', '259', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '258', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '257', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '256', '2', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '255', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '254', '3', null);
+INSERT INTO `tour_admin_access` VALUES ('1', '253', '2', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '252', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('1', '251', '3', null);
 INSERT INTO `tour_admin_access` VALUES ('30', '191', '3', null);
@@ -123,7 +130,7 @@ CREATE TABLE `tour_admin_node` (
   KEY `pid` (`pid`) USING BTREE,
   KEY `status` (`status`) USING BTREE,
   KEY `name` (`name`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=253 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=260 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_admin_node
@@ -177,6 +184,13 @@ INSERT INTO `tour_admin_node` VALUES ('247', 'userRegister', '微博注册', '1'
 INSERT INTO `tour_admin_node` VALUES ('248', 'userLogin', '微博登陆', '1', null, null, '245', '3', 'icon-calendar', '1');
 INSERT INTO `tour_admin_node` VALUES ('251', 'createContentByUserId', '发表微博', '1', null, null, '245', '3', 'icon-calendar', '1');
 INSERT INTO `tour_admin_node` VALUES ('250', 'getLastUserId', '最新注册用户', '1', null, null, '245', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('253', 'ECharts', 'ECharts图表', '1', null, null, '166', '2', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('254', 'index', 'ECharts首页', '1', null, null, '253', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('255', 'getJson', '异步JSON', '1', null, null, '253', '3', 'icon-calendar', '0');
+INSERT INTO `tour_admin_node` VALUES ('256', 'WebRTC', 'WebRTC通信', '1', null, null, '166', '2', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('257', 'index', '首页', '1', null, null, '256', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('258', 'test', '测试', '1', null, null, '256', '3', 'icon-calendar', '1');
+INSERT INTO `tour_admin_node` VALUES ('259', 'getUserMedia', '获同步流', '1', null, null, '256', '3', 'icon-calendar', '1');
 
 -- ----------------------------
 -- Table structure for `tour_admin_role`
@@ -258,7 +272,7 @@ INSERT INTO `tour_admin_user` VALUES ('86', 'admin', 'f85a836c2434e41638fe37b7ec
 INSERT INTO `tour_admin_user` VALUES ('146', 'Tinywan', 'e10adc3949ba59abbe56e057f20f883e', '1473319334', '127.0.0.1', '1', '10');
 INSERT INTO `tour_admin_user` VALUES ('155', 'admin123', '123123131', '1472051649', '127.0.0.1', '1', '0');
 INSERT INTO `tour_admin_user` VALUES ('160', 'admin6', 'e10adc3949ba59abbe56e057f20f883e', '1472057821', '127.0.0.1', '0', '140');
-INSERT INTO `tour_admin_user` VALUES ('161', 'admin888', 'e10adc3949ba59abbe56e057f20f883e', '1479689807', '127.0.0.1', '1', '170');
+INSERT INTO `tour_admin_user` VALUES ('161', 'admin888', 'e10adc3949ba59abbe56e057f20f883e', '1481096642', '127.0.0.1', '1', '210');
 INSERT INTO `tour_admin_user` VALUES ('162', 'admin666', 'e10adc3949ba59abbe56e057f20f883e', '1477883749', '127.0.0.1', '1', '70');
 INSERT INTO `tour_admin_user` VALUES ('164', 'admin123789', 'e10adc3949ba59abbe56e057f20f883e', '1472733997', '127.0.0.1', '0', '10');
 INSERT INTO `tour_admin_user` VALUES ('165', '管理人', 'e10adc3949ba59abbe56e057f20f883e', '1472744696', '127.0.0.1', '1', '10');
@@ -290,29 +304,53 @@ INSERT INTO `tour_alipay` VALUES ('3', '商品测试2', '0.02', '0', 'CS40069925
 DROP TABLE IF EXISTS `tour_category`;
 CREATE TABLE `tour_category` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(32) NOT NULL,
   `pid` int(10) NOT NULL,
   `path` varchar(255) NOT NULL,
+  `alias` varchar(32) DEFAULT NULL COMMENT '别名',
+  `type` varchar(32) DEFAULT NULL COMMENT '类型',
   `level` int(10) NOT NULL DEFAULT '0' COMMENT '级别',
   `status` tinyint(1) DEFAULT '1' COMMENT '状态',
+  `userId` varchar(32) DEFAULT NULL,
+  `orgId` varchar(16) DEFAULT NULL COMMENT '组织ID',
   `order` int(32) DEFAULT NULL COMMENT '排序',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_category
 -- ----------------------------
-INSERT INTO `tour_category` VALUES ('1', '服装', '0', '0,1', '1', '1', null, null);
-INSERT INTO `tour_category` VALUES ('2', '西服', '1', '0,1,2', '2', '1', null, null);
-INSERT INTO `tour_category` VALUES ('3', '鞋子', '0', '0,3', '1', null, null, null);
-INSERT INTO `tour_category` VALUES ('4', '皮鞋', '2', '0,3,4', '2', '1', null, null);
-INSERT INTO `tour_category` VALUES ('5', '黑皮鞋', '4', '0,3,4,5', '3', '1', null, null);
-INSERT INTO `tour_category` VALUES ('7', '西服测试', '2', '0,1,2', '2', null, null, null);
-INSERT INTO `tour_category` VALUES ('14', '童装', '1', '0,1,14', '2', null, null, null);
-INSERT INTO `tour_category` VALUES ('15', '凉鞋', '3', '0,3,15', '2', null, null, null);
-INSERT INTO `tour_category` VALUES ('22', '童装衣服33', '14', '0,1,14,22', '3', '1', null, null);
-INSERT INTO `tour_category` VALUES ('23', '服装分类33-33', '22', '0,1,14,22,23', '4', '1', null, null);
+INSERT INTO `tour_category` VALUES ('1', '服装', '0', '0,1', null, 'system', '1', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('2', '西服', '1', '0,1,2', null, 'system', '2', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('3', '鞋子', '0', '0,3', null, 'system', '1', null, null, null, null, null);
+INSERT INTO `tour_category` VALUES ('4', '皮鞋', '2', '0,3,4', null, 'system', '2', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('5', '黑皮鞋', '4', '0,3,4,5', null, 'system', '3', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('7', '西服测试', '2', '0,1,2', null, 'system', '2', null, null, null, null, null);
+INSERT INTO `tour_category` VALUES ('14', '童装', '1', '0,1,14', null, 'system', '2', null, null, null, null, null);
+INSERT INTO `tour_category` VALUES ('15', '凉鞋', '3', '0,3,15', null, 'system', '2', null, null, null, null, null);
+INSERT INTO `tour_category` VALUES ('22', '童装衣服33', '14', '0,1,14,22', null, 'system', '3', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('23', '服装分类33-33', '22', '0,1,14,22,23', null, null, '4', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('24', '汽车', '0', '0,24', null, null, '1', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('25', '国产', '24', '0,24,25', null, null, '2', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('26', '美国产', '24', '0,24,26', null, null, '2', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('27', '德国', '24', '0,24,27', null, null, '2', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('28', '罗马', '24', '0,24,28', null, null, '2', '1', null, null, null, null);
+INSERT INTO `tour_category` VALUES ('29', '中国', '24', '0,24,29', null, null, '2', '1', null, null, null, '中国描述星系');
+INSERT INTO `tour_category` VALUES ('30', '红旗', '25', '0,24,25,30', null, null, '3', '1', null, null, null, '红旗红旗红旗');
+INSERT INTO `tour_category` VALUES ('31', '山寨', '25', '0,24,25,31', null, 'system', '3', '1', null, null, null, '山寨山寨');
+INSERT INTO `tour_category` VALUES ('32', '红旗1号', '30', '0,24,25,30,32', null, 'system', '4', '1', null, null, null, '红旗1号');
+INSERT INTO `tour_category` VALUES ('33', '红旗101号', '30', '0,24,25,30,33', null, null, '4', '1', null, null, null, '红旗101号');
+INSERT INTO `tour_category` VALUES ('34', '红旗120', '30', '0,24,25,30,34', null, null, '4', '1', null, null, null, '红旗120红旗120红旗120');
+INSERT INTO `tour_category` VALUES ('35', '山寨110', '31', '0,24,25,31,35', null, null, '4', '1', null, null, null, '山寨110');
+INSERT INTO `tour_category` VALUES ('36', '123', '31', '0,24,25,31,36', null, 'system123', '4', '1', null, null, null, '3213');
+INSERT INTO `tour_category` VALUES ('37', '890', '31', '0,24,25,31,37', null, 'system', '4', '1', null, null, null, '0809');
+INSERT INTO `tour_category` VALUES ('38', '频道分类', '0', '0,38', null, 'channel', '1', '1', null, null, null, '频道分类');
+INSERT INTO `tour_category` VALUES ('39', '频道分类2', '0', '0,39', null, 'channel', '1', '1', null, null, null, '频道分类2222');
+INSERT INTO `tour_category` VALUES ('40', 'CCTV-1', '38', '0,38,40', null, 'channel', '2', '1', null, null, null, 'CCTV-1');
+INSERT INTO `tour_category` VALUES ('41', 'CCTV-1', '38', '0,38,41', null, 'channel', '2', '1', null, null, null, 'CCTV-1');
+INSERT INTO `tour_category` VALUES ('42', 'CCTV-12', '39', '0,39,42', null, 'channel', '2', '1', null, null, null, 'CCTV-12');
+INSERT INTO `tour_category` VALUES ('43', 'CCTV-13', '39', '0,39,43', null, 'video', '2', '1', null, null, null, 'CCTV-13');
 
 -- ----------------------------
 -- Table structure for `tour_download_log`
@@ -408,7 +446,7 @@ CREATE TABLE `tour_logs` (
   `ipaddr` varchar(100) NOT NULL,
   `unique_flag` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tour_logs
@@ -626,6 +664,21 @@ INSERT INTO `tour_logs` VALUES ('236', '161', '2016-11-21 08:56:14', 'admin888',
 INSERT INTO `tour_logs` VALUES ('237', '161', '2016-11-21 08:56:26', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'index--主页--icon-calendar--3--245', '1', '添加新节点:index|主页|icon-calendar|3|245', '127.0.0.1', 'system');
 INSERT INTO `tour_logs` VALUES ('238', '161', '2016-11-21 08:56:35', 'admin888', 'admin888', 'Home', 'Rbac', 'addNode', 'Array--1', '1', '给角色ID为:1：设置节点ID：166|171|172|173|174|175|176|177|178|179|192|232|187|188|189|190|191|203|205|206|207|', '127.0.0.1', 'system');
 INSERT INTO `tour_logs` VALUES ('239', '161', '2016-11-21 08:56:47', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('240', '161', '2016-11-24 09:01:00', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'ECharts--ECharts图标表--icon-calendar--2--166', '1', '添加新节点:ECharts|ECharts图标表|icon-calendar|2|166', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('241', '161', '2016-11-24 09:01:17', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'index--首页展示--icon-calendar--3--253', '1', '添加新节点:index|首页展示|icon-calendar|3|253', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('242', '161', '2016-11-24 09:01:48', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'getJson--异步JSON--icon-calendar--3--253', '1', '添加新节点:getJson|异步JSON|icon-calendar|3|253', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('243', '161', '2016-11-24 09:01:58', 'admin888', 'admin888', 'Home', 'Rbac', 'addNode', 'Array--1', '1', '给角色ID为:1：设置节点ID：166|171|172|173|174|175|176|177|178|179|192|232|187|188|189|190|191|203|205|206|207|', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('244', '161', '2016-11-24 09:02:31', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('245', '161', '2016-11-25 09:15:04', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('246', '161', '2016-11-30 13:25:14', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('247', '161', '2016-12-07 09:11:50', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('248', '161', '2016-12-07 09:12:47', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'WebRTC--WebRTC通信--icon-calendar--2--166', '1', '添加新节点:WebRTC|WebRTC通信|icon-calendar|2|166', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('249', '161', '2016-12-07 09:13:10', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'index--首页--icon-calendar--3--256', '1', '添加新节点:index|首页|icon-calendar|3|256', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('250', '161', '2016-12-07 09:16:27', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'test--测试--icon-calendar--3--256', '1', '添加新节点:test|测试|icon-calendar|3|256', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('251', '161', '2016-12-07 09:17:10', 'admin888', 'admin888', 'Home', 'Rbac', 'createnode', 'getUserMedia--获同步流--icon-calendar--3--256', '1', '添加新节点:getUserMedia|获同步流|icon-calendar|3|256', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('252', '161', '2016-12-07 09:18:03', 'admin888', 'admin888', 'Home', 'Rbac', 'addNode', 'Array--1', '1', '给角色ID为:1：设置节点ID：166|171|172|173|174|175|176|177|178|179|192|232|187|188|189|190|191|203|205|206|207|', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('253', '161', '2016-12-07 09:18:08', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
+INSERT INTO `tour_logs` VALUES ('254', '161', '2016-12-07 15:44:02', 'admin888', 'admin888', 'Home', 'Login', 'checkLogin', 'admin888--123456', '1', '登陆成功', '127.0.0.1', 'system');
 
 -- ----------------------------
 -- Table structure for `tour_product`
