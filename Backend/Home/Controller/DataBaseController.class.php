@@ -698,6 +698,25 @@ class DataBaseController extends Controller
         homePrint($fetchResult);
     }
 
+    public function microtime_float()
+    {
+        list($u_sec, $sec) = explode(' ', microtime());
+        return (floatval($u_sec) + floatval($sec));
+    }
+
+    ###PHP统计脚本执行时间 因为想知道每个进程花费的时间是多少，因此写个函数统计脚本执行时间：
+    public function phpRunTime()
+    {
+        $start_time = $this->microtime_float();
+        usleep(100); //usleep函数能把进程挂起一段时间， 单位是微秒（千分之一毫秒）
+        $end_time = $this->microtime_float();
+        $total_time = $end_time - $start_time;
+
+        $time_cost = sprintf("%.10f", $total_time);
+
+        echo "program cost total " . $time_cost . "s\n";
+    }
+
 
     public function thinkPhpSelfPdo($id)
     {
