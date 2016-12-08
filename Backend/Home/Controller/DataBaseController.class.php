@@ -430,8 +430,20 @@ class DataBaseController extends Controller
     {
         $user = 'root';
         $pass = '';
+        $id = 51;
         try {
-            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass,array(\PDO::ATTR_PERSISTENT=>true));
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass);
+            $query = "select user_id,username,apikey_time from tour_user";
+            $stmt = $dbh->prepare($query);
+            $stmt->execute();
+            $fetchResult = $stmt->fetch(); //获取最新的一行
+            var_dump($fetchResult);
+            die;
+            $sql = "select * from tour_user WHERE id = ?";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(1, $id, \PDO::PARAM_INT);
+            var_dump($stmt->execute());
+            die;
             foreach ($dbh->query("select * from tour_user") as $row) {
                 print_r($row);
             }
@@ -452,22 +464,22 @@ class DataBaseController extends Controller
         $user = 'root';
         $pass = '';
         try {
-            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass,array(\PDO::ATTR_PERSISTENT=>true));
-            foreach ($dbh->query("select * from tour_user") as $row) {
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass, array(\PDO::ATTR_PERSISTENT => true));
+            foreach ($dbh->query("select username from tour_user") as $row) {
                 print_r($row);
             }
         } catch (\PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
-        $username = 'tinywan'.mt_rand(00,88);
-        $password = mt_rand(000000,99999);
+        $username = 'tinywan' . mt_rand(00, 88);
+        $password = mt_rand(000000, 99999);
         $logintime = time();
         $query = "INSERT INTO tour_user (username,password,logintime) VALUES (?,?,?)";
         $stmt = $dbh->prepare($query);
-        $stmt->bindParam("1",$username);
-        $stmt->bindParam("2",$password);
-        $stmt->bindParam("3",$logintime);
+        $stmt->bindParam("1", $username);
+        $stmt->bindParam("2", $password);
+        $stmt->bindParam("3", $logintime);
         //插入第一条
         $stmt->execute();
         //插入第二条
@@ -479,7 +491,7 @@ class DataBaseController extends Controller
         $user = 'root';
         $pass = '';
         try {
-            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass,array(\PDO::ATTR_PERSISTENT=>true));
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass, array(\PDO::ATTR_PERSISTENT => true));
         } catch (\PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
@@ -487,17 +499,16 @@ class DataBaseController extends Controller
         return $dbh;
     }
 
-
     ////第二种参数绑定
     public function pdoBindParam1()
     {
         $dbh = self::connectionPdo();
-        $username = 'tinywan'.mt_rand(00,88);
-        $password = mt_rand(000000,99999);
+        $username = 'tinywan' . mt_rand(00, 88);
+        $password = mt_rand(000000, 99999);
         $logintime = time();
         $query = "INSERT INTO tour_user (username,password,logintime) VALUES (?,?,?)";
         $stmt = $dbh->prepare($query);
-        $insertResult = $stmt->execute([$username,$password,$logintime]);
+        $insertResult = $stmt->execute([$username, $password, $logintime]);
         homePrint($insertResult);
     }
 
@@ -505,16 +516,16 @@ class DataBaseController extends Controller
     public function pdoBindParam2()
     {
         $dbh = self::connectionPdo();
-        $username = 'tinywan'.mt_rand(00,88);
-        $password = mt_rand(000000,99999);
+        $username = 'tinywan' . mt_rand(00, 88);
+        $password = mt_rand(000000, 99999);
         $logintime = time();
         // [注意：这里的:username不可以加当引号和双引号]
         $query = "INSERT INTO tour_user (username,password,logintime) VALUES (:username,:password,:logintime)";
         $stmt = $dbh->prepare($query);
         $stmt->execute([
-            ':username'=>$username,
-            ':password'=>$password,
-            ':logintime'=>$logintime
+            ':username' => $username,
+            ':password' => $password,
+            ':logintime' => $logintime
         ]);
         //如果执行的是INSERT语句，并且数据表有自动增长的ID字段，可以使用PDO对象中的lastInsertId()方法获取最后插入数据表中的记录ID。
         //如果需要查看其他DML语句是否执行成功，可以通过PDOStatement类对象中的rowCount()方法获取影响记录的行数
@@ -548,7 +559,7 @@ class DataBaseController extends Controller
         $query = "select user_id,username,apikey_time from tour_user";
         $stmt = $dbh->prepare($query);
         $stmt->execute();
-        while($row = $stmt->fetch(\PDO::FETCH_NUM)){
+        while ($row = $stmt->fetch(\PDO::FETCH_NUM)) {
             print_r($row);
             echo "<br>";
         }
@@ -565,11 +576,11 @@ class DataBaseController extends Controller
         echo "<th>编号</th>";
         echo "<th>姓名</th>";
         echo "<th>密码</th>";
-        while(list($user_id, $username, $logintime) = $stmt -> fetch(\PDO::FETCH_NUM)) {
+        while (list($user_id, $username, $logintime) = $stmt->fetch(\PDO::FETCH_NUM)) {
             echo '<tr>';
-            echo '<td>'.$user_id.'</td>';
-            echo '<td>'.$username.'</td>';
-            echo '<td>'.$logintime.'</td>';
+            echo '<td>' . $user_id . '</td>';
+            echo '<td>' . $username . '</td>';
+            echo '<td>' . $logintime . '</td>';
             echo '</tr>';
         }
         echo '</table>';
@@ -580,7 +591,6 @@ class DataBaseController extends Controller
      * fetchAll([int fetch_style [,int column_index]])
      * @param $id
      */
-
     public function getFetchAll()
     {
         $dbh = self::connectionPdo();
@@ -592,14 +602,81 @@ class DataBaseController extends Controller
         echo "<th>姓名</th>";
         echo "<th>密码</th>";
         $allRows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        foreach ($allRows as $row ) {
+        foreach ($allRows as $row) {
             echo '<tr>';
-            echo '<td>'.$row['user_id'].'</td>';
-            echo '<td>'.$row['username'].'</td>';
-            echo '<td>'.$row['password'].'</td>';
+            echo '<td>' . $row['user_id'] . '</td>';
+            echo '<td>' . $row['username'] . '</td>';
+            echo '<td>' . $row['password'] . '</td>';
             echo '</tr>';
         }
         echo '</table>';
+    }
+
+    //使用fetchAll()方法输出所有的姓名数组
+    public function getFetchAllOneRow()
+    {
+        $dbh = self::connectionPdo();
+        $query = "select user_id,username,password from tour_user";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute();
+        echo '所有的姓名：';
+        $allUserName = $stmt->fetchAll(\PDO::FETCH_COLUMN, 1);
+        homePrint($allUserName);
+        echo '所有的密码：';
+        $allPassword = $stmt->fetchAll(\PDO::FETCH_COLUMN, 2);
+        homePrint($allPassword);
+    }
+
+    //［PDO绑定参数］使用PHP的PDO扩展进行批量更新操作
+    public function pdoBatchUpdate()
+    {
+        $data = array(['id' => 50, 'val' => 33333], ['id' => 51, 'val' => 444]);
+        $ids = implode(',', array_map(function ($v) {
+            return $v['id'];
+        }, $data)); //获取ID数组
+
+        $update_sql = 'UPDATE tour_user SET username = CASE id';
+        $params = array();
+        $params[":_ids"] = $ids;
+        foreach ($data as $key => $item) {
+            $update_sql .= " WHEN :id_" . $key . " THEN :val_" . $key . " ";
+            $params[":id_" . $key] = $item['id'];
+            $params[":val_" . $key] = $item['val'];
+        }
+        $update_sql .= "END WHERE id IN(:_ids)";
+        $dbh = self::connectionPdo();
+        $stmt = $dbh->prepare($update_sql);
+        $result = $stmt->execute($params);//此处会调用bindParam绑定参数
+        homePrint($result);
+    }
+
+    /**
+     * 绑定参数查询 user_id= :user_id
+     */
+    public function pdoBindParamFetch()
+    {
+        $uid = 51;
+        $dbh = self::connectionPdo();
+        $query = "select user_id from tour_user WHERE user_id= :user_id";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute([':user_id'=>$uid]);
+        $fetchResult = $stmt->fetch(\PDO::FETCH_COLUMN, 1);
+        homePrint($fetchResult);
+    }
+
+    /**
+     * 绑定参数查询 user_id= ?
+     */
+    public function pdoBindParamFetch1()
+    {
+        $uid = 51;
+        $dbh = self::connectionPdo();
+        $query = "select user_id from tour_user WHERE user_id= ?";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(1,$uid,\PDO::PARAM_INT);
+        $stmt->execute();
+        $fetchResult = $stmt->fetch(\PDO::FETCH_COLUMN, 1);
+        homePrint($fetchResult);
     }
 
 
