@@ -417,7 +417,191 @@ class DataBaseController extends Controller
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
+        // 现在运行完成，在此关闭连接
+        //$dbh = null;
     }
+
+    /**
+     * 【Example #4 持久化连接】
+     * 如果想使用持久连接，必须在传递给 PDO 构造函数的驱动选项数组中设置 PDO::ATTR_PERSISTENT 。
+     * 如果是在对象初始化之后用 PDO::setAttribute() 设置此属性，则驱动程序将不会使用持久连接。
+     */
+    public function pdoExample2()
+    {
+        $user = 'root';
+        $pass = '';
+        try {
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass,array(\PDO::ATTR_PERSISTENT=>true));
+            foreach ($dbh->query("select * from tour_user") as $row) {
+                print_r($row);
+            }
+        } catch (\PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+    /**
+     * 【Example #3 持久化连接】
+     *
+     * 当准备好查询并绑定了相应的参数后，就可以通过调用PDOStatement类对象中的execute()方法，反复执行在数据库缓存区准备好的语句了。
+     * 在下面的示例中，向前面提供的contactInfo表中，使用预处理方式连续执行同一个INSERT语句，通过改变不同的参数添加两条记录
+     */
+    public function pdoExample3()
+    {
+        $user = 'root';
+        $pass = '';
+        try {
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass,array(\PDO::ATTR_PERSISTENT=>true));
+            foreach ($dbh->query("select * from tour_user") as $row) {
+                print_r($row);
+            }
+        } catch (\PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+        $username = 'tinywan'.mt_rand(00,88);
+        $password = mt_rand(000000,99999);
+        $logintime = time();
+        $query = "INSERT INTO tour_user (username,password,logintime) VALUES (?,?,?)";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam("1",$username);
+        $stmt->bindParam("2",$password);
+        $stmt->bindParam("3",$logintime);
+        //插入第一条
+        $stmt->execute();
+        //插入第二条
+        $stmt->execute();
+    }
+
+    public static function connectionPdo()
+    {
+        $user = 'root';
+        $pass = '';
+        try {
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass,array(\PDO::ATTR_PERSISTENT=>true));
+        } catch (\PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+        return $dbh;
+    }
+
+
+    ////第二种参数绑定
+    public function pdoBindParam1()
+    {
+        $dbh = self::connectionPdo();
+        $username = 'tinywan'.mt_rand(00,88);
+        $password = mt_rand(000000,99999);
+        $logintime = time();
+        $query = "INSERT INTO tour_user (username,password,logintime) VALUES (?,?,?)";
+        $stmt = $dbh->prepare($query);
+        $insertResult = $stmt->execute([$username,$password,$logintime]);
+        homePrint($insertResult);
+    }
+
+    //预处理查询在执行中替换输入参数的方式。此语法可以活动对bindParam()的调用
+    public function pdoBindParam2()
+    {
+        $dbh = self::connectionPdo();
+        $username = 'tinywan'.mt_rand(00,88);
+        $password = mt_rand(000000,99999);
+        $logintime = time();
+        // [注意：这里的:username不可以加当引号和双引号]
+        $query = "INSERT INTO tour_user (username,password,logintime) VALUES (:username,:password,:logintime)";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute([
+            ':username'=>$username,
+            ':password'=>$password,
+            ':logintime'=>$logintime
+        ]);
+        //如果执行的是INSERT语句，并且数据表有自动增长的ID字段，可以使用PDO对象中的lastInsertId()方法获取最后插入数据表中的记录ID。
+        //如果需要查看其他DML语句是否执行成功，可以通过PDOStatement类对象中的rowCount()方法获取影响记录的行数
+        $lastInsertId = $dbh->lastInsertId();   //最后插入数据表中的记录ID
+        homePrint($lastInsertId);
+
+        $rowCount = $stmt->rowCount();
+        homePrint($rowCount); //这个意思是当前一共插入了多少条的记录
+    }
+
+    /**
+     * 获取数据
+     * @param $id
+     */
+    public function getFetch()
+    {
+        $dbh = self::connectionPdo();
+        $query = "select user_id,username,apikey_time from tour_user";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute();
+        $fetchResult = $stmt->fetch(); //获取最新的一行
+        homePrint($fetchResult);
+
+        $rowCount = $stmt->rowCount(); //该表中所有的记录数目 总共：11条
+        homePrint($rowCount);
+    }
+
+    public function getFetchNum()
+    {
+        $dbh = self::connectionPdo();
+        $query = "select user_id,username,apikey_time from tour_user";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute();
+        while($row = $stmt->fetch(\PDO::FETCH_NUM)){
+            print_r($row);
+            echo "<br>";
+        }
+    }
+
+    //以表格的形式输出结果集
+    public function getFetchTable()
+    {
+        $dbh = self::connectionPdo();
+        $query = "select user_id,username,password from tour_user";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute();
+        echo '<table border="1" >';
+        echo "<th>编号</th>";
+        echo "<th>姓名</th>";
+        echo "<th>密码</th>";
+        while(list($user_id, $username, $logintime) = $stmt -> fetch(\PDO::FETCH_NUM)) {
+            echo '<tr>';
+            echo '<td>'.$user_id.'</td>';
+            echo '<td>'.$username.'</td>';
+            echo '<td>'.$logintime.'</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+
+    /**
+     * fetchAll()方法与上一个方法fetch()类似，但是该方法只需要调用一次就可以获取结果集中的所有行，并赋给返回的二维数组
+     * fetchAll([int fetch_style [,int column_index]])
+     * @param $id
+     */
+
+    public function getFetchAll()
+    {
+        $dbh = self::connectionPdo();
+        $query = "select user_id,username,password from tour_user";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute();
+        echo '<table border="1" >';
+        echo "<th>编号</th>";
+        echo "<th>姓名</th>";
+        echo "<th>密码</th>";
+        $allRows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        foreach ($allRows as $row ) {
+            echo '<tr>';
+            echo '<td>'.$row['user_id'].'</td>';
+            echo '<td>'.$row['username'].'</td>';
+            echo '<td>'.$row['password'].'</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+
 
     public function thinkPhpSelfPdo($id)
     {
