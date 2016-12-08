@@ -715,6 +715,7 @@ class DataBaseController extends Controller
         $time_cost = sprintf("%.10f", $total_time);
 
         echo "program cost total " . $time_cost . "s\n";
+        getmygid();
     }
 
 
