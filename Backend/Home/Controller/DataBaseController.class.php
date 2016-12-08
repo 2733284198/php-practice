@@ -679,6 +679,25 @@ class DataBaseController extends Controller
         homePrint($fetchResult);
     }
 
+    /**
+     * 多个条件的查询 user_id= ? AND username = ?
+     * 注意！！！！！！ 查询的字段使用 `filed` 这个抱起来
+     */
+    public function pdoBindParamFetch2()
+    {
+        $dbh = self::connectionPdo();
+        $query = 'select user_id from tour_user WHERE `user_id` = ? AND `username` = ?';
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(1,$uid,\PDO::PARAM_INT);
+        $stmt->bindParam(2,$userName,\PDO::PARAM_STR);
+        $uid = 51;
+        $userName = 'tinywan31';
+        $stmt->execute();
+        $stmt->debugDumpParams();
+        $fetchResult = $stmt->fetch(\PDO::FETCH_COLUMN, 1);
+        homePrint($fetchResult);
+    }
+
 
     public function thinkPhpSelfPdo($id)
     {
