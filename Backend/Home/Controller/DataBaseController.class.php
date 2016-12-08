@@ -140,7 +140,7 @@ class DataBaseController extends Controller
         $redis->select(2);
 //
         $val = [
-            'username' => 'username312'.mt_rand(1111,9999),
+            'username' => 'username312' . mt_rand(1111, 9999),
             'description' => 'description',
         ];
         $redis->rPush($listKey, json_encode($val));
@@ -148,8 +148,8 @@ class DataBaseController extends Controller
 
         //哈哈，在这里触发一下哦，数据队列满的时候就插入到MySql数据库中去哦！
         $returnResult = false;
-        if($listLen > 20){
-           $returnResult =  $this->RedisSaveToMysql($listKey);
+        if ($listLen > 20) {
+            $returnResult = $this->RedisSaveToMysql($listKey);
         }
         homePrint($returnResult);
         var_dump($listLen);
@@ -285,7 +285,7 @@ class DataBaseController extends Controller
                         $redis->rPush($listKey, json_encode($val));
                     }
                     //同时设置一个过期时间
-                    $redis->expire($listKey,30);
+                    $redis->expire($listKey, 30);
                 } else {
                     $resultData['status_code'] = 500;
                     $resultData['mysql_msg'] = 'Data Source from Mysql is Fail';
@@ -355,23 +355,23 @@ class DataBaseController extends Controller
         return $result;
     }
 
-    public function test(){
+    public function test()
+    {
         $redis = RedisInstance::Instance();
         $conn = $redis->connect('127.0.0.1', '6379000');
-        if($conn == true){
+        if ($conn == true) {
             var_dump($conn);
-        }else{
+        } else {
             echo 'Redis server went away';
         }
         var_dump($redis);
 
     }
 
-    public function updateMsyql($id){
+    public function updateMsyql($id)
+    {
         $model = new Model();
         $msql = "select * from tour_logs";
-        homePrint($model->query($msql));
-        die;
         $display_order = [
             1 => 4,
             2 => 1,
@@ -391,8 +391,48 @@ class DataBaseController extends Controller
         }
         $sql .= "END WHERE id IN ($ids)";
         homePrint($sql);
+    }
 
+    /**
+     * #################################################################################################################
+     *
+     * PHP之PDO预处理语句
+     *
+     * #################################################################################################################
+     */
 
+    //PHP官方案例
+    public function pdoExample1()
+    {
+        $user = 'root';
+        $pass = '';
+        try {
+            //连接数据成功后，返回一个 PDO 类的实例给脚本，此连接在 PDO 对象的生存周期中保持活动。要想关闭连接，需要销毁对象以确保所有剩余到它的引用都被删除，
+            //可以赋一个 NULL 值给对象变量。如果不明确地这么做，PHP 在脚本结束时会自动关闭连接。
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass);
+            foreach ($dbh->query("select * from tour_user") as $row) {
+                print_r($row);
+            }
+        } catch (\PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+    public function thinkPhpSelfPdo($id)
+    {
+        $model = new Model();
+        $name = '121';
+        $address = '34234';
+        $phone = '13669361192';
+        $query = "INSERT INTO contactInfo (name,address,phone) VALUES (:name,:address,:phone)";
+        $stmt = $model->prepare($query);
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":address", $address);
+        $stmt->bindParam(":phone", $phone);
+        $name = '爱新觉罗';
+        $address = '东城';
+        $phone = '88888';
     }
 
 }
