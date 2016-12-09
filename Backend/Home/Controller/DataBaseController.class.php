@@ -659,7 +659,7 @@ class DataBaseController extends Controller
         $dbh = self::connectionPdo();
         $query = "select user_id from tour_user WHERE user_id= :user_id";
         $stmt = $dbh->prepare($query);
-        $stmt->execute([':user_id'=>$uid]);
+        $stmt->execute([':user_id' => $uid]);
         $fetchResult = $stmt->fetch(\PDO::FETCH_COLUMN, 1);
         homePrint($fetchResult);
     }
@@ -673,7 +673,7 @@ class DataBaseController extends Controller
         $dbh = self::connectionPdo();
         $query = "select user_id from tour_user WHERE user_id= ?";
         $stmt = $dbh->prepare($query);
-        $stmt->bindParam(1,$uid,\PDO::PARAM_INT);
+        $stmt->bindParam(1, $uid, \PDO::PARAM_INT);
         $stmt->execute();
         $fetchResult = $stmt->fetch(\PDO::FETCH_COLUMN, 1);
         homePrint($fetchResult);
@@ -688,8 +688,8 @@ class DataBaseController extends Controller
         $dbh = self::connectionPdo();
         $query = 'select user_id from tour_user WHERE `user_id` = ? AND `username` = ?';
         $stmt = $dbh->prepare($query);
-        $stmt->bindParam(1,$uid,\PDO::PARAM_INT);
-        $stmt->bindParam(2,$userName,\PDO::PARAM_STR);
+        $stmt->bindParam(1, $uid, \PDO::PARAM_INT);
+        $stmt->bindParam(2, $userName, \PDO::PARAM_STR);
         $uid = 51;
         $userName = 'tinywan31';
         $stmt->execute();
