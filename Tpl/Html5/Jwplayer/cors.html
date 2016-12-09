@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<title>跨域资源共享（CORS）</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -24,8 +24,7 @@
     // Make the actual CORS request.
     function makeCorsRequest() {
         // All HTML5 Rocks properties support CORS.
-//        var url = 'http://oss-cors-test.oss-cn-hangzhou.aliyuncs.com/test.txt';
-        var url = 'http://tinywan.amai8.com/live123/4001481269282.m3u8';
+        var url = 'http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001481269282.m3u8';
         var xhr = createCORSRequest('GET', url);
         if (!xhr) {
             alert('CORS not supported');
@@ -44,7 +43,7 @@
     }
 </script>
 <p align="center" style="font-size: 20px;">
-    <a href="#" onclick="makeCorsRequest(); return false;">Run Sample</a>
+    <a href="#" onclick="makeCorsRequest(); return false;">跨域资源共享（CORS）</a>
 </p>
 </body>
 </html>

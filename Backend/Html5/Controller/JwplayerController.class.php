@@ -24,7 +24,7 @@ class JwplayerController extends Controller
         $this->display();
     }
 
-    //swfobject
+    //swfobject swfobject
     public function oldswfobject()
     {
         $this->display();
