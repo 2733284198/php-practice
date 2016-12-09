@@ -20,7 +20,7 @@ class JwplayerController extends Controller
     //swfobject
     public function swfobject()
     {
-        $this->play_address = 'rtmp://tinywan.amai8.com/live/4001480324020';
+        $this->play_address = 'rtmp://tinywan.amai8.com/live123/4001481269282';
         $this->display();
     }
 
@@ -31,6 +31,14 @@ class JwplayerController extends Controller
     }
 
     public function onlyvideo(){
+        $this->display();
+    }
+
+    /**
+     * 跨域资源共享（CORS）
+     * https://help.aliyun.com/document_detail/31928.html
+     */
+    public function cors(){
         $this->display();
     }
 
