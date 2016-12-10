@@ -105,19 +105,21 @@ class IndexController extends BaseController
         p(UserAgent::IS_WECHAT());
     }
 
+    public function testFunction(){
+        static $i = 1; //第一次调用初始化，第二次调用的时候将不会重复去初始化
+        echo $i."\n";
+        $i++;
+
+    }
+
     public function test(){
-        $module = '';    //存放拥有的模块
-        var_dump($_SESSION['_ACCESS_LIST']);
-        foreach ($_SESSION['_ACCESS_LIST'] as $key => $value) {
-            foreach ($value as $key1 => $value1) {
-//                $module = $module.','.$key1;    //字符串拼接模块名称
-//                foreach ($value1 as $key2 => $value2) {
-//                    $node_id = $node_id.','.$value2;    //字符串拼操作id
-//                }
-                var_dump($key1);
-                var_dump($value1);
-            }
-        }
+        global $a,$b;
+        $this->testFunction();
+        $this->testFunction();
+        $this->testFunction();
+        $this->testFunction();
+        print_r($GLOBALS);
+        homePrint($GLOBALS['_SESSION']);
 
     }
 

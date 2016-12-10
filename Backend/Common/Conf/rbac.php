@@ -3,7 +3,7 @@
   'SESSION_AUTO_START' => true,
   'RBAC_SUPERADMIN' => 'admin',
   'ADMIN_AUTH_KEY' => 'administrator',
-  'USER_AUTH_ON' => '1',
+  'USER_AUTH_ON' => '0',
   'USER_AUTH_TYPE' => 1,
   'USER_AUTH_KEY' => 'authId',
   'ADMINISTRATOR' => 'admin',

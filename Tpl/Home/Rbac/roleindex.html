@@ -142,11 +142,11 @@
                 var $url = $URL2+'setAuth';
                 var $data = {'user_auth_on':$status};
                 var success = function(response){
-
+                    console.log(response);
                     if(response.status == 200)
                     {
                         alert(response.errmsg);
-                        window.location.reload();
+//                        window.location.reload();
                     }else{
                         alert(response.errmsg);
                     }
