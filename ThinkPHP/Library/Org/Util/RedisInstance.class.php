@@ -61,7 +61,6 @@ class RedisInstance
             $_connectSource = self::Instance()->connect('121.41.88.209', '63789');
             if ($_connectSource === FALSE) return FALSE; //@return bool TRUE on success, FALSE on error.
             self::Instance()->auth('tinywanredis');
-
             return static::$_instance;
         } catch (\Exception $e) {
             return FALSE;
