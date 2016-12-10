@@ -8,6 +8,8 @@ use Org\Util\Tree;
 
 class CategoryController extends BaseController
 {
+    public static $treeLink = [];
+
     /**
      * 全路径无限分类
      */
@@ -165,6 +167,12 @@ class CategoryController extends BaseController
         print_r($result);
     }
 
+    /**
+     * 子类循环遍历找所有父级
+     * @param int $cid
+     * @param array $result
+     * @return array
+     */
     public static function getList($cid = 43, &$result = array())
     {
         $model = M('Category'); // return Object
@@ -178,16 +186,6 @@ class CategoryController extends BaseController
         return $result;
     }
 
-    //递归无限分类原理
-    public static function recursiveFunction($i = 1)
-    {
-        echo $i;
-        $i++;
-        if ($i < 10) {
-            static::recursiveFunction($i);
-        }
-    }
-
     /**
      * @param string $url
      * @param int $cid
@@ -196,20 +194,19 @@ class CategoryController extends BaseController
     public function treeLinkHref($url = 'index.php?page=1&id=', $cid = 49)
     {
         $result = self::getList($cid);
-        var_dump($result);die;
         foreach ($result as $key => $val) {
             echo "<a href='{$url}{$val['id']}'>{$val['name']}</a>》";
         }
     }
 
     //递归无限分类原理
-    public function test($url = 'index.php?page=1&id=', $cid = 49)
+    public static function recursiveFunction($i = 1)
     {
-        $model = M('Category'); // return Object
-        $condition['id'] = $cid;
-        $row = $model->select();
-        $result = Tree::treeLink($row);
-        var_dump($result);
+        echo $i;
+        $i++;
+        if ($i < 10) {
+            static::recursiveFunction($i);
+        }
     }
 
 
