@@ -107,7 +107,7 @@ class CacheController extends BaseController
         if($model->where($condition)->setField('name',$name) == true){
             $cacheFile = CONF_PATH . 'Dependency/' . $fileName;
             echo $cacheFile;
-            file_put_contents($cacheFile,$cId);
+            file_put_contents($cacheFile,$cId,FILE_APPEND);
         }
     }
 
