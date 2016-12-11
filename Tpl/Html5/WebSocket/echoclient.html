@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
+<meta charset="utf-8"/>
 <title>WebSocket Echo Client</title>
 <h2>WebSocket Echo Client</h2>
 <div id="output"></div>
-<script language="javascript"type="text/javascript">
+<script language="javascript" type="text/javascript">
     //检查浏览器是否支持WebSocket
-    if(window.WebSocket){
+    if (window.WebSocket) {
         console.log('This browser supports WebSocket');
-    }else{
+    } else {
         console.log('This browser does not supports WebSocket');
     }
-    var wsUri ="ws://echo.websocket.org/";
+    var wsUri = "ws://echo.websocket.org/";
     var output;
 
     function init() {
@@ -20,16 +20,16 @@
 
     function testWebSocket() {
         websocket = new WebSocket(wsUri);
-        websocket.onopen = function(evt) {
+        websocket.onopen = function (evt) {
             onOpen(evt)
         };
-        websocket.onclose = function(evt) {
+        websocket.onclose = function (evt) {
             onClose(evt)
         };
-        websocket.onmessage = function(evt) {
+        websocket.onmessage = function (evt) {
             onMessage(evt)
         };
-        websocket.onerror = function(evt) {
+        websocket.onerror = function (evt) {
             onError(evt)
         };
     }
@@ -40,17 +40,17 @@
     }
 
     function onClose(evt) {
-        writeToScreen("DISCONNECTED:"+evt.reason);
+        writeToScreen("DISCONNECTED:" + evt.reason);
     }
 
     function onMessage(evt) {
-        writeToScreen('<span style="color: blue;">RESPONSE: '+ evt.data+'</span>');
+        writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
         // 关闭websocket
         websocket.close();
     }
 
     function onError(evt) {
-        writeToScreen('<span style="color: red;">ERROR:</span> '+ evt.data);
+        writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
     }
 
     function doSend(message) {

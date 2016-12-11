@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
+<meta charset="utf-8"/>
 <title>WebSocket Image Drop</title>
 <h2>WebSocket Image Drop</h2>
 <div id="output"></div>
-<script language="javascript"type="text/javascript">
+<script language="javascript" type="text/javascript">
     //Initialize WebSocket connection
-    var wsUrl ="ws://echo.websocket.org/echo";
+    var wsUrl = "ws://echo.websocket.org/echo";
     var ws = new WebSocket(wsUrl);
     ws.onopen = function () {
         console.log('open');
@@ -14,8 +14,8 @@
     //Handle binary image data received on the WebSocket
     ws.onmessage = function (e) {
         var blob = e.data;
-        console.log('Message:'+blob.size+'bytes');
-        if(window.webkitUrl){
+        console.log('Message:' + blob.size + 'bytes');
+        if (window.webkitUrl) {
             URL = webkitUrl;
         }
         var uri = URL.createObjectUrl(blob);
@@ -24,6 +24,6 @@
         document.boby.appendChild(img);
     }
 
-//    window.addEventListener("load", init, false);
+    //    window.addEventListener("load", init, false);
 </script>
 </html>
