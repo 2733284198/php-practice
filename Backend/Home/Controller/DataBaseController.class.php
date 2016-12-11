@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 
+use Org\Util\PDOInstance;
 use Org\Util\RedisInstance;
 use Think\Controller;
 use Think\Exception;
@@ -718,7 +719,6 @@ class DataBaseController extends Controller
         getmygid();
     }
 
-
     public function thinkPhpSelfPdo($id)
     {
         $model = new Model();
@@ -733,6 +733,54 @@ class DataBaseController extends Controller
         $name = '爱新觉罗';
         $address = '东城';
         $phone = '88888';
+    }
+
+    public function testConnectPdo()
+    {
+        $host = 'localhost';
+        $dbname = 'tp5';
+        $user = 'root';
+        $pass = '';
+        $instacne = PDOInstance::connect($host,$dbname,$user,$pass);
+        var_dump(self::connectionPdo());
+        var_dump($instacne);
+        $query = "select user_id,username,password from tour_user";
+        foreach ($instacne->query($query) as $row) {
+            print_r($row);
+        }
+
+    }
+
+    public static function ensure($reference, $type = null, $container = null)
+    {
+        if ($reference instanceof $type) {
+            return $reference;
+        } elseif (is_array($reference)) {
+            $class = isset($reference['class']) ? $reference['class'] : $type;
+            if (!$container instanceof Container) {
+                $container = Yii::$container;
+            }
+            unset($reference['class']);
+            return $container->get($class, [], $reference);
+        } elseif (empty($reference)) {
+            throw new Exception('The required component is not specified.');
+        }
+
+        if (is_string($reference)) {
+            $reference = new static($reference);
+        }
+
+        if ($reference instanceof self) {
+            $component = $reference->get($container);
+            if ($component instanceof $type || $type === null) {
+                return $component;
+            } else {
+                throw new Exception('"' . $reference->id . '" refers to a ' . get_class($component) . " component. $type is expected.");
+            }
+        }
+
+        $valueType = is_object($reference) ? get_class($reference) : gettype($reference);
+        throw new Exception("Invalid data type: $valueType. $type is expected.");
     }
 
 }

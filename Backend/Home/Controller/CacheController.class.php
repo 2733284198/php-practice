@@ -24,7 +24,7 @@ class CacheController extends BaseController
     }
 
     /**
-     * 生成依赖性数据
+     * 生成文件依赖性数据
      * @param $cache
      * @return int
      * ['fileName' => 'cache.txt']
@@ -38,8 +38,48 @@ class CacheController extends BaseController
         return @filemtime($file); //filemtime() 函数返回文件内容上次的修改时间。
     }
 
+    public static function connectionPdo()
+    {
+        $user = 'root';
+        $pass = '';
+        try {
+            $Instance = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass);
+        } catch (\PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+        return $Instance;
+    }
+
     /**
-     *  文件依赖缓存
+     * 生成数据库依赖性数据
+     * @param $cache
+     * @return int
+     * ['fileName' => 'cache.txt']
+     */
+    protected function generateDependencyDataDb($cache_sql)
+    {
+        $dbInstance = self::connectionPdo();
+
+        $db = Instance::ensure($this->db, Connection::className());
+        if ($cache_sql === null) {
+            throw new \HttpInvalidParamException("DbDependency::sql must be set.");
+        }
+
+        if ($db->enableQueryCache) {
+            // temporarily disable and re-enable query caching
+            $db->enableQueryCache = false;
+            $result = $db->createCommand($this->sql, $this->params)->queryOne();
+            $db->enableQueryCache = true;
+        } else {
+            $result = $db->createCommand($this->sql, $this->params)->queryOne();
+        }
+
+        return $result;
+    }
+
+    /**
+     *  生成数据库依赖缓存
      * filemtime() 函数返回文件内容上次的修改时间。
      */
     public static function fileCache($fileName = 'cache.txt',$cId=39)
