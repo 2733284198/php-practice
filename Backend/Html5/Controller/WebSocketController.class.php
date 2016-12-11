@@ -6,50 +6,35 @@ use Org\Util\Context;
 use Org\Util\Gateway;
 use Think\Controller;
 
-class WorkerManController extends Controller
+class WebSocketController extends Controller
 {
     public function _initialize()
     {
 
     }
 
+    /**
+     * https://www.w3.org/TR/websockets/
+     */
     public function index()
     {
-        echo 'WorkerManController';
+        echo 'WebSocket:'.__METHOD__;
     }
 
     /**
      * 处理信息的接口
-     * 【1】sendToAll 只能发送字符串或者json_encode（数组），不能够直接发送数组
      */
-    public function handleMessage()
+    public function echoClient()
     {
-        Gateway::$registerAddress = '120.26.220.223:1238';
-        $token = $_POST['token'];
-        $clientId = $_POST['clientId'];
-        $content = $_POST['content'];
-        $message = [
-            'clientId' => $clientId,
-            'content' => $content,
-            'publish_time' => date('Y-m-d h:i:s', time())
-        ];
+        $this->display();
+    }
 
-        $sendResult = Gateway::sendToAll(json_encode($message));
-        if ($sendResult == false) {
-            $arr = [
-                'status' => 500,
-                'message' => 'send fail!',
-                'content' => $content
-            ];
-        } else {
-            $arr = [
-                'status' => 200,
-                'message' => 'send success!',
-                'content' => $content
-            ];
-        }
-
-        exit(json_encode($arr));
+    /**
+     * 处理信息的接口
+     */
+    public function imageDrop()
+    {
+        $this->display();
     }
 
     /**
