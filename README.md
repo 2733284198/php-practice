@@ -71,6 +71,7 @@ ThinkPHP从诞生以来一直秉承大道至简的开发理念，无论从底层
 *  表单令牌验证
 *  防SQL注入
 *  图像上传检测
+*  图像上传检测2
 
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
