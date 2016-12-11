@@ -487,6 +487,10 @@ class DataBaseController extends Controller
         $stmt->execute();
     }
 
+    /**
+     * 测试连接一个PDO单例模式连接数据库
+     * @return \PDO
+     */
     public static function connectionPdo()
     {
         $user = 'root';
@@ -735,6 +739,9 @@ class DataBaseController extends Controller
         $phone = '88888';
     }
 
+    /**
+     * 测试连接一个PDO单例模式连接数据库
+     */
     public function testConnectPdo()
     {
         $host = 'localhost';
