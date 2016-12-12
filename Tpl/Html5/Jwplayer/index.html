@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jwplayer播放器播放RTMP视频</title>
+    <title>使用JW播放器API</title>
     <!-- Chang URLs to wherever Video.js files will be hosted -->
 </head>
 <body>
@@ -21,13 +21,29 @@
 <script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">
     jwplayer("my-video").setup({
-        file: "rtmp://ruiyutouzi.amailive.com/live/410", //视频/直播 播放地址
+        file: "rtmp://live.hkstv.hk.lxdns.com/live/hks", //视频/直播 播放地址
         image: "__PUBLIC__/Common/static/images/videodemo.png", //播放前的 LOGO 图片地址
         width: "100%", //宽度
         height: "370", //高度
         hlshtml:true,
         autostart: true //自动播放
     });
+</script>
+<div id='myFirstPlayer'>Loading the first player...</div>
+<div id='mySecondPlayer'>Loading the player...</div>
+
+<script type='text/javascript'>
+
+    jwplayer("myFirstPlayer").setup({
+        "file": "https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4",
+        "image": "/uploads/example.jpg"
+    });
+
+    jwplayer("mySecondPlayer").setup({
+        "file": "https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4",
+        "image": "/uploads/example2.jpg"
+    });
+
 </script>
 </body>
 </html>

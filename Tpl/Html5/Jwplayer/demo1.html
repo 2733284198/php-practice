@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>使用JW播放器API</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">
+    var thePlayer;
+    $(function () {
+        thePlayer = jwplayer("container").setup({
+            file: "https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4", //视频/直播 播放地址
+//            file: "rtmp://live.hkstv.hk.lxdns.com/live/hks", //视频/直播 播放地址
+            image: "__PUBLIC__/Common/static/images/videodemo.png", //播放前的 LOGO 图片地址
+            width: "100%", //宽度
+            height: "370", //高度
+            autostart:false, //自动播放
+            start:'12',//从第几秒开始播放视频
+            events:{
+                onReady:function () {
+                    alert('准备就绪！！');
+                },
+                onPlay:function () {
+                    alert('开始播放！！');
+                },
+                onPause:function () {
+                    alert('暂停播放！！');
+                },
+//                onBufferChange:function () {
+//                    if(thePlayer.getPosition()>2.00 && thePlayer.getPosition() <3.20){
+//                        window.location.href = '';
+//                        thePlayer.play(false);
+//                    }
+//                },
+//                onBufferFull:function () {
+//                     alert('缓存已经完成'+thePlayer.getPosition());
+//                },
+                onError:function () {
+                    jwplayer().load([{
+                        file:fileUrl,
+                        image:imageUrl
+                    }])
+                },
+//                onTime:function (obj) {
+//                    alert('onTime:'+thePlayer.getPosition()+0.01);
+//                },
+//                onBeforePlay:function (obj) {
+//                    alert('onBeforePlay');
+//                },
+                onFullscreen:function (obj) {
+                    if(obj.fullscreen){
+                        alert('全屏');
+                    }else{
+                        alert('不是全屏');
+                    }
+                },
+                onMute:function () {
+                    console.log("静音/取消静音");
+                }
+            }
+        });
+        
+        //播放 暂停
+        $('.player-play').click(function () {
+            console.log(thePlayer.getState());
+            if(thePlayer.getState() != 'playing'){
+                thePlayer.play(true);
+                this.value = '暂停';
+            }else if(thePlayer.getState() != 'idle'){
+                thePlayer.play(false);
+                this.value = '播放';
+            }
+        });
+        
+        //跳转到指定位置播放
+        $('.player-goto').click(function () {
+            if(thePlayer.getState() != 'PLAYING'){  //若当前未播放，先启动播放器
+                thePlayer.play();
+            }
+            thePlayer.seek(600); //从指定位置开始播放(单位：秒)
+        });
+
+        //获取视频长度
+        $('.player-length').click(function () {
+            alert(thePlayer.getDuration());
+        });
+
+        //获取播放进度
+        $('.player-current').click(function () {
+            alert(thePlayer.getPosition());
+        });
+
+        //获取状态
+        $('.player-status').click(function () {
+            var state = thePlayer.getState();
+            console.log(state);
+            var msg;
+            switch (state){
+                case 'buffering':
+                    msg = '加载中...';
+                    break;
+                case 'playing':
+                    msg = '播放中...';
+                    break;
+                case 'paused':
+                    msg = '暂停';
+                    break;
+                case 'idle':
+                    msg = '停止';
+                    break;
+            }
+            alert(msg);
+        });
+        //停止
+        $('.player-stop').click(function () {
+            thePlayer.stop();
+        });
+    });
+
+</script>
+<div id="container"></div>
+<hr/>
+<input type="button" class="player-play" value="播放" />
+<input type="button" class="player-stop" value="停止" />
+<input type="button" class="player-status" value="取得状态" />
+<input type="button" class="player-current" value="当前播放秒数" />
+<input type="button" class="player-goto" value="转到第600秒播放" />
+<input type="button" class="player-length" value="视频时长(秒)" /><br/>
+<span id="info"/>
+</body>
+</html>

@@ -12,6 +12,12 @@ class JwplayerController extends Controller
     }
 
     // 用户自定义地址去播放视频
+    public function Demo1()
+    {
+        $this->display();
+    }
+
+    // 用户自定义地址去播放视频
     public function inputPlay()
     {
         $this->display();
