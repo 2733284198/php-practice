@@ -84,17 +84,20 @@
             thePlayer.seek(600); //从指定位置开始播放(单位：秒)
         });
 
-        //获取视频长度
+        //获取视频长度,视频播放结束需要的时间
         $('.player-length').click(function () {
             alert(thePlayer.getDuration());
         });
 
-        //获取播放进度
+        //获取播放进度、播放了多少秒
         $('.player-current').click(function () {
             alert(thePlayer.getPosition());
         });
 
-        //获取状态
+        /**
+         * 获取状态
+         * state值：1.playing播放中 2.paused停止 3.idle空闲 4. completed结束
+         */
         $('.player-status').click(function () {
             var state = thePlayer.getState();
             console.log(state);
@@ -111,6 +114,9 @@
                     break;
                 case 'idle':
                     msg = '停止';
+                    break;
+                case 'completed':
+                    msg = '结束';
                     break;
             }
             alert(msg);

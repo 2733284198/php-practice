@@ -17,6 +17,50 @@ class JwplayerController extends Controller
         $this->display();
     }
 
+    // 官方DEMO load playList
+    public function Demo2()
+    {
+        $this->display();
+    }
+
+    // 官方DEMO load playList
+    public function Demo3()
+    {
+        $this->display();
+    }
+
+    // 官方DEMO load playList
+    public function rtmpPlayer()
+    {
+        $this->display();
+    }
+
+    // A Custom Error Message
+    public function errorMessage()
+    {
+        $this->display();
+    }
+
+    // Adding a Download Button
+    public function downloadButton()
+    {
+        $this->display();
+    }
+
+    // Adding a Download Button
+    public function audioStreaming()
+    {
+        $this->display();
+    }
+
+    // playAd
+    public function playAdd()
+    {
+        $this->display();
+    }
+
+
+
     // 用户自定义地址去播放视频
     public function inputPlay()
     {

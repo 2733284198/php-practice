@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2.1 JW Player 7 API Changes</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">
+    var playerInstance;
+    $(function () {
+        playerInstance = jwplayer("container");
+        playerInstance.setup({
+            file: "https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4",
+            image: "http://www.amailive.com/res/home/images/banner4.png"
+        });
+        playerInstance.on('error', function() {
+            console.log('error');
+            playerInstance.load({
+                file:"https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4",
+                image:"https://img.alicdn.com/tps/TB19yBONVXXXXX2XVXXXXXXXXXX-270-170.jpg"
+            });
+            playerInstance.play();
+        });
+
+        playerInstance.on('buffer', function() {
+            theTimeout = setTimeout(function() {
+                playerInstance.load({
+                    file:"//content.jwplatform.com/videos/7RtXk3vl-52qL9xLP.mp4",
+                    image:"//content.jwplatform.com/thumbs/7RtXk3vl-480.jpg"
+                });
+                player.play();
+            }, 5000);
+        });
+
+        playerInstance.on('play', function() {
+            clearTimeout(theTimeout);
+        });
+
+    });
+
+</script>
+<div id="container">Loading the player ...</div>
+<hr/>
+
+</body>
+</html>

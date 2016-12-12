@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2.1 JW Player 7 API Changes</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">
+    var playerInstance;
+    $(function () {
+        playerInstance = jwplayer("container").setup({
+            file: "https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4", //视频/直播 播放地址
+            image: "__PUBLIC__/Common/static/images/videodemo.png", //播放前的 LOGO 图片地址
+            width: "100%", //宽度
+            height: "370", //高度
+            autostart:false, //自动播放
+            start:'12',//从第几秒开始播放视频
+            repeat:true,
+            abouttext:'abouttext',
+        });
+
+        //################################播放列表=#############################################################
+        var playlist = new Array(
+                {
+                    title: '马云 阿里巴巴集团董事局主席',
+                    duration: 542,
+                    file:"https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4",
+                    image:"https://img.alicdn.com/tps/TB1fAlFNVXXXXXAaXXXXXXXXXXX-750-422.jpg"
+                },
+                {
+                    duration: 542,
+                    file:"https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4",
+                    image:"images/videoimg1.jpg"
+                },
+                {
+                    duration: 542,
+                    file:"https://vodcdn.alicdn.com/oss/taobao-ugc/13d7583f9d584979bd5470073901f0d1/1476603609/video.mp4",
+                    image:"images/videoimg1.jpg"},
+                {
+                    file:"https://vodcdn.alicdn.com/oss/taobao-ugc/f6e82d0da81c465eb1adeca185e3195d/1476847778/video.mp4",
+                    image:"images/videoimg1.jpg"
+                }
+            );
+        //加载视频列表
+        playerInstance.load(playlist);
+
+        //################################事件注册=#############################################################
+        //onReady不应再被使用。它被替换on('ready')
+        playerInstance.on('ready',function () {
+            console.log('ready');
+        });
+
+        //
+        playerInstance.on('play',function () {
+            console.log('start play');
+        });
+
+        //自动加载
+        playerInstance.on('playlist',function () {
+            console.log('load playlist');
+        });
+
+        //播放下标为1的视频事件回调函数
+        playerInstance.on('playlistItem',function () {
+            console.log('load playlistItem 1');
+        });
+
+//        playerInstance.on('time',function () {
+//            console.log('load playlistItem time 000000');
+//        });
+        //#######################################################################################################
+
+        //播放 暂停
+        $('.player-play').click(function () {
+            console.log(playerInstance.getState());
+            if(playerInstance.getState() != 'playing'){
+                playerInstance.play(true);
+                this.value = '暂停';
+            }else if(playerInstance.getState() != 'idle'){
+                playerInstance.play(false);
+                this.value = '播放';
+            }
+        });
+
+        //获取视频长度
+        $('.player-length').click(function () {
+            alert(playerInstance.getDuration());
+        });
+
+        //播放下标为1的视频
+        $('.player-list-1').click(function () {
+            playerInstance.playlistItem(1);
+        });
+
+        //播放上一个视频
+        $('.player-list-prev').click(function () {
+            playerInstance.playlistPrev();
+        });
+
+        //播放下一个视频
+        $('.player-list-next').click(function () {
+            playerInstance.playlistNext();
+        });
+
+        //播放下一个视频
+        $('.player-size').click(function () {
+            if (playerInstance.getWidth() > 480) {
+                playerInstance.resize(480, 270);
+            } else {
+                playerInstance.resize(640, 360);
+            }
+        });
+
+    });
+
+</script>
+<div id="container"></div>
+<hr/>
+<input type="button" class="player-play" value="播放" />
+<input type="button" class="player-stop" value="停止" />
+<input type="button" class="player-status" value="取得状态" />
+<input type="button" class="player-current" value="当前播放秒数" />
+<input type="button" class="player-goto" value="转到第600秒播放" />
+<input type="button" class="player-length" value="视频时长(秒)" /><br/>
+<input type="button" class="player-list-1" value="播放下标为1的视频" /><br/>
+<hr/>
+<input type="button" class="player-list-prev" value="播放上一个视频" /><br/>
+<input type="button" class="player-list-next" value="播放下一个视频" /><br/>
+<input type="button" class="player-size" value="设置视频大小" /><br/>
+
+
+<span id="info"/>
+</body>
+</html>

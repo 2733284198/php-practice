@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>playAdd</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/jwplayer/test.css"> </link>
+<script type="text/javascript">
+    var playerInstance;
+    var ply;
+    $(function () {
+        playerInstance = jwplayer("container");
+        playerInstance.setup({
+            logo: {
+                file: 'http://www.amailive.com/res/pub/logo/logo132.png',
+                link: 'http://www.amailive.com/'
+            },
+            file: "https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4",
+            image: "http://www.amailive.com/res/home/images/banner4.png",
+        });
+
+        playerInstance.on('ready', function() {
+            setTimeout(setAdDisplayState(), 1000);
+        });
+
+        playerInstance.on('play',function() {
+            ply = true;
+            btn.innerHTML = "<a href='javascript:playMyAd()'>Play an Ad!</a>";
+        });
+        playerInstance.on('pause',function() {
+            ply = false;
+            btn.innerHTML = "Please unpause video to play an ad!";
+        });
+        playerInstance.on('idle',function() {
+            ply = false;
+            btn.innerHTML = "Player idle. Please restart playback.";
+        });
+
+        //播放下一个视频
+        $('.player-myad').click(function () {
+            console.log('player-myad');
+            if(ply) {
+                playerInstance.playAd(tag);
+                ply = false;
+                btn.innerHTML = "Ad Playing! Please wait...";
+            }
+        });
+
+        var setAdDisplayState = function() {
+            if (getAdInView()) {
+                if (!new RegExp('(^| )jw-ad-visible( |$)', 'gi').test(adEl.className)) {
+                    adEl.className += (adEl.className ? ' ' : '') + 'jw-ad-visible';
+                    adEl.style.maxHeight = adLabelEl.offsetHeight + getMarginHeight(adLabelEl) + adMediaContainerEl.offsetHeight + getMarginHeight(adMediaContainerEl) + 'px';
+                }
+                if (playerInstance.getState() === 'idle' || playerInstance.getState() === 'paused') {
+                    setTimeout(function() {
+                        playerInstance.play();
+                    }, 0);
+                }
+            } else {
+                if (playerInstance.getState() === 'playing') {
+                    setTimeout(function() {
+                        playerInstance.pause();
+                    }, 0);
+                }
+            }
+        };
+
+    });
+
+</script>
+<div id="container"></div>
+<input type="button" class="player-myad" value="player myad" /><br/>
+</body>
+</html>

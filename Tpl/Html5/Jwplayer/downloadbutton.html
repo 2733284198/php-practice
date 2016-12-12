@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2.1 JW Player 7 API Changes</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">
+    var playerInstance;
+    $(function () {
+        playerInstance = jwplayer("container");
+        playerInstance.setup({
+            file: "https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4",
+            image: "http://www.amailive.com/res/home/images/banner4.png"
+        });
+        playerInstance.addButton(
+            //This portion is what designates the graphic used for the button
+            "//icons.jwplayer.com/icons/white/download.svg",
+            //This portion determines the text that appears as a tooltip
+            "Download Video",
+            //This portion designates the functionality of the button itself
+            function() {
+                //With the below code, we're grabbing the file that's currently playing
+                window.location.href = playerInstance.getPlaylistItem()['file'];
+            },
+            //And finally, here we set the unique ID of the button itself.
+            "download"
+        );
+
+    });
+
+</script>
+<div id="container"></div>
+<hr/>
+
+</body>
+</html>
