@@ -15,7 +15,9 @@ class CacheController extends BaseController
 
     const PHONE_API = 'https://tcc.taobao.com/cc/json/mobile_tel_segment.htm';
     const CATEGORY_INFO = 'CATEGORY:INFO:';
+    const TABLE_CACHE = 'TABLE:CACHE:';
     const LAST_MODIFIED = 'LAST:MODIFIED';
+    const EXT = '.txt';
 
 
     public function index()
@@ -29,13 +31,19 @@ class CacheController extends BaseController
      * @return int
      * ['fileName' => 'cache.txt']
      */
-    protected static function generateDependencyData($fileName)
+    public static function generateDependencyData($fileName)
     {
         if ($fileName === null) {
             throw new \HttpInvalidParamException('FileDependency::fileName must be set');
         }
-        $file = CONF_PATH . 'Dependency/' . $fileName;
-        return @filemtime($file); //filemtime() 函数返回文件内容上次的修改时间。
+        $tablefile = CONF_PATH . 'Dependency/' . $fileName.self::EXT;
+        $dir = dirname($tablefile);
+        if(!is_dir($dir)) mkdir($dir, 0777);
+        if(file_exists($tablefile) == false){
+            $cacheTime = sprintf('%011d', time());
+            file_put_contents($tablefile,$cacheTime);
+        }
+        return @filemtime($tablefile); //filemtime() 函数返回文件内容上次的修改时间。
     }
 
     public static function connectionPdo()
@@ -129,11 +137,63 @@ class CacheController extends BaseController
         return $categoryData;
     }
 
+    /**
+     *  !!!!!!生成一张数据表的缓存tour_user 用户表
+     *  $tableName 是区分大小写的（建议以大写开头哦！！！TP而言哈哈）
+     */
+    public function tableCache($tableName)
+    {
+        $redisKey = self::TABLE_CACHE . $tableName;
+        //文件内容上次的修改时间
+        $fileLastModified = self::generateDependencyData($tableName);
+        $redis = RedisInstance::MasterInstance();
+        $LastModified = unserialize($redis->get(self::LAST_MODIFIED . $redisKey));
+        if($LastModified != $fileLastModified){
+            $mysqlData = M($tableName)->select();
+            if ($mysqlData) {
+                $redis->multi();
+                $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP);
+                $redis->set($redisKey, $mysqlData);
+                $redis->set(self::LAST_MODIFIED . $redisKey,$fileLastModified);
+                $redis->expire($redisKey, 120);
+                $redis->exec();
+            }
+            $mysqlData['msg'] = '数据库记录修改后MySql数据库中的数据';
+            return $mysqlData;
+        }
+
+        //如果缓存不存在的话！
+        if ($redis->exists($redisKey)) {
+            //获取缓存内容
+            $mysqlData = unserialize($redis->get($redisKey));
+            $mysqlData['msg'] = '数据来自Redis缓存数据';
+        } else {
+            $mysqlData = M($tableName)->select();
+            if ($mysqlData) {
+                $redis->multi();
+                $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP);
+                $redis->set($redisKey, $mysqlData);
+                $redis->set(self::LAST_MODIFIED . $redisKey,$fileLastModified);
+                $redis->expire($redisKey, 120);
+                $redis->exec();
+            }
+            $mysqlData['msg'] = '数据来自MySql数据库数据';
+        }
+        return $mysqlData;
+    }
+
+
     public function getFileCache()
     {
         $fileName = 'cache.txt';
         $cId=39;
         homePrint(self::fileCache($fileName,$cId));
+    }
+
+    public function getTableFileCache()
+    {
+        $tableName = 'User';
+        homePrint(self::tableCache($tableName));
     }
 
     /**

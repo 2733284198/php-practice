@@ -17,6 +17,62 @@ class RedisCacheController extends BaseController
         return ['id'];
     }
 
+    //redis应用于php，连接mysql的完整案例
+    public function connectMysql()
+    {
+        $redis = RedisInstance::MasterInstance();
+        if($redis->exists('blog')){
+            $redisData = $redis->get('blog');
+            $resultData = unserialize($redisData);
+            var_dump($resultData);
+            foreach ($resultData as $res){
+                echo "Redis---------<br/>";
+                echo $res['username']."<br/>";
+            }
+        }else{
+            $userData = M('User')->select();
+            $redis->multi();
+            $redis->set('blog',serialize($userData));
+            $resultData = serialize($redis->get('blog'));
+            $redis->exec();
+            foreach ($resultData as $res){
+                echo "Mysql---------<br/>";
+                echo $res['username']."<br/>";
+            }
+        }
+    }
+
+    /**
+     * 使用php内置的serialize/unserialize 方法对数据进行处理
+     * $redis->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
+     * 可以看到将array存入和取出时会自动进行了序列化处理
+     * $redis->getOption(\Redis::OPT_SERIALIZER); //return 1 [ const SERIALIZER_PHP = 1;]
+     */
+    public function connectMysqlSerialize()
+    {
+        $redis = RedisInstance::MasterInstance();
+
+        if($redis->exists('blog')){
+            $redisData = $redis->get('blog');
+            $resultData = unserialize($redisData);
+            foreach ($resultData as $res){
+                echo "Redis---------<br/>";
+                echo $res['username']."<br/>";
+            }
+        }else{
+            $userData = M('User')->select();
+            $redis->multi();
+            $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP); //使用ＰＨＰ内置的serialize / unserialize
+            $redis->set('blog',$userData);
+            $redis->exec();
+            $resultData = $redis->get('blog');
+            foreach ($resultData as $res){
+                echo "Mysql---------<br/>";
+                echo $res['username']."<br/>";
+            }
+        }
+    }
+
     /**
      * @inheritdoc
      */
