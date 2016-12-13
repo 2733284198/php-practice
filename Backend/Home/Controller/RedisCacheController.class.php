@@ -72,7 +72,82 @@ class RedisCacheController extends BaseController
             }
         }
     }
+    //############################################Redis实战#########################################################
+    //cache_request 20161213
+    public function cache_request($conn, $request, $callback)
+    {
+        //对于不能被缓存的请求，直接调用回调函数。
+        $redis = RedisInstance::MasterInstance();
 
+        //将请求转换成一个简单的字符串键，方便之后进行查找。
+        $page_key = 'cache:' .$request;
+        //尝试查找被缓存的页面。
+        $content = $redis->get($page_key);
+
+        #如果页面还没有被缓存，那么生成页面。
+        $content = callback($request);
+        # 将新生成的页面放到缓存里面。
+        $redis->setex($page_key, $content, 300);
+    }
+
+    //cache_request 20161213
+    public function schedule_row_cache($conn, $row_id, $delay)
+    {
+        //对于不能被缓存的请求，直接调用回调函数。
+        $redis = RedisInstance::MasterInstance();
+        # 先设置数据行的延迟值。
+        $redis->zadd('delay:', $row_id, $delay);
+        # 立即缓存数据行。
+        $redis->zadd('schedule:', $row_id, time());
+    }
+
+    //cache_request 20161213
+    public function cache_rows($conn, $request, $callback)
+    {
+        # 尝试获取下一个需要被缓存的数据行以及该行的调度时间戳，
+        # 命令会返回一个包含零个或一个元组（tuple）的列表。
+
+        $redis = RedisInstance::MasterInstance();
+        $next = $redis->zRange('schedule:', 0, 0, $withscores=True);
+        $now = time();
+        while (list($key, $value) = each($arr)) {
+            # 暂时没有行需要被缓存，休眠50毫秒后重试。
+            if($next>10){
+                sleep(0.5);
+                continue;
+            }
+            $row_id = $next[0][0];
+            # 获取下一次调度前的延迟时间。
+            $delay = $redis->zscore('delay:', $row_id);
+            if($delay<=0){
+                # 不必再缓存这个行，将它从缓存中移除。
+                $redis->zrem('delay:', $row_id);
+                $redis->zrem('schedule:', $row_id);
+                $redis->delete('inv:' + $row_id);
+                continue;
+            }
+            # 读取数据行。
+            $row = Inventory.get(row_id);
+            # 更新调度时间并设置缓存值。
+            $redis->zadd('schedule:', $row_id, $now + $delay);
+            $redis->set('inv:' + $row_id, json_encode($row));
+        }
+
+
+        //将请求转换成一个简单的字符串键，方便之后进行查找。
+        $page_key = 'cache:' .$request;
+        //尝试查找被缓存的页面。
+        $content = $redis->get($page_key);
+
+        #如果页面还没有被缓存，那么生成页面。
+        $content = callback($request);
+        # 将新生成的页面放到缓存里面。
+        $redis->setex($page_key, $content, 300);
+
+    }
+    //############################################Redis实战#########################################################
+
+    //############################################Yii2.0实战#########################################################
     /**
      * @inheritdoc
      */
