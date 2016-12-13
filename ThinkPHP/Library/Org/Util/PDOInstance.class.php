@@ -10,6 +10,8 @@
 namespace Org\Util;
 
 
+use Think\Exception;
+
 class PDOInstance
 {
     /**
@@ -18,9 +20,10 @@ class PDOInstance
      */
     private static $_connectSource;
 
+    private static $_instance;
+
     /**
      * 私有化构造函数，防止类外实例化
-     * RedisConnect constructor.
      */
     private function __construct()
     {
@@ -30,18 +33,27 @@ class PDOInstance
      *  单例方法,用于访问实例的公共的静态方法
      *  这个只是一个实例
      *  这个实例方法适合于连接到别的Redis数据库中去。列如：在项目中选择不同的Redis数据库
-     * @return \Redis
+     * @return $_instance
      * @static
      */
+     public static function getInstance() {
+        if(!(self::$_instance instanceof self)) {
+            self::$_instance = new self();
+        }
+        return self::$_instance;
+    }
 
     public static function connect($host,$dbname,$user,$passwd)
     {
         try {
             // 如果连接资源不存在，则进行资源连接
-            if (!(static::$_connectSource instanceof self)) {
-                static::$_connectSource = new \PDO("mysql:host=$host;dbname=$dbname", $user, $passwd);
+            if (!(self::$_connectSource instanceof self)) {
+                self::$_connectSource = new \PDO("mysql:host=$host;dbname=$dbname", $user, $passwd);
+                if(!self::$_connectSource){
+                    throw new Exception('connect error');
+                }
             }
-            return static::$_connectSource;
+            return self::$_connectSource;
         } catch (\Exception $e) {
             return false;
         }

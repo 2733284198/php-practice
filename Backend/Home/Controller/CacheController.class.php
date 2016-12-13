@@ -36,12 +36,12 @@ class CacheController extends BaseController
         if ($fileName === null) {
             throw new \HttpInvalidParamException('FileDependency::fileName must be set');
         }
-        $tablefile = CONF_PATH . 'Dependency/' . $fileName.self::EXT;
+        $tablefile = CONF_PATH . 'Dependency/' . $fileName . self::EXT;
         $dir = dirname($tablefile);
-        if(!is_dir($dir)) mkdir($dir, 0777);
-        if(file_exists($tablefile) == false){
+        if (!is_dir($dir)) mkdir($dir, 0777);
+        if (file_exists($tablefile) == false) {
             $cacheTime = sprintf('%011d', time());
-            file_put_contents($tablefile,$cacheTime);
+            file_put_contents($tablefile, $cacheTime);
         }
         return @filemtime($tablefile); //filemtime() 函数返回文件内容上次的修改时间。
     }
@@ -90,14 +90,14 @@ class CacheController extends BaseController
      *  生成数据库依赖缓存
      * filemtime() 函数返回文件内容上次的修改时间。
      */
-    public static function fileCache($fileName = 'cache.txt',$cId=39)
+    public static function fileCache($fileName = 'cache.txt', $cId = 39)
     {
         $redisKey = self::CATEGORY_INFO . $cId;
         //文件内容上次的修改时间
         $fileLastModified = self::generateDependencyData($fileName);
         $redis = RedisInstance::MasterInstance();
         $LastModified = $redis->get(self::LAST_MODIFIED . $redisKey);
-        if($LastModified != $fileLastModified){
+        if ($LastModified != $fileLastModified) {
             $model = M('Category'); // return Object
             $condition['id'] = $cId;
             $categoryData = $model->where($condition)->select();
@@ -105,7 +105,7 @@ class CacheController extends BaseController
             if ($categoryData) {
                 $redis->multi();
                 $redis->set($redisKey, json_encode($categoryData));
-                $redis->set(self::LAST_MODIFIED . $redisKey,$fileLastModified);
+                $redis->set(self::LAST_MODIFIED . $redisKey, $fileLastModified);
                 $redis->expire($redisKey, 120);
                 $redis->exec();
             }
@@ -125,7 +125,7 @@ class CacheController extends BaseController
             if ($categoryData) {
                 $redis->multi();
                 $redis->set($redisKey, json_encode($categoryData));
-                $redis->set(self::LAST_MODIFIED . $redisKey,$fileLastModified);
+                $redis->set(self::LAST_MODIFIED . $redisKey, $fileLastModified);
                 $redis->expire($redisKey, 120);
                 $redis->exec();
             }
@@ -143,25 +143,25 @@ class CacheController extends BaseController
      */
     public function tableCache($tableName)
     {
+        //拼装一个自定义键
         $redisKey = self::TABLE_CACHE . $tableName;
         //文件内容上次的修改时间
         $fileLastModified = self::generateDependencyData($tableName);
         $redis = RedisInstance::MasterInstance();
         $LastModified = unserialize($redis->get(self::LAST_MODIFIED . $redisKey));
-        if($LastModified != $fileLastModified){
+        if ($LastModified != $fileLastModified) {
             $mysqlData = M($tableName)->select();
             if ($mysqlData) {
                 $redis->multi();
-                $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP);
+                $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
                 $redis->set($redisKey, $mysqlData);
-                $redis->set(self::LAST_MODIFIED . $redisKey,$fileLastModified);
+                $redis->set(self::LAST_MODIFIED . $redisKey, $fileLastModified);
                 $redis->expire($redisKey, 120);
                 $redis->exec();
             }
             $mysqlData['msg'] = '数据库记录修改后MySql数据库中的数据';
             return $mysqlData;
         }
-
         //如果缓存不存在的话！
         if ($redis->exists($redisKey)) {
             //获取缓存内容
@@ -171,9 +171,9 @@ class CacheController extends BaseController
             $mysqlData = M($tableName)->select();
             if ($mysqlData) {
                 $redis->multi();
-                $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP);
+                $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
                 $redis->set($redisKey, $mysqlData);
-                $redis->set(self::LAST_MODIFIED . $redisKey,$fileLastModified);
+                $redis->set(self::LAST_MODIFIED . $redisKey, $fileLastModified);
                 $redis->expire($redisKey, 120);
                 $redis->exec();
             }
@@ -182,32 +182,33 @@ class CacheController extends BaseController
         return $mysqlData;
     }
 
-
+    //测试
     public function getFileCache()
     {
         $fileName = 'cache.txt';
-        $cId=39;
-        homePrint(self::fileCache($fileName,$cId));
+        $cId = 39;
+        homePrint(self::fileCache($fileName, $cId));
     }
 
+    //测试
     public function getTableFileCache()
     {
-        $tableName = 'User';
+        $tableName = 'Category';
         homePrint(self::tableCache($tableName));
     }
 
     /**
      * 修改更新Mysql数据中的数据
      */
-    public function modifyMysqlData($fileName = 'cache.txt',$cId=39)
+    public function modifyMysqlData($fileName = 'cache.txt', $cId = 39)
     {
-        $name = 'T领域玩'.mt_rand(00000,99999);
+        $name = 'T领域玩' . mt_rand(00000, 99999);
         $model = M('Category'); // return Object
         $condition['id'] = $cId;
-        if($model->where($condition)->setField('name',$name) == true){
+        if ($model->where($condition)->setField('name', $name) == true) {
             $cacheFile = CONF_PATH . 'Dependency/' . $fileName;
             echo $cacheFile;
-            file_put_contents($cacheFile,$cId,FILE_APPEND);
+            file_put_contents($cacheFile, $cId, FILE_APPEND);
         }
     }
 
