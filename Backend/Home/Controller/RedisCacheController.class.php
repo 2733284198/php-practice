@@ -12,6 +12,15 @@ class RedisCacheController extends BaseController
         echo 'RedisCache';
     }
 
+    public function recursiveFunction($i = 1)
+    {
+        echo $i."<br/>";
+        $i++;
+        if ($i < 10) {
+            $this->recursiveFunction($i);
+        }
+    }
+
     public static function primaryKey()
     {
         return ['id'];
@@ -21,24 +30,24 @@ class RedisCacheController extends BaseController
     public function connectMysql()
     {
         $redis = RedisInstance::MasterInstance();
-        if($redis->exists('blog')){
+        if ($redis->exists('blog')) {
             $redisData = $redis->get('blog');
             $resultData = unserialize($redisData);
             var_dump($resultData);
-            foreach ($resultData as $res){
+            foreach ($resultData as $res) {
                 echo "Redis---------<br/>";
-                echo $res['username']."<br/>";
+                echo $res['username'] . "<br/>";
             }
-        }else{
+        } else {
             $userData = M('User')->select();
             $redis->multi();
             //$redis->del('blog'); //初始化key
-            $redis->set('blog',serialize($userData));
+            $redis->set('blog', serialize($userData));
             $resultData = serialize($redis->get('blog'));
             $redis->exec();
-            foreach ($resultData as $res){
+            foreach ($resultData as $res) {
                 echo "Mysql---------<br/>";
-                echo $res['username']."<br/>";
+                echo $res['username'] . "<br/>";
             }
         }
     }
@@ -53,26 +62,27 @@ class RedisCacheController extends BaseController
     {
         $redis = RedisInstance::MasterInstance();
 
-        if($redis->exists('blog')){
+        if ($redis->exists('blog')) {
             $redisData = $redis->get('blog');
             $resultData = unserialize($redisData);
-            foreach ($resultData as $res){
+            foreach ($resultData as $res) {
                 echo "Redis---------<br/>";
-                echo $res['username']."<br/>";
+                echo $res['username'] . "<br/>";
             }
-        }else{
+        } else {
             $userData = M('User')->select();
             $redis->multi();
-            $redis->setOption(\Redis::OPT_SERIALIZER,\Redis::SERIALIZER_PHP); //使用ＰＨＰ内置的serialize / unserialize
-            $redis->set('blog',$userData);
+            $redis->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP); //使用ＰＨＰ内置的serialize / unserialize
+            $redis->set('blog', $userData);
             $redis->exec();
             $resultData = $redis->get('blog');
-            foreach ($resultData as $res){
+            foreach ($resultData as $res) {
                 echo "Mysql---------<br/>";
-                echo $res['username']."<br/>";
+                echo $res['username'] . "<br/>";
             }
         }
     }
+
     //############################################Redis实战#########################################################
     //cache_request 20161213
     public function cache_request($conn, $request, $callback)
@@ -81,7 +91,7 @@ class RedisCacheController extends BaseController
         $redis = RedisInstance::MasterInstance();
 
         //将请求转换成一个简单的字符串键，方便之后进行查找。
-        $page_key = 'cache:' .$request;
+        $page_key = 'cache:' . $request;
         //尝试查找被缓存的页面。
         $content = $redis->get($page_key);
 
@@ -109,18 +119,18 @@ class RedisCacheController extends BaseController
         # 命令会返回一个包含零个或一个元组（tuple）的列表。
 
         $redis = RedisInstance::MasterInstance();
-        $next = $redis->zRange('schedule:', 0, 0, $withscores=True);
+        $next = $redis->zRange('schedule:', 0, 0, $withscores = True);
         $now = time();
         while (list($key, $value) = each($arr)) {
             # 暂时没有行需要被缓存，休眠50毫秒后重试。
-            if($next>10){
+            if ($next > 10) {
                 sleep(0.5);
                 continue;
             }
             $row_id = $next[0][0];
             # 获取下一次调度前的延迟时间。
             $delay = $redis->zscore('delay:', $row_id);
-            if($delay<=0){
+            if ($delay <= 0) {
                 # 不必再缓存这个行，将它从缓存中移除。
                 $redis->zrem('delay:', $row_id);
                 $redis->zrem('schedule:', $row_id);
@@ -128,7 +138,7 @@ class RedisCacheController extends BaseController
                 continue;
             }
             # 读取数据行。
-            $row = Inventory.get(row_id);
+            $row = Inventory . get(row_id);
             # 更新调度时间并设置缓存值。
             $redis->zadd('schedule:', $row_id, $now + $delay);
             $redis->set('inv:' + $row_id, json_encode($row));
@@ -136,7 +146,7 @@ class RedisCacheController extends BaseController
 
 
         //将请求转换成一个简单的字符串键，方便之后进行查找。
-        $page_key = 'cache:' .$request;
+        $page_key = 'cache:' . $request;
         //尝试查找被缓存的页面。
         $content = $redis->get($page_key);
 
@@ -181,7 +191,7 @@ class RedisCacheController extends BaseController
             // only insert attributes that are not null
             if ($value !== null) {
                 if (is_bool($value)) {
-                    $value = (int) $value;
+                    $value = (int)$value;
                 }
                 $setArgs[] = $attribute;
                 $setArgs[] = $value;
@@ -232,7 +242,7 @@ class RedisCacheController extends BaseController
                 }
                 if ($value !== null) {
                     if (is_bool($value)) {
-                        $value = (int) $value;
+                        $value = (int)$value;
                     }
                     $setArgs[] = $attribute;
                     $setArgs[] = $value;
@@ -385,8 +395,6 @@ class RedisCacheController extends BaseController
 
         return md5(json_encode($key));
     }
-
-
 
 
 }
