@@ -162,7 +162,7 @@ class CacheController extends BaseController
             $mysqlData['msg'] = '数据库记录修改后MySql数据库中的数据';
             return $mysqlData;
         }
-        //如果缓存不存在的话！
+        //如果缓存存在的话！
         if ($redis->exists($redisKey)) {
             //获取缓存内容
             $mysqlData = unserialize($redis->get($redisKey));
@@ -237,6 +237,7 @@ class CacheController extends BaseController
     public function RedisCache()
     {
         $redis = RedisInstance::MasterInstance();
+        $redis->getOption();
         var_dump($redis);
     }
 

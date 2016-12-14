@@ -31,6 +31,7 @@ class WorkerManController extends Controller
         $message = [
             'clientId' => $clientId,
             'content' => $content,
+            'token' => $token,
             'publish_time' => date('Y-m-d h:i:s', time())
         ];
 
