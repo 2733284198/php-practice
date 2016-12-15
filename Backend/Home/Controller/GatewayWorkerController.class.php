@@ -26,19 +26,54 @@ class GatewayWorkerController extends Controller
      */
     public function bindUid()
     {
+        /**
+         *====这个步骤是必须的====
+         *这里填写Register服务的ip（通常是运行GatewayWorker的服务器ip）和端口
+         *注意Register服务端口在start_register.php中可以找到（chat默认是1236）
+         *这里假设GatewayClient和Register服务都在一台服务器上，ip填写127.0.0.1
+         **/
+        Gateway::$registerAddress = '120.26.220.223:1236'; //这个链接的地址是start_register.php
+        //接受异步参数
         $clientId = I('post.client_id');
         $uid = $_SESSION['uid'];
-        Gateway::$registerAddress = '120.26.220.223:1236'; //这个链接的地址是start_register.php
+        $message = [
+            'type' => 4002,
+            'clientId' => $clientId,
+            'publish_time' => date('Y-m-d h:i:s', time())
+        ];
+        // 注意除了不支持sendToCurrentClient和closeCurrentClient方法，其它方法都支持
         Gateway::bindUid($clientId,$uid);
-        Gateway::sendToAll(json_encode($clientId));
+        //在这里发送的信息是不走Event.php文件的，直接广播出去了
+        Gateway::sendToClient($clientId,json_encode($message));
     }
 
+    //异步绑定用户信息通过Websocket,Gateway绑定是有问题的
+    public function demoBindUid()
+    {
+        $this->display();
+    }
+
+    //处理Ajax请求的数据
+    public function demoBindUidAjax()
+    {
+        Gateway::$registerAddress = '120.26.220.223:1236'; //这个链接的地址是start_register.php
+        $clientId = I('post.client_id');
+        $uid = $_SESSION['uid'];
+        $message = [
+            'type' => 4002,
+            'clientId' => $clientId,
+            'userId' => $uid,
+            'isOnline' => Gateway::isOnline('781adcdf0e750000001e')
+        ];
+        Gateway::sendToClient($clientId,json_encode($message));
+        exit(json_encode($message));
+    }
+
+    //本地测试
     public function testBindUid()
     {
-        // 设置GatewayWorker服务的Register服务ip和端口，请根据实际情况改成实际值
-        Gateway::$registerAddress = '120.26.220.223:1236';
+        Gateway::$registerAddress = '120.26.220.223:1236'; //这个链接的地址是start_register.php
         $uid = $_SESSION['uid'];
-        // client_id与uid绑定
         var_dump(Gateway::getClientIdByUid($uid));
     }
 
@@ -59,6 +94,7 @@ class GatewayWorkerController extends Controller
         $clientId = $_POST['clientId'];
         $content = $_POST['content'];
         $message = [
+            'type' => 4002,
             'clientId' => $clientId,
             'content' => $content,
             'token' => $token,
