@@ -18,15 +18,17 @@ class GatewayWorkerController extends Controller
         $this->display();
     }
 
+    /**
+     * Gateway::$registerAddress = '120.26.220.223:1236';
+     * 这个链接的地址是这个文件中的:start_register.php
+     * register 服务必须是text协议
+     * $register = new Register('text://0.0.0.0:1236');
+     */
     public function bindUid()
     {
-        // 设置GatewayWorker服务的Register服务ip和端口，请根据实际情况改成实际值
         $clientId = I('post.client_id');
-
-        Gateway::$registerAddress = '120.26.220.223:1238';
-        // 假设用户已经登录，用户uid和群组id在session中
         $uid = $_SESSION['uid'];
-        // client_id与uid绑定
+        Gateway::$registerAddress = '120.26.220.223:1236'; //这个链接的地址是start_register.php
         Gateway::bindUid($clientId,$uid);
         Gateway::sendToAll(json_encode($clientId));
     }
@@ -38,6 +40,12 @@ class GatewayWorkerController extends Controller
         $uid = $_SESSION['uid'];
         // client_id与uid绑定
         var_dump(Gateway::getClientIdByUid($uid));
+    }
+
+    //本地测试
+    public function windowsLocalHost()
+    {
+        $this->display();
     }
 
     /**

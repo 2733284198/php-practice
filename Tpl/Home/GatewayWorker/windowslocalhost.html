@@ -7,7 +7,7 @@
     var $URL = "__APP__/Home/GatewayWorker/bindUid";
     console.log($URL);
     // 与GatewayWorker建立websocket连接，域名和端口改为你实际的域名端口
-    ws = new WebSocket("ws://120.26.220.223:8384");
+    ws = new WebSocket("ws://127.0.0.1:8384");
     // 服务端主动推送消息时会触发这里的onmessage
     ws.onmessage = function(e){
         // json数据转换成js对象
