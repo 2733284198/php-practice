@@ -1,6 +1,8 @@
 <?php
 namespace Home\Controller;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Think\Controller;
 use Think\Log;
 use Think\Model\RelationModel;
@@ -90,6 +92,17 @@ class DeBugController extends Controller
     {
         $result = Get("http://121.43.63.240/control/record/start?app=live&name=L00735&rec=rec1");
         var_dump($result);
+    }
+
+    public function execTest()
+    {
+        $log = new Logger('name');
+        $log->pushHandler(new StreamHandler('path/to/your.log', Logger::WARNING));
+        // add records to the log
+        $log->warning('Foo');
+        $log->error('Bar');
+        var_dump($log);
+
     }
 
 
