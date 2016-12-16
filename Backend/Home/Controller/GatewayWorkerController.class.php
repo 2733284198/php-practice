@@ -2,9 +2,11 @@
 namespace Home\Controller;
 
 
-use Org\Util\Context;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Org\Util\Gateway;
 use Think\Controller;
+
 
 class GatewayWorkerController extends Controller
 {
@@ -81,6 +83,21 @@ class GatewayWorkerController extends Controller
     public function windowsLocalHost()
     {
         $this->display();
+    }
+
+    /**
+     * 打开windows的计算器
+     * exec('start C:WindowsSystem32calc.exe');
+     */
+    public function execTest()
+    {
+        $log = new Logger('name');
+        $log->pushHandler(new StreamHandler('path/to/your.log', Logger::WARNING));
+        // add records to the log
+        $log->warning('Foo');
+        $log->error('Bar');
+        var_dump($log);
+
     }
 
     /**
