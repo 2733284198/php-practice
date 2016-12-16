@@ -94,15 +94,20 @@ class DeBugController extends Controller
         var_dump($result);
     }
 
-    public function execTest()
+    public function logTest()
     {
-        $log = new Logger('name');
-        $log->pushHandler(new StreamHandler('path/to/your.log', Logger::WARNING));
+        $log = $this->monologInstance();
         // add records to the log
-        $log->warning('Foo');
+        $log->warning('This is a warning');
         $log->error('Bar');
         var_dump($log);
+    }
 
+    //实例化一个日志对象
+    public function monologInstance(){
+        $logInstance = new Logger('Home');
+        $logInstance->pushHandler(new StreamHandler('path/to/adminHome.log', Logger::WARNING));
+        return $logInstance;
     }
 
 
