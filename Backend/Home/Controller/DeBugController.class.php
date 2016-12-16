@@ -103,7 +103,11 @@ class DeBugController extends Controller
         var_dump($log);
     }
 
-    //实例化一个日志对象
+    /**
+     * 实例化一个日志对象
+     * 实例化一个日志对象 https://github.com/Seldaek/monolog
+     * @return Logger
+     */
     public function monologInstance(){
         $logInstance = new Logger('Home');
         $logInstance->pushHandler(new StreamHandler('path/to/adminHome.log', Logger::WARNING));
