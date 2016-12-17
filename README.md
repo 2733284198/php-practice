@@ -28,6 +28,7 @@
 *  bootstrap/css:<br>http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css
 *  bootstrap/js:<br>http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js
 *  jquery:<br>http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js
+*  Angular:<br>http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
