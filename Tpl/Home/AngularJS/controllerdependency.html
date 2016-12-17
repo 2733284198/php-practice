@@ -16,8 +16,17 @@
 </html>
 <script>
     var module = angular.module('tinywan',[]);
+    //推荐使用一下这个，在依赖注入的时候是通过"$scope" 这个变量名来注入的
     module.controller('ctrl',["$scope",function ($scope) {
         $scope.name = "弍萬";
     }]);
+    //以上形式的参数可以变化哦！
+//    module.controller('ctrl',["$scope",function (q) {
+//        q.name = "弍萬";
+//    }]);
+    //这个不建议写这个，这个在代码压缩的时候会出现问题
+//    module.controller('ctrl',function ($scope) {
+//        $scope.name = "弍萬";
+//    });
 </script>
 
