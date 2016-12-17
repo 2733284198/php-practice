@@ -33,6 +33,18 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    //MVVM双向数据绑定图例分析
+    public function mvvm()
+    {
+        $this->display();
+    }
+
+    //声明模块与控制器规范与依赖注入分析
+    public function controllerDependency()
+    {
+        $this->display();
+    }
+
 
 
 
