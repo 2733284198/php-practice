@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJS开发之模块、控制器、视图模型</title>
+</head>
+<body>
+<div ng-app="hd">
+    <div ng-controller="ctrl">
+        <h4>{{name}}</h4>
+        <h1 ng-bind="name"></h1>
+        <input type="text" ng-model="name">
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var module = angular.module('hd',[]);
+    //数据的双向绑定
+    module.controller('ctrl',["$scope",function ($scope) {
+        //viewModel
+        $scope.name = 'Tinwyam 弍萬'; //model server
+    }]);
+</script>
+

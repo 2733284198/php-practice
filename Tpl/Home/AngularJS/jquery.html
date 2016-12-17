@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>什么是Angular及与Jquery实例对比分析</title>
+</head>
+<body>
+<ul id="data">
+
+</ul>
+</body>
+</html>
+<script>
+    var $URL = "__APP__/Home/AngularJS/jqueryGetJson";
+    $.get($URL,function (res) {
+        $(res).each(function (i) {
+            console.log(res[i]);
+            $html = "<li>"+res[i].name+"</li>";
+            $('#data').append($html);
+        })
+    },'json');
+</script>
+
