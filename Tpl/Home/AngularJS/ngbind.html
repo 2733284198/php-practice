@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>表达式与ng-bind及ng-cloak解决闪屏问题</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-cloak class="ng-cloak">
+    <div ng-controller="ctrl">
+        <h3>{{name+' https://github.com/Tinywan'}}</h3>
+        <hr/>
+        <h3>{{user.username+'=>'+user.age}}</h3>
+        <hr/>
+        <h3>{{num*80}}</h3>
+        <hr/>
+        <h2 ng-bind="name+'123456'"></h2>
+    </div>
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name = 'angular study';
+        $scope.num= 2;
+        $scope.user = {'username':'tinywan','age':26};
+    }]);
+</script>
+</body>
+</html>
+
+

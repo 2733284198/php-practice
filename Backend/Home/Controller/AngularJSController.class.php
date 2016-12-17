@@ -51,6 +51,12 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    //表达式与ng-bind及ng-cloak解决闪屏问题
+    public function ngBind()
+    {
+        $this->display();
+    }
+
 
 
 
