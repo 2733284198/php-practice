@@ -46,7 +46,11 @@
 *  支付宝即时到账接口开发DEMO【Api/AliPayController/Index】
 *  用户注册邮箱激活和邮箱密码修改DEMO【Library/EmailController/Index】
 *  视频播放插件<br>
+        * 存储数据形成消息队列 【Home/DataBaseController/createRedisList】
+        * 消息队列元素大于10000时，批量插入到Mysql数据库 【Home/DataBaseController/RedisSaveToMysql】 
+        * 读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
         (1)Sewise【HTML5/SewiseController/Index】<br>
+        (1)Sewise【HTML5/SewiseController/Index】<br>
         (2)JPlayer【HTML5/JPlayerController/Index】<br>
         (3)Jwplayer【HTML5/JwplayerController/Index】<br>
         (4)SwfObject【HTML5/SwfObjectController/Index】<br>
