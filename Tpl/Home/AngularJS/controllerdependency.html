@@ -16,7 +16,7 @@
 </html>
 <script>
     var module = angular.module('tinywan',[]);
-    //推荐使用一下这个，在依赖注入的时候是通过"$scope" 这个变量名来注入的
+    //推荐使用一下这个，在依赖注入的时候是通过"$scope" 这个变量名来注入的，IOC 容器依赖注入中过来
     module.controller('ctrl',["$scope",function ($scope) {
         $scope.name = "弍萬";
     }]);
