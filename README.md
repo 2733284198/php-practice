@@ -51,26 +51,14 @@
 *      (3)Jwplayer【HTML5/JwplayerController/Index】<br>
 *      (4)SwfObject【HTML5/SwfObjectController/Index】<br>
 *      (5)Video【HTML5/VideoController/Index】<br>
-* AngularJS 框架 【Home/AngularJSController】：
->第一节 
->>什么是Angular及与Jquery实例对比分析  
->>AngularJS开发之模块、控制器、视图模型 
->>MVVM双向数据绑定图例分析 
->>声明模块与控制器规范与依赖注入分析
-<br>
->第二节 
->>$scope的基本使用方法 
->>表达式与ng-bind及ng-cloak解决闪屏问题
->>ng-model在表单中双向绑定实例分析讲解 
->>更新中....
- 
+*  AngularJS 框架 【Home/AngularJSController】：
 *  Monolog 日志记录工具【Home/MonoLogController】 
 *  ECharts 统计工具 【Home/EChartsController】 
 *  PDO预处理 【Home/DataBaseController/pdoExample1】 
 *  Socket 服务器框架:GatewayWorker 【Home/GatewayWorker】 
 *  WebSocket 【HTML5/WebSocketController】 
 *  数据依赖缓存Cache（Yii2.0文件依赖思想） 【Home/CacheController】 
-
+*  继续更新中..........
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
 
