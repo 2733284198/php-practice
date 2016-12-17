@@ -52,11 +52,16 @@
 *      (4)SwfObject【HTML5/SwfObjectController/Index】<br>
 *      (5)Video【HTML5/VideoController/Index】<br>
 * AngularJS 框架 【Home/AngularJSController】：
->数据结构  
->>树  
->>>二叉树  
->>>>平衡二叉树  
->>>>>满二叉树 
+>第一节 
+>>什么是Angular及与Jquery实例对比分析  
+>>AngularJS开发之模块、控制器、视图模型 
+>>MVVM双向数据绑定图例分析 
+>>声明模块与控制器规范与依赖注入分析 
+>第二节 
+>>$scope的基本使用方法 
+>>表达式与ng-bind及ng-cloak解决闪屏问题
+>>ng-model在表单中双向绑定实例分析讲解 
+>>更新中....
  
 *  Monolog 日志记录工具【Home/MonoLogController】 
 *  ECharts 统计工具 【Home/EChartsController】 
