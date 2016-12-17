@@ -46,11 +46,11 @@
 *  支付宝即时到账接口开发DEMO【Api/AliPayController/Index】
 *  用户注册邮箱激活和邮箱密码修改DEMO【Library/EmailController/Index】
 *  视频播放插件<br>
-     (1)Sewise【HTML5/SewiseController/Index】<br>
-    (2)JPlayer【HTML5/JPlayerController/Index】<br>
-     (3)Jwplayer【HTML5/JwplayerController/Index】<br>
-     (4)SwfObject【HTML5/SwfObjectController/Index】<br>
-     (3)Video【HTML5/VideoController/Index】<br>
+        (1)Sewise【HTML5/SewiseController/Index】<br>
+        (2)JPlayer【HTML5/JPlayerController/Index】<br>
+        (3)Jwplayer【HTML5/JwplayerController/Index】<br>
+        (4)SwfObject【HTML5/SwfObjectController/Index】<br>
+        (3)Video【HTML5/VideoController/Index】<br>
 * AngularJS 框架 【Home/AngularJSController】：
 >数据结构  
 >>树  
