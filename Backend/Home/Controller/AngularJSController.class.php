@@ -45,6 +45,12 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    //$scope的基本使用方法
+    public function baseScope()
+    {
+        $this->display();
+    }
+
 
 
 
