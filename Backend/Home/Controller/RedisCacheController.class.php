@@ -41,7 +41,6 @@ class RedisCacheController extends BaseController
         } else {
             $userData = M('User')->select();
             $redis->multi();
-            //$redis->del('blog'); //初始化key
             $redis->set('blog', serialize($userData));
             $resultData = serialize($redis->get('blog'));
             $redis->exec();
