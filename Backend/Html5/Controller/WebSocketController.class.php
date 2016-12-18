@@ -1,8 +1,6 @@
 <?php
 namespace Html5\Controller;
 
-
-use Org\Util\Context;
 use Org\Util\Gateway;
 use Think\Controller;
 

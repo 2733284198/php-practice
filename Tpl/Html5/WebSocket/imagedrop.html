@@ -4,26 +4,13 @@
 <h2>WebSocket Image Drop</h2>
 <div id="output"></div>
 <script language="javascript" type="text/javascript">
-    //Initialize WebSocket connection
-    var wsUrl = "ws://echo.websocket.org/echo";
-    var ws = new WebSocket(wsUrl);
-    ws.onopen = function () {
-        console.log('open');
-    }
-
-    //Handle binary image data received on the WebSocket
-    ws.onmessage = function (e) {
-        var blob = e.data;
-        console.log('Message:' + blob.size + 'bytes');
-        if (window.webkitUrl) {
-            URL = webkitUrl;
-        }
-        var uri = URL.createObjectUrl(blob);
-        var img = document.createElement("img");
-        img.src = uri;
-        document.boby.appendChild(img);
-    }
-
-    //    window.addEventListener("load", init, false);
+    var person = {
+        firstName:'Tinywan',
+        lastName:'wanwan',
+        age:24,
+        eyeCrolor:'blue'
+    };
+    document.getElementsById('output').innerHTML= person.firstName+':Name:'+
+            person.age+':Age'+person.eyeCrolor;
 </script>
 </html>
