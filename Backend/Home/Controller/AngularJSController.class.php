@@ -69,6 +69,11 @@ class AngularJSController extends Controller
        homePrint($_GET['title']);
     }
 
+    //ng-value的使用实例讲解
+    public function ng_value()
+    {
+        $this->display();
+    }
 
 
 }

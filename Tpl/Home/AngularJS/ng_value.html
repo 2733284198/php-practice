@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>ng-value的使用实例讲解</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-controller="ctrl">
+    商品：<input type="text" ng-model="goods.title"><br/>
+    价格：<input type="text" ng-model="goods.price"><br/>
+    数量：<input type="text" ng-model="goods.num"><br/>
+    总价格：<input type="text" ng-value="goods.price*goods.num"><br/>
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+        $scope.goods = {'title':'Yii 视频教程','price':10,'num':100};
+    }]);
+</script>
+</body>
+</html>
+
+
