@@ -93,5 +93,14 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    /**
+     * 函数使用对象扩充与数据遍历
+     * angular.extend(obj,{url:'www.tinywan.com',age:26}); 填充一个数据
+     */
+    public function angular_obj()
+    {
+        $this->display();
+    }
+
 
 }

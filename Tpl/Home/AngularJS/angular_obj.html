@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>函数使用对象扩充与数据遍历</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-controller="ctrl">
+{{dataList}}
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+        $scope.dataList = [
+            {name:'阿麦直播',value:1001,group: '中国'},
+            {name:'骑牛直播',value:1002,group: '中国'},
+            {name:'伏羲直播',value:1004,group: '中国'},
+            {name:'Youtube Live',value:2001,group: '美国'},
+            {name:'USA live',value:2002,group: '美国'},
+        ];
+        angular.forEach($scope.dataList,function (v,k) {
+            v.value = 'www'+v.value; //修改Value的值
+            console.log(v);
+        });
+        //var obj = {username:'Tinywan'};
+        //angular.extend(obj,{url:'www.tinywan.com',age:26}); 填充一个数据
+        //console.log(obj);
+    }]);
+</script>
+</body>
+</html>
+
+
