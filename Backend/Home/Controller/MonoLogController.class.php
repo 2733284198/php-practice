@@ -5,6 +5,7 @@ use Monolog\Handler\FirePHPHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Think\Controller;
+require 'vendor/autoload.php';
 
 class MonoLogController extends Controller
 {

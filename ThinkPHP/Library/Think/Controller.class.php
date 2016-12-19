@@ -9,7 +9,6 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 namespace Think;
-require 'vendor/autoload.php';
 /**
  * ThinkPHP 控制器基类 抽象类
  */
