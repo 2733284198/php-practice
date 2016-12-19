@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJs 网站关闭开启</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-controller="ctrl">
+   <h1>网站开关</h1>
+    <input type="radio" ng-model="status" ng-value="1">开启
+    <input type="radio" ng-model="status" ng-value="0">关闭
+    {{status}}
+    <div ng-show="status==0">
+        <h2>网站关闭原因</h2>
+        <textarea name="" id="" cols="30" rows="10">在线教育平台开课啦!超强大的上课工</textarea>
+    </div>
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+        $scope.status = 1;
+    }]);
+</script>
+</body>
+</html>
+
+

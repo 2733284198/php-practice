@@ -75,5 +75,17 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    //实例讲解angular控制单选框
+    public function website_off()
+    {
+        $this->display();
+    }
+
+    //实例讲解angular操作checkbox复选框
+    public function angular_checkbox()
+    {
+        $this->display();
+    }
+
 
 }
