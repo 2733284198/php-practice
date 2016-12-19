@@ -87,5 +87,11 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    //实例讲解angular操作select列表框
+    public function angular_select()
+    {
+        $this->display();
+    }
+
 
 }

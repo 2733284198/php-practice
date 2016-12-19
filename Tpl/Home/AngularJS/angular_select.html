@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>实例讲解angular操作select列表框</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-controller="ctrl">
+    <select ng-options="v.value as v.name for v in dataList" ng-model="live">
+        <option value="">请选择直播公司</option>
+    </select>
+    {{live}}
+    <h1 ng-bind="city"></h1>
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+        $scope.live = 26;
+        $scope.dataList = [{name:'阿麦直播',value:26}, {name:'骑牛直播',value:24}, {name:'伏羲直播',value:24}
+        ];
+    }]);
+</script>
+</body>
+</html>
+
+
