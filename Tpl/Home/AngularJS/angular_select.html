@@ -15,7 +15,7 @@
 </head>
 <body>
 <div ng-app="tinywan" ng-controller="ctrl">
-    <select ng-options="v.value as v.name for v in dataList" ng-model="live">
+    <select ng-options="v.value as v.name group by v.group for v in dataList" ng-model="live">
         <option value="">请选择直播公司</option>
     </select>
     {{live}}
@@ -25,8 +25,13 @@
 <script>
     var module = angular.module('tinywan', []);
     module.controller('ctrl', ['$scope', function ($scope) {
-        $scope.live = 26;
-        $scope.dataList = [{name:'阿麦直播',value:26}, {name:'骑牛直播',value:24}, {name:'伏羲直播',value:24}
+        $scope.live = 1001;
+        $scope.dataList = [
+            {name:'阿麦直播',value:1001,group: '中国'},
+            {name:'骑牛直播',value:1002,group: '中国'},
+            {name:'伏羲直播',value:1004,group: '中国'},
+            {name:'Youtube Live',value:2001,group: '美国'},
+            {name:'USA live',value:2002,group: '美国'},
         ];
     }]);
 </script>
