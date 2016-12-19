@@ -63,6 +63,12 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    //ng-model在表单中双向绑定实例
+    public function ng_model_form()
+    {
+       homePrint($_GET['title']);
+    }
+
 
 
 }

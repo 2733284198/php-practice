@@ -15,7 +15,11 @@
 </head>
 <body>
 <div ng-app="tinywan" ng-controller="ctrl">
-    <input type="text" ng-model="name">
+    <form action="{:U('AngularJS/ng_model_form')}" method="get">
+        <input type="text" name="title" ng-model="name">
+        <input type="submit" value="Commit">
+    </form>
+    <h1>{{name}}</h1>
 </div>
 
 <script>
