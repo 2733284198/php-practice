@@ -9,6 +9,14 @@ use Think\Controller;
 class RedisController extends Controller
 {
     // 限制IP地址短时间类访问
+    public function Demo(){
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(12);
+        echo 'demo';
+        var_dump($redis->hGetAll('GlobalTracking:4001482216806'));
+
+    }
+
     public function redistest(){
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
