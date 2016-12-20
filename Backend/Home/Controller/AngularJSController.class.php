@@ -102,5 +102,26 @@ class AngularJSController extends Controller
         $this->display();
     }
 
+    /**
+     * json数据转换与本地存储及$scope...
+     * angular.romJson(Json字符串) 可以把一个Json字符串中解析成一个对象，或对象数组
+     * angular.toJson(Json对象) 可以把一个对象一个中解析成Json字符串
+     */
+    public function angular_json_string()
+    {
+        $data = [
+            'username' => '二万先生',
+            'age' => 12,
+        ];
+        //这里的$json_data是Json字符串
+        $this->json_data = json_encode($data,JSON_UNESCAPED_UNICODE);
+        $this->display();
+    }
+
+    public function angular_json_string_form()
+    {
+       homePrint(json_decode($_POST['data'],true));
+    }
+
 
 }
