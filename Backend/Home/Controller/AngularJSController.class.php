@@ -123,5 +123,10 @@ class AngularJSController extends Controller
        homePrint(json_decode($_POST['data'],true));
     }
 
+    //数据类型判断函数与数据比较方法的使用
+    public function angular_function_data()
+    {
+        homePrint(json_decode($_POST['data'],true));
+    }
 
 }
