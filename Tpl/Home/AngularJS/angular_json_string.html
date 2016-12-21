@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/lib/jquery.min.js"></script>
+    <title>json数据转换与本地存储及$scope</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-controller="ctrl">
+<h1>{{data.username}}</h1>
+    <form action="{:U('AngularJS/angular_json_string_form')}" method="post">
+        标题：<input type="text" ng-model="field.title"><br/>
+        点击数：<input type="text" ng-model="field.click"><br/>
+        内容显示：<input type="text" ng-model="field.content"><br/>
+        <textarea name="data" id="" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+        $scope.field = {title:'这是一个标题',click:12,content:'实例讲解angular操作checkbox复选框'};
+        $('form').submit(function () {
+            $("[name='data']").val(angular.toJson($scope.field));
+        });
+//        $scope.data = angular.fromJson('{$json_data}');
+//        //本地存储
+//        localStorage.setItem('data','{$json_data}');
+    }]);
+</script>
+</body>
+</html>
+
+
