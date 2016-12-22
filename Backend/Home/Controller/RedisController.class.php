@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 
+use Org\Util\Database;
 use Org\Util\Gateway;
 use Org\Util\RedisInstance;
 use Org\Util\RedisTest;
@@ -10,10 +11,18 @@ class RedisController extends Controller
 {
     // 限制IP地址短时间类访问
     public function Demo(){
+        $host = '127.0.0.1'; $user='root'; $password=''; $database='tp5'; $port='3306'; $charset='utf-8';
+        $db = Database::instance($host, $user, $password, $database, $port, $charset);
+        var_dump($db);
+        die;
+
+    }
+
+    public function Demo3(){
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
         echo 'demo';
-        var_dump($redis->hGetAll('GlobalTracking:4001482216806'));
+        var_dump($redis->hGetAll('aMai_notify_url_time'));
 
     }
 
