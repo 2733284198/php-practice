@@ -906,17 +906,19 @@ function send_email($address, $subject, $content)
  * @param string $url
  * @return mixed
  */
-function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')
+function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')设置头文件的信息作为数据流输出
 {
     //初始化
     $curl = curl_init();
     //设置抓取的url
     curl_setopt($curl, CURLOPT_URL, $url);
     //设置头文件的信息作为数据流输出
-    curl_setopt($curl, CURLOPT_HEADER, 1);
-    //设置获取的信息以文件流的形式返回，而不是直接输出。
+    curl_setopt($curl, CURLOPT_HEADER, 0);
+    //设置获取的信息以文件流的形式返回，而不是直接输出。要求结果为字符串且输出到屏幕上
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     //执行命令
+    curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)');
+    curl_setopt($curl, CURLOPT_TIMEOUT, 15);
     $data = curl_exec($curl);
     //关闭URL请求
     curl_close($curl);

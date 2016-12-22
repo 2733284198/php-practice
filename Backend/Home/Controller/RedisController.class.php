@@ -47,6 +47,7 @@ class RedisController extends Controller
         }
         $redis->lPush($clientKey,$time);
         //逻辑继续往下去写就是
+        CURL_GET_REQUEST_HTTP();
         die;
     }
 
