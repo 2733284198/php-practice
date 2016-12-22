@@ -906,7 +906,7 @@ function send_email($address, $subject, $content)
  * @param string $url
  * @return mixed
  */
-function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')设置头文件的信息作为数据流输出
+function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')
 {
     //初始化
     $curl = curl_init();

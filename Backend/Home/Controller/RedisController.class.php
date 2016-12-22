@@ -9,12 +9,19 @@ use Think\Controller;
 
 class RedisController extends Controller
 {
+    // 根据URl窃取域名
+    public function domainName(){
+        preg_match("/^(rtmp:\/\/)?([^\/]+)/i", "rtmp://120.26.206.180/live/4001482369935?vhost=121.40.214.99", $matches);
+        $host = $matches[2];
+        var_dump($matches);
+    }
+
     // 限制IP地址短时间类访问
     public function Demo(){
-        $host = '127.0.0.1'; $user='root'; $password=''; $database='tp5'; $port='3306'; $charset='utf-8';
-        $db = Database::instance($host, $user, $password, $database, $port, $charset);
-        var_dump($db);
-        die;
+        preg_match("/^(rtmp:\/\/)?([^\/]+)/i", "rtmp://120.26.206.180/live/4001482369935?vhost=121.40.214.99", $matches);
+        $host = $matches[2];
+        var_dump($matches);
+        var_dump($host);
 
     }
 
