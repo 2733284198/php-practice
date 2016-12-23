@@ -121,12 +121,26 @@ class AngularJSController extends Controller
     public function angular_json_string_form()
     {
        homePrint(json_decode($_POST['data'],true));
+       echo strlen($_POST['title'])."<br/>";
+       echo strlen($_POST['data'])."<br/>";
     }
 
     //数据类型判断函数与数据比较方法的使用
     public function angular_function_data()
     {
         homePrint(json_decode($_POST['data'],true));
+    }
+
+    //ng-init与ng-trim及表单中表单value
+    public function angular_init_trim()
+    {
+        $this->display();
+    }
+
+    //使用ng-if、ng-show、ng-disabled
+    public function angular_if_show()
+    {
+        $this->display();
     }
 
 }
