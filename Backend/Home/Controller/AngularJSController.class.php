@@ -151,6 +151,8 @@ class AngularJSController extends Controller
     //ng-repeat实例详细讲解与后盾人网站进行
     public function angular_ng_repeat()
     {
+        $sqlData = M('User')->select();
+        $this->listData = json_encode($sqlData);
         $this->display();
     }
 

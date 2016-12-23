@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="hd">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <ul>
+        <!--{{$first}} 第一个  {{$last}} 最后一个  {{$middle}} 中间的 {{$even}}偶数行 {{$odd}} 奇数行-->
+        <li ng-repeat="(k,v) in data" style="{{$odd?'color:red':''}}">
+            ID:{{v.user_id}}   用户名:{{v.username}}  IP地址:{{v.loginip}}
+        </li>
+        <hr/>
+        <li ng-repeat="(k,v) in data">
+            <span ng-if="$first" style="{{$first?'color:red':''}}">ID:{{v.user_id}}   用户名:{{v.username}} </span>
+            <span ng-if="$middle">ID:{{v.user_id}}   用户名:{{v.username}}  IP地址:{{v.loginip}}</span>
+            <span ng-if="$last" style="{{$last?'color:green':''}}">ID:{{v.user_id}}   用户名:{{v.username}} </span>
+        </li>
+    </ul>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = angular.fromJson('{$listData}');
+        console.log('{$listData}');
+    }]);
+</script>
+</body>
+</html>
