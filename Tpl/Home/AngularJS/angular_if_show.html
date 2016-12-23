@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/lib/jquery.min.js"></script>
+    <title>使用ng-if、ng-show、ng-disabled</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="tinywan" ng-controller="ctrl">
+<h1>{{username}}     copyright:{{copyright}} status:{{status}} </h1>
+
+    <input type="checkbox" ng-model="status">同意协议
+    <button ng-init="copyright=false" ng-click="copyright=!copyright">查看协议详情</button><br/>
+    <textarea ng-show="copyright">协议介绍：查看协议详情</textarea><br/>
+    <input type="submit" ng-disabled="!status" value="注册"><br/>
+</div>
+
+<script>
+    var module = angular.module('tinywan', []);
+    module.controller('ctrl', ['$scope', function ($scope) {
+
+    }]);
+</script>
+</body>
+</html>
+
+

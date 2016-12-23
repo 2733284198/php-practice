@@ -137,8 +137,19 @@ class AngularJSController extends Controller
         $this->display();
     }
 
-    //使用ng-if、ng-show、ng-disabled
+    /**
+     * 使用ng-if、ng-show、ng-disabled
+     * ng-show = true 显示 ng-show = false 不显示
+     * ng-disabled = true 不可用
+     * ng-if和ng-show：都是控制显示，都为真则显示，ng-if是直接移除元素了（函数和反函数的区别），ng-show显示和隐藏只是css样式的显示
+     */
     public function angular_if_show()
+    {
+        $this->display();
+    }
+
+    //ng-repeat实例详细讲解与后盾人网站进行
+    public function angular_ng_repeat()
     {
         $this->display();
     }
