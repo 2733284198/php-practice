@@ -7,12 +7,13 @@
     var $URL = "__APP__/Home/GatewayWorker/bindUid";
     console.log($URL);
     // 与GatewayWorker建立websocket连接，域名和端口改为你实际的域名端口
-    ws = new WebSocket("ws://120.26.220.223:8384");
+    ws = new WebSocket("ws://120.26.220.223:8384"); //$gateway_ws = new Gateway("Websocket://0.0.0.0:8384");
     // 服务端主动推送消息时会触发这里的onmessage
     ws.onmessage = function(e){
         // json数据转换成js对象
         var data = eval("("+e.data+")");
         var type = data.type || '';
+        console.log(type);
         switch(type){
             // Events.php中返回的init类型的消息，将client_id发给后台进行uid绑定
             case 'init':
@@ -20,7 +21,7 @@
                 $.post($URL, {client_id: data.clientId}, function(data){}, 'json');
                 break;
             default :
-                alert(e.data);
+                alert(e.data);//
         }
     };
 

@@ -39,7 +39,7 @@ class GatewayWorkerController extends Controller
         $clientId = I('post.client_id');
         $uid = $_SESSION['uid'];
         $message = [
-            'type' => 4002,
+            'type' => 4001,
             'clientId' => $clientId,
             'publish_time' => date('Y-m-d h:i:s', time())
         ];
@@ -62,12 +62,13 @@ class GatewayWorkerController extends Controller
         $clientId = I('post.client_id');
         $uid = $_SESSION['uid'];
         $message = [
-            'type' => 4002,
+            'type' => 4001,
+            'init_type' => 'bind_uid',
             'clientId' => $clientId,
-            'userId' => $uid,
+            'user_id' => $uid,
             'isOnline' => Gateway::isOnline('781adcdf0e750000001e')
         ];
-        Gateway::sendToClient($clientId,json_encode($message));
+//        Gateway::sendToClient($clientId,json_encode($message));
         exit(json_encode($message));
     }
 
@@ -78,6 +79,24 @@ class GatewayWorkerController extends Controller
         $uid = $_SESSION['uid'];
         var_dump(Gateway::getClientIdByUid($uid));
     }
+
+    //本地测试
+    public function send_uid()
+    {
+        Gateway::$registerAddress = '120.26.220.223:1236'; //这个链接的地址是start_register.php
+        $uid = $_SESSION['uid'];
+        $clientId = Gateway::getClientIdByUid($uid);
+        var_dump($clientId);
+        die;
+        $message = [
+            'type' => 4002,
+            'clientId' => $clientId,
+            'userId' => $uid,
+            'isOnline' => Gateway::isUidOnline($uid)
+        ];
+        Gateway::sendToUid($uid,json_encode($message));
+    }
+
 
     //本地测试
     public function windowsLocalHost()
@@ -136,5 +155,9 @@ class GatewayWorkerController extends Controller
         exit(json_encode($arr));
     }
 
+    //实例二、使用WebSocket协议对外提供服务
+    public function ws_test(){
+
+    }
 
 }
