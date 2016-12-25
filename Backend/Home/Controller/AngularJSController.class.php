@@ -1,9 +1,8 @@
 <?php
 namespace Home\Controller;
 
-use Think\Controller;
 
-class AngularJSController extends Controller
+class AngularJSController extends BaseController
 {
     public function index(){
         echo 'Hello AngularJS';
@@ -155,5 +154,20 @@ class AngularJSController extends Controller
         $this->listData = json_encode($sqlData);
         $this->display();
     }
+
+    //g-selected、ng-disabled、ng-readonly实例
+    public function angular_ng_readonly()
+    {
+        $sqlData = M('User')->select();
+        $this->listData = json_encode($sqlData);
+        $this->display();
+    }
+
+    //超简单实现表单的全选与反选
+    public function angular_select_all()
+    {
+        $this->display();
+    }
+
 
 }

@@ -8,7 +8,7 @@ use Org\Util\Gateway;
 use Think\Controller;
 
 
-class GatewayWorkerController extends Controller
+class GatewayWorkerController extends BaseController
 {
     public function _initialize()
     {

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="tinywan">
+<head>
+    <meta charset="UTF-8">
+    <title>g-selected、ng-disabled、ng-实例</title>
+    <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <select ng-model="user.sex">
+        <option ng-value="1" ng-selected="user.sex==1">男</option>
+        <option ng-value="2" ng-selected="user.sex==2">女</option>
+    </select>
+    <hr/>
+        <input type="radio" ng-value="1" ng-model="user.sex">男
+        <input type="radio" ng-value="2" ng-model="user.sex">女
+    <hr/>
+    {{copyright}}
+    协议: <input type="checkbox" ng-model="copyright">接受<br/>
+    <input type="submit" value="注册" ng-disabled="!copyright">
+    <hr/>
+    <form action="{:U('AngularJS/angular_function_data')}" method="post">
+        <input type="text" name="a" value="aaaa" readonly="readonly">a<br/>
+        <input type="text" name="b" value="bbbb" disabled="disabled">b
+        <input type="submit" value="tijiao">
+    </form>
+</div>
+<script>
+    var m = angular.module('tinywan', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.user = {sex:2};
+    }]);
+</script>
+</body>
+</html>
