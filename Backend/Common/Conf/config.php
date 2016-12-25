@@ -116,8 +116,4 @@ return array(
         '__APP_JS__'         => __ROOT__.trim(TMPL_PATH,'.').'App/Public/js',
         '__APP_IMAGES__'     => __ROOT__.trim(TMPL_PATH,'.').'App/Public/images'
     ),
-
-
-    'TMPL_L_DELIM'          =>  '{',            // 模板引擎普通标签开始标记
-    'TMPL_R_DELIM'          =>  '}',            // 模板引擎普通标签结束标记
 );

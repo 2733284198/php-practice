@@ -18,12 +18,13 @@
             <span ng-if="$last" style="{{$last?'color:green':''}}">ID:{{v.user_id}}   用户名:{{v.username}} </span>
         </li>
     </ul>
+    {{data}}
 </div>
 <script>
     var m = angular.module('hd', []);
     m.controller('ctrl', ['$scope', function ($scope) {
         $scope.data = angular.fromJson('{$listData}');
-        console.log('{$listData}');
+//        console.log('{$listData}');
         console.log('{$listData}');
     }]);
 </script>

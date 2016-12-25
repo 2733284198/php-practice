@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="tinywan">
+<head>
+    <meta charset="UTF-8">
+    <title>通过ng-class动态改变样式类实例操作</title>
+    <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
+    <style type="text/css">
+        .red{
+            background: red;
+        }
+        .font{
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <div ng-class="{red:true,font:true}">red:true angular_ng_class</div>
+    <div ng-class="{red:false,font:true}">red:false angular_ng_class</div>
+    <hr/>
+    <table width="400" border="4">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>LoginIP</td>
+        </tr>
+        <tr ng-repeat="v in data">
+            <td>{{v.user_id}}</td>
+            <td>{{v.username}}</td>
+            <td>{{v.loginip}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('tinywan', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = angular.fromJson('{$listData}');
+//        console.log('{$listData}');
+        console.log('{$listData}');
+        console.log('{$username}');
+    }]);
+</script>
+</body>
+</html>

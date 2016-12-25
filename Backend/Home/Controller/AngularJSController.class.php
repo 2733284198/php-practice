@@ -2,7 +2,9 @@
 namespace Home\Controller;
 
 
-class AngularJSController extends BaseController
+use Think\Controller;
+
+class AngularJSController extends Controller
 {
     public function index(){
         echo 'Hello AngularJS';
@@ -176,6 +178,25 @@ class AngularJSController extends BaseController
      */
     public function angular_model_options()
     {
+        $this->display();
+    }
+
+    //通过ng-class动态改变样式类实例操作
+    public function angular_ng_class()
+    {
+        $sqlData = M('User')->select();
+        $this->listData = json_encode($sqlData);
+        $this->username = '1231231';
+        $this->display();
+    }
+
+    public function test()
+    {
+        $sqlData = M('User')->select();
+        var_dump($sqlData);
+        die;
+        $this->listData = json_encode($sqlData);
+        $this->username = '1231231';
         $this->display();
     }
 
