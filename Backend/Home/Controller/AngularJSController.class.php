@@ -169,5 +169,15 @@ class AngularJSController extends BaseController
         $this->display();
     }
 
+    /**
+     * ng-model-options设置数据同步时机提交网站
+     * blur:失去焦点
+     * debounce:按照指定的时间去更新（毫秒）
+     */
+    public function angular_model_options()
+    {
+        $this->display();
+    }
+
 
 }

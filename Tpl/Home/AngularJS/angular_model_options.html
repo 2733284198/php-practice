@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="tinywan">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-model-options设置数据同步时机提交网站</title>
+    <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <h1>{{title1}}</h1>
+    <h1>{{title2}}</h1>
+    <h1>{{title3}}</h1>
+    <input type="text" ng-model="title1" ng-model-options="{updateOn:'blur'}">
+    <input type="text" ng-model="title2" ng-model-options="{debounce:5000}">
+    <input type="text" ng-model="title3" ng-model-options="{updateOn:'default blur',debounce:{default:3000,blur:0}}">
+</div>
+<script>
+    var m = angular.module('tinywan', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = [
+            {name:123,url:'www.baidu.com'},
+            {name:456,url:'www.google.com'}
+        ];
+    }]);
+</script>
+</body>
+</html>
