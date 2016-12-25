@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="tinywan">
+<head>
+    <meta charset="UTF-8">
+    <title>超简单实现表单的全选与反选</title>
+    <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <table width="400" border="4" >
+        <tr>
+            <td>
+                <input type="checkbox" ng-model="all">
+                <span ng-bind="all?'取消':'全选'"></span>
+            </td>
+            <td>名称</td>
+            <td>地址</td>
+        </tr>
+        <tr ng-repeat="v in data">
+            <td><input type="checkbox" ng-checked="all"></td>
+            <td>{{v.name}}</td>
+            <td>{{v.url}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('tinywan', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = [
+            {name:123,url:'www.baidu.com'},
+            {name:456,url:'www.google.com'}
+        ];
+    }]);
+</script>
+</body>
+</html>
