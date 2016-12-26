@@ -105,7 +105,7 @@ class AngularJSController extends Controller
 
     /**
      * json数据转换与本地存储及$scope...
-     * angular.romJson(Json字符串) 可以把一个Json字符串中解析成一个对象，或对象数组
+     * angular.fromJson(Json字符串) 可以把一个Json字符串中解析成一个对象，或对象数组
      * angular.toJson(Json对象) 可以把一个对象一个中解析成Json字符串
      */
     public function angular_json_string()

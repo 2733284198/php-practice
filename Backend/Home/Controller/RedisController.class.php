@@ -28,8 +28,7 @@ class RedisController extends Controller
     public function Demo3(){
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
-        echo 'demo';
-        var_dump($redis->hGetAll('aMai_notify_url_time'));
+        var_dump(json_decode($redis->get('on_connect')));
 
     }
 

@@ -22,7 +22,7 @@
         点击数：<input type="text" ng-model="field.click"><br/>
         内容显示：<input type="text" ng-model="field.content"><br/>
         <textarea name="data" id="" cols="30" rows="10"></textarea><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" >
     </form>
 </div>
 
@@ -30,10 +30,13 @@
     var module = angular.module('tinywan', []);
     module.controller('ctrl', ['$scope', function ($scope) {
         $scope.field = {title:'这是一个标题',click:12,content:'实例讲解angular操作checkbox复选框'};
+        $scope.field1 = ['top1'];
+//        console.log($scope.field);
         $('form').submit(function () {
             $("[name='data']").val(angular.toJson($scope.field));
         });
-//        $scope.data = angular.fromJson('{$json_data}');
+        $scope.data = angular.fromJson('{$json_data}');
+        console.log($scope.field1);
 //        //本地存储
 //        localStorage.setItem('data','{$json_data}');
         var $arr= ['name'];
