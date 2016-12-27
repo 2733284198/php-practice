@@ -68,6 +68,9 @@ function curl_header_get_contents($url,$header)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);        //返回结果
     $res = curl_exec($ch);
     curl_close($ch);
+    if ($res == NULL) {
+        return 0;
+    }
     return $res;
 }
 
