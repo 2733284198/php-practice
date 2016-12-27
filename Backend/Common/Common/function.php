@@ -46,6 +46,25 @@ function curl_get_contents($url)
 }
 
 /**
+ * ===================================【使用curl 置头信息及取得返回头信息 获取远程数据】=================================
+ * 使用curl获取远程数据
+ * @param  string $url url连接
+ * @return string      获取到的数据
+ */
+function curl_header_get_contents($url,$header)
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
+    curl_setopt($ch,CURLOPT_HTTPHEADER,$header);       //设置头信息的地方
+    curl_setopt($ch,CURLOPT_HEADER,0);                //是否显示头部信息
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);        //返回结果
+    $res = curl_exec($ch);
+    curl_close($ch);
+    return $res;
+}
+
+/**
  * =================================【传入时间戳,计算距离现在的时间】=======================================================
  * 传入时间戳,计算距离现在的时间
  * @param  number $time 时间戳

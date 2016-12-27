@@ -176,4 +176,25 @@ class IndexController extends BaseController
         $carObj->add('eggs',9);
         print_r($carObj->getTotal(0.05));
     }
+
+    //=======================================================乐视云计算==================================================
+    public function leCloudApi(){
+        $userid = 882860;
+        $uri = '/data/bandwidth';
+        $appkey = '07f82bfcc7eeda519241d8fe1d53c1e6';
+        $method = 'GET';
+        $md5Val = md5($userid.$method.$uri.$appkey);
+        $base64Val = base64_encode($userid.':'.$md5Val);
+        $header = [
+            'Authorization:Basic ODgyODYwOjY3YzJiMWU1NmFkYWQ0Yzg3YzM4NmU4YjIzZTFhYjIx',
+            'Lecloud-api-version:0.4'
+        ];
+        $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
+        $res = curl_header_get_contents($url,$header);
+        var_dump(json_decode($res,true)['data']['bandwidth']);
+
+    }
+
+
+
 }
