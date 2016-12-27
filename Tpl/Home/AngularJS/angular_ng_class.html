@@ -2,7 +2,7 @@
 <html lang="en" ng-app="tinywan">
 <head>
     <meta charset="UTF-8">
-    <title>通过ng-class动态改变样式类实例操作</title>
+    <title>通过ng-class动态改变样式类实例操作,通过ng-class动态改变样式类实例操作</title>
     <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
     <style type="text/css">
         .font{
@@ -50,6 +50,11 @@
             <td>{{v.loginip}}</td>
         </tr>
     </table>
+    <hr/>
+    颜色：<input type="text" ng-model="color"><br/>
+    大小：<input type="text" ng-model="size"><br/>
+    <span ng-style="{color:'red',fontSize:'32px'}">AngularJs</span>
+    <span ng-style="{color:color,fontSize:size+'px'}">AngularJs</span>
 </div>
 <script>
     var m = angular.module('tinywan', []);
