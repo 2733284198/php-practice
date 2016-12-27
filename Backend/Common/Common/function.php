@@ -50,6 +50,13 @@ function curl_get_contents($url)
  * 使用curl获取远程数据
  * @param  string $url url连接
  * @return string      获取到的数据
+ * DEMO:
+ * $header = [
+        'Authorization:Basic ODgyODYwOjY3YzJiMWU1NmFkYWQ0Yzg3YzM4NmU4YjIzZTFhYjIx',
+        'Lecloud-api-version:0.4'
+    ];
+    $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
+    $res = curl_header_get_contents($url,$header);
  */
 function curl_header_get_contents($url,$header)
 {
