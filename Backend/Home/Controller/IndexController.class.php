@@ -184,9 +184,9 @@ class IndexController extends BaseController
         $appkey = '07f82bfcc7eeda519241d8fe1d53c1e6';
         $method = 'GET';
         $md5Val = md5($userid.$method.$uri.$appkey);
-        $base64Val = base64_encode($userid.':'.$md5Val);
+        $base64Val = 'Basic '.base64_encode($userid.':'.$md5Val);
         $header = [
-            'Authorization:Basic ODgyODYwOjY3YzJiMWU1NmFkYWQ0Yzg3YzM4NmU4YjIzZTFhYjIx',
+            "Authorization:{$base64Val}",
             'Lecloud-api-version:0.4'
         ];
         $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
