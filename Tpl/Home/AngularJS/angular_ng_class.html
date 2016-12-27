@@ -5,11 +5,18 @@
     <title>通过ng-class动态改变样式类实例操作</title>
     <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
     <style type="text/css">
-        .red{
-            background: red;
-        }
         .font{
             font-size:32px;
+        }
+        .lock{
+            background: #dcdcdc;
+        }
+        .red{
+            font-size: 18px;
+            background: orangered;
+        }
+        .green{
+            background: green;
         }
     </style>
 </head>
@@ -24,9 +31,22 @@
             <td>Name</td>
             <td>LoginIP</td>
         </tr>
-        <tr ng-repeat="v in data">
+        <tr ng-repeat="v in data" ng-class="{lock:v.status==0}">
             <td>{{v.user_id}}</td>
-            <td>{{v.username}}</td>
+            <td ng-class="{red:v.parent_id==2}">{{v.username}}</td>
+            <td>{{v.loginip}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <table width="400" border="4">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>LoginIP</td>
+        </tr>
+        <tr ng-repeat="v in data" ng-class-even="{red:true}" ng-class-odd="{green:true}">
+            <td>{{v.user_id}}</td>
+            <td >{{v.username}}</td>
             <td>{{v.loginip}}</td>
         </tr>
     </table>
