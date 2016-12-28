@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2.1 JW Player 7 API Changes</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/lib/jwplayer/jwplayer.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/jwplayer/test.css"> </link>
+<script type="text/javascript">
+    var playerInstance;
+    $(function () {
+        playerInstance = jwplayer("container");
+        playerInstance.setup({
+            logo: {
+                file: 'http://www.amailive.com/res/pub/logo/logo132.png',
+                link: 'http://www.amailive.com/'
+            },
+            file: "rtmp://leplay.amaitech.com/test/test123",
+            image: "http://www.amailive.com/res/home/images/banner4.png",
+            abouttext: "Video Available at Blender.org",
+            aboutlink: "http://www.blender.org",
+            height: 660,
+            primary: "flash",
+            width: 940,
+            rtmp: {
+                bufferlength: 3 //理智值的范围从0.1（为低延迟实时流）到10（以防止频繁的重新缓冲）。
+            },
+            skin: {
+                name: "myskin",
+                active: "red",
+                inactive: "white",
+                background: "black"
+            }
+        });
+
+
+    });
+
+</script>
+<div id="container"></div>
+<hr/>
+
+</body>
+</html>

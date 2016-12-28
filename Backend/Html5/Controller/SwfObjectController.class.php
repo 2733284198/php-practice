@@ -9,7 +9,7 @@ class SwfObjectController extends Controller
     public function index()
     {
 //        $this->play_address = 'rtmp://live.hkstv.hk.lxdns.com/live/hks';
-        $this->play_address = 'rtmp://leplay.amaitech.com/test/123456';
+        $this->play_address = 'rtmp://zonelue2.amailive.com/live/4001481873572';
         $this->display();
     }
 

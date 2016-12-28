@@ -175,6 +175,7 @@ class IndexController extends BaseController
         $carObj->add('milk',4);
         $carObj->add('eggs',9);
         print_r($carObj->getTotal(0.05));
+        echo sprintf("%u\n", ip2long("157.23.56.90"));
     }
 
     //=======================================================乐视云计算==================================================
@@ -189,9 +190,27 @@ class IndexController extends BaseController
             "Authorization:{$base64Val}",
             'Lecloud-api-version:0.4'
         ];
-        $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
+        $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161228&endday=20161228";
         $res = curl_header_get_contents($url,$header);
         var_dump(json_decode($res,true)['data']['bandwidth']);
+
+    }
+
+    //直播时长查询
+    public function liveDuration(){
+        $userid = 882860;
+        $uri = '/data/bandwidth';
+        $appkey = '07f82bfcc7eeda519241d8fe1d53c1e6';
+        $method = 'GET';
+        $md5Val = md5($userid.$method.$uri.$appkey);
+        $base64Val = 'Basic '.base64_encode($userid.':'.$md5Val);
+        $header = [
+            "Authorization:{$base64Val}",
+            'Lecloud-api-version:0.4'
+        ];
+        $url = "http://api.open.letvcloud.com/data/duration?startday=20161228&endday=20161228&pushDomain=lepush.amaitech.com";
+        $res = curl_header_get_contents($url,$header);
+        var_dump(json_decode($res,true));
 
     }
 
