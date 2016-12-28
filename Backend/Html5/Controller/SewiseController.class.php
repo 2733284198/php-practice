@@ -120,6 +120,12 @@ class SewiseController extends Controller
 
     }
 
+    // 用户自定义地址去播放视频
+    public function inputPlay()
+    {
+        $this->display();
+    }
+
 
 
 
