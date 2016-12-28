@@ -9,7 +9,7 @@ class SwfObjectController extends Controller
     public function index()
     {
 //        $this->play_address = 'rtmp://live.hkstv.hk.lxdns.com/live/hks';
-        $this->play_address = 'rtmp://zonelue2.amailive.com/live/4001481873572';
+        $this->play_address = 'rtmp://leplay.amaitech.com/test/test123_19';
         $this->display();
     }
 
@@ -24,6 +24,12 @@ class SwfObjectController extends Controller
     public function staticswfobject()
     {
         $this->play_address = 'rtmp://live.hkstv.hk.lxdns.com/live/hks';
+        $this->display();
+    }
+
+    // 用户自定义地址去播放视频
+    public function inputPlay()
+    {
         $this->display();
     }
 
