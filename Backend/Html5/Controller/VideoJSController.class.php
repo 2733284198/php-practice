@@ -10,6 +10,18 @@ class VideoJSController extends Controller
         echo 'VideoJS';
     }
 
+    //官方DEM
+    public function initDemo()
+    {
+        $this->display();
+    }
+
+    // 播放一个RTMP流VideoJS live RTMP stream, player and video size issue
+    public function playRtmp()
+    {
+        $this->display();
+    }
+
     public function test()
     {
         $this->display();
