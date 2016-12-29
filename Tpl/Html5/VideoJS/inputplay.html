@@ -16,7 +16,7 @@
         <div class="col-lg-12  clearfix-context">
             <div style="margin-bottom: 20px;">
                 <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
-                       controls autoplay preload="auto" width="1280" height="720"
+                       controls width="1280" height="720" poster="__PUBLIC__/Common/static/images/videodemo.png"
                        data-setup='{"example_option":true}'>
                     <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks2131" type="rtmp/mp4"></source>
                 </video>
@@ -30,12 +30,24 @@
             </div>
         </div>
     </div>
+    <h3>亚太第一卫视：rtmp://v1.one-tv.com/live/mpegts.stream</h3>
+    <h3>香港电视台直播: rtmp://live.hkstv.hk.lxdns.com/live/hks</h3>
 </div>
 
 <script type="text/javascript">
     $(function(){
-        var default_stream_address = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
-        jw_video(default_stream_address);
+        var options = {};
+        var player = videojs('live-stream',options,function onPlayerReady() {
+            videojs.log('Your player is ready!');
+            // In this context, `this` is the player that was created by Video.js.
+            this.play();
+            // How about an event listener?
+            this.on('ended', function() {
+                videojs.log('Awww...over so soon?!');
+            });
+        })
+        var default_address = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
+        player.src(default_address);
 
         $("#form_button").click(function () {
             var msg = $("#msg");
@@ -50,15 +62,10 @@
                 msg.text("");
                 msg.removeClass("warning");
             }
-            jw_video(stream_address);
+            player.src(stream_address);
         });
     });
 
-    function jw_video(url) {
-        var  player = videojs("live-stream");
-        player.src(url);
-        console.log(url);
-    }
 
 </script>
 </body>

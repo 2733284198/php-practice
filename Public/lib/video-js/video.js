@@ -1,6 +1,6 @@
 /**
  * @license
- * Video.js 5.15.1 <http://videojs.com/>
+ * Video.js 5.15.0 <http://videojs.com/>
  * Copyright Brightcove, Inc. <https://www.brightcove.com/>
  * Available under Apache License Version 2.0
  * <https://github.com/videojs/video.js/blob/master/LICENSE>
@@ -12897,10 +12897,6 @@ exports['default'] = PosterImage;
 exports.__esModule = true;
 exports.hasLoaded = exports.autoSetupTimeout = exports.autoSetup = undefined;
 
-var _dom = _dereq_(81);
-
-var Dom = _interopRequireWildcard(_dom);
-
 var _events = _dereq_(82);
 
 var Events = _interopRequireWildcard(_events);
@@ -12917,25 +12913,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
-/**
- * @file setup.js - Functions for setting up a player without
- * user interaction based on the data-setup `attribute` of the video tag.
- *
- * @module setup
- */
-var _windowLoaded = false;
+var _windowLoaded = false; /**
+                            * @file setup.js - Functions for setting up a player without
+                            * user interaction based on the data-setup `attribute` of the video tag.
+                            *
+                            * @module setup
+                            */
+
 var videojs = void 0;
 
 /**
  * Set up any tags that have a data-setup `attribute` when the player is started.
  */
 var autoSetup = function autoSetup() {
-
-  // Protect against breakage in non-browser environments.
-  if (!Dom.isReal()) {
-    return;
-  }
-
   // One day, when we stop supporting IE8, go back to this, but in the meantime...*hack hack hack*
   // var vids = Array.prototype.slice.call(document.getElementsByTagName('video'));
   // var audios = Array.prototype.slice.call(document.getElementsByTagName('audio'));
@@ -13010,10 +13000,10 @@ function autoSetupTimeout(wait, vjs) {
     videojs = vjs;
   }
 
-  _window2['default'].setTimeout(autoSetup, wait);
+  setTimeout(autoSetup, wait);
 }
 
-if (Dom.isReal() && _document2['default'].readyState === 'complete') {
+if (_document2['default'].readyState === 'complete') {
   _windowLoaded = true;
 } else {
   /**
@@ -13037,7 +13027,7 @@ exports.autoSetup = autoSetup;
 exports.autoSetupTimeout = autoSetupTimeout;
 exports.hasLoaded = hasLoaded;
 
-},{"81":81,"82":82,"94":94,"95":95}],57:[function(_dereq_,module,exports){
+},{"82":82,"94":94,"95":95}],57:[function(_dereq_,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -15276,9 +15266,9 @@ var Html5 = function (_Tech) {
     }
 
     for (var _i = 0; _i < removeTracks.length; _i++) {
-      var track = removeTracks[_i];
+      var _track = removeTracks[_i];
 
-      techTracks.removeTrack_(track);
+      techTracks.removeTrack_(_track);
     }
   };
 
@@ -15684,23 +15674,22 @@ var Html5 = function (_Tech) {
 
 /* HTML5 Support Testing ---------------------------------------------------- */
 
-if (Dom.isReal()) {
+/**
+ * Element for testing browser HTML5 media capabilities
+ *
+ * @type {Element}
+ * @constant
+ * @private
+ */
 
-  /**
-   * Element for testing browser HTML5 media capabilities
-   *
-   * @type {Element}
-   * @constant
-   * @private
-   */
-  Html5.TEST_VID = _document2['default'].createElement('video');
-  var track = _document2['default'].createElement('track');
 
-  track.kind = 'captions';
-  track.srclang = 'en';
-  track.label = 'English';
-  Html5.TEST_VID.appendChild(track);
-}
+Html5.TEST_VID = _document2['default'].createElement('video');
+var track = _document2['default'].createElement('track');
+
+track.kind = 'captions';
+track.srclang = 'en';
+track.label = 'English';
+Html5.TEST_VID.appendChild(track);
 
 /**
  * Check if HTML5 media is supported by this browser/device.
@@ -15717,7 +15706,7 @@ Html5.isSupported = function () {
     return false;
   }
 
-  return !!(Html5.TEST_VID && Html5.TEST_VID.canPlayType);
+  return !!Html5.TEST_VID.canPlayType;
 };
 
 /**
@@ -15784,7 +15773,9 @@ Html5.supportsNativeTextTracks = function () {
  *        - False otherwise
  */
 Html5.supportsNativeVideoTracks = function () {
-  return !!(Html5.TEST_VID && Html5.TEST_VID.videoTracks);
+  var supportsVideoTracks = !!Html5.TEST_VID.videoTracks;
+
+  return supportsVideoTracks;
 };
 
 /**
@@ -15795,7 +15786,9 @@ Html5.supportsNativeVideoTracks = function () {
  *        - False otherwise
  */
 Html5.supportsNativeAudioTracks = function () {
-  return !!(Html5.TEST_VID && Html5.TEST_VID.audioTracks);
+  var supportsAudioTracks = !!Html5.TEST_VID.audioTracks;
+
+  return supportsAudioTracks;
 };
 
 /**
@@ -15888,12 +15881,11 @@ Html5.prototype.featuresNativeVideoTracks = Html5.supportsNativeVideoTracks();
 Html5.prototype.featuresNativeAudioTracks = Html5.supportsNativeAudioTracks();
 
 // HTML5 Feature detection and Device Fixes --------------------------------- //
-var canPlayType = Html5.TEST_VID && Html5.TEST_VID.constructor.prototype.canPlayType;
+var canPlayType = Html5.TEST_VID.constructor.prototype.canPlayType;
 var mpegurlRE = /^application\/(?:x-|vnd\.apple\.)mpegurl/i;
 var mp4RE = /^video\/mp4/i;
 
 Html5.patchCanPlayType = function () {
-
   // Android 4.0 and above can play HLS to some extent but it reports being unable to do so
   if (browser.ANDROID_VERSION >= 4.0 && !browser.IS_FIREFOX) {
     Html5.TEST_VID.constructor.prototype.canPlayType = function (type) {
@@ -21127,17 +21119,15 @@ exports['default'] = VideoTrack;
 exports.__esModule = true;
 exports.BACKGROUND_SIZE_SUPPORTED = exports.TOUCH_ENABLED = exports.IS_ANY_SAFARI = exports.IS_SAFARI = exports.IE_VERSION = exports.IS_IE8 = exports.IS_CHROME = exports.IS_EDGE = exports.IS_FIREFOX = exports.IS_NATIVE_ANDROID = exports.IS_OLD_ANDROID = exports.ANDROID_VERSION = exports.IS_ANDROID = exports.IOS_VERSION = exports.IS_IOS = exports.IS_IPOD = exports.IS_IPHONE = exports.IS_IPAD = undefined;
 
-var _dom = _dereq_(81);
+var _document = _dereq_(94);
 
-var Dom = _interopRequireWildcard(_dom);
+var _document2 = _interopRequireDefault(_document);
 
 var _window = _dereq_(95);
 
 var _window2 = _interopRequireDefault(_window);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
 /**
  * @file browser.js
@@ -21208,11 +21198,10 @@ var IE_VERSION = exports.IE_VERSION = function (result) {
 var IS_SAFARI = exports.IS_SAFARI = /Safari/i.test(USER_AGENT) && !IS_CHROME && !IS_ANDROID && !IS_EDGE;
 var IS_ANY_SAFARI = exports.IS_ANY_SAFARI = IS_SAFARI || IS_IOS;
 
-var TOUCH_ENABLED = exports.TOUCH_ENABLED = Dom.isReal() && ('ontouchstart' in _window2['default'] || _window2['default'].DocumentTouch && _window2['default'].document instanceof _window2['default'].DocumentTouch);
+var TOUCH_ENABLED = exports.TOUCH_ENABLED = !!('ontouchstart' in _window2['default'] || _window2['default'].DocumentTouch && _document2['default'] instanceof _window2['default'].DocumentTouch);
+var BACKGROUND_SIZE_SUPPORTED = exports.BACKGROUND_SIZE_SUPPORTED = 'backgroundSize' in _document2['default'].createElement('video').style;
 
-var BACKGROUND_SIZE_SUPPORTED = exports.BACKGROUND_SIZE_SUPPORTED = Dom.isReal() && 'backgroundSize' in _window2['default'].document.createElement('video').style;
-
-},{"81":81,"95":95}],79:[function(_dereq_,module,exports){
+},{"94":94,"95":95}],79:[function(_dereq_,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -21315,7 +21304,6 @@ exports.$$ = exports.$ = undefined;
 
 var _templateObject = _taggedTemplateLiteralLoose(['Setting attributes in the second argument of createEl()\n                has been deprecated. Use the third argument instead.\n                createEl(type, properties, attributes). Attempting to set ', ' to ', '.'], ['Setting attributes in the second argument of createEl()\n                has been deprecated. Use the third argument instead.\n                createEl(type, properties, attributes). Attempting to set ', ' to ', '.']);
 
-exports.isReal = isReal;
 exports.isEl = isEl;
 exports.getEl = getEl;
 exports.createEl = createEl;
@@ -21419,23 +21407,6 @@ function throwIfWhitespace(str) {
  */
 function classRegExp(className) {
   return new RegExp('(^|\\s)' + className + '($|\\s)');
-}
-
-/**
- * Whether the current DOM interface appears to be real.
- *
- * @return {Boolean}
- */
-function isReal() {
-  return (
-
-    // Both document and window will never be undefined thanks to `global`.
-    _document2['default'] === _window2['default'].document &&
-
-    // In IE < 9, DOM methods return "object" as their type, so all we can
-    // confidently check is that it exists.
-    typeof _document2['default'].createElement !== 'undefined'
-  );
 }
 
 /**
@@ -23670,7 +23641,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 // HTML5 Element Shim for IE8
-if (typeof HTMLVideoElement === 'undefined' && Dom.isReal()) {
+if (typeof HTMLVideoElement === 'undefined' && _window2['default'].document && _window2['default'].document.createElement) {
   _document2['default'].createElement('video');
   _document2['default'].createElement('audio');
   _document2['default'].createElement('track');
@@ -23697,6 +23668,8 @@ if (typeof HTMLVideoElement === 'undefined' && Dom.isReal()) {
  */
 function videojs(id, options, ready) {
   var tag = void 0;
+
+  options = options || {};
 
   // Allow for element or ID to be passed in
   // String ID
@@ -23741,8 +23714,6 @@ function videojs(id, options, ready) {
   if (tag.player || _player2['default'].players[tag.playerId]) {
     return tag.player || _player2['default'].players[tag.playerId];
   }
-
-  options = options || {};
 
   videojs.hooks('beforesetup').forEach(function (hookFunction) {
     var opts = hookFunction(tag, (0, _mergeOptions3['default'])(options));
@@ -23831,7 +23802,7 @@ videojs.removeHook = function (type, fn) {
 };
 
 // Add default styles
-if (_window2['default'].VIDEOJS_NO_DYNAMIC_STYLE !== true && Dom.isReal()) {
+if (_window2['default'].VIDEOJS_NO_DYNAMIC_STYLE !== true) {
   var style = Dom.$('.vjs-styles-defaults');
 
   if (!style) {
@@ -23855,7 +23826,7 @@ setup.autoSetupTimeout(1, videojs);
  *
  * @type {string}
  */
-videojs.VERSION = '5.15.1';
+videojs.VERSION = '5.15.0';
 
 /**
  * The global options object. These are the settings that take effect
