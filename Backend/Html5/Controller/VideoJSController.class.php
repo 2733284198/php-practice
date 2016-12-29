@@ -27,7 +27,11 @@ class VideoJSController extends Controller
         $this->display();
     }
 
-    // 用户自定义m3u8
+    /**
+     * 用户自定义m3u8
+     * 跨域问题啊！
+     *
+     */
     public function inputPlayM3u8()
     {
         header("Access-Control-Allow-Origin: *");
