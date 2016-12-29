@@ -35,14 +35,14 @@
     });
 </script>
 <script type="application/javascript">
-function sum() {
-    var sumNum=0;
-    for(var i=1;i<=100;i++){
-        sumNum+=i;
+    function fact(num) {
+        if (num <= 1) {
+            return 1;
+        } else {
+            return num * fact(num - 1);
+        }
     }
-    return sumNum;
-}
-console.log(sum());
+    console.log(fact(4));
 </script>
 </body>
 </html>
