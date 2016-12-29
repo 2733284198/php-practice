@@ -15,11 +15,10 @@
     <div class="row">
         <div class="col-lg-12  clearfix-context">
             <div style="margin-bottom: 20px;">
-                <video id="livestream" class="video-js vjs-default-skin vjs-big-play-centered"
+                <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
                        controls autoplay preload="auto" width="1280" height="720"
                        data-setup='{"example_option":true}'>
-                    <!--<source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/mp4"></source>-->
-                    <source id="play-url" data-src="rtmp://tinywan.amai8.com/live/1" type="rtmp/mp4"></source>
+                    <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks2131" type="rtmp/mp4"></source>
                 </video>
             </div>
             <div class="input-group">
@@ -33,12 +32,9 @@
     </div>
 </div>
 
-
-<script src="__PUBLIC__/lib/player/swfobject.js"></script> <!--必须的的-->
-<script type="text/javascript" src="__PUBLIC__/lib/player/swffit.js"></script>
 <script type="text/javascript">
     $(function(){
-        var default_stream_address = "rtmp://tinywan.amai8.com/live/4001482914171";
+        var default_stream_address = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
         jw_video(default_stream_address);
 
         $("#form_button").click(function () {
@@ -59,10 +55,9 @@
     });
 
     function jw_video(url) {
-        console.log($('#play-url').attr('data-src'));
+        var  player = videojs("live-stream");
+        player.src(url);
         console.log(url);
-        $("#play-url").attr('src',url);
-        console.log($('#play-url').attr('data-src'));
     }
 
 </script>

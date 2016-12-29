@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 引入video.js的样式文件 -->
+    <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+    <!-- 如果没有使用Modernizr，则使用以下代码做shiv -->
+    <script type="text/javascript">
+        document.createElement('video');document.createElement('audio');document.createElement('track');
+    </script>
+    <!-- 引入video.js的脚本文件 -->
+    <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+    <!-- 指定videojs的flash文件 -->
+    <script type="text/javascript">
+        videojs.options.flash.swf = "__PUBLIC__/lib/video-js/video-js.swf";
+    </script>
+</head>
+<body>
+<video id="my-player" class="video-js vjs-default-skin vjs-big-play-centered" controls poster="__PUBLIC__/Common/static/images/videodemo.png" width="1280" height="720" data-setup='{"example_option":true}'>
+    <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/mp4"></source>
+</video>
+<script type="text/javascript">
+    var player = videojs('my-player');
+    var options = {
+        techOrder : ["html5","flash"],
+        autoplay: false,
+        children : {
+            bigPlayButton : false,
+            textTrackDisplay : false,
+            posterImage: false,
+            errorDisplay : false,
+            controlBar : {
+                captionsButton : false,
+                chaptersButton: false,
+                subtitlesButton:false,
+                liveDisplay:false,
+                playbackRateMenuButton:false
+            }
+        }
+    };
+    var player = videojs('my-player', options, function onPlayerReady() {
+        videojs.log('Your player is ready!');
+        player.play();
+        // How about an event listener?
+        this.on('ended', function() {
+            videojs.log('Awww...over so soon?!');
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -39,4 +39,12 @@ class VideoJSController extends Controller
         $this->display();
     }
 
+    /**
+     * Create your own skin
+     */
+    public function createSkin()
+    {
+        $this->display();
+    }
+
 }
