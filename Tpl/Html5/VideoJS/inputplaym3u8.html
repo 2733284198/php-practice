@@ -6,7 +6,6 @@
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="__PUBLIC__/lib/video-js/video-js.css" rel="stylesheet">
-    <script src="videojs-contrib-media-sources.min.js"></script>
     <script src="__PUBLIC__/lib/video-js/video.js"></script>
     <script src="__PUBLIC__/lib/video-js/videojs-contrib-hls.min.js"></script>
     <script>
@@ -35,14 +34,12 @@
     });
 </script>
 <script type="application/javascript">
-    function fact(num) {
-        if (num <= 1) {
-            return 1;
-        } else {
-            return num * fact(num - 1);
+    function foo(n) {
+        return function (i) {
+            return n += i;
         }
     }
-    console.log(fact(4));
+    console.log(foo(10)(20));
 </script>
 </body>
 </html>
