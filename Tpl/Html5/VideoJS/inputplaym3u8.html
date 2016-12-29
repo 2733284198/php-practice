@@ -8,18 +8,17 @@
     <link href="__PUBLIC__/lib/video-js/video-js.css" rel="stylesheet">
     <script src="videojs-contrib-media-sources.min.js"></script>
     <script src="__PUBLIC__/lib/video-js/video.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.6.0/videojs-contrib-hls.js"></script>
+    <script src="__PUBLIC__/lib/video-js/videojs-contrib-hls.min.js"></script>
     <script>
         videojs.options.flash.swf = "__PUBLIC__/lib/video-js/video-js.swf"
     </script>
-
 </head>
 <body>
 <center>
     <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
            controls autoplay preload="auto" width="1080" height="520" poster="__PUBLIC__/Common/static/images/videodemo.png"
-           data-setup='{"techOrder": ["flash"]}'>
-        <source src="http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001481793159.m3u8" type="application/x-mpegURL">
+           data-setup='{"example_option":true}'>
+        <source src="http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001482214656.m3u8" type="application/x-mpegURL">
     </video>
 </center>
 <script>
