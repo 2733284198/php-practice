@@ -22,6 +22,18 @@ class VideoJSController extends Controller
         $this->display();
     }
 
+    //自定义播放RTMP
+    public function inputPlay(){
+        $this->display();
+    }
+
+    // 用户自定义m3u8
+    public function inputPlayM3u8()
+    {
+        header("Access-Control-Allow-Origin: *");
+        $this->display();
+    }
+
     public function test()
     {
         $this->display();

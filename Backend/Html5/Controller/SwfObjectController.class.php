@@ -20,18 +20,21 @@ class SwfObjectController extends Controller
         $this->display();
     }
 
-    //swfobject swfobject
+    /**
+     * push_addr:rtmp://stream.amailive.com/live
+     */
     public function staticswfobject()
     {
         $this->play_address = 'rtmp://live.hkstv.hk.lxdns.com/live/hks';
         $this->display();
     }
 
-    // 用户自定义地址去播放视频
+    // 用户自定义rtmp
     public function inputPlay()
     {
         $this->display();
     }
+
 
 
 }
