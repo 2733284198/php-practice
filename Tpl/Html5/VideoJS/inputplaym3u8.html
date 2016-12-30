@@ -15,7 +15,7 @@
 <body>
 <center>
     <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
-           controls autoplay preload="auto" width="1080" height="520"
+           controls autoplay preload="auto"
            poster="__PUBLIC__/Common/static/images/videodemo.png"
            data-setup='{"example_option":true}'>
         <source src="http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001482214656.m3u8"
@@ -24,8 +24,8 @@
 </center>
 <script>
     var options = {
-        width: 940,
-        height: 360
+        width: 1080,
+        height: 520
     }
     var player = videojs('live-stream', options);
 

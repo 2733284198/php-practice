@@ -31,7 +31,7 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
-        var_dump(json_decode($redis->get('on_record_done')));
+        var_dump(json_decode($redis->get('on_record_done'),true));
     }
 
     public function redistest()

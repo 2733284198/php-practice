@@ -30,7 +30,7 @@ class VideoJSController extends Controller
     /**
      * 用户自定义m3u8
      * 跨域问题啊！
-     *
+     * 一个时间地址：https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8
      */
     public function inputPlayM3u8()
     {
@@ -48,6 +48,7 @@ class VideoJSController extends Controller
      */
     public function createSkin()
     {
+        header("Access-Control-Allow-Origin: *");
         $this->display();
     }
 
