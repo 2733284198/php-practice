@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Common/static/angular/angular.min.js"></script>
+    <style>
+        .mobile{
+            border: 1px solid #f0ead8;
+            height: 400px;
+            display: flex;
+        }
+
+        .mobile dl{
+            margin:0px;
+            padding:0px;
+            display: flex;
+            flex: 1;
+            flex-direction: column-reverse;
+
+        }
+        .mobile dl dt{
+            background: #303030;
+            color: #FEB902;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid #0b6cbc;
+        }
+        .mobile dl dd{
+            display: flex;
+            flex-direction: column;
+        }
+        .mobile dl dd a{
+            border: 1px solid #c0c0c0;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+   <div class="row">
+       <div class="col-xs-4 app">
+           <div class="mobile">
+                <dl>
+                    <dt>游戏</dt>
+                    <dd><a href="">天龙八部3</a></dd>
+                    <dd><a href="">英雄</a></dd>
+                    <dd><a href="">想爱你将</a></dd>
+                </dl>
+                <dl>
+                   <dt>书籍</dt>
+                    <dd><a href="">操作系统</a></dd>
+                    <dd><a href="">Linux编程</a></dd>
+                    <dd><a href="">通信技术</a></dd>
+                </dl>
+                <dl>
+                   <dt>汽车</dt>
+                    <dd><a href="">黑色宝马</a></dd>
+                    <dd><a href="">红旗</a></dd>
+                    <dd><a href="">大黄蜂</a></dd>
+                    <dd><a href="">雅马哈</a></dd>
+                </dl>
+           </div>
+       </div>
+       <div class="col-xs-8">
+           <div class="panel panel-default">
+               <div class="panel-heading">
+                   <h3 class="panel-title">
+                       这里是输入
+                   </h3>
+               </div>
+               <div class="panel-body">
+                   面板内容
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+</body>
+</html>

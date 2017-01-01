@@ -181,8 +181,18 @@ class AngularJSController extends Controller
         $this->display();
     }
 
-    //通过ng-class动态改变样式类实例操作
+    //通过ng-class动态改变样式类实例操作,事件处理机制
     public function angular_ng_class()
+    {
+        $sqlData = M('User')->select();
+        $this->listData = json_encode($sqlData);
+        $this->username = '1231231';
+        $this->display();
+    }
+
+
+    //AngularJS+flex弹性盒模型+bootStrap
+    public function flex()
     {
         $sqlData = M('User')->select();
         $this->listData = json_encode($sqlData);

@@ -55,11 +55,27 @@
     大小：<input type="text" ng-model="size"><br/>
     <span ng-style="{color:'red',fontSize:'32px'}">AngularJs</span>
     <span ng-style="{color:color,fontSize:size+'px'}">AngularJs</span>
+    <hr/>
+    <h1>事件处理机制</h1>
+    <div ng-click="show()">ng-click单击事件</div><br/>
+    ng-change单击事件:<input type="text" ng-change="change()" ng-model="title"><br/>
+    ng-blur单击事件:<input type="text" ng-blur="blur()" ng-model="title"><h2>{{blur_data}}</h2><br/>
+
+    <hr/>
 </div>
 <script>
     var m = angular.module('tinywan', []);
     m.controller('ctrl', ['$scope', function ($scope) {
         $scope.data = angular.fromJson('{$listData}');
+        $scope.show = function () {
+            alert('show');
+        };
+        $scope.change = function () {
+            alert('change');
+        };
+        $scope.blur = function () {
+            $scope.blur_data = 'blur event';
+        };
 //        console.log('{$listData}');
         console.log('{$listData}');
         console.log('{$username}');
