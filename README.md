@@ -42,7 +42,7 @@
         * 读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
 *  多级模块化的管理【实例】
 *  Uploadify图片上传DEMO【实例】
-*  phpmailer批量发送邮件DEMO【Library/IndexController/send_email】
+*  PHPmailer批量发送邮件DEMO【Library/EmailController/register】
 *  支付宝即时到账接口开发DEMO【Api/AliPayController/Index】
 *  用户注册邮箱激活和邮箱密码修改DEMO【Library/EmailController/Index】
 *  视频播放插件
