@@ -164,7 +164,7 @@ class FFmpegController extends Controller
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
      * 获取一个视频的编码格式 h264
-     * 获取一个视频的时长 123
+     * 获取一个视频的时长
      */
     public function FFProbe()
     {
