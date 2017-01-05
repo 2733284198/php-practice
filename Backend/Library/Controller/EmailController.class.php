@@ -1,6 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Tinywan
+ * Date: 2017/1/5
+ * Time: 15:29
+ * Mail: Overcome.wan@Gmail.com
+ */
 namespace Library\Controller;
-
 use Think\Controller;
 
 class EmailController extends Controller
