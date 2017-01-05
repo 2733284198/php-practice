@@ -5,6 +5,8 @@ use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\FirePHPHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Org\Util\PDOHandler;
+use Org\Util\PDOInstance;
 use Think\Controller;
 require 'vendor/autoload.php';
 
@@ -117,9 +119,21 @@ class MonoLogController extends Controller
         //记录一个日志到格式化日志文件中去
         $securityLogger->addInfo('Returns the priority of the filter.',array('admin'=>'Tinywan123'));
         var_dump($securityLogger);
-
     }
 
+    //虽然 Monolog 提供了很多内置的 Handler，但是我们依然可能没有找到我们想要的那个，这时我们就要来编写并使用自己的了。仅需 implement
+    public function pdo()
+    {
+        $host = 'localhost';
+        $dbname = 'tp5';
+        $user = 'root';
+        $pass = '';
+        $instacne = PDOInstance::connect($host,$dbname,$user,$pass);
+        $logger = new Logger('PDO_Record');
+        $logger->pushHandler(new PDOHandler($instacne));
+        $logger->addInfo('My logger is now ready');
+        var_dump($logger);
+    }
 
 
 
