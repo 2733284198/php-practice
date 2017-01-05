@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\FirePHPHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -23,12 +24,12 @@ class MonoLogController extends Controller
      * @return Logger
      */
     public function monologInstance(){
-        // 创建Logger实例
+        // 第一步，创建Logger实例，参数即通道名字
         $logger = new Logger('Admin_Home');
-        // 添加handler
-//        $logger->pushHandler(new StreamHandler('path/to/admin_home.log', Logger::WARNING));
-        $logger->pushHandler(new StreamHandler('Logs/to/admin_home.log'));
-//        $logInstance->pushHandler(new FirePHPHandler());
+        //Logger本身不知道如何处理记录，它将处理委托给Handler[s]，上面的代码注册了两个Handlers，这样就可以用两种方法来处理记录。
+        $logger->pushHandler(new StreamHandler('Logs/to/admin_home.log',Logger::DEBUG));
+        //提示：FirePHPHandler最先被调用，因为它被添加在栈的顶部。这就允许你临时添加一个阻塞的Logger，如果你想覆盖其他Logger[s]的话。
+        $logger->pushHandler(new FirePHPHandler());
         return $logger;
     }
 
@@ -49,7 +50,11 @@ class MonoLogController extends Controller
         var_dump($logger);
     }
 
-    //使用processor
+
+    /**
+     * 使用 processors
+     * Processors 可以是任何可调用的方法（回调）
+     */
     public function processor()
     {
         $logger = new Logger('Admin_Home_Processor');
@@ -57,6 +62,11 @@ class MonoLogController extends Controller
             $record['extra']['dummy'] = 'Hello world!';
             return $record;
         });
+    }
+
+    public function callBackProcessor()
+    {
+        var_dump($this->processor());
     }
 
 
@@ -67,17 +77,46 @@ class MonoLogController extends Controller
     public function channel()
     {
         // 创建handler
+        //比如我们有一个StreamHandler，它在栈的最底部，它会把记录都保存到硬盘上
         $stream = new StreamHandler(LOGGER_PATH.'/my_app.log', Logger::DEBUG);
         $firephp = new FirePHPHandler();
-        // 创建应用的主要logger
+        // 创建应用的主要logger Create the main logger of the app
         $logger = new Logger('my_logger');
         $logger->pushHandler($stream);
         $logger->pushHandler($firephp);
 
-        // 通过不同的频道名创建一个用于安全相关的logger
+        /**
+         *  Create a logger for the security-related stuff with a different channel
+         *  通过不同的频道名创建一个用于安全相关的logger
+         */
         $securityLogger = new Logger('Security');
         $securityLogger->pushHandler($stream);
         $securityLogger->pushHandler($firephp);
+
+        //Or clone the first one to only change the channel
+        $securityLogger = $logger->withName('security');
+
+    }
+
+    //自定义日志格式
+    public function customizeFormat()
+    {
+        $dateFormat = "Y n j, g:i a";
+        // the default output format is [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n"
+        $output = "%datetime% > %level_name% > %message% %context% %extra%\n";
+        $formatter = new LineFormatter($output, $dateFormat);
+
+        // Create a handler
+        $stream = new StreamHandler('Logs/to/admin_home_format.log', Logger::DEBUG);
+        $stream->setFormatter($formatter);
+
+        // bind it to a logger object
+        $securityLogger = new Logger('security');
+        $securityLogger->pushHandler($stream);
+
+        //记录一个日志到格式化日志文件中去
+        $securityLogger->addInfo('Returns the priority of the filter.',array('admin'=>'Tinywan123'));
+        var_dump($securityLogger);
 
     }
 
