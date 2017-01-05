@@ -49,14 +49,16 @@
 *      (1)Sewise【HTML5/SewiseController/Index】<br>
 *      (2)JPlayer【HTML5/JPlayerController/Index】<br>
 *      (3)Jwplayer【HTML5/JwplayerController/Index】<br>
-*      (4)SwfObject【HTML5/SwfObjectController/Index】<br>
-*      (5)Video【HTML5/VideoController/Index】<br>
-*  AngularJS 框架 【Home/AngularJSController】：
+*      (4)SwfObject【HTML5/SwfObjectController/Index】播放RTMP流：1~2S之内<br>
+*      (5)Video【HTML5/VideoController/Index】<br>
+*      (6)VideoJS【HTML5/VideoJSController/Index】播放RTMP流：3~5S之内<br>
+*  AngularJS 框架 【Home/AngularJSController】
 *  Monolog 日志记录工具【Home/MonoLogController】 
 *  ECharts 统计工具 【Home/EChartsController】 
 *  PDO预处理 【Home/DataBaseController/pdoExample1】 
 *  Socket 服务器框架:GatewayWorker 【Home/GatewayWorker】 
 *  WebSocket 【HTML5/WebSocketController】 
+*  PHP-FFmpeg 【Home/FFmpegController】  
 *  数据依赖缓存Cache（Yii2.0文件依赖思想） 【Home/CacheController】 
 *  继续更新中..........
 
