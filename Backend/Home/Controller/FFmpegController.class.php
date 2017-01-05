@@ -66,7 +66,7 @@ class FFmpegController extends Controller
 
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
-     * Extracting image 提取图像
+     * Extracting image 提取图像f
      * 此代码返回一个FFMpeg\Media\Frame对应于第二实例42.您可以通过任何FFMpeg\Coordinate\TimeCode作为参数
      */
     public function extracting_image()
