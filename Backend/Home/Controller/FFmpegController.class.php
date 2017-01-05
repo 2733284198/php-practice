@@ -176,5 +176,10 @@ class FFmpegController extends Controller
         echo '视频的时长:' . $duration . 's';
     }
 
+    public function test()
+    {
+        $ffprobe = FFProbe::create();
+    }
+
 
 }
