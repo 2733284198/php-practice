@@ -132,7 +132,7 @@ class FFmpegController extends Controller
     {
         $ffmpeg = FFMpeg::create();
         $MP4Path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/ffmpeg_mp4.mp4';
-
+        $watermarkPath = 'F:\Tinywan\Video\00018.jpg';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         //The resize filter takes three parameters :
