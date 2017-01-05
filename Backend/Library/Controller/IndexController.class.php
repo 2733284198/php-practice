@@ -26,6 +26,11 @@ class IndexController extends Controller
         qrcode($url);
     }
 
+    public function test()
+    {
+        echo 'test';
+    }
+
     /**
      * 生成pdf
      */

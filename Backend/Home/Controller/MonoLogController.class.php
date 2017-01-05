@@ -122,16 +122,11 @@ class MonoLogController extends Controller
     }
 
     //虽然 Monolog 提供了很多内置的 Handler，但是我们依然可能没有找到我们想要的那个，这时我们就要来编写并使用自己的了。仅需 implement
-    public function pdo()
+    public function pdoInsertSql()
     {
-        $host = 'localhost';
-        $dbname = 'tp5';
-        $user = 'root';
-        $pass = '';
-        $instacne = PDOInstance::connect($host,$dbname,$user,$pass);
         $logger = new Logger('PDO_Record');
-        $logger->pushHandler(new PDOHandler($instacne));
-        $logger->addInfo('My logger is now ready');
+        $logger->pushHandler(new PDOHandler(PDOInstance::connectTp5()));
+        $logger->addEmergency('In case any of our addEmergency');
         var_dump($logger);
     }
 

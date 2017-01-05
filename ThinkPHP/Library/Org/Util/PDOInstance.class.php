@@ -59,6 +59,26 @@ class PDOInstance
         }
     }
 
+    public static function connectTp5()
+    {
+        $host = 'localhost';
+        $dbname = 'tp5';
+        $user = 'root';
+        $pass = '';
+        try {
+            // 如果连接资源不存在，则进行资源连接
+            if (!(self::$_connectSource instanceof self)) {
+                self::$_connectSource = new \PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+                if(!self::$_connectSource){
+                    throw new Exception('connect error');
+                }
+            }
+            return self::$_connectSource;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
     /**
      * 私有化克隆函数，防止类外克隆对象
      */
