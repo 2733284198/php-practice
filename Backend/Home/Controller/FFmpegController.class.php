@@ -125,7 +125,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * Transcoding
+     * Transcoding StackOverflow
      * 您可以使用音频转码FFMpeg\Media\Audio:save的方法。您将通过一个FFMpeg\Format\FormatInterface针对
      */
     public function Transcoding()
