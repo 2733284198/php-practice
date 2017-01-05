@@ -33,7 +33,7 @@ class FFmpegController extends Controller
         var_dump($video);
     }
 
-    //Basic Usage
+    //Basic Usage StackOverflow
     public function movie()
     {
         $videoPath = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/out.mpg';
