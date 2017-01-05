@@ -105,7 +105,12 @@ class FFmpegController extends Controller
      */
     public function videoWatermark()
     {
-        $ffmpeg = FFMpeg::create();
+        $ffmpeg = FFMpeg::create([
+            'ffmpeg.binaries' => 'd:\ffmpeg\bin\ffmpeg.EXE',
+            'ffprobe.binaries' => 'd:\ffmpeg\bin\ffprobe.exe',
+            'timeout' => 3600,
+            'ffmpeg.threads' => 12,
+        ]);
         $MP4Path = 'F:\Tinywan\Video\fooimage2.avi';
         $watermarkPath = 'F:\Tinywan\Video\00018.jpg';
         $video = $ffmpeg->open($MP4Path);
