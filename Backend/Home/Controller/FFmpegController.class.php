@@ -16,7 +16,7 @@ class FFmpegController extends Controller
         echo 'FFmpeg';
     }
 
-    //Basic Usageerrdsadsa21321312
+    //Basic Usageerrdsadsa
     public function createFFmpeg()
     {
         $path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/';
