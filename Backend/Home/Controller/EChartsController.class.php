@@ -7,7 +7,7 @@ use Org\Util\RedisInstance;
 class EChartsController extends BaseController
 {
     /**
-     * 官方默认的
+     * 官方默认的 百度默认的一个最记得拿都拿的
      */
     public function defaultIndex()
     {
