@@ -115,7 +115,8 @@ class EChartsController extends BaseController
             array(
                 'type' => 'category',
                 'data' => array("衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子")
-            )
+            ),
+
         );
         $chart->yAxis = array(
             array('type' => 'value')
