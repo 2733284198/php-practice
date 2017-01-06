@@ -179,6 +179,7 @@ class FFmpegController extends Controller
     public function test()
     {
         $ffprobe = FFProbe::create();
+        var_dump($ffprobe);
     }
 
 
