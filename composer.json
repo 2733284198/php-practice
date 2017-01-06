@@ -15,7 +15,8 @@
         "php": ">=5.3.0",
         "monolog/monolog": "^1.22",
         "php-ffmpeg/php-ffmpeg": "~0.5",
-        "j7mbo/twitter-api-php": "dev-master"
+        "j7mbo/twitter-api-php": "dev-master",
+        "hisune/echarts-php": "~1.0.6"
     },
     "minimum-stability": "dev"
 }
