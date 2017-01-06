@@ -8,7 +8,7 @@ use Monolog\Logger;
 use Org\Util\PDOHandler;
 use Org\Util\PDOInstance;
 use Think\Controller;
-require 'vendor/autoload.php';
+
 
 class MonoLogController extends Controller
 {
@@ -126,7 +126,7 @@ class MonoLogController extends Controller
     {
         $logger = new Logger('PDO_Record');
         $logger->pushHandler(new PDOHandler(PDOInstance::connectTp5()));
-        $logger->addEmergency('In case any of our addEmergency');
+        $logger->addEmergency('MonoLogMonoLogMonoLogMonoLogMonoLog');
         var_dump($logger);
     }
 
