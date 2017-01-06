@@ -105,7 +105,7 @@ class LeCloudController extends BaseController
         $timestamp = time() . '000';
         $ver = 3.1;
         $userid = 882860;
-        $streamName = 789;
+        $streamName = 123456;
         $appName = 'test';
         $domain = 'leplay.amaitech.com';     #客户的访问域名
         $startTime = '20170103123025';         #直播开始时间，（早于开始时间几秒就可以例如20161227123025）
@@ -114,6 +114,28 @@ class LeCloudController extends BaseController
         $seckey = '07f82bfcc7eeda519241d8fe1d53c1e6';
         $sign = md5("appName{$appName}domain{$domain}method{$method}streamName{$streamName}timestamp{$timestamp}userid{$userid}ver{$ver}{$seckey}");
         $url = "http://api.open.letvcloud.com/live/execute?appName=$appName&domain=$domain&method=$method&streamName=$streamName&timestamp=$timestamp&userid=$userid&ver=$ver&sign=$sign";
+        $res = json_decode(curl_get_contents($url),true);
+        homePrint(count($res['rows']));
+        homePrint($res['rows']);
+    }
+
+    //录像后的文件如何下载和播放？
+    public function recordDownLoad()
+    {
+        $ver = 3.1;
+        $userid = 882860;
+        $video = '';
+        $vtype = 'mp4';
+        $ts = time();
+        $streamName = 789;
+        $appName = 'test';
+        $domain = 'leplay.amaitech.com';     #客户的访问域名
+        $startTime = '20170103123025';         #直播开始时间，（早于开始时间几秒就可以例如20161227123025）
+        $endTime = '20170103193025';           #直播结束时间（晚于结束时间几秒就可以
+
+        $seckey = '07f82bfcc7eeda519241d8fe1d53c1e6';
+        $sign = md5("appName{$appName}domain{$domain}method{$method}streamName{$streamName}timestamp{$timestamp}userid{$userid}ver{$ver}{$seckey}");
+        $url = "http://api.letvcloud.com/getplayurl.php?appName=$appName&domain=$domain&method=$method&streamName=$streamName&timestamp=$timestamp&userid=$userid&ver=$ver&sign=$sign";
         $res = json_decode(curl_get_contents($url),true);
         homePrint(count($res['rows']));
         homePrint($res['rows']);

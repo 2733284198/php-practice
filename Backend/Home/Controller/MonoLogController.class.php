@@ -121,12 +121,16 @@ class MonoLogController extends Controller
         var_dump($securityLogger);
     }
 
-    //虽然 Monolog 提供了很多内置的 Handler，但是我们依然可能没有找到我们想要的那个，这时我们就要来编写并使用自己的了。仅需 implement
+    /**
+     * 使用PDO把MonoLog日志写入数据库中去
+     *
+     */
     public function pdoInsertSql()
     {
         $logger = new Logger('PDO_Record');
         $logger->pushHandler(new PDOHandler(PDOInstance::connectTp5()));
-        $logger->addEmergency('MonoLogMonoLogMonoLogMonoLogMonoLog');
+        $logger->addEmergency('1111111111132144444444444444441');
+        $logger->addDebug('debug123');
         var_dump($logger);
     }
 
