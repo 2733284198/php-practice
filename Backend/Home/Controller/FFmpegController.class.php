@@ -8,7 +8,6 @@ use FFMpeg\Format;
 use FFMpeg\Filters;
 use Think\Controller;
 
-require 'vendor/autoload.php';
 
 class FFmpegController extends Controller
 {
