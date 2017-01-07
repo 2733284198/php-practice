@@ -26,8 +26,8 @@ class EChartsController extends BaseController
     public function getJson(){
         $result = [
             'status'=>200,
-            'categories'=>["12-01","12-01","12-01","12-01","12-01","12-04"],
-            'data'=>[45,23,67,43,89,230]
+            'categories'=>["12-01","12-01","12-01","12-01","12-01","12-04","12-05"],
+            'data'=>[45,23,67,43,89,230,480]
         ];
         sleep(1);
         exit(json_encode($result));
@@ -50,6 +50,32 @@ class EChartsController extends BaseController
     {
         $this->title = '异步获取数据';
         $this->name = '销量销量';
+        $this->display();
+    }
+
+    /**
+     * 折线图
+     */
+    public function chart_type_line()
+    {
+        $this->title = '折线图';
+        $this->name = '销量销量';
+        $this->display();
+    }
+
+    /**
+     * 饼图形
+     */
+    public function chart_type_pie()
+    {
+        $this->title = '饼图形';
+        $this->name = '销量销量';
+        $this->display();
+    }
+
+    //mix-timeline-finance
+    public function mix_timeline_finance(){
+        $this->title = '坐标轴刻度与标签对齐';
         $this->display();
     }
 

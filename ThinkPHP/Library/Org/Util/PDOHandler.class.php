@@ -41,7 +41,7 @@ class PDOHandler extends AbstractProcessingHandler
     private function initialize()
     {
         $this->pdo->exec(
-            'CREATE TABLE IF NOT EXISTS tour_monolog ' .'(channel VARCHAR(255), level INTEGER, message LONGTEXT, time INTEGER UNSIGNED)'
+            'CREATE TABLE IF NOT EXISTS tour_monolog ' .'(channel VARCHAR(255), level INTEGER, message LONGTEXT, time INTEGER UNSIGNED) ENGINE=MyISAM DEFAULT CHARSET=utf8'
         );
         $this->statement = $this->pdo->prepare(
             'INSERT INTO tour_monolog (channel, level, message, time) VALUES (:channel, :level, :message, :time)'

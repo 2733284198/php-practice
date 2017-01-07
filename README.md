@@ -49,7 +49,7 @@
 *      (1)Sewise【HTML5/SewiseController/Index】<br>
 *      (2)JPlayer【HTML5/JPlayerController/Index】<br>
 *      (3)Jwplayer【HTML5/JwplayerController/Index】<br>
-*      (4)SwfObject【HTML5/SwfObjectController/Index】播放RTMP流：1~2S之内<br>
+*      (4)SwfObject【HTML5/SwfObjectController/Index】播放RTMP流：1~2S之内<br>
 *      (5)Video【HTML5/VideoController/Index】<br>
 *      (6)VideoJS【HTML5/VideoJSController/Index】播放RTMP流：3~5S之内<br>
 *  AngularJS 框架 【Home/AngularJSController】
