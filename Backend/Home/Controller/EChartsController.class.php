@@ -79,6 +79,14 @@ class EChartsController extends BaseController
         $this->display();
     }
 
+    //mix-timeline-finance
+    public function Map_China(){
+        $this->title = 'Map China';
+        $this->display();
+    }
+
+
+
     /**
      * setpLine 异步获取数据 JSON
      */

@@ -1,0 +1,71 @@
+<extend name="Common:common"/>
+<block name="main">
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#"> 云系统管理平台</a>
+                </li>
+
+                <li>
+                    <a href="#">系统基本信息</a>
+                </li>
+                <li class="active">折线图</li>
+            </ul>
+            <!-- .breadcrumb -->
+            <!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <h1>{$title}</h1>
+            <hr/>
+            <div id="main" style="width: 1024px;height:400px;"></div>
+
+        </div>
+       </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script src="__PUBLIC__/Common/static/js/echarts.common.min.js"></script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}'
+            },
+            series: [
+                {
+                    name: '中国',
+                    type: 'map',
+                    mapType: 'china',
+                    selectedMode : 'multiple',
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data:[
+                        {name:'广东', selected:true}
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</block>
