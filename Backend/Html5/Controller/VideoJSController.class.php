@@ -52,4 +52,13 @@ class VideoJSController extends Controller
         $this->display();
     }
 
+    /**
+     * videoJS常用api，根据videoJS官方文档编写的播放器常用操作
+     */
+    public function api()
+    {
+        header("Access-Control-Allow-Origin: *");
+        $this->display();
+    }
+
 }

@@ -25,9 +25,7 @@ class PDOInstance
     /**
      * 私有化构造函数，防止类外实例化
      */
-    private function __construct()
-    {
-    }
+    private function __construct(){ }
 
     /**
      *  单例方法,用于访问实例的公共的静态方法
@@ -49,6 +47,7 @@ class PDOInstance
             // 如果连接资源不存在，则进行资源连接
             if (!(self::$_connectSource instanceof self)) {
                 self::$_connectSource = new \PDO("mysql:host=$host;dbname=$dbname", $user, $passwd);
+                self::$_connectSource->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
                 if(!self::$_connectSource){
                     throw new Exception('connect error');
                 }
@@ -59,16 +58,25 @@ class PDOInstance
         }
     }
 
+    final public static function __callStatic( $chrMethod, $arrArguments ) {
+
+        $objInstance = self::getInstance();
+
+        return call_user_func_array(array($objInstance, $chrMethod), $arrArguments);
+
+    }
+
     public static function connectTp5()
     {
         $host = 'localhost';
-        $dbname = 'tp5';
+        $dbname = 'tp51';
         $user = 'root';
         $pass = '';
         try {
             // 如果连接资源不存在，则进行资源连接
             if (!(self::$_connectSource instanceof self)) {
                 self::$_connectSource = new \PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+                self::$_connectSource->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
                 if(!self::$_connectSource){
                     throw new Exception('connect error');
                 }
