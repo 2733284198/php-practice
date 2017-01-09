@@ -3,8 +3,20 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hisune/echarts-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/core" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/http" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/router" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/ustring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hoa/websocket" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/j7mbo/twitter-api-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/matyhtf/swoole_framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -22,5 +34,49 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="angular-js" level="application" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/filp/whoops" />
+          <root url="file://$MODULE_DIR$/vendor/hisune/echarts-php" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/cli" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/console" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/core" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/dispatcher" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/http" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/router" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/socket" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/stream" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/ustring" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/websocket" />
+          <root url="file://$MODULE_DIR$/vendor/j7mbo/twitter-api-php" />
+          <root url="file://$MODULE_DIR$/vendor/matyhtf/swoole_framework" />
+          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+          <root url="file://$MODULE_DIR$/vendor/psr/log" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/filp/whoops" />
+          <root url="file://$MODULE_DIR$/vendor/hisune/echarts-php" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/cli" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/console" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/core" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/dispatcher" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/http" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/router" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/socket" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/stream" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/ustring" />
+          <root url="file://$MODULE_DIR$/vendor/hoa/websocket" />
+          <root url="file://$MODULE_DIR$/vendor/j7mbo/twitter-api-php" />
+          <root url="file://$MODULE_DIR$/vendor/matyhtf/swoole_framework" />
+          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+          <root url="file://$MODULE_DIR$/vendor/psr/log" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -10,7 +10,9 @@
 namespace Home\Controller;
 
 
+use Hoa\Stream\_Protocol;
 use Think\Controller;
+use Swoole;
 
 class RegularController extends Controller
 {

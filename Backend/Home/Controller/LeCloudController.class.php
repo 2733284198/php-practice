@@ -86,12 +86,12 @@ class LeCloudController extends BaseController
         $ver = 3.1;
         $userid = 882860;
         $timestamp = time() . '000';
-        $streamName = '6666';
+        $streamName = '181818';
         $appName = 'test';
         $domain = 'leplay.amaitech.com';     #客户的访问域名
         $fileType = 'flv';                    #下载类型flv|mp4
-        $startTime = date('YmdHis',time());         #直播开始时间，（早于开始时间几秒就可以例如20161227123025）
-        $endTime = date('YmdHis',time()+30);           #直播结束时间（晚于结束时间几秒就可以
+        $startTime = date('YmdHis', time());         #直播开始时间，（早于开始时间几秒就可以例如20161227123025）
+        $endTime = date('YmdHis', time() + 30);        #直播结束时间（晚于结束时间几秒就可以)
         $seckey = '07f82bfcc7eeda519241d8fe1d53c1e6';
         $sign = "appName{$appName}domain{$domain}endTime{$endTime}fileType{$fileType}method{$method}startTime{$startTime}streamName{$streamName}timestamp{$timestamp}userid{$userid}ver{$ver}{$seckey}";
         $md5Sifn = md5($sign);
@@ -111,8 +111,8 @@ class LeCloudController extends BaseController
         ];
 
         $res = http_post_data($url, $arrData);
-        echo '开始时间：'.$startTime."<br/>";
-        echo '结束时间：'.$endTime."<br/>";
+        echo '开始时间：' . $startTime . "<br/>";
+        echo '结束时间：' . $endTime . "<br/>";
         var_dump($res);
     }
 
@@ -135,7 +135,7 @@ class LeCloudController extends BaseController
         $timestamp = time() . '000';
         $ver = 3.1;
         $userid = 882860;
-        $streamName = '6666';
+        $streamName = '181818';
         $appName = 'test';
         $domain = 'leplay.amaitech.com';     #客户的访问域名
         $startTime = '20170106123025';         #直播开始时间，（早于开始时间几秒就可以例如20161227123025）
@@ -143,16 +143,21 @@ class LeCloudController extends BaseController
 
         $seckey = '07f82bfcc7eeda519241d8fe1d53c1e6';
         $sign = md5("appName{$appName}domain{$domain}method{$method}streamName{$streamName}timestamp{$timestamp}userid{$userid}ver{$ver}{$seckey}");
-//        $url = "http://api.open.letvcloud.com/live/execute?appName=$appName&domain=$domain&method=$method&streamName=$streamName&timestamp=$timestamp&userid=$userid&ver=$ver&sign=$sign";
         $url = "http://api.open.letvcloud.com/live/execute?appName=$appName&domain=$domain&method=$method&streamName=$streamName&timestamp=$timestamp&userid=$userid&ver=$ver&sign=$sign";
-        $res = json_decode(curl_get_contents($url),true);
+        $res = json_decode(curl_get_contents($url), true);
         homePrint(count($res['rows']));
         homePrint($res['rows']);
     }
 
     //录像后的文件如何下载和播放？
-    public function recordDownLoad()
+    public function recordingFunction()
     {
+//        $timestamp = date('YmdHis',time());
+//        homePrint($timestamp);
+//        die;
+        $url = 'http://sewise.amai8.com/openapi/recordingFunction?Status=stop&Token=3779a61ffa7b82798368122d99e54f33&StreamName=4001483088068&FileType=flv';
+        $res = curl_get_contents($url);
+        var_dump(json_decode($res, true));
 
     }
 

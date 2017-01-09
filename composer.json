@@ -17,7 +17,8 @@
         "php-ffmpeg/php-ffmpeg": "~0.5",
         "j7mbo/twitter-api-php": "dev-master",
         "hisune/echarts-php": "~1.0.6",
-        "phpoffice/phpexcel": "^1.8"
+        "phpoffice/phpexcel": "^1.8",
+        "matyhtf/swoole_framework": "dev-master"
     },
     "minimum-stability": "dev"
 }
