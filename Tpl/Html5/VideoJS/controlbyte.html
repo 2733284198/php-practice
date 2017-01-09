@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video.js | HTML5 Video Player</title>
+
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="__PUBLIC__/lib/video-js/video-js.css" rel="stylesheet">
+    <script src="__PUBLIC__/lib/video-js/video.js"></script>
+    <script src="__PUBLIC__/lib/video-js/videojs-contrib-hls.min.js"></script>
+    <script>
+        videojs.options.flash.swf = "__PUBLIC__/lib/video-js/video-js.swf"
+    </script>
+</head>
+<body>
+<center>
+    <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
+           controls autoplay preload="auto"
+           poster="__PUBLIC__/Common/static/images/videodemo.png"
+           data-setup='{"example_option":true}'>
+        <source src="http://odqow12di.bkt.clouddn.com/5468594435904192512_360p_v1.m3u8?v=10003"
+                type="application/x-mpegURL">
+    </video>
+</center>
+
+<script>
+    var options = {
+        width: 1080,
+        height: 520
+    }
+    var player = videojs('live-stream', options);
+
+    player.on(['loadstart', 'play', 'playing', 'firstplay', 'pause', 'ended', 'adplay', 'adplaying', 'adfirstplay', 'adpause', 'adended', 'contentplay', 'contentplaying', 'contentfirstplay', 'contentpause', 'contentended', 'contentupdate'], function (e) {
+        console.warn('VIDEOJS player event: ', e.type);
+    });
+    //播放器初始化操作面板清晰度菜单
+    function playerInitVideo() {
+        $videoPanelMenu = $(".vjs-fullscreen-control");
+        $videoPanelMenu.before('<div class="vjs-subtitles-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button" tabindex="0" role="menuitem" aria-live="polite" aria-expanded="false" aria-haspopup="true">'
+            + '<div class="vjs-menu" role="presentation">'
+            + '<ul class="vjs-menu-content" role="menu">'
+            + '<li class="vjs-menu-item" tabindex="-1" role="menuitemcheckbox"  onclick="changeUrl(this)">高清</li>'
+            + '<li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox"  onclick="changeUrl(this)">标清 </li>'
+            + '</ul></div><span class="vjs-control-text">清晰度</span></div>');
+    }
+    //加载页面进行播放器初始化
+    player.ready(function() {
+        playerInitVideo();
+        //player.play();
+        //setsrc(player,"rtmp://192.168.30.21/live/test3","rtmp/flv");
+    });
+
+    //修改播放地址并播放
+    function writeAddressAndPlay(url,type) {
+        //播放器操作
+//        setsrc(index, url, type?type:"rtmp/flv");
+        player.src(url);
+        player.play();
+    }
+
+    //高清标清切换就是应用名加减HD
+    function changeUrl(video) {
+        var index = $(video).text();
+        //获取当前播放的url
+        var CurrentUrl = "http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001482214656.m3u8";
+        $(".vjs-menu-item").removeClass("vjs-selected");
+        $(video).addClass("vjs-selected");
+        if (index == "高清") {
+            if (CurrentUrl.indexOf("HD") == -1) {
+                CurrentUrl = CurrentUrl + "HD";
+            } else {
+                return;
+            }
+        } else {
+            if (CurrentUrl.indexOf("HD") != -1) {
+                CurrentUrl = CurrentUrl.replace("HD", "");
+            } else {
+                return;
+            }
+        }
+        //修改地址并播放
+        writeAddressAndPlay(player, CurrentUrl);
+    }
+</script>
+</body>
+</html>
+

@@ -61,4 +61,11 @@ class VideoJSController extends Controller
         $this->display();
     }
 
+    //简单实现清晰度控制和创建清晰度菜单
+    public function controlByte()
+    {
+        header("Access-Control-Allow-Origin: *");
+        $this->display();
+    }
+
 }
