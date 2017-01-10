@@ -16,7 +16,7 @@
     <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
            controls autoplay preload="auto" width="1080" height="520" poster="__PUBLIC__/Common/static/images/videodemo.png"
            data-setup='{"example_option":true}'>
-        <source src="http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001482214656.m3u8"
+        <source src="http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001481527315_3.m3u8"
                 type="application/x-mpegURL">
     </video>
 </center>
@@ -77,7 +77,8 @@
     });
 
     $('.player-setsrc').click(function () {
-        js_player.src('http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001482214656.m3u8');
+        js_player.src('http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001481527315_3.m3u8');
+        js_player.play();
     });
 
 

@@ -34,7 +34,14 @@ class VideoJSController extends Controller
      */
     public function inputPlayM3u8()
     {
-        header("Access-Control-Allow-Origin: *");
+        $this->display();
+    }
+
+    /**
+     * m3u8地址切换播放
+     */
+    public function switchM3u8()
+    {
         $this->display();
     }
 
