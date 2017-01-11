@@ -138,7 +138,7 @@ class EChartsController extends BaseController
     }
 
     /**
-     * Echarts图表的php库开源了
+     * Echarts-PHP图表的php库开源了
      * Echarts-PHP a PHP library that works as a wrapper for the Echarts js library
      */
     public function EChartsPhpLibrarySimple(){
