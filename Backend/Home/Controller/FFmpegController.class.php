@@ -17,18 +17,24 @@ class FFmpegController extends Controller
         echo 'FFmpeg';
     }
 
-    //Basic Usageerrdsadsa
+    /**
+     * Basic Usageerrdsadsa
+     * 在这里可以使用不同的路径
+     * 项目路径：这个一定是全域名路径的(http://www.thinkphpstudy.com/Uploads/FFmpegVideo/)
+     * 本地磁盘路径：这个则是读取磁盘路径哦！！(F:\Tinywan\Video\ImageOut.mpg)
+     */
     public function createFFmpeg()
     {
-        $path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/';
+        //$path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/'; //项目路径
+        $path = 'F:\Tinywan\Video\ImageOut.mpg';    //本地磁盘路径
         $ffmpeg = FFMpeg::create();
-        $video = $ffmpeg->open($path . 'out.mpg');
+        $video = $ffmpeg->open($path);
         $video->filters()
             ->resize(new Coordinate\Dimension(320, 240))
             ->synchronize();
         $video->frame(Coordinate\TimeCode::fromSeconds(10))
             ->save($path . 'frame.jpg');
-        $video->save(new Format\Video\X264(), 'export-x264123.mp4');
+        $video->save(new Format\Video\X264(), 'export-123.mp4');
         var_dump($video);
     }
 
@@ -114,12 +120,12 @@ class FFmpegController extends Controller
         $watermarkPath = 'F:\Tinywan\Video\00018.jpg';
         $video = $ffmpeg->open($MP4Path);
         $watermark = $video->filters()->watermark($watermarkPath, array(
-                'position' => 'relative',
-                'bottom' => 50,
-                'right' => 50,
-            ));
+            'position' => 'relative',
+            'bottom' => 50,
+            'right' => 50,
+        ));
         // Extract the image into a new file
-        $video->save($watermark,'fooimage2_Watermark.avi');
+        $video->save($watermark, 'fooimage2_Watermark.avi');
         var_dump($video);
     }
 
@@ -162,7 +168,7 @@ class FFmpegController extends Controller
 
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
-     * 获取一个视频的编码格式 h264 2312321
+     * 获取一个视频的编码格式 h264
      * 获取一个视频的时长
      */
     public function FFProbe()
