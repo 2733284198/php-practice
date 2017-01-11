@@ -26,7 +26,7 @@ class FFmpegController extends Controller
     public function createFFmpeg()
     {
         //$path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/'; //项目路径
-        $path = 'F:\Tinywan\Video\ImageOut.mpg';    //本地磁盘路径
+        $path = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
         $ffmpeg = FFMpeg::create();
         $video = $ffmpeg->open($path);
         $video->filters()
@@ -34,7 +34,7 @@ class FFmpegController extends Controller
             ->synchronize();
         $video->frame(Coordinate\TimeCode::fromSeconds(10))
             ->save($path . 'frame.jpg');
-        $video->save(new Format\Video\X264(), 'export-123.mp4');
+        $video->save(new Format\Video\X264(), 'windows-10.mp4');
         var_dump($video);
     }
 

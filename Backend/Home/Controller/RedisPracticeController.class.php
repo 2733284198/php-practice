@@ -6,12 +6,13 @@
  * 社交网站等一系列实用示例展示了 Redis 的用法。
  */
 namespace Home\Controller;
+use FFMpeg\Filters\Video\ResizeFilter;
 use Org\Util\RedisInstance;
 use Think\Controller;
 
 class RedisPracticeController extends Controller
 {
-    const ONE_WEEK_IN_SECONDS = 7 * 86400;
+    const ONE_WEEK_IN_SECONDS = 86400;
     const VOTE_SCORE = 432;
     public function index(){
        echo '欢迎来到《Redis实战》的支持网站！';
@@ -94,4 +95,37 @@ class RedisPracticeController extends Controller
         $redis->set('inv:' + $row_id, json_encode($row.to_dict()));
         }
     }
+
+    public function test(){
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(12);
+        $result = $redis->hGetAll('GlobalTracking:4001483686566');
+        $result2 = $redis->hGetAll('GlobalTracking:4001481873572');
+        homePrint($result);
+        homePrint($result2);
+    }
+
+    public function test_set(){
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(12);
+        $result = $redis->hMset('GlobalTracking:4001481873572',[
+            'StopRecordingBug'=>0,
+            'createStream'=>1,
+            'outerIP'=>'zonelue2.amailive.com',
+            'stopStreamTime'=>0,
+            'autoStartRecord'=>0,
+            'notify_url'=>'http://sewise.amai8.com/openapi/notifyUrlCallbackFunction',
+            'stopRecord'=>1,
+            'startStream'=>1,
+            'innerIP'=>'zonelue2.amailive.com',
+            'appName'=>'live',
+            'streamName'=>'4001481873572',
+            'recordStatus'=>'STOPPING',
+            'notifyURL'=>'http://sewise.amai8.com/openapi/videoCallbackFunction',
+            'domainName'=>'zonelue2.amailive.com',
+            'play_rtmp_address'=>'rtmp://zonelue2.amailive.com/live/4001481873572'
+        ]);
+        homePrint($result);
+    }
+
 }

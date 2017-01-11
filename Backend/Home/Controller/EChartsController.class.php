@@ -54,12 +54,44 @@ class EChartsController extends BaseController
     }
 
     /**
-     * 折线图
+     * Step Line 折线图
      */
-    public function chart_type_line()
+    public function chart_type_step_line()
     {
+        $url = "http://sewise.amai8.com/openapi/getLiveStreamsFrameRateAndBitRateData?Token=3779a61ffa7b82798368122d99e54f33&AppName=live&StreamName=4001484106749&DomainName=tinywan.amai8.com&StartTime=2017-01-11 12:28:00&EndTime=2017-01-11 14:31:00";
+        $responseInfo = curl_get_contents($url);
+        $res = json_decode($responseInfo,true);
+//        $AudioFrameRate = array_column($res['data'],'AudioFrameRate');
+        foreach ($res['data'] as $value){
+            $AudioFrameRate[] = floor($value['AudioFrameRate']);
+            $Time[] = substr($value['Time'],11,-3);
+            $VideoFrameRate[] = floor($value['VideoFrameRate']);
+        }
         $this->title = '折线图';
         $this->name = '销量销量';
+        $this->AudioFrameRate = json_encode($AudioFrameRate);
+        $this->Time = json_encode($Time);
+        $this->VideoFrameRate = json_encode($VideoFrameRate);
+        $this->display();
+    }
+
+    //折线图 普通折线图
+    public function chart_type_line()
+    {
+        $url = "http://sewise.amai8.com/openapi/getLiveStreamsFrameRateAndBitRateData?Token=3779a61ffa7b82798368122d99e54f33&AppName=live&StreamName=4001484106749&DomainName=tinywan.amai8.com&StartTime=2017-01-11 12:28:00&EndTime=2017-01-11 14:31:00";
+        $responseInfo = curl_get_contents($url);
+        $res = json_decode($responseInfo,true);
+//        $AudioFrameRate = array_column($res['data'],'AudioFrameRate');
+        foreach ($res['data'] as $value){
+            $AudioFrameRate[] = floor($value['AudioFrameRate']);
+            $Time[] = substr($value['Time'],11,-3);
+            $VideoFrameRate[] = floor($value['VideoFrameRate']);
+        }
+        $this->title = '折线图';
+        $this->name = '销量销量';
+        $this->AudioFrameRate = json_encode($AudioFrameRate);
+        $this->Time = json_encode($Time);
+        $this->VideoFrameRate = json_encode($VideoFrameRate);
         $this->display();
     }
 
