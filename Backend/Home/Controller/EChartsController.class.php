@@ -117,6 +117,13 @@ class EChartsController extends BaseController
     }
 
     //mix-timeline-finance
+    public function Map_China_locate()
+    {
+        $this->title = 'Map China';
+        $this->display();
+    }
+
+    //mix-timeline-finance
     public function Map_China()
     {
         $this->title = 'Map China';
