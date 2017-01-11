@@ -109,6 +109,16 @@ class EChartsController extends BaseController
         $this->display();
     }
 
+    /**
+     * 某站点用户访问来源
+     */
+    public function chart_type_pie_simple()
+    {
+        $this->title = '饼图形';
+        $this->name = '销量销量';
+        $this->display();
+    }
+
     //mix-timeline-finance
     public function mix_timeline_finance()
     {
