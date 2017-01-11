@@ -75,7 +75,10 @@ class EChartsController extends BaseController
         $this->display();
     }
 
-    //折线图堆叠
+    /*
+     * 折线图堆叠
+     * 测试通过
+     */
     public function chart_type_line()
     {
         $url = "http://sewise.amai8.com/openapi/getLiveStreamsFrameRateAndBitRateData?Token=3779a61ffa7b82798368122d99e54f33&AppName=live&StreamName=4001484106749&DomainName=tinywan.amai8.com&StartTime=2017-01-11 12:28:00&EndTime=2017-01-11 14:31:00";
@@ -94,6 +97,7 @@ class EChartsController extends BaseController
         $this->BitRate = json_encode($BitRate);
         $this->display();
     }
+
 
     /**
      * 饼图形
@@ -114,6 +118,13 @@ class EChartsController extends BaseController
 
     //mix-timeline-finance
     public function Map_China()
+    {
+        $this->title = 'Map China';
+        $this->display();
+    }
+
+    //mix-timeline-finance
+    public function Map_China_iphone()
     {
         $this->title = 'Map China';
         $this->display();
