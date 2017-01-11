@@ -37,24 +37,23 @@
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
-        data_alias_cate = eval('{$Time}');
+        data_time = eval('{$Time}');
         data_alias_x = eval('{$AudioFrameRate}');
         data_alias_y = eval('{$VideoFrameRate}');
-        // 指定图表的配置项和数据
         option = {
             title: {
-                text: 'Step Line'
+                text: '流监控推流信息'
             },
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data:['Step Start', 'Step Middle', 'Step End']
+                data:['视频帧率','音频帧率']
             },
             grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
+                left: '1%',
+                right: '1%',
+                bottom: '8%',
                 containLabel: true
             },
             toolbox: {
@@ -64,7 +63,8 @@
             },
             xAxis: {
                 type: 'category',
-                data: data_alias_cate
+                boundaryGap: false,
+                data: data_time
             },
             yAxis: {
                 type: 'value'
@@ -73,13 +73,13 @@
                 {
                     name:'视频帧率',
                     type:'line',
-                    step: 'start',
-                    data: data_alias_x
+                    stack: '总量',
+                    data:data_alias_x
                 },
                 {
                     name:'音频帧率',
                     type:'line',
-                    step: 'middle',
+                    stack: '总量',
                     data:data_alias_y
                 }
             ]

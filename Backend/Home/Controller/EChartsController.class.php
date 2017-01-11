@@ -23,11 +23,12 @@ class EChartsController extends BaseController
         $this->display();
     }
 
-    public function getJson(){
+    public function getJson()
+    {
         $result = [
-            'status'=>200,
-            'categories'=>["12-01","12-01","12-01","12-01","12-01","12-04","12-05"],
-            'data'=>[45,23,67,43,89,230,480]
+            'status' => 200,
+            'categories' => ["12-01", "12-01", "12-01", "12-01", "12-01", "12-04", "12-05"],
+            'data' => [45, 23, 67, 43, 89, 230, 480]
         ];
         sleep(1);
         exit(json_encode($result));
@@ -60,38 +61,37 @@ class EChartsController extends BaseController
     {
         $url = "http://sewise.amai8.com/openapi/getLiveStreamsFrameRateAndBitRateData?Token=3779a61ffa7b82798368122d99e54f33&AppName=live&StreamName=4001484106749&DomainName=tinywan.amai8.com&StartTime=2017-01-11 12:28:00&EndTime=2017-01-11 14:31:00";
         $responseInfo = curl_get_contents($url);
-        $res = json_decode($responseInfo,true);
-//        $AudioFrameRate = array_column($res['data'],'AudioFrameRate');
-        foreach ($res['data'] as $value){
+        $res = json_decode($responseInfo, true);
+        //$AudioFrameRate = array_column($res['data'],'AudioFrameRate');
+        foreach ($res['data'] as $value) {
             $AudioFrameRate[] = floor($value['AudioFrameRate']);
-            $Time[] = substr($value['Time'],11,-3);
+            $Time[] = substr($value['Time'], 11, -3);
             $VideoFrameRate[] = floor($value['VideoFrameRate']);
         }
-        $this->title = '折线图';
-        $this->name = '销量销量';
+        $this->title = 'Step Line 折线图';
         $this->AudioFrameRate = json_encode($AudioFrameRate);
         $this->Time = json_encode($Time);
         $this->VideoFrameRate = json_encode($VideoFrameRate);
         $this->display();
     }
 
-    //折线图 普通折线图
+    //折线图堆叠
     public function chart_type_line()
     {
         $url = "http://sewise.amai8.com/openapi/getLiveStreamsFrameRateAndBitRateData?Token=3779a61ffa7b82798368122d99e54f33&AppName=live&StreamName=4001484106749&DomainName=tinywan.amai8.com&StartTime=2017-01-11 12:28:00&EndTime=2017-01-11 14:31:00";
         $responseInfo = curl_get_contents($url);
-        $res = json_decode($responseInfo,true);
-//        $AudioFrameRate = array_column($res['data'],'AudioFrameRate');
-        foreach ($res['data'] as $value){
+        $res = json_decode($responseInfo, true);
+        foreach ($res['data'] as $value) {
             $AudioFrameRate[] = floor($value['AudioFrameRate']);
-            $Time[] = substr($value['Time'],11,-3);
+            $Time[] = substr($value['Time'], 11, -3);
             $VideoFrameRate[] = floor($value['VideoFrameRate']);
+            $BitRate[] = floor($value['BitRate']);
         }
-        $this->title = '折线图';
-        $this->name = '销量销量';
+        $this->title = '折线图堆叠';
         $this->AudioFrameRate = json_encode($AudioFrameRate);
         $this->Time = json_encode($Time);
         $this->VideoFrameRate = json_encode($VideoFrameRate);
+        $this->BitRate = json_encode($BitRate);
         $this->display();
     }
 
@@ -106,66 +106,71 @@ class EChartsController extends BaseController
     }
 
     //mix-timeline-finance
-    public function mix_timeline_finance(){
+    public function mix_timeline_finance()
+    {
         $this->title = '坐标轴刻度与标签对齐';
         $this->display();
     }
 
     //mix-timeline-finance
-    public function Map_China(){
+    public function Map_China()
+    {
         $this->title = 'Map China';
         $this->display();
     }
 
 
-
     /**
      * setpLine 异步获取数据 JSON
      */
-    public function getsetpLineAjaxJson(){
+    public function getsetpLineAjaxJson()
+    {
 
         $legendData = ['Step Start', 'Step Middle', 'Step End'];
         $xAxisData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
         $seriesData = [120, 132, 101, 134, 90, 230, 210];
         $result = [
-            'status'=>200,
-            'categories'=>'1111111111111',
-            'data'=>[
-                'xAxisData'=>$xAxisData,
-                'seriesData'=>$seriesData,
+            'status' => 200,
+            'categories' => '1111111111111',
+            'data' => [
+                'xAxisData' => $xAxisData,
+                'seriesData' => $seriesData,
             ]
         ];
         exit(json_encode($result));
     }
 
-    public function test(){
+    public function test()
+    {
         $this->display();
     }
 
-    public function test123(){
+    public function test123()
+    {
 
     }
 
-    public function redistest(){
+    public function redistest()
+    {
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
         $clientIP = $_SERVER['REMOTE_ADDR'];
         $clientKey = "speed:limiting:{$clientIP}";
         $listClientIpLen = $redis->llen($clientKey);
         $time = time();
-        echo $listClientIpLen."<br/>";
-        echo $clientKey."<br/>";
-        echo $time."<br/>";
-        if($listClientIpLen > 10 ){
-            $clientIPexpireTime = $redis->lIndex($clientKey,-1); //获取最后一个索引文件
-            if($time - $clientIPexpireTime < 60 ){
+        echo $listClientIpLen . "<br/>";
+        echo $clientKey . "<br/>";
+        echo $time . "<br/>";
+        if ($listClientIpLen > 10) {
+            $clientIPexpireTime = $redis->lIndex($clientKey, -1); //获取最后一个索引文件
+            if ($time - $clientIPexpireTime < 60) {
                 exit('超出限制');
-            }else{
-                $redis->lPush($clientKey,$time);
-                $redis->lTrim($clientKey,0,9);
+            } else {
+                $redis->lPush($clientKey, $time);
+                $redis->lTrim($clientKey, 0, 9);
             }
         }
-        $redis->lPush($clientKey,$time);
+        $redis->lPush($clientKey, $time);
         die;
     }
 
@@ -173,14 +178,15 @@ class EChartsController extends BaseController
      * Echarts-PHP图表的php库开源了
      * Echarts-PHP a PHP library that works as a wrapper for the Echarts js library
      */
-    public function EChartsPhpLibrarySimple(){
+    public function EChartsPhpLibrarySimple()
+    {
         $chart = new ECharts();
         $chart->tooltip->show = true;
         $chart->legend->data = array('销量');
         $chart->xAxis = array(
             array(
                 'type' => 'category',
-                'data' => array("衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子")
+                'data' => array("衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子")
             ),
 
         );
@@ -197,10 +203,11 @@ class EChartsController extends BaseController
         echo $chart->render('simple-custom-id');
     }
 
-    public function EChartsPhpLibraryAdvance(){
+    public function EChartsPhpLibraryAdvance()
+    {
         $chart = new ECharts();
         $chart->tooltip->trigger = 'axis';
-        $chart->legend->data = array('蒸发量','降水量','最低气温','最高气温');
+        $chart->legend->data = array('蒸发量', '降水量', '最低气温', '最高气温');
         $chart->toolbox = array(
             'show' => true,
             'feature' => array(
@@ -258,11 +265,11 @@ class EChartsController extends BaseController
                 'splitArea' => array(
                     'show' => true,
                     'areaStyle' => array(
-                        'color' => array('rgba(144,238,144,0.3)','rgba(135,200,250,0.3)')
+                        'color' => array('rgba(144,238,144,0.3)', 'rgba(135,200,250,0.3)')
                     ),
                 ),
                 'data' => array(
-                    '1','2','3','4','5',
+                    '1', '2', '3', '4', '5',
                     array(
                         'value' => '6',
                         'textStyle' => array(
@@ -272,19 +279,19 @@ class EChartsController extends BaseController
                             'fontWeight' => 'bold',
                         ),
                     ),
-                    '7','8','9','10','11','12'
+                    '7', '8', '9', '10', '11', '12'
                 )
             ),
             array(
                 'type' => 'category',
-                'data' => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
+                'data' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
             ),
         );
         $chart->yAxis = array(
             array(
                 'type' => 'value',
                 'position' => 'left',
-                'boundaryGap' => array(0,0.1),
+                'boundaryGap' => array(0, 0.1),
                 'axisLine' => array(
                     'show' => true,
                     'lineStyle' => array(
@@ -327,7 +334,7 @@ class EChartsController extends BaseController
                 'splitArea' => array(
                     'show' => true,
                     'areaStyle' => array(
-                        'color' => array('rgba(205,92,92,0.3)','rgba(255,215,0,0.3)')
+                        'color' => array('rgba(205,92,92,0.3)', 'rgba(255,215,0,0.3)')
                     ),
                 ),
             ),
