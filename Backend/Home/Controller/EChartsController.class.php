@@ -110,11 +110,11 @@ class EChartsController extends BaseController
     }
 
     /**
-     * 某站点用户访问来源
+     * 某站点用户访问来源，
      */
     public function chart_type_pie_simple()
     {
-        $this->title = '饼图形';
+        $this->title = '某站点用户访问来源';
         $this->name = '销量销量';
         $this->display();
     }
