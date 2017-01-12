@@ -32,7 +32,7 @@ CREATE TABLE `bjyadmin_admin_nav` (
 -- ----------------------------
 -- Records of bjyadmin_admin_nav
 -- ----------------------------
-INSERT INTO `bjyadmin_admin_nav` VALUES ('1', '0', '系统设置', 'Admin/ShowNav/config', 'cog', '1');
+INSERT INTO `bjyadmin_admin_nav` VALUES ('1', '0', '系统设置32132', 'Admin/ShowNav/config', 'cog', '1');
 INSERT INTO `bjyadmin_admin_nav` VALUES ('2', '1', '菜单管理', 'Admin/Nav/index', null, null);
 INSERT INTO `bjyadmin_admin_nav` VALUES ('7', '4', '权限管理', 'Admin/Rule/index', '', '1');
 INSERT INTO `bjyadmin_admin_nav` VALUES ('4', '0', '权限控制', 'Admin/ShowNav/rule', 'expeditedssl', '2');
