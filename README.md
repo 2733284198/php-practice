@@ -24,9 +24,9 @@
 rtmp://v1.one-tv.com/live/mpegts.stream
 ```
 *  香港电视台直播:<br>
-    ~~~
+  ```
     rtmp://live.hkstv.hk.lxdns.com/live/hks
-    ~~~
+  ```
 *  亚太卫视:<br>
     ~~~
     rtmp://58.61.150.198/live/Livestream
