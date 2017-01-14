@@ -19,24 +19,18 @@
     `
     https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
     `
-*  亚太第一卫视(RTMP流):<br>
-    `rtmp://v1.one-tv.com/live/mpegts.stream`
-*  香港电视台直播:<br>
-    `rtmp://live.hkstv.hk.lxdns.com/live/hks`
-*  亚太卫视:<br>
-    `rtmp://58.61.150.198/live/Livestream`
-*  香港卫视公开的拉流地址:<br>
-    `rtmp://live.hkstv.hk.lxdns.com/live/hks`
-*  香港卫视公开的推流地址:<br>
-    `rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
-*  香港卫视公开的推流测试地址:<br>
-    `rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+*  亚太第一卫视(RTMP流):`rtmp://v1.one-tv.com/live/mpegts.stream`
+*  香港电视台直播:`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+*  亚太卫视:`rtmp://58.61.150.198/live/Livestream`
+*  香港卫视公开的拉流地址:`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+*  香港卫视公开的推流地址:`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+*  香港卫视公开的推流测试地址:`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 
 ## 公共脚本库
-*  bootstrap/css:<br>http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css
-*  bootstrap/js:<br>http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js
-*  jquery:<br>http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js
-*  Angular:<br>http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js
+*  bootstrap/css:<br>`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
+*  bootstrap/js:<br>`http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js`
+*  jquery:<br>`http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js`
+*  Angular:<br>`http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js`
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
