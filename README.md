@@ -47,7 +47,6 @@
 *  WebSocket&emsp;`HTML5/WebSocketController` 
 *  PHP-FFmpeg&emsp;`Home/FFmpegController`  
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
-*  __E=mc__
 
 ## 视频播放插件
 *  Sewise&emsp;`HTML5/SewiseController/Index`<br>
