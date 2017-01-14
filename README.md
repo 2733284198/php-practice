@@ -55,6 +55,7 @@
 *  SwfObject:&emsp;`HTML5/SwfObjectController/Index` :&emsp;播放RTMP流：1~2S之内<br>
 *  Video:&emsp;`HTML5/VideoController/Index`<br>
 *  VideoJS:&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内<br>
+## VideoJs播放插件播放一个RTMP视频流
 ```
  <link href="__PUBLIC__/lib/video-js/video-js.css" rel="stylesheet">
  <script src="__PUBLIC__/lib/video-js/video.js"></script>
