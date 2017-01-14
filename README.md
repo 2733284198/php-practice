@@ -20,17 +20,17 @@
 *  香港卫视公开的推流测试地址:`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 
 ## 公共脚本库
-*  Bootstrap/css:`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
-*  Bootstrap/js:`http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js`
-*  Jquery:`http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js`
-*  Angular:`http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js`
+*  Bootstrap/css：`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
+*  Bootstrap/js：`http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js`
+*  Jquery：`http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js`
+*  Angular：`http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js`
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
-*  基于角色的RBAC权限管理【实例】
-*  基于类的无限级分类和数据库的无限级分类【实例】
+*  基于角色的RBAC权限管理
+*  基于类的无限级分类和数据库的无限级分类
 *  非关系性数据库Redis
-*  单例模式 【Org/Util/RedisInstance.class.php】针对不同的Redis链接(主从复制)
+*  单例模式:针对不同的Redis链接(主从复制) `Org/Util/RedisInstance.class.php`
 *  存储数据形成消息队列 【Home/DataBaseController/createRedisList】
 *  消息队列元素大于10000时，批量插入到Mysql数据库 【Home/DataBaseController/RedisSaveToMysql】 
 *  读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
