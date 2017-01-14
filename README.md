@@ -73,13 +73,12 @@
  </video>
 ```
 ## 常用Shell脚本
+*  凌晨备份昨天的日志,放在该日期的月份目录下面,同时以昨天的时间为后缀名  
+    `Shell文件夹/Logs文件夹/auto_backup_logs_del_current.sh`  
+*  RTMP模块的分发服务器分发本地流到各个节点服务器上去  
+    `Shell文件夹/Logs文件夹/auto_backup_logs_del_current.sh`  
 *  凌晨备份昨天的日志,放在该日期的月份目录下面,同时以昨天的时间为后缀名&emsp;  
     `Shell文件夹/Logs文件夹/auto_backup_logs_del_current.sh`  
-*  JPlayer&emsp;`HTML5/JPlayerController/Index`  
-*  Jwplayer&emsp;`HTML5/JwplayerController/Index`  
-*  SwfObject&emsp;`HTML5/SwfObjectController/Index` :&emsp;播放RTMP流：1~2S之内
-*  Video&emsp;`HTML5/VideoController/Index`  
-*  VideoJS&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内
 
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)

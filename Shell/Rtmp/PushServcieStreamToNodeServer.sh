@@ -57,7 +57,7 @@ on_die ()
 
 trap 'on_die' TERM
 GET_ALL_NODE_IP
-#ffmpeg -r 25 -i rtmp://localhost/live/${STREAM_ID} -c copy -f flv rtmp://10.117.19.148/live/${NODE_STREAM_ID} &
+#ffmpeg -r 25 -i rtmp://localhost/live/${STREAM_ID} -c copy -f flv rtmp://10.4.19.45/live/${NODE_STREAM_ID} &
 #ffmpeg -i $FILE -c:v libx264 -b:v 300k -c:a libfdk_aac -b:a 64k  -f flv rtmp://10.1/live/${NODE_STREAM_ID} &
 #ffmpeg -i $FILE -c:v libx264 -b:v 500k -c:a libfdk_aac -b:a 64k  -f flv rtmp://10.117./hls/${NODE_STREAM_ID}_hi &
 #ffmpeg -i $FILE -c:v libx264 -b:v 100k -c:a libfdk_aac -b:a 64k  -f flv rtmp://10.117./hls/${NODE_STREAM_ID}_low &
