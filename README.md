@@ -31,22 +31,14 @@
 *  基于类的无限级分类和数据库的无限级分类【实例】
 *  非关系性数据库Redis
 *  单例模式 【Org/Util/RedisInstance.class.php】针对不同的Redis链接(主从复制)
-*  高并发简单解决方案
-        * 存储数据形成消息队列 【Home/DataBaseController/createRedisList】
-        * 消息队列元素大于10000时，批量插入到Mysql数据库 【Home/DataBaseController/RedisSaveToMysql】 
-        * 读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
+*  存储数据形成消息队列 【Home/DataBaseController/createRedisList】
+*  消息队列元素大于10000时，批量插入到Mysql数据库 【Home/DataBaseController/RedisSaveToMysql】 
+*  读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
 *  多级模块化的管理【实例】
 *  Uploadify图片上传DEMO【实例】
 *  PHPmailer批量发送邮件DEMO【Library/EmailController/register】
 *  支付宝即时到账接口开发DEMO【Api/AliPayController/Index】
 *  用户注册邮箱激活和邮箱密码修改DEMO【Library/EmailController/Index】
-*  视频播放插件
-*      (1)Sewise【HTML5/SewiseController/Index】<br>
-*      (2)JPlayer【HTML5/JPlayerController/Index】<br>
-*      (3)Jwplayer【HTML5/JwplayerController/Index】<br>
-*      (4)SwfObject【HTML5/SwfObjectController/Index】播放RTMP流：1~2S之内<br>
-*      (5)Video【HTML5/VideoController/Index】<br>
-*      (6)VideoJS【HTML5/VideoJSController/Index】播放RTMP流：3~5S之内<br>
 *  AngularJS 框架 【Home/AngularJSController】
 *  Monolog 日志记录工具【Home/MonoLogController】 
 *  ECharts 统计工具 【Home/EChartsController】 
@@ -55,7 +47,14 @@
 *  WebSocket 【HTML5/WebSocketController】 
 *  PHP-FFmpeg 【Home/FFmpegController】  
 *  数据依赖缓存Cache（Yii2.0文件依赖思想） 【Home/CacheController】 
-*  继续更新中..........
+
+## 视频播放插件
+*  Sewise【HTML5/SewiseController/Index】<br>
+*  JPlayer【HTML5/JPlayerController/Index】<br>
+*  Jwplayer【HTML5/JwplayerController/Index】<br>
+*  SwfObject【HTML5/SwfObjectController/Index】播放RTMP流：1~2S之内<br>
+*  Video【HTML5/VideoController/Index】<br>
+*  VideoJS【HTML5/VideoJSController/Index】播放RTMP流：3~5S之内<br>
 ```
 rtmp://v1.one-tv.com/live/mpegts.stream
 ```
