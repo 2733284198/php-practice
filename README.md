@@ -12,12 +12,12 @@
     `
     https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
     `
-*  亚太第一卫视(RTMP流):`rtmp://v1.one-tv.com/live/mpegts.stream`
-*  香港电视台直播:`rtmp://live.hkstv.hk.lxdns.com/live/hks`
-*  亚太卫视:`rtmp://58.61.150.198/live/Livestream`
-*  香港卫视公开的拉流地址:`rtmp://live.hkstv.hk.lxdns.com/live/hks`
-*  香港卫视公开的推流地址:`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
-*  香港卫视公开的推流测试地址:`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+*  亚太第一卫视(RTMP流):&emsp;`rtmp://v1.one-tv.com/live/mpegts.stream`
+*  香港电视台直播:&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+*  亚太卫视:&emsp;`rtmp://58.61.150.198/live/Livestream`
+*  香港卫视公开的拉流地址:&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+*  香港卫视公开的推流地址:&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+*  香港卫视公开的推流测试地址:&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 
 ## 公共脚本库
 *  Bootstrap/css:&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
@@ -30,72 +30,35 @@
 *  基于角色的RBAC权限管理
 *  基于类的无限级分类和数据库的无限级分类
 *  非关系性数据库Redis
-*  单例模式:针对不同的Redis链接(主从复制) `Org/Util/RedisInstance.class.php`
-*  存储数据形成消息队列 【Home/DataBaseController/createRedisList】
-*  消息队列元素大于10000时，批量插入到Mysql数据库 【Home/DataBaseController/RedisSaveToMysql】 
-*  读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
-*  多级模块化的管理【实例】
-*  Uploadify图片上传DEMO【实例】
-*  PHPmailer批量发送邮件DEMO【Library/EmailController/register】
-*  支付宝即时到账接口开发DEMO【Api/AliPayController/Index】
-*  用户注册邮箱激活和邮箱密码修改DEMO【Library/EmailController/Index】
-*  AngularJS 框架 【Home/AngularJSController】
-*  Monolog 日志记录工具【Home/MonoLogController】 
-*  ECharts 统计工具 【Home/EChartsController】 
-*  PDO预处理 【Home/DataBaseController/pdoExample1】 
-*  Socket 服务器框架:GatewayWorker 【Home/GatewayWorker】 
-*  WebSocket 【HTML5/WebSocketController】 
-*  PHP-FFmpeg 【Home/FFmpegController】  
-*  数据依赖缓存Cache（Yii2.0文件依赖思想） 【Home/CacheController】 
+*  单例模式:针对不同的Redis链接(主从复制)&emsp;`Org/Util/RedisInstance.class.php`
+*  存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
+*  消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
+*  读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
+*  多级模块化的管理
+*  Uploadify图片上传DEMO
+*  PHPmailer批量发送邮件&emsp;`Library/EmailController/register`
+*  支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
+*  用户注册邮箱激活和邮箱密码修改&emsp;`Library/EmailController/Index`
+*  AngularJS 框架&emsp;`Home/AngularJSController`
+*  Monolog 日志记录工具&emsp;`Home/MonoLogController` 
+*  ECharts 统计工具&emsp;`Home/EChartsController`
+*  PDO预处理&emsp;`Home/DataBaseController/pdoExample1` 
+*  Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
+*  WebSocket&emsp;`HTML5/WebSocketController` 
+*  PHP-FFmpeg&emsp;`Home/FFmpegController`  
+*  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 
 ## 视频播放插件
-*  Sewise【HTML5/SewiseController/Index】<br>
-*  JPlayer【HTML5/JPlayerController/Index】<br>
-*  Jwplayer【HTML5/JwplayerController/Index】<br>
-*  SwfObject【HTML5/SwfObjectController/Index】播放RTMP流：1~2S之内<br>
-*  Video【HTML5/VideoController/Index】<br>
-*  VideoJS【HTML5/VideoJSController/Index】播放RTMP流：3~5S之内<br>
+*  Sewise:&emsp;`HTML5/SewiseController/Index`<br>
+*  JPlayer:&emsp;`HTML5/JPlayerController/Index`<br>
+*  Jwplayer:&emsp;`HTML5/JwplayerController/Index`<br>
+*  SwfObject:&emsp;`HTML5/SwfObjectController/Index` :&emsp;播放RTMP流：1~2S之内<br>
+*  Video:&emsp;`HTML5/VideoController/Index`<br>
+*  VideoJS:&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内<br>
 ```
 rtmp://v1.one-tv.com/live/mpegts.stream
 ```
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
 
-## 编辑格式
-【标题】：
-#一级标题  
-##二级标题  
-###三级标题  
-####四级标题  
-#####五级标题  
-######六级标题 
 
-【普通文本】：
-
-这是一段普通的文本，  
-直接回车不能换行，<br>  
-要使用\<br>
-
-【多行文本，多行文本和单行文本异曲同工，只要在每行行首加两个Tab】
-欢迎到访  
-很高兴见到您  
-祝您，早上好，中午好，下午好，晚安 
-
-【部分文字的高亮，如果你想使一段话中部分文字高亮显示，来起到突出强调的作用，那么可以把它用 `  ` 包围起来】
-
-【此外还有二级圆点和三级圆点，就是多加一个Tab】：
-Thank `You` . Please `Call` Me `Tinywan`
-
-* 编程语言
-    * 脚本语言  
-        * Python 
-        * Python 
-        * Python 
-
-
-【缩进】：
->数据结构  
->>树  
->>>二叉树  
->>>>平衡二叉树  
->>>>>满二叉树 
