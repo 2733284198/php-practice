@@ -78,7 +78,9 @@
 *  RTMP模块的分发服务器分发本地流到各个节点服务器上去  
     `Shell文件夹/Logs文件夹/auto_backup_logs_del_current.sh`  
 *  每隔10分钟把每个活动对应的评论和礼物数量同步到MySQL数据库中去  
-    `Shell文件夹/Redis文件夹/comment_redis_pdo.sh`  
+    `Shell文件夹/Redis文件夹/comment_redis_pdo.sh`
+*  每隔10分钟把每个活动对应的评论和礼物数量同步到MySQL数据库中去  
+    `Shell文件夹/Redis文件夹/comment_redis_pdo.sh`       
 
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
