@@ -80,7 +80,9 @@
 *  每隔10分钟把每个活动对应的评论和礼物数量同步到MySQL数据库中去  
     `Shell文件夹/Redis文件夹/comment_redis_pdo.sh`
 *  每隔10分钟把每个活动对应的评论和礼物数量同步到MySQL数据库中去  
-    `Shell文件夹/Redis文件夹/comment_redis_pdo.sh`       
+    `Shell文件夹/Redis文件夹/comment_redis_pdo.sh`   
+*  Nginx RTMP录像自动上传到阿里云oss存储  
+    `Shell文件夹/Rtmp文件夹/rtmpRecordedNotify.sh` 
 
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
