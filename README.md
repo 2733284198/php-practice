@@ -47,14 +47,16 @@
 *  WebSocket&emsp;`HTML5/WebSocketController` 
 *  PHP-FFmpeg&emsp;`Home/FFmpegController`  
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
+*  __E=mc__
 
 ## 视频播放插件
-*  Sewise&emsp;`HTML5/SewiseController/Index`<br>
-*  JPlayer&emsp;`HTML5/JPlayerController/Index`<br>
-*  Jwplayer&emsp;`HTML5/JwplayerController/Index`<br>
-*  SwfObject&emsp;`HTML5/SwfObjectController/Index` :&emsp;播放RTMP流：1~2S之内<br>
-*  Video&emsp;`HTML5/VideoController/Index`<br>
-*  VideoJS&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内<br>
+*  Sewise&emsp;`HTML5/SewiseController/Index`  
+*  JPlayer&emsp;`HTML5/JPlayerController/Index`  
+*  Jwplayer&emsp;`HTML5/JwplayerController/Index`  
+*  SwfObject&emsp;`HTML5/SwfObjectController/Index` :&emsp;播放RTMP流：1~2S之内
+*  Video&emsp;`HTML5/VideoController/Index`  
+*  VideoJS&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内
+
 ## VideoJs播放插件播放一个RTMP视频流
 ```
  <link href="__PUBLIC__/lib/video-js/video-js.css" rel="stylesheet">
