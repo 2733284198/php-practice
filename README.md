@@ -3,13 +3,6 @@
 [doodle]: https://www.google.com/logos/doodles/2016/googles-18th-birthday-5661535679545344-hp2x.gif "Google 18岁啦"
 [doodle-story]: https://www.google.com.hk/search?q=Google
 
-## Github个人主页
-[![Tinywan] (https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://tinywan.github.io/)<br>
-
-## 博客
-
-[地址] : http://www.cnblogs.com/tinywan/
-
 ## 流媒体、视频编码、直播流测试库
 *  2016杭州·云栖大会集锦:<br>
     `
