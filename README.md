@@ -10,19 +10,16 @@
 
 [地址] : http://www.cnblogs.com/tinywan/
 
-## 公共视频测试库
+## 流媒体、视频编码、直播流测试库
 *  2016杭州·云栖大会集锦:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
 *  阿里巴巴王坚完整版视频:<br>https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
+*  亚太第一卫视(RTMP流):<br>`rtmp://v1.one-tv.com/live/mpegts.stream`
+*  香港电视台直播:<br>`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+*  亚太卫视:<br>`rtmp://58.61.150.198/live/Livestream`
+*  香港卫视公开的拉流地址:<br>`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+*  香港卫视公开的推流地址:<br>`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+*  香港卫视公开的推流测试地址:<br>`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 
-## 香港卫视公开的拉流地址（Open Broadcaster Software 推荐推流）
-*  视频测试地址:	rtmp://live.hkstv.hk.lxdns.com/live/hks<br>
-*  推流在后面随便加个流名:	rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456<br>
-*  推流测试地址:       rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456<br>
-
-## RTMP直播流
-*  亚太第一卫视	rtmp://v1.one-tv.com/live/mpegts.stream<br>
-*  香港电视台直播:	rtmp://live.hkstv.hk.lxdns.com/live/hks<br>
-*  亚太卫视:       rtmp://58.61.150.198/live/Livestream<br>
 
 ## 公共脚本库
 *  bootstrap/css:<br>http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css
@@ -35,8 +32,8 @@
 *  基于角色的RBAC权限管理【实例】
 *  基于类的无限级分类和数据库的无限级分类【实例】
 *  非关系性数据库Redis
- *  单例模式 【Org/Util/RedisInstance.class.php】针对不同的Redis链接(主从复制)
- *  高并发简单解决方案
+*  单例模式 【Org/Util/RedisInstance.class.php】针对不同的Redis链接(主从复制)
+*  高并发简单解决方案
         * 存储数据形成消息队列 【Home/DataBaseController/createRedisList】
         * 消息队列元素大于10000时，批量插入到Mysql数据库 【Home/DataBaseController/RedisSaveToMysql】 
         * 读取缓存数据 【Home/DataBaseController/findDataRedisOrMysql】
