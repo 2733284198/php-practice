@@ -48,6 +48,7 @@
 *  PHP-FFmpeg&emsp;`Home/FFmpegController`  
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 *  __E=mc__
+*  $$ (x+1)^2 = \class{hidden}{(x+1)(x+1)} $$
 ## 视频播放插件
 *  Sewise&emsp;`HTML5/SewiseController/Index`<br>
 *  JPlayer&emsp;`HTML5/JPlayerController/Index`<br>
