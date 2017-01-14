@@ -12,17 +12,17 @@
 
 ## 流媒体、视频编码、直播流测试库
 *  2016杭州·云栖大会集锦:
-    ~~~
+    ```
     https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
-    ~~~
+    ```
 *  阿里巴巴王坚完整版视频:<br>
-    ~~~
+    ```
     https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
-    ~~~
+    ```
 *  亚太第一卫视(RTMP流):<br>
-    ~~~
+    ```
     rtmp://v1.one-tv.com/live/mpegts.stream
-    ~~~
+    ```
 *  香港电视台直播:<br>
     ~~~
     rtmp://live.hkstv.hk.lxdns.com/live/hks
