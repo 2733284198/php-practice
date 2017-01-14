@@ -20,10 +20,10 @@
 *  香港卫视公开的推流测试地址:`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 
 ## 公共脚本库
-*  Bootstrap/css：`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
-*  Bootstrap/js：`http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js`
-*  Jquery：`http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js`
-*  Angular：`http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js`
+*  Bootstrap/css:&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
+*  Bootstrap/js:&emsp;`http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js`
+*  Jquery:&emsp;`http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js`
+*  Angular:&emsp;`http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js`
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
