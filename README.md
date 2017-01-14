@@ -56,7 +56,18 @@
 *  Video:&emsp;`HTML5/VideoController/Index`<br>
 *  VideoJS:&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内<br>
 ```
-rtmp://v1.one-tv.com/live/mpegts.stream
+ <link href="__PUBLIC__/lib/video-js/video-js.css" rel="stylesheet">
+ <script src="__PUBLIC__/lib/video-js/video.js"></script>
+ <script>
+     videojs.options.flash.swf = "__PUBLIC__/lib/video-js/video-js.swf"
+ </script>
+ <video 
+    id="livestream" 
+    class="video-js vjs-default-skin vjs-big-play-centered"
+    controls autoplay preload="auto" width="1280" height="720"
+    data-setup='{"example_option":true}'>
+    <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/mp4"></source>
+ </video>
 ```
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)

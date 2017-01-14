@@ -14,7 +14,8 @@
 <body>
 <center>
     <video id="live-stream" class="video-js vjs-default-skin vjs-big-play-centered"
-           controls autoplay preload="auto" width="1080" height="520" poster="__PUBLIC__/Common/static/images/videodemo.png"
+           controls autoplay preload="auto" width="1080" height="520"
+           poster="__PUBLIC__/Common/static/images/videodemo.png"
            data-setup='{"example_option":true}'>
         <source src="http://amaitest.oss-cn-hangzhou.aliyuncs.com/record/live123/4001481527315_3.m3u8"
                 type="application/x-mpegURL">
@@ -22,22 +23,22 @@
 </center>
 <hr/>
 <center>
-    <input type="button" class="getCurrentType" value="获取当前类型" />
-    <input type="button" class="getCurrentAddr" value="获取当前播放地址" />
-    <input type="button" class="getCurrentTime" value="获取当前播放时间" />
-    <input type="button" class="networkState" value="获取当前网络状态" />
-    <input type="button" class="reset" value="重载播放器" />
-    <input type="button" class="play" value="播放" />
-    <input type="button" class="pause" value="暂停" />
-    <input type="button" class="player-setsrc" value="修改播放地址" /><br/>
+    <input type="button" class="getCurrentType" value="获取当前类型"/>
+    <input type="button" class="getCurrentAddr" value="获取当前播放地址"/>
+    <input type="button" class="getCurrentTime" value="获取当前播放时间"/>
+    <input type="button" class="networkState" value="获取当前网络状态"/>
+    <input type="button" class="reset" value="重载播放器"/>
+    <input type="button" class="play" value="播放"/>
+    <input type="button" class="pause" value="暂停"/>
+    <input type="button" class="player-setsrc" value="修改播放地址"/><br/>
 </center>
 
 <script type="text/javascript">
     var options = {};
-    var js_player = videojs('live-stream',options,function onPlayerReady() {
+    var js_player = videojs('live-stream', options, function onPlayerReady() {
         videojs.log('Your player is ready!');
         this.play();
-        this.on('ended', function() {
+        this.on('ended', function () {
             videojs.log('Awww...over so soon?!');
         });
     });
