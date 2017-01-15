@@ -124,6 +124,7 @@ class IndexController extends Controller
     {
         var_dump(C('WECHAT_OAUTH2.APPID'));
         var_dump(C('WECHAT_OAUTH2.APPSECRET'));
+        (new \Addons\Article\Site())->show();
     }
 
 }
