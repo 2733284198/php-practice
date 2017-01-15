@@ -50,10 +50,12 @@ define("OSS_URL","");
 // 定义Loger path
 define("LOGGER_PATH","./Logs");
 
+//项目依赖使用 Composer 的自动加载器
+require 'vendor/autoload.php';
+
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
 // 亲^_^ 后面不需要任何代码了 就是如此简单
 
-//项目依赖使用 Composer 的自动加载器
-//require 'vendor/autoload.php';
+

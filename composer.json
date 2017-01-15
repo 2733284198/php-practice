@@ -18,7 +18,13 @@
         "j7mbo/twitter-api-php": "dev-master",
         "hisune/echarts-php": "~1.0.6",
         "phpoffice/phpexcel": "^1.8",
-        "matyhtf/swoole_framework": "dev-master"
+        "matyhtf/swoole_framework": "dev-master",
+        "houdunwang/wexin":"^1.0"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "Addons\\":"Addons"
+        }
+    }
 }

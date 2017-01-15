@@ -183,6 +183,10 @@ class IndexController extends BaseController
         echo sprintf("%u\n", ip2long("157.23.56.90"));
     }
 
+    public function testAddons(){
+        (new \Addons\Article\Site())->show();
+    }
+
 
 
 
