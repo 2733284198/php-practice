@@ -120,6 +120,13 @@ class IndexController extends Controller
         return $raw;
     }
 
+    public function Addons()
+    {
+        var_dump(C('WECHAT_OAUTH2.APPID'));
+        var_dump(C('WECHAT_OAUTH2.APPSECRET'));
+        (new \Addons\Article\Site())->show();
+    }
+
     public function test()
     {
         var_dump(C('WECHAT_OAUTH2.APPID'));

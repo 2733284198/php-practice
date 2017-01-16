@@ -70,10 +70,10 @@
                                     <if condition="$vo['access']">checked='checked'</if>>
 
                                     <if condition="$vo.level eq 1">
-                                        <span style="font-weight: bold; color: indianred;">【项目】</span>
+                                        <span style="font-weight: bold; color: indianred;">【模块】</span>
                                         <span style="font-weight: bolder;font-size: 14px;">{$vo.title}</span>
                                         <elseif condition="$vo.level eq 2"/>
-                                        <span style="font-weight: bolder;font-size: 14px; color: purple;">【模块】</span>
+                                        <span style="font-weight: bolder;font-size: 14px; color: purple;">【控制器】</span>
                                         <span style="font-weight: bolder;font-size: 14px;">{$vo.title}</span>
                                         <else />
                                         {$vo.title}
