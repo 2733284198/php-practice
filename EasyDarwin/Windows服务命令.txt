@@ -1,0 +1,3 @@
+CMD查看所有服务：services.msc
+停止一个服务：net stop EasyDarwin
+删除一个服务：sc delete EasyDarwin
