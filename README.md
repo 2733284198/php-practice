@@ -22,8 +22,9 @@
 *  RTSP协议直播源&emsp;
     - `rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov`
 *  HTTP协议直播源&emsp;
-    - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`<br/>
-    - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`<br/>
+    - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`
+    - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`
+    - CCTV5高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8`
     
 
 ## 公共脚本库
