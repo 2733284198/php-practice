@@ -20,7 +20,8 @@
 *  香港卫视公开的推流测试地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 *  RTSP协议直播源&emsp;<br/> `rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov`
 *  HTTP协议直播源&emsp;<br/>
-    >香港卫视：`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`
+   香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`<br/>
+   CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`<br/>
     
 
 ## 公共脚本库
