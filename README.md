@@ -18,6 +18,7 @@
 *  香港卫视公开的拉流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`
 *  香港卫视公开的推流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 *  香港卫视公开的推流测试地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+*  RTSP视频测试地址&emsp;`rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov`
 
 ## 公共脚本库
 *  Bootstrap/css&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
