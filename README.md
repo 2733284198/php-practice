@@ -13,16 +13,16 @@
     https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
     `
 *  RTMP协议直播源&emsp;<br/>
-    1. 亚太第一卫视(RTMP流)&emsp;`rtmp://v1.one-tv.com/live/mpegts.stream`<br/>
-    2. 香港电视台直播&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`<br/>
-    3. 亚太卫视&emsp;`rtmp://58.61.150.198/live/Livestream`<br/>
-    4. 香港卫视公开的拉流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`<br/>
-    5. 香港卫视公开的推流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
-    6. 香港卫视公开的推流测试地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+    - 亚太第一卫视(RTMP流)&emsp;`rtmp://v1.one-tv.com/live/mpegts.stream`<br/>
+    - 香港电视台直播&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`<br/>
+    - 亚太卫视&emsp;`rtmp://58.61.150.198/live/Livestream`<br/>
+    - 香港卫视公开的拉流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`<br/>
+    - 香港卫视公开的推流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
+    - 香港卫视公开的推流测试地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
 *  RTSP协议直播源&emsp;<br/> `rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov`
 *  HTTP协议直播源&emsp;<br/>
-   香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`<br/>
-   CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`<br/>
+   - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`<br/>
+   - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`<br/>
     
 
 ## 公共脚本库
