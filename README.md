@@ -5,24 +5,25 @@
 
 ## 流媒体、视频编码、直播流测试库
 *  2016杭州·云栖大会集锦  
-    `
+    - `
     https://vodcdn.alicdn.com/oss/taobao-ugc/1dde6e764244406cbe5962b26eee078c/1476754829/video.mp4
     `
 *  阿里巴巴王坚完整版视频  
-    `
+    - `
     https://vodcdn.alicdn.com/oss/taobao-ugc/e6fb60eae8594f9e812233489bfa2732/1476578718/video.mp4
     `
 *  RTMP协议直播源&emsp;<br/>
-    - 亚太第一卫视(RTMP流)&emsp;`rtmp://v1.one-tv.com/live/mpegts.stream`<br/>
-    - 香港电视台直播&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`<br/>
-    - 亚太卫视&emsp;`rtmp://58.61.150.198/live/Livestream`<br/>
-    - 香港卫视公开的拉流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`<br/>
+    - 亚太第一卫视(RTMP流)&emsp;`rtmp://v1.one-tv.com/live/mpegts.stream`
+    - 香港电视台直播&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`
+    - 亚太卫视&emsp;`rtmp://58.61.150.198/live/Livestream`
+    - 香港卫视公开的拉流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/hks`
     - 香港卫视公开的推流地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
     - 香港卫视公开的推流测试地址&emsp;`rtmp://live.hkstv.hk.lxdns.com/live/tinywan123456`
-*  RTSP协议直播源&emsp;<br/> `rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov`
-*  HTTP协议直播源&emsp;<br/>
-   - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`<br/>
-   - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`<br/>
+*  RTSP协议直播源&emsp;
+    - `rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov`
+*  HTTP协议直播源&emsp;
+    - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`<br/>
+    - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`<br/>
     
 
 ## 公共脚本库
