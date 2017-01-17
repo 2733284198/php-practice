@@ -5,7 +5,7 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
-use Home\Model\AdminUserModel;
+use Common\Model\AdminUserModel;
 use Think\Page;
 
 class AdminUserController extends BaseController

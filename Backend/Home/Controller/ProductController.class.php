@@ -7,9 +7,7 @@
  * Mail: Overcome.wan@Gmail.com
  */
 namespace Home\Controller;
-
-use Home\Controller\BaseController;
-use Home\Model\ProductViewModel;
+use Common\Model\ProductViewModel;
 
 class ProductController extends BaseController
 {

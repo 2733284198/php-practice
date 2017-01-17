@@ -8,7 +8,7 @@
 namespace Home\Controller;
 
 use Home\Controller\BaseController;
-use Home\Model\AdminRoleModel;
+use Common\Model\AdminRoleModel;
 use Org\Util\Tree;
 
 class AdminRoleController extends BaseController

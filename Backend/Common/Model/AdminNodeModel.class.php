@@ -2,8 +2,7 @@
 /**
  * UserModel.class.php
  */
-namespace Home\Model;
-use Think\Model;
+namespace Common\Model;
 use Think\Model\RelationModel;
 
 class AdminNodeModel extends RelationModel{

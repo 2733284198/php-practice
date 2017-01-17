@@ -7,6 +7,7 @@
  */
 namespace Home\Controller;
 
+use Common\Model\ConfigModel;
 use Home\Controller\BaseController;
 use Think\Page;
 
@@ -94,6 +95,19 @@ class SystemController extends BaseController
             }
             $response = ['status' => 500, 'errmsg' => '权限改变失败', 'dataList' => 1];
             return $this->ajaxReturn($response, 'JSON');
+        }
+        $this->display();
+    }
+
+    //网站配置
+    public function set()
+    {
+
+        if(IS_POST){
+            $model = new ConfigModel();
+            $res = $model->store(I('post.'));
+            homePrint($res);
+            exit();
         }
         $this->display();
     }

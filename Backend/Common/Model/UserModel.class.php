@@ -2,9 +2,8 @@
 /**
  * UserModel.class.php
  */
-namespace Home\Model;
+namespace Common\Model;
 
-use Think\Model;
 use Think\Model\RelationModel;
 
 class UserModel extends RelationModel

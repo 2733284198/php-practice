@@ -6,9 +6,8 @@
  * Time: 14:11
  */
 
-namespace Home\Model;
+namespace Common\Model;
 
-use Think\Model;
 use Think\Model\ViewModel;
 
 class ProductViewModel extends ViewModel

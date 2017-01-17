@@ -51,7 +51,7 @@ define("OSS_URL","");
 define("LOGGER_PATH","./Logs");
 
 //composer的autoload自动加载原理
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
