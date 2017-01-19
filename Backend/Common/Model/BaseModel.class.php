@@ -8,17 +8,20 @@ use Think\Model;
  */
 class BaseModel extends Model
 {
-    //数据的保存
-    public function store($data)
+    /**
+     * 添加数据
+     * @param  array $data 添加的数据
+     * @return int          新增的数据id
+     */
+    public function addData($data)
     {
-        if ($this->create($data)) {
-            $action = isset($data[$this->pk]) ? "save" : "add";
-            $res = $this->$action($data);
-
-            return ['status' => 'success', 'data' => $res, 'message' => '操作成功'];
+        // 去除键值首尾的空格
+        foreach ($data as $k => $v) {
+            $data[$k] = trim($v);
         }
-
-        return ['status' => 'failed', 'message' => $this->getError() ?: '未知错误'];
+        $id = $this->add($data);
+        return $id;
     }
+
 
 }

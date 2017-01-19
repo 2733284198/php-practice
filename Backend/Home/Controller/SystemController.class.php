@@ -99,13 +99,12 @@ class SystemController extends BaseController
         $this->display();
     }
 
-    //网站配置
+    //调用一个基类的保存数据的方法
     public function set()
     {
-
-        if(IS_POST){
+        if(IS_GET){
             $model = new ConfigModel();
-            $res = $model->store(I('post.'));
+            $res = $model->addData(I('get.'));
             homePrint($res);
             exit();
         }
