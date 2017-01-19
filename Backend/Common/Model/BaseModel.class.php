@@ -23,5 +23,21 @@ class BaseModel extends Model
         return $id;
     }
 
+    /**
+     * 修改数据
+     * @param   array $map where语句数组形式
+     * @param   array $data 数据
+     * @return  boolean         操作是否成功
+     */
+    public function editData($map, $data)
+    {
+        // 去除键值首位空格
+        foreach ($data as $k => $v) {
+            $data[$k] = trim($v);
+        }
+        $result = $this->where($map)->save($data);
+        return $result;
+    }
+
 
 }

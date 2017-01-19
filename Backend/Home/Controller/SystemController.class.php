@@ -99,8 +99,10 @@ class SystemController extends BaseController
         $this->display();
     }
 
-    //调用一个基类的保存数据的方法
-    public function set()
+    /**
+     * 调用一个基类的保存数据的方法 BaseModel->addData
+     */
+    public function addData()
     {
         if(IS_GET){
             $model = new ConfigModel();
@@ -111,6 +113,13 @@ class SystemController extends BaseController
         $this->display();
     }
 
+    /**
+     * 调用一个基类的编辑数据的方法 BaseModel->editData
+     */
+    public function editData()
+    {
+
+    }
 
 
 }
