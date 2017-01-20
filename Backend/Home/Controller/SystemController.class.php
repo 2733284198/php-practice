@@ -118,7 +118,7 @@ class SystemController extends BaseController
      */
     public function editData()
     {
-
+        $model = D('Config');
     }
 
 
