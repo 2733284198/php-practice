@@ -68,7 +68,7 @@ class GetCityByIpController extends Controller
     {
         if (empty($ip)) $ip = $this->get_ip();
 
-        $res = @file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
+        $res = CURL_GET_REQUEST_HTTP('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
         if (empty($res)) return false;
 
         $jsonMatches = array();
