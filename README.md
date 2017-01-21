@@ -64,6 +64,7 @@
 *  WebSocket&emsp;`HTML5/WebSocketController` 
 *  PHP-FFmpeg&emsp;`Home/FFmpegController`  
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
+*  Intervention Image 基本用法&emsp;`Home/ImageController` 
 *  __E=mc__
 
 ## 视频播放插件
