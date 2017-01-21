@@ -26,6 +26,10 @@
     - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`
     - CCTV5高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8`
     
+## FFmpeg录制、转换以及流化音视频的解决方案
+*  用FFmpeg将网络直播源拉取到内网，切片成m3u8+ts
+    `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+
 
 ## 公共脚本库
 *  Bootstrap/css&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
