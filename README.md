@@ -35,6 +35,10 @@
     - `ffmpeg -rtsp_transport tcp -i rtsp://admin:12345@192.168.18.252:554/h264/ch1/main/av_stream -c:a copy -c:v libx264 -f flv rtmp://公网IP地址/live/tinywan123`
 *  将rtmp流，以文件的形势保存到本地
     - `ffmpeg -i "rtmp://tinywan.www.com/live123/4008899 live=1" -acodec copy -vcodec copy -f flv -y F:\Tinywan\Video\RTMPtest2test.flv`
+*  列出本机的设备
+    - `ffmpeg -list_devices true -f dshow -i dummy`
+*  FFmpeg进行笔记本摄像头+麦克风实现流媒体直播服务
+    - `ffmpeg -f dshow -i video="Lenovo EasyCamera":audio="麦克风 (Realtek High Definition Audio)" -vcodec libx264 -acodec copy -preset:v ultrafast -tune:v zerolatency -f flv "rtmp://aitech.com/live/tinywan123"`
 
 ## 公共脚本库
 *  Bootstrap/css&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
