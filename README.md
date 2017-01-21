@@ -33,7 +33,8 @@
     - `ffmpeg -i rtsp://192.168.18.240:554/onvif/live/1 -c:a copy -c:v libx264 -f flv "rtmp://公网IP地址/live/tinywan123"`
 *  将本地摄像头RTSP流拉取到公网RTMP流(TCP协议传送)
     - `ffmpeg -rtsp_transport tcp -i rtsp://admin:12345@192.168.18.252:554/h264/ch1/main/av_stream -c:a copy -c:v libx264 -f flv rtmp://公网IP地址/live/tinywan123`
-
+*  将rtmp流，以文件的形势保存到本地
+    - `ffmpeg -i "rtmp://tinywan.www.com/live123/4008899 live=1" -acodec copy -vcodec copy -f flv -y F:\Tinywan\Video\RTMPtest2test.flv`
 
 ## 公共脚本库
 *  Bootstrap/css&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
