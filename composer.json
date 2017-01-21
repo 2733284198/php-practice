@@ -19,7 +19,8 @@
         "hisune/echarts-php": "~1.0.6",
         "phpoffice/phpexcel": "^1.8",
         "matyhtf/swoole_framework": "dev-master",
-        "intervention/image": "1.*"
+        "intervention/image": "1.*",
+        "mpociot/botman": "^1.3"
     },
     "minimum-stability": "dev",
     "autoload":{
