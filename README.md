@@ -27,8 +27,12 @@
     - CCTV5高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8`
     
 ## FFmpeg录制、转换以及流化音视频的解决方案
-*  用FFmpeg将网络直播源拉取到内网，切片成m3u8+ts
+*  用FFmpeg将网络直播源(RTMP流)拉取到内网，切片成m3u8+ts
     - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+*  用FFmpeg将本地摄像头RTSP流拉取到公网RTMP流(默认使用UDP协议传送)
+    - `ffmpeg -i rtsp://192.168.18.240:554/onvif/live/1 -c:a copy -c:v libx264 -f flv "rtmp://公网IP地址/live/tinywan123"`
+*  用FFmpeg将本地摄像头RTSP流拉取到公网RTMP流(TCP协议传送)
+    - `ffmpeg -rtsp_transport tcp -i rtsp://admin:12345@192.168.18.252:554/h264/ch1/main/av_stream -c:a copy -c:v libx264 -f flv rtmp://公网IP地址/live/tinywan123`
 
 
 ## 公共脚本库
