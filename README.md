@@ -28,7 +28,7 @@
     
 ## FFmpeg录制、转换以及流化音视频的解决方案
 *  用FFmpeg将网络直播源拉取到内网，切片成m3u8+ts
-    `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+    - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
 
 
 ## 公共脚本库
