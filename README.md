@@ -70,6 +70,7 @@
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 *  Intervention Image 基本用法&emsp;`Home/ImageController` 
 *  __E=mc__
+*  PHP GitHub API 2.0
 
 ## 视频播放插件
 *  Sewise&emsp;`HTML5/SewiseController/Index`  
