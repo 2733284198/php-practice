@@ -72,6 +72,12 @@
 *  __E=mc__
 *  PHP GitHub API 2.0
 
+## 常用单利模式调用
+*   Redis实例：`RedisInstance::Instance`
+*   PDO实例：`PDOInstance::Instance`
+*   OSS实例：`OssInstance::Instance`
+*   MonoLog实例：`MonoLogInstance::Instance`
+
 ## 视频播放插件
 *  Sewise&emsp;`HTML5/SewiseController/Index`  
 *  JPlayer&emsp;`HTML5/JPlayerController/Index`  
