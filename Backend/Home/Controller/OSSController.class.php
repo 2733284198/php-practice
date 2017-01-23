@@ -39,6 +39,7 @@ class OSSController extends Controller
 
     /**
      * 【ok!】上传一个文件
+     *  遇到的问题：刚开始在这里一直上传一个文件夹，始终上传不了，检查到最后结果是文件路径多一个‘/’,这个应该是官方的Debug吧！哈哈
      */
     public function uploadFile()
     {
@@ -63,6 +64,7 @@ class OSSController extends Controller
 
     /**
      * 【ok!】上传一个文件夹
+     *  一次性Success
      */
     public function uploadDir()
     {
@@ -101,8 +103,6 @@ class OSSController extends Controller
         }
         print(__FUNCTION__ . ": OK" . "\n");
     }
-
-
 
 
     /**
