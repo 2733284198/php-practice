@@ -115,13 +115,7 @@ class IndexController extends BaseController
 
     public function test()
     {
-        global $a, $b;
-        $this->testFunction();
-        $this->testFunction();
-        $this->testFunction();
-        $this->testFunction();
-        print_r($GLOBALS);
-        homePrint($GLOBALS['_SESSION']);
+        phpinfo();
 
     }
 

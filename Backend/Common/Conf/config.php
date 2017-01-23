@@ -116,4 +116,14 @@ return array(
         '__APP_JS__'         => __ROOT__.trim(TMPL_PATH,'.').'App/Public/js',
         '__APP_IMAGES__'     => __ROOT__.trim(TMPL_PATH,'.').'App/Public/images'
     ),
+
+    /************************************************************************************************************
+     *          阿里云OSS存储配置信息
+     *************************************************************************************************************/
+    'ALIOSS_CONFIG'          => array(
+        'accessKeyId'        => 'gyPMyJ8Tn5pTRmx0', // 阿里云oss key_id
+        'accessKeySecret'    => 'SSyqdcAwkBsvlCD6Ka22jPxwYYrLGx', // 阿里云oss key_secret
+        'endpoint'           => 'oss-cn-shanghai.aliyuncs.com', // 阿里云oss endpoint
+        'BUCKET'             => 'tinywan01'  // bucken 名称
+    ),
 );
