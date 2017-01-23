@@ -127,7 +127,7 @@ VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
 
 <ul>
-    <ol><input type="checkbox" checked disabled>fsdfds</ol>
+    <ol><input type="checkbox" checked disabled></ol>
     <ol><input type="checkbox" checked disabled>3213</ol>
     <ol><input type="checkbox" checked disabled>3213213</ol>
 </ul>
