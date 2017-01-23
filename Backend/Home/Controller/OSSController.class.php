@@ -11,6 +11,7 @@
  * '-------------------------------------------------------------------*/
 
 namespace Home\Controller;
+use Org\Util\OssInstance;
 use OSS\Core\OssException;
 use OSS\OssClient;
 use Think\Controller;
@@ -27,7 +28,7 @@ class OSSController extends Controller
      */
     public function ossClient()
     {
-       var_dump(oss_instance());
+       var_dump(OssInstance::Instance());
     }
 
     /**

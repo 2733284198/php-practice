@@ -1034,22 +1034,6 @@ function CURL_REQUEST_HTTP($url, $post = '', $cookie = '', $returnCookie = 0)
  *************************************************************************************************************/
 
 /**
- * 实例化阿里云oos
- * @return object 实例化得到的对象
- */
-function oss_instance()
-{
-    $config = C('OSS_CONFIG');
-    try {
-        $ossObject = new \OSS\OssClient($config['accessKeyId'],$config['accessKeySecret'],$config['endpoint']);
-    } catch (\OSS\Core\OssException $e) {
-        print $e->getMessage();
-        return false;
-    }
-    return $ossObject;
-}
-
-/**
  * 上传文件到oss并删除本地文件
  * @param  string $path 文件路径
  * @return bollear      是否上传
