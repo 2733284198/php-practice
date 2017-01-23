@@ -1,6 +1,7 @@
 
 # Work experience based on ThinkPhp framework
 [![Tinywan](https://img.shields.io/badge/Tinywan-PHP__Experience-ff69b4.svg)](http://www.cnblogs.com/tinywan/)
+:mortar_board:  视频播放器插件、阿里云OSS存储、支付宝即时到账接口、Redis缓存、PHPmailer批量发送邮件、Monolog 日志工具、ECharts 图标、PDO预处理、PHP-FFmpeg、WebSocket、无限级分类、RBAC、AngularJS等等
 
 [![doodle]][doodle-story]
 
