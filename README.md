@@ -76,13 +76,13 @@
 *  PHP GitHub API 2.0
 
 ## 常用单利模式调用
-*   <input type="checkbox" checked disabled>Redis实例：`RedisInstance::Instance`
+*   Redis实例：`RedisInstance::Instance`
 *   <input type="checkbox" checked disabled>PDO实例：`PDOInstance::Instance`
 *   <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
 *   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
 
 `
-<table border="1">
+<table>
   <tr>
     <th>Month</th>
     <th>Savings</th>
