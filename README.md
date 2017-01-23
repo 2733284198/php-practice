@@ -126,8 +126,18 @@ VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
 
-*   <input type="checkbox" checked disabled>
-*   <input type="checkbox" checked disabled>
-*   <input type="checkbox" checked disabled>
-*   <input type="checkbox" checked disabled>
-*   <input type="checkbox" checked disabled>
+<html>
+<head>
+    <title>2.1 JW Player 7 API Changes</title>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+</head>
+<body>
+<input type="checkbox" checked disabled>
+
+<ul>
+    <ol><input type="checkbox" checked disabled>fsdfds</ol>
+    <ol><input type="checkbox" checked disabled>3213</ol>
+    <ol><input type="checkbox" checked disabled>3213213</ol>
+</ul>
+</body>
+</html>
