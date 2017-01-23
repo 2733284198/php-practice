@@ -28,6 +28,8 @@
     - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`
     - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`
     - CCTV5高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8`
+
+[![Tinywan](https://img.shields.io/badge/Tinywan-PHP__Experience-ff69b4.svg)](http://www.cnblogs.com/tinywan/)
     
 ## FFmpeg录制、转换以及流化音视频的解决方案
 *  将网络直播源(RTMP流)拉取到内网(本地文件)，切片成m3u8+ts
@@ -91,8 +93,6 @@ SwfObject | HTML5/SwfObjectController/Index| 1~2S | 30s | 20s| 推荐
 Video | HTML5/VideoController/Index| 15s | 30s | 20s| ~
 VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 
-[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
-[![Yii2](https://img.shields.io/badge/Tinywan------green.svg)](http://www.yiiframework.com/)
 
 ## VideoJs插件播放一个RTMP视频流
 ```
