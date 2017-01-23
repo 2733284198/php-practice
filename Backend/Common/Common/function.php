@@ -52,18 +52,18 @@ function curl_get_contents($url)
  * @return string      获取到的数据
  * DEMO:
  * $header = [
-        'Authorization:Basic ODgyODYwOjY3YzJiMWU1NmFkYWQ0Yzg3YzM4NmU4YjIzZTFhYjIx',
-        'Lecloud-api-version:0.4'
-    ];
-    $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
-    $res = curl_header_get_contents($url,$header);
+ * 'Authorization:Basic ODgyODYwOjY3YzJiMWU1NmFkYWQ0Yzg3YzM4NmU4YjIzZTFhYjIx',
+ * 'Lecloud-api-version:0.4'
+ * ];
+ * $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
+ * $res = curl_header_get_contents($url,$header);
  */
-function curl_header_get_contents($url,$header)
+function curl_header_get_contents($url, $header)
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
-    curl_setopt($ch,CURLOPT_HTTPHEADER,$header);       //设置头信息的地方
-    curl_setopt($ch,CURLOPT_HEADER,0);                //是否显示头部信息
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);       //设置头信息的地方
+    curl_setopt($ch, CURLOPT_HEADER, 0);                //是否显示头部信息
     curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);        //返回结果
     $res = curl_exec($ch);
@@ -1029,7 +1029,7 @@ function CURL_REQUEST_HTTP($url, $post = '', $cookie = '', $returnCookie = 0)
     }
 }
 
- /************************************************************************************************************
+/************************************************************************************************************
  *          阿里云接口
  *************************************************************************************************************/
 
@@ -1037,11 +1037,16 @@ function CURL_REQUEST_HTTP($url, $post = '', $cookie = '', $returnCookie = 0)
  * 实例化阿里云oos
  * @return object 实例化得到的对象
  */
-function new_oss(){
-    vendor('Alioss.autoload');
-    $config=C('ALIOSS_CONFIG');
-    $oss=new \OSS\OssClient($config['KEY_ID'],$config['KEY_SECRET'],$config['END_POINT']);
-    return $oss;
+function oss_instance()
+{
+    $config = C('OSS_CONFIG');
+    try {
+        $ossObject = new \OSS\OssClient($config['accessKeyId'],$config['accessKeySecret'],$config['endpoint']);
+    } catch (\OSS\Core\OssException $e) {
+        print $e->getMessage();
+        return false;
+    }
+    return $ossObject;
 }
 
 /**
@@ -1049,17 +1054,18 @@ function new_oss(){
  * @param  string $path 文件路径
  * @return bollear      是否上传
  */
-function oss_upload($path){
+function oss_upload($path)
+{
     // 获取bucket名称
-    $bucket=C('ALIOSS_CONFIG.BUCKET');
+    $bucket = C('ALIOSS_CONFIG.BUCKET');
     // 先统一去除左侧的.或者/ 再添加./
-    $oss_path=ltrim($path,'./');
-    $path='./'.$oss_path;
+    $oss_path = ltrim($path, './');
+    $path = './' . $oss_path;
     if (file_exists($path)) {
         // 实例化oss类
-        $oss=new_oss();
+        $oss = new_oss();
         // 上传到oss
-        $oss->uploadFile($bucket,$oss_path,$path);
+        $oss->uploadFile($bucket, $oss_path, $path);
         // 如需上传到oss后 自动删除本地的文件 则删除下面的注释
         // unlink($path);
         return true;
@@ -1071,10 +1077,11 @@ function oss_upload($path){
  * 删除oss上指定文件
  * @param  string $object 文件路径 例如删除 /Public/README.md文件  传Public/README.md 即可
  */
-function oss_delet_object($object){
+function oss_delet_object($object)
+{
     // 实例化oss类
-    $oss=new_oss();
+    $oss = new_oss();
     // 获取bucket名称
-    $bucket=C('ALIOSS_CONFIG.BUCKET');
-    $test=$oss->deleteObject($bucket,$object);
+    $bucket = C('ALIOSS_CONFIG.BUCKET');
+    $test = $oss->deleteObject($bucket, $object);
 }

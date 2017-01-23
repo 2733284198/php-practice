@@ -120,7 +120,7 @@ return array(
     /************************************************************************************************************
      *          阿里云OSS存储配置信息
      *************************************************************************************************************/
-    'ALIOSS_CONFIG'          => array(
+    'OSS_CONFIG'          => array(
         'accessKeyId'        => 'gyPMyJ8Tn5pTRmx0', // 阿里云oss key_id
         'accessKeySecret'    => 'SSyqdcAwkBsvlCD6Ka22jPxwYYrLGx', // 阿里云oss key_secret
         'endpoint'           => 'oss-cn-shanghai.aliyuncs.com', // 阿里云oss endpoint

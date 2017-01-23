@@ -27,15 +27,7 @@ class OSSController extends Controller
      */
     public function ossClient()
     {
-        $accessKeyId = "gyPMyJ8Tn5pTRmx0"; ;
-        $accessKeySecret = "SSyqdcAwkBsvlCD6Ka22jPxwYYrLGx";
-        $endpoint = "oss-cn-shanghai.aliyuncs.com";
-        try {
-            $ossClient = new OssClient($accessKeyId, $accessKeySecret, $endpoint);
-        } catch (OssException $e) {
-            print $e->getMessage();
-        }
-        return  $ossClient;
+       var_dump(oss_instance());
     }
 
     /**
