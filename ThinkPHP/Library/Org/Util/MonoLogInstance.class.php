@@ -39,7 +39,7 @@ class MonoLogInstance
         if (is_object(self::$_logger_instance)) return self::$_logger_instance;
         try {
             self::$_logger_instance = new Logger('admin_Log');
-            self::$_logger_instance->pushHandler(new StreamHandler('Logs/to/instance_class.log',Logger::DEBUG));
+            self::$_logger_instance->pushHandler(new StreamHandler(LOGGER_PATH.'/to/instance_class.log',Logger::DEBUG));
             self::$_logger_instance->pushHandler(new FirePHPHandler());
         } catch (Exception $e) {
             $instance = new Logger('Class_Log');

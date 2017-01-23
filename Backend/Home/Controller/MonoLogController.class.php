@@ -100,7 +100,7 @@ class MonoLogController extends Controller
 
     }
 
-    //自定义日志格式
+    //自定义日志格式 customizeFormat
     public function customizeFormat()
     {
         $dateFormat = "Y n j, g:i a";
