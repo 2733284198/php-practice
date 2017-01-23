@@ -43,7 +43,7 @@ class OSSController extends Controller
     public function uploadFile()
     {
         $bucket = C("OSS_CONFIG.bucket");
-        $object = 'Uploads/20160815/57b14a3ef1fd.png'; //！！！注意：这里要强调的是这个文件路径前面没有‘/’
+        $object = 'Uploads/BaiduApp/BaiduApp_v1.0.zip'; //！！！注意：这里要强调的是这个文件路径前面没有‘/’
         $file = './' . $object;  //这个才是文件在本地的真实路径，也是就是你要上传的文件信息
         $oss = OssInstance::Instance();
         try {
