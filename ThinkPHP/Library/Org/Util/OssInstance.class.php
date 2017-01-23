@@ -27,13 +27,21 @@ class OssInstance
     {
     }
 
+    /**
+     * 单例方法,用于访问实例的公共的静态方法
+     * @return bool|null|OssClient
+     * @static
+     */
     public static function Instance()
     {
         if (is_object(self::$_oss_instance)) return self::$_oss_instance;
         try {
-            self::$_oss_instance = new OssClient(C('OSS_CONFIG.accessKeyId'), C('OSS_CONFIG.accessKeySecret'), C('OSS_CONFIG.endpoint'));
+            self::$_oss_instance = new OssClient(C('OSS_CONFIG.accessKeyId'), C('OSS_CONFIG'), C('OSS_CONFIG.endpoint'));
         } catch (OssException $e) {
-            print $e->getMessage();
+            MonoLogInstance::Instance()->addError(__CLASS__.'can not be instantiated err_msg:'.$e->getMessage(),array(
+                   'function'=> __METHOD__,
+                    'line' =>__LINE__
+            ));
             return false;
         }
         return self::$_oss_instance;

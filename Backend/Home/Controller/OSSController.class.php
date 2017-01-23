@@ -11,6 +11,7 @@
  * '-------------------------------------------------------------------*/
 
 namespace Home\Controller;
+use Org\Util\MonoLogInstance;
 use Org\Util\OssInstance;
 use OSS\Core\OssException;
 use OSS\OssClient;
@@ -28,7 +29,8 @@ class OSSController extends Controller
      */
     public function ossClient()
     {
-       var_dump(OssInstance::Instance());
+        $logger = OssInstance::Instance();
+        var_dump($logger);
     }
 
     /**

@@ -8,8 +8,6 @@
  */
 
 namespace Org\Util;
-
-
 use Monolog\Handler\FirePHPHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -32,24 +30,23 @@ class MonoLogInstance
     }
 
     /**
-     *  单例方法,用于访问实例的公共的静态方法
-     *  这个只是一个实例
-     *  这个实例方法适合于连接到别的Redis数据库中去。列如：在项目中选择不同的Redis数据库
-     * @return \Redis
+     * 单例方法,用于访问实例的公共的静态方法
+     * @return bool|Logger|null
      * @static
      */
     public static function Instance()
     {
         if (is_object(self::$_logger_instance)) return self::$_logger_instance;
         try {
-            self::$_logger_instance = new Logger('Admin_Log');
-            self::$_logger_instance->pushHandler(new StreamHandler('Logs/to/admin_home.log',Logger::DEBUG));
+            self::$_logger_instance = new Logger('admin_Log');
+            self::$_logger_instance->pushHandler(new StreamHandler('Logs/to/instance_class.log',Logger::DEBUG));
             self::$_logger_instance->pushHandler(new FirePHPHandler());
         } catch (Exception $e) {
-            print $e->getMessage();
+            $instance = new Logger('Class_Log');
+            $instance->pushHandler(new StreamHandler('Logs/to/error.log',Logger::ERROR));
+            $instance->addInfo('MonoLogInstance 单利模式实例化失败');
             return false;
         }
-
         return self::$_logger_instance;
     }
 
