@@ -82,16 +82,9 @@
 *   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
 
 ## 版本记录
-第一表头 | 第二表头
------------- | -------------
-第一单元格内容 | 第二单元格内容
-第一列内容 | 第二列内容
-
-|播放器         | 代码路径           | RTMP延迟  |HLS延迟  |FLV延迟  |
-| ------------- |:-------------:| -----:|
-| Sewise      | right-aligned | $1600 |
-| JPlayer      | centered      |   $12 |
-| Jwplayer | are neat      |    $1 |
+第一表头 | 代码路径| RTMP延迟| HLS延迟| FLV延迟
+------------ | -------------| -------------| -------------| -------------
+Sewise | `HTML5/SewiseController/Index`| 5s | 30s | 20s
 
 
 ## 视频播放插件
