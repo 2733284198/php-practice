@@ -2,10 +2,6 @@
 [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)]()
 # Work experience based on ThinkPhp framework
 >":mortar_board:  主要有视频播放器插件、阿里云OSS存储、支付宝即时到账接口、Redis缓存、PHPmailer批量发送邮件、Monolog 日志工具、ECharts 图标、PDO预处理、PHP-FFmpeg、WebSocket、无限级分类、RBAC、AngularJS等等"
-[![doodle]][doodle-story]
-
-[doodle]: https://www.google.com/logos/doodles/2016/googles-18th-birthday-5661535679545344-hp2x.gif "Google 18岁啦"
-[doodle-story]: https://www.google.com.hk/search?q=Google
 
 ## 后台演示
 ![image](https://github.com/Tinywan/PHP_Experience/blob/master/Public/GitHub/Images/readme2.jpg)
@@ -95,6 +91,11 @@ SwfObject | HTML5/SwfObjectController/Index| 1~2S | 30s | 20s| 推荐
 Video | HTML5/VideoController/Index| 15s | 30s | 20s| ~
 VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 
+## Google
+[![doodle]][doodle-story]
+
+[doodle]: https://www.google.com/logos/doodles/2016/googles-18th-birthday-5661535679545344-hp2x.gif "Google 18岁啦"
+[doodle-story]: https://www.google.com.hk/search?q=Google
 
 ## VideoJs插件播放一个RTMP视频流
 ```
