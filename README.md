@@ -91,6 +91,8 @@ SwfObject | HTML5/SwfObjectController/Index| 1~2S | 30s | 20s| 推荐
 Video | HTML5/VideoController/Index| 15s | 30s | 20s| ~
 VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
+[![Yii2](https://img.shields.io/wordpress/plugin/r/akismet.svg)](http://www.yiiframework.com/)
 
 ## VideoJs插件播放一个RTMP视频流
 ```
