@@ -4,7 +4,7 @@
 [doodle-story]: https://www.google.com.hk/search?q=Google
 
 ## 后台演示
-![image](https://github.com/Tinywan/PHP_Experience/blob/master/Public/GitHub/Images/readme1.jpg)
+![image](https://github.com/Tinywan/PHP_Experience/blob/master/Public/GitHub/Images/readme2.jpg)
 
 ## 流媒体、视频编码、直播流测试库
 *  2016杭州·云栖大会集锦  
@@ -76,12 +76,23 @@
 *  PHP GitHub API 2.0
 
 ## 常用单利模式调用
-*   Redis实例：`RedisInstance::Instance`
-*   PDO实例：`PDOInstance::Instance`
-*   OSS实例：`OssInstance::Instance`
-*   MonoLog实例：`MonoLogInstance::Instance`
+*   <input type="checkbox" checked disabled>Redis实例：`RedisInstance::Instance`
+*   <input type="checkbox" checked disabled>PDO实例：`PDOInstance::Instance`
+*   <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
+*   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
 
-https://img.shields.io/teamcity/codebetter/bt428.svg
+`
+<table border="1">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+`
 
 ## 视频播放插件
 *  Sewise&emsp;`HTML5/SewiseController/Index`  
