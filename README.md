@@ -81,17 +81,12 @@
 *   <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
 *   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
 
-## 版本更行记录
-<table>
-  <tr>
-    <th>Month</th>
-    <th>Savings</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-</table>
+## 版本记录
+|Tables         | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 
 ## 视频播放插件
