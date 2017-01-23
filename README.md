@@ -82,8 +82,7 @@
 *   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
 
 ## 版本记录
-|Tables         | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+|播放器         | 代码路径           | RTMP延迟  |HLS延迟  |FLV延迟  |
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
