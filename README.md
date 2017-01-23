@@ -78,6 +78,8 @@
 *   OSS实例：`OssInstance::Instance`
 *   MonoLog实例：`MonoLogInstance::Instance`
 
+https://img.shields.io/teamcity/codebetter/bt428.svg
+
 ## 视频播放插件
 *  Sewise&emsp;`HTML5/SewiseController/Index`  
 *  JPlayer&emsp;`HTML5/JPlayerController/Index`  
