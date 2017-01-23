@@ -11,17 +11,22 @@
  * '-------------------------------------------------------------------*/
 
 namespace Home\Controller;
+
 use Org\Util\MonoLogInstance;
 use Org\Util\OssInstance;
 use OSS\Core\OssException;
 use OSS\OssClient;
 use Think\Controller;
 
+/**
+ * help:https://yq.aliyun.com/articles/54024?spm=5176.doc32099.2.3.ar8ra2
+ */
 class OSSController extends Controller
 {
     public function index()
     {
         echo __METHOD__;
+
     }
 
     /**
@@ -29,26 +34,76 @@ class OSSController extends Controller
      */
     public function ossClient()
     {
-        $logger = OssInstance::Instance();
-        var_dump($logger);
+        OssInstance::Instance();
     }
 
     /**
-     * 文件操作
+     * 【ok!】上传一个文件
      */
-    public function fileOption()
+    public function uploadFile()
     {
-        $bucket = "tinywan01";
-        $object = "Images";
-        $content = __ROOT__ . '/Uploads/20160815/57b14a3ef1fd9.png';
+        $bucket = C("OSS_CONFIG.bucket");
+        $object = 'Uploads/20160815/57b14a3ef1fd.png'; //！！！注意：这里要强调的是这个文件路径前面没有‘/’
+        $file = './' . $object;  //这个才是文件在本地的真实路径，也是就是你要上传的文件信息
+        $oss = OssInstance::Instance();
         try {
-            $responseResult = $this->ossClient()->putObject($bucket, $object, $content);
+            $oss->uploadFile($bucket, $object, $file);
         } catch (OssException $e) {
-            print $e->getMessage();
+            //Writes the current log
+            MonoLogInstance::Instance()->addError('Oss Upload file failed err_msg:' . $e->getMessage(),
+                [
+                    'function' => __METHOD__,
+                    'line' => __LINE__
+                ]
+            );
+            return false;
         }
-
-        var_dump($responseResult);
+        print(__FUNCTION__ . ": OK" . "\n");
     }
+
+    /**
+     * 【ok!】上传一个文件夹
+     */
+    public function uploadDir()
+    {
+        $bucket = "tinywan-test002";
+        $object = "images";
+        $content = './Uploads/BaiduApp'; // 这里的已经是根目录了
+        $oss = OssInstance::Instance();
+        $responseResult = $oss->uploadDir($bucket, $object, $content);
+        if (!empty($responseResult['succeededList'])) {
+            echo 'success';
+            var_dump($responseResult['succeededList']);
+        } else {
+            exit('error!');
+        }
+    }
+
+    /**
+     * 上传字符串作为object的内容
+     *
+     * @param OssClient $ossClient OSSClient实例
+     * @param string $bucket 存储空间名称
+     * @return null
+     */
+    public function putObject()
+    {
+        $ossClient = OssInstance::Instance();
+        $bucket = 'tinywan-test002';
+        $object = "./Uploads/test-object-name.txt";
+        $content = file_get_contents(__FILE__);
+        try {
+            $ossClient->putObject($bucket, $object, $content);
+        } catch (OssException $e) {
+            printf(__FUNCTION__ . ": FAILED\n");
+            printf($e->getMessage() . "\n");
+            return;
+        }
+        print(__FUNCTION__ . ": OK" . "\n");
+    }
+
+
+
 
     /**
      * 存储空间操作
@@ -57,7 +112,7 @@ class OSSController extends Controller
     {
         $bucket = "tinywan-test002";
         try {
-            $responseResult = $this->ossClient()->createBucket($bucket);
+            $responseResult = OssInstance::Instance()->createBucket($bucket);
         } catch (OssException $e) {
             print $e->getMessage();
         }
@@ -71,9 +126,9 @@ class OSSController extends Controller
      */
     public function responseResult()
     {
-        $bucketListInfo = $this->ossClient()->listBuckets();
+        $bucketListInfo = OssInstance::Instance()->listBuckets();
         $bucketList = $bucketListInfo->getBucketList();
-        foreach($bucketList as $bucket) {
+        foreach ($bucketList as $bucket) {
             print($bucket->getLocation() . "\t" . $bucket->getName() . "\t" . $bucket->getCreatedate() . "\n");
         }
     }

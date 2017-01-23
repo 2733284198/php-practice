@@ -36,7 +36,7 @@ class OssInstance
     {
         if (is_object(self::$_oss_instance)) return self::$_oss_instance;
         try {
-            self::$_oss_instance = new OssClient(C('OSS_CONFIG.accessKeyId'), C('OSS_CONFIG'), C('OSS_CONFIG.endpoint'));
+            self::$_oss_instance = new OssClient(C('OSS_CONFIG.accessKeyId'), C('OSS_CONFIG.accessKeySecret'), C('OSS_CONFIG.endpoint'));
         } catch (OssException $e) {
             MonoLogInstance::Instance()->addError(__CLASS__.'can not be instantiated err_msg:'.$e->getMessage(),array(
                    'function'=> __METHOD__,

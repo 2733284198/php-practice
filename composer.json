@@ -3,12 +3,12 @@
     "description": "the ThinkPHP Framework",
     "type": "framework",
     "keywords": ["framework","thinkphp","ORM"],
-    "homepage": "http://thinkphp.cn/",
+    "homepage": "http://www.cnblogs.com/tinywan/",
     "license": "Apache2",
     "authors": [
         {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
+            "name": "Tinywan",
+            "email": "ovecome.wan@gmail.com"
         }
     ],
     "require": {
