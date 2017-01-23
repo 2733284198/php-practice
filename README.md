@@ -130,3 +130,4 @@ VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 *   <input type="checkbox" checked disabled>
 *   <input type="checkbox" checked disabled>
 *   <input type="checkbox" checked disabled>
+*   <input type="checkbox" checked disabled>
