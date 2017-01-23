@@ -18,7 +18,7 @@ class OssInstance
      * 类对象实例数组,共有静态变量
      * @var null
      */
-    private static $_instance;
+    private static $_oss_instance;
 
     /**
      * 私有化构造函数，防止类外实例化
@@ -29,14 +29,14 @@ class OssInstance
 
     public static function Instance()
     {
-        if (is_object(self::$_instance)) return self::$_instance;
+        if (is_object(self::$_oss_instance)) return self::$_oss_instance;
         try {
-            self::$_instance = new OssClient(C('OSS_CONFIG.accessKeyId'), C('OSS_CONFIG.accessKeySecret'), C('OSS_CONFIG.endpoint'));
+            self::$_oss_instance = new OssClient(C('OSS_CONFIG.accessKeyId'), C('OSS_CONFIG.accessKeySecret'), C('OSS_CONFIG.endpoint'));
         } catch (OssException $e) {
             print $e->getMessage();
             return false;
         }
-        return self::$_instance;
+        return self::$_oss_instance;
     }
 
     /**

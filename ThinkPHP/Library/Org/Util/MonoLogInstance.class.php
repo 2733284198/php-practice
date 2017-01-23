@@ -21,7 +21,7 @@ class MonoLogInstance
      * 类对象实例数组,共有静态变量
      * @var null
      */
-    private static $_instance;
+    private static $_logger_instance;
 
     /**
      * 私有化构造函数，防止类外实例化
@@ -40,16 +40,17 @@ class MonoLogInstance
      */
     public static function Instance()
     {
-        if (is_object(self::$_instance)) return self::$_instance;
+        if (is_object(self::$_logger_instance)) return self::$_logger_instance;
         try {
-            $logger = new Logger('Admin_Log');
-            $logger->pushHandler(new StreamHandler('Logs/to/admin_home.log',Logger::DEBUG));
-            $logger->pushHandler(new FirePHPHandler());
+            self::$_logger_instance = new Logger('Admin_Log');
+            self::$_logger_instance->pushHandler(new StreamHandler('Logs/to/admin_home.log',Logger::DEBUG));
+            self::$_logger_instance->pushHandler(new FirePHPHandler());
         } catch (Exception $e) {
             print $e->getMessage();
             return false;
         }
-        return $logger;
+
+        return self::$_logger_instance;
     }
 
     /**
