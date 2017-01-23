@@ -81,24 +81,16 @@
 *   <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
 *   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
 
-## 版本记录
+## 视频播放插件
 播放器 | 代码路径| RTMP延迟| HLS延迟| FLV延迟| 描述
 ------------ | -------------| -------------| -------------| -------------| -------------
-Sewise | HTML5/SewiseController/Index| 5s | 30s | 20s| 20s
-JPlayer | HTML5/JPlayerController/Index| 5s | 30s | 20s| 20s
-Jwplayer | HTML5/JwplayerController/Index| 5s | 30s | 20s| 20s
-SwfObject | HTML5/SwfObjectController/Index| 5s | 30s | 20s| 20s
-Video | HTML5/VideoController/Index| 5s | 30s | 20s| 20s
-VideoJS | HTML5/VideoJSController/Index| 5s | 30s | 20s| 20s
+Sewise | HTML5/SewiseController/Index| 20s | 30s | 20s| ~
+JPlayer | HTML5/JPlayerController/Index| 15s | 30s | 20s| ~
+Jwplayer | HTML5/JwplayerController/Index| 15s | 30s | 20s| ~
+SwfObject | HTML5/SwfObjectController/Index| 1~2S | 30s | 20s| 推荐
+Video | HTML5/VideoController/Index| 15s | 30s | 20s| ~
+VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 
-
-## 视频播放插件
-*  Sewise&emsp;`HTML5/SewiseController/Index`  
-*  JPlayer&emsp;`HTML5/JPlayerController/Index`  
-*  Jwplayer&emsp;`HTML5/JwplayerController/Index`  
-*  SwfObject&emsp;`HTML5/SwfObjectController/Index` :&emsp;播放RTMP流：1~2S之内
-*  Video&emsp;`HTML5/VideoController/Index`  
-*  VideoJS&emsp;`HTML5/VideoJSController/Index`:&emsp;`播放RTMP流：3~5S之内
 
 ## VideoJs插件播放一个RTMP视频流
 ```
