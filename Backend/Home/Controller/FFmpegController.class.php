@@ -38,16 +38,18 @@ class FFmpegController extends Controller
             ->synchronize();
         //截取视频图片 2s 时候截取
         $video->frame(Coordinate\TimeCode::fromSeconds(2))
-            ->save($outPutPath.'\windows-10.jpg');
+            ->save(MEDIA_PATH.'\windows-10.jpg');
         //编码视频编码为X264 同时输出保存
-        $video->save(new Format\Video\X264(), $outPutPath.'windows-10.mp4');
+        $video->save(new Format\Video\X264(), MEDIA_PATH.'\windows-10.mp4')
+              ->save(new Format\Video\WMV(),MEDIA_PATH.'\windows-wmv.wmv')
+              ->save(new Format\Video\WebM(),MEDIA_PATH.'\windows-webm.webm');
         var_dump($video);
     }
 
     //Basic Usage StackOverflow
     public function movie()
     {
-        $videoPath = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/out.mpg';
+        $videoPath = 'F:\Tinywan\Video\out.mpg';
         $movie = new \ffmpeg_movie($videoPath, true);
         var_dump($movie->getDuration());
     }
