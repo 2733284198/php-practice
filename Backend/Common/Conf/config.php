@@ -126,4 +126,9 @@ return array(
         'endpoint'           => 'oss-cn-shanghai.aliyuncs.com', // 阿里云oss endpoint
         'bucket'             => 'tinywan-test002'  // bucket 名称
     ),
+
+    /**
+     * thinkphp自定义模板标签
+     */
+    'TAGLIB_BUILD_IN'       =>  'Cx,Common\Tag\My',   //加载自定义标签
 );

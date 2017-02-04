@@ -296,7 +296,7 @@ php;
     public function _webuploaderjs(){
         $str=<<<php
 <script>
-    var BASE_URL = '__PUBLIC__/statics/webuploader-0.1.5';
+    var BASE_URL = '__PUBLIC__/Common/statics/webuploader-0.1.5';
 </script>
 <script src="//cdn.staticfile.org/webuploader/0.1.5/webuploader.min.js"></script>
 php;
