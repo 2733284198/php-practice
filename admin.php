@@ -53,7 +53,7 @@ define("OSS_URL","");
 // 定义Loger path
 define("LOGGER_PATH",dirname(__FILE__)."/Logs");
 
-//定义媒体存放路径
+//定义多媒体存放路径
 define("MEDIA_PATH",dirname(__FILE__)."/Media");
 
 //composer的autoload自动加载原理
