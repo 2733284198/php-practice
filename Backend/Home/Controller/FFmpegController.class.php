@@ -18,6 +18,8 @@ class FFmpegController extends Controller
     }
 
     /**
+     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 功能：读取视频、设置视频大小、截取视频图片、保存编码过的图片
      * Basic Usageerrdsadsa
      * 在这里可以使用不同的路径
      * 项目路径：这个一定是全域名路径的(http://www.thinkphpstudy.com/Uploads/FFmpegVideo/)
@@ -26,15 +28,19 @@ class FFmpegController extends Controller
     public function createFFmpeg()
     {
         //$path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/'; //项目路径
-        $path = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
+        $inPutPath = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
+        $outPutPath = 'F:\Tinywan\Video\outVideo\\';   //视频输出路径
         $ffmpeg = FFMpeg::create();
-        $video = $ffmpeg->open($path);
+        $video = $ffmpeg->open($inPutPath);
+        //设置视频大小
         $video->filters()
             ->resize(new Coordinate\Dimension(320, 240))
             ->synchronize();
-        $video->frame(Coordinate\TimeCode::fromSeconds(10))
-            ->save($path . 'frame.jpg');
-        $video->save(new Format\Video\X264(), 'windows-10.mp4');
+        //截取视频图片 2s 时候截取
+        $video->frame(Coordinate\TimeCode::fromSeconds(2))
+            ->save($outPutPath.'\windows-10.jpg');
+        //编码视频编码为X264 同时输出保存
+        $video->save(new Format\Video\X264(), $outPutPath.'windows-10.mp4');
         var_dump($video);
     }
 
@@ -48,7 +54,7 @@ class FFmpegController extends Controller
 
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
-     *  MP4 to MP3
+     *  功能：MP4格式到MP3格式转换
      *  如果命令可以执行，运行以下行PHP代码配置FFMpeg包装器，并使用它为您的应用程序创建真棒视频功能。
      */
     public function mp4_to_mp3()
