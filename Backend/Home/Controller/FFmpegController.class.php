@@ -8,6 +8,8 @@ use FFMpeg\Coordinate;
 use FFMpeg\FFProbe;
 use FFMpeg\Format;
 use FFMpeg\Filters;
+use FFMpeg\Media\Gif;
+use FFMpeg\Media\Waveform;
 use Think\Controller;
 
 
@@ -33,6 +35,7 @@ class FFmpegController extends Controller
         $inPutPath = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
         $outPutPath = 'F:\Tinywan\Video\outVideo\\';   //视频输出路径
         $ffmpeg = FFMpeg::create();
+        //打开资源
         $video = $ffmpeg->open($inPutPath);
         //设置视频大小
         $video->filters()
@@ -145,6 +148,36 @@ class FFmpegController extends Controller
         var_dump($video);
     }
 
+    /**
+     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 转码进度可以实时监控，有关详细信息
+     */
+    public function Transcoding()
+    {
+        $ffmpeg = FFMpeg::create();
+        $MP4Path = 'F:\Tinywan\Video\out.mpg';
+        $video = $ffmpeg->open($MP4Path);
+        $format = new Format\Video\X264();
+        $format->on('progress',function ($video, $format, $percentage){
+            echo "$percentage % transcoded"."<br/>";
+        });
+
+        $format->setKiloBitrate(1000)->setAudioChannels(2)->setAudioKiloBitrate(256);
+        $video->save($format,'video.avi');
+    }
+
+    /**
+     * gif是从视频序列中提取的动画图像。
+     */
+    public function gif()
+    {
+        $ffmpeg = FFMpeg::create();
+        $video = $ffmpeg->open('F:\Tinywan\Video\out.mpg');
+        $video->gif(Coordinate\TimeCode::fromSeconds(2),new Coordinate\Dimension(640,480),3);
+        $video->save('12312321.gif');
+
+    }
+
     public function debugInfo()
     {
         //打印编译步骤信息
@@ -201,7 +234,7 @@ class FFmpegController extends Controller
      * Transcoding StackOverflow
      * 您可以使用音频转码FFMpeg\Media\Audio:save的方法。您将通过一个FFMpeg\Format\FormatInterface针对
      */
-    public function Transcoding()
+    public function Transcoding12321321()
     {
         $ffmpeg = FFMpeg::create();
         $MP4Path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/ffmpeg_mp4.mp4';
