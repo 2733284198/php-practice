@@ -1,6 +1,8 @@
 <?php
 namespace Home\Controller;
 
+use Alchemy\BinaryDriver\Listeners\DebugListener;
+use FFMpeg\Exception\ExecutableNotFoundException;
 use FFMpeg\FFMpeg;
 use FFMpeg\Coordinate;
 use FFMpeg\FFProbe;
@@ -38,20 +40,27 @@ class FFmpegController extends Controller
             ->synchronize();
         //截取视频图片 2s 时候截取
         $video->frame(Coordinate\TimeCode::fromSeconds(2))
-            ->save(MEDIA_PATH.'\windows-10.jpg');
+            ->save(MEDIA_PATH . '\windows-10.jpg');
         //编码视频编码为X264 同时输出保存
-        $video->save(new Format\Video\X264(), MEDIA_PATH.'\windows-10.mp4')
-              ->save(new Format\Video\WMV(),MEDIA_PATH.'\windows-wmv.wmv')
-              ->save(new Format\Video\WebM(),MEDIA_PATH.'\windows-webm.webm');
+        $video->save(new Format\Video\X264(), MEDIA_PATH . '\windows-10.mp4')
+            ->save(new Format\Video\WMV(), MEDIA_PATH . '\windows-wmv.wmv')
+            ->save(new Format\Video\WebM(), MEDIA_PATH . '\windows-webm.webm');
         var_dump($video);
     }
 
-    //Basic Usage StackOverflow
-    public function movie()
+    /**
+     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 获取一个视频的编码格式 h264
+     * 获取一个视频的时长
+     */
+    public function FFProbe()
     {
-        $videoPath = 'F:\Tinywan\Video\out.mpg';
-        $movie = new \ffmpeg_movie($videoPath, true);
-        var_dump($movie->getDuration());
+        $ffprobe = FFProbe::create();
+        $MP4Path = 'F:\Tinywan\Video\out.mpg';
+        $encodeFormat = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_name');
+        echo '视频格式为：' . $encodeFormat . "<br/>";
+        $duration = $ffprobe->format($MP4Path)->get('duration');
+        echo '视频的时长:' . $duration . 's';
     }
 
     /**
@@ -67,7 +76,7 @@ class FFmpegController extends Controller
             'timeout' => 3600,
             'ffmpeg.threads' => 12,
         ]);
-        $MP4Path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/ffmpeg_mp4.mp4';
+        $MP4Path = 'F:\Tinywan\Video\image.mp4';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         // Set an audio format
@@ -85,15 +94,64 @@ class FFmpegController extends Controller
     public function extracting_image()
     {
         $ffmpeg = FFMpeg::create();
-        $MP4Path = 'F:\Tinywan\Video\ImageOut.mpg';
+        $MP4Path = 'F:\Tinywan\Video\out.mpg';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         $rand = mt_rand(000, 222);
         //Set an image cut time
         $frame = $video->frame(Coordinate\TimeCode::fromSeconds($rand));
         // Extract the image into a new file
-        $images = $frame->save('ffmpeg_mp4_' . $rand . '.jpg');
+        $images = $frame->save(MEDIA_PATH . '\ffmpeg_mp4_' . $rand . '.jpg');
         var_dump($images);
+    }
+
+    /**
+     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     *  提取多张图像
+     */
+    public function extracting_multiple_image()
+    {
+        $ffmpeg = FFMpeg::create();
+        $MP4Path = 'F:\Tinywan\Video\out.mpg';
+        $video = $ffmpeg->open($MP4Path);
+        $video->filters()
+            ->extractMultipleFrames(Filters\Video\ExtractMultipleFramesFilter::FRAMERATE_EVERY_2SEC, MEDIA_PATH . '/image/')//这是是一个文件夹
+            ->synchronize();
+        $video->save(new Format\Video\X264(), MEDIA_PATH . '/extracting_multiple_image.mp4'); //这里必须执行输出文件名
+        var_dump($video);
+    }
+
+    /**
+     * 功能：视频剪切
+     * 注意：开始时间和持续时间必须小于视频总时间否则编码错误！！！
+     * 剪辑过滤器有两个参数：
+     *      $start的一个实例FFMpeg\Coordinate\TimeCode，指定了剪辑的开始点
+     *      $duration的，可选的一个实例FFMpeg\Coordinate\TimeCode，指定了剪辑的持续时间
+     *
+     */
+    public function Clip($startTime = 200, $duration = 25)
+    {
+        $ffmpeg = FFMpeg::create();
+        $ffprobe = FFProbe::create();
+        $MP4Path = 'F:\Tinywan\Video\output64.mp4';
+        $video = $ffmpeg->open($MP4Path);
+        $currentDuration = $ffprobe->format($MP4Path)->get('duration');
+        //判断截取的视频长度是否大于视频本身最大长度，
+        if (($startTime + $duration) > floor($currentDuration)) exit('截取视频长度参数错误!请合理的设置开始时间和持续时间');
+        //开始截取
+        $video->filters()->clip(Coordinate\TimeCode::fromSeconds($startTime), Coordinate\TimeCode::fromSeconds($duration));
+        $video->save(new Format\Video\X264(), floor($currentDuration).'_'.$startTime.'_'.$duration.'.mp4');
+        var_dump($video);
+    }
+
+    public function debugInfo()
+    {
+        //打印编译步骤信息
+        $ffmpeg = FFMpeg::create();
+        $ffmpeg->getFFMpegDriver()->listen(new DebugListener());
+        $ffmpeg->getFFMpegDriver()->on('debug', function ($message) {
+            echo $message . "/n";
+        });
     }
 
     /**
@@ -115,25 +173,26 @@ class FFmpegController extends Controller
     /**
      * Watermark
      * 使用给定图像对视频进行水印。
+     * 错误信息：Encoding failed
      */
     public function videoWatermark()
     {
+        $inPutPath = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
         $ffmpeg = FFMpeg::create([
             'ffmpeg.binaries' => 'd:\ffmpeg\bin\ffmpeg.EXE',
             'ffprobe.binaries' => 'd:\ffmpeg\bin\ffprobe.exe',
             'timeout' => 3600,
             'ffmpeg.threads' => 12,
         ]);
-        $MP4Path = 'F:\Tinywan\Video\fooimage2.avi';
-        $watermarkPath = 'F:\Tinywan\Video\00018.jpg';
-        $video = $ffmpeg->open($MP4Path);
-        $watermark = $video->filters()->watermark($watermarkPath, array(
-            'position' => 'relative',
-            'bottom' => 50,
-            'right' => 50,
+        $video = $ffmpeg->open($inPutPath);
+        $watermarkPath = 'F:\Tinywan\Video\amailogo.png';
+        $video->filters()->watermark($watermarkPath, array(
+            'position' => 'absolute',
+            'x' => 1180,
+            'y' => 620,
         ));
-        // Extract the image into a new file
-        $video->save($watermark, 'fooimage2_Watermark.avi');
+        //编码视频编码为X264 同时输出保存
+        $video->save(new Format\Video\X264(), 'Watermark2.mp4');
         var_dump($video);
     }
 
@@ -174,20 +233,6 @@ class FFmpegController extends Controller
         var_dump($video);
     }
 
-    /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
-     * 获取一个视频的编码格式 h264
-     * 获取一个视频的时长
-     */
-    public function FFProbe()
-    {
-        $ffprobe = FFProbe::create();
-        $MP4Path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/ffmpeg_mp4.mp4';
-        $encodeFormat = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_name');
-        echo '视频格式为：' . $encodeFormat . "<br/>";
-        $duration = $ffprobe->format($MP4Path)->get('duration');
-        echo '视频的时长:' . $duration . 's';
-    }
 
     public function test()
     {
