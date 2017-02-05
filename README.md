@@ -68,7 +68,7 @@
 *  PDO预处理&emsp;`Home/DataBaseController/pdoExample1` 
 *  Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
 *  WebSocket&emsp;`HTML5/WebSocketController` 
-*  PHP-FFmpeg&emsp;`Home/FFmpegController`  
+*  PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`  
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 *  Intervention Image 基本用法&emsp;`Home/ImageController` 
 *  __E=mc__
