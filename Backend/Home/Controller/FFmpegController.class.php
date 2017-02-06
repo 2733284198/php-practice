@@ -21,6 +21,12 @@ class FFmpegController extends Controller
         echo 'FFmpeg';
     }
 
+    //返回一个ffmpeg实例
+    public static function ffmpeg()
+    {
+        return FFMpeg::create();
+    }
+
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
      * 功能：读取视频、设置视频大小、截取视频图片、保存编码过的图片
@@ -53,17 +59,54 @@ class FFmpegController extends Controller
 
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
-     * 获取一个视频的编码格式 h264
-     * 获取一个视频的时长
+     * 【1】获取一个视频的编码格式 h264
+     * 【2】获取一个视频的时长
+     *  -profile:v baseline 注意使用--profile选项和无损编码是不兼容的。
+     *   这将会关闭很多高级特性，但是它会提供很好的兼容性。也许你可能不需要这些设置，因为一旦你用了这些设置，在同样的视频质量下与更高的编码档次相比会使比特率稍有增加。
      */
     public function FFProbe()
     {
         $ffprobe = FFProbe::create();
-        $MP4Path = 'F:\Tinywan\Video\out.mpg';
-        $encodeFormat = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_name');
-        echo '视频格式为：' . $encodeFormat . "<br/>";
-        $duration = $ffprobe->format($MP4Path)->get('duration');
-        echo '视频的时长:' . $duration . 's';
+        $MP4Path = 'F:\Tinywan\Video\cutVideo.mp4';
+
+        //获取一个视频的编码格式 h264
+        $probeArr['视频时长'] = $ffprobe->format($MP4Path)->get('duration');
+        //视频信息
+        $probeArr['视频信息']['index'] = $ffprobe->streams($MP4Path)->videos()->first()->get('index');
+        $probeArr['视频信息']['视频格式'] = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_name');
+        $probeArr['视频信息']['全视频格式'] = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_long_name');
+        $probeArr['视频信息']['画质'] = $ffprobe->streams($MP4Path)->videos()->first()->get('profile');
+        $probeArr['视频信息']['类型'] = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_type');
+        $probeArr['视频信息']['codec_tag_string'] = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_tag_string');
+        $probeArr['视频信息']['codec_tag'] = $ffprobe->streams($MP4Path)->videos()->first()->get('codec_tag');
+        $probeArr['视频信息']['宽度'] = $ffprobe->streams($MP4Path)->videos()->first()->get('width');
+        $probeArr['视频信息']['高度'] = $ffprobe->streams($MP4Path)->videos()->first()->get('height');
+        $probeArr['视频信息']['has_b_frames'] = $ffprobe->streams($MP4Path)->videos()->first()->get('has_b_frames');
+        $probeArr['视频信息']['显示比例'] = $ffprobe->streams($MP4Path)->videos()->first()->get('display_aspect_ratio');
+        $probeArr['视频信息']['采样纵横比'] = $ffprobe->streams($MP4Path)->videos()->first()->get('sample_aspect_ratio');
+        $probeArr['视频信息']['level'] = $ffprobe->streams($MP4Path)->videos()->first()->get('level');
+        $probeArr['视频信息']['r_frame_rate'] = $ffprobe->streams($MP4Path)->videos()->first()->get('r_frame_rate');
+        $probeArr['视频信息']['avg_frame_rate'] = $ffprobe->streams($MP4Path)->videos()->first()->get('avg_frame_rate');
+        $probeArr['视频信息']['time_base'] = $ffprobe->streams($MP4Path)->videos()->first()->get('time_base');
+        $probeArr['视频信息']['disposition'] = $ffprobe->streams($MP4Path)->videos()->first()->get('disposition');
+        //音频信息
+        $probeArr['音频信息']['index'] = $ffprobe->streams($MP4Path)->audios()->first()->get('index');
+        $probeArr['音频信息']['音频格式'] = $ffprobe->streams($MP4Path)->audios()->first()->get('codec_name');
+        $probeArr['音频信息']['全音频格式'] = $ffprobe->streams($MP4Path)->audios()->first()->get('codec_long_name');
+        $probeArr['音频信息']['类型'] = $ffprobe->streams($MP4Path)->audios()->first()->get('codec_type');
+        $probeArr['音频信息']['codec_time_base'] = $ffprobe->streams($MP4Path)->audios()->first()->get('codec_time_base');
+        $probeArr['音频信息']['codec_tag_string'] = $ffprobe->streams($MP4Path)->audios()->first()->get('codec_tag_string');
+        $probeArr['音频信息']['codec_tag'] = $ffprobe->streams($MP4Path)->audios()->first()->get('codec_tag');
+        $probeArr['音频信息']['sample_fmt'] = $ffprobe->streams($MP4Path)->audios()->first()->get('sample_fmt');
+        $probeArr['音频信息']['sample_rate'] = $ffprobe->streams($MP4Path)->audios()->first()->get('sample_rate');
+        $probeArr['音频信息']['channels'] = $ffprobe->streams($MP4Path)->audios()->first()->get('channels');
+        $probeArr['音频信息']['bits_per_sample'] = $ffprobe->streams($MP4Path)->audios()->first()->get('bits_per_sample');
+        $probeArr['音频信息']['"r_frame_rate'] = $ffprobe->streams($MP4Path)->audios()->first()->get('"r_frame_rate');
+        $probeArr['音频信息']['"avg_frame_rate'] = $ffprobe->streams($MP4Path)->audios()->first()->get('"avg_frame_rate');
+        $probeArr['音频信息']['时间基准'] = $ffprobe->streams($MP4Path)->audios()->first()->get('time_base');
+        $probeArr['音频信息']['start_time'] = $ffprobe->streams($MP4Path)->audios()->first()->get('start_time');
+        $probeArr['音频信息']['disposition'] = $ffprobe->streams($MP4Path)->audios()->first()->get('disposition');
+        homePrint($probeArr);
     }
 
     /**
@@ -127,7 +170,7 @@ class FFmpegController extends Controller
     /**
      * 【测试通过！！！！！！！！！！！！！！！！！！！！】
      * 功能：视频剪切
-     * 注意：开始时间和持续时间必须小于视频总时间否则编码错误！！！
+     * 注意：开始时间和持续时间之和必须小于视频总时间否则编码错误！！！
      * 剪辑过滤器有两个参数：
      *      $start的一个实例FFMpeg\Coordinate\TimeCode，指定了剪辑的开始点
      *      $duration的，可选的一个实例FFMpeg\Coordinate\TimeCode，指定了剪辑的持续时间
@@ -144,7 +187,7 @@ class FFmpegController extends Controller
         if (($startTime + $duration) > floor($currentDuration)) exit('截取视频长度参数错误!请合理的设置开始时间和持续时间');
         //开始截取
         $video->filters()->clip(Coordinate\TimeCode::fromSeconds($startTime), Coordinate\TimeCode::fromSeconds($duration));
-        $video->save(new Format\Video\X264(), floor($currentDuration).'_'.$startTime.'_'.$duration.'.mp4');
+        $video->save(new Format\Video\X264(), floor($currentDuration) . '_' . $startTime . '_' . $duration . '.mp4');
         var_dump($video);
     }
 
@@ -158,12 +201,12 @@ class FFmpegController extends Controller
         $MP4Path = 'F:\Tinywan\Video\out.mpg';
         $video = $ffmpeg->open($MP4Path);
         $format = new Format\Video\X264();
-        $format->on('progress',function ($video, $format, $percentage){
-            echo "$percentage % transcoded"."<br/>";
+        $format->on('progress', function ($video, $format, $percentage) {
+            echo "$percentage % transcoded" . "<br/>";
         });
 
         $format->setKiloBitrate(1000)->setAudioChannels(2)->setAudioKiloBitrate(256);
-        $video->save($format,'video.avi');
+        $video->save($format, 'video.avi');
     }
 
     /**
@@ -173,7 +216,7 @@ class FFmpegController extends Controller
     {
         $ffmpeg = FFMpeg::create();
         $video = $ffmpeg->open('F:\Tinywan\Video\out.mpg');
-        $video->gif(Coordinate\TimeCode::fromSeconds(2),new Coordinate\Dimension(640,480),3);
+        $video->gif(Coordinate\TimeCode::fromSeconds(2), new Coordinate\Dimension(640, 480), 3);
         $video->save('12312321.gif');
 
     }
