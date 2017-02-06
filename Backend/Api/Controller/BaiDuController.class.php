@@ -23,8 +23,9 @@ class BaiDuController
         echo __METHOD__;
     }
 
-    public static function requestUrl($header, $url)
+    public static function baiDuRequestUrl($url)
     {
+        $header = ['apikey:cbbaa61823ce797038df761b3e947861'];
         // 添加apikey到header
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
@@ -35,27 +36,20 @@ class BaiDuController
         return $res;
     }
 
+    /**
+     * 城市交通查询
+     */
     public function base()
     {
         $id = "wutaishan";
         $url = "http://apis.baidu.com/apistore/attractions/spot?id=" . $id . "&output=json";
-        $header = ['apikey:cbbaa61823ce797038df761b3e947861'];
-        $res = self::requestUrl($header, $url);
+        $res = self::baiDuRequestUrl($url);
         var_dump(json_decode($res, true));
     }
 
-    //二维码生成
-    public function qrcode()
-    {
-        $ch = curl_init();
-        $content = "tel:13669361192;email:7566874177@qq.com";
-        $url = 'http://apis.baidu.com/3023/qr/qrcode?size=8&qr=' . $content;
-        $header = ['apikey:cbbaa61823ce797038df761b3e947861'];
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        $res = curl_exec($ch);
-
-        var_dump(json_decode($res));
+    public function baiduBus(){
+        $url = 'http://apis.baidu.com/jundie/plate_number_ocr/place_number_ocr?format=json&pic_url=http%3A%2F%2Fwww.longyao.cc%2Fuserfiles%2Fimages%2F201203131542.jpg';
+        $res = self::baiDuRequestUrl($url);
+        var_dump(json_decode($res, true));
     }
 }
