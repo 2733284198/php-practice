@@ -25,7 +25,6 @@ use Think\Controller;
 
 class FFmpegController extends Controller
 {
-
     public function index()
     {
         echo 'FFmpeg';
@@ -38,7 +37,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      * 功能：读取视频、设置视频大小、截取视频图片、保存编码过的图片
      * Basic Usageerrdsadsa
      * 在这里可以使用不同的路径
@@ -68,7 +67,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      * 【1】获取一个视频的编码格式 h264
      * 【2】获取一个视频的时长
      *  -profile:v baseline 注意使用--profile选项和无损编码是不兼容的。
@@ -120,7 +119,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      *  功能：MP4格式到MP3格式转换
      *  如果命令可以执行，运行以下行PHP代码配置FFMpeg包装器，并使用它为您的应用程序创建真棒视频功能。
      */
@@ -143,7 +142,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      * Extracting image 提取图像f
      * 此代码返回一个FFMpeg\Media\Frame对应于第二实例42.您可以通过任何FFMpeg\Coordinate\TimeCode作为参数
      */
@@ -162,7 +161,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      *  提取多张图像
      */
     public function extracting_multiple_image()
@@ -178,7 +177,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      * 功能：视频剪切
      * 注意：开始时间和持续时间之和必须小于视频总时间否则编码错误！！！
      * 剪辑过滤器有两个参数：
@@ -202,7 +201,7 @@ class FFmpegController extends Controller
     }
 
     /**
-     * 【测试通过！！！！！！！！！！！！！！！！！！！！】
+     * 【调试成功】
      * 转码进度可以实时监控，有关详细信息
      */
     public function Transcoding()
@@ -214,7 +213,6 @@ class FFmpegController extends Controller
         $format->on('progress', function ($video, $format, $percentage) {
             echo "$percentage % transcoded" . "<br/>";
         });
-
         $format->setKiloBitrate(1000)->setAudioChannels(2)->setAudioKiloBitrate(256);
         $video->save($format, 'video.avi');
     }
