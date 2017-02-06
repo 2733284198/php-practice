@@ -72,6 +72,7 @@
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 *  Intervention Image 基本用法&emsp;`Home/ImageController` 
 *  Faker生成测试数据的PHP库&emsp;`Home/FakerController`
+*  一个简单的APi接口签名方法&emsp;`Home/SignEncryptController`
 *  __E=mc__
 *  PHP GitHub API 2.0
 
