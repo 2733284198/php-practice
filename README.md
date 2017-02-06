@@ -71,6 +71,7 @@
 *  PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`  
 *  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 *  Intervention Image 基本用法&emsp;`Home/ImageController` 
+*  Faker生成测试数据的PHP库&emsp;`Home/FakerController`
 *  __E=mc__
 *  PHP GitHub API 2.0
 

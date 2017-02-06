@@ -21,6 +21,7 @@ class FakerController
     {
         $faker = Factory::create();
         echo $faker->name."<br/>";
-        echo $faker->address;
+        echo $faker->address."<br/>";
+        echo $faker->text;
     }
 }
