@@ -1,4 +1,14 @@
 <?php
+/** .-------------------------------------------------------------------
+ * |  Github: https://github.com/Tinywan
+ * |  Blog: http://www.cnblogs.com/Tinywan
+ * |-------------------------------------------------------------------
+ * |  Author: Tinywan
+ * |  Date: 2017/1/20
+ * |  Time: 16:25
+ * |  Mail: Overcome.wan@Gmail.com
+ * |  Created by PhpStorm.
+ * '-------------------------------------------------------------------*/
 namespace Home\Controller;
 
 use Alchemy\BinaryDriver\Listeners\DebugListener;
@@ -208,6 +218,10 @@ class FFmpegController extends Controller
         $format->setKiloBitrate(1000)->setAudioChannels(2)->setAudioKiloBitrate(256);
         $video->save($format, 'video.avi');
     }
+
+    /** ----------------------------------------------------------------------------------------------------------------
+     *          一下部分正在调试部分 有Debug
+     * ---------------------------------------------------------------------------------------------------------------*/
 
     /**
      * gif是从视频序列中提取的动画图像。
