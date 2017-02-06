@@ -5,57 +5,18 @@
  * |-------------------------------------------------------------------
  * |  Author: Tinywan
  * |  Date: 2017/2/6
- * |  Time: 14:16
+ * |  Time: 15:17
  * |  Mail: Overcome.wan@Gmail.com
- * |  Created by PhpStorm.
+ * |  Function: 加密签名  doc: http://www.cnblogs.com/dcb3688/p/4608008.html
  * '-------------------------------------------------------------------*/
 
-namespace Api\Controller;
+namespace Home\Controller;
 
-/**
- * 百度API调用
- * http://apistore.baidu.com/
- */
-class BaiDuController
+
+class SignEncryptController
 {
-    public function index()
-    {
-        echo __METHOD__;
-    }
-
-    public static function baiDuRequestUrl($url)
-    {
-        $header = ['apikey:cbbaa61823ce797038df761b3e947861'];
-        // 添加apikey到header
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // 执行HTTP请求
-        curl_setopt($ch, CURLOPT_URL, $url);
-        $res = curl_exec($ch);
-        return $res;
-    }
-
     /**
-     * 城市交通查询
-     */
-    public function base()
-    {
-        $id = "wutaishan";
-        $url = "http://apis.baidu.com/apistore/attractions/spot?id=" . $id . "&output=json";
-        $res = self::baiDuRequestUrl($url);
-        var_dump(json_decode($res, true));
-    }
-
-    public function baiduBus()
-    {
-        $url = 'http://apis.baidu.com/jundie/plate_number_ocr/place_number_ocr?format=json&pic_url=http%3A%2F%2Fwww.longyao.cc%2Fuserfiles%2Fimages%2F201203131542.jpg';
-        $res = self::baiDuRequestUrl($url);
-        var_dump(json_decode($res, true));
-    }
-
-    /**
-     * 获取签名
+     * APi自定义签名方法
      * appId会在请求中作为一个应用标识参与接口请求的参数传递，appSecret 将作为唯一不需要参数传递,但是作为加密的参数
      */
     public function getSign()
@@ -88,6 +49,9 @@ class BaiDuController
         echo $sign;
     }
 
+    /**
+     * 字符串拼接签名方法
+     */
     public function getSign2()
     {
         $appid = 13669361192;
