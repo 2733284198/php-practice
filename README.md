@@ -127,4 +127,5 @@ VideoJS | HTML5/VideoJSController/Index| 3~5S | 30s | 20s| 推荐
 
 ## What is he thinking about?
 ![Tinywan](https://raw.githubusercontent.com/docker/dockercraft/master/docs/img/contribute.png)
+![Tinywan](https://github.com/Tinywan/PHP_Experience/blob/master/Public/Common/static/images/git-workflow-release.png)
 
