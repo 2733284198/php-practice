@@ -41,6 +41,9 @@
     - `ffmpeg -list_devices true -f dshow -i dummy`
 *  FFmpeg进行笔记本摄像头+麦克风实现流媒体直播服务
     - `ffmpeg -f dshow -i video="Lenovo EasyCamera":audio="麦克风 (Realtek High Definition Audio)" -vcodec libx264 -acodec copy -preset:v ultrafast -tune:v zerolatency -f flv "rtmp://aitech.com/live/tinywan123"`
+*  将本地摄像头RTSP流拉取到公网EasyDarwin流媒体服务器,播放RTSP流(TCP协议传送)
+    - 推流模式：`ffmpeg -i "rtsp://192.168.18.240:554/onvif/live/1" -vcodec copy -acodec copy  -rtsp_transport tcp -f rtsp "rtsp://114.55.107.180:10554/tinywan123.sdp"`
+    - 播放地址：`rtsp://114.55.107.180:10554/tinywan123.sdp`
 
 ## 公共脚本库
 *  Bootstrap/css&emsp;`http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css`
