@@ -39,6 +39,5 @@ class QiniuController extends Controller
         var_dump($ret);
         homePrint($error);
         die;
-
     }
 }
