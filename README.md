@@ -76,6 +76,7 @@
 *  Intervention Image 基本用法&emsp;`Home/ImageController` 
 *  Faker生成测试数据的PHP库&emsp;`Home/FakerController`
 *  一个简单的APi接口签名方法&emsp;`Home/SignEncryptController`
+*  Mobile_Detect是一个轻量级的PHP类,用于检测移动设备&emsp;`Home/MobileController`
 *  __E=mc__
 *  PHP GitHub API 2.0
 
