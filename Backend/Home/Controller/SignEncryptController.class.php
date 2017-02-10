@@ -75,8 +75,7 @@ class SignEncryptController
         $finalStr = $str . $appSecret;
         //4. 通过sha1加密,转化为大写大写获得签名
         $sign = strtoupper(sha1($finalStr));
-//        $url = "127.0.0.1/serviceResponse?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
-        $url = "http://sewise.amai8.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
+        $url = "127.0.0.1/serviceResponse?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");

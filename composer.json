@@ -26,7 +26,8 @@
         "aliyuncs/oss-sdk-php": "^2.2",
         "league/oauth2-client": "^1.4",
         "fzaninotto/faker": "^1.6",
-        "qiniu/php-sdk": "^7.1"
+        "qiniu/php-sdk": "^7.1",
+        "mobiledetect/mobiledetectlib": "^2.8"
     },
     "minimum-stability": "dev",
     "autoload":{
