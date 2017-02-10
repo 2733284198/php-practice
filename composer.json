@@ -25,7 +25,8 @@
         "php-http/guzzle6-adapter": "^1.1",
         "aliyuncs/oss-sdk-php": "^2.2",
         "league/oauth2-client": "^1.4",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "qiniu/php-sdk": "^7.1"
     },
     "minimum-stability": "dev",
     "autoload":{
