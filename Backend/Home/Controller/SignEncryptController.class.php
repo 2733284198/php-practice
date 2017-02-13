@@ -52,30 +52,17 @@ class SignEncryptController
     public function testRequest()
     {
         $appId = 13669361192;
-        $domainName = 'tinywan';
-        $appName = 'live';
+        $streamName = '4001486435195';
         $appSecret = 'eb9a365a9d37a1354e13ddd7973d5e02409ef451';
-        $allParam = [
-            'AppId' => $appId,
-            'AppName' => $appName,
-            'DomainName' => $domainName,
-        ];
-        // 1. 对加密数组进行字典排序
-        foreach ($allParam as $key => $value) {
-            $sortParam[$key] = $key;
-        }
-        // 2. 字典排序的作用就是防止因为参数顺序不一致而导致下面拼接加密不同
-        sort($sortParam);
-        // 3. 将Key和Value拼接
-        $str = "";
-        foreach ($sortParam as $k => $v) {
-            $str = $str . $sortParam[$k] . $allParam[$v];
-        }
-        //3.将appSecret作为拼接字符串的后缀,形成最后的字符串
-        $finalStr = $str . $appSecret;
-        //4. 通过sha1加密,转化为大写大写获得签名
-        $sign = strtoupper(sha1($finalStr));
-        $url = "127.0.0.1/serviceResponse?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
+        //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
+        $str = "AppId" . $appId  . "StreamName" . $streamName . $appSecret;
+        //签名串，由签名算法sha1生成
+        $sign = strtoupper(sha1($str));
+        echo $str."<br/>";
+        //请求资源访问路径以及请求参数，参数名必须为大写
+        $url = "http://sewise.amai8.com/openapi/liveStatus?AppId=" . $appId . "&StreamName=" . $streamName . "&Sign=" . $sign;
+        echo $url;
+        //CURL方式请求
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
@@ -83,7 +70,9 @@ class SignEncryptController
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
         $response = curl_exec($ch);
         curl_close($ch);
-        var_dump(json_decode($response, true));
+        homePrint($response);
+        //返回数据为JSON格式，进行转换为数组打印输出
+        homePrint(json_decode($response, true));
         die;
     }
 
@@ -143,4 +132,52 @@ class SignEncryptController
         $sign = strtoupper(sha1($finalStr));
         return $sign;
     }
+
+    /**
+     * 客户端请求API方法
+     */
+    public function testRequestSort()
+    {
+        //请求参数
+        $appId = 13669361192;
+        $domainName = 'tinywan.amai8.com';
+        $appName = 'live';
+        $streamName = '4001486435195';
+        $resumeTime = '2017-11-30  09:15:00';
+        //签名密钥
+        $appSecret = 'eb9a365a9d37a1354e13ddd7973d5e02409ef451';
+//        $allParam = [
+//            'AppId' => $appId,
+//            'DomainName' => $domainName,
+//            'AppName' => $appName,
+//            'StreamName' => $streamName,
+//            'ServiceArea' => $serviceArea,
+//        ];
+//        // 1. 对加密数组进行字典排序
+//        foreach ($allParam as $key => $value) {
+//            $sortParam[$key] = $key;
+//        }
+//        // 2. 字典排序的作用就是防止因为参数顺序不一致而导致下面拼接加密不同
+//        sort($sortParam);
+//        var_dump($sortParam);
+//        die;
+        //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
+        $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName . "ResumeTime" . $resumeTime . "StreamName" . $streamName . $appSecret;
+        //签名串，由签名算法sha1生成
+        $sign = strtoupper(sha1($str));
+        //请求资源访问路径以及请求参数，参数名必须为大写
+        $url = "http://sewise.amai8.com/openapi/setForbidLiveStream?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&ResumeTime=" . $resumeTime . "&StreamName=" . $streamName . "&Sign=" . $sign;
+        //CURL方式请求
+        $ch = curl_init() or die (curl_error());
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //返回数据为JSON格式，进行转换为数组打印输出
+        var_dump(json_decode($response, true));
+        die;
+    }
+
 }
