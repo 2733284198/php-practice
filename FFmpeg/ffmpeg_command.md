@@ -31,8 +31,8 @@
 *  直接抓取笔记本摄像头视频和音频到本地存储     
     `ffmpeg -f dshow -i video="USB Camera":audio="麦克风 (Conexant SmartAudio HD)" -vcodec libx264 -acodec copy -preset:v ultrafast ./tinywan_computer_out.mpg`    
  
-        
-    
+ ###strfime选项允许你导出按时间/日期信息命名的文件 "%Y-%m-%d_%H-%M-%S" 模板       
+    `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S.jpg"`    
     
     
     
