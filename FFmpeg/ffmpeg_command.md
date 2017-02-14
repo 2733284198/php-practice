@@ -44,11 +44,21 @@
      - 参数 `-re`：按时间戳读取文件(另外一种是直接读取,文件被迅速读完)
      - 参数 `-vcodec copy`：要加，否则ffmpeg会重新编码输入流格式
      - 参数 `-rtsp_transport`：传输协议，默认UDP
-### 网络流到本地流
+### 网络流和本地流切换
 *  使用FFmpeg转录网络直播流     
     - `ffmpeg -i http://60.199.188.151/HLS/WG_ETTV-N/index.m3u8 d:\cap.mp4`：CPU消耗很大    
     - `ffmpeg -i http://60.199.188.151/HLS/WG_ETTV-N/index.m3u8 -c:v copy -c:a copy -bsf:a aac_adtstoasc d:\cap.mp4`：CPU消耗很小    
-
+*  把文件当做直播推送至服务器 (RTMP + FLV)     
+    `ffmpeg - re -i demo.mp4 -c copy - f flv rtmp://w.gslb.letv/live/streamid`  
+*  将直播的媒体保存到本地     
+    `ffmpeg -i rtmp://r.glsb.letv/live/streamid -c copy streamfile.flv`
+*  将一个直播流，视频改用h264压缩，音频改用faac压缩，送至另一个直播服务器    
+    `ffmpeg -i rtmp://r.glsb.letv/live/streamidA -c:a libfaac -ar 44100 -ab 48k -c:v libx264 -vpre slow -vpre baseline -f flv rtmp://w.glsb.letv/live/streamb`
+*  将一个高清流，复制为几个不同视频清晰度的流重新发布，其中音频不变     
+    `ffmpeg -re -i rtmp://server/live/high_FMLE_stream -acodec copy -vcodec x264lib -s 640×360 -b 500k -vpre medium -vpre baseline rtmp://server/live/baseline_500k -acodec copy -vcodec x264lib -s 480×272 -b 300k -vpre medium -vpre baseline rtmp://server/live/baseline_300k -acodec copy -vcodec x264lib -s 320×200 -b 150k -vpre medium -vpre baseline rtmp://server/live/baseline_150k -acodec libfaac -vn -ab 48k rtmp://server/live/audio_only_AAC_48k`
+*  将直播的媒体保存到本地     
+    `ffmpeg -i rtmp://r.glsb.letv/live/streamid -c copy streamfile.flv`
+  
       
 
     
