@@ -1,7 +1,7 @@
 [![Tinywan](https://img.shields.io/badge/Tinywan-PHP__Experience-ff69b4.svg)](http://www.cnblogs.com/tinywan/)
 [![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)]()
 # Work experience based on ThinkPhp framework
-**&nbsp;&nbsp;&nbsp;&nbsp;主要有视频播放器插件、阿里云OSS存储、支付宝即时到账接口、Redis缓存、PHPmailer批量发送邮件、Monolog 日志工具、ECharts 图标、PDO预处理、PHP-FFmpeg、WebSocket、无限级分类、RBAC、AngularJS等等**
+**&nbsp;&nbsp;&nbsp;&nbsp;主要有视频播放器插件、阿里云OSS存储、支付宝即时到账接口、Redis缓存、PHPmailer批量发送邮件、Monolog 日志工具、ECharts图表库、PDO预处理、PHP-FFmpeg、WebSocket、无限级分类、RBAC、AngularJS等等**
 - - -
 ![image](https://github.com/Tinywan/PHP_Experience/blob/master/Public/GitHub/Images/readme2.jpg)
 
