@@ -37,11 +37,18 @@
     
 ### RTSP
 *  发送流到RTSP服务器     
-    `ffmpeg -re -rtsp_transport tcp -i "rtsp://192.168.18.240:554/onvif/live/1" -vcodec copy -f rtsp -muxdelay 0.1 rtsp://server/live.sdp`   
-     - __注意__ ：`-re一定要加，代表按照帧率发送，否则ffmpeg会一股脑地按最高的效率发送数据`
+    `ffmpeg -rtsp_transport tcp -i "rtsp://192.168.18.240:554/onvif/live/1" -vcodec copy -f rtsp -muxdelay 0.1 rtsp://server/live.sdp`    
+    `ffmpeg -re -i /input.avi -f rtsp -muxdelay 0.1 rtsp://12.34.56.78:5545/abc` 
+     - __注意__ ：`如果是本地视频，-re一定要加，代表按照帧率发送，否则ffmpeg会一股脑地按最高的效率发送数据`
+     - __建议__ ：`如果拉取的是一个摄像头的话，-re不要加`
      - 参数 `-re`：按时间戳读取文件(另外一种是直接读取,文件被迅速读完)
      - 参数 `-vcodec copy`：要加，否则ffmpeg会重新编码输入流格式
      - 参数 `-rtsp_transport`：传输协议，默认UDP
+### 网络流到本地流
+*  使用FFmpeg转录网络直播流     
+    - `ffmpeg -i http://60.199.188.151/HLS/WG_ETTV-N/index.m3u8 d:\cap.mp4`：CPU消耗很大    
+    - `ffmpeg -i http://60.199.188.151/HLS/WG_ETTV-N/index.m3u8 -c:v copy -c:a copy -bsf:a aac_adtstoasc d:\cap.mp4`：CPU消耗很小    
+
       
 
     
