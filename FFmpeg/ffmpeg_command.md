@@ -30,9 +30,18 @@
 ### 摄像头
 *  直接抓取笔记本摄像头视频和音频到本地存储     
     `ffmpeg -f dshow -i video="USB Camera":audio="麦克风 (Conexant SmartAudio HD)" -vcodec libx264 -acodec copy -preset:v ultrafast ./tinywan_computer_out.mpg`    
- 
- ###strfime选项允许你导出按时间/日期信息命名的文件 "%Y-%m-%d_%H-%M-%S" 模板       
+
+### 图片流
+*  strfime选项允许你导出按时间/日期信息命名的文件 "%Y-%m-%d_%H-%M-%S" 模板       
     `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S.jpg"`    
     
-    
+### RTSP
+*  发送流到RTSP服务器     
+    `ffmpeg -re -i input -f rtsp -muxdelay 0.1 rtsp://server/live.sdp`   
+     - __注意__ :-re一定要加，代表按照帧率发送，否则ffmpeg会一股脑地按最高的效率发送数据
+     - 参数 `-re`：按时间戳读取文件(另外一种是直接读取,文件被迅速读完)
+     - 参数 `-vcodec copy`：要加，否则ffmpeg会重新编码输入流格式
+     - 参数 `-re`：按时间戳读取文件(另外一种是直接读取,文件被迅速读完)
+      
+
     
