@@ -82,10 +82,10 @@
 - [ ] PHP GitHub API 2.0
 
 ## 常用单利模式调用
-*   Redis实例：`RedisInstance::Instance`
-*   <input type="checkbox" checked disabled>PDO实例：`PDOInstance::Instance`
-*   <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
-*   <input type="checkbox" checked disabled>MonoLog实例：`MonoLogInstance::Instance`
+*   - [x] Redis实例：`RedisInstance::Instance`
+*   - [x] PDO实例：`PDOInstance::Instance`
+*   - [x] <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
+*   - [x] MonoLog实例：`MonoLogInstance::Instance`
 
 ## 视频播放插件
 播放器 | 代码路径| RTMP延迟| HLS延迟| FLV延迟| 描述

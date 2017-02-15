@@ -26,6 +26,9 @@
 *  第二路流的音频：  
 `ffmpeg -i ./0001.mp4 -i ./0002.mp4 -map 1:1  -c copy -y ./0001_video.mp4`    
 
+*  第一路、第二路流的混合：  
+`ffmpeg -i ./0001.mp4 -i ./0002.mp4 -map 0:0 -map 0:1 -map 1:0 -map 1:1  -c copy -y ./0001_0002_audio_video.mp4`    
+
 
 ### 摄像头
 *  直接抓取笔记本摄像头视频和音频到本地存储     
