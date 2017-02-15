@@ -1,12 +1,12 @@
-# 音频通道操作
-## 操作音频通道
-#### 立体声→单声道流
+# 操作音频通道
+### 立体声→单声道流
 ![image](https://trac.ffmpeg.org/raw-attachment/wiki/AudioChannelManipulation/stereo_mono.png)
 *  将单个立体声流混合到单声道流。 立体声流的两个声道将被下混合成流：     
     `ffmpeg -i stereo.flac -ac 1 mono.flac`
     >注意：任何异相立体声将会消除   
     
-####立体→2×单声道文件
+### 立体→2×单声道文件   
+---   
 ![image](https://trac.ffmpeg.org/raw-attachment/wiki/AudioChannelManipulation/stereo_2mono_outputs.png)    
 *  将立体声输入中的每个通道输出到各个单声道文件：     
     `ffmpeg -i stereo.wav -map_channel 0.0.0 left.wav -map_channel 0.0.1 right.wav`      
