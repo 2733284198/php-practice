@@ -82,10 +82,23 @@
 - [ ] PHP GitHub API 2.0
 
 ## 常用单利模式调用
-*   - [x] Redis实例：`RedisInstance::Instance`
-*   - [x] PDO实例：`PDOInstance::Instance`
-*   - [x] <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
-*   - [x] MonoLog实例：`MonoLogInstance::Instance`
+- [x] Redis实例：`RedisInstance::Instance`
+- [x] PDO实例：`PDOInstance::Instance`
+- [x] <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
+- [x] MonoLog实例：`MonoLogInstance::Instance`
+
+## 支付功能
+*   支付宝支付
+    - [ ] 即时到帐
+    - [ ] 手机网站
+    - [ ] 移动支付
+    - [ ] 订单查询
+    - [ ] 退款
+    - [ ] 转款
+*   微信支付
+    - [ ] APP支付
+    - [ ] 公众号支付
+    - [ ] 扫码支付 
 
 ## 视频播放插件
 播放器 | 代码路径| RTMP延迟| HLS延迟| FLV延迟| 描述
