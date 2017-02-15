@@ -24,7 +24,7 @@ class WorkerManController extends Controller
      */
     public function handleMessage()
     {
-        Gateway::$registerAddress = '120.26.220.223:1238';
+        Gateway::$registerAddress = '120.2.0.3:1238';
         $token = $_POST['token'];
         $clientId = $_POST['clientId'];
         $content = $_POST['content'];
