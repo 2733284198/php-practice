@@ -9,9 +9,9 @@
 ### 视频
 *  FFmpeg concat 协议：     
     - [x] `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`   
- - [x] `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`   
+    - [x] `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`   
     - [x] `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`
-- [ ] `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`
+    - [ ] `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`
     
   
       

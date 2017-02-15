@@ -54,30 +54,30 @@
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
-*  基于角色的RBAC权限管理
-*  基于类的无限级分类和数据库的无限级分类
-*  非关系性数据库Redis
-*  单例模式:针对不同的Redis链接(主从复制)&emsp;`Org/Util/RedisInstance.class.php`
-*  存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
-*  消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
-*  读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
-*  多级模块化的管理
-*  Uploadify图片上传DEMO
-*  PHPmailer批量发送邮件&emsp;`Library/EmailController/register`
-*  支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
-*  用户注册邮箱激活和邮箱密码修改&emsp;`Library/EmailController/Index`
-*  AngularJS 框架&emsp;`Home/AngularJSController`
-*  Monolog 日志记录工具&emsp;`Home/MonoLogController` 
-*  ECharts 统计工具&emsp;`Home/EChartsController`
-*  PDO预处理&emsp;`Home/DataBaseController/pdoExample1` 
-*  Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
-*  WebSocket&emsp;`HTML5/WebSocketController` 
-*  PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`  
-*  数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
-*  Intervention Image 基本用法&emsp;`Home/ImageController` 
-*  Faker生成测试数据的PHP库&emsp;`Home/FakerController`
-*  一个简单的APi接口签名方法&emsp;`Home/SignEncryptController`
-*  Mobile_Detect是一个轻量级的PHP类,用于检测移动设备&emsp;`Home/MobileController`
+- [x] 基于角色的RBAC权限管理
+- [x] 基于类的无限级分类和数据库的无限级分类
+- [x] 非关系性数据库Redis
+- [x] 单例模式:针对不同的Redis链接(主从复制)&emsp;`Org/Util/RedisInstance.class.php`
+- [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
+- [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
+- [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
+- [x] 多级模块化的管理
+- [x] Uploadify图片上传DEMO
+- [x] PHPmailer批量发送邮件&emsp;`Library/EmailController/register`
+- [x] 支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
+- [x] 用户注册邮箱激活和邮箱密码修改&emsp;`Library/EmailController/Index`
+- [x] AngularJS 框架&emsp;`Home/AngularJSController`
+- [x] Monolog 日志记录工具&emsp;`Home/MonoLogController` 
+- [x] ECharts 统计工具&emsp;`Home/EChartsController`
+- [x] PDO预处理&emsp;`Home/DataBaseController/pdoExample1` 
+- [x] Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
+- [x] WebSocket&emsp;`HTML5/WebSocketController` 
+- [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`  
+- [x] 数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
+- [x] Intervention Image 基本用法&emsp;`Home/ImageController` 
+- [x] Faker生成测试数据的PHP库&emsp;`Home/FakerController`
+- [x] 一个简单的APi接口签名方法&emsp;`Home/SignEncryptController`
+- [x] Mobile_Detect是一个轻量级的PHP类,用于检测移动设备&emsp;`Home/MobileController`
 *  __E=mc__
 *  PHP GitHub API 2.0
 
