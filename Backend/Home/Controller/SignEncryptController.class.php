@@ -51,17 +51,21 @@ class SignEncryptController
      */
     public function testRequest()
     {
+        //请求参数
         $appId = 13669361192;
-        $streamName = '4001486435195';
+        $domainName = 'tinywan.amai8.com';
+        $appName = 'live';
+        $DeviceId = 2802;
+        //签名密钥
         $appSecret = 'eb9a365a9d37a1354e13ddd7973d5e02409ef451';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
-        $str = "AppId" . $appId  . "StreamName" . $streamName . $appSecret;
+//        $str = "AppId" . $appId . "AppName" . $appName . "DeviceId" . $DeviceId . "DomainName" . $domainName . $appSecret;
+        $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName . $appSecret;
         //签名串，由签名算法sha1生成
         $sign = strtoupper(sha1($str));
-        echo $str."<br/>";
         //请求资源访问路径以及请求参数，参数名必须为大写
-        $url = "http://sewise.amai8.com/openapi/liveStatus?AppId=" . $appId . "&StreamName=" . $streamName . "&Sign=" . $sign;
-        echo $url;
+//        $url = "http://sewise.amai8.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName . "&DeviceId=" . $DeviceId . "&DomainName=" . $domainName . "&Sign=" . $sign;
+        $url = "http://sewise.amai8.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
         //CURL方式请求
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -70,9 +74,8 @@ class SignEncryptController
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
         $response = curl_exec($ch);
         curl_close($ch);
-        homePrint($response);
         //返回数据为JSON格式，进行转换为数组打印输出
-        homePrint(json_decode($response, true));
+        var_dump(json_decode($response, true));
         die;
     }
 
