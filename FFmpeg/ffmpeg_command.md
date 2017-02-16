@@ -5,6 +5,8 @@
     `ffmpeg -i input.avi -b:v 64k -bufsize 64k output.avi`
 *  为了切换帧率到24fps：     
     `ffmpeg -i input.avi -r 24 output.avi`
+*  将输入的1920x1080缩小到960x540输出
+    `ffmpeg -i ./test.mkv -vf scale=960:540 960_540.mp4`
 ### 视频
 *  FFmpeg concat 协议：     
     `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`
@@ -52,7 +54,8 @@
      - __建议__ ：`如果拉取的是一个摄像头的话，-re不要加`
      - 参数 `-re`：按时间戳读取文件(另外一种是直接读取,文件被迅速读完)
      - 参数 `-vcodec copy`：要加，否则ffmpeg会重新编码输入流格式
-     - 参数 `-rtsp_transport`：传输协议，默认UDP
+     - 参数 `-rtsp_transport`：传输协议，默认UDP   
+     
 ### 网络流和本地流切换
 *  使用FFmpeg转录网络直播流     
     - `ffmpeg -i http://60.199.188.151/HLS/WG_ETTV-N/index.m3u8 d:\cap.mp4`：CPU消耗很大    
