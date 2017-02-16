@@ -37,6 +37,12 @@
 ### 图片流
 *  strfime选项允许你导出按时间/日期信息命名的文件 "%Y-%m-%d_%H-%M-%S" 模板       
     `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S.jpg"`    
+*  每隔20秒截一张图       
+    `ffmpeg -i input.flv -f image2 -vf fps=fps=1/20 out%d.png`    
+*  strfime选项允许你导出按时间/日期信息命名的文件 "%Y-%m-%d_%H-%M-%S" 模板       
+    `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S.jpg"`    
+
+
     
 ### RTSP
 *  发送流到RTSP服务器     
