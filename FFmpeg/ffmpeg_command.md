@@ -1,18 +1,19 @@
 ![image](https://github.com/Tinywan/PHP_Experience/blob/master/Public/Common/static/images/ffmpeg.png)
 ## FFmpeg 常用命令DEMO
-### 常用
+### :one: 常用
 *  为了设定输出视频码率为64kbit/s：(码率转换很慢，尤其高码率到低码率，如：2312kbps=>1024kbps)     
     `ffmpeg -i input.avi -b:v 64k -bufsize 64k output.avi`
-*  为了切换帧率到24fps：     
+*  为了切换帧率到24fps :one:：     
     `ffmpeg -i input.avi -r 24 output.avi`
-*  将输入的1920x1080缩小到960x540输出
+*  将输入的1920x1080缩小到960x540输出   
     `ffmpeg -i ./test.mkv -vf scale=960:540 960_540.mp4`
+    
 ### 视频
 *  FFmpeg concat 协议：     
     `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`
     
-### 音频
-*  FFmpeg concat 协议：     
+### :satellite: 音频
+*  FFmpeg concat 协议 :satellite: ：     
     `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`    
 
 ### 复合流
