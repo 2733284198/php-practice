@@ -75,11 +75,16 @@
 - [x] Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
 - [x] WebSocket&emsp;`HTML5/WebSocketController` 
 - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`
-    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
-    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
-    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
-    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
-    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
+    - [x] 读取视频、设置视频大小 
+    - [x] 视频编码h264 
+    - [x] 获取一个视频的时长、宽度、高度等基本信息 
+    - [x] MP4格式=>MP3格式转换 
+    - [x] 提取单张、多张图像 
+    - [x] 视频剪切 
+    - [x] 转码进度实时监控
+    - [ ] 提取GIF动画图像
+    - [ ] 视频旋转到给定的角度
+    - [ ] 视频水印
 - [x] 数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 - [x] Intervention Image 基本用法&emsp;`Home/ImageController` 
 - [x] Faker生成测试数据的PHP库&emsp;`Home/FakerController`
