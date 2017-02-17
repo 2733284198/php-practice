@@ -29,6 +29,7 @@
     - 香港卫视&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`
     - CCTV1高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8`
     - CCTV5高清&emsp;`http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8`
+    - 杭康&emsp;`http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8`
     
 ## FFmpeg录制、转换以及流化音视频的解决方案
 *  [更多FFmpeg 命令相关文档](https://github.com/Tinywan/PHP_Experience/blob/master/FFmpeg/ffmpeg_command.md)
