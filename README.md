@@ -74,7 +74,12 @@
 - [x] PDO预处理&emsp;`Home/DataBaseController/pdoExample1` 
 - [x] Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
 - [x] WebSocket&emsp;`HTML5/WebSocketController` 
-- [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`  
+- [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`
+    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
+    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
+    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
+    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
+    - [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController` 
 - [x] 数据依赖缓存Cache(Yii2.0文件依赖思想)&emsp;`Home/CacheController` 
 - [x] Intervention Image 基本用法&emsp;`Home/ImageController` 
 - [x] Faker生成测试数据的PHP库&emsp;`Home/FakerController`

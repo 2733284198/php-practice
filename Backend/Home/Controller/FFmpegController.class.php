@@ -202,7 +202,7 @@ class FFmpegController extends Controller
 
     /**
      * 【调试成功】
-     * 转码进度可以实时监控，有关详细信息
+     * 功能：转码进度可以实时监控，有关详细信息
      */
     public function Transcoding()
     {
