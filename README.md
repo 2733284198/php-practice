@@ -74,7 +74,7 @@
 - [x] ECharts 统计工具&emsp;`Home/EChartsController`
 - [x] PDO 数据库抽象层&emsp;`Home/DataBaseController/pdoExample1`
     - [x] 陷阱
-     >当绑定整型变量时，如果不传递 PDO::PARAM_INT 参数有事可能会导致 PDO 对数据加引号。 这会搞坏特定的 MySQL 查询
+        > PDO::PARAM_INT 参数有事可能会导致 PDO 对数据加引号。 这会搞坏特定的 MySQL 查询
     - [ ] 优化
 - [x] Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
 - [x] WebSocket&emsp;`HTML5/WebSocketController` 
