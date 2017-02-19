@@ -465,7 +465,15 @@ class DataBaseController extends Controller
         $user = 'root';
         $pass = '';
         try {
-            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass, array(\PDO::ATTR_PERSISTENT => true));
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass, [
+                /**
+                 * //PDO 提供了三种不同的错误处理模式,除设置错误码之外，
+                 * \PDO::ERRMODE_EXCEPTION=>PDO 还将抛出一个 PDOException 异常类并设置它的属性来反射错误码和错误信息
+                 */
+                \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_PERSISTENT => false, //请求一个持久连接，而非创建一个新连接
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8mb4'
+            ]);
             foreach ($dbh->query("select username from tour_user") as $row) {
                 print_r($row);
             }
@@ -496,7 +504,11 @@ class DataBaseController extends Controller
         $user = 'root';
         $pass = '';
         try {
-            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass, array(\PDO::ATTR_PERSISTENT => true));
+            $dbh = new \PDO("mysql:host=localhost;dbname=tp5", $user, $pass, array(
+                \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_PERSISTENT => false, //请求一个持久连接，而非创建一个新连接
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8mb4'
+            ));
         } catch (\PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
@@ -756,6 +768,77 @@ class DataBaseController extends Controller
             print_r($row);
         }
 
+    }
+
+    /**
+     * 陷阱:
+     * [1]:当绑定整型变量时，如果不传递 PDO::PARAM_INT 参数有事可能会导致 PDO 对数据加引号。 这会搞坏特定的 MySQL 查询
+     * [2]:未使用 `set names utf8mb4` 作为首个查询，可能会导致 Unicode 数据错误地存储进数据库
+     * [1]:当绑定整型变量时，如果不传递 PDO::PARAM_INT 参数有事可能会导致 PDO 对数据加引号。 这会搞坏特定的 MySQL 查询
+     */
+    public function PDOInstanceException()
+    {
+        $host = 'localhost';
+        $dbname = 'tp5';
+        $user = 'root';
+        $pass = '';
+        $link = PDOInstance::connect($host,$dbname,$user,$pass);
+        $handel = $link->prepare("select user_id,username,password from tour_user WHERE user_id = ? or username = ? limit ?");
+        $handel->bindValue(1,28,\PDO::PARAM_INT);
+        $handel->bindValue(2,'admin');
+        $handel->bindValue(3,5,\PDO::PARAM_INT);
+        $handel->execute();
+        $results = $handel->fetchAll(\PDO::FETCH_OBJ);
+        foreach ($results as $row) {
+            homePrint($row->username);
+        }
+    }
+
+    /**
+     * [有陷阱]
+     * PDOStatement::bindParam的一个陷阱
+     * 本文地址: http://www.laruence.com/2012/10/16/2831.html
+     * 最终执行的SQL是：INSERT INTO `user` (`username`, `password`) VALUES ("weibo", "weibo");
+     */
+    public function PDOStatementBindParam()
+    {
+        $host = 'localhost';
+        $dbname = 'tp5';
+        $user = 'root';
+        $pass = '';
+        $dbh = PDOInstance::connect($host,$dbname,$user,$pass);
+        $query = <<<QUERY
+        INSERT INTO `tour_user` (`username`, `password`) VALUES (:username, :password);
+QUERY;
+        $statement = $dbh->prepare($query);
+
+        $bind_params = array(':username' => "laruence", ':password' => "weibo");
+        foreach( $bind_params as $key => $value ){
+            $statement->bindParam($key, $value);
+        }
+        $statement->execute();
+    }
+
+    /**【安全通过代码，来自鸟哥博客】
+     * 也就是bindParam和bindValue的不同之处, bindParam要求第二个参数是一个引用变量(reference).
+     * 让我们把上面的代码的foreach拆开, 也就是这个foreach
+     */
+    public function PDOStatementBindParam2()
+    {
+        $host = 'localhost';
+        $dbname = 'tp5';
+        $user = 'root';
+        $pass = '';
+        $dbh = PDOInstance::connect($host,$dbname,$user,$pass);
+        $query = <<<QUERY
+        INSERT INTO `tour_user` (`username`, `password`) VALUES (:username, :password);
+QUERY;
+        $statement = $dbh->prepare($query);
+        // 在使用bindParam的时候, 尤其要注意和foreach联合使用的这个陷阱 不要使用foreach, 而是手动赋值
+        $bind_params = array(':username' => "laruence", ':password' => "weibo");
+        $statement->bindParam(":username", $bind_params[":username"]); //$value是引用变量了
+        $statement->bindParam(":password", $bind_params[":password"]);
+        $statement->execute();
     }
 
     public static function ensure($reference, $type = null, $container = null)
