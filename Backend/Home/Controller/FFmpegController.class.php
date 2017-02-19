@@ -172,7 +172,7 @@ class FFmpegController extends Controller
         $video->filters()
             ->extractMultipleFrames(Filters\Video\ExtractMultipleFramesFilter::FRAMERATE_EVERY_2SEC, MEDIA_PATH . '/image/')//这是是一个文件夹
             ->synchronize();
-        $video->save(new Format\Video\X264(), MEDIA_PATH . '/extracting_multiple_image.mp4'); //这里必须执行输出文件名
+        $video->save(new Format\Video\X264(), MEDIA_PATH . '/extracting_multiple_image.jpg'); //这里必须执行输出文件名
         var_dump($video);
     }
 
@@ -222,14 +222,28 @@ class FFmpegController extends Controller
      * ---------------------------------------------------------------------------------------------------------------*/
     /**
      * gif是从视频序列中提取的动画图像。
+     * 第三个可选布尔参数，即动画的持续时间。如果你不设置它，你会得到一个固定的gif图像。
+     * error：Unable to save gif
      */
     public function gif()
     {
         $ffmpeg = FFMpeg::create();
         $video = $ffmpeg->open('F:\Tinywan\Video\out.mpg');
-        $video->gif(Coordinate\TimeCode::fromSeconds(2), new Coordinate\Dimension(640, 480), 3);
-        $video->save('12312321.gif');
+        $video->gif(Coordinate\TimeCode::fromSeconds(6), new Coordinate\Dimension(40, 100))
+              ->save(MEDIA_PATH . '/123456.gif');
+    }
 
+    /**
+     * gif图片到MP4转换
+     * FFmpeg：ffmpeg -i animated.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.mp4
+     */
+    public function gifToMp4()
+    {
+        $ffmpeg = FFMpeg::create();
+        $video = $ffmpeg->open('F:\Tinywan\Video\tinywanGif.gif');
+        $format = new Format\Video\X264();
+        $format->setAdditionalParameters(array('foo', 'bar'));
+        $video->save($format, MEDIA_PATH . '/export-x264.mp4');
     }
 
     public function debugInfo()
@@ -276,11 +290,11 @@ class FFmpegController extends Controller
         $watermarkPath = 'F:\Tinywan\Video\amailogo.png';
         $video->filters()->watermark($watermarkPath, array(
             'position' => 'absolute',
-            'x' => 1180,
-            'y' => 620,
+            'x' => 10,
+            'y' => 200,
         ));
         //编码视频编码为X264 同时输出保存
-        $video->save(new Format\Video\X264(), 'Watermark2.mp4');
+        $video->save(new Format\Video\X264(), MEDIA_PATH . '/Watermark2.mp4');
         var_dump($video);
     }
 

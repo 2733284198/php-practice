@@ -44,9 +44,12 @@
     `ffmpeg -i input.flv -f image2 -vf fps=fps=1/20 out%d.png`    
 *  strfime选项允许你导出按时间/日期信息命名的文件 "%Y-%m-%d_%H-%M-%S" 模板       
     `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S.jpg"`    
-
-
-    
+*  Gif图片转换MP4格式视频   
+    `ffmpeg -i ./tinywanGif.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -f mp4 ./TinywanGifvideo.mp4`
+*  视频添加图片水印  
+    - [x] 单个图片，测试成功   
+    `ffmpeg -i out.mpg -vf "movie=amailogo.png [watermark]; [in][watermark] overlay=10:10" tinywanVideologo.mp4`
+   
 ### :sunflower:RTSP
 *  发送流到RTSP服务器     
     `ffmpeg -rtsp_transport tcp -i "rtsp://192.168.18.240:554/onvif/live/1" -vcodec copy -f rtsp -muxdelay 0.1 rtsp://server/live.sdp`    
