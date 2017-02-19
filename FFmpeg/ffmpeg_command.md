@@ -11,6 +11,11 @@
 ### :bouquet:视频
 *  FFmpeg concat 协议：     
     `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`
+*  视频合并：   
+    - 方法一：FFmpeg concat 协议（测试通过）    
+    `ffmpeg -i "concat:input1.mpg|input2.mpg|input3.mpg" -c copy output.mpg`   
+    - 方法一：FFmpeg concat 协议    
+        `ffmpeg -i "concat:02.mp4|03.mp4" -c copy concat_output.mp4`  
     
 ### :cherry_blossom: 音频
 *  FFmpeg concat 协议 :satellite: ：     

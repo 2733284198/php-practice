@@ -132,4 +132,12 @@ html;
         die;
     }
 
+    /**
+     * 验证邮件地址,
+     */
+    public function filterVar(){
+        filter_var('sgamgee@example.com',FILTER_VALIDATE_EMAIL);
+        filter_var('sauron@mordor',FILTER_VALIDATE_EMAIL);
+    }
+
 }
