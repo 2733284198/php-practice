@@ -136,8 +136,10 @@ html;
      * 验证邮件地址,
      */
     public function filterVar(){
-        filter_var('sgamgee@example.com',FILTER_VALIDATE_EMAIL);
-        filter_var('sauron@mordor',FILTER_VALIDATE_EMAIL);
+        $filerRes = filter_var('756684177@qq.com',FILTER_VALIDATE_EMAIL);
+        $filerRes2 = filter_var('sauron@tinywan',FILTER_VALIDATE_EMAIL);
+        var_dump($filerRes);
+        var_dump($filerRes2);
     }
 
 }
