@@ -74,8 +74,8 @@
 - [x] ECharts 统计工具&emsp;`Home/EChartsController`
 - [x] PDO 数据库抽象层&emsp;`Home/DataBaseController/pdoExample1`
     - [x] 陷阱
-        > PDO::PARAM_INT 参数有事可能会导致搞坏特定的MySQL查询
-        > PDOStatement::bindParam的一个陷阱 `Home/DataBaseController/PDOStatementBindParam2`
+        > PDO::PARAM_INT,PDOStatement::bindParam的一个陷阱    
+        `Home/DataBaseController/PDOStatementBindParam2`
     - [ ] 优化
 - [x] Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
 - [x] WebSocket&emsp;`HTML5/WebSocketController` 

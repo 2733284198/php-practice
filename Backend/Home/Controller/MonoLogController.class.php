@@ -28,6 +28,8 @@ class MonoLogController extends Controller
     public function monologInstance(){
         // 第一步，创建Logger实例，参数即通道名字
         $logger = new Logger('Admin_Home');
+        var_dump($logger);
+        die;
         //Logger本身不知道如何处理记录，它将处理委托给Handler[s]，上面的代码注册了两个Handlers，这样就可以用两种方法来处理记录。
         $logger->pushHandler(new StreamHandler('Logs/to/admin_home.log',Logger::DEBUG));
         //提示：FirePHPHandler最先被调用，因为它被添加在栈的顶部。这就允许你临时添加一个阻塞的Logger，如果你想覆盖其他Logger[s]的话。
