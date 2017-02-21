@@ -57,9 +57,9 @@
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
-- [基于角色的RBAC权限管理](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RbacController.class.php)
-- [基于类的无限级分类和数据库的无限级分类](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CategoryController.class.php)
-- [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
+- [x] [基于角色的RBAC权限管理](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RbacController.class.php)
+- [x] [基于类的无限级分类和数据库的无限级分类](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CategoryController.class.php)
+- [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
 - [x] 基于角色的RBAC权限管理
 - [x] 基于类的无限级分类和数据库的无限级分类
 - [x] 非关系性数据库Redis
