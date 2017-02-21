@@ -14,25 +14,24 @@ namespace Home\Controller;
 
 
 use Think\Controller;
+use Think\Log;
 
 class StringController extends Controller
 {
     public function index()
     {
-        $appId = 75715888;
+        //请求参数
+        $appId = 757158800;
         $domainName = 'zonelue2.amailive.com';
         $appName = 'live';
-        $streamName = '4001487324388';
-        $resumeTime = '2017-11-30  09:15:00';
-        $serviceArea = 'A';
         //签名密钥
-        $appSecret = 'eb9a365a9d37a1354e13ddd7973d5e02409ef451';
+        $appSecret = 'c6120125849a5e2f34f0a755c1772fe2e8e91930';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
-        $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName . "ResumeTime" . $resumeTime . "ServiceArea" . $serviceArea . "StreamName" . $streamName . $appSecret;
+        $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName . $appSecret;
         //签名串，由签名算法sha1生成
         $sign = strtoupper(sha1($str));
         //请求资源访问路径以及请求参数，参数名必须为大写
-        $url = "http://sewise.amai8.com/openapi/setForbidLiveStream?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&ResumeTime=" . $resumeTime . "&ServiceArea=" . $serviceArea . "&StreamName=" . $streamName . "&Sign=" . $sign;
+        $url = "http://sewise.amai8.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
         //CURL方式请求
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -43,6 +42,7 @@ class StringController extends Controller
         curl_close($ch);
         //返回数据为JSON格式，进行转换为数组打印输出
         var_dump(json_decode($response, true));
+        Log::record('test.',Log::ERR,true);
     }
 
     /**
