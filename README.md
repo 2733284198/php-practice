@@ -81,7 +81,7 @@
     - [ ] 优化
 - [x] Socket 服务器框架GatewayWorker&emsp;`Home/GatewayWorker` 
 - [x] WebSocket&emsp;`HTML5/WebSocketController` 
-- [x] PHP-FFmpeg视频编码处理 &emsp;`Home/FFmpegController`
+- [x] [PHP-FFmpeg视频编码处理](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/FFmpegController.class.php)
     - [x] 读取视频、设置视频大小 
     - [x] 视频编码h264 
     - [x] 获取一个视频的时长、宽度、高度等基本信息 
