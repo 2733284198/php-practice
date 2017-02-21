@@ -1,17 +1,17 @@
 {
-    "name": "topthink/thinkphp",    //包的名称
-    "description": "the ThinkPHP Framework",    //包的描述
+    "name": "topthink/thinkphp",
+    "description": "the ThinkPHP Framework",
     "type": "framework",
     "keywords": ["framework","thinkphp","ORM"],
-    "homepage": "http://www.cnblogs.com/tinywan/",  //包的主页
+    "homepage": "http://www.cnblogs.com/tinywan/",
     "license": "Apache2",
-    "authors": [    //包的作者
+    "authors": [
         {
             "name": "Tinywan",
             "email": "ovecome.wan@gmail.com"
         }
     ],
-    "require": {    //需要依赖的其它包，必须要有一个版本约束
+    "require": {
         "php": ">=5.3.0",
         "monolog/monolog": "^1.22",
         "php-ffmpeg/php-ffmpeg": "0.9.0",
@@ -28,7 +28,8 @@
         "fzaninotto/faker": "^1.6",
         "qiniu/php-sdk": "^7.1",
         "mobiledetect/mobiledetectlib": "^2.8",
-        "ezyang/htmlpurifier": "^4.8"
+        "ezyang/htmlpurifier": "^4.8",
+        "overtrue/wechat": "~3.1"
     },
     "minimum-stability": "dev",
     "autoload":{

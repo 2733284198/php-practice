@@ -57,10 +57,12 @@
 
 ## 最新的以ThinkPHP为WEB应用开发提供功能
 
+- [基于角色的RBAC权限管理](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RbacController.class.php)
+- [基于类的无限级分类和数据库的无限级分类](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CategoryController.class.php)
+- [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
 - [x] 基于角色的RBAC权限管理
 - [x] 基于类的无限级分类和数据库的无限级分类
 - [x] 非关系性数据库Redis
-- [x] 单例模式:针对不同的Redis链接(主从复制)&emsp;`Org/Util/RedisInstance.class.php`
 - [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
 - [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
 - [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
@@ -100,10 +102,10 @@
 - [ ] PHP GitHub API 2.0
 
 ## 常用单利模式调用
-- [x] Redis实例：`RedisInstance::Instance`
-- [x] PDO实例：`PDOInstance::Instance`
-- [x] <input type="checkbox" checked disabled>OSS实例：`OssInstance::Instance`
-- [x] MonoLog实例：`MonoLogInstance::Instance`
+- [x] Redis单利模式：`RedisInstance::Instance`
+- [x] PDO单利模式：`PDOInstance::Instance`
+- [x] OSS单利模式：`OssInstance::Instance`
+- [x] MonoLog单利模式：`MonoLogInstance::Instance`
 
 ## 支付功能
 *   支付宝支付

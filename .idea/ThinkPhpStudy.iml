@@ -24,6 +24,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mpociot/botman" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/opis/closure" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/overtrue/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/overtrue/wechat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/cache-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/client-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/discovery" />
@@ -33,6 +35,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/promise" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -42,6 +45,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/psr-http-message-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tightenco/collect" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -82,6 +86,8 @@
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mpociot/botman" />
           <root url="file://$MODULE_DIR$/vendor/opis/closure" />
+          <root url="file://$MODULE_DIR$/vendor/overtrue/socialite" />
+          <root url="file://$MODULE_DIR$/vendor/overtrue/wechat" />
           <root url="file://$MODULE_DIR$/vendor/php-http/cache-plugin" />
           <root url="file://$MODULE_DIR$/vendor/php-http/client-common" />
           <root url="file://$MODULE_DIR$/vendor/php-http/discovery" />
@@ -91,6 +97,7 @@
           <root url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
           <root url="file://$MODULE_DIR$/vendor/php-http/promise" />
           <root url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+          <root url="file://$MODULE_DIR$/vendor/pimple/pimple" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -100,6 +107,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
           <root url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/psr-http-message-bridge" />
           <root url="file://$MODULE_DIR$/vendor/tightenco/collect" />
         </CLASSES>
         <SOURCES>
@@ -125,6 +133,8 @@
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mpociot/botman" />
           <root url="file://$MODULE_DIR$/vendor/opis/closure" />
+          <root url="file://$MODULE_DIR$/vendor/overtrue/socialite" />
+          <root url="file://$MODULE_DIR$/vendor/overtrue/wechat" />
           <root url="file://$MODULE_DIR$/vendor/php-http/cache-plugin" />
           <root url="file://$MODULE_DIR$/vendor/php-http/client-common" />
           <root url="file://$MODULE_DIR$/vendor/php-http/discovery" />
@@ -134,6 +144,7 @@
           <root url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
           <root url="file://$MODULE_DIR$/vendor/php-http/promise" />
           <root url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+          <root url="file://$MODULE_DIR$/vendor/pimple/pimple" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -143,6 +154,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
           <root url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/psr-http-message-bridge" />
           <root url="file://$MODULE_DIR$/vendor/tightenco/collect" />
         </SOURCES>
       </library>
