@@ -1,6 +1,6 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 /**
  * =====================================================================================================================
  * 传递数据以易于阅读的样式格式化后输出
@@ -920,7 +920,7 @@ function send_email($address, $subject, $content)
     // 设置邮件标题
     $phpmailer->Subject = $subject;
     // 设置邮件正文
-    $phpmailer->Body = $content;
+    $phpmailer->MsgHTML($content);
     // 发送邮件。
     if (!$phpmailer->Send()) {
         $phpmailererror = $phpmailer->ErrorInfo;
