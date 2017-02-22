@@ -1,8 +1,41 @@
+<?php
+/** .-------------------------------------------------------------------
+ * |  Github: https://github.com/Tinywan
+ * |  Blog: http://www.cnblogs.com/Tinywan
+ * |-------------------------------------------------------------------
+ * |  Author: Tinywan
+ * |  Date: 2017/2/20
+ * |  Time: 8:36
+ * |  Mail: Overcome.wan@Gmail.com
+ * |  Created by PhpStorm.
+ * '-------------------------------------------------------------------*/
+
+namespace Home\Controller;
+
+use Seld\JsonLint\JsonParser;
+use Think\Controller;
+use Think\Log;
+
+class JsonController extends Controller
 {
+    public function index()
+    {
+        echo 'Json';
+    }
+
+    public function index2()
+    {
+        //如果它是有效的json则返回null，否则返回一个ParsingException对象。
+        $jsonString = <<<JSOM
+           {
     "name": "topthink/thinkphp",
     "description": "the ThinkPHP Framework",
     "type": "framework",
-    "keywords": ["framework","thinkphp","ORM"],
+    "keywords": [
+        "framework",
+        "thinkphp",
+        "ORM"
+    ],
     "homepage": "http://www.cnblogs.com/tinywan/",
     "license": "Apache2",
     "authors": [
@@ -33,15 +66,16 @@
         "seld/jsonlint": "^1.5"
     },
     "minimum-stability": "dev",
-    "autoload":{
-        "psr-4":{
-            "Addons\\":"Addons"
+    "autoload": {
+        "psr-4": {
+            "Addons\\": "Addons"
         }
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
+    }
+}
+JSOM;
+
+        $parser = new JsonParser();
+        $jsonFile = MEDIA_PATH . '\composer.json';
+        var_dump($parser->lint($jsonString));
     }
 }

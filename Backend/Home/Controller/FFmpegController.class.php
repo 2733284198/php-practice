@@ -48,7 +48,7 @@ class FFmpegController extends Controller
     {
         //$path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/'; //项目路径
         $inPutPath = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
-        $outPutPath = 'F:\Tinywan\Video\outVideo\\';   //视频输出路径
+        $outPutPath = "F:\Tinywan\Video\outVideo";   //视频输出路径
         $ffmpeg = FFMpeg::create();
         //打开资源
         $video = $ffmpeg->open($inPutPath);

@@ -18,6 +18,19 @@ use Think\Log;
 
 class StringController extends Controller
 {
+    const F0 = 0x1; // 2^0
+    const F1 = 0x2; // 2^1
+    const F2 = 0x4; // 2^2
+    const F3 = 0x8; // 2^3
+    const F4 = 0x10; // 2^4
+    const F5 = 0x20; // 2^5
+
+    public function index2()
+    {
+        echo self::F0.'---'.self::F1;
+        echo self::F2.'---'.self::F3;
+    }
+
     public function index()
     {
         //请求参数
@@ -25,7 +38,7 @@ class StringController extends Controller
         $domainName = 'zonelue2.amailive.com';
         $appName = 'live';
         //签名密钥
-        $appSecret = 'c6120125849a5e2f34f0a755c1772fe2e8e91930';
+        $appSecret = '5fa09735ce5de5d194fb7f2daa4289f53634d314';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
         $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName . $appSecret;
         //签名串，由签名算法sha1生成
@@ -42,8 +55,9 @@ class StringController extends Controller
         curl_close($ch);
         //返回数据为JSON格式，进行转换为数组打印输出
         var_dump(json_decode($response, true));
-        Log::record('test.',Log::ERR,true);
     }
+
+
 
     /**
      * 字符串运算符
