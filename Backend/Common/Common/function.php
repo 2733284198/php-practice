@@ -888,9 +888,7 @@ function send_email($address, $subject, $content)
     if (empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)) {
         return array("error" => 1, "message" => '邮箱配置不完整');
     }
-    require './ThinkPHP/Library/Org/Nx/class.phpmailer.php';
-    require './ThinkPHP/Library/Org/Nx/class.smtp.php';
-    $phpmailer = new \Phpmailer();
+    $phpmailer = new PHPMailer();
     // 设置PHPMailer使用SMTP服务器发送Email
     $phpmailer->IsSMTP();
     // 设置为html格式

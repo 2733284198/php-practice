@@ -18,7 +18,7 @@ class EmailController extends Controller
     {
         $usernName = I('post.userName', 'Guest1722318623');
         $passWord = I('post.passWord', '123456' . rand(1000, 9999));
-        $email = I('post.email', '756684177@qq.com');
+        $email = I('post.email', '1722318623@qq.com');
         $reTime = time();
         $accessToken = md5($usernName . $passWord . $reTime);//创建用于激活识别码
         $accessExpires = $reTime + 60 * 60 * 24; //过期时间为24小时后

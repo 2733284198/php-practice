@@ -35,7 +35,7 @@ class StringController extends Controller
     {
         //请求参数
         $appId = 757158800;
-        $domainName = 'zonelue2.amailive.com';
+        $domainName = 'tinywan.amai8.com';
         $appName = 'live';
         //签名密钥
         $appSecret = '5fa09735ce5de5d194fb7f2daa4289f53634d314';
