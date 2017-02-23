@@ -874,7 +874,7 @@ function alipay($order)
 
 /**
  * 发送邮件
- * @param  string $address 需要发送的邮箱地址 发送给多个地址需要写成数组形式
+ * @param  array $address 需要发送的邮箱地址 发送给多个地址需要写成数组形式
  * @param  string $subject 标题
  * @param  string $content 内容
  * @return boolean       是否成功

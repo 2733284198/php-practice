@@ -41,7 +41,9 @@ class EmailController extends Controller
 			$link
 
 html;
-        $result = send_email($email, 'Tinywan世界帐户激活邮件--' . $usernName, $str);
+        //传递一个数组，可以实现多邮件发送
+        $eamilAddress = [$email,'756684177@qq.com'];
+        $result = send_email($eamilAddress, 'Tinywan世界帐户激活邮件--' . $usernName, $str);
         if ($result['error'] == 1) {
             var_dump($result);
             die;
