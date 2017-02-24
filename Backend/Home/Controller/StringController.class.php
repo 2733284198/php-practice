@@ -55,6 +55,8 @@ class StringController extends Controller
     public function index()
     {
         //请求参数
+        phpinfo();
+        die;
         $appId = 757158800;
         $domainName = 'tinywan.amai8.com';
         $appName = 'live123';
