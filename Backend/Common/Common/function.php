@@ -2,7 +2,7 @@
 header("Content-type:text/html;charset=utf-8");
 
 
-require 'vendor/autoload.php';
+#require 'vendor/autoload.php';
 
 
 /**
@@ -1995,7 +1995,6 @@ function getStreamByIp($outerIP, $streamName)
     //所有流的信息,解析Xml
     $outputs = FromXml($output);
     $streamInfo = $outputs['server']['application']['live']['stream'];
-
     if (array_key_exists("name", $streamInfo)) {
         //判断该设备是否在这个数组中，真：获取这个设备的所有打流信息
         if ($streamName == $streamInfo['name']) {
@@ -2037,4 +2036,23 @@ function getStreamByIp($outerIP, $streamName)
         }
     }
     return $totalInfo;
+}
+
+/**
+ * 获取当期RTMP在线人数
+ */
+function getXML()
+{
+    $outerIP = '121.40.133.183';
+    $streamName = 313;
+    $url = "http://stream.amailive.com/rtmp/stat";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    //将XML转为array
+    $values = json_decode(json_encode(simplexml_load_string($output, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+    var_dump( $values['server']['application'][0]['live']['nclients']);
 }

@@ -88,11 +88,11 @@ class StringController extends Controller
         //签名密钥
         $appSecret = '5fa09735ce5de5d194fb7f2daa4289f53634d314';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
-        $str = "AppId" . $appId . "StreamId" . $streamId  . $appSecret;
+        $str = "AppId" . $appId . "StreamId" . $streamId . $appSecret;
         //签名串，由签名算法sha1生成
         $sign = strtoupper(sha1($str));
         //请求资源访问路径以及请求参数，参数名必须为大写
-        $url = "http://sewise.amai8.com/openapi/getPushFlowInformationById?AppId=" . $appId . "&StreamId=" . $streamId  . "&Sign=" . $sign;
+        $url = "http://sewise.amai8.com/openapi/getPushFlowInformationById?AppId=" . $appId . "&StreamId=" . $streamId . "&Sign=" . $sign;
         //CURL方式请求
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -104,6 +104,7 @@ class StringController extends Controller
         //返回数据为JSON格式，进行转换为数组打印输出
         var_dump(json_decode($response, true));
     }
+
 
 
 
