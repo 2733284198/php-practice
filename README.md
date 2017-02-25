@@ -69,6 +69,7 @@
 - [x] 多级模块化的管理
 - [x] Uploadify图片上传DEMO
 - [x] PHPmailer批量发送邮件&emsp;`Library/EmailController/register`
+    - [x] PHP+Mysql 模拟队列发送邮件
 - [x] 支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
 - [x] 用户注册邮箱激活和邮箱密码修改&emsp;`Library/EmailController/Index`
 - [x] AngularJS 框架&emsp;`Home/AngularJSController`

@@ -1,28 +1,59 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
+
+
 require 'vendor/autoload.php';
+
+
 /**
  * =====================================================================================================================
  * 传递数据以易于阅读的样式格式化后输出
  * @param $data
  * =====================================================================================================================
  */
+
+
 function p($data)
 {
-    // 定义样式
+
+
+    // 	定义样式
     $str = '<pre style="display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">';
-    // 如果是boolean或者null直接显示文字；否则print
+
+
+    // 	如果是boolean或者null直接显示文字；否则print
     if (is_bool($data)) {
+
+
         $show_data = $data ? 'true' : 'false';
+
+
     } elseif (is_null($data)) {
+
+
         $show_data = 'null';
+
+
     } else {
+
+
         $show_data = print_r($data, true);
+
+
     }
+
+
     $str .= $show_data;
+
+
     $str .= '</pre>';
+
+
     echo $str;
+
+
 }
+
 
 /**
  * ===================================【使用curl获取远程数据】=======================================================
@@ -30,20 +61,47 @@ function p($data)
  * @param  string $url url连接
  * @return string      获取到的数据
  */
+
+
 function curl_get_contents($url)
 {
+
+
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
-    //curl_setopt($ch,CURLOPT_HEADER,1);                //是否显示头部信息
-    curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
-    curl_setopt($ch, CURLOPT_USERAGENT, _USERAGENT_);   //用户访问代理 User-Agent
-    curl_setopt($ch, CURLOPT_REFERER, _REFERER_);        //设置 referer
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);          //跟踪301
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);        //返回结果
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    //设	置访问的url地址
+    //c	url_setopt($ch,CURLOPT_HEADER,1);
+
+    //是	否显示头部信息
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+
+    //设	置超时
+    curl_setopt($ch, CURLOPT_USERAGENT, _USERAGENT_);
+
+    //用	户访问代理 User-Agent
+    curl_setopt($ch, CURLOPT_REFERER, _REFERER_);
+
+    //设	置 referer
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+    //跟	踪301
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    //返	回结果
     $r = curl_exec($ch);
+
+
     curl_close($ch);
+
+
     return $r;
+
+
 }
+
 
 /**
  * ===================================【使用curl 置头信息及取得返回头信息 获取远程数据】=================================
@@ -58,21 +116,48 @@ function curl_get_contents($url)
  * $url = "http://api.open.letvcloud.com/data/bandwidth?productline=CDN&domaintype=VOD&startday=20161227&endday=20161227";
  * $res = curl_header_get_contents($url,$header);
  */
+
+
 function curl_header_get_contents($url, $header)
 {
+
+
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);                //设置访问的url地址
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);       //设置头信息的地方
-    curl_setopt($ch, CURLOPT_HEADER, 0);                //是否显示头部信息
-    curl_setopt($ch, CURLOPT_TIMEOUT, 5);               //设置超时
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);        //返回结果
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    //设	置访问的url地址
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
+    //设	置头信息的地方
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+
+    //是	否显示头部信息
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+
+    //设	置超时
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    //返	回结果
     $res = curl_exec($ch);
+
+
     curl_close($ch);
+
+
     if ($res == NULL) {
+
+
         return 0;
+
+
     }
     return $res;
+
+
 }
+
 
 /**
  * =================================【传入时间戳,计算距离现在的时间】=======================================================
@@ -81,51 +166,115 @@ function curl_header_get_contents($url, $header)
  * @return string       返回多少以前
  * =====================================================================================================================
  */
+
+
 function word_time($time)
 {
+
+
     $time = (int)substr($time, 0, 10);
+
+
     $int = time() - $time;
+
+
     $str = '';
+
+
     if ($int <= 2) {
+
+
         $str = sprintf('刚刚', $int);
+
+
     } elseif ($int < 60) {
+
+
         $str = sprintf('%d秒前', $int);
+
+
     } elseif ($int < 3600) {
+
+
         $str = sprintf('%d分钟前', floor($int / 60));
+
+
     } elseif ($int < 86400) {
+
+
         $str = sprintf('%d小时前', floor($int / 3600));
+
+
     } else {
+
+
         $str = date('Y-m-d H:i:s', $time);
+
+
     }
+
+
     return $str;
+
+
 }
+
 
 /**
  * 转换字节大小 Bytes/Kb/MB/GB/TB/EB
  * @param number $size
  * @return number
  */
+
+
 function trans_byte($size)
 {
+
+
     $size_arr = array("B", "KB", "MB", "GB", "TB", "EB");
+
+
     $i = 0;
+
+
     while ($size >= 1024) {
+
+
         $size = $size / 1024;
+
+
         $i++;
+
+
     }
+
+
     return round($size, 2) . $size_arr[$i];
+
+
 }
+
 
 /**
  * 文件下载
  * @param number $size
  * @return number
  */
+
+
 function downfile($filename)
 {
+
+
     header("content-disposition:attachment;filename=" . basename($filename));
+
+
     header("content-length:" . filesize($filename));
+
+
     readfile($filename);
+
+
 }
 
 
@@ -137,69 +286,145 @@ function downfile($filename)
  * @param  integer $height 缩略图的高
  * @return string             缩略图path
  */
+
+
 function crop_image($image_path, $width = 170, $height = 170)
 {
+
+
     $image_path = trim($image_path, '.');
+
+
     $min_path = '.' . str_replace('.', '_' . $width . '_' . $height . '.', $image_path);
+
+
     $image = new \Think\Image();
+
+
     $image->open($image_path);
-    // 生成一个居中裁剪为$width*$height的缩略图并保存
+
+
+    // 	生成一个居中裁剪为$width*$height的缩略图并保存
     $image->thumb($width, $height, \Think\Image::IMAGE_THUMB_CENTER)->save($min_path);
+
+
     oss_upload($min_path);
+
+
     return $min_path;
+
+
 }
+
 
 /**
  * ======================检测webuploader上传是否成功
  * @param  string $file_path post中的字段
  * @return boolear           是否成功
  */
+
+
 function upload_success($file_path)
 {
-    // 为兼容传进来的有数组；先转成json
+
+
+    // 	为兼容传进来的有数组；先转成json
     $file_path = json_encode($file_path);
-    // 如果有undefined说明上传失败
+
+
+    // 	如果有undefined说明上传失败
     if (strpos($file_path, 'undefined') !== false) {
+
+
         return false;
+
+
     }
-    // 如果没有.符号说明上传失败
+
+
+    // 	如果没有.符号说明上传失败
     if (strpos($file_path, '.') === false) {
+
+
         return false;
+
+
     }
-    // 否则上传成功则返回true
+
+
+    // 	否则上传成功则返回true
     return true;
+
+
 }
 
+
 //======================================================================================================================
+
 
 /**
  * ==============================================【访问方式检测】=========================================================
  * 检测是否是手机访问
  */
+
+
 function is_mobile()
 {
+
+
     $useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+
+
     $useragent_commentsblock = preg_match('|\(.*?\)|', $useragent, $matches) > 0 ? $matches[0] : '';
+
+
     function _is_mobile($substrs, $text)
     {
+
+
         foreach ($substrs as $substr)
             if (false !== strpos($text, $substr)) {
+
+
                 return true;
+
+
             }
+
+
         return false;
+
+
     }
 
+
     $mobile_os_list = array('Google Wireless Transcoder', 'Windows CE', 'WindowsCE', 'Symbian', 'Android', 'armv6l', 'armv5', 'Mobile', 'CentOS', 'mowser', 'AvantGo', 'Opera Mobi', 'J2ME/MIDP', 'Smartphone', 'Go.Web', 'Palm', 'iPAQ');
+
+
     $mobile_token_list = array('Profile/MIDP', 'Configuration/CLDC-', '160×160', '176×220', '240×240', '240×320', '320×240', 'UP.Browser', 'UP.Link', 'SymbianOS', 'PalmOS', 'PocketPC', 'SonyEricsson', 'Nokia', 'BlackBerry', 'Vodafone', 'BenQ', 'Novarra-Vision', 'Iris', 'NetFront', 'HTC_', 'Xda_', 'SAMSUNG-SGH', 'Wapaka', 'DoCoMo', 'iPhone', 'iPod');
+
 
     $found_mobile = _is_mobile($mobile_os_list, $useragent_commentsblock) ||
         _is_mobile($mobile_token_list, $useragent);
+
+
     if ($found_mobile) {
+
+
         return true;
+
+
     } else {
+
+
         return false;
+
+
     }
+
+
 }
+
 
 //======================================================================================================================
 
@@ -210,53 +435,96 @@ function is_mobile()
  * @param  string $file_path 路径
  * @return string            转换后的路径
  */
+
+
 function path_encode($file_path)
 {
+
+
     return rawurlencode(base64_encode($file_path));
+
+
 }
+
 
 /**
  * ===========将路径解密
  * @param  string $file_path 加密后的字符串
  * @return string            解密后的路径
  */
+
+
 function path_decode($file_path)
 {
+
+
     return base64_decode(rawurldecode($file_path));
+
+
 }
 
+
 //======================================================================================================================
+
 
 /**
  * ================================================【用户登陆信息】=======================================================
  * 返回用户id
  * @return integer 用户id
  */
+
+
 function get_uid()
 {
+
+
     return $_SESSION['user']['id'];
+
+
 }
+
 
 /**
  * 检测是否登录
  * @return boolean 是否登录
  */
+
+
 function check_login()
 {
+
+
     if (!empty($_SESSION['user']['id'])) {
+
+
         return true;
+
+
     } else {
+
+
         return false;
+
+
     }
+
+
 }
+
 
 /**
  * 设置验证码
  * @return boolean 是否登录
  */
+
+
 function show_verify($config = '')
 {
+
+
     if ($config == '') {
+
+
         $config = array(
             'codeSet' => '1234567890',
             'fontSize' => 30,
@@ -266,17 +534,33 @@ function show_verify($config = '')
             'length' => 4,
             'fontttf' => '4.ttf',
         );
+
+
     }
+
+
     $verify = new \Think\Verify($config);
+
+
     return $verify->entry();
+
+
 }
+
 
 // 检测验证码
 function check_verify($code)
 {
+
+
     $verify = new \Think\Verify();
+
+
     return $verify->check($code);
+
+
 }
+
 
 //======================================================================================================================
 
@@ -292,23 +576,54 @@ function check_verify($code)
  * @return string
  * =====================================================================================================================
  */
+
+
 function re_substr($str, $start = 0, $length, $suffix = true, $charset = "utf-8")
 {
+
+
     if (function_exists("mb_substr"))
         $slice = mb_substr($str, $start, $length, $charset);
+
+
     elseif (function_exists('iconv_substr')) {
+
+
         $slice = iconv_substr($str, $start, $length, $charset);
+
+
     } else {
+
+
         $re['utf-8'] = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|[\xe0-\xef][\x80-\xbf]{2}|[\xf0-\xff][\x80-\xbf]{3}/";
+
+
         $re['gb2312'] = "/[\x01-\x7f]|[\xb0-\xf7][\xa0-\xfe]/";
+
+
         $re['gbk'] = "/[\x01-\x7f]|[\x81-\xfe][\x40-\xfe]/";
+
+
         $re['big5'] = "/[\x01-\x7f]|[\x81-\xfe]([\x40-\x7e]|\xa1-\xfe])/";
+
+
         preg_match_all($re[$charset], $str, $match);
+
+
         $slice = join("", array_slice($match[0], $start, $length));
+
+
     }
+
+
     $omit = mb_strlen($str) >= $length ? '...' : '';
+
+
     return $suffix ? $slice . $omit : $slice;
+
+
 }
+
 
 /**
  * =====================================================================================================================
@@ -317,37 +632,76 @@ function re_substr($str, $start = 0, $length, $suffix = true, $charset = "utf-8"
  * @return string      文件格式
  * =====================================================================================================================
  */
+
+
 function file_format($str)
 {
-    // 取文件后缀名
+
+
+    // 	取文件后缀名
     $str = strtolower(pathinfo($str, PATHINFO_EXTENSION));
-    // 图片格式
+
+
+    // 	图片格式
     $image = array('webp', 'jpg', 'png', 'ico', 'bmp', 'gif', 'tif', 'pcx', 'tga', 'bmp', 'pxc', 'tiff', 'jpeg', 'exif', 'fpx', 'svg', 'psd', 'cdr', 'pcd', 'dxf', 'ufo', 'eps', 'ai', 'hdri');
-    // 视频格式
+
+
+    // 	视频格式
     $video = array('mp4', 'avi', '3gp', 'rmvb', 'gif', 'wmv', 'mkv', 'mpg', 'vob', 'mov', 'flv', 'swf', 'mp3', 'ape', 'wma', 'aac', 'mmf', 'amr', 'm4a', 'm4r', 'ogg', 'wav', 'wavpack');
-    // 压缩格式
+
+
+    // 	压缩格式
     $zip = array('rar', 'zip', 'tar', 'cab', 'uue', 'jar', 'iso', 'z', '7-zip', 'ace', 'lzh', 'arj', 'gzip', 'bz2', 'tz');
-    // 文档格式
+
+
+    // 	文档格式
     $text = array('exe', 'doc', 'ppt', 'xls', 'wps', 'txt', 'lrc', 'wfs', 'torrent', 'html', 'htm', 'java', 'js', 'css', 'less', 'php', 'pdf', 'pps', 'host', 'box', 'docx', 'word', 'perfect', 'dot', 'dsf', 'efe', 'ini', 'json', 'lnk', 'log', 'msi', 'ost', 'pcs', 'tmp', 'xlsb');
-    // 匹配不同的结果
+
+
+    // 	匹配不同的结果
     switch ($str) {
+
+
         case in_array($str, $image):
             return 'image';
+
+
             break;
+
+
         case in_array($str, $video):
             return 'video';
+
+
             break;
+
+
         case in_array($str, $zip):
             return 'zip';
+
+
             break;
+
+
         case in_array($str, $text):
             return 'text';
+
+
             break;
+
+
         default:
             return 'image';
+
+
             break;
+
+
     }
+
+
 }
+
 
 /**
  * =====================================================================================================================
@@ -355,27 +709,55 @@ function file_format($str)
  * @return string 上传后的图片名
  * =====================================================================================================================
  */
+
+
 function app_upload_image($path, $maxSize = 52428800)
 {
+
+
     ini_set('max_execution_time', '0');
-    // 去除两边的/
+
+
+    // 	去除两边的/
     $path = trim($path, '.');
+
+
     $path = trim($path, '/');
+
+
     $config = array(
-        'rootPath' => './',         //文件上传保存的根路径
+        'rootPath' => './',         //文	件上传保存的根路径
         'savePath' => './' . $path . '/',
         'exts' => array('jpg', 'gif', 'png', 'jpeg', 'bmp'),
         'maxSize' => $maxSize,
         'autoSub' => true,
     );
-    $upload = new \Think\Upload($config);// 实例化上传类
+
+
+    $upload = new \Think\Upload($config);
+
+    // 	实例化上传类
     $info = $upload->upload();
+
+
     if ($info) {
+
+
         foreach ($info as $k => $v) {
+
+
             $data[] = trim($v['savepath'], '.') . $v['savename'];
+
+
         }
+
+
         return $data;
+
+
     }
+
+
 }
 
 
@@ -388,38 +770,96 @@ function app_upload_image($path, $maxSize = 52428800)
  * @return  string
  * =====================================================================================================================
  */
+
+
 function juhecurl($url, $params = false, $ispost = 0)
 {
+
+
     $httpInfo = array();
+
+
     $ch = curl_init();
 
+
     curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+
+
     curl_setopt($ch, CURLOPT_USERAGENT, 'JuheData');
+
+
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+
+
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+
+
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+
     if ($ispost) {
+
+
         curl_setopt($ch, CURLOPT_POST, true);
+
+
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+
+
         curl_setopt($ch, CURLOPT_URL, $url);
+
+
     } else {
+
+
         if ($params) {
+
+
             curl_setopt($ch, CURLOPT_URL, $url . '?' . $params);
+
+
         } else {
+
+
             curl_setopt($ch, CURLOPT_URL, $url);
+
+
         }
+
+
     }
 
+
     $response = curl_exec($ch);
+
+
     if ($response === FALSE) {
-        //echo "cURL Error: " . curl_error($ch);
+
+
+        //e		cho "cURL Error: " . curl_error($ch);
+
+
         return false;
+
+
     }
+
+
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+
     $httpInfo = array_merge($httpInfo, curl_getinfo($ch));
+
+
     curl_close($ch);
+
+
     return $response;
+
+
 }
 
 
@@ -431,102 +871,185 @@ function juhecurl($url, $params = false, $ispost = 0)
  * @return array
  * =====================================================================================================================
  */
+
+
 function http_post_data($url, $params = array())
 {
-    //在没有需要上传文件的情况下，尽量对 post 提交的数据进行 http_build_query 处理，然后再发送出去，能实现更好的兼容性，更小的请求数据包。
+
+
+    //在	没有需要上传文件的情况下，尽量对 post 提交的数据进行 http_build_query 处理，然后再发送出去，能实现更好的兼容性，更小的请求数据包。
     if (is_array($params)) {
+
+
         $params = http_build_query($params, null, '&');
+
+
     }
 
-    //初始化一个curl会话，curl_init()函数唯一的一个参数是可选的，表示一个url地址
+
+    //初	始化一个curl会话，curl_init()函数唯一的一个参数是可选的，表示一个url地址
     $curl = curl_init();
 
-    //这是你想用PHP取回的URL地址
+
+    //这	是你想用PHP取回的URL地址
     curl_setopt($curl, CURLOPT_URL, $url);
 
-    //如果想把一个头包含在输出中，设置这个选项为一个非零值。
+
+    //如	果想把一个头包含在输出中，设置这个选项为一个非零值。
     curl_setopt($curl, CURLOPT_HEADER, false);
 
-    //如果成功只将结果返回，不自动输出任何内容。如果失败返回FALSE
+
+    //如	果成功只将结果返回，不自动输出任何内容。如果失败返回FALSE
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-    //如果你不想在输出中包含body部分，设置这个选项为一个非零值。
+
+    //如	果你不想在输出中包含body部分，设置这个选项为一个非零值。
     curl_setopt($curl, CURLOPT_NOBODY, true);
 
-    //如果你想PHP去做一个正规的HTTP POST，设置这个选项为一个非零值。
-    //这个POST是普通的 application/x-www-from-urlencoded 类型，多数被HTML表单使用
+
+    //如	果你想PHP去做一个正规的HTTP POST，设置这个选项为一个非零值。
+    //这	个POST是普通的 application/x-www-from-urlencoded 类型，多数被HTML表单使用
     curl_setopt($curl, CURLOPT_POST, true);
 
-    // 传递一个作为HTTP “POST”操作的所有数据的字符串
+
+    // 	传递一个作为HTTP “POST”操作的所有数据的字符串
     curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
 
-    //执行一个curl会话
+
+    //执	行一个curl会话
     $response = curl_exec($curl);
 
-    //获取一个Http服务器状态吗
+
+    //获	取一个Http服务器状态吗
     $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-    //关闭一个curl会话
+
+    //关	闭一个curl会话
     curl_close($curl);
 
+
     return array($httpCode, $response);
+
+
 }
+
 
 /**
  * ====================================融云开发环境=================================================================
  * 根据配置项获取对应的key和secret
  * @return array key和secret
  */
+
+
 function get_rong_key_secret()
 {
-    // 判断是需要开发环境还是生产环境的key
+
+
+    // 	判断是需要开发环境还是生产环境的key
     if (C('RONG_IS_DEV')) {
+
+
         $key = C('RONG_DEV_APP_KEY');
+
+
         $secret = C('RONG_DEV_APP_SECRET');
+
+
     } else {
+
+
         $key = C('RONG_PRO_APP_KEY');
+
+
         $secret = C('RONG_PRO_APP_SECRET');
+
+
     }
+
+
     $data = array(
         'key' => $key,
         'secret' => $secret
     );
+
+
     return $data;
+
+
 }
+
 
 /**
  * 获取融云token
  * @param  integer $uid 用户id
  * @return integer      token
  */
+
+
 function get_rongcloud_token($uid)
 {
-    // 从数据库中获取token
+
+
+    // 	从数据库中获取token
     $token = D('OauthUser')->getToken($uid, 1);
-    // 如果有token就返回
+
+
+    // 	如果有token就返回
     if ($token) {
+
+
         return $token;
+
+
     }
-    // 获取用户昵称和头像
+
+
+    // 	获取用户昵称和头像
     $user_data = M('Users')->field('username,avatar')->getById($uid);
-    // 用户不存在
+
+
+    // 	用户不存在
     if (empty($user_data)) {
+
+
         return false;
+
+
     }
-    // 获取头像url格式
+
+
+    // 	获取头像url格式
     $avatar = get_url($user_data['avatar']);
-    // 获取key和secret
+
+
+    // 	获取key和secret
     $key_secret = get_rong_key_secret();
-    // 实例化融云
+
+
+    // 	实例化融云
     $rong_cloud = new \Org\Xb\RongCloud($key_secret['key'], $key_secret['secret']);
-    // 获取token
+
+
+    // 	获取token
     $token_json = $rong_cloud->getToken($uid, $user_data['username'], $avatar);
+
+
     $token_array = json_decode($token_json, true);
-    // 获取token失败
+
+
+    // 	获取token失败
     if ($token_array['code'] != 200) {
+
+
         return false;
+
+
     }
+
+
     $token = $token_array['token'];
+
+
     $data = array(
         'uid' => $uid,
         'type' => 1,
@@ -534,116 +1057,263 @@ function get_rongcloud_token($uid)
         'head_img' => $avatar,
         'access_token' => $token
     );
-    // 插入数据库
+
+
+    // 	插入数据库
     $result = D('OauthUser')->addData($data);
+
+
     if ($result) {
+
+
         return $token;
+
+
     } else {
+
+
         return false;
+
+
     }
+
+
 }
+
 
 /**
  * 更新融云头像
  * @param  integer $uid 用户id
  * @return boolear      操作是否成功
  */
+
+
 function refresh_rongcloud_token($uid)
 {
-    // 获取用户昵称和头像
+
+
+    // 	获取用户昵称和头像
     $user_data = M('Users')->field('username,avatar')->getById($uid);
-    // 用户不存在
+
+
+    // 	用户不存在
     if (empty($user_data)) {
+
+
         return false;
+
+
     }
+
+
     $avatar = get_url($user_data['avatar']);
-    // 获取key和secret
+
+
+    // 	获取key和secret
     $key_secret = get_rong_key_secret();
-    // 实例化融云
+
+
+    // 	实例化融云
     $rong_cloud = new \Org\Xb\RongCloud($key_secret['key'], $key_secret['secret']);
-    // 更新融云用户头像
+
+
+    // 	更新融云用户头像
     $result_json = $rong_cloud->userRefresh($uid, $user_data['username'], $avatar);
+
+
     $result_array = json_decode($result_json, true);
+
+
     if ($result_array['code'] == 200) {
+
+
         return true;
+
+
     } else {
+
+
         return false;
+
+
     }
+
+
 }
+
 
 /** 删除所有空目录
  * @param String $path 目录路径
  */
+
+
 function rm_empty_dir($path)
 {
+
+
     if (is_dir($path) && ($handle = opendir($path)) !== false) {
-        while (($file = readdir($handle)) !== false) {// 遍历文件夹
+
+
+        while (($file = readdir($handle)) !== false) {
+
+            // 			遍历文件夹
             if ($file != '.' && $file != '..') {
-                $curfile = $path . '/' . $file;// 当前目录
-                if (is_dir($curfile)) {// 目录
-                    rm_empty_dir($curfile);// 如果是目录则继续遍历
-                    if (count(scandir($curfile)) == 2) {//目录为空,=2是因为.和..存在
-                        rmdir($curfile);// 删除空目录
+
+
+                $curfile = $path . '/' . $file;
+
+                // 				当前目录
+                if (is_dir($curfile)) {
+
+                    // 					目录
+                    rm_empty_dir($curfile);
+
+                    // 					如果是目录则继续遍历
+                    if (count(scandir($curfile)) == 2) {
+
+                        //目						录为空,=2是因为.和..存在
+                        rmdir($curfile);
+
+                        // 						删除空目录
                     }
+
+
                 }
+
+
             }
+
+
         }
+
+
         closedir($handle);
+
+
     }
+
+
 }
+
 
 /**
  * 删除空目录
  * @param $dir
  * @return bool
  */
+
+
 function rmdirs($dir)
 {
+
+
     $dh = opendir($dir);
+
+
     while ($file = readdir($dh)) {
+
+
         if ($file != "." && $file != "..") {
+
+
             $fullpath = $dir . "/" . $file;
+
+
             if (!is_dir($fullpath)) {
+
+
                 @unlink($fullpath);
+
+
             } else {
+
+
                 $this->rmdirs($fullpath);
+
+
             }
+
+
         }
+
+
     }
 
+
     closedir($dh);
-    //删除当前文件夹：
+
+
+    //删	除当前文件夹：
     if (rmdir($dir)) {
+
+
         return true;
+
+
     } else {
+
+
         return false;
+
+
     }
+
+
 }
+
 
 /**
  * 获取完整网络连接
  * @param  string $path 文件路径
  * @return string       http连接
  */
+
+
 function get_url($path)
 {
-    // 如果是空；返回空
+
+
+    // 	如果是空；返回空
     if (empty($path)) {
+
+
         return '';
-    }
-    // 如果已经有http直接返回
-    if (strpos($path, 'http://') !== false) {
-        return $path;
-    }
-    // 判断是否使用了oss
-    $alioss = C('ALIOSS_CONFIG');
-    if (empty($alioss['KEY_ID'])) {
-        return 'http://' . $_SERVER['HTTP_HOST'] . $path;
-    } else {
-        return 'http://' . $alioss['BUCKET'] . '.' . $alioss['END_POINT'] . $path;
+
+
     }
 
+
+    // 	如果已经有http直接返回
+    if (strpos($path, 'http://') !== false) {
+
+
+        return $path;
+
+
+    }
+
+
+    // 	判断是否使用了oss
+    $alioss = C('ALIOSS_CONFIG');
+
+
+    if (empty($alioss['KEY_ID'])) {
+
+
+        return 'http://' . $_SERVER['HTTP_HOST'] . $path;
+
+
+    } else {
+
+
+        return 'http://' . $alioss['BUCKET'] . '.' . $alioss['END_POINT'] . $path;
+
+
+    }
+
+
 }
+
 
 /** ***********************************异位或加密 **********************************
  *
@@ -651,15 +1321,32 @@ function get_url($path)
  * @param  integer $type [description]
  * @return [type]         [description]
  */
+
+
 function encrytion($value, $type = 0)
 {
+
+
     $key = md5(C('AUTO_LOGIN_KEY'));
+
+
     if ($type) {
+
+
         return str_replace('=', '', base64_encode($value ^ $key));
+
+
     }
+
+
     $value = base64_decode($value);
+
+
     return $value ^ $key;
+
+
 }
+
 
 /** ***********************************格式化字符串时间 **********************************
  *
@@ -667,86 +1354,174 @@ function encrytion($value, $type = 0)
  * @return [type]       [description]
  */
 
+
 function time_format($time)
 {
+
+
     $now = time();
+
+
     $today = strtotime(date('y-m-d'));
+
+
     $yesterday = strtotime('-1 day', $today);
+
 
     $diff = $now - $time;
 
+
     $str = '';
+
+
     switch (true) {
+
+
         case $diff < 60 :
             $str = '刚刚';
+
+
             break;
+
+
         case $diff < 3600 :
             $str = floor($diff / 60) . '分钟前';
+
+
             break;
+
+
         case $diff < (3600 * 8) :
             $str = floor($diff / 3600) . '小时前';
+
+
             break;
+
+
         case $time > $today :
             $str = '今天' . date('H:i', $time);
+
+
             break;
+
+
         case $time > $yesterday :
             $str = '昨天' . date('H:i', $time);
+
+
             break;
+
+
         default :
             $str = date('Y-m-d H:i', $time);
+
+
     }
+
+
     return $str;
+
+
 }
+
 
 /*************************************经验值转换为等级 **********************************
  *
  * @param  [type] $exp [description]
  * @return [type]      [description]
  */
+
+
 function exp_to_level($exp)
 {
+
+
     switch (true) {
+
+
         case $exp >= C('LV20') :
             return 20;
+
+
         case $exp >= C('LV19') :
             return 19;
+
+
         case $exp >= C('LV18') :
             return 18;
+
+
         case $exp >= C('LV17') :
             return 17;
+
+
         case $exp >= C('LV16') :
             return 16;
+
+
         case $exp >= C('LV15') :
             return 15;
+
+
         case $exp >= C('LV14') :
             return 14;
+
+
         case $exp >= C('LV13') :
             return 13;
+
+
         case $exp >= C('LV12') :
             return 12;
+
+
         case $exp >= C('LV11') :
             return 11;
+
+
         case $exp >= C('LV10') :
             return 10;
+
+
         case $exp >= C('LV9') :
             return 9;
+
+
         case $exp >= C('LV8') :
             return 8;
+
+
         case $exp >= C('LV7') :
             return 7;
+
+
         case $exp >= C('LV6') :
             return 6;
+
+
         case $exp >= C('LV5') :
             return 5;
+
+
         case $exp >= C('LV4') :
             return 4;
+
+
         case $exp >= C('LV3') :
             return 3;
+
+
         case $exp >= C('LV2') :
             return 2;
+
+
         default :
             return 1;
+
+
     }
+
+
 }
 
 
@@ -755,8 +1530,12 @@ function exp_to_level($exp)
  * 读取配置项的详细信息
  * @return array
  */
+
+
 function getGlobalSkypeLogDbConfig()
 {
+
+
     $global_skype_db_config = array(
         'dbms' => C('DB_TYPE'),
         'username' => C('DB_USER'),
@@ -764,8 +1543,13 @@ function getGlobalSkypeLogDbConfig()
         'hostname' => C('DB_HOST'),
         'database' => C('DB_NAME'),
     );
+
+
     return $global_skype_db_config;
+
+
 }
+
 
 /**
  *
@@ -777,22 +1561,48 @@ function getGlobalSkypeLogDbConfig()
  * @return bool 【返回一个布尔值，TRUE表示插入成功，否则失败】
  */
 
+
 function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NAME, $action = CONTROLLER_NAME, $method = ACTION_NAME)
 {
+
+
     $config = getGlobalSkypeLogDbConfig();
+
+
     $conn = new \mysqli($config['hostname'], $config['username'], $config['password'], $config['database']);
+
+
     if ($conn->connect_error) {
+
+
         die("连接失败: " . $conn->connect_error);
+
+
     }
+
+
     mysqli_query($conn, 'set names utf8');
+
+
     $account = getAdminAccount();
+
+
     $nickname = getAdminNickname();
+
+
     $user_id = getAdminUserId();
+
+
     $ipaddr = get_client_ip();
+
+
     $query_string = implode('--', array_merge($_GET, $_POST));
 
+
     $is_desc = 0;
+
     if ($desc) $is_desc = 1;
+
     $insert_time = date('Y-m-d H:i:s');
 
     $query = "INSERT INTO `" . C('LOG_DB_TABLE') . "` (`guid`,`account`,`nickname`,`addtime`,`app`,`action`,
@@ -801,76 +1611,123 @@ function addOperationLog($desc = NULL, $unique_flag = 'system', $app = MODULE_NA
     if (mysqli_query($conn, $query)) {
         $result = TRUE;
     } else {
-        //$result = "Error:" . $query . "<br/>" . mysqli_error($conn); 用于以后调试
+        //$		result = "Error:" . $query . "<br/>" . mysqli_error($conn);
+        //用于以后调试
         $result = FALSE;
     }
     return $result;
+
 }
+
 
 /**
  * 获取用户账号
  * @return mixed
  */
+
+
 function getAdminAccount()
 {
+
+
     return $_SESSION['loginAccount'];
+
+
 }
+
 
 /**
  * 获取用户昵称
  * @return mixed
  */
+
+
 function getAdminNickname()
 {
+
+
     return $_SESSION['loginUserName'];
+
+
 }
+
 
 /**
  * 获取用户ID信息，这条信息是用户登陆的时候保存的
  * @return mixed
  */
+
+
 function getAdminUserId()
 {
+
+
     return $_SESSION[C('USER_AUTH_KEY')];
+
+
 }
 
+
 /** ***********************************跳向支付宝付款 ***************************************************************/
+
+
 /**
  * 跳向支付宝付款
  * @param  array $order 订单数据 必须包含 out_trade_no(订单号)、price(订单金额)、subject(商品名称标题)
  */
+
+
 function alipay($order)
 {
+
+
     vendor('Alipay.AlipaySubmit', '', '.class.php');
-    // 获取配置
+
+
+    // 	获取配置
     $config = C('ALIPAY_CONFIG');
+
+
     $data = array(
-        "_input_charset" => $config['input_charset'], // 编码格式
-        "logistics_fee" => "0.00", // 物流费用
-        "logistics_payment" => "SELLER_PAY", // 物流支付方式SELLER_PAY（卖家承担运费）、BUYER_PAY（买家承担运费）
-        "logistics_type" => "EXPRESS", // 物流类型EXPRESS（快递）、POST（平邮）、EMS（EMS）
-        "notify_url" => $config['notify_url'], // 异步接收支付状态通知的链接
-        "out_trade_no" => $order['out_trade_no'], // 订单号
-        "partner" => $config['partner'], // partner 从支付宝商户版个人中心获取
-        "payment_type" => "1", // 支付类型对应请求时的 payment_type 参数,原样返回。固定设置为1即可
-        "price" => $order['price'], // 订单价格单位为元
-        // "price" => 0.01, // // 调价用于测试
-        "quantity" => "1", // price、quantity 能代替 total_fee。 即存在 total_fee,就不能存在 price 和 quantity;存在 price、quantity, 就不能存在 total_fee。 （没绕明白；好吧；那无视这个参数即可）
-        "receive_address" => '1', // 收货人地址 即时到账方式无视此参数即可
-        "receive_mobile" => '1', // 收货人手机号码 即时到账方式无视即可
-        "receive_name" => '1', // 收货人姓名 即时到账方式无视即可
-        "receive_zip" => '1', // 收货人邮编 即时到账方式无视即可
-        "return_url" => $config['return_url'], // 页面跳转 同步通知 页面路径 支付宝处理完请求后,当前页面自 动跳转到商户网站里指定页面的 http 路径。
-        "seller_email" => $config['seller_email'], // email 从支付宝商户版个人中心获取
-        "service" => "create_direct_pay_by_user", // 接口名称 固定设置为create_direct_pay_by_user
-        "show_url" => $config['show_url'], // 商品展示网址,收银台页面上,商品展示的超链接。
-        "subject" => $order['subject'] // 商品名称商品的标题/交易标题/订单标 题/订单关键字等
+        "_input_charset" => $config['input_charset'], // 	编码格式
+        "logistics_fee" => "0.00", // 	物流费用
+        "logistics_payment" => "SELLER_PAY", // 	物流支付方式SELLER_PAY（卖家承担运费）、BUYER_PAY（买家承担运费）
+        "logistics_type" => "EXPRESS", // 	物流类型EXPRESS（快递）、POST（平邮）、EMS（EMS）
+        "notify_url" => $config['notify_url'], // 	异步接收支付状态通知的链接
+        "out_trade_no" => $order['out_trade_no'], // 	订单号
+        "partner" => $config['partner'], // 	partner 从支付宝商户版个人中心获取
+        "payment_type" => "1", // 	支付类型对应请求时的 payment_type 参数,原样返回。固定设置为1即可
+        "price" => $order['price'], // 	订单价格单位为元
+        // 	"price" => 0.01, // 	// 	调价用于测试
+        "quantity" => "1", // 	price、quantity 能代替 total_fee。 即存在 total_fee,就不能存在 price 和 quantity;
+
+        //存在 price、quantity, 就不能存在 total_fee。 （没绕明白；好吧；那无视这个参数即可）
+        "receive_address" => '1', // 	收货人地址 即时到账方式无视此参数即可
+        "receive_mobile" => '1', // 	收货人手机号码 即时到账方式无视即可
+        "receive_name" => '1', // 	收货人姓名 即时到账方式无视即可
+        "receive_zip" => '1', // 	收货人邮编 即时到账方式无视即可
+        "return_url" => $config['return_url'], // 	页面跳转 同步通知 页面路径 支付宝处理完请求后,当前页面自 动跳转到商户网站里指定页面的 http 路径。
+        "seller_email" => $config['seller_email'], // 	email 从支付宝商户版个人中心获取
+        "service" => "create_direct_pay_by_user", // 	接口名称 固定设置为create_direct_pay_by_user
+        "show_url" => $config['show_url'], // 	商品展示网址,收银台页面上,商品展示的超链接。
+        "subject" => $order['subject'] // 	商品名称商品的标题/交易标题/订单标 题/订单关键字等
     );
+
+
     $alipay = new \AlipaySubmit($config);
+
+
     $new = $alipay->buildRequestPara($data);
+
+
     $go_pay = $alipay->buildRequestForm($new, 'get', '支付');
+
+
     echo $go_pay;
+
+
 }
+
 
 /**
  * 发送邮件
@@ -879,21 +1736,45 @@ function alipay($order)
  * @param  string $content 内容
  * @return boolean       是否成功
  */
+
+
 function send_email($address, $subject, $content)
 {
+
+
     $email_smtp = C('EMAIL_SMTP');
+
+
     $email_username = C('EMAIL_USERNAME');
+
+
     $email_password = C('EMAIL_PASSWORD');
+
+
     $email_from_name = C('EMAIL_FROM_NAME');
+
+
     if (empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)) {
+
+
         return array("error" => 1, "message" => '邮箱配置不完整');
+
+
     }
+
+
     $phpmailer = new PHPMailer();
-    // 设置PHPMailer使用SMTP服务器发送Email
+
+
+    // 	设置PHPMailer使用SMTP服务器发送Email
     $phpmailer->IsSMTP();
-    // 设置为html格式
+
+
+    // 	设置为html格式
     $phpmailer->IsHTML(true);
-    // 设置邮件的字符编码'
+
+
+    // 	设置邮件的字符编码'
     $phpmailer->CharSet = 'UTF-8';
     // 设置SMTP服务器。
     $phpmailer->Host = $email_smtp;
@@ -933,7 +1814,7 @@ function send_email($address, $subject, $content)
  * @param string $url
  * @return mixed
  */
-function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')
+function CURL_GET_REQUEST_HTTP($url = 'http://w	ww.baidu.com')
 {
     //初始化
     $curl = curl_init();
@@ -944,7 +1825,11 @@ function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')
     //设置获取的信息以文件流的形式返回，而不是直接输出。要求结果为字符串且输出到屏幕上
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     //执行命令
-    curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)');
+    curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible;
+	
+	MSIE 5.01;
+	
+	Windows NT 5.0)');
     curl_setopt($curl, CURLOPT_TIMEOUT, 15);
     $data = curl_exec($curl);
     //关闭URL请求
@@ -959,7 +1844,7 @@ function CURL_GET_REQUEST_HTTP($url = 'http://www.baidu.com')
  * @param $post_data
  * @return mixed
  */
-function CURL_POST_REQUEST_HTTP($url = 'http://www.baidu.com', $post_data)
+function CURL_POST_REQUEST_HTTP($url = 'http://w	ww.baidu.com', $post_data)
 {
     //初始化
     $curl = curl_init();
@@ -997,7 +1882,13 @@ function CURL_REQUEST_HTTP($url, $post = '', $cookie = '', $returnCookie = 0)
 {
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)');
+    curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible;
+	
+	MSIE 10.0;
+	
+	Windows NT 6.1;
+	
+	Trident/6.0)');
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
     curl_setopt($curl, CURLOPT_AUTOREFERER, 1);
     curl_setopt($curl, CURLOPT_REFERER, "http://XXX");
@@ -1066,4 +1957,84 @@ function oss_delet_object($object)
     // 获取bucket名称
     $bucket = C('ALIOSS_CONFIG.BUCKET');
     $test = $oss->deleteObject($bucket, $object);
+}
+
+/**
+ * 解析Xml
+ * @param $xml
+ * @return mixed
+ */
+function FromXml($xml)
+{
+    if (!$xml) {
+        $totalInfo['status'] = 500;
+        $totalInfo['message'] = '没有该设备的相应信息';
+        $totalInfo['dataList'] = null;
+        return $totalInfo;
+    }
+    //将XML转为array
+    $values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+    return $values;
+}
+
+/**
+ * 查看当前的流记录
+ * @param string $deviceId
+ * @return mixed
+ */
+function getStreamByIp($outerIP, $streamName)
+{
+    //查询录像模块的ＩＰ地址外网，根据这个可以查看到相应的流
+    $url = $outerIP . "/rtmp/stat";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    //所有流的信息,解析Xml
+    $outputs = FromXml($output);
+    $streamInfo = $outputs['server']['application']['live']['stream'];
+
+    if (array_key_exists("name", $streamInfo)) {
+        //判断该设备是否在这个数组中，真：获取这个设备的所有打流信息
+        if ($streamName == $streamInfo['name']) {
+            $totalInfo['status'] = 200;
+            $totalInfo['message'] = 'The server is normal and is currently streaming';
+            $totalInfo['dataList']['name'] = $streamInfo['name'];
+            $totalInfo['dataList']['bw_in'] = $streamInfo['bw_in'];
+            $totalInfo['dataList']['bw_out'] = $streamInfo['bw_out'];
+
+        } else {
+            $totalInfo['status'] = 500;
+            $totalInfo['message'] = 'The server has a problem or is not currently streaming information 1';
+            $totalInfo['dataList']['name'] = $streamName;
+            $totalInfo['dataList']['bw_in'] = 0;
+            $totalInfo['dataList']['bw_out'] = 0;
+        }
+    } else {
+        //存放所有的设备号到一个数组中
+        foreach ($streamInfo as $key => $val) {
+            $deviceInfo[] = $val['name'];
+        }
+        //判断该设备是否在这个数组中，真：获取这个设备的所有打流信息
+        if (in_array($streamName, $deviceInfo)) {
+            $totalInfo['status'] = 200;
+            $totalInfo['message'] = 'The server is normal and is currently streaming';
+            foreach ($streamInfo as $val) {
+                if ($val['name'] == $streamName) {
+                    $totalInfo['dataList']['name'] = $val['name'];
+                    $totalInfo['dataList']['bw_in'] = $val['bw_in'];
+                    $totalInfo['dataList']['bw_out'] = $val['bw_out'];
+                }
+            }
+        } else {
+            $totalInfo['status'] = 500;
+            $totalInfo['message'] = 'The server has a problem or is not currently streaming information 2';
+            $totalInfo['dataList']['name'] = $streamName;
+            $totalInfo['dataList']['bw_in'] = 0;
+            $totalInfo['dataList']['bw_out'] = 0;
+        }
+    }
+    return $totalInfo;
 }
