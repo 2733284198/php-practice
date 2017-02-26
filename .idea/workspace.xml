@@ -439,7 +439,7 @@
       <workItem from="1488028916461" duration="464000" />
       <workItem from="1488029737473" duration="1698000" />
       <workItem from="1488082974836" duration="4339000" />
-      <workItem from="1488113320233" duration="3072000" />
+      <workItem from="1488113320233" duration="3062000" />
     </task>
     <task id="LOCAL-00050" summary="angular操作select列表框">
       <created>1482164711745</created>
@@ -788,7 +788,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165189000" />
+    <option name="totallyTimeSpent" value="165179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
