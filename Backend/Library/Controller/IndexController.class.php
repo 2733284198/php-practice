@@ -58,7 +58,10 @@ html;
         var_dump('发送完成');
     }
 
-
+    public function email(){
+        $email = '2680737855@qq.com';
+        var_dump(filter_var($email,FILTER_VALIDATE_EMAIL));
+    }
 
 
 }

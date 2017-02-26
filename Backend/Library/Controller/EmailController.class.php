@@ -188,9 +188,10 @@ html;
             //其实在这里可以添加一个状态表示没有发送成功的标记，修改数据库字段status 的值为2
             //$model->where(array('id' => $value['id']))->setField('status', 2);
         }
-        exit('发送邮件结束');
+        exit('发送邮件结束时间：'.date("Y-m-d H:i:s"));
     }
 
+    //Apache 服务器需要执行的队列
     public function apacheToCliEmail()
     {
         echo '------------------------------------启动一个CLi进程 开始--------------------------------';
