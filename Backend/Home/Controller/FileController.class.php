@@ -97,7 +97,7 @@ class FileController extends BaseController
      * @param [Bool] $unlink [是否删除原图,默认False不删除原图]
      * @return [Array] [图片上传信息]
      */
-    public function imageUpload($path = 'Images', $thumb = FALSE, $thumbWidth = 100, $thumbHeight = 100,$unlink = FALSE)
+    public function imageUpload($path = 'Images', $thumb = FALSE, $thumbWidth = 100, $thumbHeight = 100, $unlink = FALSE)
     {
         $typeCode = $_POST['typeCode'];
         // 检查配置目录是否存在，如果不存在，则创建一个
@@ -137,7 +137,7 @@ class FileController extends BaseController
                 //使用thumb方法生成缩略图,IMAGE_THUMB_FILLED    =   2 ; 缩放后填充类型
                 $image->thumb($thumbWidth, $thumbHeight, \Think\Image::IMAGE_THUMB_SCALE);
                 $image->save($savePath);
-                if($unlink) @unlink(C('UPLOAD_PATH') .$file['savepath'] . $file['savename']);
+                if ($unlink) @unlink(C('UPLOAD_PATH') . $file['savepath'] . $file['savename']);
 
                 // 返回文件信息
                 return array(
@@ -250,7 +250,6 @@ class FileController extends BaseController
     }
 
 
-
     /**
      * uploadify 文件上传,通过调用imageUpload（）方法
      */
@@ -303,17 +302,38 @@ class FileController extends BaseController
         $old = $model->where($where)->field($field)->find();
         if ($model->where($where)->save($_POST)) {
             if (!empty($old['face180'])) {
-                @unlink('./Uploads/'.$old['face180']);//删除之前的缩略图
+                @unlink('./Uploads/' . $old['face180']);//删除之前的缩略图
             }
-            $this->success('修改成功',U('index'));
-        }else{
+            $this->success('修改成功', U('index'));
+        } else {
             $this->error('修改失败,请重试。。。');
         }
     }
 
     public function test()
     {
-        return ['userId'=>'090909090'];
+        return ['userId' => '090909090'];
+    }
+
+    //在写入任何文件之前检查目录是否可写
+    public function is_write()
+    {
+        $contents = "All the content";
+        $dir = '/var/www/project';
+        $file_path = $dir . "/content.txt";
+
+        if (is_writable($dir)) {
+            file_put_contents($file_path, $contents);
+        } else {
+            die("Directory $dir is not writable, or does not exist. Please check");
+        }
+
+        //改变应用程序创建的文件的权限
+        // Read and write for owner, read for everybody else
+        chmod("/somedir/somefile", 0644);
+
+        // Everything for owner, read and execute for others
+        chmod("/somedir/somefile", 0755);
     }
 
 
