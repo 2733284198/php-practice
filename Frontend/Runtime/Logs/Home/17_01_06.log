@@ -1,0 +1,11 @@
+[ 2017-01-06T22:27:10+08:00 ] 127.0.0.1 /ThinkPhpStudy/index.php/home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000108s ]
+INFO: [ app_init ] --END-- [ RunTime:0.037341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.046078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.046680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.058216s ]
+INFO: [ app_end ] --END-- [ RunTime:0.059193s ]
+

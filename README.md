@@ -100,9 +100,13 @@
 - [x] 一个简单的APi接口签名方法&emsp;`Home/SignEncryptController`
 - [x] Mobile_Detect是一个轻量级的PHP类,用于检测移动设备&emsp;`Home/MobileController`
 - [ ]  __E=mc__
-- [X] PHP标准的HTML过滤器: `Home/HtmlController/complexFilter`   
-- [ ] PHP GitHub API 2.0
-
+- [x] PHP标准的HTML过滤器: `Home/HtmlController/complexFilter`   
+- [x] PHP的机器学习库(PHP-ML - Machine Learning library for PHP)
+    - [x] PHP >= 7.0 
+    - [ ] 算法
+    - [ ] 交叉验证 
+    - [ ] 视频编码h神经网络
+    - [ ] 预处理    
 ## 常用单利模式调用
 - [x] Redis单利模式：`RedisInstance::Instance`
 - [x] PDO单利模式：`PDOInstance::Instance`

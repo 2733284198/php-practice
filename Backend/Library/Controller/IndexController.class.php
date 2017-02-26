@@ -1,6 +1,7 @@
 <?php
 namespace Library\Controller;
 
+use Phpml\Classification\KNearestNeighbors;
 use Think\Controller;
 
 class IndexController extends Controller
@@ -61,6 +62,17 @@ html;
     public function email(){
         $email = '2680737855@qq.com';
         var_dump(filter_var($email,FILTER_VALIDATE_EMAIL));
+    }
+
+    public function simpleExample()
+    {
+        $samples = [[1, 3], [1, 4], [2, 4], [3, 1], [4, 1], [4, 2]];
+        $labels = ['a', 'a', 'a', 'b', 'b', 'b'];
+        $classifier = new KNearestNeighbors();
+        $classifier->train($samples,$labels);
+        $result = $classifier->predict([3,2]); // return b
+        echo $result;
+        var_dump($classifier);
     }
 
 

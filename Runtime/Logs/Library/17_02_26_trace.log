@@ -1,0 +1,2158 @@
+[ 2017-02-26T11:58:17+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 11:58:09 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:7.9645s ( Load:1.0765s Init:0.0155s Exec:6.8726s Template:-0.0001s )
+吞吐率:0.13req/s
+内存开销:3,193.81 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.13 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0022s ]
+
+[ 2017-02-26T11:59:16+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 11:59:14 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:1.4974s ( Load:0.0929s Init:0.0133s Exec:1.3913s Template:-0.0001s )
+吞吐率:0.67req/s
+内存开销:3,193.81 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.13 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0026s ]
+
+[ 2017-02-26T11:59:32+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Email/register
+[ 基本 ]
+请求信息:2017-02-26 11:59:29 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Email/register
+运行时间:2.4740s ( Load:0.0872s Init:0.0238s Exec:2.3631s Template:-0.0001s )
+吞吐率:0.40req/s
+内存开销:3,201.95 kb
+查询信息:1 queries 1 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\EmailController.class.php ( 5.91 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SHOW COLUMNS FROM `tour_user` [ RunTime:0.1491s ]
+INSERT INTO `tour_user` (`username`,`password`) VALUES ('Guest1722318623','1234567872') [ RunTime:0.1131s ]
+
+[ 2017-02-26T12:02:31+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:02:30 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:0.9169s ( Load:0.0808s Init:0.0199s Exec:0.8163s Template:-0.0001s )
+吞吐率:1.09req/s
+内存开销:3,195.58 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0238s ]
+
+[ 2017-02-26T12:03:50+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:03:49 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:0.8882s ( Load:0.0829s Init:0.0199s Exec:0.7855s Template:-0.0001s )
+吞吐率:1.13req/s
+内存开销:3,195.58 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0023s ]
+
+[ 2017-02-26T12:06:02+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:06:01 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:0.9043s ( Load:0.0764s Init:0.0188s Exec:0.8092s Template:-0.0001s )
+吞吐率:1.11req/s
+内存开销:3,195.20 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.37 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0099s ]
+
+[ 2017-02-26T12:07:49+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:07:47 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:2.3576s ( Load:0.1184s Init:0.0274s Exec:2.2119s Template:-0.0001s )
+吞吐率:0.42req/s
+内存开销:3,195.44 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.42 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0030s ]
+
+[ 2017-02-26T12:08:40+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:08:37 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:2.5086s ( Load:0.1247s Init:0.0323s Exec:2.3523s Template:-0.0007s )
+吞吐率:0.40req/s
+内存开销:3,195.42 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.47 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0018s ]
+
+[ 2017-02-26T12:09:19+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:09:17 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:1.7484s ( Load:0.0699s Init:0.0187s Exec:1.6599s Template:-0.0001s )
+吞吐率:0.57req/s
+内存开销:3,195.43 kb
+查询信息:1 queries 0 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.47 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0013s ]
+
+[ 2017-02-26T12:17:50+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:17:48 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:1.6461s ( Load:0.1705s Init:0.0396s Exec:1.4360s Template:-0.0001s )
+吞吐率:0.61req/s
+内存开销:3,176.37 kb
+查询信息:1 queries 2 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.60 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0029s ]
+UPDATE `tour_task_list` SET `status`='1' [ RunTime:0.0026s ]
+UPDATE `tour_task_list` SET `status`='1' [ RunTime:0.0013s ]
+
+[ 2017-02-26T12:22:34+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:22:24 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:9.8128s ( Load:3.7638s Init:0.8987s Exec:5.1504s Template:-0.0001s )
+吞吐率:0.10req/s
+内存开销:3,176.18 kb
+查询信息:1 queries 1 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0390s ]
+UPDATE `tour_task_list` SET `status`='1' [ RunTime:0.0277s ]
+
+[ 2017-02-26T12:23:42+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/taskTable
+[ 基本 ]
+请求信息:2017-02-26 12:23:40 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/taskTable
+运行时间:1.1376s ( Load:0.1578s Init:0.0545s Exec:0.9255s Template:-0.0001s )
+吞吐率:0.88req/s
+内存开销:3,176.18 kb
+查询信息:1 queries 1 writes 
+文件加载:51
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 3.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Model.class.php ( 67.27 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db.class.php ( 5.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Db\Driver.class.php ( 41.60 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.phpmailer.php ( 143.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\phpmailer\phpmailer\class.smtp.php ( 41.07 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+SELECT * FROM `tour_task_list` WHERE `status` = '0'  [ RunTime:0.0017s ]
+UPDATE `tour_task_list` SET `status`='1' [ RunTime:0.0199s ]
+
+[ 2017-02-26T12:25:45+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:25:39 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:5.9436s ( Load:0.0872s Init:0.0661s Exec:5.7904s Template:-0.0001s )
+吞吐率:0.17req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:26:18+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:26:11 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:7.1189s ( Load:0.8973s Init:0.0359s Exec:6.1858s Template:-0.0001s )
+吞吐率:0.14req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:27:49+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:27:47 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:1.9320s ( Load:0.5706s Init:0.0309s Exec:1.3306s Template:-0.0001s )
+吞吐率:0.52req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:28:27+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:28:25 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:1.4391s ( Load:0.1891s Init:0.0248s Exec:1.2256s Template:-0.0003s )
+吞吐率:0.69req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:28:32+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:28:30 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:1.5531s ( Load:0.0918s Init:0.0195s Exec:1.4418s Template:-0.0001s )
+吞吐率:0.64req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:28:45+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:28:43 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:1.6585s ( Load:0.1216s Init:0.0675s Exec:1.4695s Template:-0.0001s )
+吞吐率:0.60req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:29:34+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:29:32 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:1.7149s ( Load:0.1189s Init:0.0359s Exec:1.5602s Template:-0.0001s )
+吞吐率:0.58req/s
+内存开销:1,623.82 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.11 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:40:19+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:40:06 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:12.5657s ( Load:3.6543s Init:0.6012s Exec:8.3103s Template:-0.0001s )
+吞吐率:0.08req/s
+内存开销:1,623.77 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.24 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:41:47+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:41:44 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:2.8661s ( Load:0.0709s Init:0.0147s Exec:2.7806s Template:-0.0001s )
+吞吐率:0.35req/s
+内存开销:1,623.91 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.26 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:43:46+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:43:04 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:41.3750s ( Load:0.0682s Init:0.0263s Exec:41.2806s Template:-0.0001s )
+吞吐率:0.02req/s
+内存开销:1,623.08 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.24 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T12:46:09+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:45:45 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:24.6119s ( Load:0.2071s Init:0.0280s Exec:24.3770s Template:-0.0001s )
+吞吐率:0.04req/s
+内存开销:1,623.08 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.24 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T13:00:20+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 12:59:43 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/apacheToCliEmail
+运行时间:36.3980s ( Load:0.1223s Init:0.0318s Exec:36.2440s Template:-0.0001s )
+吞吐率:0.03req/s
+内存开销:1,623.70 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.73 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 4.37 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T13:25:43+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/email
+[ 基本 ]
+请求信息:2017-02-26 13:25:39 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/email
+运行时间:4.2066s ( Load:3.3156s Init:0.6430s Exec:0.2481s Template:-0.0001s )
+吞吐率:0.24req/s
+内存开销:1,613.52 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.76 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 1.74 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T13:26:00+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/index/email
+[ 基本 ]
+请求信息:2017-02-26 13:26:00 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/index/email
+运行时间:0.1387s ( Load:0.0869s Init:0.0185s Exec:0.0333s Template:-0.0001s )
+吞吐率:7.21req/s
+内存开销:1,613.51 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 41.76 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 1.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T13:29:06+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Email/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 13:28:27 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Email/apacheToCliEmail
+运行时间:38.9599s ( Load:0.1074s Init:0.0199s Exec:38.8329s Template:-0.0002s )
+吞吐率:0.03req/s
+内存开销:1,656.05 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\EmailController.class.php ( 8.73 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T13:32:35+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Email/apacheToCliEmail
+[ 基本 ]
+请求信息:2017-02-26 13:32:21 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Email/apacheToCliEmail
+运行时间:13.5907s ( Load:0.0826s Init:0.0213s Exec:13.4869s Template:-0.0001s )
+吞吐率:0.07req/s
+内存开销:1,656.84 kb
+查询信息:0 queries 0 writes 
+文件加载:45
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.85 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\EmailController.class.php ( 8.76 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T20:55:22+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+[ 基本 ]
+请求信息:2017-02-26 20:55:22 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+运行时间:0.3704s ( Load:0.0622s Init:0.0173s Exec:0.2910s Template:-0.0001s )
+吞吐率:2.70req/s
+内存开销:1,640.70 kb
+查询信息:0 queries 0 writes 
+文件加载:52
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.90 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 1.88 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\KNearestNeighbors.php ( 1.78 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Trainable.php ( 0.46 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Predictable.php ( 0.64 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\Classifier.php ( 0.13 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Estimator.php ( 0.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance\Euclidean.php ( 0.68 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance.php ( 0.22 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T20:55:37+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+[ 基本 ]
+请求信息:2017-02-26 20:55:37 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+运行时间:0.1953s ( Load:0.1114s Init:0.0193s Exec:0.0647s Template:-0.0001s )
+吞吐率:5.12req/s
+内存开销:1,641.09 kb
+查询信息:0 queries 0 writes 
+文件加载:52
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.90 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 1.91 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\KNearestNeighbors.php ( 1.78 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Trainable.php ( 0.46 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Predictable.php ( 0.64 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\Classifier.php ( 0.13 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Estimator.php ( 0.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance\Euclidean.php ( 0.68 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance.php ( 0.22 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T20:56:42+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+[ 基本 ]
+请求信息:2017-02-26 20:56:42 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+运行时间:0.1837s ( Load:0.0744s Init:0.0177s Exec:0.0916s Template:-0.0001s )
+吞吐率:5.44req/s
+内存开销:1,709.34 kb
+查询信息:0 queries 0 writes 
+文件加载:52
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.90 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 2.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\KNearestNeighbors.php ( 1.78 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Trainable.php ( 0.46 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Predictable.php ( 0.64 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\Classifier.php ( 0.13 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Estimator.php ( 0.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance\Euclidean.php ( 0.68 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance.php ( 0.22 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T20:56:50+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+[ 基本 ]
+请求信息:2017-02-26 20:56:50 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+运行时间:0.1716s ( Load:0.0724s Init:0.0262s Exec:0.0732s Template:-0.0002s )
+吞吐率:5.83req/s
+内存开销:1,709.01 kb
+查询信息:0 queries 0 writes 
+文件加载:52
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.90 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 2.08 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\KNearestNeighbors.php ( 1.78 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Trainable.php ( 0.46 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Predictable.php ( 0.64 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\Classifier.php ( 0.13 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Estimator.php ( 0.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance\Euclidean.php ( 0.68 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance.php ( 0.22 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+
+[ 2017-02-26T20:57:16+08:00 ] 127.0.0.1 /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+[ 基本 ]
+请求信息:2017-02-26 20:57:16 HTTP/1.1 GET : /ThinkPhpStudy/admin.php/Library/Index/simpleExample
+运行时间:0.3000s ( Load:0.1449s Init:0.0508s Exec:0.1044s Template:-0.0001s )
+吞吐率:3.33req/s
+内存开销:1,709.63 kb
+查询信息:0 queries 0 writes 
+文件加载:52
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=bh5j37gcfls3glfts5263oop21
+
+[ 文件 ]
+E:\wamp64\www\ThinkPhpStudy\admin.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Mode\common.php ( 2.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Common\functions.php ( 52.60 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Common\function.php ( 42.11 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\autoload.php ( 0.18 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_real.php ( 1.75 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\ClassLoader.php ( 12.17 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_namespaces.php ( 0.90 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_psr4.php ( 1.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_classmap.php ( 0.87 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\composer\autoload_files.php ( 0.65 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\symfony\polyfill-mbstring\bootstrap.php ( 4.34 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\illuminate\support\Illuminate\Support\helpers.php ( 19.69 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\j7mbo\twitter-api-php\TwitterAPIExchange.php ( 11.09 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\convention.php ( 11.18 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\config.php ( 7.19 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\tags.php ( 0.50 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Conf\debug.php ( 1.51 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\db.php ( 0.75 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\redis.php ( 1.45 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Conf\rbac.php ( 0.93 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Conf\config.php ( 0.38 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Common\function.php ( 2.35 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+E:\wamp64\www\ThinkPhpStudy\Backend\Library\Controller\IndexController.class.php ( 2.14 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\KNearestNeighbors.php ( 1.78 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Trainable.php ( 0.46 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Helper\Predictable.php ( 0.64 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Classification\Classifier.php ( 0.13 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Estimator.php ( 0.32 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance\Euclidean.php ( 0.68 KB )
+E:\wamp64\www\ThinkPhpStudy\vendor\php-ai\php-ml\src\Phpml\Math\Distance.php ( 0.22 KB )
+E:\wamp64\www\ThinkPhpStudy\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+

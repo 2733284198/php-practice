@@ -25,7 +25,8 @@
         "qiniu/php-sdk": "^7.1",
         "mobiledetect/mobiledetectlib": "^2.8",
         "ezyang/htmlpurifier": "^4.8",
-        "phpmailer/phpmailer": "^5.2"
+        "phpmailer/phpmailer": "^5.2",
+        "php-ai/php-ml": "^0.3.0"
     },
     "minimum-stability": "dev",
     "autoload":{
