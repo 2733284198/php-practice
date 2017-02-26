@@ -106,7 +106,8 @@
     - [ ] 算法
     - [ ] 交叉验证 
     - [ ] 视频编码h神经网络
-    - [ ] 预处理    
+    - [ ] 预处理 
+     
 ## 常用单利模式调用
 - [x] Redis单利模式：`RedisInstance::Instance`
 - [x] PDO单利模式：`PDOInstance::Instance`

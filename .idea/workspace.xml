@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="ThinkPhpStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +42,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="216">
-                <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="58" />
+              <first_editor relative-caret-position="324">
+                <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -439,14 +440,7 @@
       <workItem from="1488028916461" duration="464000" />
       <workItem from="1488029737473" duration="1698000" />
       <workItem from="1488082974836" duration="4339000" />
-      <workItem from="1488113320233" duration="3062000" />
-    </task>
-    <task id="LOCAL-00050" summary="angular操作select列表框">
-      <created>1482164711745</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1482164711787</updated>
+      <workItem from="1488113320233" duration="4044000" />
     </task>
     <task id="LOCAL-00051" summary="angular操作forEach循环遍历使用">
       <created>1482165555899</created>
@@ -784,11 +778,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488116842752</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="PHP的机器学习库(PHP-ML - Machine Learning library for PHP)">
+      <created>1488117904850</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1488117904850</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165179000" />
+    <option name="totallyTimeSpent" value="166161000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1268,8 +1269,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="216">
-            <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="58" />
+          <first_editor relative-caret-position="324">
+            <caret line="109" column="5" lean-forward="false" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
             <folding />
           </first_editor>
           <second_editor />
