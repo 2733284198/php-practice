@@ -44,9 +44,6 @@ define('RUNTIME_PATH',dirname(__FILE__).'/Runtime/');
 // 定义模板文件默认目录
 define("TMPL_PATH",dirname(__FILE__)."/Tpl/");
 
-// 采用CLI运行模式运行
-define("APP_MODE",'cli');
-
 // 定义oss的url
 define("OSS_URL","");
 
@@ -56,8 +53,8 @@ define("LOGGER_PATH",dirname(__FILE__)."/Logs");
 //定义多媒体存放路径
 define("MEDIA_PATH",dirname(__FILE__)."/Media");
 
-//composer的autoload自动加载原理
-//require 'vendor/autoload.php';
+// 定义CLI运行模式运行的项目路径
+define('CLI_PATH',dirname(__FILE__)."\\");
 
 // 引入ThinkPHP入口文件
 require dirname(__FILE__).'/ThinkPHP/ThinkPHP.php';

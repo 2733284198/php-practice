@@ -68,6 +68,7 @@
 - [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
 - [x] 多级模块化的管理
 - [x] Uploadify图片上传DEMO
+- [x] [PHPmailer批量发送邮件](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
 - [x] PHPmailer批量发送邮件&emsp;`Library/EmailController/register`
     - [x] PHP+Mysql 模拟队列发送邮件
 - [x] 支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
