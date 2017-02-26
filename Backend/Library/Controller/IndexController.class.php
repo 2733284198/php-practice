@@ -58,61 +58,7 @@ html;
         var_dump('发送完成');
     }
 
-    //通过APache 服务器方式启动一个CLi进程
-    public function apacheToCli()
-    {
-        // echo CLI_PATH."cli.php Library/index/test";
-        echo '------------------------------------启动一个CLi进程 开始--------------------------------';
-        //exec("E:\wamp64\bin\php\php7.0.10\php.exe E:\wamp64\www\ThinkPhpStudy\cli.php /Library/index/cmdCliTest 2>&1", $output, $return_val);
-        exec("E:\wamp64\bin\php\php7.0.10\php.exe ".CLI_PATH."cli.php /Library/index/cmdCliTest 2>&1", $output, $return_val);
-        echo "<hr/>";
-        var_dump($output);  //命令执行后生成的数组
-        echo "<hr/>";
-        var_dump("执行的状态:" . $return_val); //执行的状态
-        echo '-----------------------------------启动一个CLi进程 结束----------------------------------';
-    }
 
-    //这个方法将被cli模式调用
-    public function cmdCliTest()
-    {
-        sleep(10); //方便我们在任务管理器查看PHP cli进程，
-        echo date("Y-m-d H:i:s", time()) . ' cmdCliTest()这个方法将被cli模式调用: ThinnPHP cli Mode Run Success:';
-    }
-
-    //cli 命令行需要执行的php文件
-    public function taskTable()
-    {
-        $model = M("TaskList");
-        $status = 0;
-        $conditions = array('status' => ':status');
-        $result = $model->where($conditions)->bind(':status', $status)->select();
-        if (empty($result)) exit('没有可发送的邮件');
-        echo '开始发送邮件:' . "\r\n";
-        foreach ($result as $key => $value) {
-            //发送邮件
-            $result = send_email($value['user_email'], 'Tinywan激活邮件', "https://github.com/Tinywan");
-            //发送成功
-            if ($result['error'] == 0) {
-                //修改数据库字段status 的值为1
-                $model->where(array('id' => $value['id']))->setField('status', 1);
-            }
-            sleep(10);
-            //其实在这里可以添加一个状态表示没有发送成功的标记，修改数据库字段status 的值为2
-//            $model->where(array('id' => $value['id']))->setField('status', 2);
-        }
-        exit('发送邮件结束');
-    }
-
-    public function apacheToCliEmail()
-    {
-        echo '------------------------------------启动一个CLi进程 开始--------------------------------';
-        exec("E:\wamp64\bin\php\php7.0.10\php.exe E:\wamp64\www\ThinkPhpStudy\cli.php /Library/index/taskTable 2>&1", $output, $return_val);
-        echo "<hr/>";
-        var_dump($output);  //命令执行后生成的数组
-        echo "<hr/>";
-        var_dump("执行的状态:" . $return_val); //执行的状态
-        echo '-----------------------------------启动一个CLi进程 结束----------------------------------';
-    }
 
 
 }
