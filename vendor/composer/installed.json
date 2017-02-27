@@ -17,7 +17,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-02-18 17:35:19",
+        "time": "2017-02-18T17:35:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -72,7 +72,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.8"
         },
-        "time": "2016-03-05 10:22:50",
+        "time": "2016-03-05T10:22:50+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -110,7 +110,7 @@
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2014-07-09 21:08:03",
+        "time": "2014-07-09T21:08:03+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -165,7 +165,7 @@
             "phpunit/phpunit": "^5.7",
             "predis/predis": "~1.0"
         },
-        "time": "2017-01-20 09:27:09",
+        "time": "2017-01-20T09:27:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -229,7 +229,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-02-18 17:35:19",
+        "time": "2017-02-18T17:35:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -280,7 +280,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-10-10 12:19:37",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -359,7 +359,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-        "time": "2017-01-11 16:17:39",
+        "time": "2017-01-11T16:17:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -416,7 +416,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.0|^5.0"
         },
-        "time": "2016-03-02 13:49:15",
+        "time": "2016-03-02T13:49:15+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -480,7 +480,7 @@
         "suggest": {
             "php-ffmpeg/extras": "A compilation of common audio & video drivers for PHP-FFMpeg"
         },
-        "time": "2017-02-14 17:21:07",
+        "time": "2017-02-14T17:21:07+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -552,7 +552,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.5,>=4.5.1"
         },
-        "time": "2016-07-21 13:33:46",
+        "time": "2016-07-21T13:33:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -601,7 +601,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-09-12 05:32:46",
+        "time": "2016-09-12T05:32:46+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -655,7 +655,7 @@
         "require-dev": {
             "symfony/http-kernel": "~2.8|~3.0"
         },
-        "time": "2017-02-18 17:35:19",
+        "time": "2017-02-18T17:35:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -709,7 +709,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2016-11-14 01:06:16",
+        "time": "2016-11-14T01:06:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -781,7 +781,7 @@
             "symfony/filesystem": "",
             "symfony/process": ""
         },
-        "time": "2016-11-16 22:18:16",
+        "time": "2016-11-16T22:18:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -841,7 +841,7 @@
             "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
             "whoops/soap": "Formats errors as SOAP responses"
         },
-        "time": "2017-02-18 14:22:27",
+        "time": "2017-02-18T14:22:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -895,7 +895,7 @@
             "filp/whoops": "^2.1",
             "symfony/console": "3.2"
         },
-        "time": "2017-01-25 02:25:50",
+        "time": "2017-01-25T02:25:50+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -943,7 +943,7 @@
         "require": {
             "php": ">=5.2"
         },
-        "time": "2016-07-16 12:58:58",
+        "time": "2016-07-16T12:58:58+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -995,7 +995,7 @@
         "require-dev": {
             "squizlabs/php_codesniffer": "2.*"
         },
-        "time": "2017-02-14 05:33:15",
+        "time": "2017-02-14T05:33:15+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1058,7 +1058,7 @@
             "jeremeamia/superclosure": "~1.0.1",
             "patchwork/utf8": "~1.1"
         },
-        "time": "2015-01-27 20:51:43",
+        "time": "2015-01-27T20:51:43+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1111,7 +1111,7 @@
         "suggest": {
             "intervention/imagecache": "Caching extension for the Intervention Image library"
         },
-        "time": "2017-02-17 13:24:34",
+        "time": "2017-02-17T13:24:34+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -1162,7 +1162,7 @@
             "phpunit/phpunit": "~4.0",
             "satooshi/php-coveralls": "~1.0"
         },
-        "time": "2017-01-18 08:56:15",
+        "time": "2017-01-18T08:56:15+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1206,7 +1206,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~1.5"
         },
-        "time": "2017-02-01 09:18:35",
+        "time": "2017-02-01T09:18:35+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1257,7 +1257,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~2.3"
         },
-        "time": "2016-11-18 02:57:31",
+        "time": "2016-11-18T02:57:31+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1311,7 +1311,7 @@
             "johnkary/phpunit-speedtrap": "~1.0@dev",
             "phpunit/phpunit": "*"
         },
-        "time": "2016-11-11 14:56:25",
+        "time": "2016-11-11T14:56:25+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1369,7 +1369,7 @@
         "suggest": {
             "league/oauth2-google": "Needed for Google XOAUTH2 authentication"
         },
-        "time": "2017-01-09 09:33:47",
+        "time": "2017-01-09T09:33:47+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1427,7 +1427,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2017-02-03 16:54:41",
+        "time": "2017-02-03T16:54:41+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1455,6 +1455,57 @@
             "feature extraction",
             "machine learning",
             "pattern recognition"
+        ]
+    },
+    {
+        "name": "rmccue/requests",
+        "version": "v1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rmccue/Requests.git",
+            "reference": "87932f52ffad70504d93f04f15690cf16a089546"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/rmccue/Requests/87932f52ffad70504d93f04f15690cf16a089546.zip",
+            "reference": "87932f52ffad70504d93f04f15690cf16a089546",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "requests/test-server": "dev-master"
+        },
+        "time": "2016-10-13T00:11:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Requests": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "ISC"
+        ],
+        "authors": [
+            {
+                "name": "Ryan McCue",
+                "homepage": "http://ryanmccue.info"
+            }
+        ],
+        "description": "A HTTP library written in PHP, for human beings.",
+        "homepage": "http://github.com/rmccue/Requests",
+        "keywords": [
+            "curl",
+            "fsockopen",
+            "http",
+            "idna",
+            "ipv6",
+            "iri",
+            "sockets"
         ]
     }
 ]

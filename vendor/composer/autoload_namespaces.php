@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Swoole' => array($vendorDir . '/matyhtf/swoole_framework/libs'),
+    'Requests' => array($vendorDir . '/rmccue/requests/library'),
     'Phpml' => array($vendorDir . '/php-ai/php-ml/src'),
     'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
     'Neutron' => array($vendorDir . '/neutron/temporary-filesystem/src'),

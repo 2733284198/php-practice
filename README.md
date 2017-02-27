@@ -101,12 +101,13 @@
 - [x] Mobile_Detect是一个轻量级的PHP类,用于检测移动设备&emsp;`Home/MobileController`
 - [ ]  __E=mc__
 - [x] PHP标准的HTML过滤器: `Home/HtmlController/complexFilter`   
-- [x] PHP的机器学习库(PHP-ML - Machine Learning library for PHP)
+- [x] [PHP的机器学习库](PHP-ML - Machine Learning library for PHP)
     - [x] PHP >= 7.0 
     - [ ] 算法
     - [ ] 交叉验证 
     - [ ] 视频编码h神经网络
-    - [ ] 预处理 
+    - [ ] 预处理
+- [x] HTTP请求库 ``    
      
 ## 常用单利模式调用
 - [x] Redis单利模式：`RedisInstance::Instance`
