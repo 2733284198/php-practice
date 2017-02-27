@@ -149,14 +149,14 @@ class FFmpegController extends Controller
     public function extracting_image()
     {
         $ffmpeg = FFMpeg::create();
-        $MP4Path = 'F:\Tinywan\Video\out.mpg';
+        $MP4Path = 'F:\Tinywan\Video\ImageOut.mpg';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         $rand = mt_rand(000, 222);
         //Set an image cut time
         $frame = $video->frame(Coordinate\TimeCode::fromSeconds($rand));
         // Extract the image into a new file
-        $images = $frame->save(MEDIA_PATH . '\ffmpeg_mp4_' . $rand . '.jpg');
+        $images = $frame->save(MEDIA_PATH . '/ffmpeg_mp4_' . $rand . '.jpg');
         var_dump($images);
     }
 
@@ -167,7 +167,7 @@ class FFmpegController extends Controller
     public function extracting_multiple_image()
     {
         $ffmpeg = FFMpeg::create();
-        $MP4Path = 'F:\Tinywan\Video\out.mpg';
+        $MP4Path = 'F:\Tinywan\Video\concat_mpg_output.mpg';
         $video = $ffmpeg->open($MP4Path);
         $video->filters()
             ->extractMultipleFrames(Filters\Video\ExtractMultipleFramesFilter::FRAMERATE_EVERY_2SEC, MEDIA_PATH . '/image/')//这是是一个文件夹
@@ -207,7 +207,7 @@ class FFmpegController extends Controller
     public function Transcoding()
     {
         $ffmpeg = FFMpeg::create();
-        $MP4Path = 'F:\Tinywan\Video\out.mpg';
+        $MP4Path = 'F:\Tinywan\Video\output64.mp4';
         $video = $ffmpeg->open($MP4Path);
         $format = new Format\Video\X264();
         $format->on('progress', function ($video, $format, $percentage) {

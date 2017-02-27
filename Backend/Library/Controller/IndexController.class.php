@@ -64,17 +64,7 @@ html;
         var_dump(filter_var($email,FILTER_VALIDATE_EMAIL));
     }
 
-    //PHP的机器学习库(PHP-ML - Machine Learning library for PHP)
-    public function simpleExample()
-    {
-        $samples = [[1, 3], [1, 4], [2, 4], [3, 1], [4, 1], [4, 2]];
-        $labels = ['a', 'a', 'a', 'b', 'b', 'b'];
-        $classifier = new KNearestNeighbors();
-        $classifier->train($samples,$labels);
-        $result = $classifier->predict([3,2]); // return b
-        echo $result;
-        var_dump($classifier);
-    }
+
 
 
 }

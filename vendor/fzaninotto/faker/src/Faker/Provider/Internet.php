@@ -93,18 +93,7 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        $username = strtolower(static::transliterate($username));
-
-        // check if transliterate() didn't support the language and removed all letters
-        if (trim($username, '._') === '') {
-            throw new \Exception('userName failed with the selected locale. Try a different locale or activate the "intl" PHP extension.');
-        }
-
-        // clean possible trailing dots from first/last names
-        $username = str_replace('..', '.', $username);
-        $username = rtrim($username, '.');
-
-        return $username;
+        return strtolower(static::transliterate($username));
     }
     /**
      * @example 'fY4èHdZv68'
@@ -131,17 +120,7 @@ class Internet extends \Faker\Provider\Base
     {
         $lastName = $this->generator->format('lastName');
 
-        $lastName = strtolower(static::transliterate($lastName));
-
-        // check if transliterate() didn't support the language and removed all letters
-        if (trim($lastName, '._') === '') {
-            throw new \Exception('domainWord failed with the selected locale. Try a different locale or activate the "intl" PHP extension.');
-        }
-
-        // clean possible trailing dot from last name
-        $lastName = rtrim($lastName, '.');
-
-        return $lastName;
+        return strtolower(static::transliterate($lastName));
     }
 
     /**
@@ -206,10 +185,10 @@ class Internet extends \Faker\Provider\Base
     {
         if (static::numberBetween(0, 1) === 0) {
             // 10.x.x.x range
-            $ip = long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
+            $ip = long2ip(static::numberBetween(167772160, 184549375));
         } else {
             // 192.168.x.x range
-            $ip = long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+            $ip = long2ip(static::numberBetween(3232235520, 3232301055));
         }
 
         return $ip;
@@ -230,12 +209,8 @@ class Internet extends \Faker\Provider\Base
 
     protected static function transliterate($string)
     {
-        if (0 === preg_match('/[^A-Za-z0-9_.]/', $string)) {
-            return $string;
-        }
-
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
-        if (class_exists('Transliterator') && $transliterator = \Transliterator::create($transId)) {
+        if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
             $transString = static::toAscii($string);

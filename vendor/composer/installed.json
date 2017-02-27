@@ -1,30 +1,30 @@
 [
     {
         "name": "symfony/filesystem",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v3.2.4",
+        "version_normalized": "3.2.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/filesystem.git",
-            "reference": "5755830b51f2c2f4d9e0b5957b26436f3b507dce"
+            "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/symfony/filesystem/5755830b51f2c2f4d9e0b5957b26436f3b507dce.zip",
-            "reference": "5755830b51f2c2f4d9e0b5957b26436f3b507dce",
+            "url": "https://packagist.phpcomposer.com/files/symfony/filesystem/a0c6ef2dc78d33b58d91d3a49f49797a184d06f4.zip",
+            "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-02-18T17:35:19+00:00",
+        "time": "2017-01-08T20:47:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.3-dev"
+                "dev-master": "3.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Symfony\\Component\\Filesystem\\": ""
@@ -94,30 +94,30 @@
     },
     {
         "name": "evenement/evenement",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/igorw/evenement.git",
-            "reference": "35e87541d4b53c22201519fce3caaa5b38ac8164"
+            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/igorw/evenement/35e87541d4b53c22201519fce3caaa5b38ac8164.zip",
-            "reference": "35e87541d4b53c22201519fce3caaa5b38ac8164",
+            "url": "https://packagist.phpcomposer.com/files/igorw/evenement/f6e843799fd4f4184d54d8fc7b5b3551c9fa803e.zip",
+            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2014-07-09T21:08:03+00:00",
+        "time": "2012-11-02T14:49:47+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Evenement": "src"
@@ -142,37 +142,38 @@
     },
     {
         "name": "doctrine/cache",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.6.1",
+        "version_normalized": "1.6.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/cache.git",
-            "reference": "e64d917c29fd8bb4ac13e122ec6de9721c4cf0e7"
+            "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/doctrine/cache/e64d917c29fd8bb4ac13e122ec6de9721c4cf0e7.zip",
-            "reference": "e64d917c29fd8bb4ac13e122ec6de9721c4cf0e7",
+            "url": "https://packagist.phpcomposer.com/files/doctrine/cache/b6f544a20f4807e81f7044d31e679ccbb1866dc3.zip",
+            "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
             "shasum": ""
         },
         "require": {
-            "php": "~5.6|~7.0"
+            "php": "~5.5|~7.0"
         },
         "conflict": {
             "doctrine/common": ">2.2,<2.4"
         },
         "require-dev": {
-            "phpunit/phpunit": "^5.7",
-            "predis/predis": "~1.0"
+            "phpunit/phpunit": "~4.8|~5.0",
+            "predis/predis": "~1.0",
+            "satooshi/php-coveralls": "~0.6"
         },
-        "time": "2017-01-20T09:27:09+00:00",
+        "time": "2016-10-29T11:16:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.7.x-dev"
+                "dev-master": "1.6.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
@@ -213,30 +214,30 @@
     },
     {
         "name": "symfony/process",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v3.2.4",
+        "version_normalized": "3.2.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/process.git",
-            "reference": "c47877b449701de868c2e9237453e069ea293de1"
+            "reference": "0ab87c1e7570b3534a6e51eb4ca8e9f6d7327856"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/symfony/process/c47877b449701de868c2e9237453e069ea293de1.zip",
-            "reference": "c47877b449701de868c2e9237453e069ea293de1",
+            "url": "https://packagist.phpcomposer.com/files/symfony/process/0ab87c1e7570b3534a6e51eb4ca8e9f6d7327856.zip",
+            "reference": "0ab87c1e7570b3534a6e51eb4ca8e9f6d7327856",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-02-18T17:35:19+00:00",
+        "time": "2017-02-16T14:07:22+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.3-dev"
+                "dev-master": "3.2-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Symfony\\Component\\Process\\": ""
@@ -264,8 +265,8 @@
     },
     {
         "name": "psr/log",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/php-fig/log.git",
@@ -287,7 +288,7 @@
                 "dev-master": "1.0.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Psr\\Log\\": "Psr/Log/"
@@ -313,17 +314,17 @@
     },
     {
         "name": "monolog/monolog",
-        "version": "1.x-dev",
-        "version_normalized": "1.9999999.9999999.9999999-dev",
+        "version": "1.22.0",
+        "version_normalized": "1.22.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "c82afaa30356d20e08cc74fec7ab9b6ecd38288a"
+            "reference": "bad29cb8d18ab0315e6c477751418a82c850d558"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/Seldaek/monolog/c82afaa30356d20e08cc74fec7ab9b6ecd38288a.zip",
-            "reference": "c82afaa30356d20e08cc74fec7ab9b6ecd38288a",
+            "url": "https://packagist.phpcomposer.com/files/Seldaek/monolog/bad29cb8d18ab0315e6c477751418a82c850d558.zip",
+            "reference": "bad29cb8d18ab0315e6c477751418a82c850d558",
             "shasum": ""
         },
         "require": {
@@ -359,14 +360,14 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-        "time": "2017-01-11T16:17:39+00:00",
+        "time": "2016-11-26T00:15:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Monolog\\": "src/Monolog"
@@ -532,58 +533,6 @@
         ]
     },
     {
-        "name": "j7mbo/twitter-api-php",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/J7mbo/twitter-api-php.git",
-            "reference": "5a1ac487adc248b59a73d5edc002b57f8dc211b8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/J7mbo/twitter-api-php/5a1ac487adc248b59a73d5edc002b57f8dc211b8.zip",
-            "reference": "5a1ac487adc248b59a73d5edc002b57f8dc211b8",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.5,>=4.5.1"
-        },
-        "time": "2016-07-21T13:33:46+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "TwitterAPIExchange.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GNU Public License"
-        ],
-        "authors": [
-            {
-                "name": "James Mallison",
-                "homepage": "https://github.com/j7mbo/twitter-api-php"
-            }
-        ],
-        "description": "Simple PHP Wrapper for Twitter API v1.1 calls",
-        "homepage": "https://github.com/j7mbo/twitter-api-php",
-        "keywords": [
-            "api",
-            "php",
-            "twitter"
-        ]
-    },
-    {
         "name": "hisune/echarts-php",
         "version": "1.0.6",
         "version_normalized": "1.0.6.0",
@@ -631,227 +580,37 @@
         ]
     },
     {
-        "name": "symfony/debug",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "fzaninotto/faker",
+        "version": "v1.6.0",
+        "version_normalized": "1.6.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/debug.git",
-            "reference": "105f6a21065954b6449e47effb98bdae8317e733"
+            "url": "https://github.com/fzaninotto/Faker.git",
+            "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/symfony/debug/105f6a21065954b6449e47effb98bdae8317e733.zip",
-            "reference": "105f6a21065954b6449e47effb98bdae8317e733",
+            "url": "https://packagist.phpcomposer.com/files/fzaninotto/Faker/44f9a286a04b80c76a4e5fb7aad8bb539b920123.zip",
+            "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5.9",
-            "psr/log": "~1.0"
-        },
-        "conflict": {
-            "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+            "php": "^5.3.3|^7.0"
         },
         "require-dev": {
-            "symfony/http-kernel": "~2.8|~3.0"
+            "ext-intl": "*",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~1.5"
         },
-        "time": "2017-02-18T17:35:19+00:00",
+        "time": "2016-04-29T12:21:54+00:00",
         "type": "library",
         "extra": {
-            "branch-alias": {
-                "dev-master": "3.3-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Debug\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Debug Component",
-        "homepage": "https://symfony.com"
-    },
-    {
-        "name": "symfony/polyfill-mbstring",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/symfony/polyfill-mbstring/e79d363049d1c2128f133a2667e4f4190904f7f4.zip",
-            "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "suggest": {
-            "ext-mbstring": "For best performance"
-        },
-        "time": "2016-11-14T01:06:16+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.3-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Polyfill\\Mbstring\\": ""
-            },
-            "files": [
-                "bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony polyfill for the Mbstring extension",
-        "homepage": "https://symfony.com",
-        "keywords": [
-            "compatibility",
-            "mbstring",
-            "polyfill",
-            "portable",
-            "shim"
-        ]
-    },
-    {
-        "name": "symfony/console",
-        "version": "v3.2.0",
-        "version_normalized": "3.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/console.git",
-            "reference": "09d0fd33560e3573185a2ea17614e37ba38716c5"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/symfony/console/09d0fd33560e3573185a2ea17614e37ba38716c5.zip",
-            "reference": "09d0fd33560e3573185a2ea17614e37ba38716c5",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5.9",
-            "symfony/debug": "~2.8|~3.0",
-            "symfony/polyfill-mbstring": "~1.0"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/event-dispatcher": "~2.8|~3.0",
-            "symfony/filesystem": "~2.8|~3.0",
-            "symfony/process": "~2.8|~3.0"
-        },
-        "suggest": {
-            "psr/log": "For using the console logger",
-            "symfony/event-dispatcher": "",
-            "symfony/filesystem": "",
-            "symfony/process": ""
-        },
-        "time": "2016-11-16T22:18:16+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.2-dev"
-            }
+            "branch-alias": []
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Symfony\\Component\\Console\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Console Component",
-        "homepage": "https://symfony.com"
-    },
-    {
-        "name": "filp/whoops",
-        "version": "2.1.6",
-        "version_normalized": "2.1.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/filp/whoops.git",
-            "reference": "92bdc6800ac6e233c9e161a1768e082389a73530"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/filp/whoops/92bdc6800ac6e233c9e161a1768e082389a73530.zip",
-            "reference": "92bdc6800ac6e233c9e161a1768e082389a73530",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^5.5.9 || ^7.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "0.9.*",
-            "phpunit/phpunit": "^4.8 || ^5.0",
-            "symfony/var-dumper": "^2.6 || ^3.0"
-        },
-        "suggest": {
-            "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
-            "whoops/soap": "Formats errors as SOAP responses"
-        },
-        "time": "2017-02-18T14:22:27+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Whoops\\": "src/Whoops/"
+                "Faker\\": "src/Faker/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -860,69 +619,14 @@
         ],
         "authors": [
             {
-                "name": "Filipe Dobreira",
-                "homepage": "https://github.com/filp",
-                "role": "Developer"
+                "name": "François Zaninotto"
             }
         ],
-        "description": "php error handling for cool kids",
-        "homepage": "https://filp.github.io/whoops/",
+        "description": "Faker is a PHP library that generates fake data for you.",
         "keywords": [
-            "error",
-            "exception",
-            "handling",
-            "library",
-            "whoops",
-            "zf2"
-        ]
-    },
-    {
-        "name": "matyhtf/swoole_framework",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/swoole/framework.git",
-            "reference": "0df22c8713e471611d3e56c12b83639efd64b506"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/swoole/framework/0df22c8713e471611d3e56c12b83639efd64b506.zip",
-            "reference": "0df22c8713e471611d3e56c12b83639efd64b506",
-            "shasum": ""
-        },
-        "require": {
-            "filp/whoops": "^2.1",
-            "symfony/console": "3.2"
-        },
-        "time": "2017-01-25T02:25:50+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Swoole": "libs/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL"
-        ],
-        "authors": [
-            {
-                "name": "Tianfeng Han",
-                "email": "mikan.tenny@gmail.com"
-            }
-        ],
-        "description": "PHP Networking framework & Application Server.",
-        "homepage": "http://www.swoole.com/",
-        "keywords": [
-            "Socket",
-            "client",
-            "framework",
-            "library",
-            "server",
-            "webserver",
-            "websocket"
+            "data",
+            "faker",
+            "fixtures"
         ]
     },
     {
@@ -972,175 +676,6 @@
         ]
     },
     {
-        "name": "phpoffice/phpexcel",
-        "version": "1.8.x-dev",
-        "version_normalized": "1.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/PHPOffice/PHPExcel.git",
-            "reference": "afb11493d0ddd10b35b013773b64bb95354d5764"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/PHPOffice/PHPExcel/afb11493d0ddd10b35b013773b64bb95354d5764.zip",
-            "reference": "afb11493d0ddd10b35b013773b64bb95354d5764",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "ext-xml": "*",
-            "ext-xmlwriter": "*",
-            "php": "^5.2|^7.0"
-        },
-        "require-dev": {
-            "squizlabs/php_codesniffer": "2.*"
-        },
-        "time": "2017-02-14T05:33:15+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "PHPExcel": "Classes/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL-2.1"
-        ],
-        "authors": [
-            {
-                "name": "Maarten Balliauw",
-                "homepage": "http://blog.maartenballiauw.be"
-            },
-            {
-                "name": "Erik Tilt"
-            },
-            {
-                "name": "Franck Lefevre",
-                "homepage": "http://rootslabs.net"
-            },
-            {
-                "name": "Mark Baker",
-                "homepage": "http://markbakeruk.net"
-            }
-        ],
-        "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
-        "homepage": "https://github.com/PHPOffice/PHPExcel",
-        "keywords": [
-            "OpenXML",
-            "excel",
-            "php",
-            "spreadsheet",
-            "xls",
-            "xlsx"
-        ]
-    },
-    {
-        "name": "illuminate/support",
-        "version": "4.2.x-dev",
-        "version_normalized": "4.2.9999999.9999999-dev",
-        "target-dir": "Illuminate/Support",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/illuminate/support.git",
-            "reference": "131741133aae79b085951b9382f42b088e479ef9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/support/131741133aae79b085951b9382f42b088e479ef9.zip",
-            "reference": "131741133aae79b085951b9382f42b088e479ef9",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "jeremeamia/superclosure": "~1.0.1",
-            "patchwork/utf8": "~1.1"
-        },
-        "time": "2015-01-27T20:51:43+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.2-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Illuminate\\Support": ""
-            },
-            "files": [
-                "Illuminate/Support/helpers.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
-            }
-        ]
-    },
-    {
-        "name": "intervention/image",
-        "version": "1.6.x-dev",
-        "version_normalized": "1.6.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Intervention/image.git",
-            "reference": "d923b7793e7b02b2232ae070273929fb11d481e4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/Intervention/image/d923b7793e7b02b2232ae070273929fb11d481e4.zip",
-            "reference": "d923b7793e7b02b2232ae070273929fb11d481e4",
-            "shasum": ""
-        },
-        "require": {
-            "ext-gd": "*",
-            "illuminate/support": "4.*",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.1.*"
-        },
-        "suggest": {
-            "intervention/imagecache": "Caching extension for the Intervention Image library"
-        },
-        "time": "2017-02-17T13:24:34+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Intervention\\Image": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Oliver Vogel",
-                "email": "oliver@olivervogel.net",
-                "homepage": "http://olivervogel.net/"
-            }
-        ],
-        "description": "Image handling and manipulation library with support for Laravel 4 integration",
-        "homepage": "http://image.intervention.io/",
-        "keywords": [
-            "gd",
-            "image",
-            "laravel",
-            "thumbnail",
-            "watermark"
-        ]
-    },
-    {
         "name": "aliyuncs/oss-sdk-php",
         "version": "v2.2.2",
         "version_normalized": "2.2.2.0",
@@ -1182,58 +717,6 @@
         ],
         "description": "Aliyun OSS SDK for PHP",
         "homepage": "http://www.aliyun.com/product/oss/"
-    },
-    {
-        "name": "fzaninotto/faker",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fzaninotto/Faker.git",
-            "reference": "a2dec96198bb146ffead806700074b0ec8d07f2f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/fzaninotto/Faker/a2dec96198bb146ffead806700074b0ec8d07f2f.zip",
-            "reference": "a2dec96198bb146ffead806700074b0ec8d07f2f",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^5.3.3|^7.0"
-        },
-        "require-dev": {
-            "ext-intl": "*",
-            "phpunit/phpunit": "~4.0",
-            "squizlabs/php_codesniffer": "~1.5"
-        },
-        "time": "2017-02-01T09:18:35+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.6.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Faker\\": "src/Faker/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "François Zaninotto"
-            }
-        ],
-        "description": "Faker is a PHP library that generates fake data for you.",
-        "keywords": [
-            "data",
-            "faker",
-            "fixtures"
-        ]
     },
     {
         "name": "qiniu/php-sdk",
@@ -1455,57 +938,6 @@
             "feature extraction",
             "machine learning",
             "pattern recognition"
-        ]
-    },
-    {
-        "name": "rmccue/requests",
-        "version": "v1.7.0",
-        "version_normalized": "1.7.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/rmccue/Requests.git",
-            "reference": "87932f52ffad70504d93f04f15690cf16a089546"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/rmccue/Requests/87932f52ffad70504d93f04f15690cf16a089546.zip",
-            "reference": "87932f52ffad70504d93f04f15690cf16a089546",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2"
-        },
-        "require-dev": {
-            "requests/test-server": "dev-master"
-        },
-        "time": "2016-10-13T00:11:37+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Requests": "library/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "ISC"
-        ],
-        "authors": [
-            {
-                "name": "Ryan McCue",
-                "homepage": "http://ryanmccue.info"
-            }
-        ],
-        "description": "A HTTP library written in PHP, for human beings.",
-        "homepage": "http://github.com/rmccue/Requests",
-        "keywords": [
-            "curl",
-            "fsockopen",
-            "http",
-            "idna",
-            "ipv6",
-            "iri",
-            "sockets"
         ]
     }
 ]

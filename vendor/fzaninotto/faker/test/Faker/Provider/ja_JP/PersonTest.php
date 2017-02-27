@@ -7,40 +7,22 @@ use Faker\Provider\ja_JP\Person;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
-    public function testKanaNameMaleReturns()
+    public function testKanaNameReturnsAotaMinoru()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $faker->seed(1);
 
-        $this->assertEquals('アオタ ミノル', $faker->kanaName('male'));
+        $this->assertEquals('アオタ ミノル', $faker->kanaName);
     }
 
-    public function testKanaNameFemaleReturns()
+    public function testFirstKanaNameReturnsHaruka()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $faker->seed(1);
 
-        $this->assertEquals('アオタ ミキ', $faker->kanaName('female'));
-    }
-
-    public function testFirstKanaNameMaleReturns()
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('ヒデキ', $faker->firstKanaName('male'));
-    }
-
-    public function testFirstKanaNameFemaleReturns()
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('マアヤ', $faker->firstKanaName('female'));
+        $this->assertEquals('ハルカ', $faker->firstKanaName);
     }
 
     public function testLastKanaNameReturnsNakajima()

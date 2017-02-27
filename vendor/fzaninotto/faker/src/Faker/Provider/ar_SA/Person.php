@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\ar_SA;
 
-use Faker\Calculator\Luhn;
-
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -92,27 +90,59 @@ class Person extends \Faker\Provider\Person
      */
     public static function idNumber()
     {
-        $partialValue = static::numerify(
-            static::randomElement(array(1, 2)) . str_repeat('#', 8)
-        );
-        return Luhn::generateLuhnNumber($partialValue);
+        $firstDigit = static::numberBetween(1, 2);
+
+        do {
+            $number = $firstDigit.static::numerify('#########');
+        } while (!static::checkSum($number));
+
+        return $number;
     }
 
     /**
-     * @example 1010101010
+     * @example
      */
     public static function nationalIdNumber()
     {
-        $partialValue = static::numerify(1 . str_repeat('#', 8));
-        return Luhn::generateLuhnNumber($partialValue);
+        do {
+            $number = '1'.static::numerify('#########');
+        } while (!static::checkSum($number));
+
+        return $number;
     }
 
     /**
-     * @example 2010101010
+     * @example
      */
     public static function foreignerIdNumber()
     {
-        $partialValue = static::numerify(2 . str_repeat('#', 8));
-        return Luhn::generateLuhnNumber($partialValue);
+        do {
+            $number = '2'.static::numerify('#########');
+        } while (!static::checkSum($number));
+
+        return $number;
+    }
+
+    /**
+     * Check sum the number.
+     * @param $number
+     *
+     * @return bool
+     */
+    protected static function checkSum($number)
+    {
+        $sum  = 0;
+        $nums = str_split($number);
+
+        for ($i = 0; $i < 10; $i++) {
+            if ($i % 2 == 0) {
+                $s = $nums[$i] * 2;
+                $sum += $s % 10 + floor($s / 10);
+            } else {
+                $sum += $nums[$i];
+            }
+        }
+
+        return ($sum % 10 == 0);
     }
 }

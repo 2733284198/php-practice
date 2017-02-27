@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\en_SG;
 
+use Faker\Factory;
+
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $internationalCodePrefix = array(
