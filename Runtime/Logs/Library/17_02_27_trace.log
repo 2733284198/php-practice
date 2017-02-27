@@ -7236,3 +7236,66 @@ D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.cla
 [ SQL ]
 
 
+[ 2017-02-27T18:34:13+08:00 ] 127.0.0.1 /PHP_Experience/admin.php/Library/MachineLearning/simpleExample
+[ 基本 ]
+请求信息:2017-02-27 18:34:13 HTTP/1.1 GET : /PHP_Experience/admin.php/Library/MachineLearning/simpleExample
+运行时间:0.0240s ( Load:0.0110s Init:0.0050s Exec:0.0080s Template:0.0000s )
+吞吐率:41.67req/s
+内存开销:1,472.73 kb
+查询信息:0 queries 0 writes 
+文件加载:46
+缓存信息:0 gets 0 writes 
+配置加载:197
+会话信息:SESSION_ID=rjlhtiacqbtv8dnlnht5t2hhv6
+
+[ 文件 ]
+D:\wamp64\www\PHP_Experience\admin.php ( 1.93 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\ThinkPHP.php ( 4.71 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Think.class.php ( 12.32 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Storage.class.php ( 1.38 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Storage\Driver\File.class.php ( 3.56 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Mode\common.php ( 2.82 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Common\functions.php ( 52.60 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Common\function.php ( 42.11 KB )
+D:\wamp64\www\PHP_Experience\vendor\autoload.php ( 0.17 KB )
+D:\wamp64\www\PHP_Experience\vendor\composer\autoload_real.php ( 2.36 KB )
+D:\wamp64\www\PHP_Experience\vendor\composer\ClassLoader.php ( 12.94 KB )
+D:\wamp64\www\PHP_Experience\vendor\composer\autoload_static.php ( 5.09 KB )
+D:\wamp64\www\PHP_Experience\vendor\ezyang\htmlpurifier\library\HTMLPurifier.composer.php ( 0.10 KB )
+D:\wamp64\www\PHP_Experience\vendor\qiniu\php-sdk\src\Qiniu\functions.php ( 7.10 KB )
+D:\wamp64\www\PHP_Experience\vendor\qiniu\php-sdk\src\Qiniu\Config.php ( 0.70 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Hook.class.php ( 4.02 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\App.class.php ( 12.44 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Dispatcher.class.php ( 15.15 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Route.class.php ( 13.38 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Controller.class.php ( 10.95 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\View.class.php ( 7.96 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Behavior\BuildLiteBehavior.class.php ( 3.69 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Behavior\ParseTemplateBehavior.class.php ( 3.89 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Behavior\ContentReplaceBehavior.class.php ( 1.93 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Conf\convention.php ( 11.18 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Conf\config.php ( 7.19 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Conf\tags.php ( 0.50 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Lang\zh-cn.php ( 2.57 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Conf\debug.php ( 1.51 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Conf\db.php ( 0.75 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Conf\redis.php ( 1.45 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Conf\rbac.php ( 0.96 KB )
+D:\wamp64\www\PHP_Experience\Backend\Library\Conf\config.php ( 0.38 KB )
+D:\wamp64\www\PHP_Experience\Backend\Library\Common\function.php ( 2.35 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Behavior\ReadHtmlCacheBehavior.class.php ( 5.62 KB )
+D:\wamp64\www\PHP_Experience\Backend\Common\Behaviors\AppBeginBehavior.class.php ( 0.82 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Think\Behavior.class.php ( 0.88 KB )
+D:\wamp64\www\PHP_Experience\Backend\Library\Controller\MachineLearningController.class.php ( 1.11 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Classification\KNearestNeighbors.php ( 1.78 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Classification\Classifier.php ( 0.13 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Estimator.php ( 0.32 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Helper\Trainable.php ( 0.46 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Helper\Predictable.php ( 0.64 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Math\Distance\Euclidean.php ( 0.68 KB )
+D:\wamp64\www\PHP_Experience\vendor\php-ai\php-ml\src\Phpml\Math\Distance.php ( 0.22 KB )
+D:\wamp64\www\PHP_Experience\ThinkPHP\Library\Behavior\ShowPageTraceBehavior.class.php ( 5.27 KB )
+
+[ SQL ]
+
+

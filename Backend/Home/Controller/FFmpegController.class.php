@@ -47,7 +47,7 @@ class FFmpegController extends Controller
     public function createFFmpeg()
     {
         //$path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/'; //项目路径
-        $inPutPath = 'F:\Tinywan\Video\out.mpg';    //本地磁盘路径
+        $inPutPath = 'F:\Tinywan\Video\input3.mp4';    //本地磁盘路径
         $outPutPath = "F:\Tinywan\Video\outVideo";   //视频输出路径
         $ffmpeg = FFMpeg::create();
         //打开资源
@@ -131,7 +131,7 @@ class FFmpegController extends Controller
             'timeout' => 3600,
             'ffmpeg.threads' => 12,
         ]);
-        $MP4Path = 'F:\Tinywan\Video\image.mp4';
+        $MP4Path = 'F:\Tinywan\Video\input1.mpg';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         // Set an audio format
@@ -148,15 +148,20 @@ class FFmpegController extends Controller
      */
     public function extracting_image()
     {
-        $ffmpeg = FFMpeg::create();
-        $MP4Path = 'F:\Tinywan\Video\ImageOut.mpg';
+        $ffmpeg = FFMpeg::create([
+            'ffmpeg.binaries' => 'd:\ffmpeg\bin\ffmpeg.EXE',
+            'ffprobe.binaries' => 'd:\ffmpeg\bin\ffprobe.exe',
+            'timeout' => 3600,
+            'ffmpeg.threads' => 12,
+        ]);
+        $MP4Path = 'F:\Tinywan\Video\input1.mpg';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         $rand = mt_rand(000, 222);
         //Set an image cut time
         $frame = $video->frame(Coordinate\TimeCode::fromSeconds($rand));
         // Extract the image into a new file
-        $images = $frame->save(MEDIA_PATH . '/ffmpeg_mp4_' . $rand . '.jpg');
+        $images = $frame->save('./ffmpeg_mp4_' . $rand . '.jpg');
         var_dump($images);
     }
 
@@ -166,8 +171,13 @@ class FFmpegController extends Controller
      */
     public function extracting_multiple_image()
     {
-        $ffmpeg = FFMpeg::create();
-        $MP4Path = 'F:\Tinywan\Video\concat_mpg_output.mpg';
+        $ffmpeg = FFMpeg::create([
+            'ffmpeg.binaries' => 'd:\ffmpeg\bin\ffmpeg.EXE',
+            'ffprobe.binaries' => 'd:\ffmpeg\bin\ffprobe.exe',
+            'timeout' => 3600,
+            'ffmpeg.threads' => 12,
+        ]);
+        $MP4Path = 'F:\Tinywan\Video\input1.mpg';
         $video = $ffmpeg->open($MP4Path);
         $video->filters()
             ->extractMultipleFrames(Filters\Video\ExtractMultipleFramesFilter::FRAMERATE_EVERY_2SEC, MEDIA_PATH . '/image/')//这是是一个文件夹
