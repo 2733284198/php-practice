@@ -59,10 +59,10 @@
 
 - [x] [基于角色的RBAC权限管理](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RbacController.class.php)
 - [x] [基于类的无限级分类和数据库的无限级分类](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CategoryController.class.php)
-- [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
 - [x] 基于角色的RBAC权限管理
 - [x] 基于类的无限级分类和数据库的无限级分类
-- [x] 非关系性数据库Redis
+- [x] [非关系性数据库Redis](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisController.class.php)
+    - [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
     - [x] PHPRedis使用管道技术提升性能
 - [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
 - [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 

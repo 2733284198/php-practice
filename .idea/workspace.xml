@@ -4,19 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/Tpl/Home/AngularJS/angular_init_trim.html" description="&lt;div ng-app=&quot;tinywan&quot; ng-controller=&quot;ctrl&quot; ng-init..." line="17" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Media/extracting_multiple_image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Media/text.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Media/windows-10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Media/windows-10.mp4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Media/windows-webm.webm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Media/windows-wmv.wmv" afterPath="" />
+    <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="PHPRedis使用管道技术提升性能">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" afterPath="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" afterPath="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php" afterPath="$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" />
     </list>
     <ignored path="ThinkPhpStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,12 +38,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="252">
-                <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="28" />
+              <first_editor relative-caret-position="216">
+                <caret line="63" column="124" lean-forward="false" selection-start-line="63" selection-start-column="124" selection-end-line="63" selection-end-column="124" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -83,21 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedisController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RedisController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="653" column="63" lean-forward="true" selection-start-line="653" selection-start-column="63" selection-end-line="653" selection-end-column="63" />
+            <state relative-caret-position="78">
+              <caret line="600" column="45" lean-forward="false" selection-start-line="600" selection-start-column="14" selection-end-line="600" selection-end-column="45" />
               <folding>
                 <element signature="e#10740#10861#0#PHP" expanded="true" />
                 <element signature="e#18318#19078#0#PHP" expanded="true" />
                 <element signature="e#19084#19168#0#PHP" expanded="true" />
-                <element signature="e#19174#19707#0#PHP" expanded="true" />
                 <element signature="e#19726#19908#0#PHP" expanded="true" />
                 <element signature="e#19914#20012#0#PHP" expanded="true" />
                 <element signature="e#20017#20412#0#PHP" expanded="true" />
                 <element signature="e#20418#20525#0#PHP" expanded="true" />
                 <element signature="e#20530#20974#0#PHP" expanded="true" />
+                <element signature="e#20980#21086#0#PHP" expanded="true" />
                 <element signature="e#21091#21551#0#PHP" expanded="true" />
                 <marker date="1488287775310" expanded="true" signature="3788:3877" ph="INSERT INTO livecomment... " />
               </folding>
@@ -180,8 +170,8 @@
         <option value="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -539,14 +529,7 @@
       <workItem from="1488159591314" duration="182000" />
       <workItem from="1488190860710" duration="1489000" />
       <workItem from="1488242797550" duration="2324000" />
-      <workItem from="1488272382923" duration="9005000" />
-    </task>
-    <task id="LOCAL-00057" summary="使用ng-if、ng-show、ng-disabled">
-      <created>1482527989594</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1482527989595</updated>
+      <workItem from="1488272382923" duration="9256000" />
     </task>
     <task id="LOCAL-00058" summary="ng-repeat实例详细讲解，ThinkPHP 3.2 模板中的Angularjs 的变量{{$first}} 无法被解析">
       <created>1482535095521</created>
@@ -884,11 +867,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488275968953</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="PHPRedis使用管道技术提升性能">
+      <created>1488287818119</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1488287818119</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180961000" />
+    <option name="totallyTimeSpent" value="181212000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -983,7 +973,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="videoJS常用api" />
     <MESSAGE value="简单实现清晰度控制和创建清晰度菜单" />
     <MESSAGE value="Map China 手机销售量" />
     <MESSAGE value="Map_China_locate 动态可变化的" />
@@ -1008,7 +997,8 @@
     <MESSAGE value="功能：gif是从视频序列中提取的动画图像。" />
     <MESSAGE value="提取GIF动画图像" />
     <MESSAGE value="PHP Curl类可以轻松地发送HTTP请求并与Web API集成" />
-    <option name="LAST_COMMIT_MESSAGE" value="PHP Curl类可以轻松地发送HTTP请求并与Web API集成" />
+    <MESSAGE value="PHPRedis使用管道技术提升性能" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHPRedis使用管道技术提升性能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1466,26 +1456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="653" column="63" lean-forward="true" selection-start-line="653" selection-start-column="63" selection-end-line="653" selection-end-column="63" />
-          <folding>
-            <element signature="e#10740#10861#0#PHP" expanded="true" />
-            <element signature="e#18318#19078#0#PHP" expanded="true" />
-            <element signature="e#19084#19168#0#PHP" expanded="true" />
-            <element signature="e#19174#19707#0#PHP" expanded="true" />
-            <element signature="e#19726#19908#0#PHP" expanded="true" />
-            <element signature="e#19914#20012#0#PHP" expanded="true" />
-            <element signature="e#20017#20412#0#PHP" expanded="true" />
-            <element signature="e#20418#20525#0#PHP" expanded="true" />
-            <element signature="e#20530#20974#0#PHP" expanded="true" />
-            <element signature="e#21091#21551#0#PHP" expanded="true" />
-            <marker date="1488287775310" expanded="true" signature="3788:3877" ph="INSERT INTO livecomment... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -1497,11 +1467,31 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="252">
-            <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="28" />
+          <first_editor relative-caret-position="216">
+            <caret line="63" column="124" lean-forward="false" selection-start-line="63" selection-start-column="124" selection-end-line="63" selection-end-column="124" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="600" column="45" lean-forward="false" selection-start-line="600" selection-start-column="14" selection-end-line="600" selection-end-column="45" />
+          <folding>
+            <element signature="e#10740#10861#0#PHP" expanded="true" />
+            <element signature="e#18318#19078#0#PHP" expanded="true" />
+            <element signature="e#19084#19168#0#PHP" expanded="true" />
+            <element signature="e#19726#19908#0#PHP" expanded="true" />
+            <element signature="e#19914#20012#0#PHP" expanded="true" />
+            <element signature="e#20017#20412#0#PHP" expanded="true" />
+            <element signature="e#20418#20525#0#PHP" expanded="true" />
+            <element signature="e#20530#20974#0#PHP" expanded="true" />
+            <element signature="e#20980#21086#0#PHP" expanded="true" />
+            <element signature="e#21091#21551#0#PHP" expanded="true" />
+            <marker date="1488287775310" expanded="true" signature="3788:3877" ph="INSERT INTO livecomment... " />
+          </folding>
         </state>
       </provider>
     </entry>
