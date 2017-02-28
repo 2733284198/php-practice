@@ -108,6 +108,7 @@
     - [ ] 视频编码h神经网络
     - [ ] 预处理
 - [x] HTTP请求库 ``    
+- [x] PHP Curl类可以轻松地发送HTTP请求并与Web API集成 ``    
      
 ## 常用单利模式调用
 - [x] Redis单利模式：`RedisInstance::Instance`

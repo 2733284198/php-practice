@@ -202,5 +202,22 @@ html;
         var_dump("执行的状态:" . $return_val); //执行的状态
         echo '-----------------------------------启动一个CLi进程 结束----------------------------------';
     }
+    
+    //CLI模式，模拟队列的形成
+    public function list(){
+        $count = 0;
+        while(true){
+            $count++;
+            echo $count."\r\n";
+            if($count>10){
+                break;
+            }
+            sleep(5);
+        }
+        echo "done\r\n";
+        exit(1);
+
+    }
+    
 
 }

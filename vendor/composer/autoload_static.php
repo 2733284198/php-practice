@@ -45,6 +45,10 @@ class ComposerStaticInit96a50d15bf79c7d1a0e972b6aac6969f
         array (
             'Doctrine\\Common\\Cache\\' => 22,
         ),
+        'C' => 
+        array (
+            'Curl\\' => 5,
+        ),
         'A' => 
         array (
             'Addons\\' => 7,
@@ -87,6 +91,10 @@ class ComposerStaticInit96a50d15bf79c7d1a0e972b6aac6969f
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl',
         ),
         'Addons\\' => 
         array (
