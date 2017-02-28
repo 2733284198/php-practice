@@ -63,6 +63,7 @@
 - [x] 基于角色的RBAC权限管理
 - [x] 基于类的无限级分类和数据库的无限级分类
 - [x] 非关系性数据库Redis
+    - [x] PHPRedis使用管道技术提升性能
 - [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
 - [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
 - [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`

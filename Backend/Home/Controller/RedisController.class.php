@@ -31,7 +31,7 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
-        var_dump(json_decode($redis->get('on_record_done'),true));
+        var_dump(json_decode($redis->get('on_record_done'), true));
     }
 
     public function redistest()
@@ -595,4 +595,77 @@ class RedisController extends Controller
     {
         var_dump(C('REDIS_CONFIG')['HOST']);
     }
+
+    /** .-------------------------------------------------------------------
+     * |  主题：PHPRedis使用管道技术提升性能
+     * |  探索： 发现对于互不相关的多次Redis操作使用管道可以极大的提升性能
+     * |-------------------------------------------------------------------
+     * |  测试结果分析：
+     * |  [1]由测试结果可以看出，管道技术由于合并了多次请求，可以有效的减少执行时间，加快效率。
+     * |  [2]而一般型的事务可能只是把所有命令做了一个队列并依次发送，并没有合并请求
+     * |  [3]Redis使用TCP协议进行数据传输，在多次Redis命令中会有大量的时间消耗在TCP握手上
+     * |  [4]而管道可以合并多次TCP请求，统一发送，这样就可以节省大量的时间。
+     * '-------------------------------------------------------------------*/
+    //获取毫秒数时间
+    public static function getMillisecond()
+    {
+        list($s1, $s2) = explode(' ', microtime());
+        return (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
+    }
+
+    /**
+     * 不使用事务 代码段：
+     * 执行时间：float 30762-----------float 28698------------float 26904
+     */
+    public function redis_multi_demo1()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        $startTime = self::getMillisecond();
+        //给数据插入 10000 条记录
+        for ($i = 0; $i < 10000; $i++) {
+            $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
+        }
+        $endTime = self::getMillisecond();
+        var_dump($endTime - $startTime);
+    }
+
+    /**
+     * 使用参数为MULTI的一般事务 代码段
+     * 执行时间：float 32194-----------float 30765------------float 28943
+     */
+    public function redis_multi_demo2()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        $startTime = self::getMillisecond();
+        $redis->multi();
+        //给数据插入 10000 条记录
+        for ($i = 0; $i < 10000; $i++) {
+            $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
+        }
+        $redis->exec();
+        $endTime = self::getMillisecond();
+        var_dump($endTime - $startTime);
+    }
+
+    /**
+     * 使用参数为PIPELINE的管道事务 代码段：
+     * 执行时间: float 198-----------float 184------------float 170
+     */
+    public function redis_multi_demo3()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        $startTime = self::getMillisecond();
+        $redis->multi(\Redis::PIPELINE);
+        //给数据插入 10000 条记录
+        for ($i = 0; $i < 10000; $i++) {
+            $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
+        }
+        $redis->exec();
+        $endTime = self::getMillisecond();
+        var_dump($endTime - $startTime);
+    }
+
 }
