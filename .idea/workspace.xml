@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Backend/Home/Controller/MachineLearningController.class.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ThinkPhpStudy.iml" afterPath="$PROJECT_DIR$/.idea/ThinkPhpStudy.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" afterPath="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Library/Controller/EmailController.class.php" afterPath="$PROJECT_DIR$/Backend/Library/Controller/EmailController.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
     </list>
@@ -47,35 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CURLController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CURLController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+            <state relative-caret-position="690">
+              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding>
                 <element signature="e#6#432#0#PHP" expanded="true" />
                 <element signature="e#462#476#0#PHP" expanded="true" />
                 <element signature="e#546#682#0#PHP" expanded="true" />
                 <element signature="e#688#2194#0#PHP" expanded="true" />
                 <element signature="e#2200#2226#0#PHP" expanded="true" />
+                <element signature="e#2231#2554#0#PHP" expanded="true" />
                 <element signature="e#2560#2637#0#PHP" expanded="true" />
                 <element signature="e#2642#3023#0#PHP" expanded="true" />
                 <element signature="e#3029#3059#0#PHP" expanded="true" />
                 <element signature="e#3064#3497#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="414">
-                <caret line="110" column="6" lean-forward="false" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="39" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -492,14 +476,7 @@
       <workItem from="1488159591314" duration="182000" />
       <workItem from="1488190860710" duration="1489000" />
       <workItem from="1488242797550" duration="2324000" />
-      <workItem from="1488272382923" duration="2295000" />
-    </task>
-    <task id="LOCAL-00055" summary="数据类型判断函数与数据比较方法的使用">
-      <created>1482523838612</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1482523838613</updated>
+      <workItem from="1488272382923" duration="3343000" />
     </task>
     <task id="LOCAL-00056" summary="ng-init与ng-trim及表单中表单value">
       <created>1482525627497</created>
@@ -837,11 +814,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488244771484</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="PHP Curl类可以轻松地发送HTTP请求并与Web API集成">
+      <created>1488274740353</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1488274740353</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174251000" />
+    <option name="totallyTimeSpent" value="175299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -936,7 +920,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="正则表达式" />
     <MESSAGE value="videoJS常用api" />
     <MESSAGE value="简单实现清晰度控制和创建清晰度菜单" />
     <MESSAGE value="Map China 手机销售量" />
@@ -961,7 +944,8 @@
     <MESSAGE value="PHP的机器学习库(PHP-ML - Machine Learning library for PHP)" />
     <MESSAGE value="功能：gif是从视频序列中提取的动画图像。" />
     <MESSAGE value="提取GIF动画图像" />
-    <option name="LAST_COMMIT_MESSAGE" value="提取GIF动画图像" />
+    <MESSAGE value="PHP Curl类可以轻松地发送HTTP请求并与Web API集成" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHP Curl类可以轻松地发送HTTP请求并与Web API集成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1250,7 +1234,7 @@
         <state relative-caret-position="540">
           <caret line="87" column="20" lean-forward="false" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
           <folding>
-            <element signature="e#1799#3287#0#PHP" expanded="true" />
+            <element signature="e#1799#3287#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1272,9 +1256,9 @@
         <state relative-caret-position="582">
           <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
           <folding>
-            <element signature="e#34#70#0#PHP" expanded="true" />
-            <element signature="e#693#1185#0#PHP" expanded="true" />
-            <element signature="e#1191#1427#0#PHP" expanded="true" />
+            <element signature="e#34#70#0#PHP" expanded="false" />
+            <element signature="e#693#1185#0#PHP" expanded="false" />
+            <element signature="e#1191#1427#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1302,41 +1286,41 @@
         <state relative-caret-position="233">
           <caret line="231" column="28" lean-forward="true" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="28" />
           <folding>
-            <element signature="e#6#432#0#PHP" expanded="true" />
-            <element signature="e#461#510#0#PHP" expanded="true" />
-            <element signature="e#783#841#0#PHP" expanded="true" />
-            <element signature="e#866#942#0#PHP" expanded="true" />
-            <element signature="e#948#1193#0#PHP" expanded="true" />
-            <element signature="e#1198#2112#0#PHP" expanded="true" />
-            <element signature="e#2118#2334#0#PHP" expanded="true" />
-            <element signature="e#2339#6203#0#PHP" expanded="true" />
-            <element signature="e#6209#6319#0#PHP" expanded="true" />
-            <element signature="e#6324#6946#0#PHP" expanded="true" />
-            <element signature="e#6952#7087#0#PHP" expanded="true" />
-            <element signature="e#7092#7789#0#PHP" expanded="true" />
-            <element signature="e#7795#7835#0#PHP" expanded="true" />
-            <element signature="e#7840#8549#0#PHP" expanded="true" />
-            <element signature="e#8555#8789#0#PHP" expanded="true" />
-            <element signature="e#8794#9514#0#PHP" expanded="true" />
-            <element signature="e#9520#9573#0#PHP" expanded="true" />
-            <element signature="e#9578#10063#0#PHP" expanded="true" />
-            <element signature="e#9819#9925#1#PHP" expanded="true" />
-            <element signature="e#10178#10466#0#PHP" expanded="true" />
-            <element signature="e#10472#10743#0#PHP" expanded="true" />
-            <element signature="e#10750#10933#0#PHP" expanded="true" />
-            <element signature="e#10938#11259#0#PHP" expanded="true" />
-            <element signature="e#11265#11540#0#PHP" expanded="true" />
-            <element signature="e#11467#11532#1#PHP" expanded="true" />
-            <element signature="e#11546#11610#0#PHP" expanded="true" />
-            <element signature="e#11615#12125#0#PHP" expanded="true" />
-            <element signature="e#12131#12209#0#PHP" expanded="true" />
-            <element signature="e#12214#12950#0#PHP" expanded="true" />
-            <element signature="e#12956#13081#0#PHP" expanded="true" />
-            <element signature="e#13086#13729#0#PHP" expanded="true" />
-            <element signature="e#13735#13872#0#PHP" expanded="true" />
-            <element signature="e#13877#14439#0#PHP" expanded="true" />
-            <element signature="e#14220#14316#1#PHP" expanded="true" />
-            <element signature="e#14446#14546#0#PHP" expanded="true" />
+            <element signature="e#6#432#0#PHP" expanded="false" />
+            <element signature="e#461#510#0#PHP" expanded="false" />
+            <element signature="e#783#841#0#PHP" expanded="false" />
+            <element signature="e#866#942#0#PHP" expanded="false" />
+            <element signature="e#948#1193#0#PHP" expanded="false" />
+            <element signature="e#1198#2112#0#PHP" expanded="false" />
+            <element signature="e#2118#2334#0#PHP" expanded="false" />
+            <element signature="e#2339#6203#0#PHP" expanded="false" />
+            <element signature="e#6209#6319#0#PHP" expanded="false" />
+            <element signature="e#6324#6946#0#PHP" expanded="false" />
+            <element signature="e#6952#7087#0#PHP" expanded="false" />
+            <element signature="e#7092#7789#0#PHP" expanded="false" />
+            <element signature="e#7795#7835#0#PHP" expanded="false" />
+            <element signature="e#7840#8549#0#PHP" expanded="false" />
+            <element signature="e#8555#8789#0#PHP" expanded="false" />
+            <element signature="e#8794#9514#0#PHP" expanded="false" />
+            <element signature="e#9520#9573#0#PHP" expanded="false" />
+            <element signature="e#9578#10063#0#PHP" expanded="false" />
+            <element signature="e#9819#9925#1#PHP" expanded="false" />
+            <element signature="e#10178#10466#0#PHP" expanded="false" />
+            <element signature="e#10472#10743#0#PHP" expanded="false" />
+            <element signature="e#10750#10933#0#PHP" expanded="false" />
+            <element signature="e#10938#11259#0#PHP" expanded="false" />
+            <element signature="e#11265#11540#0#PHP" expanded="false" />
+            <element signature="e#11467#11532#1#PHP" expanded="false" />
+            <element signature="e#11546#11610#0#PHP" expanded="false" />
+            <element signature="e#11615#12125#0#PHP" expanded="false" />
+            <element signature="e#12131#12209#0#PHP" expanded="false" />
+            <element signature="e#12214#12950#0#PHP" expanded="false" />
+            <element signature="e#12956#13081#0#PHP" expanded="false" />
+            <element signature="e#13086#13729#0#PHP" expanded="false" />
+            <element signature="e#13735#13872#0#PHP" expanded="false" />
+            <element signature="e#13877#14439#0#PHP" expanded="false" />
+            <element signature="e#14220#14316#1#PHP" expanded="false" />
+            <element signature="e#14446#14546#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1362,26 +1346,8 @@
         <state relative-caret-position="576">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="e#37#80#0#PHP" expanded="true" />
-            <element signature="e#151#595#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
-          <folding>
-            <element signature="e#6#432#0#PHP" expanded="true" />
-            <element signature="e#462#476#0#PHP" expanded="true" />
-            <element signature="e#546#682#0#PHP" expanded="true" />
-            <element signature="e#688#2194#0#PHP" expanded="true" />
-            <element signature="e#2200#2226#0#PHP" expanded="true" />
-            <element signature="e#2560#2637#0#PHP" expanded="true" />
-            <element signature="e#2642#3023#0#PHP" expanded="true" />
-            <element signature="e#3029#3059#0#PHP" expanded="true" />
-            <element signature="e#3064#3497#0#PHP" expanded="true" />
+            <element signature="e#37#80#0#PHP" expanded="false" />
+            <element signature="e#151#595#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1389,11 +1355,30 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="414">
-            <caret line="110" column="6" lean-forward="false" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="39" />
+          <first_editor relative-caret-position="288">
+            <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#432#0#PHP" expanded="true" />
+            <element signature="e#462#476#0#PHP" expanded="true" />
+            <element signature="e#546#682#0#PHP" expanded="true" />
+            <element signature="e#688#2194#0#PHP" expanded="true" />
+            <element signature="e#2200#2226#0#PHP" expanded="true" />
+            <element signature="e#2231#2554#0#PHP" expanded="true" />
+            <element signature="e#2560#2637#0#PHP" expanded="true" />
+            <element signature="e#2642#3023#0#PHP" expanded="true" />
+            <element signature="e#3029#3059#0#PHP" expanded="true" />
+            <element signature="e#3064#3497#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

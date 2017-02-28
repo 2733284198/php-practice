@@ -103,6 +103,13 @@ class ComposerStaticInit96a50d15bf79c7d1a0e972b6aac6969f
     );
 
     public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Requests' => 
+            array (
+                0 => __DIR__ . '/..' . '/rmccue/requests/library',
+            ),
+        ),
         'P' => 
         array (
             'Phpml' => 

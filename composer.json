@@ -23,7 +23,8 @@
         "ezyang/htmlpurifier": "^4.8",
         "phpmailer/phpmailer": "^5.2",
         "php-ai/php-ml": "^0.3.0",
-        "php-curl-class/php-curl-class": "^7.2"
+        "php-curl-class/php-curl-class": "^7.2",
+        "rmccue/requests": "^1.7"
     },
     "autoload":{
         "psr-4":{
