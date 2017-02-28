@@ -131,13 +131,13 @@ class FFmpegController extends Controller
             'timeout' => 3600,
             'ffmpeg.threads' => 12,
         ]);
-        $MP4Path = 'F:\Tinywan\Video\input1.mpg';
+        $MP4Path = 'F:\Tinywan\Video\cutVideo.mp4';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
         // Set an audio format
         $audio_format = new Format\Audio\Mp3();
         // Extract the audio into a new file
-        $video->save($audio_format, 'ffmpeg_mp3.mp3');
+        $video->save($audio_format, MEDIA_PATH . '\ffmpeg_mp3.mp3');
         var_dump($video);
     }
 
@@ -161,7 +161,7 @@ class FFmpegController extends Controller
         //Set an image cut time
         $frame = $video->frame(Coordinate\TimeCode::fromSeconds($rand));
         // Extract the image into a new file
-        $images = $frame->save('./ffmpeg_mp4_' . $rand . '.jpg');
+        $images = $frame->save(MEDIA_PATH . '\ffmpeg_mp4_' . $rand . '.jpg');
         var_dump($images);
     }
 
@@ -195,7 +195,7 @@ class FFmpegController extends Controller
      *      $duration的，可选的一个实例FFMpeg\Coordinate\TimeCode，指定了剪辑的持续时间
      *
      */
-    public function Clip($startTime = 200, $duration = 25)
+    public function Clip($startTime = 0, $duration = 20)
     {
         $ffmpeg = FFMpeg::create();
         $ffprobe = FFProbe::create();
@@ -227,24 +227,27 @@ class FFmpegController extends Controller
         $video->save($format, 'video.avi');
     }
 
-    /** ----------------------------------------------------------------------------------------------------------------
-     *          一下部分正在调试部分 有Debug
-     * ---------------------------------------------------------------------------------------------------------------*/
     /**
-     * gif是从视频序列中提取的动画图像。
+     * 【调试成功】
+     * 功能：gif是从视频序列中提取的动画图像。
      * 第三个可选布尔参数，即动画的持续时间。如果你不设置它，你会得到一个固定的gif图像。
-     * error：Unable to save gif
      */
     public function gif()
     {
         $ffmpeg = FFMpeg::create();
-        $video = $ffmpeg->open('F:\Tinywan\Video\out.mpg');
-        $video->gif(Coordinate\TimeCode::fromSeconds(6), new Coordinate\Dimension(40, 100))
-              ->save(MEDIA_PATH . '/123456.gif');
+        $video = $ffmpeg->open('F:\Tinywan\Video\output_file_video.mp4');
+        $video->gif(Coordinate\TimeCode::fromSeconds(6), new Coordinate\Dimension(640, 480),3)
+            ->save(MEDIA_PATH . '/12345689.gif');
     }
+
+    /** ----------------------------------------------------------------------------------------------------------------
+     *          一下部分正在调试部分 有Debug
+     * ---------------------------------------------------------------------------------------------------------------*/
+
 
     /**
      * gif图片到MP4转换
+     * Error:Encoding failed
      * FFmpeg：ffmpeg -i animated.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.mp4
      */
     public function gifToMp4()
@@ -253,7 +256,7 @@ class FFmpegController extends Controller
         $video = $ffmpeg->open('F:\Tinywan\Video\tinywanGif.gif');
         $format = new Format\Video\X264();
         $format->setAdditionalParameters(array('foo', 'bar'));
-        $video->save($format, MEDIA_PATH . '/export-x264.mp4');
+        $video->save($format, MEDIA_PATH . '/tinywanif-export-x264.mp4');
     }
 
     public function debugInfo()
@@ -272,13 +275,14 @@ class FFmpegController extends Controller
     public function video_rotate()
     {
         $ffmpeg = FFMpeg::create();
-        $MP4Path = 'http://' . $_SERVER['HTTP_HOST'] . __ROOT__ . '/Uploads/FFmpegVideo/ffmpeg_mp4.mp4';
+        $MP4Path = 'F:\Tinywan\Video\output64.mp4';
         //Open your video file
         $video = $ffmpeg->open($MP4Path);
+        $format = new  Format\Video\X264();
         //The resize filter takes three parameters :
-        $format = $video->filters()->rotate(Filters\Video\RotateFilter::ROTATE_90);
+        $video->filters()->rotate(Filters\Video\RotateFilter::ROTATE_90);
         // Extract the image into a new file
-        $video->save($format, 'ffmpeg_mp4_90.mp4');
+        $video->save($format,MEDIA_PATH . '/ffmpeg_mp4_90.mp4');
         var_dump($video);
     }
 
