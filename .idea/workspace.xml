@@ -4,10 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/Tpl/Home/AngularJS/angular_init_trim.html" description="&lt;div ng-app=&quot;tinywan&quot; ng-controller=&quot;ctrl&quot; ng-init..." line="17" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="PHP的机器学习库(PHP-ML - Machine Learning library for PHP)">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Uploads/FFmpegVideo/ffmpeg_mp4.mp4" afterPath="" />
+    <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php" afterPath="$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="ThinkPhpStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FFmpegController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FFmpegController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
-              <caret line="231" column="28" lean-forward="true" selection-start-line="231" selection-start-column="7" selection-end-line="231" selection-end-column="28" />
+              <caret line="231" column="28" lean-forward="true" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="28" />
               <folding>
                 <element signature="e#6#432#0#PHP" expanded="true" />
                 <element signature="e#461#510#0#PHP" expanded="true" />
@@ -124,6 +123,19 @@
             <state relative-caret-position="288">
               <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="216">
+                <caret line="93" column="10" lean-forward="true" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="19" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -185,7 +197,6 @@
         <option value="$PROJECT_DIR$/Backend/Home/Controller/StringController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Common/Common/function.php" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/FileController.class.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/EmailController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineLearning.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineLearn.class.php" />
@@ -195,6 +206,7 @@
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -524,14 +536,7 @@
       <workItem from="1488158280728" duration="784000" />
       <workItem from="1488159591314" duration="182000" />
       <workItem from="1488190860710" duration="1489000" />
-      <workItem from="1488242797550" duration="1935000" />
-    </task>
-    <task id="LOCAL-00053" summary="json数据转换与本地存储及$scope">
-      <created>1482243430253</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1482243430253</updated>
+      <workItem from="1488242797550" duration="1963000" />
     </task>
     <task id="LOCAL-00054" summary="数据类型判断函数与数据比较方法的使用">
       <created>1482523723651</created>
@@ -869,11 +874,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488158460855</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="功能：gif是从视频序列中提取的动画图像。">
+      <created>1488244744756</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1488244744756</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171567000" />
+    <option name="totallyTimeSpent" value="171595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -968,7 +980,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="AngularJS+flex弹性盒模型+bootStrap" />
     <MESSAGE value="坐标轴刻度与标签对齐" />
     <MESSAGE value="正则表达式" />
     <MESSAGE value="videoJS常用api" />
@@ -993,7 +1004,8 @@
     <MESSAGE value="PHPmailer批量发送邮件" />
     <MESSAGE value="PHP 命令行模式实战之cli+mysql 模拟队列批量发送邮件" />
     <MESSAGE value="PHP的机器学习库(PHP-ML - Machine Learning library for PHP)" />
-    <option name="LAST_COMMIT_MESSAGE" value="PHP的机器学习库(PHP-ML - Machine Learning library for PHP)" />
+    <MESSAGE value="功能：gif是从视频序列中提取的动画图像。" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能：gif是从视频序列中提取的动画图像。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1318,16 +1330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="18">
-            <caret line="103" column="16" lean-forward="false" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Uploads/Logo/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1376,7 +1378,7 @@
     <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
-          <caret line="231" column="28" lean-forward="true" selection-start-line="231" selection-start-column="7" selection-end-line="231" selection-end-column="28" />
+          <caret line="231" column="28" lean-forward="true" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="28" />
           <folding>
             <element signature="e#6#432#0#PHP" expanded="true" />
             <element signature="e#461#510#0#PHP" expanded="true" />
@@ -1414,6 +1416,17 @@
             <element signature="e#14220#14316#1#PHP" expanded="true" />
             <element signature="e#14446#14546#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="216">
+            <caret line="93" column="10" lean-forward="true" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="19" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
