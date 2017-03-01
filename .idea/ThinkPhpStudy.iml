@@ -93,6 +93,7 @@
           <root url="file://$MODULE_DIR$/vendor/phpmailer/phpmailer" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/qiniu/php-sdk" />
+          <root url="file://$MODULE_DIR$/vendor/rmccue/requests" />
           <root url="file://$MODULE_DIR$/vendor/symfony/filesystem" />
           <root url="file://$MODULE_DIR$/vendor/symfony/process" />
         </CLASSES>
@@ -114,6 +115,7 @@
           <root url="file://$MODULE_DIR$/vendor/phpmailer/phpmailer" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/qiniu/php-sdk" />
+          <root url="file://$MODULE_DIR$/vendor/rmccue/requests" />
           <root url="file://$MODULE_DIR$/vendor/symfony/filesystem" />
           <root url="file://$MODULE_DIR$/vendor/symfony/process" />
         </SOURCES>

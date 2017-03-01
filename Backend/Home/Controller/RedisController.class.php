@@ -606,9 +606,15 @@ class RedisController extends Controller
      * |  [3]Redis使用TCP协议进行数据传输，在多次Redis命令中会有大量的时间消耗在TCP握手上
      * |  [4]而管道可以合并多次TCP请求，统一发送，这样就可以节省大量的时间。
      * '-------------------------------------------------------------------*/
+    public static function getMillisecond1()
+    {
+        return microtime(true); //microtime(true)返回的值是sec+msec的和，保留四位小数。
+    }
     //获取毫秒数时间
     public static function getMillisecond()
     {
+        //microtime()返回的结果是以 "msec sec" 的格式返回一个字符串，
+        //其中 sec（时间戳） 是自 Unix 纪元（0:00:00 January 1, 1970 GMT）起到现在的秒数，msec 是微秒部分。microtime(true)返回的值是sec+msec的和，保留四位小数。
         list($s1, $s2) = explode(' ', microtime());
         return (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
     }
@@ -652,20 +658,37 @@ class RedisController extends Controller
     /**
      * 使用参数为PIPELINE的管道事务 代码段：
      * 执行时间: float 198-----------float 184------------float 170
+     * 插入1000,000 数据执行时间，float 31855 ，keys * 查询时间：(57.40s) ，flushsb 消耗时间：(1.26s)
      */
     public function redis_multi_demo3()
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(8);
-        $startTime = self::getMillisecond();
+        $startTime = self::getMillisecond1();
         $redis->multi(\Redis::PIPELINE);
+        $redis->eval();
         //给数据插入 10000 条记录
-        for ($i = 0; $i < 10000; $i++) {
+        for ($i = 0; $i < 1000000; $i++) {
             $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
         }
         $redis->exec();
-        $endTime = self::getMillisecond();
+//        if($redis->getLastError() !== null) exit('ERR Error compiling');
+        $endTime = self::getMillisecond1();
         var_dump($endTime - $startTime);
+    }
+
+    public function test11111()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        //随机返回key空间的一个key
+        $redis->randomKey();
+        //转移一个key到另外一个数据库
+        $redis->select(0); // switch to DB 0
+        $redis->set('x', '42'); // write 42 to x
+        $redis->move('x', 1); // move to DB 1
+        $redis->select(1); // switch to DB 1
+        $redis->get('x'); // will return 42
     }
 
 }
