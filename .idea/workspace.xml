@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ThinkPhpStudy.iml" afterPath="$PROJECT_DIR$/.idea/ThinkPhpStudy.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" afterPath="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" />
     </list>
     <ignored path="ThinkPhpStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +43,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1134">
-                <caret line="63" column="124" lean-forward="false" selection-start-line="63" selection-start-column="124" selection-end-line="63" selection-end-column="124" />
+              <first_editor relative-caret-position="540">
+                <caret line="92" column="15" lean-forward="true" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="15" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -52,16 +52,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MachineLearningController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MachineLearningController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="73" />
+            <state relative-caret-position="396">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#6#432#0#PHP" expanded="true" />
                 <element signature="e#466#496#0#PHP" expanded="true" />
-                <element signature="e#564#2445#0#PHP" expanded="true" />
-                <element signature="e#621#688#0#PHP" expanded="true" />
                 <element signature="e#753#1122#0#PHP" expanded="true" />
                 <element signature="e#1128#1257#0#PHP" expanded="true" />
                 <element signature="e#1262#2443#0#PHP" expanded="true" />
@@ -69,42 +67,6 @@
                 <element signature="e#1683#1754#0#PHP" expanded="true" />
                 <element signature="e#2016#2078#0#PHP" expanded="true" />
                 <element signature="e#2248#2315#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RedisController.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="685" column="25" lean-forward="true" selection-start-line="685" selection-start-column="25" selection-end-line="685" selection-end-column="25" />
-              <folding>
-                <element signature="e#10740#10861#0#PHP" expanded="true" />
-                <element signature="e#18318#19078#0#PHP" expanded="true" />
-                <element signature="e#19084#19168#0#PHP" expanded="true" />
-                <element signature="e#19174#19707#0#PHP" expanded="true" />
-                <element signature="e#19712#19837#0#PHP" expanded="true" />
-                <element signature="e#19856#20209#0#PHP" expanded="true" />
-                <element signature="e#20215#20313#0#PHP" expanded="true" />
-                <element signature="e#20318#20713#0#PHP" expanded="true" />
-                <element signature="e#20719#20826#0#PHP" expanded="true" />
-                <element signature="e#20831#21275#0#PHP" expanded="true" />
-                <element signature="e#21281#21468#0#PHP" expanded="true" />
-                <element signature="e#21473#22036#0#PHP" expanded="true" />
-                <marker date="1488346157050" expanded="true" signature="3788:3877" ph="INSERT INTO livecomment... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="standard_2.php" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3654">
-              <caret line="338" column="16" lean-forward="false" selection-start-line="338" selection-start-column="9" selection-end-line="338" selection-end-column="16" />
-              <folding>
-                <element signature="e#9314#10295#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,10 +135,10 @@
         <option value="$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php" />
-        <option value="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/../reids-lua/src/Lua/Base/Base2017.php" />
         <option value="$PROJECT_DIR$/../reids-lua/src/Lua/Basic/Basic2017.php" />
+        <option value="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" />
       </list>
     </option>
@@ -251,6 +213,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,174 +259,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPHP" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Think" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPHP" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Org" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPHP" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Org" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Util" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Library" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -639,14 +437,10 @@
       <workItem from="1488242797550" duration="2324000" />
       <workItem from="1488272382923" duration="9392000" />
       <workItem from="1488329165095" duration="6359000" />
-      <workItem from="1488366997630" duration="11000" />
-    </task>
-    <task id="LOCAL-00059" summary="ng-repeat实例详细讲解，ThinkPHP 3.2 模板中的Angularjs 的变量{{$first}} 无法被解析">
-      <created>1482535448263</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1482535448263</updated>
+      <workItem from="1488366997630" duration="47000" />
+      <workItem from="1488415980930" duration="2863000" />
+      <workItem from="1488442276202" duration="630000" />
+      <workItem from="1488450198557" duration="42000" />
     </task>
     <task id="LOCAL-00060" summary="利用jquery发起ajax请求，将client_id发给后端进行uid绑定">
       <created>1482567881462</created>
@@ -984,11 +778,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488288066155</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="什么都没做！">
+      <created>1488367025615</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1488367025615</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187718000" />
+    <option name="totallyTimeSpent" value="191289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1003,7 +804,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23720682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24520256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49389312" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1083,7 +884,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Map China 手机销售量" />
     <MESSAGE value="Map_China_locate 动态可变化的" />
     <MESSAGE value="某站点用户访问来源" />
     <MESSAGE value="饼图、某站点用户访问来源" />
@@ -1108,7 +908,8 @@
     <MESSAGE value="PHP Curl类可以轻松地发送HTTP请求并与Web API集成" />
     <MESSAGE value="PHPRedis使用管道技术提升性能" />
     <MESSAGE value="发现对于互不相关的多次Redis操作使用管道可以极大的提升性能" />
-    <option name="LAST_COMMIT_MESSAGE" value="发现对于互不相关的多次Redis操作使用管道可以极大的提升性能" />
+    <MESSAGE value="什么都没做！" />
+    <option name="LAST_COMMIT_MESSAGE" value="什么都没做！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1296,31 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding>
-            <marker date="1488189485977" expanded="true" signature="6638:6712" ph="INSERT INTO livecomment... " />
-            <marker date="1488189485977" expanded="true" signature="12077:12100" ph="select * fro... tour_logs" />
-            <marker date="1488189485977" expanded="true" signature="12425:12470" ph="UPDATE categ... " />
-            <marker date="1488189485977" expanded="true" signature="13346:13369" ph="select * fro... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="13994:14044" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="14246:14282" ph="select * fro... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="14472:14495" ph="select * fro... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="15496:15526" ph="select usern... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="15850:15916" ph="INSERT INTO tour_user... " />
-            <marker date="1488189485977" expanded="true" signature="17034:17100" ph="INSERT INTO tour_user... " />
-            <marker date="1488189485977" expanded="true" signature="17567:17658" ph="INSERT INTO tour_user... " />
-            <marker date="1488189485977" expanded="true" signature="18345:18395" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="18738:18788" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="19096:19143" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="19910:19957" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="20623:20670" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="21278:21317" ph="UPDATE tour_... " />
-            <marker date="1488189485977" expanded="true" signature="22010:22063" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="22414:22460" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="22880:22948" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="24076:24151" ph="INSERT INTO contactInfo... " />
-            <marker date="1488189485977" expanded="true" signature="24751:24798" ph="select user_... tour_user" />
-            <marker date="1488189485977" expanded="true" signature="25400:25489" ph="select user_... tour_user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1351,11 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
-          <folding>
-            <element signature="e#34#70#0#PHP" expanded="false" />
-            <element signature="e#693#1185#0#PHP" expanded="false" />
-            <element signature="e#1191#1427#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1380,43 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="231" column="28" lean-forward="true" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#432#0#PHP" expanded="false" />
-            <element signature="e#461#510#0#PHP" expanded="false" />
-            <element signature="e#783#841#0#PHP" expanded="false" />
-            <element signature="e#866#942#0#PHP" expanded="false" />
-            <element signature="e#948#1193#0#PHP" expanded="false" />
-            <element signature="e#1198#2112#0#PHP" expanded="false" />
-            <element signature="e#2118#2334#0#PHP" expanded="false" />
-            <element signature="e#2339#6203#0#PHP" expanded="false" />
-            <element signature="e#6209#6319#0#PHP" expanded="false" />
-            <element signature="e#6324#6946#0#PHP" expanded="false" />
-            <element signature="e#6952#7087#0#PHP" expanded="false" />
-            <element signature="e#7092#7789#0#PHP" expanded="false" />
-            <element signature="e#7795#7835#0#PHP" expanded="false" />
-            <element signature="e#7840#8549#0#PHP" expanded="false" />
-            <element signature="e#8555#8789#0#PHP" expanded="false" />
-            <element signature="e#8794#9514#0#PHP" expanded="false" />
-            <element signature="e#9520#9573#0#PHP" expanded="false" />
-            <element signature="e#9578#10063#0#PHP" expanded="false" />
-            <element signature="e#9819#9925#1#PHP" expanded="false" />
-            <element signature="e#10178#10466#0#PHP" expanded="false" />
-            <element signature="e#10472#10743#0#PHP" expanded="false" />
-            <element signature="e#10750#10933#0#PHP" expanded="false" />
-            <element signature="e#10938#11259#0#PHP" expanded="false" />
-            <element signature="e#11265#11540#0#PHP" expanded="false" />
-            <element signature="e#11467#11532#1#PHP" expanded="false" />
-            <element signature="e#11546#11610#0#PHP" expanded="false" />
-            <element signature="e#11615#12125#0#PHP" expanded="false" />
-            <element signature="e#12131#12209#0#PHP" expanded="false" />
-            <element signature="e#12214#12950#0#PHP" expanded="false" />
-            <element signature="e#12956#13081#0#PHP" expanded="false" />
-            <element signature="e#13086#13729#0#PHP" expanded="false" />
-            <element signature="e#13735#13872#0#PHP" expanded="false" />
-            <element signature="e#13877#14439#0#PHP" expanded="false" />
-            <element signature="e#14220#14316#1#PHP" expanded="false" />
-            <element signature="e#14446#14546#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1431,7 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
           <caret line="317" column="6" lean-forward="false" selection-start-line="317" selection-start-column="6" selection-end-line="317" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,10 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#37#80#0#PHP" expanded="false" />
-            <element signature="e#151#595#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1464,21 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="910">
           <caret line="150" column="5" lean-forward="false" selection-start-line="150" selection-start-column="4" selection-end-line="150" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#432#0#PHP" expanded="false" />
-            <element signature="e#462#476#0#PHP" expanded="false" />
-            <element signature="e#566#702#0#PHP" expanded="false" />
-            <element signature="e#708#2214#0#PHP" expanded="false" />
-            <element signature="e#2220#2246#0#PHP" expanded="false" />
-            <element signature="e#2251#2574#0#PHP" expanded="false" />
-            <element signature="e#2580#2657#0#PHP" expanded="false" />
-            <element signature="e#2662#3043#0#PHP" expanded="false" />
-            <element signature="e#3049#3079#0#PHP" expanded="false" />
-            <element signature="e#3084#3517#0#PHP" expanded="false" />
-            <element signature="e#3522#3552#0#PHP" expanded="false" />
-            <element signature="e#3557#4707#0#PHP" expanded="false" />
-            <element signature="e#4713#4966#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1493,37 +1207,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-516">
           <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#270#3578#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="73" />
-          <folding>
-            <element signature="e#6#432#0#PHP" expanded="true" />
-            <element signature="e#466#496#0#PHP" expanded="true" />
-            <element signature="e#564#2445#0#PHP" expanded="true" />
-            <element signature="e#621#688#0#PHP" expanded="true" />
-            <element signature="e#753#1122#0#PHP" expanded="true" />
-            <element signature="e#1128#1257#0#PHP" expanded="true" />
-            <element signature="e#1262#2443#0#PHP" expanded="true" />
-            <element signature="e#1302#1398#0#PHP" expanded="true" />
-            <element signature="e#1683#1754#0#PHP" expanded="true" />
-            <element signature="e#2016#2078#0#PHP" expanded="true" />
-            <element signature="e#2248#2315#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1134">
-            <caret line="63" column="124" lean-forward="false" selection-start-line="63" selection-start-column="124" selection-end-line="63" selection-end-column="124" />
+          <first_editor relative-caret-position="540">
+            <caret line="92" column="15" lean-forward="true" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="15" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1563,56 +1254,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="172" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#119#0#PHP" expanded="true" />
-            <element signature="e#169#219#0#PHP" expanded="true" />
-            <element signature="e#255#295#0#PHP" expanded="true" />
-            <element signature="e#337#404#0#PHP" expanded="true" />
-            <element signature="e#409#451#0#PHP" expanded="true" />
-            <element signature="e#457#604#0#PHP" expanded="true" />
-            <element signature="e#609#901#0#PHP" expanded="true" />
-            <element signature="e#907#989#0#PHP" expanded="true" />
-            <element signature="e#994#1408#0#PHP" expanded="true" />
-            <element signature="e#1414#1477#0#PHP" expanded="true" />
-            <element signature="e#1482#1827#0#PHP" expanded="true" />
-            <element signature="e#1833#1896#0#PHP" expanded="true" />
-            <element signature="e#1901#2246#0#PHP" expanded="true" />
-            <element signature="e#2252#2315#0#PHP" expanded="true" />
-            <element signature="e#2320#2699#0#PHP" expanded="true" />
-            <element signature="e#2705#2768#0#PHP" expanded="true" />
-            <element signature="e#2773#3050#0#PHP" expanded="true" />
-            <element signature="e#3056#3119#0#PHP" expanded="true" />
-            <element signature="e#3124#3353#0#PHP" expanded="true" />
-            <element signature="e#3359#3419#0#PHP" expanded="true" />
-            <element signature="e#3424#3855#0#PHP" expanded="true" />
-            <element signature="e#3861#3896#0#PHP" expanded="true" />
-            <element signature="e#3901#3984#0#PHP" expanded="true" />
-            <element signature="e#3990#4038#0#PHP" expanded="true" />
-            <element signature="e#4043#4107#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="366">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="685" column="25" lean-forward="true" selection-start-line="685" selection-start-column="25" selection-end-line="685" selection-end-column="25" />
+        <state relative-caret-position="1356">
+          <caret line="690" column="49" lean-forward="true" selection-start-line="690" selection-start-column="49" selection-end-line="690" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
-            <element signature="e#10740#10861#0#PHP" expanded="true" />
-            <element signature="e#18318#19078#0#PHP" expanded="true" />
-            <element signature="e#19084#19168#0#PHP" expanded="true" />
-            <element signature="e#19174#19707#0#PHP" expanded="true" />
-            <element signature="e#19712#19837#0#PHP" expanded="true" />
-            <element signature="e#19856#20209#0#PHP" expanded="true" />
-            <element signature="e#20215#20313#0#PHP" expanded="true" />
-            <element signature="e#20318#20713#0#PHP" expanded="true" />
-            <element signature="e#20719#20826#0#PHP" expanded="true" />
-            <element signature="e#20831#21275#0#PHP" expanded="true" />
-            <element signature="e#21281#21468#0#PHP" expanded="true" />
-            <element signature="e#21473#22036#0#PHP" expanded="true" />
-            <marker date="1488346157050" expanded="true" signature="3788:3877" ph="INSERT INTO livecomment... " />
+            <element signature="e#6#432#0#PHP" expanded="true" />
+            <element signature="e#466#496#0#PHP" expanded="true" />
+            <element signature="e#753#1122#0#PHP" expanded="true" />
+            <element signature="e#1128#1257#0#PHP" expanded="true" />
+            <element signature="e#1262#2443#0#PHP" expanded="true" />
+            <element signature="e#1302#1398#0#PHP" expanded="true" />
+            <element signature="e#1683#1754#0#PHP" expanded="true" />
+            <element signature="e#2016#2078#0#PHP" expanded="true" />
+            <element signature="e#2248#2315#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
