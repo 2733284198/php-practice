@@ -6,6 +6,7 @@ use Org\Util\Gateway;
 use Org\Util\RedisInstance;
 use Org\Util\RedisTest;
 use Think\Controller;
+use Think\Model;
 
 class RedisController extends Controller
 {
@@ -610,6 +611,7 @@ class RedisController extends Controller
     {
         return microtime(true); //microtime(true)返回的值是sec+msec的和，保留四位小数。
     }
+
     //获取毫秒数时间
     public static function getMillisecond()
     {
@@ -671,7 +673,7 @@ class RedisController extends Controller
             $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
         }
         $redis->exec();
-        if($redis->getLastError() !== null) exit('ERR Error compiling');
+        if ($redis->getLastError() !== null) exit('ERR Error compiling');
         $endTime = self::getMillisecond1();
         var_dump($endTime - $startTime);
     }
@@ -680,11 +682,82 @@ class RedisController extends Controller
      * |  主题：phpredis提高消息队列的实时性方法
      * |  探索： 提升队列的性能
      * |----------------------------------------------------------------------------------------------------------------
-     * |  数据库存贮都用list形式 要存2个队列 1个用作消息队列保存到数据 还有个 就是用来实时读取数据在redis：
+     * |  数据库存贮都用list形式 要存2个队列 1个用作消息队列保存到数据 还有个就是用来实时读取数据在redis：
      * |  [1]消息队列保存数据：   $redis->lpush($queenkey, json_encode($array));
      * |  [2]实时读取数据：   $redis->lpush($listkey, json_encode($array));
      * '--------------------------------------------------------------------------------------------------------------*/
-    /*消息队列实例*/
+    /*
+     * 消息队列实例
+     **/
+    public function insertinfo()
+    {
+        $infos = [
+            'info1' => mt_rand(10, 100),
+            'info2' => mt_rand(10, 100)
+        ];
+        $this->insertinfos($infos, 'tutorial-list', 'tutoriallist');
+    }
+
+    public function insertinfos($array, $queenkey, $listkey)
+    {
+        //连接本地的 Redis 服务
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);
+        //存储数据到列表中
+        $redis->lpush($queenkey, json_encode($array));
+        $redis->lpush($listkey, json_encode($array));
+
+    }
+
+    //读取 逻辑当redis key没有了 就读取数据库 然后重新写入list 有的话就读取redis数据
+    /*读取实例*/
+
+    public function getinfo()
+    {
+        $sql = 'select * from tutorial_table';
+        $result = $this->getinfos('tutoriallist', $sql);
+
+        //redis key不为空 直接读取redis
+        if (empty($result)) {
+            //连接本地的 Redis 服务
+            $redis = new \Redis();
+            $redis->connect('127.0.0.1', 6379);
+            // 获取存储的数据并输出
+            $result = $redis->lrange('tutoriallist', 0, -1);
+            foreach ($result as $k => $v) {
+                $result[$k] = json_decode($v, true);
+            }
+            print_r($result);
+            exit();
+        }
+    }
+
+    function getinfos($key, $sql)
+    {
+        //连接本地的 Redis 服务
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);
+
+        // 获取存储的数据
+        $result = $redis->lrange($key, 0, 1);
+
+        if (empty($result)) {
+            $VModel = new Model('tutorial_table');
+            $result = $VModel->query($sql);
+            //重新将缓存队列的形式放入数据库
+            foreach ($result as $k => $v) {
+                //这个地方要从右边插入 来保证跟数据库顺序一样
+                $redis->rpush($key, json_encode($v));
+            }
+        } else {
+            $result = 0;
+        }
+        return $result;
+    }
+
+    /**
+     * ==================================phpredis提高消息队列的实时性方法结束===============================================
+     */
 
     public function test11111()
     {
