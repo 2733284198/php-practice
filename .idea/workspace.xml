@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="ThinkPhpStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +37,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -71,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedisController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RedisController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="758" column="33" lean-forward="true" selection-start-line="758" selection-start-column="13" selection-end-line="758" selection-end-column="33" />
+            <state relative-caret-position="528">
+              <caret line="796" column="16" lean-forward="false" selection-start-line="796" selection-start-column="12" selection-end-line="796" selection-end-column="16" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
                 <element signature="e#235#454#0#PHP" expanded="true" />
@@ -144,7 +143,7 @@
                 <element signature="e#23047#23344#0#PHP" expanded="true" />
                 <element signature="e#23421#23996#0#PHP" expanded="true" />
                 <element signature="e#24002#24594#0#PHP" expanded="true" />
-                <element signature="e#25405#26436#0#PHP" expanded="true" />
+                <element signature="e#24600#25400#0#PHP" expanded="true" />
                 <element signature="e#25877#26098#0#PHP" expanded="true" />
                 <element signature="e#26442#26564#0#PHP" expanded="true" />
                 <element signature="e#26570#26996#0#PHP" expanded="true" />
@@ -603,14 +602,7 @@
       <workItem from="1488501490140" duration="101000" />
       <workItem from="1488501665540" duration="639000" />
       <workItem from="1488506981289" duration="312000" />
-      <workItem from="1488532371186" duration="3781000" />
-    </task>
-    <task id="LOCAL-00063" summary="ng-model-options设置数据同步时机提交网站">
-      <created>1482639588699</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1482639588731</updated>
+      <workItem from="1488532371186" duration="3904000" />
     </task>
     <task id="LOCAL-00064" summary="通过ng-class动态改变样式类实例操作">
       <created>1482680734371</created>
@@ -948,11 +940,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488535907449</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="PHP 命令行模式实战之cli+mysql 模拟队列批量发送邮件(在Linux环境下PHP 异步执行脚本发送事件通知消息实际案例)">
+      <created>1488536165949</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1488536165949</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196873000" />
+    <option name="totallyTimeSpent" value="196996000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -969,7 +968,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49389312" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43387097" sideWeight="0.4908397" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1047,7 +1046,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="饼图、某站点用户访问来源" />
     <MESSAGE value="ConfigModel" />
     <MESSAGE value="Home 模块的所有Model移动到Common中，统一管理" />
     <MESSAGE value="git-workflow-release.png" />
@@ -1072,7 +1070,8 @@
     <MESSAGE value="什么都没做！" />
     <MESSAGE value="数据库存贮都用list形式 要存2个队列 1个用作消息队列保存到数据 还有个就是用来实时读取数据在redis" />
     <MESSAGE value="Redis SETNX 命令实现分布式锁" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redis SETNX 命令实现分布式锁" />
+    <MESSAGE value="PHP 命令行模式实战之cli+mysql 模拟队列批量发送邮件(在Linux环境下PHP 异步执行脚本发送事件通知消息实际案例)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHP 命令行模式实战之cli+mysql 模拟队列批量发送邮件(在Linux环境下PHP 异步执行脚本发送事件通知消息实际案例)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1439,10 +1438,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="673">
+            <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="758" column="33" lean-forward="true" selection-start-line="758" selection-start-column="13" selection-end-line="758" selection-end-column="33" />
+        <state relative-caret-position="528">
+          <caret line="796" column="16" lean-forward="false" selection-start-line="796" selection-start-column="12" selection-end-line="796" selection-end-column="16" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
             <element signature="e#235#454#0#PHP" expanded="true" />
@@ -1511,7 +1521,7 @@
             <element signature="e#23047#23344#0#PHP" expanded="true" />
             <element signature="e#23421#23996#0#PHP" expanded="true" />
             <element signature="e#24002#24594#0#PHP" expanded="true" />
-            <element signature="e#25405#26436#0#PHP" expanded="true" />
+            <element signature="e#24600#25400#0#PHP" expanded="true" />
             <element signature="e#25877#26098#0#PHP" expanded="true" />
             <element signature="e#26442#26564#0#PHP" expanded="true" />
             <element signature="e#26570#26996#0#PHP" expanded="true" />
@@ -1519,17 +1529,6 @@
             <marker date="1488535887930" expanded="true" signature="23469:23491" ph="select * fro... mobantestinfo" />
             <marker date="1488535887930" expanded="true" signature="23469:23497" ph="select * fro... tutorial_table" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="673">
-            <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
