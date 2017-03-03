@@ -63,16 +63,16 @@
 - [x] 基于类的无限级分类和数据库的无限级分类
 - [x] [非关系性数据库Redis](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisController.class.php)
     - [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
-    - [x] PHPRedis使用管道技术提升性能
-    - [x] Redis SETNX 命令实现分布式锁
+    - [x] [PHPRedis使用管道技术提升性能](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
+    - [x] [Redis SETNX 命令实现分布式锁](http://www.jb51.net/article/104111.htm)
 - [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
 - [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
 - [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
 - [x] 多级模块化的管理
 - [x] Uploadify图片上传DEMO
 - [x] [PHPmailer批量发送邮件](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Library/Controller/EmailController.class.php)
-    - [x] PHP 命令行模式
-    - [x] PHP+Mysql 模拟队列发送邮件
+    - [x] [PHP 命令行模式实战之Cli+Mysql模拟队列批量发送邮件](http://www.cnblogs.com/tinywan/p/6443615.html)
+    - [x] [在Linux环境下PHP 异步执行脚本发送事件通知消息实际案例](http://www.cnblogs.com/tinywan/p/6443615.html)
 - [x] 支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
 - [x] 用户注册邮箱激活和邮箱密码修改&emsp;`Library/EmailController/Index`
 - [x] AngularJS 框架&emsp;`Home/AngularJSController`
@@ -109,7 +109,7 @@
     - [ ] 交叉验证 
     - [ ] 视频编码h神经网络
     - [ ] 预处理
-- [x] HTTP请求库 ``    
+- [x] HTTP请求库    
 - [x] [PHP Curl类可以轻松地发送HTTP请求并与Web API集成](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CURLController.class.php)    
      
 ## 常用单利模式调用
