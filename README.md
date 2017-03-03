@@ -64,6 +64,7 @@
 - [x] [非关系性数据库Redis](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisController.class.php)
     - [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
     - [x] PHPRedis使用管道技术提升性能
+    - [x] Redis SETNX 命令实现分布式锁
 - [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
 - [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
 - [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
