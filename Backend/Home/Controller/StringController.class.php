@@ -28,12 +28,12 @@ class StringController extends Controller
     public function index2()
     {
         //请求参数
-        $appId = 757158800;
+        $appId = 75715888;
         $domainName = 'tinywan.amai8.com';
         $appName = 'live';
         $DeviceId = 2801;
         //签名密钥
-        $appSecret = '5fa09735ce5de5d194fb7f2daa4289f53634d314';
+        $appSecret = '00205268c4e6db6bf25a04cbc0cb23e6efc7f929';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
         $str = "AppId" . $appId . "AppName" . $appName . "DeviceId" . $DeviceId . "DomainName" . $domainName . $appSecret;
         //签名串，由签名算法sha1生成
@@ -54,20 +54,19 @@ class StringController extends Controller
 
     public function index()
     {
-        //请求参数
-        phpinfo();
-        die;
-        $appId = 757158800;
-        $domainName = 'tinywan.amai8.com';
-        $appName = 'live123';
+        $appId = 75715888;
+//        $domainName = 'tinywan.amai8.com';
+        $domainName = '121.40';
+        $appName = 'live';
+//        $AuthKeyStatus = 0;
         //签名密钥
-        $appSecret = '5fa09735ce5de5d194fb7f2daa4289f53634d314';
+        $appSecret = '00205268c4e6db6bf25a04cbc0cb23e6efc7f929';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
         $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName . $appSecret;
         //签名串，由签名算法sha1生成
         $sign = strtoupper(sha1($str));
         //请求资源访问路径以及请求参数，参数名必须为大写
-        $url = "http://sewise.amai8.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName . "&Sign=" . $sign;
+        $url = "http://sewise.amai8.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName ."&DomainName=" . $domainName . "&Sign=" . $sign;
         //CURL方式请求
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
