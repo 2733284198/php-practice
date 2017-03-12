@@ -12,7 +12,7 @@ FLOG=/home/www/logs/amai_live_comment.log
 
 REDIS_HOST='127.0.01'
 REDIS_PORT='6379'
-REDIS_PASS='tinywanredis'
+REDIS_PASS='1234567'
 REDIS_DB=0
 #echo $TIME $INSERT_CURL >> $FLOG
 ALLKEY=$(redis-cli -h $REDIS_HOST -p $REDIS_PORT  keys 'L*Comments')
