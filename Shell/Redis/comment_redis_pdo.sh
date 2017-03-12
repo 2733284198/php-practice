@@ -10,7 +10,7 @@ YMD=`date +%Y%m%d`
 S_TIME=`date +%S`
 FLOG=/home/www/logs/amai_live_comment.log
 
-REDIS_HOST='10.51.24.116'
+REDIS_HOST='127.0.01'
 REDIS_PORT='6379'
 REDIS_PASS='tinywanredis'
 REDIS_DB=0
