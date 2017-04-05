@@ -11,6 +11,18 @@ use Think\Model;
 class RedisController extends Controller
 {
     // 根据URl窃取域名
+    public function redistest()
+    {
+        $redis = new \Redis();
+        var_dump($redis);
+        die;
+        $redis->connect('116.62.28.219','63790');
+        $redis->auth('amai_redis_stream_system_requirepass_tinywan');
+        $redis->select(12);
+        var_dump($redis->keys('*'));
+    }
+
+    // 根据URl窃取域名
     public function domainName()
     {
         preg_match("/^(rtmp:\/\/)?([^\/]+)/i", "rtmp://120.26.206.180/live/4001482369935?vhost=121.40.214.99", $matches);
