@@ -34,7 +34,21 @@
 ## FFmpeg录制、转换以及流化音视频的解决方案
 *  [更多FFmpeg 命令相关文档](https://github.com/Tinywan/PHP_Experience/blob/master/FFmpeg/ffmpeg_command.md)
 *  将网络直播源(RTMP流)拉取到内网(本地文件)，切片成m3u8+ts
-    - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+*  ffmpeg设置转码延时的参数和步骤如下:
+   > 关闭sync-lookahead   
+   > 降低rc-lookahead，但别小于10,默认是-1   
+   > 降低threads(比如从12降到6)   
+   > 禁用rc-lookahead   
+   > 禁用b-frames   
+   > 缩小GOP，    
+   > 开启x264的 -preset fast/faster/verfast/superfast/ultrafast参数   
+   > 使用-tune zerolatency 参数   
+   * 测试案例：
+   ```
+   ./ffmpeg -i rtmp://192.168.1.12/live/src -tune zerolatency -vcodec libx264 -preset ultrafast -b:v 400k -s 720x576 -r 25 
+   -acodec libfaac -b:a 64k -f flv rtmp://192.168.1.12/live/dst
+   ```
+
 *  将本地摄像头RTSP流拉取到公网RTMP流(默认使用UDP协议传送)
     - `ffmpeg -i rtsp://192.168.18.240:554/onvif/live/1 -c:a copy -c:v libx264 -f flv "rtmp://公网IP地址/live/tinywan123"`
 *  将本地摄像头RTSP流拉取到公网RTMP流(TCP协议传送)
