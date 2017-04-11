@@ -35,6 +35,8 @@
 *  [更多FFmpeg 命令相关文档](https://github.com/Tinywan/PHP_Experience/blob/master/FFmpeg/ffmpeg_command.md)
 *  将网络直播源(RTMP流)拉取到内网(本地文件)，切片成m3u8+ts
    - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+*  FFmpeg 自动截取直播图片
+   - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -vframes 1 -y -f image2 -t 1 -s 600x480 $path/autoCli.jpg`
 *  FFmpeg的转码延时测试与设置优化,ffmpeg设置转码延时的参数和步骤如下:
    > 关闭sync-lookahead   
    > 降低rc-lookahead，但别小于10,默认是-1   
