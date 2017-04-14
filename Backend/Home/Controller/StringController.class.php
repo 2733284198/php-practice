@@ -117,8 +117,8 @@ class StringController extends Controller
     public function index()
     {
         $appId = 75715888;
-       $domainName = '10.51.10.172';
-        // $domainName = 'tinywan.amai8.com';
+//       $domainName = '10.51.10.172';
+         $domainName = 'zonelue2.amailive.com';
         $appName = 'live';
 //        $AuthKeyStatus = 0;
         //签名密钥
@@ -129,6 +129,34 @@ class StringController extends Controller
         $sign = strtoupper(sha1($str));
         //请求资源访问路径以及请求参数，参数名必须为大写
         $url = "http://ssconsole.amaitech.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName ."&DomainName=" . $domainName . "&Sign=" . $sign;
+        //CURL方式请求
+        $ch = curl_init() or die (curl_error());
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //返回数据为JSON格式，进行转换为数组打印输出
+        var_dump(json_decode($response, true));
+    }
+
+    // 带权限的测试 tinywan.amai8.com
+    public function indexAuthKeyStatus()
+    {
+        $appId = 75715888;
+//       $domainName = '10.51.10.172';
+        $domainName = 'tinywan.amai8.com';
+        $appName = 'live';
+        $AuthKeyStatus = 1;
+        //签名密钥
+        $appSecret = '981119290651e52a52dc469df5eeb638942cc7bb';
+        //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
+        $str = "AppId" . $appId . "AppName" . $appName . "AuthKeyStatus" . $AuthKeyStatus . "DomainName" . $domainName . $appSecret;
+        //签名串，由签名算法sha1生成
+        $sign = strtoupper(sha1($str));
+        //请求资源访问路径以及请求参数，参数名必须为大写
+        $url = "http://ssconsole.amaitech.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName ."&AuthKeyStatus=" . $AuthKeyStatus ."&DomainName=" . $domainName . "&Sign=" . $sign;
         //CURL方式请求
         $ch = curl_init() or die (curl_error());
         curl_setopt($ch, CURLOPT_URL, $url);
