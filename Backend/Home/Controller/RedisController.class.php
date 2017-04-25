@@ -6,9 +6,22 @@ use Org\Util\Gateway;
 use Org\Util\RedisInstance;
 use Org\Util\RedisTest;
 use Think\Controller;
+use Think\Model;
 
 class RedisController extends Controller
 {
+    // 根据URl窃取域名
+    public function redistest()
+    {
+        $redis = new \Redis();
+        var_dump($redis);
+        die;
+        $redis->connect('116.62.28.219','63790');
+        $redis->auth('amai_redis_stream_system_requirepass_tinywan');
+        $redis->select(12);
+        var_dump($redis->keys('*'));
+    }
+
     // 根据URl窃取域名
     public function domainName()
     {
@@ -31,7 +44,7 @@ class RedisController extends Controller
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
-        var_dump(json_decode($redis->get('on_record_done'),true));
+        var_dump(json_decode($redis->get('on_record_done'), true));
     }
 
     public function redistest()
@@ -595,4 +608,225 @@ class RedisController extends Controller
     {
         var_dump(C('REDIS_CONFIG')['HOST']);
     }
+
+    /** .--------------------------------------------------------------------------------------------------------------
+     * |  主题：PHPRedis使用管道技术提升性能
+     * |  探索： 发现对于互不相关的多次Redis操作使用管道可以极大的提升性能
+     * |----------------------------------------------------------------------------------------------------------------
+     * |  测试结果分析：
+     * |  [1]由测试结果可以看出，管道技术由于合并了多次请求，可以有效的减少执行时间，加快效率。
+     * |  [2]而一般型的事务可能只是把所有命令做了一个队列并依次发送，并没有合并请求
+     * |  [3]Redis使用TCP协议进行数据传输，在多次Redis命令中会有大量的时间消耗在TCP握手上
+     * |  [4]而管道可以合并多次TCP请求，统一发送，这样就可以节省大量的时间。
+     * '--------------------------------------------------------------------------------------------------------------*/
+    public static function getMillisecond1()
+    {
+        return microtime(true); //microtime(true)返回的值是sec+msec的和，保留四位小数。
+    }
+
+    //获取毫秒数时间
+    public static function getMillisecond()
+    {
+        //microtime()返回的结果是以 "msec sec" 的格式返回一个字符串，
+        //其中 sec（时间戳） 是自 Unix 纪元（0:00:00 January 1, 1970 GMT）起到现在的秒数，msec 是微秒部分。microtime(true)返回的值是sec+msec的和，保留四位小数。
+        list($s1, $s2) = explode(' ', microtime());
+        return (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
+    }
+
+    /**
+     * 不使用事务 代码段：
+     * 执行时间：float 30762-----------float 28698------------float 26904
+     */
+    public function redis_multi_demo1()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        $startTime = self::getMillisecond();
+        //给数据插入 10000 条记录
+        for ($i = 0; $i < 10000; $i++) {
+            $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
+        }
+        $endTime = self::getMillisecond();
+        var_dump($endTime - $startTime);
+    }
+
+    /**
+     * 使用参数为MULTI的一般事务 代码段
+     * 执行时间：float 32194-----------float 30765------------float 28943
+     */
+    public function redis_multi_demo2()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        $startTime = self::getMillisecond();
+        $redis->multi();
+        //给数据插入 10000 条记录
+        for ($i = 0; $i < 10000; $i++) {
+            $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
+        }
+        $redis->exec();
+        $endTime = self::getMillisecond();
+        var_dump($endTime - $startTime);
+    }
+
+    /**
+     * 使用参数为PIPELINE的管道事务 代码段：
+     * 执行时间: float 198-----------float 184------------float 170
+     * 插入1000,000 数据执行时间，float 31855 ，keys * 查询时间：(57.40s) ，flushsb 消耗时间：(1.26s)
+     */
+    public function redis_multi_demo3()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        $startTime = self::getMillisecond1();
+        $redis->multi(\Redis::PIPELINE);
+        //给数据插入 10000 条记录
+        for ($i = 0; $i < 1000000; $i++) {
+            $redis->set('redis_multi_demo1:' . $i, 'test' . $i);
+        }
+        $redis->exec();
+        if ($redis->getLastError() !== null) exit('ERR Error compiling');
+        $endTime = self::getMillisecond1();
+        var_dump($endTime - $startTime);
+    }
+
+    /** .--------------------------------------------------------------------------------------------------------------
+     * |  主题：phpredis提高消息队列的实时性方法
+     * |  探索： 提升队列的性能
+     * |----------------------------------------------------------------------------------------------------------------
+     * |  数据库存贮都用list形式 要存2个队列 1个用作消息队列保存到数据 还有个就是用来实时读取数据在redis：
+     * |  [1]消息队列保存数据：   $redis->lpush($queenkey, json_encode($array));
+     * |  [2]实时读取数据：   $redis->lpush($listkey, json_encode($array));
+     * '--------------------------------------------------------------------------------------------------------------*/
+    /*
+     * 消息队列实例
+     **/
+    public function insertinfo()
+    {
+        $infos = [
+            'info1' => mt_rand(10, 100),
+            'info2' => mt_rand(10, 100)
+        ];
+        $this->insertinfos($infos, 'tutorial-list', 'tutoriallist');
+    }
+
+    public function insertinfos($array, $queenkey, $listkey)
+    {
+        //连接本地的 Redis 服务
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);
+        //存储数据到列表中
+        $redis->lpush($queenkey, json_encode($array));
+        $redis->lpush($listkey, json_encode($array));
+
+    }
+
+    //读取 逻辑当redis key没有了 就读取数据库 然后重新写入list 有的话就读取redis数据
+    /*读取实例*/
+
+    public function getinfo()
+    {
+        $sql = 'select * from tutorial_table';
+        $result = $this->getinfos('tutoriallist', $sql);
+
+        //redis key不为空 直接读取redis
+        if (empty($result)) {
+            //连接本地的 Redis 服务
+            $redis = new \Redis();
+            $redis->connect('127.0.0.1', 6379);
+            // 获取存储的数据并输出
+            $result = $redis->lrange('tutoriallist', 0, -1);
+            foreach ($result as $k => $v) {
+                $result[$k] = json_decode($v, true);
+            }
+            print_r($result);
+            exit();
+        }
+    }
+
+    function getinfos($key, $sql)
+    {
+        //连接本地的 Redis 服务
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1', 6379);
+
+        // 获取存储的数据
+        $result = $redis->lrange($key, 0, 1);
+
+        if (empty($result)) {
+            $VModel = new Model('tutorial_table');
+            $result = $VModel->query($sql);
+            //重新将缓存队列的形式放入数据库
+            foreach ($result as $k => $v) {
+                //这个地方要从右边插入 来保证跟数据库顺序一样
+                $redis->rpush($key, json_encode($v));
+            }
+        } else {
+            $result = 0;
+        }
+        return $result;
+    }
+
+    /** .--------------------------------------------------------------------------------------------------------------
+     * |  主题：Redis SETNX 命令实现分布式锁 (参考地址：http://www.jb51.net/article/104111.htm)
+     * |  探索： 某个查询数据库的接口，因为调用量比较大，所以加了缓存，并设定缓存过期后刷新，问题是当并发量比较大的时候，如果没有锁机制，
+     * |        那么缓存过期的瞬间，大量并发请求会穿透缓存直接查询数据库，造成雪崩效应，如果有锁机制，那么就可以控制只有一个请求去更新缓存，
+     * |        其它的请求视情况要么等待，要么使用过期的缓存。
+     * |----------------------------------------------------------------------------------------------------------------
+     * |  解释：将 key 的值设为 value ，当且仅当 key 不存在。若给定的 key 已经存在，则 SETNX 不做任何动作。
+     * |  [1]时间复杂度： O(1)
+     * |  [2]返回值：
+     * |        设置成功，返回 1
+     * |        设置失败，返回 0
+     * '--------------------------------------------------------------------------------------------------------------*/
+    public function redisSetNx()
+    {
+        $LOCK_TIMEOUT = 3;
+        $lock = 0;
+        $lock_timeout = 0;
+        $lock_key = 'lock.foo';
+        $redis = RedisInstance::Instance();
+        $redis->connect('127.0.0.1', 6379);
+        //获取锁,当我没有锁的时候
+        while ($lock != 1) {
+            // 获取当前时间
+            $now = time();
+            $lock_timeout = $now + $LOCK_TIMEOUT + 1;
+            $lock = $redis->setnx($lock_key, $lock_timeout); //获得锁，返回1，否则返回0
+            /**
+             * 获得了锁，或者现在的时间已经大于锁的过期时间同时设置当前key的值为当前的过期时间
+             * GETSET key value：将给定 key 的值设为 value ，并返回 key 的旧值(old value)
+             * GETSET 可以和 INCR 组合使用，实现一个有原子性(atomic)复位操作的计数器(counter)
+             */
+            if ($lock == 1 || ($now > $redis->get($lock_key) && ($now > $redis->getSet($lock_key, $lock_timeout)))) {
+                break;
+            }
+            sleep(0.001);
+        }
+        //已获得锁，这时候你可以使用这个锁了！也就是给Keys就可以了
+
+        //释放锁
+        if ($now < $lock_timeout) {
+            $redis->delete($lock_key);
+        }
+    }
+
+    /**
+     * ==================================phpredis提高消息队列的实时性方法结束===============================================
+     */
+
+    public function test11111()
+    {
+        $redis = RedisInstance::MasterInstance();
+        $redis->select(8);
+        //随机返回key空间的一个key
+        $redis->randomKey();
+        //转移一个key到另外一个数据库
+        $redis->select(0); // switch to DB 0
+        $redis->set('x', '42'); // write 42 to x
+        $redis->move('x', 1); // move to DB 1
+        $redis->select(1); // switch to DB 1
+        $redis->get('x'); // will return 42
+    }
+
 }

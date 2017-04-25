@@ -34,7 +34,22 @@
 ## FFmpeg录制、转换以及流化音视频的解决方案
 *  [更多FFmpeg 命令相关文档](https://github.com/Tinywan/PHP_Experience/blob/master/FFmpeg/ffmpeg_command.md)
 *  将网络直播源(RTMP流)拉取到内网(本地文件)，切片成m3u8+ts
-    - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+   - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -f hls -hls_list_size 5 -hls_time 10 -hls_wrap 10 ./live.m3u8`
+*  FFmpeg 自动截取直播图片
+   - `ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks -vframes 1 -y -f image2 -t 1 -s 600x480 $path/autoCli.jpg`
+*  FFmpeg的转码延时测试与设置优化,ffmpeg设置转码延时的参数和步骤如下:
+   > 关闭sync-lookahead   
+   > 降低rc-lookahead，但别小于10,默认是-1   
+   > 降低threads(比如从12降到6)   
+   > 禁用rc-lookahead   
+   > 禁用b-frames   
+   > 缩小GOP，    
+   > 开启x264的 -preset fast/faster/verfast/superfast/ultrafast参数   
+   > 使用-tune zerolatency 参数   
+   * 测试案例(延时大概在0.2 -- 0.6 秒)：
+   - `./ffmpeg -i rtmp://192.168.1.12/live/src -tune zerolatency -vcodec libx264 -preset ultrafast -b:v 400k -s 720x576 -r 25 
+   -acodec libfaac -b:a 64k -f flv rtmp://192.168.1.12/live/dst `
+
 *  将本地摄像头RTSP流拉取到公网RTMP流(默认使用UDP协议传送)
     - `ffmpeg -i rtsp://192.168.18.240:554/onvif/live/1 -c:a copy -c:v libx264 -f flv "rtmp://公网IP地址/live/tinywan123"`
 *  将本地摄像头RTSP流拉取到公网RTMP流(TCP协议传送)
@@ -59,18 +74,20 @@
 
 - [x] [基于角色的RBAC权限管理](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RbacController.class.php)
 - [x] [基于类的无限级分类和数据库的无限级分类](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CategoryController.class.php)
-- [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
 - [x] 基于角色的RBAC权限管理
 - [x] 基于类的无限级分类和数据库的无限级分类
-- [x] 非关系性数据库Redis
+- [x] [非关系性数据库Redis](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisController.class.php)
+    - [x] [Redis数据库作为Mysql数据库缓存](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
+    - [x] [PHPRedis使用管道技术提升性能](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/RedisCacheController.class.php)
+    - [x] [Redis SETNX 命令实现分布式锁](http://www.jb51.net/article/104111.htm)
 - [x] 存储数据形成消息队列&emsp;`Home/DataBaseController/createRedisList`
 - [x] 消息队列元素大于10000时，批量插入到Mysql数据库&emsp;`Home/DataBaseController/RedisSaveToMysql` 
 - [x] 读取缓存数据&emsp;`Home/DataBaseController/findDataRedisOrMysql`
 - [x] 多级模块化的管理
 - [x] Uploadify图片上传DEMO
 - [x] [PHPmailer批量发送邮件](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Library/Controller/EmailController.class.php)
-    - [x] PHP 命令行模式
-    - [x] PHP+Mysql 模拟队列发送邮件
+    - [x] [PHP 命令行模式实战之Cli+Mysql模拟队列批量发送邮件](http://www.cnblogs.com/tinywan/p/6443615.html)
+    - [x] [在Linux环境下PHP 异步执行脚本发送事件通知消息实际案例](http://www.cnblogs.com/tinywan/p/6443615.html)
 - [x] 支付宝即时到账接口开发&emsp;`Api/AliPayController/Index`
 - [x] 用户注册邮箱激活和邮箱密码修改&emsp;`Library/EmailController/Index`
 - [x] AngularJS 框架&emsp;`Home/AngularJSController`
@@ -107,7 +124,7 @@
     - [ ] 交叉验证 
     - [ ] 视频编码h神经网络
     - [ ] 预处理
-- [x] HTTP请求库 ``    
+- [x] HTTP请求库    
 - [x] [PHP Curl类可以轻松地发送HTTP请求并与Web API集成](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CURLController.class.php)    
      
 ## 常用单利模式调用

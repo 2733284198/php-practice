@@ -1,7 +1,7 @@
 #!/bin/bash
 TIME=`date '+%Y-%m-%d %H:%M:%S'`
-REDIS_HOST='121.41.88.209'
-REDIS_PORT='63789'
+REDIS_HOST='12.12.12.12'
+REDIS_PORT='1211'
 REDIS_PASS='tinywanredis'
 REDIS_DB=1
 LOG_PATH="/home/www/logs"
