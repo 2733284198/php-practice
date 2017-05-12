@@ -29,8 +29,8 @@ class StringController extends Controller
     public function redistest()
     {
         $redis = new \Redis();
-        $redis->connect('116.62.28.219','63790');
-        $redis->auth('amai_redis_stream_system_requirepass_tinywan');
+        $redis->connect('116','63790');
+        $redis->auth('1111');
         $redis->select(12);
         var_dump($redis->keys('*'));
     }
