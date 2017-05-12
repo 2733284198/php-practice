@@ -126,7 +126,41 @@
     - [ ] 预处理
 - [x] HTTP请求库    
 - [x] [PHP Curl类可以轻松地发送HTTP请求并与Web API集成](https://github.com/Tinywan/PHP_Experience/blob/master/Backend/Home/Controller/CURLController.class.php)    
-     
+
+## jwplayer 播放器ajax同步获取播放地址 
+```javascript
+var default_stream_address;
+function testPlay(name) {
+    var url = 'http/127.0.0.1/getplay_rtmp_address';
+    var data = {
+        'name' : name
+    };
+    var success = function(response){
+        default_stream_address = response;
+        console.log(default_stream_address);
+    };
+    $.ajax({
+        url:url,
+        type:'get',
+        data:data,
+        dataType:'json',
+        async:false,
+        success:success
+    });
+    $("#testPlayModal").modal("show");
+    console.log(111111111111111)
+    console.log(default_stream_address)
+    console.log(2222222222222222222)
+    jwplayer("my-video").setup({
+        file: default_stream_address,
+        image: "/res/streaming/img/amai-logo-01.jpg",
+        width: "100%",//580
+        height: "370",//370
+        hlshtml: true,
+        autostart: true //自动播放
+    });
+}
+``` 
 ## 常用单利模式调用
 - [x] Redis单利模式：`RedisInstance::Instance`
 - [x] PDO单利模式：`PDOInstance::Instance`

@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="afb70721-157f-4ee9-94fa-f073f9311d82" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Common/Common/function.php" afterPath="$PROJECT_DIR$/Backend/Common/Common/function.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Home/Controller/StringController.class.php" afterPath="$PROJECT_DIR$/Backend/Home/Controller/StringController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/Sewise/m3u8Https.html" afterPath="$PROJECT_DIR$/Tpl/Html5/Sewise/m3u8Https.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/Sewise/requestm3u8.html" afterPath="$PROJECT_DIR$/Tpl/Html5/Sewise/requestm3u8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpm3u8.html" afterPath="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpm3u8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamsrc.html" afterPath="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamsrc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamurl.html" afterPath="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamurl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplay.html" afterPath="$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplaym3u8.html" afterPath="$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplaym3u8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tpl/Html5/VideoJS/playrtmp.html" afterPath="$PROJECT_DIR$/Tpl/Html5/VideoJS/playrtmp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
     </list>
     <ignored path="ThinkPhpStudy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,25 +48,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StringController.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/StringController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="150" column="26" lean-forward="false" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
-              <folding>
-                <element signature="e#6#431#0#PHP" expanded="true" />
-                <element signature="e#462#483#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tpl/Html5/Jwplayer/demo1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="244">
+                <caret line="129" column="3" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="129" selection-end-column="28" />
+                <folding>
+                  <marker date="1494580109287" expanded="true" signature="7228:8002" ph="{...}" />
+                  <marker date="1494580109287" expanded="true" signature="7298:7327" ph="{&quot;name&quot;: name...}" />
+                  <marker date="1494580109287" expanded="true" signature="7365:7460" ph="{...}" />
+                  <marker date="1494580109287" expanded="true" signature="7473:7606" ph="{&quot;url&quot;: url...}" />
+                  <marker date="1494580109287" expanded="true" signature="7789:7998" ph="{&quot;file&quot;: default_stream_address...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -79,13 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Backend/Home/Controller/AngularJSController.class.php" />
-        <option value="$PROJECT_DIR$/Tpl/Home/AngularJS/flex.html" />
-        <option value="$PROJECT_DIR$/Backend/Home/Controller/MonoLogController.class.php" />
-        <option value="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/PDOHandler.class.php" />
-        <option value="$PROJECT_DIR$/Tpl/Home/ECharts/chart_type_pie.html" />
-        <option value="$PROJECT_DIR$/Tpl/Home/ECharts/chart_type_line.html" />
-        <option value="$PROJECT_DIR$/Tpl/Home/ECharts/index.html" />
         <option value="$PROJECT_DIR$/Tpl/Home/ECharts/mix_timeline_finance.html" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/PDOInstance.class.php" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/RegularController.class.php" />
@@ -118,7 +116,6 @@
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachLearn.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/CURLController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Library/Controller/MachineLearningController.class.php" />
@@ -127,9 +124,17 @@
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Org/Util/RedisInstance.class.php" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/RedisController.class.php" />
         <option value="$PROJECT_DIR$/Backend/Common/Common/function.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplaym3u8.html" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpm3u8.html" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplay.html" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/VideoJS/playrtmp.html" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamsrc.html" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamurl.html" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/Sewise/requestm3u8.html" />
+        <option value="$PROJECT_DIR$/Tpl/Html5/Sewise/m3u8Https.html" />
         <option value="$PROJECT_DIR$/Backend/Home/Controller/StringController.class.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -192,6 +197,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -236,28 +242,9 @@
               <option name="myItemId" value="Tpl" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThinkPhpStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_Experience" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,14 +467,14 @@
       <workItem from="1491889564049" duration="1804000" />
       <workItem from="1491905643591" duration="769000" />
       <workItem from="1492050629352" duration="1002000" />
-      <workItem from="1492163212613" duration="54000" />
-    </task>
-    <task id="LOCAL-00071" summary="坐标轴刻度与标签对齐">
-      <created>1483755986847</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1483755986916</updated>
+      <workItem from="1492163212613" duration="726000" />
+      <workItem from="1492404744453" duration="32000" />
+      <workItem from="1492477348899" duration="1660000" />
+      <workItem from="1492482033003" duration="7920000" />
+      <workItem from="1492570280515" duration="599000" />
+      <workItem from="1493003220597" duration="1393000" />
+      <workItem from="1493200910155" duration="589000" />
+      <workItem from="1494554067489" duration="7393000" />
     </task>
     <task id="LOCAL-00072" summary="正则表达式">
       <created>1483852845858</created>
@@ -825,11 +812,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491874099657</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="FFmpeg 自动截取直播图片">
+      <created>1492163275529</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1492163275530</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223558000" />
+    <option name="totallyTimeSpent" value="243816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,15 +836,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49389312" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.5030534" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19829424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48773986" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.51226014" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43361884" sideWeight="0.4908397" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43361884" sideWeight="0.48880598" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18736617" sideWeight="0.49694657" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18736617" sideWeight="0.4946695" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -964,75 +960,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/GitHubController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Common/Model/ConfigModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Common/Model/BaseModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/AdminRoleController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/AdminUserController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/SystemController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="107" column="20" lean-forward="false" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFmpeg/ffmpeg_command.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-421">
-            <caret line="29" column="78" lean-forward="true" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFmpeg/ParamUsed.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="270">
-            <caret line="15" column="13" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="15" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Backend/Common/Conf/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1081,13 +1008,6 @@
     <entry file="file://$PROJECT_DIR$/Uploads/Logo/apple.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/FFmpegController.class.php">
@@ -1200,13 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Html5/SwfObject/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tpl/Html5/SwfObject/inputplay.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1221,53 +1134,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplay.html">
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Jwplayer/demo1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="1386">
+          <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplaym3u8.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+        <state relative-caret-position="486">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/VideoJS/inputplay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="163" lean-forward="false" selection-start-line="20" selection-start-column="163" selection-end-line="20" selection-end-column="163" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tpl/Html5/VideoJS/playrtmp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="67" lean-forward="false" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="77" />
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="496">
-            <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Jwplayer/demo1.html">
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamsrc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+        <state relative-caret-position="864">
+          <caret line="48" column="67" lean-forward="false" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpm3u8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="60" lean-forward="false" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Jwplayer/rtmpplayer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/SwfObject/swfobject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/SwfObject/staticswfobject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/SwfObject/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Sewise/rtmpstreamurl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="51" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Sewise/m3u8Https.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/Home/Controller/StringController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="150" column="26" lean-forward="false" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
+        <state relative-caret-position="954">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="144" selection-end-column="5" />
           <folding>
-            <element signature="e#6#431#0#PHP" expanded="true" />
-            <element signature="e#462#483#0#PHP" expanded="true" />
+            <element signature="e#6#431#0#PHP" expanded="false" />
+            <element signature="e#462#483#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tpl/Html5/Sewise/requestm3u8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="71" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="244">
+            <caret line="129" column="3" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="129" selection-end-column="28" />
+            <folding>
+              <marker date="1494580109287" expanded="true" signature="7228:8002" ph="{...}" />
+              <marker date="1494580109287" expanded="true" signature="7298:7327" ph="{&quot;name&quot;: name...}" />
+              <marker date="1494580109287" expanded="true" signature="7365:7460" ph="{...}" />
+              <marker date="1494580109287" expanded="true" signature="7473:7606" ph="{&quot;url&quot;: url...}" />
+              <marker date="1494580109287" expanded="true" signature="7789:7998" ph="{&quot;file&quot;: default_stream_address...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

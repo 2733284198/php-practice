@@ -30,11 +30,5 @@
         "psr-4":{
             "Addons\\":"Addons"
         }
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        },"packagist": false
     }
 }
