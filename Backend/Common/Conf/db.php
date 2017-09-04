@@ -20,7 +20,7 @@
   'DISCRIPTION' => '云系统管理平台社区',
   'COPY' => 'Copyright © 2013 houdunwang.Com All Rights Reserved 后盾网',
   'RECORD' => '京ICP备10027771号-110',
-  'REGIS_ON' => '1',
+  'REGIS_ON' => '0',
   'WEB_STATE' => '1',
   'KEYWRODS' => '云系统管理平台123',
 );

@@ -66,7 +66,7 @@
                                 <volist name='node_list' id='vo'>
                                     <p style="text-indent: {$vo['level']*20}px;
                             <if condition="$vo.level eq 3">float:left;<else/>clear:both;</if> padding-right: -40px;">
-                                    <input type="checkbox"id="{$vo.id}" name="actions[]" value="{$vo.id}_{$vo.level}" pid='{$vo.pid}' level="{$vo.level}"
+                                    <input type="checkbox" id="{$vo.id}" name="actions[]" value="{$vo.id}_{$vo.level}" pid='{$vo.pid}' level="{$vo.level}"
                                     <if condition="$vo['access']">checked='checked'</if>>
 
                                     <if condition="$vo.level eq 1">
