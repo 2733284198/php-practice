@@ -33,7 +33,7 @@ class LoginController extends Controller
     */
     public function checkPwd()
     {
-        $username = I('post.username');
+        $username = ('post.username');
         $password = I('post.password');
         $conditions = array('username' => ':username');
         $result = M('User')->where($conditions)->bind(':username', $username)->find();
