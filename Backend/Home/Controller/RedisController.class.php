@@ -47,7 +47,7 @@ class RedisController extends Controller
         var_dump(json_decode($redis->get('on_record_done'), true));
     }
 
-    public function redistest()
+    public function redistest2()
     {
         $redis = RedisInstance::MasterInstance();
         $redis->select(12);
@@ -121,7 +121,7 @@ class RedisController extends Controller
             return $this->toJson($result);
         }
         $redis = new \Redis();
-        $redis->connect('10.51.24.116', '6379');
+        $redis->connect('1.1.1.12', '6379');
         $redisInfo = $redis->lRange($liveKey, 0, 99);
         $dataLength = $redis->lLen($liveKey);
         while ($dataLength > 200) {
@@ -159,7 +159,7 @@ class RedisController extends Controller
     public function createRedisAction()
     {
         $redis = new \Redis();
-        $redis->connect('10.51.24.116', '6379');
+        $redis->connect('10.11.24.11', '6379');
         $message = [
             'type' => 'say',
             'userId' => $redis->incr('user_id'),

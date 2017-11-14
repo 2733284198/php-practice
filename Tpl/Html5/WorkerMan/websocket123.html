@@ -94,11 +94,6 @@
     function sub(){
         var $userId = 123456;
         websocket.send("{'user_id':"+$userId+"}"+"\n");
-//        websocket.send($("#data").val()+"\n");
-//        $.post("/gateway/handlemessage", { 'token': $("#token").val(), 'data': $("#data").val() },
-//                function(data){
-//                    console.log(data);
-//                }, "json");
     }
     window.addEventListener("load", init, false);
 

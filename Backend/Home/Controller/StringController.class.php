@@ -35,14 +35,15 @@ class StringController extends Controller
         var_dump($redis->keys('*'));
     }
 
+
     public function index3()
     {
         //请求参数
         $appId = 75715888;
-        $domainName = '10.51.10.172';
-        // $domainName = 'tinywan.amai8.com';
+       $domainName = '10.51.10.172';
+        //  $domainName = 'tinywan.amai8.com';
         $appName = 'live';
-        $DeviceId = 2803;
+        $DeviceId = 208;
         //签名密钥
         $appSecret = '981119290651e52a52dc469df5eeb638942cc7bb';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
@@ -63,7 +64,62 @@ class StringController extends Controller
         var_dump(json_decode($response, true));
     }
 
-    public  function checkApiSign()
+    /**
+     * 设备鉴权
+     */
+    public function index4()
+    {
+        //请求参数
+        $appId = 75715888;
+        $domainName = '10.51.10.172';
+//          $domainName = 'zonelue2.amailive.com';
+//          $domainName = 'tinywan.amai8.com';
+        $appName = 'live';
+        $DeviceId = 2803;
+        $AuthKeyStatus = 1;
+        $ExpireTime = 1000000;
+        $AutoStartRecord = 1;
+        //签名密钥
+        $appSecret = 'f48d03070f4572069dfafab41027a913a50ea06e';
+        //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
+//        $str = "AppId" . $appId . "AppName" . $appName . "AuthKeyStatus" . $AuthKeyStatus. "DeviceId" . $DeviceId . "DomainName" . $domainName. "ExpireTime" . $ExpireTime . $appSecret;
+        $str = "AppId" . $appId . "AppName" . $appName . "AuthKeyStatus" . $AuthKeyStatus."AutoStartRecord" . $AutoStartRecord. "DeviceId" . $DeviceId . "DomainName" . $domainName. "ExpireTime" . $ExpireTime . $appSecret;
+        //签名串，由签名算法sha1生成
+        $sign = strtoupper(sha1($str));
+        //请求资源访问路径以及请求参数，参数名必须为大写
+//        $url = "http://ssconsole.amaitech.com/openapi/createDevicePushFlowAddress?AppId=" . $appId . "&AppName=" . $appName ."&AuthKeyStatus=" . $AuthKeyStatus. "&DeviceId=" . $DeviceId  . "&DomainName=" . $domainName ."&ExpireTime=" . $ExpireTime . "&Sign=" . $sign;
+        $url = "http://ssconsole.amaitech.com/openapi/createDevicePushFlowAddress?AppId=" . $appId . "&AppName=" . $appName ."&AuthKeyStatus=" . $AuthKeyStatus."&AutoStartRecord=" . $AutoStartRecord. "&DeviceId=" . $DeviceId  . "&DomainName=" . $domainName ."&ExpireTime=" . $ExpireTime . "&Sign=" . $sign;
+
+        //CURL方式请求
+        $ch = curl_init() or die (curl_error());
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //返回数据为JSON格式，进行转换为数组打印输出
+        var_dump(json_decode($response, true));
+//        print_r($response);
+    }
+
+    public function deviceRegister(){
+        $device_id = 8936;
+        $url = "http://ssconsole.amaitech.com/openapi/deviceRegister?device_id=${device_id}";
+        //CURL方式请求
+        $ch = curl_init() or die (curl_error());
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //返回数据为JSON格式，进行转换为数组打印输出
+        print_r($response);
+//        var_dump(json_decode($response, true));
+    }
+
+    public  function checkApiSign($allParam)
     {
         //根据appId查询否存在该用户
         $appSecret = '981119290651e52a52dc469df5eeb638942cc7bb';  //$appSecret = sha1('http://sewise.amai8.com/');
@@ -114,14 +170,41 @@ class StringController extends Controller
         var_dump(json_decode($response, true));
     }
 
+
+    public function zltest(){
+        //请求参数
+        $appId = 757158803;
+        $domainName = 'zonelue2.amailive.com';
+        $appName = 'live';
+        //签名密钥
+        $appSecret = '588c02a56959d3314cbd58f07c0bcf1fe57ef43d';
+        $NotifyUrl = "ssconsole.amaitech.com";
+        //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
+        $str = "AppId" . $appId . "AppName" . $appName . "DomainName" . $domainName ."NotifyUrl" . $NotifyUrl . $appSecret;
+        //签名串，由签名算法sha1生成
+        $sign = strtoupper(sha1($str));
+        //请求资源访问路径以及请求参数，参数名必须为大写
+        $url = "http://ssconsole.amaitech.com/openapi/createPushFlowAddress?AppId=" . $appId . "&AppName=" . $appName . "&DomainName=" . $domainName ."&NotifyUrl=" . $NotifyUrl . "&Sign=" . $sign;
+        //CURL方式请求
+        $ch = curl_init() or die (curl_error());
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 360);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        //返回数据为JSON格式，进行转换为数组打印输出
+        var_dump(json_decode($response, true));
+    }
+
     public function index()
     {
         $appId = 75715888;
         $domainName = '10.51.10.172';
 //         $domainName = 'zonelue2.amailive.com';
         $appName = 'live';
-        $AuthKeyStatus = 1;
-        $ExpireTime = 100;
+        $AuthKeyStatus = 0;
+        $ExpireTime = 10000;
         //签名密钥
         $appSecret = '981119290651e52a52dc469df5eeb638942cc7bb';
         //拼接字符串，注意这里的字符为首字符大小写，采用驼峰命名
@@ -352,6 +435,9 @@ EOD;
         homePrint($response);
         //返回数据为JSON格式，进行转换为数组打印输出
         homePrint(json_decode($response, true));
+        $path = '/home/www/bin/php.txt';
+        $time = date("Y-m-d H:i:s");
+        file_put_contents($path,$time);
     }
 
 }
